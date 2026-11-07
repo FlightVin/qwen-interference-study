@@ -1,0 +1,584 @@
+{
+ "pairs": [
+  {
+   "r": "syn-R1-017",
+   "u": "syn-U2-098",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.017898
+  },
+  {
+   "r": "syn-R3-085",
+   "u": "syn-U3-013",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.103716
+  },
+  {
+   "r": "algebra/train/01732",
+   "u": "number_theory/train/00437",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.211039
+  },
+  {
+   "r": "syn-R5-063",
+   "u": "syn-U2-008",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.211771
+  },
+  {
+   "r": "syn-R5-065",
+   "u": "syn-U2-077",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.239343
+  },
+  {
+   "r": "syn-R5-026",
+   "u": "syn-U3-078",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.261886
+  },
+  {
+   "r": "syn-R4-070",
+   "u": "syn-U1-040",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.263429
+  },
+  {
+   "r": "syn-R5-047",
+   "u": "syn-U2-034",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.360027
+  },
+  {
+   "r": "syn-R4-049",
+   "u": "syn-U3-059",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.400694
+  },
+  {
+   "r": "syn-R5-027",
+   "u": "syn-U3-099",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.411605
+  },
+  {
+   "r": "syn-R4-077",
+   "u": "syn-U3-032",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.422185
+  },
+  {
+   "r": "algebra/train/00769",
+   "u": "number_theory/train/00708",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.425352
+  },
+  {
+   "r": "syn-R3-096",
+   "u": "syn-U1-036",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.435745
+  },
+  {
+   "r": "syn-R2-054",
+   "u": "syn-U3-026",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.486445
+  },
+  {
+   "r": "syn-R3-006",
+   "u": "syn-U1-012",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.546913
+  },
+  {
+   "r": "syn-R1-013",
+   "u": "syn-U2-012",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.550652
+  },
+  {
+   "r": "algebra/train/00352",
+   "u": "number_theory/train/00797",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.588205
+  },
+  {
+   "r": "syn-R4-012",
+   "u": "syn-U3-038",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.605519
+  },
+  {
+   "r": "syn-R4-010",
+   "u": "syn-U2-027",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.612651
+  },
+  {
+   "r": "syn-R2-068",
+   "u": "syn-U2-018",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.638082
+  },
+  {
+   "r": "syn-R5-075",
+   "u": "syn-U3-069",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.77074
+  },
+  {
+   "r": "syn-R4-074",
+   "u": "syn-U1-063",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.863413
+  },
+  {
+   "r": "syn-R3-005",
+   "u": "syn-U3-029",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 0.98717
+  },
+  {
+   "r": "syn-R4-098",
+   "u": "syn-U3-094",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.078072
+  },
+  {
+   "r": "syn-R2-069",
+   "u": "syn-U3-091",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.110541
+  },
+  {
+   "r": "syn-R5-046",
+   "u": "syn-U3-097",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.148519
+  },
+  {
+   "r": "syn-R4-072",
+   "u": "syn-U3-048",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.15593
+  },
+  {
+   "r": "syn-R3-020",
+   "u": "syn-U1-025",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.410938
+  },
+  {
+   "r": "syn-R4-007",
+   "u": "syn-U3-008",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.499831
+  },
+  {
+   "r": "syn-R4-091",
+   "u": "syn-U3-118",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.686689
+  },
+  {
+   "r": "syn-R4-041",
+   "u": "syn-U1-053",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 1.877303
+  },
+  {
+   "r": "algebra/train/01661",
+   "u": "number_theory/train/00107",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 2.202878
+  },
+  {
+   "r": "syn-R4-090",
+   "u": "syn-U3-106",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 2.326005
+  },
+  {
+   "r": "syn-R4-089",
+   "u": "syn-U1-098",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 2.511294
+  },
+  {
+   "r": "syn-R4-096",
+   "u": "syn-U3-081",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 2.631131
+  },
+  {
+   "r": "algebra/train/00454",
+   "u": "number_theory/train/00817",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 2.748109
+  },
+  {
+   "r": "algebra/train/00599",
+   "u": "number_theory/train/00683",
+   "exact": true,
+   "same_answer_type": true,
+   "dist": 3.333612
+  },
+  {
+   "r": "syn-R5-042",
+   "u": "syn-U3-063",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.178543
+  },
+  {
+   "r": "syn-R5-078",
+   "u": "syn-U1-052",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.450915
+  },
+  {
+   "r": "syn-R4-064",
+   "u": "syn-U1-032",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.564585
+  },
+  {
+   "r": "syn-R5-035",
+   "u": "syn-U3-108",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.602564
+  },
+  {
+   "r": "syn-R2-072",
+   "u": "syn-U3-117",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.758272
+  },
+  {
+   "r": "syn-R5-017",
+   "u": "syn-U3-077",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.853047
+  },
+  {
+   "r": "syn-R5-080",
+   "u": "syn-U1-045",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 0.878861
+  },
+  {
+   "r": "syn-R5-033",
+   "u": "syn-U3-068",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 1.248737
+  },
+  {
+   "r": "syn-R5-044",
+   "u": "syn-U2-036",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 1.413639
+  },
+  {
+   "r": "syn-R4-047",
+   "u": "syn-U3-100",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 1.433186
+  },
+  {
+   "r": "syn-R5-038",
+   "u": "syn-U3-034",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 1.471512
+  },
+  {
+   "r": "syn-R3-037",
+   "u": "syn-U3-050",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 1.604822
+  },
+  {
+   "r": "syn-R5-031",
+   "u": "syn-U3-028",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 2.512536
+  },
+  {
+   "r": "syn-R5-037",
+   "u": "syn-U3-071",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 2.607339
+  },
+  {
+   "r": "syn-R4-030",
+   "u": "syn-U3-079",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 2.816128
+  },
+  {
+   "r": "intermediate_algebra/train/01013",
+   "u": "number_theory/train/00149",
+   "exact": true,
+   "same_answer_type": false,
+   "dist": 2.876647
+  },
+  {
+   "r": "syn-R3-034",
+   "u": "syn-U3-088",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.03553
+  },
+  {
+   "r": "syn-R3-038",
+   "u": "syn-U2-092",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.163998
+  },
+  {
+   "r": "intermediate_algebra/train/01046",
+   "u": "number_theory/train/00832",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.335488
+  },
+  {
+   "r": "syn-R2-071",
+   "u": "syn-U3-017",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.428092
+  },
+  {
+   "r": "syn-R2-055",
+   "u": "syn-U3-112",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.617083
+  },
+  {
+   "r": "syn-R3-035",
+   "u": "syn-U3-080",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.693732
+  },
+  {
+   "r": "syn-R4-021",
+   "u": "syn-U2-068",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.778418
+  },
+  {
+   "r": "intermediate_algebra/train/00145",
+   "u": "number_theory/train/00014",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.846646
+  },
+  {
+   "r": "syn-R4-063",
+   "u": "syn-U3-070",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 0.974235
+  },
+  {
+   "r": "syn-R2-062",
+   "u": "syn-U2-009",
+   "exact": false,
+   "same_answer_type": false,
+   "dist": 1.073027
+  }
+ ],
+ "n_pairs": 63,
+ "eligible": {
+  "related": 77,
+  "unrelated": 82
+ },
+ "by_provenance": {
+  "authored": 54,
+  "natural": 9
+ },
+ "exact_count_matches": 53,
+ "mixed_group_prob": {
+  "related": 0.9626764245847823,
+  "unrelated": 0.9639201332483935
+ },
+ "final_balance": {
+  "smd_success": 0.02474094654173616,
+  "smd_resp_len": 0.1902550637394412,
+  "dropped": [
+   {
+    "r": "syn-R4-040",
+    "u": "syn-U3-061",
+    "smd_success": 0.023937911862546662,
+    "smd_resp_len": 0.2546697499981688
+   }
+  ]
+ },
+ "final_coverage": [
+  {
+   "technique": "F1",
+   "H_count": 11,
+   "H_share": 0.2391,
+   "R_count": 17,
+   "R_share": 0.2698,
+   "required_R": 8,
+   "deficit": 0
+  },
+  {
+   "technique": "F2",
+   "H_count": 7,
+   "H_share": 0.1522,
+   "R_count": 6,
+   "R_share": 0.0952,
+   "required_R": 5,
+   "deficit": 0
+  },
+  {
+   "technique": "F3",
+   "H_count": 11,
+   "H_share": 0.2391,
+   "R_count": 11,
+   "R_share": 0.1746,
+   "required_R": 8,
+   "deficit": 0
+  },
+  {
+   "technique": "F4",
+   "H_count": 10,
+   "H_share": 0.2174,
+   "R_count": 19,
+   "R_share": 0.3016,
+   "required_R": 7,
+   "deficit": 0
+  },
+  {
+   "technique": "F8",
+   "H_count": 7,
+   "H_share": 0.1522,
+   "R_count": 10,
+   "R_share": 0.1587,
+   "required_R": 5,
+   "deficit": 0
+  }
+ ],
+ "history": [
+  {
+   "attempt": 0,
+   "priority": [],
+   "n_pairs": 63,
+   "balance": {
+    "smd_success": 0.02474094654173616,
+    "smd_resp_len": 0.1902550637394412,
+    "dropped": [
+     {
+      "r": "syn-R4-040",
+      "u": "syn-U3-061",
+      "smd_success": 0.023937911862546662,
+      "smd_resp_len": 0.2546697499981688
+     }
+    ]
+   },
+   "coverage": [
+    {
+     "technique": "F1",
+     "H_count": 11,
+     "H_share": 0.2391,
+     "R_count": 17,
+     "R_share": 0.2698,
+     "required_R": 8,
+     "deficit": 0
+    },
+    {
+     "technique": "F2",
+     "H_count": 7,
+     "H_share": 0.1522,
+     "R_count": 6,
+     "R_share": 0.0952,
+     "required_R": 5,
+     "deficit": 0
+    },
+    {
+     "technique": "F3",
+     "H_count": 11,
+     "H_share": 0.2391,
+     "R_count": 11,
+     "R_share": 0.1746,
+     "required_R": 8,
+     "deficit": 0
+    },
+    {
+     "technique": "F4",
+     "H_count": 10,
+     "H_share": 0.2174,
+     "R_count": 19,
+     "R_share": 0.3016,
+     "required_R": 7,
+     "deficit": 0
+    },
+    {
+     "technique": "F8",
+     "H_count": 7,
+     "H_share": 0.1522,
+     "R_count": 10,
+     "R_share": 0.1587,
+     "required_R": 5,
+     "deficit": 0
+    }
+   ]
+  }
+ ]
+}
