@@ -12,7 +12,7 @@ import os
 CLIP = {"sym": 0.2, "asym": 0.28}
 
 TEMPLATE = r'''#!/usr/bin/env bash
-#EXP gpus=1 cpus=8 mem=64G time=24:00:00 part=preempt constraint=VRAM_48GB
+#EXP gpus=1 cpus=8 mem=64G time=40:00:00 part=preempt constraint=VRAM_48GB
 # HYPOTHESIS: main study ({phase}) — arm {arm}, seed {seed}, lr {lr}, clip (0.2,{eh}), {rounds} rounds,
 # cap 8,192, bundle main-v1 (sha 0e255243…). Primary contrast R−U on held-out target_test (separate job).
 export PROJ_DATA="/data/user_data/$USER/qis"
