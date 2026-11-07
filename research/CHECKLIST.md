@@ -35,18 +35,18 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.2 done — Rubric v1 `research/RUBRIC.md`.
 - 3.3 done — Annotation pass 1: 1,496 items → `data/annotations/pass1.jsonl` (batches 2, 5 redone after contamination, D13). Rubric v1.1 roles (D16): construction H 154, E_related 110, E_unrelated 152; target_dev 63; target_test 209.
 - 3.4 done — Length probe 11072430: truncation 2.83% at 4096, 0% at 8192, success identical (0.6406) → cap 4096 frozen (D18). H reserve tranche pre-registered (D19).
-- 3.5 active — stage 1 running: study pools 11072609 (general), calibration 11072610 (preempt). Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
-- 3.6 pending — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
+- 3.5 done (superseded at 8,192 by 3.16) — stage 1 running: study pools 11072609 (general), calibration 11072610 (preempt). Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
+- 3.6 done (D47/D48; pass 2 + third read) — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
 - 3.7 pending — Error audit: ≤64 incorrect screening attempts on H candidates.
-- 3.8 pending — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
-- 3.9 partial — calibration panels done (D33). target_dev/target_test selection by rubric pending (pass 2 + third read done).
-- 3.10 pending — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
-- 3.12 active — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
-- 3.13 pending — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
-- 3.14 pending — (A4.3–5) Only if native < 48 or missing structures: Omni-MATH tranche (≤200, pinned) / smaller pilot (record families, core share, 16T/N and 8T/N repetitions) / authored tranche / fallback.
+- 3.8 done (D48: 63 pairs, |SMD| ≤ 0.19; mixed-group fraction from stage-3 baseline 11075046) — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
+- 3.9 done (D34, D46) — calibration panels done (D33). target_dev/target_test selection by rubric pending (pass 2 + third read done).
+- 3.10 done (D34: J_H 32, J_R 28, J_U 32) — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
+- 3.12 done (D47) — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
+- 3.13 partial (selection done D47; stage-3 baseline 11075046 pending) — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
+- 3.14 done (D47: Omni tranche, n=46 under A4.4) — (A4.3–5) Only if native < 48 or missing structures: Omni-MATH tranche (≤200, pinned) / smaller pilot (record families, core share, 16T/N and 8T/N repetitions) / authored tranche / fallback.
 - 3.16 done (D46–D48) — (D45) Re-screen at 8,192: H candidates with 4k c ≤ 12/32 (native + Omni, audit-eligible), auxiliary candidates with 4k c ≤ 24/32 or stage-1 ≤ 14/16, calibration panels (400 × 16); then re-run selection, matching, coverage.
-- 3.15 pending — (A5) Primary + secondary technique tags for every H_train and E_related item (blind annotators; F1–F8); coverage check after R/U matching; repair loop; coverage table → PROTOCOL and report.
-- 3.11 pending — (A2) Pool decision after stage-2 screening: count matched pairs, coverage (factoring forms), diversity (template families), balance (SMD). If short: record gap + finite synthetic budget, OR retain smaller natural set, OR fallback skill — choose and record before freeze.
+- 3.15 done (D48: coverage met, no repair) — (A5) Primary + secondary technique tags for every H_train and E_related item (blind annotators; F1–F8); coverage check after R/U matching; repair loop; coverage table → PROTOCOL and report.
+- 3.11 done (D48: authored tranches, 63 pairs) — (A2) Pool decision after stage-2 screening: count matched pairs, coverage (factoring forms), diversity (template families), balance (SMD). If short: record gap + finite synthetic budget, OR retain smaller natural set, OR fallback skill — choose and record before freeze.
 - **G1 — PASSED 2026-11-07 under A2/A4 (D47, D48):** H_train 46 (A4.4 record), 63 matched aux pairs with A5 coverage, target_dev 53, target_test 128, calibration panels 59/56 at the 8,192 cap. Bundle `data/main_v1_manifest.json` (bundle sha256 `0e255243…`, sealed test `2ffe70dd…`). Original text: ≥64 H_train, ≥32 dev, ≥64 test, ≥64 per calib split (hard minima). Aux pools: 64 matched pairs target (A2); a modest shortfall needs documented coverage/diversity/balance. Else supplementation or the linear-equation fallback, before any treatment run.
 
 ## 4. Trainer (gate G2: correctness tests of project.md §8)
@@ -61,9 +61,9 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
-- 5.1 queued (8,192 cap; jobs 11074519–11074527; first run is the 8,192 canary) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Jobs 11072991, 11072995–11072999 (preempt; move to general as slots free, D23 rule). Depend on panels job 11072990 ← calib16 screening 11072944.
+- 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Running on general: 11074520 (1e-6/sym), 11074527 (5e-7/sym). Pending on preempt, move to general as slots free: 11074526, 11074519, 11074522, 11074521. 4,096 jobs 11072991–11072999 superseded (D45).
 - 5.2 pending — Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
-- 5.3 pending — Cost estimate → 128 or 64 rounds. Write and commit `research/PROTOCOL.md` (freeze).
+- 5.3 active — PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
 
 ## 6. Main runs (after G3)
 - 6.1 pending — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.
@@ -72,6 +72,6 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 
 ## 7. Evaluation, audit, report
 - 7.1 pending — Dev curves; test at baseline and endpoint (32 samples/problem).
-- 7.2 pending — Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
+- 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests in job 11075419; figures and pass@8 tables pending. Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
 - 7.3 pending — Independent recomputation entry point; verifier sample audit.
 - 7.4 pending — Cost reconciliation; `reports/REPORT.md` with figures in `reports/figures/` (A1.2), plotting script and source tables committed, verified from a clean checkout.

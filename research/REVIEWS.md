@@ -63,3 +63,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt idle (no starts). Calibration ETA: 6 runs × ~1.8 h / 2 GPUs ≈ 5.5 h, plus 2 seed-22 runs ≈ 1.8 h.
 6. **Most important.** Prepare main-study configs, cost estimate and PROTOCOL freeze text now so the matrix can launch the moment calibration selects; draft the analysis plan.
 7. **Reconciliation.** Slurm ↔ ledger agree (7 live owned jobs). Watcher alive.
+
+## Review 8 — 2026-11-07 10:05Z
+1. **Changes.** No job ended this hour. Running on general: cal8k lr1e-6/sym (11074520, ~1.9 h in; round 7 + baseline eval at the 09:10Z peek) and lr5e-7/sym (11074527). Pending on preempt: four cal8k runs and stage-3 baseline 11075046. New code: `src/qis/analysis/stats.py` (paired t interval, crossed bootstrap seed 2027, per-problem change) with `tests/test_analysis.py`; test job `qis-tests-b` 11075419 submitted. PROTOCOL draft, main recipe generator and checkpoint evaluator committed last hour.
+2. **Alignment.** Analysis code is written before any endpoint data, as §9 requires. No treatment run.
+3. **Mechanics.** Calibration rounds at 8k ~150–210 s plus ~8 min per validation pass; no fault in logs at the last peek.
+4. **Confounds.** None new. Cross-job eval noise 0.010 (D49) stays the main caution for calibration ranking.
+5. **Next jobs / limits.** GPU 2/2 general; preempt 0 starts (D37). CPU 4/30.
+6. **Most important.** Keep both general GPUs busy: when a cal8k run ends, move the next pending one (order: 5e-7/asym, 1e-6/asym, 2e-6/sym, 2e-6/asym; stage-3 baseline in between if a CPU-light gap appears) to general at once.
+7. **Reconciliation.** Slurm ↔ ledger agree (7 live owned GPU jobs + 1 CPU test job). Watcher alive (btjiyyann).

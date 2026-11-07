@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 09:10Z (review 7).
+Updated 2026-11-07 10:10Z (review 8).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
