@@ -27,6 +27,8 @@ def role(a):
     if a["pool"] == "factor" and a["label"] == "central":
         if a["direct_practice"] == "no" and level(a) >= 4:
             return "hard"
+        if a["direct_practice"] == "no" and level(a) == 3:
+            return "hard_reserve"          # D18: screened; used only if H_train < 64 after stage 2
         if a["direct_practice"] == "yes":
             return "related"
     if a["pool"] == "modular" and a["label"] == "absent" and a["modular"] == "yes":
@@ -46,7 +48,7 @@ def main():
     for line in open(a.manifest):
         r = json.loads(line)
         man[r["id"]] = r
-    pools = {"hard": [], "related": [], "unrelated": [], "target_dev": [], "target_test": [],
+    pools = {"hard": [], "hard_reserve": [], "related": [], "unrelated": [], "target_dev": [], "target_test": [],
              "probe_related_dev": [], "probe_unrelated_dev": []}
     for line in open(a.annotations):
         ann = json.loads(line)
@@ -58,6 +60,8 @@ def main():
             continue
         if r["split"] == "construction":
             pools[ro].append(r)
+        elif ro == "hard_reserve":
+            continue                       # reserve applies to H_train only (construction split)
         elif r["split"] == "study_dev":
             {"hard": pools["target_dev"], "related": pools["probe_related_dev"],
              "unrelated": pools["probe_unrelated_dev"]}[ro].append(r)
