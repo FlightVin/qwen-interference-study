@@ -1,0 +1,24 @@
+# Dataset construction log
+
+Purpose: the evidence trail for every pool decision (project.md §5, A2). Counts are per item:
+successes c out of n samples, frozen model/prompt/decoding, cap 4,096 (D18).
+
+## Stage 1 (16 samples/item; job 11072609, L40 babel-w5-28, 2026-11-07)
+Per-item counts: `data/screening/<pool>_s1_counts.jsonl`. No verifier-unknown attempts; no prompt over the 1,024-token cap.
+
+| pool (construction) | candidates | band | shortlisted | at 16/16 | at 0/16 | truncated attempts |
+|---|---|---|---|---|---|---|
+| hard (L4–5, multi-step) | 154 | 0–5/16 | 56 | 34 | 32 | 3.4% |
+| hard_reserve (L3, D19) | 30 | 0–5/16 | 4 | 8 | 0 | 1.3% |
+| related (direct practice) | 110 | 4–14/16 | 23 | 56 | 7 | 0.4% |
+| unrelated (modular) | 152 | 4–14/16 | 41 | 76 | 2 | 0.6% |
+
+**Reading.** Qwen3-1.7B (non-thinking, T=1) solves most MATH items of every role reliably. The
+hard band (2–8/32 at stage 2) can be met only by items at roughly 1–5/16 now (28 incl. reserve)
+plus a few of the 32 zero-success items. Projection: H_train ≈ 25–35, below the hard minimum 64.
+The auxiliary pools are also short of 64 pairs (A2 options apply).
+
+**Fallback feasibility (model-free upper bound).** Linear-equation word problems (algebra +
+prealgebra, levels 4–5, any word-problem cue, an equation in the solution): ≤ ~128 construction
+candidates before the skill audit, and easier on average than the factoring hard pool. The
+fallback cannot be expected to produce more H_train items than the primary skill.
