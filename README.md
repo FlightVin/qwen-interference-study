@@ -6,6 +6,4 @@ GRPO, one job per GPU on CMU Babel.
 
 - Canonical instruction: [`project.md`](project.md).
 - Research records: [`research/`](research/) (STATE, CHECKLIST, PROTOCOL, DECISIONS, REVIEWS, READING).
-- Run registry: [`registry/runs.jsonl`](registry/runs.jsonl).
-- Operations: [`ops/`](ops/) (slot-guarded submission, hourly review).
 - Execution harness: `slurm-agentic-engineering/` (separate repo, excluded from this one).

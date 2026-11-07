@@ -7,3 +7,7 @@ wandb/
 *.pt
 *.bin
 /scratch/
+
+# Slurm/harness orchestration (local only; owner instruction 2026-11-07)
+/registry/
+/ops/
