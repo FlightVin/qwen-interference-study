@@ -161,8 +161,27 @@ def main():
     if start > 0:
         log.event("resume", round=start, opt_step=counters["opt_step"])
 
+    saver = ckpt.Saver(cdir, cfg.get("ckpt_lock_root", os.path.dirname(cdir.rstrip("/"))),
+                       retain=cfg.get("retain_rounds", []))
+    reported = {"round": None}
+
+    def report_ckpt():
+        last = saver.last
+        if last and last.get("round") != reported["round"] and not saver.busy():
+            reported["round"] = last["round"]
+            log.event("checkpoint" if last["ok"] else "checkpoint_failed", **last)
+
     def preempted():
         return bool(flag) and os.path.exists(flag)
+
+    def preempt_exit(**kv):
+        saver.abort()
+        log.event("preempt_exit", **kv)
+        sys.exit(143)
+
+    def gpu_used():
+        f, t = torch.cuda.mem_get_info()
+        return (t - f) / 2**30
 
     def run_evals(rnd):
         for panel, n in cfg.get("eval_panels", {}).items():
@@ -186,7 +205,8 @@ def main():
 
     for rnd in range(start, cfg["rounds"]):
         if preempted():
-            log.event("preempt_exit", round=rnd); sys.exit(143)
+            preempt_exit(round=rnd)
+        report_ckpt()
         t_round = time.time()
         plan = round_plan(cfg["arm"], cfg["seed"], rnd, n_hard, n_pairs, n_calib)
         items = [(role, pools[pool][i]) for role, pool, i in plan]
@@ -196,6 +216,7 @@ def main():
         t0 = time.time()
         groups = rollout.generate(p_ids, N_PER_PROMPT, req_seeds, logprobs=True)
         t_gen = time.time() - t0
+        mem_gen = gpu_used()
         rollout.sleep()
 
         t0 = time.time()
@@ -232,7 +253,7 @@ def main():
         t0 = time.time()
         for m, mb in enumerate(mb_plan):
             if preempted():
-                log.event("preempt_exit_midround", round=rnd, minibatch=m); sys.exit(143)
+                preempt_exit(round=rnd, minibatch=m, midround=True)
             members = [(gi, j) for gi in mb for j in range(N_PER_PROMPT)]
             tot_loss, valid_tok = torch.zeros((), device="cuda"), 0
             for gi, j in members:
@@ -260,6 +281,7 @@ def main():
             learner.step()
             counters["opt_step"] += 1
         t_train = time.time() - t0
+        mem_train = gpu_used()
 
         t0 = time.time()
         rollout.load_weights(learner.model)
@@ -285,7 +307,8 @@ def main():
               "clipfrac_neg": float(act_neg / max(n_neg, 1)),
               "logprob_mismatch_absq": qtiles(mism.abs()), "logprob_mismatch_mean": float(mism.mean()),
               "t_gen": t_gen, "t_verify": t_ver, "t_oldlp": t_old, "t_train": t_train, "t_sync": t_sync,
-              "t_round": time.time() - t_round, **counters}
+              "t_round": time.time() - t_round, "gpu_used_gib_gen": mem_gen, "gpu_used_gib_train": mem_train,
+              "ckpt_busy": saver.busy(), **counters}
         if (rnd + 1) % 8 == 0:
             ent = [float(learner.token_entropy(p_ids[gi], o["ids"])) for gi, o in flat[:8]]
             rm["entropy_sample_mean"] = float(np.mean(ent))
@@ -303,16 +326,20 @@ def main():
         if done_rounds in cfg.get("eval_rounds", []):
             run_evals(done_rounds)
         if done_rounds % cfg["ckpt_every"] == 0 or done_rounds == cfg["rounds"] or done_rounds in ckpt_retain:
-            info = ckpt.save(cdir, done_rounds, learner.model, learner.opt,
-                             {"counters": counters, "config_sha": hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest(),
-                              "bundle_sha": bundle_sha, "wandb_id": getattr(log, "wandb_id", None),
-                              "attempt_id": cfg["attempt_id"]},
-                             keep=2, retain=ckpt_retain)
-            log.event("checkpoint", round=done_rounds, **info)
+            snap_s = saver.save(done_rounds, learner.model, learner.opt,
+                                {"counters": counters, "config_sha": hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest(),
+                                 "bundle_sha": bundle_sha, "wandb_id": getattr(log, "wandb_id", None),
+                                 "attempt_id": cfg["attempt_id"]},
+                                blocking=bool(os.environ.get("QIS_EXIT_AFTER_ROUND")) or done_rounds == cfg["rounds"])
+            log.event("checkpoint_started", round=done_rounds, snapshot_s=snap_s)
+            report_ckpt()
         if os.environ.get("QIS_EXIT_AFTER_ROUND") == str(done_rounds) and not os.path.exists(os.path.join(out, "FORCED_EXIT_DONE")):
             open(os.path.join(out, "FORCED_EXIT_DONE"), "w").close()     # test hook: simulated preemption
             log.event("forced_exit_test", round=done_rounds); sys.exit(143)
 
+    saver.wait(); report_ckpt()
+    if not (saver.last or {}).get("ok"):
+        log.event("final_checkpoint_failed"); sys.exit(5)
     log.event("complete", rounds=cfg["rounds"], **counters)
     with open(os.path.join(out, "RUN_COMPLETE"), "w") as f:
         f.write(json.dumps(counters))

@@ -157,8 +157,11 @@ def main():
     roll.sleep()
 
     # restart: save, reload into a fresh learner, compare weights and moments bitwise
-    info = ckpt.save(a.ckpt_dir, 4, L.model, L.opt, {"audit": True}, keep=1)
-    R["ckpt"] = info
+    R["gpu_used_gib_device_after_steps"] = (lambda f, t: (t - f) / 2**30)(*torch.cuda.mem_get_info())
+    sv = ckpt.Saver(a.ckpt_dir, a.ckpt_dir)
+    R["ckpt_snapshot_s"] = sv.save(4, L.model, L.opt, {"audit": True}, blocking=True)
+    R["ckpt"] = sv.last
+    assert sv.last["ok"], sv.last
     ref_w = {n: p.detach().clone() for n, p in params.items()}
     ref_m = {i: (s["exp_avg"].clone(), s["exp_avg_sq"].clone()) for i, s in enumerate(L.opt.state.values())}
     del L
@@ -172,6 +175,7 @@ def main():
     R["restart_moments_bitexact"] = all(torch.equal(m2[i]["exp_avg"], ref_m[i][0]) and torch.equal(m2[i]["exp_avg_sq"], ref_m[i][1]) for i in ref_m)
     R["restart_moment_dtypes"] = dtypes_of([s["exp_avg"] for s in m2] + [s["exp_avg_sq"] for s in m2])
     R["peak_gpu_gib_overall"] = torch.cuda.max_memory_allocated() / 2**30
+    R["note_peak"] = "torch allocator stats include vLLM sleep-mode pool; device-level reading is gpu_used_gib_device_after_steps"
     R["documented_not_measured"] = [
         "BF16 autocast matmuls accumulate in FP32 inside cuBLAS (documented torch/cuBLAS behaviour; not inspectable)",
         "SDPA attention kernel internal precision under autocast (documented: BF16 inputs, FP32 softmax accumulation)",
