@@ -1,28 +1,81 @@
-# PROTOCOL (draft — not frozen)
+# PROTOCOL — frozen experimental design (draft until the freeze line is signed)
 
-Purpose: the frozen experimental design. Until the freeze line below is signed with a commit, this
-file is a working draft. The canonical instruction remains root `project.md` (§1–§18).
+Purpose: the single reference for the main study. Canonical instruction: root `project.md` §1–§19.
+Every entry cites the decision (`research/DECISIONS.md`) that fixed it. Items marked PENDING are
+filled only from the calibration result and the cost rule; nothing else may change at freeze.
 
-## Status
-- Draft. Frozen items so far: response cap **8,192** (D45; supersedes 4,096 of D18); decoding T=1, top_p=1, top_k disabled
-  (vLLM default 0), repetition penalty 1, native sampler (D14); model Qwen3-1.7B @ `70d244cc`;
-  MATH @ `21a56338`; rubric v1.1 (D16).
+## 1. Question and estimand
+Does easier practice on polynomial factorization (E_related) improve GRPO learning on harder
+problems whose audited solutions use it, compared with matched modular-arithmetic practice
+(E_unrelated)? Primary estimand: seed-mean R − U endpoint pass@1 on held-out target_test (128 MATH
+test problems, equal weight per problem, 32 samples/problem). Secondary: R − H, U − H; dev curves;
+training-target success; per-problem changes; pass@8 (`1 − C(32−c,8)/C(32,8)`).
 
-## Amendments in force
-- A1 (§15) precision audit + report figures; A2 (§16) auxiliary pool target and supplementation;
-  A3 (§17) 30 CPUs; A4 (§18) H_train construction: full native stage 2 over 184 candidates, core
-  band 2–8/32 and moderate band 9–12/32, target 64 (≥ half core), proceed at 48–64, external
-  Omni-MATH tranche (≤200) or authored tranche or smaller pilot with uniform endpoint shortening,
-  one frozen H_train manifest for all arms, H-only extra prompts balanced by source/difficulty.
+## 2. Model, prompt, decoding (D14, D18→D45)
+Qwen/Qwen3-1.7B @ `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`, full-parameter, non-thinking template
+(`enable_thinking=False`; fixture `research/evidence/g2/template_fixture.json`). User prefix:
+"Solve the following problem. Show your working and put your final answer in \boxed{}." Prompt cap
+1,024 tokens. **Response cap 8,192 tokens** (D45). T=1.0, top_p=1.0, top_k disabled (vLLM 0),
+repetition penalty 1.0, vLLM native sampler. Same decoding for screening, training, evaluation.
 
-## Technique coverage rule (A5, `project.md` §19)
-Techniques = rubric v1.3 primary operations F1, F2, F3, F4, F8 (`research/RUBRIC.md`); substitution, rational simplification and sign analysis are step tags (owner rule, D30). Each
-H_train and E_related item has one primary technique (main factoring operation in the reference
-solution) plus optional secondary tags (descriptive only). After R/U matching: for every technique
-with ≥ 10% of H_train, require count_R ≥ ceil(0.5 · share_H · |E_related|). Repair only by
-authorized E_related selection/augmentation, re-match, recompute; H_train fixed. Residual
-shortfalls are recorded (technique, required, achieved, limitation); coverage table in the report.
+## 3. Reward (§6, verifier `src/qis/verify.py`)
+Math-Verify 0.9.0 on the last `\boxed{}` only; reward 1 verified correct, 0 otherwise; capped responses
+score 0; verifier timeout 5 s, retry 15 s in a fresh process; unresolved = unknown → round held.
 
-## To freeze (pending)
-H_train, E_related/E_unrelated pairs, target_dev, target_test, probe panels, calibration result,
-learning rate and clipping, endpoint rounds, seeds mapping, evaluation schedule, analysis plan.
+## 4. Algorithm (D10, D11, D24–D26; `src/qis/train/`)
+Synchronous GRPO; 16 prompts × 8 responses per round; 4 optimizer steps of 4 complete groups (32
+responses), micro-batch 1; A=(r−mean)/(pop_std+1e-6); objective min(qA, clip(q,1−ε_low,1+ε_high)A),
+no dual clip; mean over valid tokens per response, then over the 32 responses; π_old = round-start
+learner log probs (teacher forced) fixed for the round; AdamW β=(0.9,0.999), ε=1e-8, wd 0, constant lr,
+grad-norm clip 1.0; no KL, no entropy bonus; FP32 weights and moments, BF16 compute and rollout
+(precision audit `research/evidence/g2/precision_audit.md`). Mixed arms: each minibatch 2 hard + 2
+auxiliary groups. Checkpoint every 4 rounds (background, validated).
+
+## 5. Datasets (frozen; `data/main_v1_manifest.json`, bundle sha256 `0e255243…`)
+| pool | n | construction | decision |
+|---|---|---|---|
+| H_train | 46 | 31 core (2–8/32) + 15 moderate (9–12/32) at 8k; native MATH 25 + Omni-MATH 21; F1 11, F2 7, F3 11, F4 10, F8 7 | D47 |
+| E_related | 63 | direct factoring practice, band 12–24/32 at 8k; 9 natural + 54 authored | D48 |
+| E_unrelated | 63 | direct modular arithmetic, band 12–24/32; matched 1:1 to E_related within provenance | D48 |
+| target_dev | 53 | study_dev, rubric only (central, multi-step, L4–5) | D34 |
+| target_test | 128 | MATH test, rubric only; sealed file sha256 `2ffe70dd…` | D34 |
+| probes | J_H 32 (⊂ dev), J_R 28, J_U 32 | study_dev rubric panels, IDs frozen before any probe result | D34 |
+Matching balance: |SMD| success 0.025, response length 0.19; A5 coverage met (D48).
+Annotation: agent-annotated and audited (pass 1, blind pass 2, third read), not human-reviewed.
+
+## 6. Optimizer calibration (§7; D46)
+Panels: calib_train 59, calib_val 56 at 8k (bundle `a90a0d71…`). Six configs lr {5e-7, 1e-6, 2e-6} ×
+clip {(0.2,0.2),(0.2,0.28)}, seed 11, 32 rounds; validation 16/problem at 0/16/32; reject non-finite,
+broken verification, > 5% capped validation responses; rank by endpoint gain; top 2 repeat with seed
+22; mean gain; ties ≤ 0.01 broken lr 1e-6 > 5e-7 > 2e-6, symmetric > asymmetric; require positive mean
+gain and neither seed < baseline − 0.02. Cross-job eval noise ≈ 0.01 (D49).
+**Result: PENDING.** **Selected lr / clip: PENDING.**
+
+## 7. Matrix and schedule
+Primary: H, R, U × seeds 101, 202, 303 (selected clip). Sensitivity: R, U × 3 seeds (other clip).
+Shuffled-cycle schedules (`src/qis/train/schedule.py`): R and U share the hard stream and the pair
+stream; H = common 8 hard + 8 extra hard (equal per-item exposure over cycles, so source/difficulty
+strata are represented in proportion, A4.6). All runs start from the original checkpoint.
+**Endpoint T: PENDING** (128 unless the measured cost exceeds 24 active GPU-h per run → 64 for all).
+Dev evaluation at 0, T/4, T/2, 3T/4, T (8/problem; dev, J_R, J_U). Test at baseline and endpoint
+(32/problem), sealed until endpoint.
+
+## 8. Local update diagnostic (§7, A1.2)
+Source: R, seed 101, selected clip at rounds 0 and T/2 (retained). Branches from identical model +
+optimizer snapshots: none, hard, related, unrelated; 4 prompts × 8 responses; minibatch seeds
+4101–4104; evaluate a fixed 32-problem dev subset (J_H) plus J_R, J_U with 16 responses/problem and
+paired seeds. Reported as finite changes after an AdamW/GRPO update.
+
+## 9. Analysis (§9; to be implemented in `src/qis/analysis/` before endpoint data)
+Per seed R−U, R−H, U−H on target_test pass@1; two-sided 95% paired t interval over 3 seeds;
+crossed bootstrap over seeds and problems preserving pairing, 10,000 draws, seed 2027; pass@8; per-
+problem changes; dev curves vs rounds, hard rollouts, tokens, GPU-h; POPE-style (J_R,J_H), (J_U,J_H)
+trajectories; coverage table (A5); costs. No equivalence claim from a null pilot.
+
+## 10. Limitations known at freeze
+H_train 46 (< 64) with 21 Omni-MATH items (distribution shift to MATH targets; transfer reported
+separately); auxiliary pools 86% authored (equal across arms); cross-job sampling nondeterminism;
+two general GPUs (preempt unavailable at design time).
+
+## Freeze
+PENDING — signed by commit hash when calibration and endpoint are filled.
