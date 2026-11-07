@@ -72,8 +72,8 @@ def select(d):
         return out
     best = max(f["mean"] for f in ok)
     tied = [f for f in ok if best - f["mean"] <= TIE]
-    lr = lambda c: c.split("-")[0][2:]
-    clip = lambda c: c.split("-")[-1]
+    lr = lambda c: c[len("lr"):].rsplit("-", 1)[0]      # "lr2e-6-sym" -> "2e-6"
+    clip = lambda c: c.rsplit("-", 1)[1]                # "lr2e-6-sym" -> "sym"
     pick = min(tied, key=lambda f: (LR_PREF[lr(f["config"])], CLIP_PREF[clip(f["config"])]))
     out.update(status="selected", selected=pick["config"], tie=len(tied) > 1)
     return out
