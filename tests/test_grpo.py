@@ -107,3 +107,17 @@ def test_pass_at_k():
     assert grpo.pass_at_k(32, 25, 8) == 1.0               # 32-c < 8
     assert grpo.pass_at_k(32, 1, 8) == pytest.approx(8 / 32)
     assert grpo.pass_at_k(32, 4, 1) == pytest.approx(4 / 32)
+
+
+def test_checksum_exact_across_order_and_device_independent_of_summation():
+    from qis.train.ckpt import tensor_checksums
+    torch.manual_seed(0)
+    t = torch.randn(3_000_000)
+    a = tensor_checksums({"w": t})["w"][2]
+    b = tensor_checksums({"w": t.flip(0).flip(0).clone()})["w"][2]
+    perm = t[torch.randperm(t.numel())]
+    c = tensor_checksums({"w": perm})["w"][2]          # same multiset of bits -> same sum
+    assert a == b == c and isinstance(a, int)
+    t2 = t.clone(); t2[5] = torch.nextafter(t2[5], torch.tensor(1e9))
+    assert tensor_checksums({"w": t2})["w"][2] != a     # one-ulp change detected
+    assert tensor_checksums({"w": t.bfloat16().float()})["w"][2] != a   # BF16 round trip detected

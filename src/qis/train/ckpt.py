@@ -34,7 +34,8 @@ def tensor_checksums(sd: dict) -> dict:
         t = v.detach().contiguous()
         bits = t.view(torch.int32) if t.element_size() == 4 else (
             t.view(torch.int16) if t.element_size() == 2 else t.view(torch.int64))
-        out[k] = [str(t.dtype), list(t.shape), float(bits.double().sum().item())]
+        # exact, order-independent: int64 sum of the raw bit patterns (|sum| < 2^31 * numel < 2^63)
+        out[k] = [str(t.dtype), list(t.shape), int(bits.to(torch.int64).sum().item())]
     return out
 
 
