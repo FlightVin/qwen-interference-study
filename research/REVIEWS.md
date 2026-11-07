@@ -36,3 +36,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt still not starting (D37). CPU: 1 job pending (queue of 85 on the CPU partition).
 6. **Most important.** Finish H selection + R/U matching → freeze dataset; stage-3 baseline. Calibration throughput (2 GPUs) is the next bottleneck: 5 runs + 2 seed-22 runs ≈ 13 GPU-h.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned live jobs). Watcher alive (re-armed 06:0x after the Omni event).
+
+## Review 5 — 2026-11-07 07:05Z
+1. **Changes.** D45: cap 4,096 → 8,192 after calibration showed validation truncation 11.5% (genuine long reasoning, not loops). Cancelled six owned 4,096 jobs (~56 GPU-min). H selection at 4,096 reached 49 (D43, superseded pending re-screen). Running: 8,192 re-screen H+calibration (11074495; 107 H items) and auxiliary (11074499; 302 related items at stage 1, 5.1k tok/s). Queued: panels-k8 → six cal8k runs.
+2. **Alignment.** The cap change protects the endpoint from a growing truncation confound; decided before any treatment run and applied to every pool.
+3. **Mechanics.** 8,192 generation runs (vLLM max_seq_len 9,216). Learner at 9k tokens untested → first cal8k run is the canary.
+4. **Confounds.** Pools must be re-selected from 8,192 counts with the same frozen rules (D38/D39); no rule changes.
+5. **Next jobs / limits.** GPU 2/2 general; preempt still not starting. Storage ~120 GB used account-wide.
+6. **Most important.** The 8,192 canary (memory, round time) — risk of OOM with 9k-token sequences. Action at first cal8k start: check first-round metrics within ~10 min.
+7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs). Watcher alive.
