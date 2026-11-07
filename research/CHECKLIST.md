@@ -86,6 +86,8 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6B.2 active — Smoke test `qis-smoke-k16` (11079543): full round at 16,384 with forced long responses; pass criteria in D74.
 - 6B.3 pending — Watchers fire at round_0064 (11079553/5/6) → cancel old s101 job → confirm ended → submit replacement (`qis-main-*-s101-sym`, attempt a2, same run dir).
 - 6B.4 pending — Replace queued s202 jobs (11078181/4/5) with schedule-aware recipes.
+- 6B.6 pending (D75) — Boundary dev evaluation at 16,384 from each `boundary_0064` (both budgets, crossing-then-correct, throughput benchmark) → revised forecast for 28,672 final completions.
+- 6B.7 active (D75) — Learning curves by role (hard vs aux group outcomes) and R vs U on the shared hard schedule; hourly snapshots.
 - 6B.5 pending — Verify each replacement's first 16k round: `max_tokens` 16384 logged, resume round 64, counters continuous, memory.
 
 ## 6. Main runs (after G3)
