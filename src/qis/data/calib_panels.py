@@ -21,12 +21,13 @@ def main():
     ap.add_argument("--cand", required=True)
     ap.add_argument("--screen", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--stage", default="calib16")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     pools, summary = {}, {}
     for sp in ("calib_train", "calib_val"):
         order = [json.loads(line) for line in open(os.path.join(a.cand, f"{sp}.jsonl"))]
-        cnt = {json.loads(line)["id"]: json.loads(line) for line in open(os.path.join(a.screen, sp, "calib16_counts.jsonl"))}
+        cnt = {json.loads(line)["id"]: json.loads(line) for line in open(os.path.join(a.screen, sp, f"{a.stage}_counts.jsonl"))}
         panel, info = [], {b: 0 for b in BANDS}
         held = []
         for it in order:
