@@ -22,11 +22,12 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 ## Owner amendments in force
 A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
 A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
+A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
 GPU ceilings unchanged: 2 general, 6 preempt.
 
 ## Uncertain
-- H_train: length-probe projection ~30 items in 2–8/32 from 154 level-4–5 candidates (< 64 hard
-  minimum). Reserve tranche of 30 level-3 items pre-registered (D19). Stage 1 decides.
+- H_train: stage 1 projected ~25–35 core-band items from 154 candidates. Under A4 the moderate band
+  (9–12/32) also counts; full native stage 2 over all 184 candidates decides the count.
 - E_related: 110 candidates; may fall short of 64 pairs after band + matching (A2 options apply).
 - Round time and memory of a real 128-response round (smoke run A in progress).
 

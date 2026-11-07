@@ -374,3 +374,42 @@ Recorded faithfully from the owner's message of 2026-11-07, before any treatment
 "You are allowed to use 30 CPUs from the CPU-only queue since my other project has relinquished
 some of its capacity." This project may hold up to 30 CPUs in total on `preempt_cpu_qos`
 (all owned nonterminal CPU jobs together). GPU ceilings are unchanged.
+
+## 18. Amendment A4 (owner, 2026-11-07): resolving the H_train shortage
+
+Recorded faithfully from the owner's message of 2026-11-07. The agent owns the choice among the
+constructions below and escalates only if all credible paths are exhausted or the remedy exceeds
+authorized scope or resources. All dataset and endpoint decisions precede any treatment outcome.
+Optimizer calibration and trainer validation continue in parallel.
+
+1. **Full native stage 2.** Revisit all 154 original hard candidates and all 30 level-3 reserves.
+   For every audited, verifier-eligible item obtain 32 stage-2 attempts independent of stage 1
+   (same checkpoint, prompt, decoding, cap, verifier). Reuse valid stage-2 attempts already
+   collected. Maximum 5,888 attempts across the 184 candidates, less valid stage-2 work done.
+   Record exclusions; report counts by band and source before screening another dataset.
+2. **Bands and target.** Focal skill stays factorization. Core hard = 2–8/32; moderately hard =
+   9–12/32. Target 64 distinct problems, at least half in the core band. Prefer varied solution
+   structures; break ties by a recorded seeded order. With 48–64 credible native items, proceed.
+   After selection collect an independent baseline and report it without reselecting. Measure the
+   actual fraction of eight-response groups containing both a success and a failure.
+3. **External tranche (if native is too small or lacks important structures).** One tranche of up
+   to 200 candidates from a pinned Omni-MATH revision: verifiable, multi-step, short-answer,
+   audited solutions centrally using factorization. Same annotation, bands, verifier, response
+   budget. Exclude proofs, guessable yes/no, and items whose difficulty comes mainly from
+   truncation. Check contest identity, wording and solution templates for overlap with every split.
+   Preserve the held-out MATH panel; record provenance and screening yield.
+4. **Fewer than 48 suitable items.** A smaller factorization pilot may launch without asking.
+   First record the number of distinct solution families, the core-band share, and expected
+   repetitions per item per arm (H-only 16T/N presentations per item; mixtures 8T/N). With
+   adequate diversity but excessive repetition, shorten the endpoint uniformly across arms and
+   freeze it before launch. If the pool is credible, proceed directly.
+5. **Authored tranche (if missing structures make the small pilot uninformative).** One bounded
+   tranche of authored hard factorization problems: first record missing structures, candidate
+   budget, stopping rule; same independent annotation, difficulty screen, verifier audit,
+   deduplication; track synthetic provenance; minor template variants count as one family. If this
+   fails, assess the linear-equation fallback on measured eligibility and proceed if credible.
+6. **Freeze and launch.** One H_train manifest for all arms. R and U get identical hard-prompt
+   schedules. Balance source and difficulty strata in H-only's additional hard prompts. Keep the
+   primary R−U comparison; report training performance separately from held-out MATH transfer.
+   Document pool, endpoint, provenance, limitations; launch authorized runs when gates pass.
+A count below 64 or 48 does not require escalation.
