@@ -135,3 +135,12 @@
 5. **Next jobs / limits.** GPU 2/2 general. Projected main study 189–264 GPU-h; T=128 under every projection (≤ 21 GPU-h per run).
 6. **Most important.** At ~18:30–19:00Z: apply §7 to the seed-22 results, fill PROTOCOL, freeze, generate recipes, launch the canary main run.
 7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (bke26mee7).
+
+## Review 16 — 2026-11-07 18:05Z
+1. **Changes.** Seed-22 repeats still running on general: lr1e-6/sym (11075978, 2 h 41 min), lr2e-6/sym (11076551, 1 h 52 min). New: `src/qis/analysis/calib_select.py` (frozen §7 rule as code) and recipe `qis-calib-select` (CPU job) for the official selection.
+2. **Alignment.** Selection becomes mechanical and recomputable from committed metrics with input checksums.
+3. **Mechanics.** No failures.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** GPU 2/2 general; CPU 0/30.
+6. **Most important.** Process issue found and fixed: I ran a read-only preview of the selection script, and earlier one-line metric summaries, on the laptop, which breaks the "no project code on the laptop" rule (D55). From now on every reported statistic is computed in a CPU job.
+7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (bke26mee7).

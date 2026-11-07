@@ -62,7 +62,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
 - 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Done: 11074527 (5e-7/sym, +0.031), 11074520 (1e-6/sym, +0.122), 11074526 (5e-7/asym, −0.003), 11074519 (1e-6/asym, +0.066). 11074522 (2e-6/sym, +0.146, trunc 4.69%). 11074521 (2e-6/asym, +0.196 but trunc 7.14% → rejected, D54). 4,096 jobs 11072991–11072999 superseded (D45).
-- 5.2 active — seed 22: 1e-6/sym running (11075978, D51); 2e-6/sym (11076551, D53) moved to general. Finalists fixed (D54): 2e-6/sym, 1e-6/sym. Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
+- 5.2 active — selection by `qis-calib-select` CPU job (D55). Seed 22: 1e-6/sym running (11075978, D51); 2e-6/sym (11076551, D53) moved to general. Finalists fixed (D54): 2e-6/sym, 1e-6/sym. Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
 - 5.3 active — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
 
 ## 6. Main runs (after G3)
