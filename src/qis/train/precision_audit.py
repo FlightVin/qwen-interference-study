@@ -162,18 +162,21 @@ def main():
     R["ckpt_snapshot_s"] = sv.save(4, L.model, L.opt, {"audit": True}, blocking=True)
     R["ckpt"] = sv.last
     assert sv.last["ok"], sv.last
-    ref_w = {n: p.detach().clone() for n, p in params.items()}
-    ref_m = {i: (s["exp_avg"].clone(), s["exp_avg_sq"].clone()) for i, s in enumerate(L.opt.state.values())}
-    del L
-    torch.cuda.empty_cache()
+    ref_w = {n: p.detach().to("cpu", copy=True) for n, p in params.items()}
+    ref_m = [(s_["exp_avg"].to("cpu", copy=True), s_["exp_avg_sq"].to("cpu", copy=True)) for s_ in L.opt.state.values()]
+    del L, params, st, sv, vp
+    import gc
+    gc.collect(); torch.cuda.empty_cache()
     L2 = Learner(a.model, a.lr)
     ckpt.load(os.path.join(a.ckpt_dir, "round_0004"), L2.model, L2.opt)
     p2 = dict(L2.model.named_parameters())
-    R["restart_weights_bitexact"] = all(torch.equal(p2[n].detach(), ref_w[n]) for n in ref_w)
+    R["restart_weights_bitexact"] = all(torch.equal(p2[n].detach().cpu(), ref_w[n]) for n in ref_w)
     R["restart_weight_dtypes"] = dtypes_of(list(p2.values()))
     m2 = list(L2.opt.state.values())
-    R["restart_moments_bitexact"] = all(torch.equal(m2[i]["exp_avg"], ref_m[i][0]) and torch.equal(m2[i]["exp_avg_sq"], ref_m[i][1]) for i in ref_m)
-    R["restart_moment_dtypes"] = dtypes_of([s["exp_avg"] for s in m2] + [s["exp_avg_sq"] for s in m2])
+    R["restart_moments_bitexact"] = len(m2) == len(ref_m) and all(
+        torch.equal(m2[i]["exp_avg"].cpu(), ref_m[i][0]) and torch.equal(m2[i]["exp_avg_sq"].cpu(), ref_m[i][1]) for i in range(len(ref_m)))
+    R["restart_moment_dtypes"] = dtypes_of([s_["exp_avg"] for s_ in m2] + [s_["exp_avg_sq"] for s_ in m2])
+    R["restart_moment_device"] = sorted({str(s_["exp_avg"].device) for s_ in m2})
     R["peak_gpu_gib_overall"] = torch.cuda.max_memory_allocated() / 2**30
     R["note_peak"] = "torch allocator stats include vLLM sleep-mode pool; device-level reading is gpu_used_gib_device_after_steps"
     R["documented_not_measured"] = [
