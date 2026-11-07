@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Slot-guarded wrapper around `ae submit` for this project (project.md Section 3 "Scheduling").
+# Slots: 2 on general, 6 on preempt (GPU jobs), 2 on preempt_cpu_qos (CPU jobs).
+# A slot counts one submitted NONTERMINAL owned job (pending, held, running, requeued).
+# Ownership = job IDs in this project's ledger; Slurm (squeue) gives their live state.
+# Usage: ops/qis-submit <expid> [--after X]      (all args pass through to ae submit)
+set -euo pipefail
+HERE=$(cd "$(dirname "$0")/.." && pwd)
+AE="$HERE/slurm-agentic-engineering/bin/ae"
+LEDGER="$HERE/slurm-agentic-engineering/state/LEDGER.jsonl"
+EXP="$HERE/slurm-agentic-engineering/exp/$1.sh"
+SLOTS_general=2; SLOTS_preempt=6; SLOTS_cpu=2
+[ -f "$EXP" ] || { echo "qis-submit: no such experiment $EXP" >&2; exit 2; }
+case "$1" in qis-*) ;; *) echo "qis-submit: expid must start with qis-" >&2; exit 2;; esac
+
+meta() { sed -n 's/^#EXP //p' "$EXP" | tr ' ' '\n' | sed -n "s/^$1=//p" | head -1; }
+gpus=$(meta gpus); gpus=${gpus:-1}; part=$(meta part); part=${part:-preempt}
+if [ "$gpus" = 0 ]; then pool=cpu; else pool=$part; fi
+case "$pool" in general|preempt|cpu) ;; *) echo "qis-submit: pool '$pool' not allowed (no part=auto)" >&2; exit 2;; esac
+[ "$gpus" -le 1 ] || { echo "qis-submit: one GPU per job (project.md Section 3)" >&2; exit 2; }
+
+LOCK="$HERE/slurm-agentic-engineering/.qis-submit.lock"
+mkdir "$LOCK" 2>/dev/null || { echo "qis-submit: lock held ($LOCK); another submission is running" >&2; exit 3; }
+trap 'rmdir "$LOCK"' EXIT
+
+ids=$(sed -n 's/.*"jobid":"\([0-9]*\)".*/\1/p' "$LEDGER" 2>/dev/null | sort -u)
+# All of this user's live jobs (other projects included); keep only ledger-owned IDs.
+# Fail closed: if Slurm cannot be read, refuse rather than assume free slots.
+rows=$("$AE" slurm squeue -h -u vineethb -o '%i|%P|%q|%T') || { echo "qis-submit: squeue failed; refusing" >&2; exit 5; }
+used=$(printf '%s\n' "$rows" | awk -F'|' -v p="$pool" -v ids="$(echo $ids)" '
+    BEGIN { n = split(ids, a, " "); for (i = 1; i <= n; i++) own[a[i]] = 1 }
+    NF >= 4 && ($1 in own) { q = ($3 ~ /cpu/) ? "cpu" : $2; if (q == p) c++ } END { print c + 0 }')
+eval "cap=\$SLOTS_$pool"
+echo "qis-submit: pool=$pool owned-nonterminal=$used cap=$cap"
+[ "$used" -lt "$cap" ] || { echo "qis-submit: no free $pool slot; refusing" >&2; exit 4; }
+"$AE" submit "$@"

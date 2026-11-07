@@ -1,0 +1,296 @@
+# Project: Does targeted easier practice improve RL on hard problems?
+
+## 1. Mandate and scope
+
+Execute this preliminary study autonomously. Implement, validate, calibrate, train, evaluate, audit, and report the experiments below. Move between stages when their gates pass; do not stop after writing a plan, completing a smoke test, or finishing the first training batch. Fix ordinary engineering failures and continue. Do not seek a positive result by changing the question after observing the comparisons.
+
+The immediate question is:
+
+> Does easier practice on a specified mathematical skill improve learning on harder problems whose audited solutions use that skill, compared with matched easier practice that does not use it?
+
+Use **Qwen/Qwen3-1.7B in non-thinking mode, full-parameter GRPO, one independent job per GPU**. Compare hard-only training, hard plus related easier practice, and hard plus unrelated easier practice. The primary contrast is related minus unrelated on held-out target problems. Hard-only measures whether allocating training effort to either auxiliary set is worthwhile.
+
+This is **post-training transfer within an existing mathematical domain**, not acquisition of knowledge demonstrably absent from pretraining. The checkpoint is already post-trained. Disabling thinking at inference does not remove its training history. No additional SFT is part of this study.
+
+Our longer-term question is whether feedback-grounded reflection can select useful auxiliary practice better than similarity or difficulty alone at the same total cost. **Do not implement that selector yet.** First establish whether our specified auxiliary practice produces useful transfer. Neither a positive result nor a plateau proves ray interference or saddle-point avoidance.
+
+Authorized work includes all stages in this document: setup, dataset construction, calibration, nine primary pilot runs, six clipping-sensitivity runs, bounded diagnostic branches, evaluation, and independent recomputation. This is a finite programme, not permission for indefinite sweeps. Concurrency limits are ceilings, not utilization targets that justify unnecessary experiments. Complete the programme even if the primary result is null, unless a validity or resource gate fails.
+
+**First session, in parallel:** On CPU, read the history, draft the skill rubric, and test the verifier. On the first available general GPU, test non-thinking generation, a full optimizer step, memory, and resume; use the second for a development-only length and difficulty probe when the renderer and verifier pass. Start the hourly review before waiting for either job. The critical path is a credible dataset and working trainer, not filling eight slots.
+
+## 2. Authority, orientation, and reading
+
+Read `slurm-agentic-engineering/agent.md`, the harness README, the active cluster card, and existing project state before acting. Follow the harness for execution and job ownership; this document defines the scientific scope and explicit resource authorization. Later user instructions supersede this document. Do not overwrite existing user work.
+
+Read the project-history PDF(s) in `context/` briefly for orientation: synopsis, iteration transitions, conclusions, and limitations. Start with text extraction; inspect pages where figures or extraction errors matter. Spend no more than about 45 minutes on the first historical pass. Record filenames and a short summary in `research/READING.md`. Do not treat the PDF as the current execution protocol or reopen the MiniGrid programme. If `context/` is absent, record the missing background and continue from this document; do not pretend to have read it.
+
+Read these primary sources before freezing the protocol. Focus on the listed sections, not an exhaustive literature review:
+
+| Source | Read for | What not to infer |
+|---|---|---|
+| Schaul et al., *Ray Interference* (2019), https://arxiv.org/abs/1904.11455 — Sections 2.1–2.6 and 4 | Conflicting component updates, performance-dependent learning, exact toy dynamics, diagnostic controls | A flat curve alone does not establish this mechanism in an LLM. |
+| Qu et al., *POPE* (2026), https://arxiv.org/abs/2601.18779 — Section 3.2/Figure 5, Section 6, Appendix E | Two-problem comparisons, hard-problem exposure, reward scarcity, model and optimizer setup | Do not assume related + hard must beat hard-only or copy the asynchronous recipe unchanged. |
+| *Qwen3 Technical Report*, https://arxiv.org/abs/2505.09388 — Sections 4.2 and 4.5; model card https://huggingface.co/Qwen/Qwen3-1.7B | Learnability, rollout sampling, checkpoint history, non-thinking template | The report is not a validated numerical optimizer recipe for our setting. |
+| *DAPO*, https://arxiv.org/abs/2503.14476 — Sections 3.1 and 4.1 | Asymmetric clipping and a learning-rate starting point | We are not adopting dynamic sampling, token-weighted loss, or length shaping. |
+| Pinned verl GRPO/configuration documentation and code; https://github.com/huggingface/Math-Verify | Actual loss, masks, minibatch semantics, synchronization, answer verification | Configuration names alone do not establish implementation behaviour. |
+
+Write at most two pages of reading notes: what each source establishes, what remains uncertain, and consequences for this protocol. Record versions/commits and exact configuration mappings. Resolve source ambiguities before relying on them. Historical results motivate the study; they are not results of this study.
+
+Keep root `project.md` as the tracked canonical instruction. The harness expects `slurm-agentic-engineering/PROJECT.md`: put a short pointer and the operational paths there, without a competing protocol. Maintain tracked research records because the harness workspace is normally git-ignored.
+
+## 3. Resource contract and isolation
+
+### GPU ownership
+
+- Maximum **2 allocated GPUs in `general`/`normal`** and **6 allocated GPUs in `preempt`/`preempt_qos`** for this project, counting training, evaluation, calibration, debugging, and standby allocations together.
+- These are project ceilings, not claims about account-wide entitlement. Other projects run under the same username. Read account occupancy to determine available quota, but never cancel, hold, requeue, modify, attach to, or clean up their jobs or files.
+- Initially request one GPU per experiment. Do not combine six jobs into one six-GPU allocation or silently switch to distributed training, LoRA, or a different model.
+- Identify owned jobs through this project's ledger, experiment ID, pinned commit/recipe, and recorded Slurm job ID. A username or similar job name is not sufficient proof of ownership. Before controlling a process, also verify its PID start time and project-specific working directory or metadata.
+- Do not use broad `pkill`, `scancel -u`, account-wide W&B synchronization, global cache cleanup, or edits to shared environments. Only modify this project's paths and environments. Never expose credentials in logs or config files.
+- Existing valid jobs belonging to this project count against the limits. Adopt and monitor them instead of creating duplicates. An ownership ambiguity is a reason to leave the resource untouched.
+
+### Scheduling
+
+The owner's current experience is that `general` starts within minutes and `preempt` can take 12–24 hours. Verify live conditions; neither is a guarantee. Use `general` for short setup, calibration, and urgent evaluations (and run jobs on general and setup and calibrate through general or CPUs if `preempt` would take more than 30 minutes to start). Queue validated production jobs on `preempt` promptly after protocol freeze. Submit independent one-GPU recipes.
+
+Use two logical general slots and six preempt slots. Use one slot per GPU requested, including self-tests and debugger allocations. Keep at most one submitted nonterminal one-GPU job per slot, including pending, held, running, and requeued jobs. This prevents pending jobs from exceeding the ceiling when they start together. A slot is reusable only after Slurm confirms its previous job terminal. Protect submissions with a project-local lock. Do not race duplicate copies across partitions. To move work, cancel/retire the owned pending job and verify its state before submitting its replacement, preserving the run lineage.
+
+Initial production wave: three conditions for seed 101 and three for seed 202 on the six preempt slots. Run seed 303's three conditions on available general slots or released preempt slots, whichever produces results sooner. Schedule clipping sensitivity and diagnostics after their prerequisites are ready. Never leave an allocation idle waiting for an agent to inspect it: exit or continue a predeclared phase. Do not reserve GPU standbys speculatively or invoke plain `ae pool` with its default GPU holdings.
+
+Verify partition/QOS, allowed GPU types, RAM, walltime, and account limits through the harness. Start with 1 GPU, 8 CPU cores, and 64 GiB host RAM per GPU job, adjusting only from measurements. Prefer one 48 GB GPU type across conditions if compatible with the observed queue. Otherwise balance hardware assignment across conditions and record GPU type. Hardware from unrelated benchmark notes is not a throughput estimate for this workload.
+
+Use `exp/<id>.sh` from the installed template. For example, a short engineering job can start with `#EXP gpus=1 cpus=8 mem=64G time=02:00:00 part=general constraint=VRAM_48GB`; verify that feature on the account. Use `part=preempt` and a measured walltime for production. Submit with `ae submit <id>`; use `ae status`, `ae-watch`, and `ae harvest <id>`. Check upstream success manifests in dependent jobs; termination alone need not mean success. Reserve scarce GPU slots for work that needs a GPU.
+
+Use CPU allocations for parsing, annotation tooling, verification audits, statistics, and disk checks. Do not run substantive computation on login nodes. Use a project-specific environment or immutable container, with pinned versions and a tested CUDA/attention stack.
+
+## 4. First actions and execution gates
+
+Perform these actions in order; continue independent CPU work while GPU jobs queue.
+
+1. Inventory project files, active owned jobs, existing credentials/configuration, environment, available quota, and storage. Read the harness and `context/`. Preserve existing work and resolve branch/path conventions from the repository.
+2. Before even the smoke jobs, set a unique project slug, a separate harness workspace/ledger, Slurm experiment-ID prefix, compute checkout and remote harness root (where the installed harness supports it). Verify resolved paths with `ae paths`; never reuse another project's default smoke-result path or standby. Establish `PROJ_DATA` under `/data/user_data/$USER/<unique-project-id>` and a unique W&B project/group prefix. Initialize tracked state and a run registry. Use existing authentication; ask only for missing access that cannot be resolved locally.
+3. Run `ae doctor` and the relevant harness self-tests within the slot limits. Validate GPU visibility, writable shared storage, and job identity on compute nodes. However, do not take too much time running tests (more than a few minutes) since another project is already using the harness and CMU babel effectively.
+4. Implement the data manifest, verifier, seeded sampler, full-parameter trainer, evaluator, checkpoint/resume path, logging, and analysis. Prefer existing verl facilities over a bespoke RL framework; inspect the pinned code to confirm all semantics below.
+5. Pass the correctness and interruption tests in Section 8. Profile a real training round. Do not submit production training before these tests pass.
+6. Build and freeze datasets; run the optimizer calibration. Freeze the selected configuration and final round budget in `research/PROTOCOL.md` before starting main comparisons.
+7. Submit and finish the primary and clipping-sensitivity matrix. Run the prespecified local diagnostics, evaluate, independently recompute, and report. Update state after each transition rather than waiting until the end.
+
+If a gate fails, diagnose and repair it. A failed gate does not authorize bypassing it. Missing historical context or W&B network access does not block otherwise valid local work. Missing Slurm/model access, an unusable dataset, or persistent trainer invalidity blocks the dependent stage only.
+
+## 5. Dataset construction
+
+### Source, skill, and splits
+
+Use a pinned version of MATH, initially from `EleutherAI/hendrycks_math`, with original train/test provenance, stable IDs, problem text, reference solutions, and answer hashes. Start with algebra problems whose reference solutions centrally use **polynomial factorization in solving equations or deriving a requested quantity**. Related auxiliary questions practise that operation more directly. Unrelated auxiliary questions omit that focal operation; use direct modular-arithmetic problems as the initial candidate pool, excluding those whose solution centrally uses polynomial factorization.
+
+Do not assert that the reference method is necessary or that unrelated questions share no useful representations. Record alternative solution routes. This is a study of a specific practice relationship, not a universal test of semantic similarity.
+
+Split the official training data deterministically, before screening: 60% construction/training candidates, 20% study development candidates, 20% calibration candidates, stratified by source subject/level where feasible. Split the calibration pool again into training and validation halves. Use the official test split only for final evaluation. Group identified duplicate/near-duplicate problems before assigning internal splits; remove training-side counterparts of test overlaps. Record all exclusions and their reasons.
+
+Desired final sizes: H_train=128, E_related=128, E_unrelated=128, target_dev=64, target_test=128. Each calibration split should contain at least 64 eligible problems, disjoint from all study sets. These are targets, not assumed dataset facts. If only smaller valid pools exist, use the same auxiliary size for both conditions and record actual counts. Minimum for launching the main study: 64 H_train, 64 per auxiliary pool, 32 target_dev, 64 target_test, and 64 per calibration split. Do not duplicate questions to meet a minimum.
+
+If the first skill fails these minima, one alternative is authorized **before any main treatment run**: single-variable linear-equation manipulation, with harder word problems that require formulating and solving such equations, and matched easier equation-solving questions. Rebuild all affected labels and splits; keep the same experimental design. Do not switch based on a treatment effect. If neither construction is viable, finish the data audit and report the specific blocker instead of launching a weakly defined study.
+
+### Agent annotation and audit
+
+The research agent is authorized to annotate and review the data. Call the result **agent-annotated and audited**, not human-reviewed. Store for each item: source ID, split, focal skill, central/incidental/absent label, supporting reference-solution step, alternative route, confidence, and verifier eligibility.
+
+Conduct a second review in a fresh context without the first labels, confidence, or treatment results. Preserve both passes, disagreements, and resolutions. Exclude unresolved cases. Review all selected items; do not use observed training gains to relabel relatedness. A second agent pass is an audit, not independent ground truth. Audit a seeded sample of up to 64 incorrect screening attempts on hard training candidates, at most one per problem. Mark whether the first identifiable error concerns the focal skill, another skill, or cannot be determined; also flag valid alternative solutions. Report counts including unknowns. This is a diagnostic, not a licence to select the family with the most promising errors. Use the fallback only for the stated construction/minimum-size failure.
+
+### Difficulty screening and matching
+
+Use the exact frozen model, prompt, decoding, and response cap intended for training. Start with 16 samples per candidate. In the fixed candidate order, shortlist H candidates with 0–5 successes/16 and auxiliary candidates with 4–14/16; take up to twice the target size per pool per tranche. The broad first screen deliberately retains some zero-success hard candidates. Then obtain 32 independent samples per shortlisted item. Retain counts from both stages but select by the second stage: H_train candidates have 2–8 successes/32; auxiliary candidates have 12–24/32. These are noisy screening rules, not exact population probabilities. Re-estimate the selected pools with 16 new baseline samples for reporting; do not reselect based on this third sample.
+
+Before screening, rank eligible candidates by a fixed seeded permutation, not by preferred apparent outcomes. Limit initial screening to 1,200 candidates for the primary skill; one additional 1,200-candidate tranche is authorized if needed to meet minima. The alternative skill, if used, has the same limits. Record screening costs and reasons for stopping.
+
+Match E_related and E_unrelated one-to-one using second-stage success counts, prompt length, mean generated response length, and answer type. Prefer exact success-count matches, then four-count bins. Within bins minimize total standardized length distance, with source ID as the deterministic tie-breaker. Save the matched-pair table and matching code. Exclude unmatched items rather than hiding imbalance. Report histograms, standardized differences, and expected mixed-reward-group probability `1-p^8-(1-p)^8`. Equal mean accuracy alone is insufficient. Treat absolute standardized differences above 0.25 in success or response length as a mismatch to repair before freezing; if repair violates minima, apply the dataset gate.
+
+Select development and test target problems by the frozen skill/task rubric, **not by measured model success**. Test outcomes must remain inaccessible to configuration selection. Automated baseline test evaluation may run after freeze and be sealed until endpoint evaluation. Do not expose test solutions to the training prompts, annotation-driven selector, or calibration.
+
+## 6. Model, reward, and GRPO specification
+
+### Fixed model and input
+
+- Model: pinned revision of `Qwen/Qwen3-1.7B`; all parameters trainable; no LoRA, SFT, quantized optimizer, or teacher hints.
+- Apply the official chat template with `enable_thinking=False`. Save the rendered template and a fixture proving the flag is honored. This is non-thinking operation of a hybrid-trained checkpoint.
+- User text: `Solve the following problem. Show your working and put your final answer in \boxed{}.` followed by the problem. No references or demonstrations in context.
+- Prompt cap 1,024 tokens, including chat-template overhead; never silently truncate problems. Exclude overlong prompts consistently or increase the cap once before calibration and freeze it.
+- Response cap 4,096 tokens initially. Temperature 1.0, top_p=1.0, top_k disabled according to the pinned backend, repetition penalty 1.0, no other sampling warpers. Apply the same decoding to screening, training, and evaluation.
+- Run an initial length probe on construction items before large-scale screening. During construction, if more than 5% of target attempts hit the cap, inspect a fixed sample and test 8,192 tokens. Use 8k if it materially resolves incomplete useful attempts and fits. If substantial truncation remains, report the regime as unsuitable; do not train as though failures were solely mathematical. If the cap changes, supersede affected screening estimates and repeat screening under the final cap before freezing membership. Freeze the cap before calibration and main runs.
+
+### Reward and failures
+
+Use pinned Math-Verify with audited canonical gold answers and a fixed parser configuration. Extract only the designated final answer, not any matching number somewhere in the reasoning. Reward verified correct answers 1, incorrect/missing/malformed final answers 0. Require a non-truncated completion for reward 1; capped incomplete responses receive 0. Report this as a budgeted-completion objective. No format bonus, partial credit, length shaping, or learned reward model.
+
+Validate every gold answer. For capped responses apply the stated completion rule even if the last visible fragment happens to match the answer; log truncation separately. Use a verifier timeout of 5 seconds per response initially, implemented with proper process cleanup. Persist the prediction and diagnostic on timeout. A timeout/crash is **unknown**, not a wrong answer: retry once in an isolated process with 15 seconds. If unresolved, hold the affected rollout round, repair verification or mark the run invalid; never silently drop and replace difficult responses. Fix parser bugs using training/development fixtures, document their scope, and recompute affected evaluations. No arbitrary execution of generated code.
+
+### Algorithm
+
+Use synchronous GRPO, fresh rollouts each round, no critic, no replay buffer, no reference-policy KL term, no entropy bonus. Keep zero-variance groups in the loss denominator with zero numerator contribution; do not filter, resample, or adaptively prioritize them.
+
+| Quantity | Setting |
+|---|---|
+| Prompts per round | 16 |
+| Responses per prompt | 8; total 128 responses/round |
+| Optimizer minibatch | 4 complete prompt groups = 32 responses |
+| Optimizer steps per round | 4, one pass through the round |
+| Mixed-condition minibatch | 2 hard groups + 2 auxiliary groups |
+| Microbatch | 1 response initially; accumulate exactly to 32 responses |
+| Precision | BF16 computation; standard FP32 optimizer states/master weights where supported |
+| Optimizer | AdamW, betas=(0.9,0.999), epsilon=1e-8, weight_decay=0 |
+| Learning rate | Selected in Section 7; constant, no warmup |
+| Gradient norm limit | 1.0 |
+| Clipping | Selected in Section 7 |
+| Loss reduction | Mean over valid response tokens per response, then mean over all responses |
+
+For each prompt group, use `A_i=(r_i-mean(r))/(population_std(r)+1e-6)`. An all-equal reward group has exactly zero advantage. Expand the response advantage over its valid response tokens, including the EOS token when generated. Mask prompt and padding tokens. For response-token probability ratio `q=pi_current/pi_rollout`, maximize `min(q*A, clip(q,1-eps_low,1+eps_high)*A)` with the reduction above. Store the rollout-policy log probabilities once and keep them fixed for all four optimizer steps. Synchronize the rollout model after the round.
+
+Inspect and test the pinned framework: its minibatch fields may count prompts rather than expanded responses; its default standard deviation or loss reduction may differ. The mathematical specification here is authoritative. Record resolved settings and actual counts. Accumulation must not accidentally give short microbatches different weights. Keep minibatch composition and optimizer ordering balanced across mixed conditions. Zero direct gradient does not imply zero Adam momentum update.
+
+Use checkpointing and efficient attention to fit one GPU. Alternate generation and training using a supported memory-management path; account for duplicate model copies and caches. If OOM occurs, first reduce generation concurrency and transient token batching, then enable validated offloading. Preserve effective batch size, objective, model, and cap. If these cannot fit, report the resource blocker rather than silently changing the scientific specification.
+
+## 7. Calibration, freezing, and experiment matrix
+
+### Optimizer calibration
+
+Use only the disjoint calibration train/validation sets. Exclude near-duplicate templates of study items. Before optimizer runs, use 16 independent baseline samples per item to select a control panel with both lower (1–5/16) and higher (6–12/16) observed success; include at least 16 items in each band in each split. Freeze both panels and use independent baseline evaluation draws. Do not use treatment, study-development, or test outcomes for optimizer selection. Run six configurations: learning rates `{5e-7, 1e-6, 2e-6}` crossed with clipping epsilons `{(0.2,0.2), (0.2,0.28)}`. These correspond to ratio intervals `[0.8,1.2]` and `[0.8,1.28]`, not KL bounds. Every run uses seed 11, 32 rollout rounds, and the same sampler schedule. Evaluate calibration validation with 16 responses/problem initially and at the endpoint. Save round 16 measurements for diagnosing trends.
+
+Reject configurations with non-finite updates, broken verification, or more than 5% capped validation responses. Rank the remaining configurations by endpoint calibration-validation pass@1 gain. Repeat the top two with seed 22 for 32 rounds. Select using their mean gain across seeds. Treat differences of at most 0.01 as ties; among tied choices prefer lr=1e-6, then 5e-7, then 2e-6, and symmetric before asymmetric clipping. This is a pragmatic selection rule, not a significance test.
+
+Require positive mean validation gain with neither seed worse than baseline by more than 0.02. If fewer than two first-stage configurations are valid, diagnose the common failure, fix it, and rerun affected configurations once; do not call an invalid configuration a finalist. If the validation-gain gate fails, diagnose first. After correctness is reconfirmed, extend only the two finalist runs for both seeds to 64 rounds and reapply the rule. If still unsuccessful, report inadequate calibration; do not expand to an open-ended optimizer search or launch uninterpretable main comparisons. All correctness repairs get new attempt IDs and recorded lineage.
+
+Measure entropy, objective-active clip fractions by advantage sign, probability-ratio quantiles, gradient norms, validation accuracy, and lengths. If clipping is rarely active, say the tested settings have similar realized behaviour. Do not add epochs just to make the clipping ablation look consequential.
+
+### Freeze
+
+Commit `research/PROTOCOL.md`, dataset manifests, resolved configs, seed mappings, evaluator, and analysis plan before main runs. Record paper/software revisions, calibration selection, exact skill, pool sizes, prompt/cap, hardware, and intended costs. Freeze the annotation manifest and its hash. Start all main runs from the original checkpoint, not the calibrated model.
+
+Default endpoint: 128 rounds. Before main results exist, estimate total cost using measured throughput, including all 15 main/sensitivity runs and evaluation. If a production run is projected to exceed 24 active GPU-hours, use 64 rounds for **all** conditions and sensitivity runs and label it a shorter-budget pilot. If even 64 rounds exceeds this planning threshold, investigate throughput and present the measured blocker. The threshold is a conservative project planning default, not an account quota. No extension based on promising curves.
+
+### Primary matrix
+
+| Arm | Prompts/round | Seeds |
+|---|---|---|
+| H | 16 hard | 101, 202, 303 |
+| R | 8 hard + 8 related auxiliary | 101, 202, 303 |
+| U | 8 hard + 8 unrelated auxiliary | 101, 202, 303 |
+
+Within each seed block, R/U have identical hard schedules and paired auxiliary selection schedules. Sample via shuffled cycles; avoid duplicate prompts within a round. H uses the common eight hard prompts plus eight additional hard prompts per round. Do not pretend H has matched hard exposure: it has twice as much. All arms have equal prompt/response counts, not necessarily equal tokens or compute.
+
+### Clipping sensitivity
+
+After freeze, run R and U for all three seeds with the **other clipping setting**, keeping the selected learning rate and every other setting fixed: six runs. This sensitivity is authorized regardless of the primary result; it is not another configuration-selection stage. Do not pool it with the primary results or promote whichever setting looks best. Report the R-minus-U contrast under both settings.
+
+### Local update diagnostic
+
+Reserve the halfway full restart checkpoint for this assay before retention cleanup. Use the selected-clipping R trajectory for seed 101, at rounds 0 and halfway to the endpoint, chosen now rather than after results. For each source checkpoint, clone model **and optimizer** state into four branches: no update, one minibatch update using hard problems, related auxiliary problems, or unrelated auxiliary problems. Use four prompts × eight responses per update. Repeat with four prespecified minibatch seeds (4101–4104). Keep source checkpoints unchanged.
+
+Evaluate before/after on a fixed 32-problem development subset with 16 responses/problem and paired evaluation seeds. These are short local diagnostics, not new full training runs. They estimate the effect of actual Adam/GRPO updates; historical momentum is part of that effect. Do not describe them as a pure gradient-cosine measurement or proof of saddle-point avoidance. Run them regardless of whether the primary estimate is positive; do not chase additional checkpoints.
+
+## 8. Validation and reproducibility
+
+Before calibration, pass meaningful tests for: template/masking/EOS handling; group boundaries and zero advantages; population standard deviation; loss reduction and accumulation; all-parameter trainability; four optimizer steps/round; balanced minibatches; verifier correctness; and deterministic dataset splits. Test that a known rewarded response receives the expected signed objective contribution. An artificial fixture is a unit test, not scientific evidence of learning.
+
+Before each rollout round's first update, check that stored rollout log probabilities and teacher-forced training log probabilities on the same tokens agree within a tolerance established on the pinned backend. Record mismatch quantiles; investigate substantial mismatches rather than masking them with wide clipping. Confirm a training update changes the rollout model after synchronization. Keep dropout disabled during both rollout and policy-loss computation.
+
+Seed Python, NumPy, PyTorch CPU/CUDA, dataset construction, prompt order, minibatch order, generation, evaluation, bootstrap, and diagnostic branches. Derive separate named streams from the master seed with a stable hash or SeedSequence, never Python's randomized `hash()`. Use construction seed 1701 and bootstrap seed 2027. Store per-request generation seed mappings where supported; otherwise save engine RNG state and record the limitation. Evaluation streams are independent of training and selection streams.
+
+Enable practical deterministic settings without claiming bitwise reproducibility across GPUs or kernels. Record versions, GPU model, driver, attention kernels, and nondeterministic operations. A repeated-seed smoke test establishes expected numerical variation; it is not an independent scientific replicate.
+
+Force an interruption and resume during the general-pool smoke test. Test restoration of optimizer, scheduler if any, RNG, sampler position, counters, and logging identity. Confirm no skipped or duplicated committed rounds. Mid-round work may be discarded and replayed from the last complete round; log and charge it. Compare with an uninterrupted short run, using documented tolerances rather than demanding impossible cross-backend bit identity.
+
+## 9. Evaluation and statistical interpretation
+
+For a 128-round run, development evaluation occurs at 0,32,64,96,128, with 8 responses/problem; for a 64-round run use 0,16,32,48,64. Final test evaluation occurs only at baseline and endpoint, with 32 responses/problem. Use the same prompt/decoding/cap as training. Baseline results can be reused because the starting model is identical, but record the evaluation seed panel and preserve pairing.
+
+Primary estimand: seed-mean difference R minus U in endpoint **held-out target pass@1**, with equal weight per target problem. Secondary: R minus H, U minus H, development learning curves, training-target success, per-problem changes, and pass@8. Estimate pass@8 from 32 attempts using `1 - C(32-c,8)/C(32,8)`, with numerator zero when `32-c < 8`. Report success distributions and counts of regressions without treating noisy single-problem changes as established effects.
+
+Show all three seed contrasts and a two-sided 95% paired t interval over seeds as a descriptive uncertainty summary. Also provide a paired crossed bootstrap resampling seeds and problem IDs while preserving arm pairing, 10,000 draws, reporting the 2.5th and 97.5th percentiles. Explicitly state that three seeds give weak training-variation estimates and that a large number of questions does not replace training replications. Do not select a claim by whichever interval is favourable. No equivalence or definitive no-effect claim from a nonsignificant pilot.
+
+Predeclare 0.03 absolute success improvement as a practical planning effect, not a significance threshold or a gate for running authorized work. A consistent positive R-U result merits later replication; practical usefulness also requires comparison with H and cost. A negative/null result remains valid evidence within this skill, model, budget, and optimizer. Do not prescribe a selector from a single skill family.
+
+Report actual generated tokens, prompt tokens, optimizer steps, active GPU-hours, elapsed calendar time, and discarded/replayed work separately. Give performance against rounds, hard responses, tokens, and active GPU time at observed checkpoints; do not invent exact matched-compute endpoints through unlabelled interpolation. Different GPU types require separate throughput interpretation. The initial primary experiment controls exposure; it does not yet establish equal-cost selector superiority.
+
+Independently recompute final rewards and metrics from saved attempts with a separate audit entry point. It may reuse the pinned verifier but must not simply read the main summary tables. Compare counts, identities, checkpoint hashes, success totals, seed contrasts, and resource ledgers. Audit a fixed seeded sample of verifier decisions and trajectories qualitatively. Resolve discrepancies before calling the programme complete. Give the primary contrast first, with a table of H/R/U by seed; plot development pass@1 against rounds and tokens, marking the final test measurement separately. A single endpoint difference supports an endpoint claim; to describe faster learning, use the prescheduled development curves, not the most favourable checkpoint.
+
+## 10. Configuration, logs, and W&B
+
+Keep versioned base configs and small explicit experiment overrides. Save the fully resolved config, model/tokenizer revision, dependency lock/container digest, code commit, recipe hash, data hash, seed streams, host/GPU identity, and command for **every** run, including failures. Never rely on a mutable default. Separate scientific run ID from attempt ID; a retry belongs to the same scientific seed, not a new replicate.
+
+Use W&B for concise searchable telemetry, with a unique project name and phase tags for calibration, primary, sensitivity, and diagnostics. Use one W&B group per scientific run within its phase (or equivalent phase/run tags). Resume the same W&B run ID on a true checkpoint restart; give a superseding retry from scratch a new W&B ID linked to its predecessor. Assign every metric row a logical round/step and attempt ID. On recovery, preserve discarded rows but mark them superseded; publish committed metrics once and audit their uniqueness. Keep an append-only local JSONL log as the source of truth; W&B unavailability must not block training. Sync only this project's offline runs when access returns. Never upload secrets, full checkpoints, or the entire dataset by default.
+
+| Cadence | Log |
+|---|---|
+| Each optimizer step | Total loss, policy loss, pre-clipping gradient norm, whether gradient clipping applied, learning rate, valid tokens/responses, numerical-failure indicators |
+| Each rollout round | Success by H/auxiliary, all-zero/all-one/mixed groups, lengths and truncation, malformed answers/verifier errors, policy-ratio quantiles, objective-active clip fractions split by advantage sign, elapsed generation/training/verification time, cumulative tokens and optimizer steps |
+| Every 8 rounds | Token-weighted entropy if efficient, fixed small trajectory sample, representative memory/throughput summaries |
+| Each scheduled evaluation | Pass@1/pass@8, per-problem count artifact, seed identity, checkpoint hash, evaluation time/tokens |
+| Event-driven | Submission, start, checkpoint commit, interruption, resume, OOM, software change, exclusion, failed verification, terminal status |
+
+KL and entropy losses are disabled: record their coefficients as zero and their losses as disabled, not fabricated measurements. If approximate behaviour-policy KL is logged, label it as a diagnostic, distinct from a reference-policy KL penalty. Do not compute full reference KL solely for logging. Use on-device aggregates; avoid CPU transfers or `.item()` calls per token. Target telemetry overhead below 3% of round time and measure it; reduce costly diagnostics, not essential counters, if exceeded.
+
+Persist compact attempt records: run/checkpoint/round/prompt IDs, split, generation seed, token count, termination reason, extracted answer, reward/verifier status, and response token IDs or compressed response text. Keep all evaluation attempts and training responses needed for audits. Store full-vocabulary logits or per-parameter gradient histories **never** by default; transient rollout log probabilities need not be archived permanently. W&B receives scalar summaries and small sampled tables, not every response. Do not change training based on live W&B impressions.
+
+## 11. Storage and preemption
+
+The harness documents 100 GB home and 500 GB user-data quotas, shared with other projects; verify current quotas. Never put checkpoints, datasets, model caches, or large traces in `/home` or `$AE_RUNDIR`. Use project-scoped subdirectories under `PROJ_DATA`; use existing shared read-only caches when appropriate and never evict them.
+
+Before a wave, measure checkpoint size and reserve for concurrent writes, two valid restart copies per active run, planned model-only snapshots, raw records, and temporary downloads. Treat all other projects' space as unavailable. Keep at least **50 GiB of free account quota** after projected peak writes; if current free space is already below that floor, pause new large writes rather than claiming remaining space. Project soft warning: 250 GiB; hard ceiling: 350 GiB, or less if account headroom requires it. These project defaults do not override a smaller real quota. Serialize checkpoint writes if shared storage cannot sustain them, and reduce active job count if necessary; do not borrow another project's space.
+
+Write checkpoints atomically to a temporary path, validate completeness/checksums, then update a manifest pointer. Keep the newest two full restart checkpoints for active runs. Once a run and its evaluation/audit are complete, keep the endpoint model-only export and compact evidence. Retire optimizer state once the evaluator and an independent reload have validated the export and no planned branch needs it. For calibration, keep finalist resume checkpoints through the extension decision. For the diagnostic source, retain optimizer state until all branches pass audit; prune superseded project-owned copies after verifying references and recording deletions. Do not delete evidence just to make a failed result disappear. Avoid redundant copies of base weights and W&B artifacts.
+
+Initially save complete-round restart checkpoints every four rounds and on a warning if safe. Measure write time and adjust cadence before production to keep expected lost work below approximately 15 minutes where feasible. The harness supplies `$AE_PREEMPT_FLAG` and requeue support, but the trainer must honor it. Use the tested harness phase wrapper to requeue after a controlled save/exit; do not assume a process that exits will automatically restart. If the warning is too short, rely on the last verified checkpoint. Restore all scientific state, not just weights. Count failed/replayed work in actual compute cost.
+
+## 12. Monitoring and hourly self-review
+
+Create and start a **project-owned hourly review loop** as part of execution. Use the research agent runtime's supported scheduling/background mechanism, not an unrelated ChatGPT reminder. Make it persistent across normal agent yields, with an ownership record, lock, last-run timestamp, and missed-review detection. Verify one short test trigger reaches the agent, then set the interval to 60 minutes. Do not claim a review is scheduled if it is only written in a checklist.
+
+Prefer a runtime-managed background watcher whose exit actually wakes the orchestrator; a detached process that only writes a file is insufficient. If the scheduler expires, renew this project's recurring task before expiry. If there is no persistent timer, use a managed hour-long background wakeup and re-arm it after each review. On orchestrator restart, reconcile jobs and run one catch-up review if overdue. Record last successful review and next due time in UTC.
+
+Use `ae-watch` or equivalent project-local deterministic scripts for job transitions. Poll owned jobs cheaply, approximately every 2 minutes, and wake the agent on completion, failure, stalled progress, dependency readiness, disk pressure, or review due. Scripts may detect events; they must not invent scientific changes or autonomously launch unapproved variants. Re-arm the watcher after handling an event. Batch concurrent events and suppress duplicate notifications.
+
+At each hourly review, inspect actual Slurm state and fresh artifacts, then answer in `research/REVIEWS.md`:
+
+1. What completed, what is running/queued, and what changed since the last review?
+2. Does every active job still answer the stated question? Are we drifting into debugging a single example or seeking a favourable result?
+3. Are reward verification, sampling, masks, mixed-group rates, optimizer updates, and truncation behaving as intended?
+4. Are there confounds, leakage, protocol deviations, or claims stronger than the evidence?
+5. Are the next jobs ready, scientifically necessary, and within GPU/storage limits? Can useful CPU work proceed while GPUs queue?
+6. What is the single most important next uncertainty or blocker, and what authorized action resolves it?
+7. Do STATE, CHECKLIST, the run registry, W&B, and the Slurm ledger agree? Correct discrepancies from evidence.
+
+Write concise conclusions and decisions, not an unbounded transcript of reasoning. Most reviews should take 5–10 minutes; spend longer only on a concrete issue. Continue healthy training during review. Do not change a frozen treatment because an interim curve is weak. Commit meaningful state updates. If all work is pending, keep event monitoring and the hourly review alive; do not terminate the programme simply because the queue is long.
+
+At programme completion, verify the terminal state of all owned jobs, sync outstanding logs, stop only project-owned monitors/timers, and record their shutdown. If authorization or access blocks all remaining work, preserve checkpoints and monitoring only where it can still usefully detect progress; report precisely what is needed.
+
+## 13. Autonomous recovery and change control
+
+Authorized without another permission request: project-local code fixes, tests, dataset annotation, the declared pre-training fallback, calibration, all listed runs, checkpoint resume, migration of owned queued work between authorized pools, safe retention cleanup, local/offline W&B logging, documentation updates, and commits/pushes to the configured project branch under the harness workflow. No force-pushes, destructive resets, changes to unrelated projects, or account-wide actions.
+
+For a failure: save diagnostics, classify it as infrastructure/implementation/scientific validity, reproduce minimally, fix the cause, test, record the change, and resume or replace the run with correct lineage. Permit at most two unchanged automatic retries for a transient infrastructure failure. A third recurrence requires diagnosis and a changed remedy, not another blind retry. Preemption with a valid checkpoint is normal continuation, not an excluded seed.
+
+Set progress alarms from measured round time: no progress for the larger of 20 minutes or three expected round durations triggers inspection, not immediate cancellation. Identify whether generation, verification, checkpoint I/O, or GPU health is responsible. Do not kill a healthy long round based on a generic timeout.
+
+Before protocol freeze, resolve routine choices within this document and record them. After freeze, document all fixes before resubmission. Performance-neutral fixes may continue after validation. Any fix changing rewards, masks, loss, sampling, dataset membership, or optimizer semantics requires a protocol amendment and consistent reruns of all affected conditions from the original checkpoint. Preserve superseded runs; never mix incompatible runs in a table. The declared clipping sensitivity remains a separate analysis.
+
+Ask the user only when missing credentials/permissions prevent execution, neither authorized task construction works, the specified model cannot run validly on one GPU, calibration remains invalid after the declared extension, a scientific change exceeds this scope, or resources beyond the ceilings are required. State the exact blocker, evidence, attempted remedies, recommendation, and what independent work continues. Do not ask the user to approve a routine next stage already authorized here.
+
+## 14. Records, outputs, and completion
+
+Maintain these tracked records (adapt existing equivalent filenames rather than duplicating them):
+
+- `research/STATE.md`: current phase, active/queued owned jobs, blockers, next actions, latest evidence timestamps.
+- `research/CHECKLIST.md`: gates and remaining work, with evidence links for completed items.
+- `research/PROTOCOL.md`: frozen design, manifests, calibration rule/result, endpoints, amendments.
+- `research/DECISIONS.md`: dated decisions and rationale, including failed alternatives and deviations.
+- `research/REVIEWS.md` and `research/READING.md`.
+- `configs/`, dataset manifests/annotation records, and the project run registry.
+- `reports/REPORT.md`, machine-readable result tables, plotting scripts, and audit outputs.
+
+Reconcile short operational summaries into the harness state files; the tracked research records hold scientific authority. Keep large raw records on compute storage, referenced by manifest and checksum. Do not commit model weights, private credentials, or huge outputs to git.
+
+Declare the programme complete only after validating the data and trainer, finishing calibration and all 15 valid treatment runs, completing the scheduled diagnostics and evaluations, independently recomputing the results, and reconciling costs. If a prerequisite remains blocked or any cell is missing or invalid, deliver a partial report naming the affected comparisons. Never call an incomplete matrix fully executed. A failed gate can produce a legitimate blocked-stage report, but cannot be relabelled a negative treatment result.
+
+The report must explain the question, dataset relationship and ambiguity, model/optimizer, per-seed findings, uncertainty, costs, exclusions/retries, limitations, and what follows. Distinguish beneficial transfer, harmful interference, absence of transfer, and reduced direct hard practice. A weak pilot is not a proof of no effect; a positive pilot is not a dependable selector. Propose fresh-seed/second-skill replication if warranted, but do not launch an unbounded new programme.
+
+Begin now: inspect the project and harness, orient from `context/`, establish the owned resource ledger and hourly review, then execute the gates. Continue until the authorized programme is complete or a concrete blocker requires the user.
