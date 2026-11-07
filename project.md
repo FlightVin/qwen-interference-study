@@ -294,3 +294,56 @@ Declare the programme complete only after validating the data and trainer, finis
 The report must explain the question, dataset relationship and ambiguity, model/optimizer, per-seed findings, uncertainty, costs, exclusions/retries, limitations, and what follows. Distinguish beneficial transfer, harmful interference, absence of transfer, and reduced direct hard practice. A weak pilot is not a proof of no effect; a positive pilot is not a dependable selector. Propose fresh-seed/second-skill replication if warranted, but do not launch an unbounded new programme.
 
 Begin now: inspect the project and harness, orient from `context/`, establish the owned resource ledger and hourly review, then execute the gates. Continue until the authorized programme is complete or a concrete blocker requires the user.
+
+## 15. Addendum A1 (owner, 2026-11-07): precision audit and report figures
+
+Recorded verbatim in substance from the owner's message of 2026-11-07. It applies from now on.
+
+### A1.1 Numerical precision of full-parameter GRPO
+- BF16 for rollout inference and the learner's supported mixed-precision forward/backward.
+  FP32 for the authoritative trainable weights updated by AdamW and for both moment buffers.
+  FP32 parameters with BF16 autocast satisfies the weight requirement; do not allocate another
+  FP32 copy. Prefer FP32 gradient accumulation across microbatches.
+- Compute selected-token log-probability differences, importance ratios, advantage normalization,
+  loss reductions and gradient norms in FP32 where supported. Use fused or chunked operations;
+  never materialize full-vocabulary FP32 logits for every token.
+- Inspect the pinned checkpoint and the actual learner after its first optimizer step. Record
+  separately: checkpoint tensor dtype, rollout dtype, learner compute dtype, optimizer-owned
+  parameter dtype, gradient accumulation dtype, moment-buffer dtypes, across all parameter
+  groups/shards. A config field is not evidence. For fused kernels, separate documented behaviour
+  from measurement.
+- On a disposable smoke run (or a calibration checkpoint), on a mixed-reward minibatch: record a
+  nonzero gradient norm; measure the change in a fixed sample of optimizer-owned weights; verify
+  that repeated small updates accumulate; that rollout sync receives the updated weights at the
+  expected serving precision; and that a restart restores FP32 weights and moments without a BF16
+  round trip. Save one small audit table, the code revision and peak GPU memory. One check per
+  trainer configuration; no per-step tensor dumps.
+- Existing jobs: determine what they used. Conforming jobs continue. Confirmed BF16 optimizer
+  updates, reduced-precision moments or lossy restarts: preserve evidence, find the earliest
+  affected stage, correct it consistently across comparable runs, recalibrate if calibration used
+  the affected path, record superseded attempts and their cost. If memory is tight, first reduce
+  rollout concurrency or use validated optimizer-state offload; keep one GPU per job.
+
+### A1.2 Final report `reports/REPORT.md` with embedded figures
+- Figures in `reports/figures/`, embedded by relative Markdown paths; commit the plotting script
+  and compact source tables; verify the report renders from a clean checkout. Each caption names
+  the question set, metric, number of training seeds and evaluation attempts, and the meaning of
+  any interval.
+- **Main result:** held-out hard-problem pass@1 for H, R, U; paired R−U per seed and mean;
+  clipping sensitivity shown separately.
+- **Learning and exposure:** hard-dev pass@1 at scheduled checkpoints vs rounds and vs cumulative
+  hard-problem rollouts, individual seeds; generated tokens and active GPU-hours in a companion
+  panel/table.
+- **POPE-style trajectories:** J_H = mean sampled success on a fixed hard-dev panel; J_R, J_U on
+  fixed related / unrelated auxiliary probe panels; every arm evaluated on the same panels. Plots
+  (J_R, J_H) and (J_U, J_H), common axes, marked start, arrows between successive checkpoints.
+  Use fixed seeded dev probes where available; if probes come from auxiliary training pools, label
+  the axis "training-pool performance". Same axis definition for all arms. Freeze probe IDs before
+  inspecting probe results. Disclose missing checkpoints.
+- **Local update effects:** from the prespecified branches (identical model + optimizer
+  snapshots), the observed ΔJ_H after hard, related, unrelated and no-update branches, with
+  variation across minibatch seeds; optionally paired arrows (ΔJ_R, ΔJ_H), (ΔJ_U, ΔJ_H). Label
+  as finite changes after an AdamW/GRPO update. "∇J" or "gradient alignment" only for an actual
+  parameter-gradient measurement. No vector field or saddle-point inference.
+- Reuse scheduled evaluations and retained checkpoints. If extra probe evaluations cost
+  materially, choose a smaller fixed panel before looking at results and record the cost.

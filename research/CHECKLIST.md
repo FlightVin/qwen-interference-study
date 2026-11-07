@@ -10,6 +10,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 0.4 No treatment change after freeze because of interim curves; corrections apply to all affected conditions.
 - 0.5 Record consequential decisions (evidence, action, runs, interpretation) in `research/DECISIONS.md`.
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
+- 0.7 Addendum A1 (2026-11-07, `project.md` §15): FP32 trainable weights + FP32 AdamW moments, BF16 rollout and autocast compute; one precision audit per trainer configuration; report figures (main, learning/exposure, POPE-style J trajectories, local update effects).
 
 ## 1. Setup and isolation — done except 1.6
 - 1.1 done — Harness workspace, unique names, `config.sh` (DECISIONS D1–D7).
@@ -17,24 +18,25 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 1.3 done — Limits verified (harness `cluster/CARD.md`, 2026-11-07).
 - 1.4 done — Hourly review: session cron at :47 local, `ops/qis-review` record/lock/overdue detection; one-shot test trigger received 2026-11-07T02:30:02Z (`research/REVIEWS.md`).
 - 1.5 done — Event watcher: `ae-watch` background task, 120 s poll.
-- 1.6 active — Environment `venv-v1` (verl 0.9.0, vLLM, math-verify 0.9.0), model download (`qis-env-v1`, job 11072074).
+- 1.6 done — Environment `venv-v1`: verl 0.9.0, vLLM 0.31.0, torch 2.13.0+cu130, transformers 5.10.4, math-verify 0.9.0; model `Qwen/Qwen3-1.7B` @ `70d244cc` (`qis-env-v1`, job 11072074; harness `results/qis-env-v1/`).
 - 1.7 pending — W&B credentials check on Babel (no secret printed); fallback: local JSONL + offline W&B.
 
 ## 2. Reading — done except 2.3
 - 2.1 done — `research/READING.md` (history PDF + primary sources).
-- 2.2 active — verl 0.9.0 semantics audit → `research/VERL-AUDIT.md`.
+- 2.2 done — verl 0.9.0 audit → `research/VERL-AUDIT.md`; decision D10 (lean custom trainer, verl as reference).
 - 2.3 pending — Pin Math-Verify commit and model revision in PROTOCOL.
 
 ## 3. Data (gate G1: dataset minima)
-- 3.1 active — Split manifest + gold eligibility + annotation exports (`qis-data-v1`, after 1.6). Tests: `tests/test_verify.py`, `tests/test_splits.py`.
-- 3.2 pending — Skill rubric v1 (`research/RUBRIC.md`): central / incidental / absent; role pools fixed BEFORE screening: H/target = central + level 4–5; E_related = central + direct practice + level 1–3; E_unrelated = number-theory modular arithmetic, factorization absent.
-- 3.3 pending — Annotation pass 1 (agent) over candidate exports; store all fields of project.md §5.
+- 3.1 done — Split manifest `splits-v1` (sha256 `6580712d…`): 12,500 items, 344 duplicate pairs, 87 train items excluded as test overlaps; construction 4,458 / study_dev 1,478 / calib_train 750 / calib_val 727 / test 5,000. Gold: 12,495 eligible, 2 no box, 3 verifier-unknown. 11/11 tests passed (`qis-data-v1`, job 11072095).
+- 3.2 done — Rubric v1 `research/RUBRIC.md`.
+- 3.3 active — Annotation pass 1: 1,496 items (factor: construction 592, study_dev 179, test L4–5 450; modular: construction 214, study_dev 61) in 6 parallel agent batches.
 - 3.4 pending — Length probe (needs 4.2): cap-hit rate on construction items; 8k test if >5%.
 - 3.5 pending — Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
 - 3.6 pending — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
 - 3.7 pending — Error audit: ≤64 incorrect screening attempts on H candidates.
 - 3.8 pending — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
 - 3.9 pending — target_dev (64) / target_test (128) by rubric only; calibration panels (≥16 per band per split).
+- 3.10 pending — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
 - **G1** — ≥64 H_train, ≥64 per aux pool, ≥32 dev, ≥64 test, ≥64 per calib split. Else the linear-equation fallback (before any treatment run).
 
 ## 4. Trainer (gate G2: correctness tests of project.md §8)
@@ -44,6 +46,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 4.4 pending — Rollout vs teacher-forced logprob agreement; update changes the rollout model.
 - 4.5 pending — Interruption + resume test vs uninterrupted short run; repeated-seed variation.
 - 4.6 pending — Profile a real round; checkpoint size/write time; telemetry overhead <3%.
+- 4.7 pending — (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
 - **G2** — all tests pass on the pinned backend.
 
 ## 5. Calibration and freeze (gate G3)
@@ -60,4 +63,4 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 7.1 pending — Dev curves; test at baseline and endpoint (32 samples/problem).
 - 7.2 pending — Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
 - 7.3 pending — Independent recomputation entry point; verifier sample audit.
-- 7.4 pending — Cost reconciliation; `reports/REPORT.md`.
+- 7.4 pending — Cost reconciliation; `reports/REPORT.md` with figures in `reports/figures/` (A1.2), plotting script and source tables committed, verified from a clean checkout.

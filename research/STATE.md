@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 02:40Z.
+Updated 2026-11-07 03:00Z.
 
 ## Phase
 Setup → data construction and trainer implementation (in parallel). No GPU training yet.
@@ -17,9 +17,12 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-
 - Keyword estimate: ~564 algebra/intermediate-algebra train items mention factoring; ~264
   number-theory train items are modular without factoring. Role pools may be tight for H (2–8/32).
 
+- Env `venv-v1` built; split manifest `splits-v1` built; verifier/split tests 11/11 passed.
+- Trainer design (D10): custom single-GPU GRPO; verl 0.9.0 deviates from our spec in advantage std, dual-clip, minibatch order, truncation visibility.
+- Owner addendum A1 (2026-11-07): precision audit at gate G2; four report figures incl. POPE-style J trajectories on fixed probe panels. No existing run affected.
+
 ## Uncertain
 - Whether ≥64 H_train items reach 2–8/32 success (Qwen3-1.7B solves many MATH algebra items).
-- verl 0.9.0 semantics vs our GRPO spec (audit running).
 - Whether full-parameter GRPO with colocated vLLM fits one 48 GB GPU.
 
 ## Resource facts
@@ -30,6 +33,6 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-
 See `slurm-agentic-engineering/bin/ae status` (env build `qis-env-v1`, data build `qis-data-v1`).
 
 ## Next actions
-1. Finish env; run data build + verifier tests.
-2. Read verl audit; decide trainer design; write GPU probe (template, generation, optimizer step, memory).
-3. Write rubric; annotate candidates (pass 1).
+1. GPU probe `qis-probe-gpu-v1` (queued on general): template, generation, logprob agreement, memory.
+2. Annotation pass 1 (running, 6 agents) → screening candidate lists.
+3. Write the trainer (`src/qis/train/`), its unit tests and the precision audit (gate G2).
