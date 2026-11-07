@@ -24,11 +24,14 @@ def main():
     ap.add_argument("--manifest", required=True)
     ap.add_argument("--model", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--also-dedupe", nargs="*", default=[], help="earlier authored jsonl files (problem field)")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     items = [json.loads(l) for f in a.authored for l in open(f)]
     math_rows = [json.loads(l) for l in open(a.manifest)]
     msh = [(r["id"], r["split"], splits.shingles(r["problem"])) for r in math_rows]
+    for f in a.also_dedupe:
+        msh += [(r["id"], "authored-earlier", splits.shingles(r["problem"])) for r in (json.loads(l) for l in open(f))]
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(a.model)
     v = Verifier(4)
