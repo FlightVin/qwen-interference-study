@@ -1,0 +1,17 @@
+{
+ "hard": {
+  "groups": 92,
+  "mixed": 71,
+  "fraction": 0.7717391304347826
+ },
+ "related": {
+  "groups": 126,
+  "mixed": 119,
+  "fraction": 0.9444444444444444
+ },
+ "unrelated": {
+  "groups": 126,
+  "mixed": 118,
+  "fraction": 0.9365079365079365
+ }
+}
