@@ -72,3 +72,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt 0 starts (D37). CPU 4/30.
 6. **Most important.** Keep both general GPUs busy: when a cal8k run ends, move the next pending one (order: 5e-7/asym, 1e-6/asym, 2e-6/sym, 2e-6/asym; stage-3 baseline in between if a CPU-light gap appears) to general at once.
 7. **Reconciliation.** Slurm ↔ ledger agree (7 live owned GPU jobs + 1 CPU test job). Watcher alive (btjiyyann).
+
+## Review 9 — 2026-11-07 11:05Z
+1. **Changes.** Two calibration runs done (table `research/evidence/calibration/cal8k_summary.md`): lr5e-7/sym gain +0.031, lr1e-6/sym gain +0.122; both valid (validation truncation ≤ 1.12%, 0 unknown). Moved 11074526 (5e-7/asym) and 11074519 (1e-6/asym) to general; both running. Analysis tests 33/33 (11075445) after 11075419 failed on missing scipy (replaced by a verified t table).
+2. **Alignment.** Calibration follows the frozen §7 rule; no selection yet (4 configs outstanding, then seed-22 repeats).
+3. **Mechanics.** Rounds 176 s (5e-7) and 237 s (1e-6; longer responses as the policy learns). Device memory max 41.3 GiB of ~44.4. The logged `mem_peak_gib` 47.5 is the allocator peak incl. the vLLM pool, not device use.
+4. **Confounds.** Round-0 baselines differ 0.010 across jobs at identical seeds (D49); gains are within-run.
+5. **Next jobs / limits.** GPU 2/2 general; preempt still 0 starts. Provisional cost (measured 237 s/round, 5 dev evals): 9.0 GPU-h per 128-round run (13.2 h with a 1.5× margin for longer hard-item responses) — below the 24 GPU-h rule, so T=128 is expected. 15 runs ≈ 135–200 GPU-h ≈ 68–99 h wall on 2 GPUs.
+6. **Most important.** Calibration remains the critical path: ETA for the last seed-11 runs ~16:00Z, seed-22 repeats ~18:30Z. Stage-3 baseline (3 h) waits behind calibration unless preempt starts.
+7. **Reconciliation.** Slurm ↔ ledger agree (4 live owned GPU jobs; old cancelled/failed rows kept). Watcher alive (b87y26pwf).

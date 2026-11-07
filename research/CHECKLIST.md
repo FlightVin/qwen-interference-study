@@ -61,7 +61,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
-- 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Running on general: 11074520 (1e-6/sym), 11074527 (5e-7/sym). Pending on preempt, move to general as slots free: 11074526, 11074519, 11074522, 11074521. 4,096 jobs 11072991–11072999 superseded (D45).
+- 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Done: 11074527 (5e-7/sym, +0.031), 11074520 (1e-6/sym, +0.122). Running on general: 11074526, 11074519. Pending (move to general as slots free): 11074522, 11074521. 4,096 jobs 11072991–11072999 superseded (D45).
 - 5.2 pending — Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
 - 5.3 active — PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
 

@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 10:10Z (review 8).
+Updated 2026-11-07 11:10Z (review 9).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -33,7 +33,9 @@ GPU ceilings unchanged: 2 general, 6 preempt.
 - Stage-3 independent baseline queued (11075046).
 
 ## Calibration
-- 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49); lr1e-6/sym and lr5e-7/sym running on general; four runs waiting for slots. Cross-job eval noise ≈ 0.01 (D49).
+- 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49).
+- Seed 11 done: lr5e-7/sym +0.031, lr1e-6/sym +0.122 (both valid). Running: 5e-7/asym, 1e-6/asym. Waiting: 2e-6 × 2. Table: `research/evidence/calibration/cal8k_summary.md`.
+- Provisional main-run cost 9–13 GPU-h per 128-round run → T=128 expected (rule: >24 GPU-h → 64).
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.
