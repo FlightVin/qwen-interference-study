@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 06:30Z (after D45).
+Updated 2026-11-07 09:10Z (review 7).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -26,13 +26,14 @@ A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + m
 A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
 GPU ceilings unchanged: 2 general, 6 preempt.
 
-## Dataset status (pre-freeze; cap 8,192 per D45)
-- At 4,096 (superseded, kept): H_train selection 49 (D43); auxiliary in band R 16 / U 48 + tranche 2 pending.
-- Re-screen at 8,192 running: H (11074495, with calibration candidates) and auxiliary (11074499). Then re-run the frozen selection (D38), matching + coverage (D39).
-- Targets frozen (D34), unaffected by the cap.
+## Dataset status — G1 passed (cap 8,192)
+- H_train 46 (31 core / 15 moderate; native 25 + Omni 21; F1 11, F2 7, F3 11, F4 10, F8 7) — D47.
+- E_related / E_unrelated 63 matched pairs (9 natural + 54 authored each; |SMD| ≤ 0.19; A5 coverage met) — D48.
+- Targets: dev 53, test 128 (sealed file), probes J_H 32 / J_R 28 / J_U 32 — D34. Bundle `data/main_v1_manifest.json`.
+- Stage-3 independent baseline queued (11075046).
 
 ## Calibration
-- 4,096 run lr1e-6/sym superseded (truncation 11.5%). Six 8,192 runs queued (11074519–527) behind panels job 11074507; first run = canary for 8,192 memory/round time.
+- 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49); lr1e-6/sym and lr5e-7/sym running on general; four runs waiting for slots. Cross-job eval noise ≈ 0.01 (D49).
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.

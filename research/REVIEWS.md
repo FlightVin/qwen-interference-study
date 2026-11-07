@@ -54,3 +54,12 @@
 5. **Next jobs / limits.** GPU 2/2 general (both re-screens); 7 jobs waiting on dependencies (panels-k8, six cal8k).
 6. **Most important.** Calibration remains the long pole (≈6 runs × ~3 h at 8k on 2 GPUs). Action: when the H job ends, move the first cal8k run (canary) to general immediately.
 7. **Reconciliation.** Slurm ↔ ledger agree; failed attempt 11074499 kept in ledger (cost ~41 GPU-min, stage-1 output reused). Watcher alive.
+
+## Review 7 — 2026-11-07 09:05Z
+1. **Changes.** Gate G1 passed at the 8,192 cap: H_train 46 (D47), 63 matched aux pairs with A5 coverage and balance (D48), panels unchanged (D34), calibration panels (D46), main bundle built (sha `0e255243…`; sealed test `2ffe70dd…`). Canary cal8k healthy (D49). Running: cal8k lr1e-6/sym (52 min), lr5e-7/sym (27 min). Queued: 4 cal8k, stage-3 baseline.
+2. **Alignment.** All selections followed rules committed before the data (D38/D39/D47 rule application unchanged at 8k). No treatment run.
+3. **Mechanics.** 8k rounds ~150–210 s; memory peak 40.0 / 44.4 GiB (4.4 GiB headroom — watch for OOM on long batches); truncation ≤ 1/128.
+4. **Confounds.** Cross-job eval noise 0.010 at identical seeds (D49) → calibration ties likely; main-study baselines must be averaged across runs. Authored share of aux pools 86% (equal across arms by construction).
+5. **Next jobs / limits.** GPU 2/2 general; preempt idle (no starts). Calibration ETA: 6 runs × ~1.8 h / 2 GPUs ≈ 5.5 h, plus 2 seed-22 runs ≈ 1.8 h.
+6. **Most important.** Prepare main-study configs, cost estimate and PROTOCOL freeze text now so the matrix can launch the moment calibration selects; draft the analysis plan.
+7. **Reconciliation.** Slurm ↔ ledger agree (7 live owned jobs). Watcher alive.
