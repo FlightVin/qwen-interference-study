@@ -22,3 +22,9 @@ The auxiliary pools are also short of 64 pairs (A2 options apply).
 prealgebra, levels 4–5, any word-problem cue, an equation in the solution): ≤ ~128 construction
 candidates before the skill audit, and easier on average than the factoring hard pool. The
 fallback cannot be expected to produce more H_train items than the primary skill.
+
+## Pass 2 (blind) — targets and probe panels (2026-11-07)
+`data/annotations/pass2_targets_probes.jsonl`: 291 items (target_dev 63, first 150 of target_test in
+seeded order, probe_related_dev 31, probe_unrelated_dev 47), three isolated agents, rubric v1+v1.1,
+no access to pass-1 labels. All support quotes verbatim. Agreement with pass 1: 258/291 (88.7%);
+disagreements: label 22, direct_practice 7, modular 4 → third read (both rationales) pending.
