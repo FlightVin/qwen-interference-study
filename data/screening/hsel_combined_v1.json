@@ -1,0 +1,1512 @@
+{
+ "selected": [
+  {
+   "id": "intermediate_algebra/train/01249",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00481",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00427",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "core",
+   "c32": 8,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01234",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F4"
+  },
+  {
+   "id": "omni/01551",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F8"
+  },
+  {
+   "id": "omni/02804",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/01168",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00995",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F3"
+  },
+  {
+   "id": "omni/01413",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F4"
+  },
+  {
+   "id": "omni/00984",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F8"
+  },
+  {
+   "id": "omni/01012",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00477",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "omni/00542",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01205",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "omni/02008",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F8"
+  },
+  {
+   "id": "omni/01558",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00076",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00431",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "omni/00622",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00916",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F8"
+  },
+  {
+   "id": "omni/04174",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F1"
+  },
+  {
+   "id": "omni/01788",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01174",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00048",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00592",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "algebra/train/01269",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F3"
+  },
+  {
+   "id": "omni/00524",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00522",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/01036",
+   "source": "hard_reserve",
+   "level": "Level 3",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00474",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "omni/02796",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/01067",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F2"
+  },
+  {
+   "id": "omni/02244",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00467",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "omni/00852",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00074",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00381",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "omni/02842",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00104",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F4"
+  },
+  {
+   "id": "omni/02316",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00147",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00350",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F2"
+  },
+  {
+   "id": "omni/00136",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00656",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00301",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/01097",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F1"
+  },
+  {
+   "id": "omni/01480",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F3"
+  },
+  {
+   "id": "omni/02460",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00340",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F3"
+  }
+ ],
+ "eligible": [
+  {
+   "id": "intermediate_algebra/train/00048",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/01234",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00656",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01174",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01168",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00467",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00427",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "core",
+   "c32": 8,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01067",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/01205",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01249",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00481",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00995",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00522",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00350",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00147",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F1"
+  },
+  {
+   "id": "algebra/train/01269",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00916",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00474",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00301",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00592",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00074",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01097",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00076",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00104",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00431",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00340",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00381",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00477",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/01036",
+   "source": "hard_reserve",
+   "level": "Level 3",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  },
+  {
+   "id": "omni/00136",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "omni/00524",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F4"
+  },
+  {
+   "id": "omni/00542",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F3"
+  },
+  {
+   "id": "omni/00622",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F4"
+  },
+  {
+   "id": "omni/00852",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "omni/00984",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F8"
+  },
+  {
+   "id": "omni/01012",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "omni/01413",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F4"
+  },
+  {
+   "id": "omni/01480",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F3"
+  },
+  {
+   "id": "omni/01551",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F8"
+  },
+  {
+   "id": "omni/01558",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  },
+  {
+   "id": "omni/01788",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "omni/02008",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F8"
+  },
+  {
+   "id": "omni/02244",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "omni/02316",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F8"
+  },
+  {
+   "id": "omni/02460",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F3"
+  },
+  {
+   "id": "omni/02796",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "omni/02804",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 8,
+   "family": "F1"
+  },
+  {
+   "id": "omni/02842",
+   "source": "omni",
+   "level": "omni",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F3"
+  },
+  {
+   "id": "omni/04174",
+   "source": "omni",
+   "level": "omni",
+   "band": "core",
+   "c32": 5,
+   "family": "F1"
+  }
+ ],
+ "omni_excluded": [
+  {
+   "id": "omni/00158",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00197",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "omni/00289",
+   "reason": "outside bands (c=20/32)"
+  },
+  {
+   "id": "omni/00419",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00446",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00451",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00455",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00467",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00515",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00516",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00546",
+   "reason": "outside bands (c=19/32)"
+  },
+  {
+   "id": "omni/00552",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00571",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/00600",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00621",
+   "reason": "outside bands (c=26/32)"
+  },
+  {
+   "id": "omni/00668",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00695",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/00738",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00755",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00792",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/00803",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "omni/00813",
+   "reason": "intake: near-duplicate of precalculus/train/00737 (construction, J=1.00)"
+  },
+  {
+   "id": "omni/00814",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "omni/00831",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00836",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00892",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00918",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00930",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00933",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00938",
+   "reason": "intake: near-duplicate of intermediate_algebra/test/00846 (test, J=0.75)"
+  },
+  {
+   "id": "omni/00957",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00958",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/00995",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01030",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01070",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01145",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01231",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01237",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01240",
+   "reason": "intake: near-duplicate of intermediate_algebra/train/00251 (calib_val, J=1.00)"
+  },
+  {
+   "id": "omni/01247",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01286",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01310",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01316",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01343",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01348",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01351",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01355",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01365",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01374",
+   "reason": "intake: near-duplicate of intermediate_algebra/train/00656 (construction, J=1.00)"
+  },
+  {
+   "id": "omni/01381",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01386",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/01388",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01398",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01414",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01422",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01469",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01473",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/01481",
+   "reason": "intake: near-duplicate of precalculus/test/00048 (test, J=1.00)"
+  },
+  {
+   "id": "omni/01492",
+   "reason": "outside bands (c=30/32)"
+  },
+  {
+   "id": "omni/01493",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01502",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01530",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01544",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01555",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01559",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/01568",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01580",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01650",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01658",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01671",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/01690",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01776",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01783",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01786",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01817",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01851",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/01882",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01893",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/01966",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/01988",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02026",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02047",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02085",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02121",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02130",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02140",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/02148",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02164",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02168",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02184",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02204",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/02227",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02247",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02251",
+   "reason": "outside bands (c=19/32)"
+  },
+  {
+   "id": "omni/02271",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/02278",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02308",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02322",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02324",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02364",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02387",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02432",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02466",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02467",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02469",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02481",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02486",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02503",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02525",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/02543",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "omni/02564",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02580",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02605",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02634",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02699",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "omni/02701",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02706",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02716",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02722",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02744",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02758",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "omni/02762",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "omni/02794",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02812",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02819",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02830",
+   "reason": "outside bands (c=14/32)"
+  },
+  {
+   "id": "omni/02836",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02846",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02868",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/02897",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02903",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02918",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02931",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/02978",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03016",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03031",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03077",
+   "reason": "low confidence or figure"
+  },
+  {
+   "id": "omni/03084",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03126",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03140",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03159",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03174",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03179",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/03185",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03210",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03317",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03323",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03337",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "omni/03346",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/03387",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/03408",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03431",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03461",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03545",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03548",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03615",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03618",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "omni/03643",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03649",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03688",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03723",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "omni/03766",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03767",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03784",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "omni/03799",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03800",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "omni/03809",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03810",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03940",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/03978",
+   "reason": "outside bands (c=21/32)"
+  },
+  {
+   "id": "omni/04018",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04085",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04124",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04129",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04267",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04276",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04285",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04374",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04385",
+   "reason": "not central multi-step short-answer"
+  },
+  {
+   "id": "omni/04424",
+   "reason": "not central multi-step short-answer"
+  }
+ ]
+}
