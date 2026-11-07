@@ -1,12 +1,13 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 21:35Z.
+Updated 2026-11-07 22:10Z (A9 deadline scope).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
-Matrix: 9 primary (H/R/U × seeds 101/202/303, clip (0.2, 0.2)) + 6 sensitivity (R/U × 3 seeds, clip (0.2, 0.28));
-lr 2e-6; 128 rounds; cap 8,192 (fixed, A8.4). No endpoint result exists yet.
+**Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds; cap 8,192.
+Seed 303 and clipping sensitivity deferred. Deadline: report by 10 Nov 01:00Z (target), 14:30Z (hard).
+No endpoint result exists yet (none viewed at the A9 amendment).
 
 ## Question
 Does direct practice on polynomial factorization (E_related) help the learner recognize and use factoring in
@@ -24,18 +25,19 @@ Qwen3-1.7B @ `70d244cc`, non-thinking.
 
 ## Owner amendments in force
 A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (§17); A4 H_train authority (§18);
-A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A8 priorities (§22): cap fixed,
+A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A8 priorities (§22): cap fixed,
 truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
 (evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
 
 ## Uncertain
 - Preempt starts are rare (D37); wall time depends mostly on 3 general GPUs.
-- Response growth at lr 2e-6 over 128 rounds. Truncation so far: hard 0.2–2.3% per run; shared hard schedule R 1.0% vs U 2.3% (21 rounds). The asymmetric sensitivity arm may exceed 5% (calibration: 7.14%).
+- Response growth at lr 2e-6 over 128 rounds. Truncation so far: hard 0.2–2.3% per run; shared hard schedule R 1.0% vs U 2.3% (21 rounds).
+- Two seeds give no real estimate of training variability; conclusions rest on per-seed agreement plus problem-resampling intervals conditional on the trained policies (A9.4).
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Keep 3 general GPUs on main runs: next free slot ~8 Nov 06:00Z → oldest queued primary run (R-s202, U-s202, H-s202, R-s303), then U-s303, H-s303, then the 6 sensitivity runs.
-2. Write and test the local-update diagnostic (CPU tests now); run it from R-s101 rounds 0 and 64 on the first free GPU.
-3. Write the sealed test-evaluation recipe (base model once; each endpoint, 32 samples/problem); outcomes never feed training decisions.
-4. Endpoint retention: model-only export + reload check, then retire restart checkpoints (project.md line 240).
-5. Hourly: truncation monitor, storage, slot filling. Then prespecified analysis → figures → REPORT → independent recomputation and audit.
+1. Each s101 completion (~8 Nov 07:00–10:00Z) → move matching s202 job to general at once.
+2. Now (CPU): local-update diagnostic code + tests; sealed test-evaluation recipe; endpoint validation script (attempt counts, verifier outputs, checkpoint identity, cost); report skeleton with the A9 two-row table and incremental figures.
+3. Queue base-model test eval, s101 endpoint evals and the diagnostic on preempt; move to general as s202 runs end.
+4. Hourly: forecast from actual throughput, truncation by arm and role, storage.
+5. Analysis → audited REPORT by 10 Nov 01:00Z; verified partial delivery by 14:30Z if anything slips.

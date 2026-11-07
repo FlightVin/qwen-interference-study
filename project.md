@@ -518,3 +518,31 @@ frozen non-thinking study.
    filling more slots.
 Continue healthy main runs while doing the CPU-side tasks. Keep sealed test outcomes out of training
 decisions and proceed autonomously through the prespecified analysis and report.
+
+## 23. Amendment A9 (owner, received 2026-11-07 ~22:00Z): delivery deadline and reduced scope
+
+Recorded faithfully from the owner's message. **Time-budget decision.** Deadline: Tuesday 2026-11-10 09:30
+America/New_York (14:30 UTC). **Endpoint results viewed at amendment time: none.** No run had reached an
+endpoint and no target_test outcome existed; only round-0 dev/probe evaluations (identical base model), training
+metrics through rounds 13–26 of the three seed-101 runs, and truncation counts had been seen.
+
+1. Run exactly six primary runs: H, R, U at seeds 101 and 202, symmetric clip (0.2, 0.2), frozen 128-round
+   endpoint. Remove all seed-303 runs and all alternate-clipping sensitivity runs from the current scope; disable
+   their recipes and pending dependencies; reconcile Slurm with the ledger; cancel verified project-owned jobs for
+   them, preserving artifacts, status and costs; prevent resubmission.
+2. Prioritize completing the six runs and their evaluations. Keep the R-s101 round-64 model and optimizer
+   checkpoint and the planned local-update diagnostic from rounds 0 and 64. Use spare GPU capacity for the common
+   base-model evaluation, completed endpoints and the diagnostic. Keep test outcomes out of training decisions. Do
+   not fill freed slots with new experiments.
+3. Start report preparation and independent recomputation as soon as possible. As each endpoint finishes, validate
+   attempt counts, verifier outputs, checkpoint identity and the cost ledger. Prepare figures incrementally. Keep the
+   8,192 cap and frozen grading rule. Report truncation by arm and by hard vs auxiliary prompts.
+4. Lead the report with a two-row table (one row per seed): H, R, U held-out pass@1, paired R−U, paired R−H; then
+   the means. Show whether direction and magnitude agree across seeds. Label any interval from resampled problems as
+   conditional on these trained policies. Do not present a two-seed interval as strong evidence about training
+   variability. Report local branch results separately; identify clipping sensitivity as deferred.
+5. Target a complete, audited Markdown report with figures by Monday 2026-11-09 20:00 Eastern (2026-11-10 01:00
+   UTC), leaving Tuesday morning for recovery. Update the forecast at each hourly review from actual throughput. If
+   work will miss the deadline, deliver the verified results available by 09:30 Eastern with missing cells or
+   diagnostics clearly identified. Preserve the primary comparison and its verification ahead of secondary figures.
+Continue autonomously within 3 general and 6 preempt GPUs; no further approval needed for this reduced plan.

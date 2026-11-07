@@ -96,3 +96,17 @@ Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS 
   Scheduled evaluations report truncation alongside pass@1.
 - Baseline error audit (§3.7) on saved non-thinking screening attempts, with the categories of project.md §22.3;
   extraction misses (e.g., complete answers split across boxes) are reported separately and never regraded.
+
+## Amendment A9 (2026-11-07 ~22:00Z, after freeze, before any endpoint result; project.md §23)
+- **Scope:** six primary runs — H, R, U × seeds 101, 202; clip (0.2, 0.2); lr 2e-6; 128 rounds; cap 8,192; frozen
+  grading. Seed 303 and the clip (0.2, 0.28) sensitivity runs are **deferred** (recipes moved to
+  `slurm-agentic-engineering/exp-deferred/`; slot guard refuses them).
+- **Endpoint results viewed at amendment time: none** (no endpoint reached; target_test unopened).
+- **Primary report table:** one row per seed (101, 202): H, R, U target_test pass@1 (32 samples/problem, 128
+  problems), paired R−U and paired R−H; then means. Direction and magnitude agreement across seeds is reported.
+- **Uncertainty:** problem-resampling (paired bootstrap over the 128 problems, seed 2027) is reported per seed and for
+  the mean, labelled **conditional on these trained policies**. The two-seed t interval (df = 1) is shown only with an
+  explicit warning that it is not strong evidence about training variability; no claim rests on it. This replaces the
+  three-seed t interval and crossed bootstrap of §9 for the current scope.
+- **Local update diagnostic** (R-s101, rounds 0 and 64) reported separately. **Clipping sensitivity: deferred.**
+- Deadline: complete audited report by 2026-11-10 01:00 UTC; hard deadline 2026-11-10 14:30 UTC.
