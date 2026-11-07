@@ -95,6 +95,16 @@ def grade_inputs(gold, ids, finish, thinking, decode, think_end_id):
     return {"gold": gold, "response": decode(final), "truncated": capped}, None, len(ids), len(reason)
 
 
+def warm(ver, tries=6):
+    """Import math_verify in every worker before real scoring (cold imports can exceed the 5 s/15 s
+    limits on a cold node and would surface as 'unknown'). Warm-up results are discarded."""
+    for _ in range(tries):
+        r = ver.score([{"gold": "1", "response": "\\boxed{1}", "truncated": False}] * ver.n)
+        if all(x["status"] == "correct" for x in r):
+            return True
+    raise RuntimeError("verifier warm-up failed")
+
+
 def paired_ci(d, name, draws=10_000):
     d = np.asarray(d, dtype=np.float64)
     r = seeds.rng(seeds.BOOTSTRAP_SEED, f"a6/{name}")
@@ -122,6 +132,7 @@ def run(a):
     end_id = tpl["think_end_id"]
     roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
     ver = Verifier(8)
+    warm(ver)
     dec = lambda ids: tok.decode(ids, skip_special_tokens=True)
     per, cost, fails = [], [], []
     rec = gzip.open(os.path.join(a.out, f"records_cap{a.max_tokens}.jsonl.gz"), "wt")

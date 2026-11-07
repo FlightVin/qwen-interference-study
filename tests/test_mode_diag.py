@@ -18,6 +18,7 @@ def test_split_final_uses_first_close():
 def test_boxed_inside_reasoning_cannot_earn_reward():
     v = Verifier(1)
     try:
+        md.warm(v)
         # correct box only inside reasoning, wrong box in the final answer -> 0
         vin, fixed, _, _ = md.grade_inputs("7", [1, END, 3], "stop", True, dec, END)
         assert fixed is None and v.score([vin])[0]["reward"] == 0
@@ -34,6 +35,7 @@ def test_boxed_inside_reasoning_cannot_earn_reward():
 def test_incomplete_response_gets_truncation_treatment():
     v = Verifier(1)
     try:
+        md.warm(v)
         # capped inside the reasoning: existing truncation treatment (reward 0, status truncated)
         vin, fixed, n, nr = md.grade_inputs("7", [1, 1, 1], "length", True, dec, END)
         assert vin is None and fixed["status"] == "truncated" and fixed["reward"] == 0 and n == nr == 3
