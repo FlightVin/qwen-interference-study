@@ -546,3 +546,23 @@ metrics through rounds 13–26 of the three seed-101 runs, and truncation counts
    work will miss the deadline, deliver the verified results available by 09:30 Eastern with missing cells or
    diagnostics clearly identified. Preserve the primary comparison and its verification ahead of secondary figures.
 Continue autonomously within 3 general and 6 preempt GPUs; no further approval needed for this reduced plan.
+
+## 24. Amendment A10 (owner, received 2026-11-07 ~22:35Z): 8k-to-16k response budget
+
+Recorded faithfully from the owner's message. Raise the response budget of the six primary non-thinking runs to
+16,384 generated tokens (prompt cap 1,024 unchanged; six-run scope, GPU ceilings and the 2026-11-10 09:30 Eastern
+deadline unchanged). Apply it at one common rollout-round boundary across H, R, U for seeds 101 and 202, chosen as the
+earliest practical shared boundary that discards no valid work, and recorded before further comparative results are
+inspected; runs below it use 8,192 until they reach it. Preserve weights, FP32 optimizer state, sampler position and
+counters; keep the frozen dataset and hyperparameters. Describe the study as using an 8k-to-16k training schedule
+whose questions were screened at 8k. Before release, smoke-test a complete rollout and optimizer step on one 48 GB
+GPU with a genuinely long response; serving context ≥ 17,408 tokens; verify generation and trainer limits and that
+nothing clips at 8,192; reduce concurrency or micro-batching if needed while preserving the effective GRPO batch.
+If 16k cannot fit or measured throughput threatens the deadline, choose the largest feasible common cap between 8k
+and 16k before any arm trains under the amendment, and document it. Continue the truncation diagnosis on saved
+attempts (by arm and prompt type: share crossing 8,192, share of those finishing correctly by the new cap, share
+exhausting it; a fixed sample inspected for productive reasoning, repetition and answer-format failures), keeping
+the frozen correctness rule at the applicable cap. Use the amended evaluation cap for the base model and every
+endpoint, and also report success when completion is required within 8,192 tokens from the same traces. Mark the
+cap transition on learning curves; report generated tokens and GPU-hours. Keep the six primary comparisons and
+their verification ahead of secondary plots. No further cap increases.
