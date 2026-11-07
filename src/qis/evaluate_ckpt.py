@@ -76,6 +76,9 @@ def main():
             "pass8": float(np.mean([grpo.pass_at_k(a.n, p["c"], 8) for p in per])),
             "pass1_within_8192": float(np.mean([p["c_within_8192"] / a.n for p in per])),
             "over_8192": sum(len(o["ids"]) > 8192 for g in outs for o in g) / (a.n * len(items)), "max_tokens": a.max_tokens,
+            "over_8192_then_correct": sum(r["reward"] == 1 and len(o["ids"]) > 8192
+                                          for r, o in zip(sc, [o for g in outs for o in g])) / (a.n * len(items)),
+            "tokens_per_second": toks / max(time.time() - t0, 1e-9), "completions": a.n * len(items),
             "truncated": sum(o["finish"] == "length" for g in outs for o in g) / (a.n * len(items)),
             "unknown": unknown, "tokens": toks, "seconds": time.time() - t0, "seed_label": a.seed_label,
             "per_problem": per}

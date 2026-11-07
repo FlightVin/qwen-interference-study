@@ -50,6 +50,10 @@ phase config "false" '
  "wandb": {{"enabled": true, "project": "qis-qwen-interference"}}}}
 JSON
 '
+phase boundary_eval "test ! -d $CK/boundary_0064 -o -s $W/boundary_eval/summary.json" '
+    # A10: dev panel at the amended cap from the pre-switch checkpoint (both budgets + throughput); no training effect
+    "$VENV/bin/python" -m qis.evaluate_ckpt --model "$MODEL" --ckpt "$CK/boundary_0064" --panel "$BUNDLE" --panel-key dev --n 32 --out "$W/boundary_eval" --seed-label boundary-r64 --max-tokens 16384
+'
 phase train "test -f $W/RUN_COMPLETE" '
     rc=0; "$VENV/bin/python" -m qis.train.run --config "$W/config.json" >> "$W/stdout.log" 2>&1 || rc=$?
     tail -20 "$W/stdout.log"
@@ -57,7 +61,7 @@ phase train "test -f $W/RUN_COMPLETE" '
     exit $rc
 '
 phase export "test -s $AE_RESULTS/metrics.jsonl" '
-    cp "$W/metrics.jsonl" "$W/config.json" "$AE_RESULTS/"
+    cp "$W/metrics.jsonl" "$W/config.json" "$AE_RESULTS/"; [ -s "$W/boundary_eval/summary.json" ] && cp "$W/boundary_eval/summary.json" "$AE_RESULTS/boundary_eval_summary.json"; true
 '
 '''
 
