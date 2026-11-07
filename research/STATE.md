@@ -1,10 +1,10 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 03:45Z (verified against Slurm and saved results).
+Updated 2026-11-07 05:10Z (review 3).
 
 ## Phase
-Dataset construction (stage-1 screening) and trainer gate G2, in parallel. No training run yet.
+Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
 
 ## Question
 Does easier practice on polynomial factorization (E_related) improve GRPO learning on hard MATH
@@ -26,14 +26,17 @@ A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + m
 A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
 GPU ceilings unchanged: 2 general, 6 preempt.
 
+## Dataset status (pre-freeze)
+- H_train: native 29 eligible (18 core / 11 moderate); Omni-MATH tranche 73 annotation-eligible, screening pending (job 11073332). Combined rule fixed (D38).
+- Auxiliary: natural R 7 / U 18 in band; authored tranche (198 R / 196 U after intake; 114 R / 196 U annotation-eligible) screening (job 11073304). Matching + A5 coverage code fixed (D39).
+- Targets frozen (D34): target_dev 53, target_test 128, probes J_H 32 / J_R 28 / J_U 32.
+- Calibration panels frozen (D33); calibration run 1 of 6 at round 4 (baseline calib_val 0.4265).
+
 ## Uncertain
-- H_train: stage 1 projected ~25–35 core-band items from 154 candidates. Under A4 the moderate band
-  (9–12/32) also counts; full native stage 2 over all 184 candidates decides the count.
-- E_related: 110 candidates; may fall short of 64 pairs after band + matching (A2 options apply).
-- Round time and memory of a real 128-response round (smoke run A in progress).
+- Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.
+- Preempt availability (D37): main matrix may run on 2 general GPUs (~50 h wall).
 
 ## Next actions
-1. Stage-1 results (job 11072609) → shortlist → stage-2 (32 samples) on GPU.
-2. Smoke run A/B (job 11072622) → G2 decision; profile round time; cost estimate.
-3. Calibration screening (job 11072610, preempt): move to general if not started by 03:52Z.
-4. Pass-2 blind annotation on shortlisted items (CPU-free; agents, isolated directories).
+1. Omni screening → combined H selection → independent baseline (stage 3) → mixed-group fraction.
+2. Authored screening → R/U matching, balance, coverage → freeze dataset + PROTOCOL.
+3. Calibration: remaining 5 runs on general as slots free; then seed-22 finalists; select config.

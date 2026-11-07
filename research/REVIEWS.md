@@ -18,3 +18,12 @@
 5. **Next jobs / limits.** GPUs: 2/2 general running; 6/6 preempt slots used by pending calibration jobs (0 running). CPU: 1 pending. Storage: smoke checkpoints (~44 GB) to prune after this review; calibration will add up to 6 × 21.9 GB.
 6. **Most important uncertainty.** Whether a defensible H_train ≥ 64 exists. Action: stage-2 counts, then options to the owner (band widening recommended provisionally).
 7. **Reconciliation.** Slurm ↔ ledger agree (all 11 owned live/pending jobs in ledger). Registry untracked (D21). STATE/CHECKLIST current as of 03:45Z plus calibration queue entry.
+
+## Review 3 — 2026-11-07 05:05Z
+1. **Changes.** Done since review 2: G2 evidence tracked; full native stage 2 (5,888 attempts) → 29 eligible H (18 core, 11 moderate); target/probe panels frozen (D34); calibration panels frozen (D33); authored tranche (400) written, intake (394 kept), blind-annotated; Omni-MATH tranche (200) annotated (73 H-eligible); amendments A4, A5, v1.3 tagging recorded. Running: calibration lr 1e-6/sym (11072995, round 4 of 32), authored screening (11073304). Pending: Omni screening + 5 calibration runs on preempt (no start estimate; D37).
+2. **Alignment.** All work builds the frozen dataset or calibrates the optimizer; no treatment run exists. Every selection rule was committed before its outcome data (D28, D31, D32, D38, D39).
+3. **Mechanics.** Real calibration rounds 138–178 s (gen ~60 s, train 60–116 s), 11–15/16 mixed groups, truncation 1–3/128, logprob mismatch p99 0.107 (D25 limit 0.20), clip fractions ~1e-4, device memory 36–38.5 GiB. Baseline calib_val pass@1 0.4265.
+4. **Confounds.** Authored auxiliary items are matched within provenance (D32/D39). Omni items enter H_train only (provenance recorded; held-out MATH untouched). Watch: if H_train is majority Omni, training distribution shifts from MATH targets — report transfer separately (A4.6).
+5. **Next jobs / limits.** GPU 2/2 general used; preempt unusable now. Cost model: main run ≈ 128 × 2.7 min + evals ≈ 6.5 GPU-h (< 24 h threshold → 128 rounds feasible); 15 runs ≈ 100 GPU-h ≈ 50 h wall on 2 GPUs.
+6. **Most important.** Omni screening is the critical path for H_train but waits for a GPU slot. Action: it takes the next free general slot (before remaining calibration runs).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 live owned jobs). Watcher was found not re-armed after the last event; re-armed now (rule: re-arm in the same step as harvesting).
