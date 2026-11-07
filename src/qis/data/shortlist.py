@@ -8,8 +8,9 @@ import argparse
 import json
 import os
 
-BANDS = {"hard": (0, 5), "hard_reserve": (0, 5), "related": (4, 14), "unrelated": (4, 14)}
-TARGET = {"hard": 128, "hard_reserve": 128, "related": 128, "unrelated": 128}
+BANDS = {"hard": (0, 5), "hard_reserve": (0, 5), "related": (4, 14), "unrelated": (4, 14),
+         "auth_related": (4, 14), "auth_unrelated": (4, 14)}
+TARGET = {k: 128 for k in BANDS}
 
 
 def main():
@@ -17,10 +18,12 @@ def main():
     ap.add_argument("--cand", required=True)
     ap.add_argument("--s1", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--pools", nargs="+", default=["hard", "hard_reserve", "related", "unrelated"])
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     summary = {}
-    for pool, (lo, hi) in BANDS.items():
+    for pool in a.pools:
+        lo, hi = BANDS[pool]
         order = [json.loads(line) for line in open(os.path.join(a.cand, f"{pool}.jsonl"))]
         counts = {json.loads(line)["id"]: json.loads(line) for line in open(os.path.join(a.s1, pool, "s1_counts.jsonl"))}
         keep, held, missing, hist = [], [], [], {}
