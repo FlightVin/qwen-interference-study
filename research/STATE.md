@@ -21,6 +21,8 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-
 - Trainer design (D10): custom single-GPU GRPO; verl 0.9.0 deviates from our spec in advantage std, dual-clip, minibatch order, truncation visibility.
 - Owner addendum A1 (2026-11-07): precision audit at gate G2; four report figures incl. POPE-style J trajectories on fixed probe panels. No existing run affected.
 
+- Owner addendum A2 (2026-11-07): 64 aux pairs is a target, not a hard minimum; synthetic supplementation allowed under rules; choice frozen before treatment outcomes.
+
 ## Uncertain
 - Whether ≥64 H_train items reach 2–8/32 success (Qwen3-1.7B solves many MATH algebra items).
 - Whether full-parameter GRPO with colocated vLLM fits one 48 GB GPU.

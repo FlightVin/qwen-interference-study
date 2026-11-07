@@ -10,6 +10,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 0.4 No treatment change after freeze because of interim curves; corrections apply to all affected conditions.
 - 0.5 Record consequential decisions (evidence, action, runs, interpretation) in `research/DECISIONS.md`.
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
+- 0.8 Addendum A2 (2026-11-07, `project.md` §16): 64 aux pairs is a target; modest shortfall allowed with documented coverage/diversity/balance; synthetic supplementation only under a recorded gap + finite budget, same audit/screen/matching, provenance balanced R vs U, template families tracked, eval sets free of training-template variants; choose smaller natural / supplemented / fallback and freeze before any treatment outcome.
 - 0.7 Addendum A1 (2026-11-07, `project.md` §15): FP32 trainable weights + FP32 AdamW moments, BF16 rollout and autocast compute; one precision audit per trainer configuration; report figures (main, learning/exposure, POPE-style J trajectories, local update effects).
 
 ## 1. Setup and isolation — done except 1.6
@@ -37,7 +38,8 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.8 pending — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
 - 3.9 pending — target_dev (64) / target_test (128) by rubric only; calibration panels (≥16 per band per split).
 - 3.10 pending — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
-- **G1** — ≥64 H_train, ≥64 per aux pool, ≥32 dev, ≥64 test, ≥64 per calib split. Else the linear-equation fallback (before any treatment run).
+- 3.11 pending — (A2) Pool decision after stage-2 screening: count matched pairs, coverage (factoring forms), diversity (template families), balance (SMD). If short: record gap + finite synthetic budget, OR retain smaller natural set, OR fallback skill — choose and record before freeze.
+- **G1** — ≥64 H_train, ≥32 dev, ≥64 test, ≥64 per calib split (hard minima). Aux pools: 64 matched pairs target (A2); a modest shortfall needs documented coverage/diversity/balance. Else supplementation or the linear-equation fallback, before any treatment run.
 
 ## 4. Trainer (gate G2: correctness tests of project.md §8)
 - 4.1 done — Custom single-GPU trainer, verl as reference (D10, D11). Code: `src/qis/train/`.

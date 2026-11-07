@@ -347,3 +347,24 @@ Recorded verbatim in substance from the owner's message of 2026-11-07. It applie
   parameter-gradient measurement. No vector field or saddle-point inference.
 - Reuse scheduled evaluations and retained checkpoints. If extra probe evaluations cost
   materially, choose a smaller fixed panel before looking at results and record the cost.
+
+## 16. Addendum A2 (owner, 2026-11-07): auxiliary pool size, supplementation, fallback choice
+
+Recorded faithfully from the owner's message of 2026-11-07, before any treatment run.
+
+- **64 matched pairs is a planning target**, not a hard minimum, for E_related/E_unrelated. A
+  modest shortfall is acceptable if the retained pairs give adequate skill coverage, diversity,
+  and balance in baseline success and response length. Document the tradeoff. A shortage says
+  nothing about whether related practice helps.
+- **Authored or augmented training problems** are allowed in either auxiliary pool to fill
+  specific gaps found during screening. First record the gap and a finite generation budget.
+  Apply the same skill audit, answer verification, difficulty screen and matching rules to every
+  candidate. Report how many were generated and retained per arm. Balance synthetic provenance
+  across arms so it cannot explain the contrast. Track source and template families; count
+  near-duplicate variants together when judging diversity. Keep held-out evaluation problems
+  independent and free of training-template variants.
+- **Choice:** use judgment to pick the strongest defensible option — a slightly smaller natural
+  set, a supplemented set, or the agreed fallback skill. Freeze the dataset, rationale and
+  manifests before examining treatment outcomes.
+- Supersedes, for the auxiliary pools only, the §5 sentence "Minimum for launching the main
+  study: … 64 per auxiliary pool"; the other minima stand.
