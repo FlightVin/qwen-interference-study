@@ -41,3 +41,15 @@ disagreements: label 22, direct_practice 7, modular 4 → third read (both ratio
   (→ central via v1.3 F2); undetermined-coefficient factorizations (→ absent); rational equations
   count as polynomial equations for `direct_practice`; remainder used only as an inner step →
   `modular = no`.
+
+## Stage 2 on the stage-1 shortlist (32 fresh attempts; job 11072896) and calibration screen (job 11072944)
+| pool | items | core 2–8 | moderate 9–12 | aux band 12–24 | unknown |
+|---|---|---|---|---|---|
+| hard (L4–5) | 56 | 18 | 4 | — | 0 |
+| hard_reserve (L3) | 4 | 3 | 0 | — | 0 |
+| related | 23 | — | — | 7 | 0 |
+| unrelated | 41 | — | — | 18 | 0 |
+Calibration (16 samples): calib_train 200 → low 1–5/16: 27, high 6–12/16: 35; calib_val 200 → 20 / 31.
+Both splits meet ≥ 16 per band. Full native stage 2 over all 184 hard candidates: job 11073157 (A4.1).
+
+## Auxiliary gap and authored tranche (A2; recorded BEFORE any item is authored) — see D32

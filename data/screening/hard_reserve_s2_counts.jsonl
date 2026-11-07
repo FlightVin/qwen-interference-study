@@ -1,0 +1,4 @@
+{"id": "intermediate_algebra/train/00900", "stage": "s2", "n": 32, "seed": 458311365, "c": 5, "unknown": 0, "truncated": 0, "truncated_would_match": 0, "no_answer": 0, "prompt_tokens": 115, "resp_len_mean": 1425.25, "resp_len_max": 2256}
+{"id": "intermediate_algebra/train/01036", "stage": "s2", "n": 32, "seed": 1761708351, "c": 7, "unknown": 0, "truncated": 1, "truncated_would_match": 0, "no_answer": 0, "prompt_tokens": 63, "resp_len_mean": 2671.15625, "resp_len_max": 4096}
+{"id": "intermediate_algebra/train/01074", "stage": "s2", "n": 32, "seed": 349376269, "c": 1, "unknown": 0, "truncated": 0, "truncated_would_match": 0, "no_answer": 0, "prompt_tokens": 106, "resp_len_mean": 1053.0625, "resp_len_max": 2290}
+{"id": "intermediate_algebra/train/00414", "stage": "s2", "n": 32, "seed": 170581323, "c": 4, "unknown": 0, "truncated": 0, "truncated_would_match": 0, "no_answer": 0, "prompt_tokens": 145, "resp_len_mean": 1222.5, "resp_len_max": 2145}
