@@ -99,3 +99,12 @@
 5. **Next jobs / limits.** GPU 2/2 general + 1 pending preempt (budget 6). Seed-11 calibration ends ~15:45Z; then the top-2 repeats.
 6. **Most important.** Shorten the critical path to the freeze: done by queueing the likely seed-22 repeat now. Next: on the 2e-6 results, apply §7 and queue the second repeat.
 7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned GPU jobs + stage-3 pending). Our watcher re-armed; another project's ae-watch process (PID 17928) left untouched.
+
+## Review 12 — 2026-11-07 14:05Z
+1. **Changes.** First preempt start of the study: stage-3 baseline 11075046 started 13:47Z (preempt_qos). 2e-6/sym (11074522, since 12:50Z) and 2e-6/asym (11074521, since 13:07Z) running on general. Seed-22 repeat 11075978 pending on preempt (Slurm start estimate 11-11, unreliable).
+2. **Alignment.** Unchanged. Stage-3 counts are reported only, never used to reselect H (A4.2).
+3. **Mechanics.** No new failures. Watcher alive (bvz1fzoxo).
+4. **Confounds.** None new.
+5. **Next jobs / limits.** GPU 2/2 general, 1/6 preempt running + 1 pending. Seed-11 calibration ends ~15:00–15:45Z.
+6. **Most important.** When a 2e-6 run ends: apply §7 with all six, queue the second seed-22 repeat, and move both repeats to general as slots free (preempt start remains unpredictable, D37).
+7. **Reconciliation.** Slurm ↔ ledger agree (4 live owned jobs, all `qis-` rows).
