@@ -4,13 +4,14 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 **pending**. Evidence links follow each done item. Gates (G1–G6) must pass before later stages start.
 
 ## 0. Owner instructions (NON-NEGOTIABLE)
-- 0.1 Ceilings: ≤2 general GPUs, ≤6 preempt GPUs, all project activity. One GPU per job. Enforced by `ops/qis-submit`.
+- 0.1 Ceilings: ≤3 general GPUs (A7, 2026-11-07, `project.md` §21; supersedes ≤2), ≤6 preempt GPUs, all project activity. One GPU per job. Enforced by `ops/qis-submit`.
 - 0.2 Control only ledger-owned jobs by exact job ID (`ae slurm`). Never touch other projects' jobs/files/envs/W&B.
 - 0.3 No GPU standbys reserved speculatively; no plain `ae pool`.
 - 0.4 No treatment change after freeze because of interim curves; corrections apply to all affected conditions.
 - 0.5 Record consequential decisions (evidence, action, runs, interpretation) in `research/DECISIONS.md`.
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
 - 0.12 Amendment A6 (2026-11-07, `project.md` §20): thinking-mode baseline diagnostic on an 80-item seeded panel (32 H stratified by source × technique, 16 R + 16 matched U, 16 dev; sealed test untouched), 8 attempts per item per mode; same cap 8,192 first, only `enable_thinking` changes; reasoning + answer count against the cap; grade only the final answer after reasoning (tests); report per pool; 16,384 profile only if thinking truncation > 5%; separate thinking study only after re-screen, matching, calibration and a 32-round truncation check; distinct manifests/run IDs; main study and hourly review continue.
+- 0.13 Amendment A7 (2026-11-07, `project.md` §21): 3 concurrent general + 6 preempt GPUs; reconcile with the ledger; fill the third general GPU with the highest-priority ready task; move an eligible pending job if it starts earlier; verify single execution; keep the slot filled while useful work is ready.
 - 0.11 Amendment A5 (2026-11-07, `project.md` §19): technique coverage — primary technique per H_train/E_related item (F1–F8, frozen); each technique ≥ 10% of H_train needs E_related share ≥ ½ of it (ceil to whole items); check after R/U matching; repair via authorized E_related selection/augmentation only, re-match; H_train fixed; residual shortfall recorded; table in report.
 - 0.10 Amendment A4 (2026-11-07, `project.md` §18): H_train via full native stage 2 (184 candidates, ≤5,888 attempts), core 2–8/32 + moderate 9–12/32, target 64 (≥½ core), proceed at 48–64; else Omni-MATH tranche (≤200), smaller pilot with uniform endpoint shortening, or one authored tranche; one H_train manifest; decisions before treatment outcomes.
 - 0.9 Amendment A3 (2026-11-07, `project.md` §17): ≤30 CPUs total on `preempt_cpu_qos`; enforced by `ops/qis-submit`.

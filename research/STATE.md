@@ -21,11 +21,12 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 
 ## Owner amendments in force
 A6 thinking-mode baseline diagnostic (§20; D56).
+A7 GPU ceilings 3 general + 6 preempt (§21; D60).
 A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
 A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
 A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
 A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
-GPU ceilings unchanged: 2 general, 6 preempt.
+GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 
 ## Dataset status — G1 passed (cap 8,192)
 - H_train 46 (31 core / 15 moderate; native 25 + Omni 21; F1 11, F2 7, F3 11, F4 10, F8 7) — D47.

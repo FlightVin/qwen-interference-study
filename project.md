@@ -473,3 +473,11 @@ of the transfer result.
    repeat optimizer calibration, and demonstrate acceptable truncation after 32 RL rounds; monitor
    length and truncation by arm thereafter. Keep distinct manifests, run IDs and results for the two
    modes. Continue the existing study and its hourly review while this diagnostic runs.
+
+## 21. Amendment A7 (owner, 2026-11-07 ~19:20Z): GPU ceilings raised
+
+Recorded faithfully from the owner's message. **Supersedes the "two general GPUs" ceiling** in the
+execution mandate: this project may use **3 concurrent general GPUs and 6 preempt GPUs** across all
+its activities. Reconcile running and pending jobs against the project ledger, use the third general
+GPU for the highest-priority ready task, move an eligible pending job when that gives an earlier
+start, verify each job runs only once, and keep the slot filled while useful work is ready.
