@@ -11,17 +11,19 @@ Purpose: decide the endpoint (128 rounds unless a run is projected above 24 acti
 ## Mean response length per round (16 prompts × 8)
 H arm = H_train only: 2,199. R/U arms = 8 hard + 8 auxiliary: (2,199 + 1,212) / 2 ≈ 1,706.
 
-## Projection per 128-round run (worst node 0.155 s/token; checkpoint overhead +5%)
-| selected lr | growth assumed over 128 rounds | H arm GPU-h | R/U arm GPU-h | ≤ 24? |
-|---|---|---|---|---|
-| 1e-6 | ×1.15 | 14.3 | 11.2 | yes |
-| 2e-6 | ×1.5 | 18.6 | 14.6 | yes |
-| 2e-6 | ×2.0 (pessimistic) | 24.6 | 19.2 | H arm marginal |
+## Projection per 128-round run
+Formula: GPU-h = 1.05 × [(128 × L × f × 0.155 s) + (5 × 870 s × f)] / 3600, with L the base mean length,
+growth linear from 1 to g over the run (mean factor f = (1+g)/2), worst node 0.155 s/token, +5% checkpoint overhead.
 
-On L40S nodes the figures are ~30% lower. Total for 15 runs (3 H + 12 R/U): lr 1e-6 ≈ 177 GPU-h; lr 2e-6 ≈ 230 GPU-h (×1.5).
-Wall on 2 general GPUs: ~4–5 days; less if preempt starts.
+| selected lr | final growth g | H arm GPU-h | R/U arm GPU-h | 15 runs GPU-h | ≤ 24 per run? |
+|---|---|---|---|---|---|
+| 1e-6 | 1.15 | 15.0 | 12.0 | 189 | yes |
+| 2e-6 | 1.5 | 17.5 | 13.9 | 220 | yes |
+| 2e-6 | 2.0 (pessimistic) | 21.0 | 16.7 | 264 | yes |
+
+On L40S nodes the figures are ~30% lower. Wall on 2 general GPUs: ~4–5.5 days; less if preempt starts.
 
 ## Decision rule application (to be confirmed at freeze with the selected lr)
 - Selected 1e-6 → 128 rounds.
-- Selected 2e-6 → 128 rounds at the central (×1.5) projection; the pessimistic ×2.0 case is not the planning estimate and would bind only the H arm marginally.
+- Selected 2e-6 → 128 rounds (all projections ≤ 21 GPU-h per run).
 Recipe wall limit raised from 24 h to 40 h (general max 2 days) so a slow-node run cannot time out; preemption requeue is unchanged.
