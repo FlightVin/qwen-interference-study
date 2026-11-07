@@ -162,3 +162,12 @@
 5. **Next jobs / limits.** GPU 3/3 general running; preempt 6/6 queued (0 started). H-s303 and 6 sensitivity runs wait for slots.
 6. **Most important.** Keep all three general GPUs busy (move the oldest queued primary run on each free slot); finish A6 failure inspection (agent running) and the 16,384 profile.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs; cancelled 11078412 kept in the ledger). Watcher alive (b5j64v5my).
+
+## Review 19 — 2026-11-07 21:05Z
+1. **Changes.** A8 executed: A6 closed (11078421 cancelled, cost 0; D64), D63 narrowed (D65), truncation monitor (D66), reconciliation + calibration-panel deviation note + forecast (D67), calibration checkpoints pruned (204 GB; D68), §3.7 audit complete (D69: missed opportunity 30/64, execution 6, after-correct-factoring 20, valid alternative 6, extraction 2, split-box 0). Storage released → cap 7, R-s303 released (D70).
+2. **Alignment.** Main study unchanged; sealed test untouched; A6 closed.
+3. **Mechanics.** Main runs healthy: rounds 13–26, mismatch p99 ≈ 0.11, train memory ≤ 41.6 GiB, round time 259–306 s (lengthening responses).
+4. **Confounds.** Shared hard schedule truncation R 1.0% vs U 2.3% (21 rounds): small, monitored; no 5% crossing.
+5. **Next jobs / limits.** GPU 3/3 general running; preempt 4 queued (R-s202, U-s202, H-s202, R-s303), 2 held (U-s303, H-s303). Storage 195/500 GB.
+6. **Most important.** Keep general slots filled as runs finish (~06:00Z on 8 Nov); local-update diagnostic after R-s101 round 64; test evaluations at endpoints.
+7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs). Watcher alive (b69kcksnz).

@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 20:10Z (review 18; main matrix running).
+Updated 2026-11-07 21:10Z (review 19).
 
 ## Phase
 Main study running (treatment runs started 2026-11-07 19:07Z). Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca`.
@@ -48,7 +48,7 @@ GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 ## Uncertain
 - Preempt starts remain rare (D37); wall time depends on them (3 general GPUs guaranteed).
 - Response growth at lr 2e-6 over 128 rounds: truncation per arm/role monitored (D66); the asymmetric sensitivity arm likely exceeds 5%.
-- Storage: ≤ 6 concurrent main runs (D67); 15 runs ≈ 170 GPU-h, ~57 h on 3 general GPUs alone.
+- Storage 195/500 GB; ≤ 7 concurrent main runs (D70). Responses lengthening (≈ 2,550 tokens by round 20); forecast ≈ 11–14 h per run, all 15 done ≈ 10 Nov on 3 general GPUs alone.
 
 ## Next actions
 1. Keep 3 general GPUs busy with main runs; move the oldest queued primary run on each free slot; sensitivity runs after the primary ones.
