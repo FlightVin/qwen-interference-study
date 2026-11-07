@@ -126,3 +126,12 @@
 5. **Next jobs / limits.** GPU 2/2 general, 1 pending preempt. CPU 1/30 (peek).
 6. **Most important.** On 2e-6/asym: fix the finalists (cancel 1e-6/sym s22 only if 2e-6/asym > +0.122), move 11076551 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned GPU jobs). Watcher alive (biluz30jp).
+
+## Review 15 — 2026-11-07 17:05Z
+1. **Changes.** First-stage calibration complete (D54): lr2e-6/asym +0.196 rejected (validation truncation 7.14%); finalists lr2e-6/sym (+0.146) and lr1e-6/sym (+0.122). Both seed-22 repeats running on general (11075978 since 15:24Z; 11076551 since 16:14Z). Cost estimate prepared for both outcomes (`research/evidence/cost/main_cost_estimate.md`).
+2. **Alignment.** §7 applied as written; the rejection of the highest-gain config follows the frozen truncation threshold.
+3. **Mechanics.** Main recipe wall limit raised 24 h → 40 h: the worst projected run (H arm, lr 2e-6, slow L40 node) is ~17.5–21 GPU-h, too close to 24 h.
+4. **Confounds.** H_train base responses are 1.5× longer than calibration items (2,199 vs ~1,450 tokens); H arm costs ~25% more per round than R/U (reported; equal prompt/response counts, not equal tokens, as §7 states).
+5. **Next jobs / limits.** GPU 2/2 general. Projected main study 189–264 GPU-h; T=128 under every projection (≤ 21 GPU-h per run).
+6. **Most important.** At ~18:30–19:00Z: apply §7 to the seed-22 results, fill PROTOCOL, freeze, generate recipes, launch the canary main run.
+7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (bke26mee7).
