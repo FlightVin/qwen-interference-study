@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 18:10Z (review 16).
+Updated 2026-11-07 19:30Z (calibration selected; protocol frozen; A6 recorded).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -20,6 +20,7 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 - Checkpoints: 20.6 GB, NFS ~40 MB/s → background validated writer, project-wide write lock.
 
 ## Owner amendments in force
+A6 thinking-mode baseline diagnostic (§20; D56).
 A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
 A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
 A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
@@ -32,11 +33,13 @@ GPU ceilings unchanged: 2 general, 6 preempt.
 - Targets: dev 53, test 128 (sealed file), probes J_H 32 / J_R 28 / J_U 32 — D34. Bundle `data/main_v1_manifest.json`.
 - Stage-3 baseline (D52): H mean p 0.202, mixed-group fraction 0.77; R 0.589 / U 0.569.
 
-## Calibration
-- 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49).
-- Seed 11 done (all valid): 2e-6/sym +0.146 (trunc 4.69%, D53), 1e-6/sym +0.122, 1e-6/asym +0.066, 5e-7/sym +0.031, 5e-7/asym −0.003. 2e-6/asym +0.196 rejected (trunc 7.14%). Finalists (D54): 2e-6/sym, 1e-6/sym; both seed-22 repeats running.
-- Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51). Table: `research/evidence/calibration/cal8k_summary.md`.
-- Main-run cost 12–21 GPU-h per 128-round run depending on lr (`research/evidence/cost/main_cost_estimate.md`) → T=128 under every projection.
+## Calibration and freeze (G3)
+- Selected **lr 2e-6, clip (0.2, 0.2)** by the frozen §7 rule (D57): mean gain 0.159 vs 0.106 (lr 1e-6/sym). lr2e-6/asym rejected (truncation 7.14%, D54).
+- Endpoint T=128 (≤ 21 GPU-h per run). PROTOCOL frozen. Risk: lr 2e-6 lengthens responses; truncation per arm monitored.
+- Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51).
+
+## A6 thinking-mode diagnostic (D56)
+- 80-item seeded panel (32 H, 16+16 matched R/U, 16 dev), 8 attempts per mode at cap 8,192; only `enable_thinking` changes. 16,384 profile only if thinking truncation > 5% on H or an auxiliary pool. Separate IDs and outputs; does not alter the main study.
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.

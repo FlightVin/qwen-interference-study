@@ -1,0 +1,9 @@
+b6999963e9bcc10e1c46b8992d592bd7fb337cb60204db538373d8d20ecf86ca  research/evidence/calibration/cal8k-lr1e-6-asym-s11.metrics.jsonl
+4dbc81b987d73c1e7727188f1d1a04262fcbb845fdf8392cda8bd4401bd68135  research/evidence/calibration/cal8k-lr1e-6-sym-s11.metrics.jsonl
+750f4edea6fff08cd0ed31ace003e71e96cc8a6d247121a91bc46164babcc634  research/evidence/calibration/cal8k-lr1e-6-sym-s22.metrics.jsonl
+5a5fbbd0ba8b3a5930ffbef0641dcbf9d5083d569e19f5a878dcb0bc7139bd25  research/evidence/calibration/cal8k-lr2e-6-asym-s11.metrics.jsonl
+9e09d832db5c8cc394c84fcad9c597f849ac037bae18af0160e93ba580383840  research/evidence/calibration/cal8k-lr2e-6-sym-s11.metrics.jsonl
+175b987c934f1115caeea8516a1f650b9c8faa169acb9fc8ea6fd8fd6bfeeb85  research/evidence/calibration/cal8k-lr2e-6-sym-s22.metrics.jsonl
+b42066608499a987adb61130809af0d4c10d2d57d141b8d49eee67d0cbe02eed  research/evidence/calibration/cal8k-lr5e-7-asym-s11.metrics.jsonl
+ad91b2bd63b142498bd7d320f003c2a93e4257c365aee38d7c3cc43f310c9e9f  research/evidence/calibration/cal8k-lr5e-7-sym-s11.metrics.jsonl
+a195422d2a658dd8c9272c838717258c314b537ee3aa709be25802609af112ed  research/evidence/calibration/lr1e-6-sym-s11.metrics.jsonl

@@ -48,15 +48,19 @@ Panels: calib_train 59, calib_val 56 at 8k (bundle `a90a0d71…`). Six configs l
 clip {(0.2,0.2),(0.2,0.28)}, seed 11, 32 rounds; validation 16/problem at 0/16/32; reject non-finite,
 broken verification, > 5% capped validation responses; rank by endpoint gain; top 2 repeat with seed
 22; mean gain; ties ≤ 0.01 broken lr 1e-6 > 5e-7 > 2e-6, symmetric > asymmetric; require positive mean
-gain and neither seed < baseline − 0.02. Cross-job eval noise ≈ 0.01 (D49).
-**Result: PENDING.** **Selected lr / clip: PENDING.**
+gain and neither seed < baseline − 0.02. Evaluation noise: sd ≈ 0.020 per within-run gain; cross-job reproduction partial (D50, D51).
+**Result (D54, D57):** seed 11 — lr2e-6/asym +0.196 rejected (validation truncation 7.14%); lr2e-6/sym +0.146;
+lr1e-6/sym +0.122; lr1e-6/asym +0.066; lr5e-7/sym +0.031; lr5e-7/asym −0.003. Seed 22 — lr2e-6/sym +0.172,
+lr1e-6/sym +0.090. Means 0.159 vs 0.106 (no tie). Selection computed by `src/qis/analysis/calib_select.py` in CPU job
+11078053; record `research/evidence/calibration/selection.json`.
+**Selected lr / clip: lr 2e-6, clip (0.2, 0.2).** Sensitivity clip: (0.2, 0.28).
 
 ## 7. Matrix and schedule
 Primary: H, R, U × seeds 101, 202, 303 (selected clip). Sensitivity: R, U × 3 seeds (other clip).
 Shuffled-cycle schedules (`src/qis/train/schedule.py`): R and U share the hard stream and the pair
 stream; H = common 8 hard + 8 extra hard (equal per-item exposure over cycles, so source/difficulty
 strata are represented in proportion, A4.6). All runs start from the original checkpoint.
-**Endpoint T: PENDING** (128 unless the measured cost exceeds 24 active GPU-h per run → 64 for all).
+**Endpoint T = 128** (measured-cost projection ≤ 21 GPU-h per run; `research/evidence/cost/main_cost_estimate.md`). Recipe wall 40 h.
 Dev evaluation at 0, T/4, T/2, 3T/4, T (8/problem; dev, J_R, J_U). Test at baseline and endpoint
 (32/problem), sealed until endpoint.
 
@@ -75,7 +79,10 @@ trajectories; coverage table (A5); costs. No equivalence claim from a null pilot
 ## 10. Limitations known at freeze
 H_train 46 (< 64) with 21 Omni-MATH items (distribution shift to MATH targets; transfer reported
 separately); auxiliary pools 86% authored (equal across arms); cross-job sampling nondeterminism;
-two general GPUs (preempt unavailable at design time).
+two general GPUs (preempt mostly unavailable at design time); selected lr 2e-6 lengthens responses
+(validation truncation 4.7% at 32 rounds, seed 11) — truncation per arm is monitored every round and reported;
+the asymmetric-clip sensitivity arm exceeded 5% truncation in calibration and runs as authorized.
+A6: a separate thinking-mode baseline diagnostic (D56) does not alter this protocol.
 
 ## Freeze
-PENDING — signed by commit hash when calibration and endpoint are filled.
+Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS D57 follow-up and in every main run's config `code_sha`). Main runs: `qis-main-{H,R,U}-s{101,202,303}-sym`, `qis-sens-{R,U}-s{101,202,303}-asym`, lr 2e-6, 128 rounds.

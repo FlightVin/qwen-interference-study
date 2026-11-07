@@ -435,3 +435,41 @@ unnecessary" with a measurable coverage criterion.
    technique, required count, achieved count and limitation, then proceed under the dataset
    viability rules. The coverage table goes in the final report. If treatment has started, audit
    the frozen pools without changing membership or restarting runs.
+
+## 20. Amendment A6 (owner, 2026-11-07): thinking-mode baseline diagnostic
+
+Recorded faithfully from the owner's message of 2026-11-07 (~19:05Z). It adds a diagnostic; it does
+not change the validated non-thinking study, which continues unchanged with its hourly review.
+
+Reason. Qwen3-1.7B was distilled in both thinking and non-thinking modes (Qwen3 Technical Report,
+§4.5). The aim is to test whether mode choice changes task difficulty, failure modes, and the scope
+of the transfer result.
+
+1. **Panel.** Run a small baseline comparison on available project GPU capacity. Before seeing
+   results, select a fixed, seeded panel of 80 distinct problems: 32 from H_train (stratified by
+   source and factoring technique), 16 related auxiliary, 16 matched unrelated auxiliary, and 16 hard
+   development items. Leave the sealed test set untouched. Use eight attempts per item per mode.
+   Reuse non-thinking baseline attempts only if panel, checkpoint, decoding, cap and
+   attempt-selection rule are compatible.
+2. **Same-cap comparison first.** Compare modes at the same 8,192-token response cap. Change only
+   `enable_thinking`; keep the same problem prompt, sampling parameters and verifier. Verify the
+   rendered templates. In thinking mode, reasoning and final-answer tokens both count against the
+   cap. Grade only the final answer after the reasoning segment. Test that a boxed candidate inside
+   the reasoning cannot earn reward and that an incomplete response receives the existing
+   truncation treatment.
+3. **Report**, by pool: paired item-level changes in pass@1, mixed-reward group frequency,
+   truncation, response lengths and GPU cost. Show whether related and unrelated practice remain
+   difficulty-matched and whether the original hard pool still gives occasional successes. Inspect a
+   fixed sample of failures for whether the focal factoring operation is still implicated. Eight
+   attempts per item suffice for this aggregate screen; do not use them to reclassify individual
+   items into the original 32-attempt difficulty bands.
+4. **Longer cap, only if needed.** If thinking-mode truncation exceeds 5% on the hard panel or in
+   either auxiliary pool, profile a 16,384-token cap on the same panel. If it still binds, profile a
+   longer cap only if the pinned model context and measured single-GPU memory permit. Configure the
+   serving context for prompt plus response. Report the same-cap comparison separately from any
+   longer-budget result, since the latter changes both mode and available compute.
+5. **Decision use.** Use the results to judge whether a separate thinking-mode transfer study is
+   warranted. Before launching one: re-screen and match the pools under its chosen mode and cap,
+   repeat optimizer calibration, and demonstrate acceptable truncation after 32 RL rounds; monitor
+   length and truncation by arm thereafter. Keep distinct manifests, run IDs and results for the two
+   modes. Continue the existing study and its hourly review while this diagnostic runs.

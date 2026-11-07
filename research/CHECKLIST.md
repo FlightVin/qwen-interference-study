@@ -10,6 +10,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 0.4 No treatment change after freeze because of interim curves; corrections apply to all affected conditions.
 - 0.5 Record consequential decisions (evidence, action, runs, interpretation) in `research/DECISIONS.md`.
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
+- 0.12 Amendment A6 (2026-11-07, `project.md` §20): thinking-mode baseline diagnostic on an 80-item seeded panel (32 H stratified by source × technique, 16 R + 16 matched U, 16 dev; sealed test untouched), 8 attempts per item per mode; same cap 8,192 first, only `enable_thinking` changes; reasoning + answer count against the cap; grade only the final answer after reasoning (tests); report per pool; 16,384 profile only if thinking truncation > 5%; separate thinking study only after re-screen, matching, calibration and a 32-round truncation check; distinct manifests/run IDs; main study and hourly review continue.
 - 0.11 Amendment A5 (2026-11-07, `project.md` §19): technique coverage — primary technique per H_train/E_related item (F1–F8, frozen); each technique ≥ 10% of H_train needs E_related share ≥ ½ of it (ceil to whole items); check after R/U matching; repair via authorized E_related selection/augmentation only, re-match; H_train fixed; residual shortfall recorded; table in report.
 - 0.10 Amendment A4 (2026-11-07, `project.md` §18): H_train via full native stage 2 (184 candidates, ≤5,888 attempts), core 2–8/32 + moderate 9–12/32, target 64 (≥½ core), proceed at 48–64; else Omni-MATH tranche (≤200), smaller pilot with uniform endpoint shortening, or one authored tranche; one H_train manifest; decisions before treatment outcomes.
 - 0.9 Amendment A3 (2026-11-07, `project.md` §17): ≤30 CPUs total on `preempt_cpu_qos`; enforced by `ops/qis-submit`.
@@ -62,8 +63,15 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
 - 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Done: 11074527 (5e-7/sym, +0.031), 11074520 (1e-6/sym, +0.122), 11074526 (5e-7/asym, −0.003), 11074519 (1e-6/asym, +0.066). 11074522 (2e-6/sym, +0.146, trunc 4.69%). 11074521 (2e-6/asym, +0.196 but trunc 7.14% → rejected, D54). 4,096 jobs 11072991–11072999 superseded (D45).
-- 5.2 active — selection by `qis-calib-select` CPU job (D55). Seed 22: 1e-6/sym running (11075978, D51); 2e-6/sym (11076551, D53) moved to general. Finalists fixed (D54): 2e-6/sym, 1e-6/sym. Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
-- 5.3 active — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
+- 5.2 done (D57: lr 2e-6 / sym selected; job 11078053) — selection by `qis-calib-select` CPU job (D55). Seed 22: 1e-6/sym running (11075978, D51); 2e-6/sym (11076551, D53) moved to general. Finalists fixed (D54): 2e-6/sym, 1e-6/sym. Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
+- 5.3 done (D57: T=128; PROTOCOL frozen) — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
+
+## 6A. A6 thinking-mode diagnostic (owner amendment, project.md §20; D56)
+- 6A.1 active — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
+- 6A.2 pending — Same-cap run (8,192): both modes, 8 attempts, template check; report per pool: paired Δpass@1, mixed-group frequency, truncation, lengths, GPU cost; R vs U match; H occasional successes.
+- 6A.3 pending — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
+- 6A.4 conditional — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
+- 6A.5 pending — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6. Main runs (after G3)
 - 6.1 pending — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.

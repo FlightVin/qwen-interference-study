@@ -1,0 +1,88 @@
+{
+ "seed11": {
+  "lr5e-7-asym": {
+   "base": 0.48660714285714285,
+   "end": 0.48325892857142855,
+   "gain": -0.0033482142857143016,
+   "trunc_max": 0.006696428571428571,
+   "valid": true,
+   "reasons": []
+  },
+  "lr5e-7-sym": {
+   "base": 0.4486607142857143,
+   "end": 0.4799107142857143,
+   "gain": 0.03125,
+   "trunc_max": 0.004464285714285714,
+   "valid": true,
+   "reasons": []
+  },
+  "lr2e-6-sym": {
+   "base": 0.48660714285714285,
+   "end": 0.6328125,
+   "gain": 0.14620535714285715,
+   "trunc_max": 0.046875,
+   "valid": true,
+   "reasons": []
+  },
+  "lr1e-6-sym": {
+   "base": 0.43861607142857145,
+   "end": 0.5602678571428571,
+   "gain": 0.12165178571428564,
+   "trunc_max": 0.011160714285714286,
+   "valid": true,
+   "reasons": []
+  },
+  "lr2e-6-asym": {
+   "base": 0.48660714285714285,
+   "end": 0.6830357142857143,
+   "gain": 0.19642857142857145,
+   "trunc_max": 0.07142857142857142,
+   "valid": false,
+   "reasons": [
+    "truncation 0.0714 > 0.05"
+   ]
+  },
+  "lr1e-6-asym": {
+   "base": 0.48660714285714285,
+   "end": 0.5524553571428571,
+   "gain": 0.06584821428571425,
+   "trunc_max": 0.014508928571428572,
+   "valid": true,
+   "reasons": []
+  }
+ },
+ "ranking": [
+  "lr2e-6-sym",
+  "lr1e-6-sym",
+  "lr1e-6-asym",
+  "lr5e-7-sym",
+  "lr5e-7-asym"
+ ],
+ "finalists": [
+  "lr2e-6-sym",
+  "lr1e-6-sym"
+ ],
+ "finalist_results": [
+  {
+   "config": "lr2e-6-sym",
+   "gain11": 0.14620535714285715,
+   "gain22": 0.17187499999999994,
+   "mean": 0.15904017857142855,
+   "seed22_valid": true,
+   "seed22_reasons": [],
+   "gate": true
+  },
+  {
+   "config": "lr1e-6-sym",
+   "gain11": 0.12165178571428564,
+   "gain22": 0.09040178571428575,
+   "mean": 0.1060267857142857,
+   "seed22_valid": true,
+   "seed22_reasons": [],
+   "gate": true
+  }
+ ],
+ "status": "selected",
+ "selected": "lr2e-6-sym",
+ "tie": false
+}
