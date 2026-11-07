@@ -1,0 +1,8 @@
+nas5:/srv/nfs/data/user_data/vineethb  500G  374G  127G  75% /data/user_data/vineethb
+240G	/data/user_data/vineethb/qis/ckpt
+77M	/data/user_data/vineethb/qis/runs
+50M	/data/user_data/vineethb/qis/screen
+3.5M	/data/user_data/vineethb/qis/a6
+1.0K	/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym
+40G	/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym
+20G	/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym

@@ -48,10 +48,10 @@ GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 ## Uncertain
 - Preempt starts remain rare (D37); wall time depends on them (3 general GPUs guaranteed).
 - Response growth at lr 2e-6 over 128 rounds: truncation per arm/role monitored (D66); the asymmetric sensitivity arm likely exceeds 5%.
-- Calibration panels 59/56 vs the §3 "64 per calibration split" minimum: documentation pending (A8.5).
+- Storage: ≤ 6 concurrent main runs (D67); 15 runs ≈ 170 GPU-h, ~57 h on 3 general GPUs alone.
 
 ## Next actions
 1. Keep 3 general GPUs busy with main runs; move the oldest queued primary run on each free slot; sensitivity runs after the primary ones.
-2. A8 CPU tasks (job 11078552): §3.7 audit sample → reviewer annotation; reconciliation counts; truncation monitor; storage.
+2. §3.7 audit: 64-attempt sample exported (job 11078552) → reviewer annotation. Reconciliation done (D67). Truncation monitor each hourly review.
 3. Local-update diagnostic when R-s101 reaches round 64; sealed test evaluation at each endpoint (never used for training decisions).
 4. Prespecified analysis → figures → REPORT, independent recomputation, audit.

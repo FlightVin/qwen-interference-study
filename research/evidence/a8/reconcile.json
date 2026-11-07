@@ -1,0 +1,39 @@
+{
+ "native": {
+  "stage2_4k_items": 184,
+  "n32_each": [
+   32
+  ],
+  "excluded_by_4k_score_c_gt_12": 117,
+  "4k_c_le_12": 67,
+  "rescreened_8k_32_fresh": 55,
+  "rescreened_8k_n": [
+   32
+  ],
+  "le12_not_rescreened_(annotation_ineligible)": 12,
+  "rescreened_with_4k_c_gt_12_(should_be_0)": 0,
+  "omni_rescreened_8k": 52,
+  "selected_H_train_native": 25
+ },
+ "calib_train": {
+  "screened_8k": 200,
+  "low_1_5": 22,
+  "high_6_12": 37,
+  "zero": 7,
+  "above_12": 134,
+  "unknown_attempts": 0
+ },
+ "calib_val": {
+  "screened_8k": 200,
+  "low_1_5": 21,
+  "high_6_12": 35,
+  "zero": 15,
+  "above_12": 129,
+  "unknown_attempts": 0
+ },
+ "frozen_panels_in_panels_json": {},
+ "frozen_calib_bundle": {
+  "calib_train": 59,
+  "calib_val": 56
+ }
+}

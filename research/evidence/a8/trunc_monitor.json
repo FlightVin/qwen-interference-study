@@ -1,0 +1,194 @@
+{
+ "runs": {
+  "qis-main-H-s101-sym": {
+   "rounds_logged": 3,
+   "last_round": 2,
+   "cumulative": {
+    "hard": {
+     "capped": 0,
+     "total": 384,
+     "frac": 0.0
+    },
+    "hard_common": {
+     "capped": 0,
+     "total": 192,
+     "frac": 0.0
+    },
+    "hard_extra": {
+     "capped": 0,
+     "total": 192,
+     "frac": 0.0
+    }
+   },
+   "last_round_counts": {
+    "hard": [
+     0,
+     128
+    ],
+    "hard_common": [
+     0,
+     64
+    ],
+    "hard_extra": [
+     0,
+     64
+    ]
+   },
+   "evals": [
+    {
+     "panel": "dev",
+     "round": 0,
+     "pass1": 0.4221698113207547,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_R",
+     "round": 0,
+     "pass1": 0.8169642857142857,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_U",
+     "round": 0,
+     "pass1": 0.81640625,
+     "truncated": 0.0,
+     "unknown": 0
+    }
+   ]
+  },
+  "qis-main-R-s101-sym": {
+   "rounds_logged": 16,
+   "last_round": 15,
+   "cumulative": {
+    "hard": {
+     "capped": 7,
+     "total": 1024,
+     "frac": 0.0068359375
+    },
+    "hard_common": {
+     "capped": 7,
+     "total": 1024,
+     "frac": 0.0068359375
+    },
+    "aux": {
+     "capped": 0,
+     "total": 2048,
+     "frac": 0.0
+    }
+   },
+   "last_round_counts": {
+    "hard": [
+     3,
+     64
+    ],
+    "hard_common": [
+     3,
+     64
+    ],
+    "aux": [
+     0,
+     128
+    ]
+   },
+   "evals": [
+    {
+     "panel": "dev",
+     "round": 0,
+     "pass1": 0.4221698113207547,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_R",
+     "round": 0,
+     "pass1": 0.8169642857142857,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_U",
+     "round": 0,
+     "pass1": 0.81640625,
+     "truncated": 0.0,
+     "unknown": 0
+    }
+   ]
+  },
+  "qis-main-U-s101-sym": {
+   "rounds_logged": 11,
+   "last_round": 10,
+   "cumulative": {
+    "hard": {
+     "capped": 0,
+     "total": 704,
+     "frac": 0.0
+    },
+    "hard_common": {
+     "capped": 0,
+     "total": 704,
+     "frac": 0.0
+    },
+    "aux": {
+     "capped": 0,
+     "total": 1408,
+     "frac": 0.0
+    }
+   },
+   "last_round_counts": {
+    "hard": [
+     0,
+     64
+    ],
+    "hard_common": [
+     0,
+     64
+    ],
+    "aux": [
+     0,
+     128
+    ]
+   },
+   "evals": [
+    {
+     "panel": "dev",
+     "round": 0,
+     "pass1": 0.4221698113207547,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_R",
+     "round": 0,
+     "pass1": 0.8169642857142857,
+     "truncated": 0.0,
+     "unknown": 0
+    },
+    {
+     "panel": "probe_J_U",
+     "round": 0,
+     "pass1": 0.81640625,
+     "truncated": 0.0,
+     "unknown": 0
+    }
+   ]
+  }
+ },
+ "R_vs_U_shared_hard": {
+  "main-s101-sym": {
+   "common_rounds": 11,
+   "R": {
+    "capped": 3,
+    "total": 704,
+    "frac": 0.004261363636363636
+   },
+   "U": {
+    "capped": 0,
+    "total": 704,
+    "frac": 0.0
+   }
+  }
+ },
+ "flags_over_5pct": []
+}
