@@ -53,3 +53,36 @@ A fresh-context agent labels the selected items from this rubric alone, without 
 confidence or any screening or treatment outcome. Disagreements on `label`, `direct_practice` or
 `modular` are resolved by a third read that sees both rationales; unresolved items are excluded.
 Agent annotation is reported as "agent-annotated and audited", not human-reviewed.
+
+## Amendment v1.1 (2026-11-07, before any screening or model outcome)
+
+**Why.** Pass 1 (1,496 items) showed (a) the v1 role rule gives only 69 E_related candidates in
+the construction split, too few to reach 64 after the 12–24/32 band and matching; and (b)
+annotators split on edge cases the v1 text left open. The change uses annotation counts only;
+no screening or treatment outcome existed. Pass-1 labels are kept unchanged; pass 2 and the
+resolution read apply v1.1.
+
+### Role pools (replace the v1 table)
+| pool | subjects | rule |
+|---|---|---|
+| H candidates (H_train, target_dev, target_test) | algebra, intermediate_algebra | `central`, `direct_practice = no`, MATH level 4–5 |
+| E_related candidates | algebra, intermediate_algebra | `central`, `direct_practice = yes`, any level |
+| E_unrelated candidates | number_theory | `modular = yes`, focal label `absent` |
+
+Roles are disjoint by `direct_practice`. Hard items use factoring as a step inside a larger
+derivation; related items practise factoring directly.
+
+### Edge-case clarifications (apply to pass 2 and resolution)
+| case | label |
+|---|---|
+| Polynomial built from known roots, then only expanded or matched to coefficients | `absent` |
+| Product form built from roots (factor theorem) and itself evaluated to give the answer | `central` |
+| Factor theorem used only as a root/divisibility test, no factorization | `absent` |
+| Product already given in the problem; only sign analysis or cancellation | `absent` |
+| Identity used in the multiplying direction (e.g. (z−1)(z²+z+1)=z³−1 to get z³) | `absent` |
+| Constant pulled out only to complete the square | `incidental` |
+| Factoring replaceable by a one-line direct computation (square root, Vieta sum/product) | `incidental` |
+| Simon's Favorite Factoring Trick on a polynomial expression | `central` |
+| Difference of squares / grouping on plain numbers | `incidental` |
+| Word problem whose core is one polynomial equation solved by factoring | `direct_practice = no` |
+| Bare task: factor, solve a polynomial equation or inequality, simplify a rational expression | `direct_practice = yes` |
