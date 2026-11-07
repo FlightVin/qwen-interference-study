@@ -114,3 +114,25 @@ judged by family counts and by near-duplicate groups).
 | F7 sign analysis | x² − x − 6 < 0 → (x−3)(x+2) < 0 → −2 < x < 3 |
 | F8 other | name the operation in `family_note` |
 Primary = the factoring operation doing the main work; secondary = other factoring operations used.
+
+## Amendment v1.3 (owner instruction 2026-11-07): primary operation vs surrounding steps (A5 tagging)
+Applies identically to H_train and E_related. Supersedes the v1.2 primary-family assignment for
+the A5 coverage calculation (v1.2 families remain as recorded descriptions).
+
+**Primary tag = the specific factoring operation that does the main work:**
+| tag | operation | representative worked step |
+|---|---|---|
+| F1 | quadratic trinomial factored (in any variable or expression) | x⁴ − 5x² + 4: with u = x², u² − 5u + 4 = (u−1)(u−4) → primary F1, step `substitution` |
+| F2 | special product: difference of squares, sum/difference of cubes, perfect square recognised as a product | x⁴ − 16 = (x²−4)(x²+4) = (x−2)(x+2)(x²+4) |
+| F3 | grouping, including Simon's Favorite Factoring Trick | xy + 3x + 2y + 6 = (x+2)(y+3) |
+| F4 | factor theorem: a root r is established (found, given, or tested) and the factor (x − r) is extracted, by division, synthetic division or matching | p(x) = x³ − 6x² + 11x − 6, p(1) = 0 → p(x) = (x−1)(x² − 5x + 6) |
+| F8 | other factoring operation (e.g. common-factor extraction that does the main work); name it | 6x³ − 9x² = 3x²(2x − 3) = 0 |
+
+**F5 (substitution) is not a primary operation.** Definition: replacing an expression (x², 2^x,
+x + 1/x, √x, …) by a new variable so that a polynomial in that variable appears. Representative
+step: 4^x − 5·2^x + 4 = 0, u = 2^x → u² − 5u + 4 = 0. The factoring that follows gets the primary
+tag (here F1); `substitution` is a step tag.
+
+**Step tags (record all that apply; descriptive, not used for quotas):** `substitution`,
+`rational_simplification` (cancel common factors, domain, holes, asymptotes), `sign_analysis`
+(inequalities from factor signs), `zero_product`, `root_reading`, `partial_fractions`, `other`.

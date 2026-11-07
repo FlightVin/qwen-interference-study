@@ -16,7 +16,7 @@ file is a working draft. The canonical instruction remains root `project.md` (§
   one frozen H_train manifest for all arms, H-only extra prompts balanced by source/difficulty.
 
 ## Technique coverage rule (A5, `project.md` §19)
-Techniques = rubric v1.2 families F1–F8 (`research/RUBRIC.md`), frozen with this protocol. Each
+Techniques = rubric v1.3 primary operations F1, F2, F3, F4, F8 (`research/RUBRIC.md`); substitution, rational simplification and sign analysis are step tags (owner rule, D30). Each
 H_train and E_related item has one primary technique (main factoring operation in the reference
 solution) plus optional secondary tags (descriptive only). After R/U matching: for every technique
 with ≥ 10% of H_train, require count_R ≥ ceil(0.5 · share_H · |E_related|). Repair only by
