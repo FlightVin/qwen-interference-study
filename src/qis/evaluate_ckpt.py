@@ -59,19 +59,23 @@ def main():
     sc = ver.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
                      "truncated": o["finish"] == "length"} for it, g in zip(items, outs) for o in g])
     per, k, unknown, toks = [], 0, 0, 0
+    c8 = []          # A10: success with completion required within 8,192 tokens (same traces)
     with gzip.open(os.path.join(a.out, "records.jsonl.gz"), "wt") as f:
         for it, g, s in zip(items, outs, req):
-            c = 0
+            c, c_8k = 0, 0
             for j, o in enumerate(g):
                 r = sc[k]; k += 1
                 unknown += r["status"] == UNKNOWN; c += r["reward"] == 1; toks += len(o["ids"])
+                c_8k += r["reward"] == 1 and len(o["ids"]) <= 8192
                 f.write(json.dumps({"prompt_id": it["id"], "seed": s, "sample": j, "n_tokens": len(o["ids"]),
                                     "finish": o["finish"], "extracted": r["extracted"], "status": r["status"],
                                     "reward": r["reward"], "ids": o["ids"]}) + "\n")
-            per.append({"id": it["id"], "c": c, "n": a.n})
+            per.append({"id": it["id"], "c": c, "c_within_8192": c_8k, "n": a.n})
     summ = {"ckpt": a.ckpt, "ckpt_model_sha256": ck_hash, "panel": a.panel_key, "n": a.n, "problems": len(items),
             "pass1": float(np.mean([p["c"] / a.n for p in per])),
             "pass8": float(np.mean([grpo.pass_at_k(a.n, p["c"], 8) for p in per])),
+            "pass1_within_8192": float(np.mean([p["c_within_8192"] / a.n for p in per])),
+            "over_8192": sum(len(o["ids"]) > 8192 for g in outs for o in g) / (a.n * len(items)), "max_tokens": a.max_tokens,
             "truncated": sum(o["finish"] == "length" for g in outs for o in g) / (a.n * len(items)),
             "unknown": unknown, "tokens": toks, "seconds": time.time() - t0, "seed_label": a.seed_label,
             "per_problem": per}
