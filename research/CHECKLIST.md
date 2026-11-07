@@ -32,8 +32,8 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.1 done — Split manifest `splits-v1` (sha256 `6580712d…`): 12,500 items, 344 duplicate pairs, 87 train items excluded as test overlaps; construction 4,458 / study_dev 1,478 / calib_train 750 / calib_val 727 / test 5,000. Gold: 12,495 eligible, 2 no box, 3 verifier-unknown. 11/11 tests passed (`qis-data-v1`, job 11072095).
 - 3.2 done — Rubric v1 `research/RUBRIC.md`.
 - 3.3 done — Annotation pass 1: 1,496 items → `data/annotations/pass1.jsonl` (batches 2, 5 redone after contamination, D13). Rubric v1.1 roles (D16): construction H 154, E_related 110, E_unrelated 152; target_dev 63; target_test 209.
-- 3.4 active — Length probe `qis-lenprobe-v1` (11072430): 64 hard-like construction items × 16 at 4096 and 8192.
-- 3.5 pending — Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
+- 3.4 done — Length probe 11072430: truncation 2.83% at 4096, 0% at 8192, success identical (0.6406) → cap 4096 frozen (D18). H reserve tranche pre-registered (D19).
+- 3.5 active — stage 1 running: study pools 11072609 (general), calibration 11072610 (preempt). Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
 - 3.6 pending — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
 - 3.7 pending — Error audit: ≤64 incorrect screening attempts on H candidates.
 - 3.8 pending — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
@@ -45,11 +45,11 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 ## 4. Trainer (gate G2: correctness tests of project.md §8)
 - 4.1 done — Custom single-GPU trainer, verl as reference (D10, D11). Code: `src/qis/train/`.
 - 4.2 done — GPU probe 11072268 (RTX 6000 Ada): template fixture ok; 1,721 tok/s at 32 seqs; step 13.3 s/32 responses; logprob |Δ| p99 0.127 (BF16 head); ckpt 20.6 GB, write 512 s → background writer added.
-- 4.3 done (CPU part) — 29/29 (`qis-env-v1b`): advantages, clip cases, accumulation, verl parity, minibatch balance, schedules, verifier, splits. GPU part in 4.4–4.7. Unit tests: template/mask/EOS, group boundaries, zero advantages, population std, loss reduction + accumulation, all-param trainability, 4 steps/round, balanced minibatches, signed objective.
+- 4.3 done (CPU part) — 30/30 (job 11072715, incl. exact checkpoint checksum): advantages, clip cases, accumulation, verl parity, minibatch balance, schedules, verifier, splits. GPU part in 4.4–4.7. Unit tests: template/mask/EOS, group boundaries, zero advantages, population std, loss reduction + accumulation, all-param trainability, 4 steps/round, balanced minibatches, signed objective.
 - 4.4 pending — Rollout vs teacher-forced logprob agreement; update changes the rollout model.
-- 4.5 active — (`qis-trainer-smoke-v1` 11072428, with 4.4 and 4.7) Interruption + resume test vs uninterrupted short run; repeated-seed variation.
+- 4.5 active — (`qis-trainer-smoke-v1` 11072622, with 4.4 and 4.7; attempts: 11072408 cancelled before start [skipped precheck]; 11072428 failed 6 min [float64 checksum order-dependence]; 11072527 failed 7 min [audit OOM]; 11072622 current) Interruption + resume test vs uninterrupted short run; repeated-seed variation.
 - 4.6 pending — Profile a real round; checkpoint size/write time; telemetry overhead <3%.
-- 4.7 pending — (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
+- 4.7 done (pending harvest of table) — job 11072622: restart weights + moments bit-exact, updates accumulate. (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
 - **G2** — all tests pass on the pinned backend.
 
 ## 5. Calibration and freeze (gate G3)

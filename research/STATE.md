@@ -1,43 +1,37 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 03:10Z (review 1).
+Updated 2026-11-07 03:45Z (verified against Slurm and saved results).
 
 ## Phase
-Setup → data construction and trainer implementation (in parallel). No GPU training yet.
+Dataset construction (stage-1 screening) and trainer gate G2, in parallel. No training run yet.
 
 ## Question
 Does easier practice on polynomial factorization (E_related) improve GRPO learning on hard MATH
 problems that use it, compared with matched modular-arithmetic practice (E_unrelated)?
-Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-1.7B, non-thinking.
+Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @ `70d244cc`, non-thinking.
 
-## Established
-- Harness isolated and self-tested (2026-11-07). Account limits verified (harness `cluster/CARD.md`).
-- Pinned data: `EleutherAI/hendrycks_math` @ `21a56338` (7,500 train / 5,000 test).
-- Keyword estimate: ~564 algebra/intermediate-algebra train items mention factoring; ~264
-  number-theory train items are modular without factoring. Role pools may be tight for H (2–8/32).
+## Established (evidence in CHECKLIST)
+- Environment `venv-v1`: verl 0.9.0 (reference only), vLLM 0.31.0, torch 2.13.0+cu130, transformers 5.10.4, math-verify 0.9.0. CPU tests 30/30 (job 11072715).
+- Data: MATH @ `21a56338`, split manifest sha `6580712d…`; pass-1 annotation of 1,496 items; rubric v1.1 roles (D16).
+- Response cap frozen at 4,096 tokens (D18): 2.83% truncation, no reward change at 8,192.
+- Trainer (D10, D11): custom single-GPU GRPO, verl-parity of the loss reduction tested.
+- Precision audit (A1) passed on job 11072622: restart weights and AdamW moments bit-exact after reload; repeated updates accumulate. Full table pending harvest.
+- Checkpoints: 20.6 GB, NFS ~40 MB/s → background validated writer, project-wide write lock.
 
-- Env `venv-v1` built; split manifest `splits-v1` built; verifier/split tests 11/11 passed.
-- Trainer design (D10): custom single-GPU GRPO; verl 0.9.0 deviates from our spec in advantage std, dual-clip, minibatch order, truncation visibility.
-- Owner addendum A1 (2026-11-07): precision audit at gate G2; four report figures incl. POPE-style J trajectories on fixed probe panels. No existing run affected.
-
-- Owner addendum A2 (2026-11-07): 64 aux pairs is a target, not a hard minimum; synthetic supplementation allowed under rules; choice frozen before treatment outcomes.
+## Owner amendments in force
+A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
+A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
+GPU ceilings unchanged: 2 general, 6 preempt.
 
 ## Uncertain
-- Whether ≥64 H_train items reach 2–8/32 success (Qwen3-1.7B solves many MATH algebra items).
-- Whether full-parameter GRPO with colocated vLLM fits one 48 GB GPU.
-
-## Resource facts
-- Another project uses 6 general GPUs. Owner amendment A3: this project may use up to 30 CPUs
-  on `preempt_cpu_qos`. General GPU slots (2) have started within ~1 min so far.
-
-## Active / queued owned jobs
-See `slurm-agentic-engineering/bin/ae status` (env build `qis-env-v1`, data build `qis-data-v1`).
-
-- Pass-1 annotation done; rubric v1.1 roles give construction pools H 154 / R 110 / U 152 (pre-screening).
-- GPU probe passed; checkpoints are 20.6 GB and NFS writes ~40 MB/s → background validated writer; one validated + one in-flight checkpoint per run (storage).
+- H_train: length-probe projection ~30 items in 2–8/32 from 154 level-4–5 candidates (< 64 hard
+  minimum). Reserve tranche of 30 level-3 items pre-registered (D19). Stage 1 decides.
+- E_related: 110 candidates; may fall short of 64 pairs after band + matching (A2 options apply).
+- Round time and memory of a real 128-response round (smoke run A in progress).
 
 ## Next actions
-1. Length probe → freeze response cap → stage-1 screening (study pools + calibration subsets).
-2. Trainer smoke (G2): precision audit, resume equality, real-round profile.
-3. Pass-2 blind annotation on screened/selected items; error audit; matching.
+1. Stage-1 results (job 11072609) → shortlist → stage-2 (32 samples) on GPU.
+2. Smoke run A/B (job 11072622) → G2 decision; profile round time; cost estimate.
+3. Calibration screening (job 11072610, preempt): move to general if not started by 03:52Z.
+4. Pass-2 blind annotation on shortlisted items (CPU-free; agents, isolated directories).
