@@ -9,7 +9,8 @@ import json
 import os
 
 BANDS = {"hard": (0, 5), "hard_reserve": (0, 5), "related": (4, 14), "unrelated": (4, 14),
-         "auth_related": (4, 14), "auth_unrelated": (4, 14)}
+         "auth_related": (4, 14), "auth_unrelated": (4, 14),
+         "auth2_related": (4, 14), "auth2_unrelated": (4, 14)}
 TARGET = {k: 128 for k in BANDS}
 
 
