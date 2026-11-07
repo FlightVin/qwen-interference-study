@@ -40,7 +40,7 @@ GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 - Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51).
 
 ## A6 thinking-mode diagnostic (D56)
-- Same-cap (8,192) result (D62): thinking raises pass@1 by +0.23–0.25 in every pool, but truncates 51.6% of H and 46% of dev responses; auxiliary practice becomes near-trivial (0.97–0.98; mixed groups 13–25%); R/U stay matched; 5.5–8.1× GPU time. 16,384 profile queued (11078421). Failure inspection in progress.
+- Same-cap (8,192) result (D62): thinking raises pass@1 by +0.23–0.25 in every pool, but truncates 51.6% of H and 46% of dev responses; auxiliary practice becomes near-trivial (0.97–0.98; mixed groups 13–25%); R/U stay matched; 5.5–8.1× GPU time. 16,384 profile queued (11078421). Failures (D63): non-thinking fails at the factoring step (11/16); thinking at 8,192 mostly truncates after doing it (10/16).
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.

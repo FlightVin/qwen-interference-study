@@ -70,7 +70,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 ## 6A. A6 thinking-mode diagnostic (owner amendment, project.md §20; D56)
 - 6A.1 done — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
 - 6A.2 done (D62; job 11078115) — Same-cap run (8,192): both modes, 8 attempts, template check; report per pool: paired Δpass@1, mixed-group frequency, truncation, lengths, GPU cost; R vs U match; H occasional successes.
-- 6A.3 active (agent annotation of 32 records) — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
+- 6A.3 done (D63) — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
 - 6A.4 active (triggered: H truncation 51.6%; job 11078421 queued) — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
 - 6A.5 pending — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
