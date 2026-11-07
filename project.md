@@ -547,7 +547,7 @@ metrics through rounds 13–26 of the three seed-101 runs, and truncation counts
    diagnostics clearly identified. Preserve the primary comparison and its verification ahead of secondary figures.
 Continue autonomously within 3 general and 6 preempt GPUs; no further approval needed for this reduced plan.
 
-## 24. Amendment A10 (owner, received 2026-11-07 ~22:35Z): 8k-to-16k response budget
+## 24. Amendment A10 (owner, received 2026-11-07 ~22:22Z): 8k-to-16k response budget
 
 Recorded faithfully from the owner's message. Raise the response budget of the six primary non-thinking runs to
 16,384 generated tokens (prompt cap 1,024 unchanged; six-run scope, GPU ceilings and the 2026-11-10 09:30 Eastern
