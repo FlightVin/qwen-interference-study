@@ -28,8 +28,8 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-
 - Whether full-parameter GRPO with colocated vLLM fits one 48 GB GPU.
 
 ## Resource facts
-- Another project uses 6 general GPUs and ~62/64 account CPUs on `preempt_cpu_qos`.
-  Our CPU jobs run at 2 CPUs; general GPU slots (2) start within ~1 min.
+- Another project uses 6 general GPUs. Owner amendment A3: this project may use up to 30 CPUs
+  on `preempt_cpu_qos`. General GPU slots (2) have started within ~1 min so far.
 
 ## Active / queued owned jobs
 See `slurm-agentic-engineering/bin/ae status` (env build `qis-env-v1`, data build `qis-data-v1`).

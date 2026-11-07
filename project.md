@@ -368,3 +368,9 @@ Recorded faithfully from the owner's message of 2026-11-07, before any treatment
   manifests before examining treatment outcomes.
 - Supersedes, for the auxiliary pools only, the §5 sentence "Minimum for launching the main
   study: … 64 per auxiliary pool"; the other minima stand.
+
+## 17. Amendment A3 (owner, 2026-11-07): CPU allowance
+
+"You are allowed to use 30 CPUs from the CPU-only queue since my other project has relinquished
+some of its capacity." This project may hold up to 30 CPUs in total on `preempt_cpu_qos`
+(all owned nonterminal CPU jobs together). GPU ceilings are unchanged.
