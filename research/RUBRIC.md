@@ -86,3 +86,18 @@ derivation; related items practise factoring directly.
 | Difference of squares / grouping on plain numbers | `incidental` |
 | Word problem whose core is one polynomial equation solved by factoring | `direct_practice = no` |
 | Bare task: factor, solve a polynomial equation or inequality, simplify a rational expression | `direct_practice = yes` |
+
+## Amendment v1.2 (2026-11-07): solution-structure families (A4.2; before any stage-2 count was viewed)
+Each hard candidate gets one primary `family`, from the reference solution's factorization step:
+| family | structure |
+|---|---|
+| F1 | quadratic trinomial factored, then zero-product / roots |
+| F2 | special products: difference of squares, sum/difference of cubes |
+| F3 | grouping, including Simon's Favorite Factoring Trick |
+| F4 | factor theorem / known root / synthetic division / rational-root search on degree ≥ 3 |
+| F5 | substitution: polynomial in an expression (x², 2^x, x+1/x, …), then factored |
+| F6 | rational-expression simplification, cancellation, domain or asymptote from factors |
+| F7 | polynomial inequality or sign analysis from factors |
+| F8 | other (name it) |
+Minor wording or number variants of one problem template count as one family member (diversity is
+judged by family counts and by near-duplicate groups).
