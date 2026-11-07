@@ -90,3 +90,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt 0 starts; `/data/user_data` 163/500 GB used (account-wide). Harness quirk: `ae harvest` waits while `squeue` still shows COMPLETING after `sacct` reports COMPLETED; read the distillate directly or harvest later.
 6. **Most important.** Same critical path: both asym runs end ~13:30Z → move the 2e-6 pair to general at once.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b87y26pwf).
+
+## Review 11 — 2026-11-07 13:05Z
+1. **Changes.** Two more calibration runs done: 5e-7/asym −0.003 (11074526), 1e-6/asym +0.066 (11074519); all four finished runs valid. 2e-6/sym (11074522) running on general; 2e-6/asym (11074521) moved to general. Seed-22 repeat of 1e-6/sym queued on preempt (11075978, D51).
+2. **Alignment.** Selection waits for all six seed-11 runs, per §7. The early seed-22 queueing uses idle preempt budget and changes no rule.
+3. **Mechanics.** Healthy runs: device memory ≤ 42.2 GiB, validation truncation ≤ 1.45%, 0 unknown verifier results.
+4. **Confounds.** Eval reproduction across jobs is partial (56/56 identical in one pair, 8/56 in another; D51). Noise planning figure 0.020 per gain (D50).
+5. **Next jobs / limits.** GPU 2/2 general + 1 pending preempt (budget 6). Seed-11 calibration ends ~15:45Z; then the top-2 repeats.
+6. **Most important.** Shorten the critical path to the freeze: done by queueing the likely seed-22 repeat now. Next: on the 2e-6 results, apply §7 and queue the second repeat.
+7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned GPU jobs + stage-3 pending). Our watcher re-armed; another project's ae-watch process (PID 17928) left untouched.
