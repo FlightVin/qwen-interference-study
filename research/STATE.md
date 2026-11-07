@@ -14,7 +14,7 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 ## Established (evidence in CHECKLIST)
 - Environment `venv-v1`: verl 0.9.0 (reference only), vLLM 0.31.0, torch 2.13.0+cu130, transformers 5.10.4, math-verify 0.9.0. CPU tests 30/30 (job 11072715).
 - Data: MATH @ `21a56338`, split manifest sha `6580712d…`; pass-1 annotation of 1,496 items; rubric v1.1 roles (D16).
-- Response cap frozen at 4,096 tokens (D18): 2.83% truncation, no reward change at 8,192.
+- Response cap raised to 8,192 (D45): at 4,096, calibration training pushed validation truncation to 11.5% in 32 rounds (genuine long reasoning, not loops). 4,096 screening/calibration superseded; re-screen and recalibrate at 8,192.
 - Trainer (D10, D11): custom single-GPU GRPO, verl-parity of the loss reduction tested.
 - Precision audit (A1) passed on job 11072622: restart weights and AdamW moments bit-exact after reload; repeated updates accumulate. Full table pending harvest.
 - Checkpoints: 20.6 GB, NFS ~40 MB/s → background validated writer, project-wide write lock.

@@ -4,7 +4,7 @@ Purpose: the frozen experimental design. Until the freeze line below is signed w
 file is a working draft. The canonical instruction remains root `project.md` (§1–§18).
 
 ## Status
-- Draft. Frozen items so far: response cap 4,096 (D18); decoding T=1, top_p=1, top_k disabled
+- Draft. Frozen items so far: response cap **8,192** (D45; supersedes 4,096 of D18); decoding T=1, top_p=1, top_k disabled
   (vLLM default 0), repetition penalty 1, native sampler (D14); model Qwen3-1.7B @ `70d244cc`;
   MATH @ `21a56338`; rubric v1.1 (D16).
 
