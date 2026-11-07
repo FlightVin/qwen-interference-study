@@ -101,3 +101,16 @@ Each hard candidate gets one primary `family`, from the reference solution's fac
 | F8 | other (name it) |
 Minor wording or number variants of one problem template count as one family member (diversity is
 judged by family counts and by near-duplicate groups).
+
+### v1.2 technique definitions with examples (frozen technique list for A5 coverage)
+| tag | example (illustrative, not from any study split) |
+|---|---|
+| F1 quadratic trinomial | x² − 5x + 6 = 0 → (x−2)(x−3) = 0 → x ∈ {2, 3} |
+| F2 special products | x⁴ − 16 = (x²−4)(x²+4) = (x−2)(x+2)(x²+4); a³ − 8 = (a−2)(a²+2a+4) |
+| F3 grouping / SFFT | xy + 3x + 2y = 10 → (x+2)(y+3) = 16 |
+| F4 factor theorem / known root | x³ − 6x² + 11x − 6 has root 1 → (x−1)(x²−5x+6) |
+| F5 substitution | x⁴ − 5x² + 4 = 0 with u = x² → (u−1)(u−4) = 0 |
+| F6 rational expressions | (x²−9)/(x²+x−6) = (x−3)/(x−2), x ≠ −3; hole at x = −3 |
+| F7 sign analysis | x² − x − 6 < 0 → (x−3)(x+2) < 0 → −2 < x < 3 |
+| F8 other | name the operation in `family_note` |
+Primary = the factoring operation doing the main work; secondary = other factoring operations used.

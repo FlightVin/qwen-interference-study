@@ -15,6 +15,14 @@ file is a working draft. The canonical instruction remains root `project.md` (§
   Omni-MATH tranche (≤200) or authored tranche or smaller pilot with uniform endpoint shortening,
   one frozen H_train manifest for all arms, H-only extra prompts balanced by source/difficulty.
 
+## Technique coverage rule (A5, `project.md` §19)
+Techniques = rubric v1.2 families F1–F8 (`research/RUBRIC.md`), frozen with this protocol. Each
+H_train and E_related item has one primary technique (main factoring operation in the reference
+solution) plus optional secondary tags (descriptive only). After R/U matching: for every technique
+with ≥ 10% of H_train, require count_R ≥ ceil(0.5 · share_H · |E_related|). Repair only by
+authorized E_related selection/augmentation, re-match, recompute; H_train fixed. Residual
+shortfalls are recorded (technique, required, achieved, limitation); coverage table in the report.
+
 ## To freeze (pending)
 H_train, E_related/E_unrelated pairs, target_dev, target_test, probe panels, calibration result,
 learning rate and clipping, endpoint rounds, seeds mapping, evaluation schedule, analysis plan.

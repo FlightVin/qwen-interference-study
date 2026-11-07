@@ -23,6 +23,7 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
 A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
 A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
+A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
 GPU ceilings unchanged: 2 general, 6 preempt.
 
 ## Uncertain

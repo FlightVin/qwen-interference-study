@@ -10,6 +10,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 0.4 No treatment change after freeze because of interim curves; corrections apply to all affected conditions.
 - 0.5 Record consequential decisions (evidence, action, runs, interpretation) in `research/DECISIONS.md`.
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
+- 0.11 Amendment A5 (2026-11-07, `project.md` §19): technique coverage — primary technique per H_train/E_related item (F1–F8, frozen); each technique ≥ 10% of H_train needs E_related share ≥ ½ of it (ceil to whole items); check after R/U matching; repair via authorized E_related selection/augmentation only, re-match; H_train fixed; residual shortfall recorded; table in report.
 - 0.10 Amendment A4 (2026-11-07, `project.md` §18): H_train via full native stage 2 (184 candidates, ≤5,888 attempts), core 2–8/32 + moderate 9–12/32, target 64 (≥½ core), proceed at 48–64; else Omni-MATH tranche (≤200), smaller pilot with uniform endpoint shortening, or one authored tranche; one H_train manifest; decisions before treatment outcomes.
 - 0.9 Amendment A3 (2026-11-07, `project.md` §17): ≤30 CPUs total on `preempt_cpu_qos`; enforced by `ops/qis-submit`.
 - 0.8 Addendum A2 (2026-11-07, `project.md` §16): 64 aux pairs is a target; modest shortfall allowed with documented coverage/diversity/balance; synthetic supplementation only under a recorded gap + finite budget, same audit/screen/matching, provenance balanced R vs U, template families tracked, eval sets free of training-template variants; choose smaller natural / supplemented / fallback and freeze before any treatment outcome.
@@ -43,6 +44,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.12 active — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
 - 3.13 pending — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
 - 3.14 pending — (A4.3–5) Only if native < 48 or missing structures: Omni-MATH tranche (≤200, pinned) / smaller pilot (record families, core share, 16T/N and 8T/N repetitions) / authored tranche / fallback.
+- 3.15 pending — (A5) Primary + secondary technique tags for every H_train and E_related item (blind annotators; F1–F8); coverage check after R/U matching; repair loop; coverage table → PROTOCOL and report.
 - 3.11 pending — (A2) Pool decision after stage-2 screening: count matched pairs, coverage (factoring forms), diversity (template families), balance (SMD). If short: record gap + finite synthetic budget, OR retain smaller natural set, OR fallback skill — choose and record before freeze.
 - **G1** — ≥64 H_train, ≥32 dev, ≥64 test, ≥64 per calib split (hard minima). Aux pools: 64 matched pairs target (A2); a modest shortfall needs documented coverage/diversity/balance. Else supplementation or the linear-equation fallback, before any treatment run.
 

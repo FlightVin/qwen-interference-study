@@ -413,3 +413,25 @@ Optimizer calibration and trainer validation continue in parallel.
    primary R−U comparison; report training performance separately from held-out MATH transfer.
    Document pool, endpoint, provenance, limitations; launch authorized runs when gates pass.
 A count below 64 or 48 does not require escalation.
+
+## 19. Amendment A5 (owner, 2026-11-07): technique coverage of E_related relative to H_train
+
+Recorded faithfully from the owner's message of 2026-11-07. It replaces "exact proportions are
+unnecessary" with a measurable coverage criterion.
+
+1. Before treatment, freeze a short list of factoring techniques with definitions and examples.
+   Assign each H_train and E_related item one **primary** technique (the factoring operation that
+   does the main work in its reference solution) and record secondary techniques for description.
+   Only primary tags enter the coverage calculation, so each item counts once.
+2. For each technique compute its share of H_train and of E_related from the final item counts.
+   If a technique is ≥ 10% of H_train, its E_related share must be ≥ half its H_train share,
+   rounded up to a whole item (example: 16/64 hard items = 25% → with 64 related items, ≥ 8
+   related items, 12.5%). Techniques below 10% of H_train have no individual quota.
+3. Apply the check after matching related and unrelated items. Repair shortfalls only through the
+   already authorized selection or augmentation of E_related, then redo difficulty and length
+   matching and recompute coverage. H_train stays fixed during repair. Existing screening,
+   deduplication and augmentation limits stand.
+4. Thresholds are pilot design choices. If a shortfall remains after authorized repair, record
+   technique, required count, achieved count and limitation, then proceed under the dataset
+   viability rules. The coverage table goes in the final report. If treatment has started, audit
+   the frozen pools without changing membership or restarting runs.
