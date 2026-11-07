@@ -60,3 +60,11 @@ Both splits meet ≥ 16 per band. Full native stage 2 over all 184 hard candidat
 the rest incidental (numeric identities, one-line Vieta/square-root routes) or direct_practice=no
 (SFFT integer problems, systems, word problems). Primary agreement 111/112. Eligible related by
 primary (pass 2): F1 33, F4 30, F8 24, F3 14, F2 11. Authored items are auxiliary-only (D32).
+
+## H_train — full native stage 2 and frozen selection rule (A4.1–2)
+Full native stage 2 (job 11073157): 184 candidates × 32 = 5,888 attempts (60 items reused from job
+11072896). By band before audit filters: core 2–8/32 = 22 (hard 19, reserve 3), moderate 9–12/32 = 12.
+Frozen rule (`select_hard.py`, D28/D31; job 11073309, `data/screening/hsel_native_v1.json`):
+**29 eligible** = 18 core + 11 moderate (source: 28 L4–5, 1 L3). Primary operations: F1 5, F2 8, F3 5,
+F4 6, F8 5. Exclusions: 128 outside bands, 26 audit disagreement, 1 verifier unknown.
+29 < 48 → external Omni-MATH tranche (D36), screening job 11073332.

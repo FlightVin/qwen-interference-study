@@ -1,0 +1,1092 @@
+{
+ "selected": [
+  {
+   "id": "intermediate_algebra/train/01249",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/01168",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00431",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01234",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00048",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/01036",
+   "source": "hard_reserve",
+   "level": "Level 3",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00076",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00995",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01205",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00522",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00592",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00481",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "algebra/train/01269",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01174",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00916",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00477",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00427",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "core",
+   "c32": 8,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00474",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00147",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00074",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01097",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00467",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00340",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00104",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00301",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00381",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00656",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01067",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00350",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F2"
+  }
+ ],
+ "eligible": [
+  {
+   "id": "intermediate_algebra/train/00048",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/01234",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00656",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01174",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01168",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00467",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00427",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "core",
+   "c32": 8,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/01067",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/01205",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01249",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00481",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00995",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00522",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00350",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00147",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F1"
+  },
+  {
+   "id": "algebra/train/01269",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 7,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00916",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 2,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00474",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 6,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00301",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 11,
+   "family": "F8"
+  },
+  {
+   "id": "intermediate_algebra/train/00592",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00074",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/01097",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "moderate",
+   "c32": 12,
+   "family": "F1"
+  },
+  {
+   "id": "intermediate_algebra/train/00076",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00104",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F4"
+  },
+  {
+   "id": "intermediate_algebra/train/00431",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 5,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00340",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 9,
+   "family": "F3"
+  },
+  {
+   "id": "intermediate_algebra/train/00381",
+   "source": "hard",
+   "level": "Level 4",
+   "band": "moderate",
+   "c32": 10,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/00477",
+   "source": "hard",
+   "level": "Level 5",
+   "band": "core",
+   "c32": 4,
+   "family": "F2"
+  },
+  {
+   "id": "intermediate_algebra/train/01036",
+   "source": "hard_reserve",
+   "level": "Level 3",
+   "band": "core",
+   "c32": 7,
+   "family": "F1"
+  }
+ ],
+ "excluded": [
+  {
+   "id": "algebra/train/00267",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01216",
+   "reason": "outside bands (c=23/32)"
+  },
+  {
+   "id": "algebra/train/01346",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/01587",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00379",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00066",
+   "reason": "outside bands (c=18/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00606",
+   "reason": "outside bands (c=25/32)"
+  },
+  {
+   "id": "algebra/train/01487",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00680",
+   "reason": "outside bands (c=16/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00306",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "algebra/train/00487",
+   "reason": "outside bands (c=14/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00463",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/00998",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00809",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00265",
+   "reason": "outside bands (c=17/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01202",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00702",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01229",
+   "reason": "outside bands (c=25/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01286",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00632",
+   "reason": "outside bands (c=22/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00748",
+   "reason": "outside bands (c=23/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00385",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00480",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/00386",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00133",
+   "reason": "outside bands (c=20/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00334",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00390",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "algebra/train/00637",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00070",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01242",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "algebra/train/00245",
+   "reason": "outside bands (c=30/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00943",
+   "reason": "outside bands (c=26/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00207",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00384",
+   "reason": "verifier unknown"
+  },
+  {
+   "id": "intermediate_algebra/train/00475",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00245",
+   "reason": "outside bands (c=14/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00663",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/01004",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00801",
+   "reason": "outside bands (c=16/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00513",
+   "reason": "outside bands (c=18/32)"
+  },
+  {
+   "id": "algebra/train/01378",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/00365",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/00818",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "algebra/train/00288",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00720",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00325",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00639",
+   "reason": "outside bands (c=14/32)"
+  },
+  {
+   "id": "algebra/train/00494",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/01418",
+   "reason": "outside bands (c=22/32)"
+  },
+  {
+   "id": "algebra/train/01190",
+   "reason": "outside bands (c=21/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00708",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00490",
+   "reason": "outside bands (c=20/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01082",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/01221",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00321",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/01258",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00397",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00977",
+   "reason": "outside bands (c=21/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01177",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/01085",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "algebra/train/00568",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00233",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00770",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/01218",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01118",
+   "reason": "outside bands (c=26/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01232",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00601",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00188",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "algebra/train/01473",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01029",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00710",
+   "reason": "outside bands (c=30/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00673",
+   "reason": "outside bands (c=20/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00649",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00149",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00467",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00425",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/01649",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00816",
+   "reason": "outside bands (c=24/32)"
+  },
+  {
+   "id": "algebra/train/00729",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "algebra/train/01610",
+   "reason": "outside bands (c=16/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01125",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01058",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00062",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00268",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "algebra/train/00792",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00458",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01231",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00242",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/01623",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00919",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/00816",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01095",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "algebra/train/00233",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/01354",
+   "reason": "outside bands (c=17/32)"
+  },
+  {
+   "id": "algebra/train/01009",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01236",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00603",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/01635",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00782",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00172",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00020",
+   "reason": "outside bands (c=23/32)"
+  },
+  {
+   "id": "algebra/train/00826",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "algebra/train/00532",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/01195",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00140",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00157",
+   "reason": "outside bands (c=15/32)"
+  },
+  {
+   "id": "algebra/train/00433",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/00892",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/00810",
+   "reason": "outside bands (c=23/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00410",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "algebra/train/00758",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/01499",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00191",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/00978",
+   "reason": "outside bands (c=17/32)"
+  },
+  {
+   "id": "algebra/train/01678",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "algebra/train/01599",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01186",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01248",
+   "reason": "outside bands (c=30/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00827",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/01059",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00569",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00829",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00203",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "algebra/train/01743",
+   "reason": "outside bands (c=0/32)"
+  },
+  {
+   "id": "algebra/train/01177",
+   "reason": "outside bands (c=18/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00025",
+   "reason": "outside bands (c=28/32)"
+  },
+  {
+   "id": "algebra/train/01335",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00430",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00900",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00510",
+   "reason": "outside bands (c=24/32)"
+  },
+  {
+   "id": "algebra/train/00713",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01105",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00957",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00858",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00935",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01042",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00036",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00654",
+   "reason": "outside bands (c=22/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00222",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01092",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00236",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00238",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01278",
+   "reason": "outside bands (c=23/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00443",
+   "reason": "outside bands (c=15/32)"
+  },
+  {
+   "id": "algebra/train/00213",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00299",
+   "reason": "outside bands (c=31/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00571",
+   "reason": "outside bands (c=27/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01074",
+   "reason": "outside bands (c=1/32)"
+  },
+  {
+   "id": "algebra/train/00097",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00130",
+   "reason": "outside bands (c=29/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/01274",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "intermediate_algebra/train/00636",
+   "reason": "outside bands (c=13/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00414",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  },
+  {
+   "id": "algebra/train/00824",
+   "reason": "outside bands (c=32/32)"
+  },
+  {
+   "id": "intermediate_algebra/train/00891",
+   "reason": "pass-1/pass-2 disagreement not resolved to central multi-step by third read"
+  }
+ ]
+}
