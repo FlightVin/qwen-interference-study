@@ -14,4 +14,4 @@ device-level reading is `gpu_used_gib_train`/`gpu_used_gib_gen`.
 
 Round-0 baselines of the identical base model differ across jobs (0.4386, 0.4487, 0.4866): cross-job
 evaluations are independent samples (D50). Sampling sd 0.014 per evaluation, 0.020 per within-run gain.
-Selection uses the frozen within-run gain; the pooled-baseline column below is a disclosed robustness check only.
+Selection uses the frozen within-run gain; a pooled-baseline comparison (added when all six runs finish) is a disclosed robustness check only.
