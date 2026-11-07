@@ -171,3 +171,12 @@
 5. **Next jobs / limits.** GPU 3/3 general running; preempt 4 queued (R-s202, U-s202, H-s202, R-s303), 2 held (U-s303, H-s303). Storage 195/500 GB.
 6. **Most important.** Keep general slots filled as runs finish (~06:00Z on 8 Nov); local-update diagnostic after R-s101 round 64; test evaluations at endpoints.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs). Watcher alive (b69kcksnz).
+
+## Review 20 — 2026-11-07 22:19Z (extended by amendments A9 and A10)
+1. **Changes.** A9: scope cut to six primary runs; seed-303 jobs cancelled (cost 0); sensitivity deferred (D71). Tooling for diagnostic, test evals, endpoint validation and the report table (D72). A10: 8k-to-16k schedule at common boundary round 64 (D73), code + smoke test + watchers (D74).
+2. **Alignment.** Frozen data and hyperparameters kept; boundary recorded before further comparative results; test set unopened.
+3. **Mechanics.** s101 runs healthy; responses 2.5–3.1k tokens, rounds 294–380 s.
+4. **Confounds.** Dev truncation at round 32: R 11.6%, U 16.7%; training hard capped U 5.1% (shared schedule R 2.7% vs U 5.1%). Truncated responses are long reasoning, not loops. This motivated A10.
+5. **Next jobs / limits.** GPU 3/3 general (s101); preempt 6/6 queued (3 s202, base test eval, diagnostic r0, smoke). CPU: 3 watchers + tests. Storage 200/500 GB.
+6. **Most important.** Pass the smoke test before round 64 (~01:30Z on 8 Nov) and execute the transition without losing completed rounds.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher re-armed.
