@@ -1,0 +1,189 @@
+{
+ "cap": 8192,
+ "pools": {
+  "hard": {
+   "off": {
+    "items": 32,
+    "pass1": 0.1875,
+    "mixed_frac": 0.78125,
+    "any_success_frac": 0.78125,
+    "trunc_frac": 0.00390625,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 2224.2578125,
+    "reason_len_mean": 0.0
+   },
+   "on": {
+    "items": 32,
+    "pass1": 0.41796875,
+    "mixed_frac": 0.6875,
+    "any_success_frac": 0.75,
+    "trunc_frac": 0.515625,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 7195.50390625,
+    "reason_len_mean": 6669.0
+   },
+   "paired_pass1_on_minus_off": {
+    "mean": 0.23046875,
+    "lo": 0.125,
+    "hi": 0.3359375,
+    "n": 32
+   }
+  },
+  "related": {
+   "off": {
+    "items": 16,
+    "pass1": 0.7265625,
+    "mixed_frac": 0.875,
+    "any_success_frac": 1.0,
+    "trunc_frac": 0.0,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 1124.109375,
+    "reason_len_mean": 0.0
+   },
+   "on": {
+    "items": 16,
+    "pass1": 0.96875,
+    "mixed_frac": 0.25,
+    "any_success_frac": 1.0,
+    "trunc_frac": 0.015625,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 4642.734375,
+    "reason_len_mean": 3911.046875
+   },
+   "paired_pass1_on_minus_off": {
+    "mean": 0.2421875,
+    "lo": 0.171875,
+    "hi": 0.3125,
+    "n": 16
+   }
+  },
+  "unrelated": {
+   "off": {
+    "items": 16,
+    "pass1": 0.734375,
+    "mixed_frac": 1.0,
+    "any_success_frac": 1.0,
+    "trunc_frac": 0.0,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 1091.8203125,
+    "reason_len_mean": 0.0
+   },
+   "on": {
+    "items": 16,
+    "pass1": 0.984375,
+    "mixed_frac": 0.125,
+    "any_success_frac": 1.0,
+    "trunc_frac": 0.015625,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 4494.90625,
+    "reason_len_mean": 3749.03125
+   },
+   "paired_pass1_on_minus_off": {
+    "mean": 0.25,
+    "lo": 0.171875,
+    "hi": 0.328125,
+    "n": 16
+   }
+  },
+  "dev": {
+   "off": {
+    "items": 16,
+    "pass1": 0.2578125,
+    "mixed_frac": 0.375,
+    "any_success_frac": 0.5,
+    "trunc_frac": 0.0,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 1851.1796875,
+    "reason_len_mean": 0.0
+   },
+   "on": {
+    "items": 16,
+    "pass1": 0.5078125,
+    "mixed_frac": 0.5,
+    "any_success_frac": 0.8125,
+    "trunc_frac": 0.4609375,
+    "no_final_frac": 0.0,
+    "unknown": 0,
+    "len_mean": 6541.234375,
+    "reason_len_mean": 6113.8203125
+   },
+   "paired_pass1_on_minus_off": {
+    "mean": 0.25,
+    "lo": 0.1015625,
+    "hi": 0.421875,
+    "n": 16
+   }
+  }
+ },
+ "cost": [
+  {
+   "mode": "off",
+   "pool": "hard",
+   "gen_s": 189.09499883651733,
+   "tokens": 569410
+  },
+  {
+   "mode": "off",
+   "pool": "related",
+   "gen_s": 36.5643355846405,
+   "tokens": 143886
+  },
+  {
+   "mode": "off",
+   "pool": "unrelated",
+   "gen_s": 51.034459590911865,
+   "tokens": 139753
+  },
+  {
+   "mode": "off",
+   "pool": "dev",
+   "gen_s": 88.28591346740723,
+   "tokens": 236951
+  },
+  {
+   "mode": "on",
+   "pool": "hard",
+   "gen_s": 1314.2271840572357,
+   "tokens": 1842049
+  },
+  {
+   "mode": "on",
+   "pool": "related",
+   "gen_s": 300.6761817932129,
+   "tokens": 594270
+  },
+  {
+   "mode": "on",
+   "pool": "unrelated",
+   "gen_s": 279.00282979011536,
+   "tokens": 575348
+  },
+  {
+   "mode": "on",
+   "pool": "dev",
+   "gen_s": 586.0880637168884,
+   "tokens": 837278
+  }
+ ],
+ "related_minus_unrelated": {
+  "off": {
+   "mean": -0.0078125,
+   "lo": -0.09375,
+   "hi": 0.0859375,
+   "n": 16
+  },
+  "on": {
+   "mean": -0.015625,
+   "lo": -0.046875,
+   "hi": 0.015625,
+   "n": 16
+  }
+ }
+}
