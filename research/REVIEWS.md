@@ -117,3 +117,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt 0 running, 1 pending (11075978).
 6. **Most important.** On the 2e-6 results: apply §7, queue the second seed-22 repeat, move both repeats to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned jobs). Watcher alive (b8wlrdna2).
+
+## Review 14 — 2026-11-07 16:05Z
+1. **Changes.** lr2e-6/sym done: gain +0.146, validation truncation 4.69% (valid; D53); its seed-22 repeat queued on preempt (11076551). lr1e-6/sym seed 22 (11075978) moved to general, at round 8. Peek 11076768: lr2e-6/asym (11074521) finished round 32 and is in its final evaluation (round-16 pass@1 0.596 vs 0.487 at round 0).
+2. **Alignment.** §7 applied as written; finalist set fixed once 2e-6/asym reports.
+3. **Mechanics.** lr2e-6/asym is slower (2 h 58 min so far) because responses grew: mean length 1,800–2,500 in rounds 29–32, training truncation 3–8/128, round-16 evaluation 873 s vs ~450 s at round 0. Not stalled. Logprob mismatch p99 ≤ 0.118.
+4. **Confounds.** lr 2e-6 lengthens responses fast; truncation risk for 128-round runs if 2e-6 is selected (D53).
+5. **Next jobs / limits.** GPU 2/2 general, 1 pending preempt. CPU 1/30 (peek).
+6. **Most important.** On 2e-6/asym: fix the finalists (cancel 1e-6/sym s22 only if 2e-6/asym > +0.122), move 11076551 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned GPU jobs). Watcher alive (biluz30jp).

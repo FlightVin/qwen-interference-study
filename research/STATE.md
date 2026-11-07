@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 15:10Z (review 13).
+Updated 2026-11-07 16:10Z (review 14).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -34,7 +34,7 @@ GPU ceilings unchanged: 2 general, 6 preempt.
 
 ## Calibration
 - 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49).
-- Seed 11 done (all valid): 1e-6/sym +0.122, 1e-6/asym +0.066, 5e-7/sym +0.031, 5e-7/asym −0.003. Running: 2e-6 × 2. Seed-22 repeat of 1e-6/sym queued on preempt (D51).
+- Seed 11 done (all valid): 2e-6/sym +0.146 (trunc 4.69%, D53), 1e-6/sym +0.122, 1e-6/asym +0.066, 5e-7/sym +0.031, 5e-7/asym −0.003. 2e-6/asym in final eval. Seed-22: 1e-6/sym running, 2e-6/sym queued.
 - Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51). Table: `research/evidence/calibration/cal8k_summary.md`.
 - Provisional main-run cost 9–13 GPU-h per 128-round run → T=128 expected (rule: >24 GPU-h → 64).
 
