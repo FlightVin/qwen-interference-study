@@ -72,7 +72,16 @@ class Log:
         self.f.write(json.dumps(rec) + "\n"); self.f.flush()
         if self.wb is not None:
             try:
-                flat = {f"{kind}/{k}": v for k, v in kv.items() if isinstance(v, (int, float))}
+                # numeric fields, nested dicts flattened one level; evaluations keyed by panel (logging only)
+                pre = f"{kind}/{kv['panel']}" if kind == "eval" and "panel" in kv else kind
+                flat = {}
+                for k, v in kv.items():
+                    if isinstance(v, bool) or not isinstance(v, (int, float, dict)):
+                        continue
+                    if isinstance(v, dict):
+                        flat.update({f"{pre}/{k}/{kk}": vv for kk, vv in v.items() if isinstance(vv, (int, float))})
+                    else:
+                        flat[f"{pre}/{k}"] = v
                 if kind == "step":
                     flat["opt_step"] = kv["opt_step"]
                 elif "round" in kv:
@@ -215,6 +224,13 @@ def main():
             log.write("eval", **{k: v for k, v in r.items() if k != "per_problem"},
                       per_problem=r["per_problem"],
                       ckpt_round=rnd)
+            if panel == "dev" and "probe_J_H" in pools:      # J_H is a fixed 32-problem subset of dev
+                jh = {it["id"] for it in pools["probe_J_H"]}
+                pp = [x for x in r["per_problem"] if x["id"] in jh]
+                log.write("eval", panel="probe_J_H", round=rnd, n=n, problems=len(pp), derived_from="dev",
+                          pass1=float(np.mean([x["c"] / x["n"] for x in pp])),
+                          pass8=float(np.mean([grpo.pass_at_k(x["n"], x["c"], 8) for x in pp])) if n >= 8 else None,
+                          per_problem=pp, ckpt_round=rnd)
 
     if start == 0 and 0 in cfg.get("eval_rounds", []):
         run_evals(0)
