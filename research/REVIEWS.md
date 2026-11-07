@@ -108,3 +108,12 @@
 5. **Next jobs / limits.** GPU 2/2 general, 1/6 preempt running + 1 pending. Seed-11 calibration ends ~15:00–15:45Z.
 6. **Most important.** When a 2e-6 run ends: apply §7 with all six, queue the second seed-22 repeat, and move both repeats to general as slots free (preempt start remains unpredictable, D37).
 7. **Reconciliation.** Slurm ↔ ledger agree (4 live owned jobs, all `qis-` rows).
+
+## Review 13 — 2026-11-07 15:05Z
+1. **Changes.** Stage-3 baseline done (D52): H mixed-group fraction 0.77, mean p 0.202; R 0.589 / U 0.569 (mixed 0.94 each). Calibration 2e-6/sym (2 h 16 min) and 2e-6/asym (1 h 58 min) still running on general.
+2. **Alignment.** Unchanged; selection after both 2e-6 runs, per §7.
+3. **Mechanics.** W&B online logging confirmed for all finished calibration runs (no `wandb_failed` events); local JSONL is the analysis source.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** GPU 2/2 general; preempt 0 running, 1 pending (11075978).
+6. **Most important.** On the 2e-6 results: apply §7, queue the second seed-22 repeat, move both repeats to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (3 live owned jobs). Watcher alive (b8wlrdna2).

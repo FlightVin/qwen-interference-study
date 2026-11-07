@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 14:10Z (review 12).
+Updated 2026-11-07 15:10Z (review 13).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -30,7 +30,7 @@ GPU ceilings unchanged: 2 general, 6 preempt.
 - H_train 46 (31 core / 15 moderate; native 25 + Omni 21; F1 11, F2 7, F3 11, F4 10, F8 7) — D47.
 - E_related / E_unrelated 63 matched pairs (9 natural + 54 authored each; |SMD| ≤ 0.19; A5 coverage met) — D48.
 - Targets: dev 53, test 128 (sealed file), probes J_H 32 / J_R 28 / J_U 32 — D34. Bundle `data/main_v1_manifest.json`.
-- Stage-3 independent baseline queued (11075046).
+- Stage-3 baseline (D52): H mean p 0.202, mixed-group fraction 0.77; R 0.589 / U 0.569.
 
 ## Calibration
 - 4,096 run lr1e-6/sym superseded (truncation 11.5%). 8,192 panels frozen (D46); canary passed (D49).
