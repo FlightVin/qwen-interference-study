@@ -1,7 +1,9 @@
 # CHECKLIST — execution plan
 
 Purpose: the live plan from setup to the final report. Status: **done** / **active** / **blocked** /
-**pending**. Evidence links follow each done item. Gates (G1–G6) must pass before later stages start.
+**pending** / **withdrawn**. Evidence links follow each done item. Gates must pass before later stages start:
+G1 data, G2 trainer, G3 calibration + freeze (all passed); G4 all 15 main runs complete and valid; G5 sealed
+evaluation + prespecified analysis complete; G6 independent recomputation, audit and report verified from a clean checkout.
 
 ## 0. Owner instructions (NON-NEGOTIABLE)
 - 0.1 Ceilings: ≤3 general GPUs (A7, 2026-11-07, `project.md` §21; supersedes ≤2), ≤6 preempt GPUs, all project activity. One GPU per job. Enforced by `ops/qis-submit`.
@@ -27,23 +29,23 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 1.4 done — Hourly review: session cron at :47 local, `ops/qis-review` record/lock/overdue detection; one-shot test trigger received 2026-11-07T02:30:02Z (`research/REVIEWS.md`).
 - 1.5 done — Event watcher: `ae-watch` background task, 120 s poll.
 - 1.6 done — Environment `venv-v1`: verl 0.9.0, vLLM 0.31.0, torch 2.13.0+cu130, transformers 5.10.4, math-verify 0.9.0; model `Qwen/Qwen3-1.7B` @ `70d244cc` (`qis-env-v1`, job 11072074; harness `results/qis-env-v1/`).
-- 1.7 pending — W&B credentials check on Babel (no secret printed); fallback: local JSONL + offline W&B.
+- 1.7 done — W&B online logging works on Babel (run links in calibration logs; no `wandb_failed` events); local JSONL is the analysis source and fallback.
 
 ## 2. Reading — done except 2.3
 - 2.1 done — `research/READING.md` (history PDF + primary sources).
 - 2.2 done — verl 0.9.0 audit → `research/VERL-AUDIT.md`; decision D10 (lean custom trainer, verl as reference).
-- 2.3 pending — Pin Math-Verify commit and model revision in PROTOCOL.
+- 2.3 done — PROTOCOL pins Math-Verify 0.9.0 (package version in `venv-v1`) and model revision `70d244cc` (§2, §3).
 
 ## 3. Data (gate G1: dataset minima)
 - 3.1 done — Split manifest `splits-v1` (sha256 `6580712d…`): 12,500 items, 344 duplicate pairs, 87 train items excluded as test overlaps; construction 4,458 / study_dev 1,478 / calib_train 750 / calib_val 727 / test 5,000. Gold: 12,495 eligible, 2 no box, 3 verifier-unknown. 11/11 tests passed (`qis-data-v1`, job 11072095).
 - 3.2 done — Rubric v1 `research/RUBRIC.md`.
 - 3.3 done — Annotation pass 1: 1,496 items → `data/annotations/pass1.jsonl` (batches 2, 5 redone after contamination, D13). Rubric v1.1 roles (D16): construction H 154, E_related 110, E_unrelated 152; target_dev 63; target_test 209.
-- 3.4 done — Length probe 11072430: truncation 2.83% at 4096, 0% at 8192, success identical (0.6406) → cap 4096 frozen (D18). H reserve tranche pre-registered (D19).
+- 3.4 done — Length probe 11072430: truncation 2.83% at 4096, 0% at 8192, success identical (0.6406) → cap 4096 frozen (D18; superseded by D45: cap 8,192). H reserve tranche pre-registered (D19).
 - 3.5 done (superseded at 8,192 by 3.16) — stage 1 running: study pools 11072609 (general), calibration 11072610 (preempt). Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
 - 3.6 done (D47/D48; pass 2 + third read) — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
 - 3.7 done (D69: missed opportunity 30, after-correct-factoring 20, execution 6, valid alternative 6, extraction 2, insufficient 0; split-box 0) — Error audit: ≤64 incorrect non-thinking screening attempts on H candidates; reviewer gets problem statement + full response; categories: missed factoring opportunity / incorrect execution / valid alternative then other error / extraction failure / insufficient evidence; first identifiable error; unknowns kept; split-box check; extraction misses reported separately.
 - 3.8 done (D48: 63 pairs, |SMD| ≤ 0.19; mixed-group fraction from stage-3 baseline 11075046) — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
-- 3.9 done (D34, D46; panels 59/56 = all in-band items of 200 screened per split; §3 64-per-split deviation under the strict reading, D67) — calibration panels done (D33). target_dev/target_test selection by rubric pending (pass 2 + third read done).
+- 3.9 done (D34, D46; panels 59/56 = all in-band items of 200 screened per split; §3 64-per-split deviation under the strict reading, D67) — calibration panels (D33 → D46); target_dev/target_test selected by rubric (D34).
 - 3.10 done (D34: J_H 32, J_R 28, J_U 32) — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
 - 3.12 done (D47; counts D67: 184 native at 4k → 117 excluded by 4k score, 55 re-screened with 32 fresh attempts at 8k, 12 annotation-ineligible) — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
 - 3.13 done (D47 selection; D52 stage-3 baseline: H mixed-group fraction 0.77, mean p 0.202) — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
@@ -59,15 +61,16 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 4.3 done (CPU part) — 30/30 (job 11072715, incl. exact checkpoint checksum): advantages, clip cases, accumulation, verl parity, minibatch balance, schedules, verifier, splits. GPU part in 4.4–4.7. Unit tests: template/mask/EOS, group boundaries, zero advantages, population std, loss reduction + accumulation, all-param trainability, 4 steps/round, balanced minibatches, signed objective.
 - 4.4 done — mismatch median ~1e-7, p99 0.10–0.11, p99.9 0.21–0.23; alarm thresholds D25; update reaches rollout (probe: mean |Δlp| 0.0026 after one step).
 - 4.5 done — resume test (11072622): no duplicated/missing rounds, counters equal; A/B diverge from round 2 (pre-interruption) = kernel nondeterminism tolerance (D24). Attempts 11072408 (cancelled), 11072428, 11072527 (failed, fixed).
-- 4.6 partial — smoke rounds 42–51 s (short items), 36/44.4 GiB device memory, ckpt 21.9 GB in 197–245 s background (D26). Real-length round profile and telemetry overhead: first calibration run.
+- 4.6 done — smoke rounds 42–51 s (D26); real-length profile from calibration (145–237 s/round) and production (175 s at round 1 → 259–306 s by rounds 13–26 as responses lengthen; ≤ 41.6 GiB) (D49, D61, D70).
 - 4.7 done — `research/evidence/g2/precision_audit.md` (D24). (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
 - **G2** — PASSED 2026-11-07 (D24).
 
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
-- 5.1 active (8,192 cap; D46, D49) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Done: 11074527 (5e-7/sym, +0.031), 11074520 (1e-6/sym, +0.122), 11074526 (5e-7/asym, −0.003), 11074519 (1e-6/asym, +0.066). 11074522 (2e-6/sym, +0.146, trunc 4.69%). 11074521 (2e-6/asym, +0.196 but trunc 7.14% → rejected, D54). 4,096 jobs 11072991–11072999 superseded (D45).
+- 5.1 done (8,192 cap; D46, D49, D54) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Done: 11074527 (5e-7/sym, +0.031), 11074520 (1e-6/sym, +0.122), 11074526 (5e-7/asym, −0.003), 11074519 (1e-6/asym, +0.066). 11074522 (2e-6/sym, +0.146, trunc 4.69%). 11074521 (2e-6/asym, +0.196 but trunc 7.14% → rejected, D54). 4,096 jobs 11072991–11072999 superseded (D45).
 - 5.2 done (D57: lr 2e-6 / sym selected; job 11078053) — selection by `qis-calib-select` CPU job (D55). Seed 22: 1e-6/sym running (11075978, D51); 2e-6/sym (11076551, D53) moved to general. Finalists fixed (D54): 2e-6/sym, 1e-6/sym. Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
-- 5.3 done (D57: T=128; PROTOCOL frozen) — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
+- 5.3 done (D57: T=128; PROTOCOL frozen) — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Freeze commit `b8f36ca` (D58).
+- **G3 — PASSED 2026-11-07 (D57, D58):** lr 2e-6, clip (0.2, 0.2), T = 128.
 
 ## 6A. A6 thinking-mode diagnostic (owner amendment, project.md §20; D56)
 - 6A.1 done — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
@@ -77,13 +80,16 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 6A.5 withdrawn (A8) — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6. Main runs (after G3)
-- 6.1 active (D61: canary passed; R-s101, U-s101 running on general; 6 primary runs queued on preempt; H-s303 waits) — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.
-- 6.2 pending — Clipping sensitivity: R/U × 3 seeds, other clipping.
-- 6.3 pending — Local update diagnostic (R seed 101, rounds 0 and halfway; 4 branches × 4 seeds).
+- 6.1 active (D61, D70) — 9 primary runs. Running on general: R-s101 11078086, U-s101 11078164, H-s101 11078180. Queued on preempt: R-s202 11078181, U-s202 11078184, H-s202 11078185, R-s303 11078186. Held (storage cap 7): U-s303 11078187, H-s303 11078506. Rule: each free general slot → oldest queued primary run (`ae slurm update`), single execution checked.
+- 6.2 pending — Clipping sensitivity: R/U × 3 seeds, clip (0.2, 0.28), lr 2e-6 (recipes `qis-sens-*` generated). Submit after the primary runs hold their slots; report truncation per arm (calibration showed 7.14% for this clip).
+- 6.3 pending — Local update diagnostic (§7; PROTOCOL §8): source R-s101 at rounds 0 and 64 (round 64 retained; reached ~8 Nov 00:30Z).
+  - 6.3a active — Write `src/qis/diag_local.py`: clone model + optimizer per branch (none / hard / related / unrelated), one 4×8 minibatch update with seeds 4101–4104, evaluate J_H 32 + J_R + J_U at 16 responses/problem with paired eval seeds; source checkpoints untouched. CPU tests of branch cloning and seed mapping.
+  - 6.3b pending — GPU run on the first free general slot (~2 GPU-h); audit before optimizer state is retired.
 
 ## 7. Evaluation, audit, report
 - 7.0 active (D66; first report D67: no flags) — Truncation monitor: capped/total by role per arm per round; R vs U on shared hard schedule; 5% crossing → inspect + report.
-- 7.1 pending — Dev curves; test at baseline and endpoint (32 samples/problem).
-- 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests 33/33 passed in job 11075445 (11075419 failed: scipy absent from venv; replaced by a verified t table, ~7 CPU-min charged); figures and pass@8 tables pending. Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
+- 7.1 pending — Dev/probe curves from scheduled evaluations (rounds 0/32/64/96/128, with truncation). Sealed test: recipe `qis-test-*` using `qis.evaluate_ckpt` (base model once; each endpoint; 32 samples/problem; seed label `test-final`); run only after a run's endpoint; never used for training decisions.
+- 7.1b pending — Endpoint retention per run: model-only export, independent reload check by the evaluator, then retire restart checkpoints and optimizer state (project.md line 240); log deletions.
+- 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests 33/33 passed in job 11075445 (11075419 failed: scipy absent from venv; replaced by a verified t table, ~7 CPU-min charged); pending: pass@8 tables, R−H and U−H, per-problem changes, coverage (A5) and cost tables, and the A1.2 figures (main result; learning/exposure vs rounds, hard rollouts, tokens, GPU-h; POPE-style (J_R, J_H) and (J_U, J_H) trajectories; local update effects). Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
 - 7.3 pending — Independent recomputation entry point; verifier sample audit.
 - 7.4 pending — Cost reconciliation; `reports/REPORT.md` with figures in `reports/figures/` (A1.2), plotting script and source tables committed, verified from a clean checkout.

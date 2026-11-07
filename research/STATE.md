@@ -1,57 +1,41 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 21:10Z (review 19).
+Updated 2026-11-07 21:35Z.
 
 ## Phase
-Main study running (treatment runs started 2026-11-07 19:07Z). Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca`.
-Matrix: 9 primary (H/R/U × 101/202/303, clip (0.2,0.2)) + 6 sensitivity (R/U × 3 seeds, clip (0.2,0.28)); lr 2e-6; 128 rounds.
+Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
+Matrix: 9 primary (H/R/U × seeds 101/202/303, clip (0.2, 0.2)) + 6 sensitivity (R/U × 3 seeds, clip (0.2, 0.28));
+lr 2e-6; 128 rounds; cap 8,192 (fixed, A8.4). No endpoint result exists yet.
 
 ## Question
-Does easier practice on polynomial factorization (E_related) improve GRPO learning on hard MATH
-problems that use it, compared with matched modular-arithmetic practice (E_unrelated)?
-Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @ `70d244cc`, non-thinking.
+Does direct practice on polynomial factorization (E_related) help the learner recognize and use factoring in
+harder problems (H_train → held-out MATH targets), compared with matched modular-arithmetic practice
+(E_unrelated)? Primary contrast: seed-mean R − U endpoint pass@1 on target_test (sealed until endpoints).
+Qwen3-1.7B @ `70d244cc`, non-thinking.
 
-## Established (evidence in CHECKLIST)
-- Environment `venv-v1`: verl 0.9.0 (reference only), vLLM 0.31.0, torch 2.13.0+cu130, transformers 5.10.4, math-verify 0.9.0. CPU tests 30/30 (job 11072715).
-- Data: MATH @ `21a56338`, split manifest sha `6580712d…`; pass-1 annotation of 1,496 items; rubric v1.1 roles (D16).
-- Response cap raised to 8,192 (D45): at 4,096, calibration training pushed validation truncation to 11.5% in 32 rounds (genuine long reasoning, not loops). 4,096 screening/calibration superseded; re-screen and recalibrate at 8,192.
-- Trainer (D10, D11): custom single-GPU GRPO, verl-parity of the loss reduction tested.
-- Precision audit (A1) passed on job 11072622: restart weights and AdamW moments bit-exact after reload; repeated updates accumulate (`research/evidence/g2/precision_audit.md`).
-- Canary main run healthy (D61): round-1 hard success 0.203, 12/16 mixed groups, 1/128 capped, 175 s/round.
-- Checkpoints: 20.6 GB, NFS ~40 MB/s → background validated writer, project-wide write lock.
+## Established
+- Trainer and environment: custom single-GPU GRPO (D10, D11); tests 33/33 + 5/5 + 3/3 (jobs 11075445, 11078552, 11078115); precision audit passed (A1; `research/evidence/g2/precision_audit.md`).
+- Data (G1, cap 8,192): H_train 46 (31 core / 15 moderate; native 25 + Omni-MATH 21; D47); 63 matched R/U pairs (A5 coverage met; D48); target_dev 53, target_test 128 (sealed), probes 32/28/32 (D34). Native funnel: 184 at 4,096 → 117 excluded by 4,096 score, 55 re-screened with 32 fresh attempts at 8,192, 12 annotation-ineligible (D67).
+- Stage-3 baseline (D52): H mean pass 0.202, mixed groups 0.77; R 0.589 / U 0.569.
+- Baseline error audit (§3.7, D69; 64 attempts, one per problem; observational): first error = missed factoring opportunity 30, error after correct factoring 20, incorrect execution 6, valid alternative 6, extraction 2 (none split across boxes).
+- Calibration (G3): lr 2e-6 / clip (0.2, 0.2) selected by the frozen rule (mean gain 0.159 vs 0.106; D57). Panels 59/56 = all in-band items; deviation from the §3 "64 per split" reading recorded (D67). Eval noise sd ≈ 0.020 per within-run gain (D50, D51).
+- Main runs healthy so far (D61, D70): rounds 13–26, mismatch p99 ≈ 0.11, memory ≤ 41.6 GiB; responses 1,743 → ~2,550 tokens.
 
 ## Owner amendments in force
-A6 thinking-mode baseline diagnostic (§20; D56).
-A7 GPU ceilings 3 general + 6 preempt (§21; D60).
-A8 A6 closed; D63 narrowed; §3.7 error audit; cap fixed, truncation by role reported; records reconciliation (§22; D64–D66).
-A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
-A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
-A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
-A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
-GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
-
-## Dataset status — G1 passed (cap 8,192)
-- H_train 46 (31 core / 15 moderate; native 25 + Omni 21; F1 11, F2 7, F3 11, F4 10, F8 7) — D47.
-- E_related / E_unrelated 63 matched pairs (9 natural + 54 authored each; |SMD| ≤ 0.19; A5 coverage met) — D48.
-- Targets: dev 53, test 128 (sealed file), probes J_H 32 / J_R 28 / J_U 32 — D34. Bundle `data/main_v1_manifest.json`.
-- Stage-3 baseline (D52): H mean p 0.202, mixed-group fraction 0.77; R 0.589 / U 0.569.
-
-## Calibration and freeze (G3)
-- Selected **lr 2e-6, clip (0.2, 0.2)** by the frozen §7 rule (D57): mean gain 0.159 vs 0.106 (lr 1e-6/sym). lr2e-6/asym rejected (truncation 7.14%, D54).
-- Endpoint T=128 (≤ 21 GPU-h per run). PROTOCOL frozen. Risk: lr 2e-6 lengthens responses; truncation per arm monitored.
-- Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51).
-
-## A6 thinking-mode diagnostic — closed (A8, D64)
-- Completed evidence: same-cap comparison (D62) and 32-record failure sample (D63, interpretation narrowed in D65: tail-only observations). No longer-cap profile.
+A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (§17); A4 H_train authority (§18);
+A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A8 priorities (§22): cap fixed,
+truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
+(evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
 
 ## Uncertain
-- Preempt starts remain rare (D37); wall time depends on them (3 general GPUs guaranteed).
-- Response growth at lr 2e-6 over 128 rounds: truncation per arm/role monitored (D66); the asymmetric sensitivity arm likely exceeds 5%.
-- Storage 195/500 GB; ≤ 7 concurrent main runs (D70). Responses lengthening (≈ 2,550 tokens by round 20); forecast ≈ 11–14 h per run, all 15 done ≈ 10 Nov on 3 general GPUs alone.
+- Preempt starts are rare (D37); wall time depends mostly on 3 general GPUs.
+- Response growth at lr 2e-6 over 128 rounds. Truncation so far: hard 0.2–2.3% per run; shared hard schedule R 1.0% vs U 2.3% (21 rounds). The asymmetric sensitivity arm may exceed 5% (calibration: 7.14%).
+- Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Keep 3 general GPUs busy with main runs; move the oldest queued primary run on each free slot; sensitivity runs after the primary ones.
-2. §3.7 audit: 64-attempt sample exported (job 11078552) → reviewer annotation. Reconciliation done (D67). Truncation monitor each hourly review.
-3. Local-update diagnostic when R-s101 reaches round 64; sealed test evaluation at each endpoint (never used for training decisions).
-4. Prespecified analysis → figures → REPORT, independent recomputation, audit.
+1. Keep 3 general GPUs on main runs: next free slot ~8 Nov 06:00Z → oldest queued primary run (R-s202, U-s202, H-s202, R-s303), then U-s303, H-s303, then the 6 sensitivity runs.
+2. Write and test the local-update diagnostic (CPU tests now); run it from R-s101 rounds 0 and 64 on the first free GPU.
+3. Write the sealed test-evaluation recipe (base model once; each endpoint, 32 samples/problem); outcomes never feed training decisions.
+4. Endpoint retention: model-only export + reload check, then retire restart checkpoints (project.md line 240).
+5. Hourly: truncation monitor, storage, slot filling. Then prespecified analysis → figures → REPORT → independent recomputation and audit.
