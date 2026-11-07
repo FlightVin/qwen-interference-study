@@ -81,3 +81,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt still 0 starts. Provisional cost (measured 237 s/round, 5 dev evals): 9.0 GPU-h per 128-round run (13.2 h with a 1.5× margin for longer hard-item responses) — below the 24 GPU-h rule, so T=128 is expected. 15 runs ≈ 135–200 GPU-h ≈ 68–99 h wall on 2 GPUs.
 6. **Most important.** Calibration remains the critical path: ETA for the last seed-11 runs ~16:00Z, seed-22 repeats ~18:30Z. Stage-3 baseline (3 h) waits behind calibration unless preempt starts.
 7. **Reconciliation.** Slurm ↔ ledger agree (4 live owned GPU jobs; old cancelled/failed rows kept). Watcher alive (b87y26pwf).
+
+## Review 10 — 2026-11-07 12:05Z
+1. **Changes.** No job ended. Peek 11075838 (read-only): cal8k 5e-7/asym at round ≥17 and 1e-6/asym at round ≥15 of 32, ~1 h in.
+2. **Alignment.** Unchanged; calibration under the frozen §7 rule.
+3. **Mechanics.** Both runs healthy: 0 truncated training responses in recent rounds, mixed groups 13–15/16, logprob mismatch p99 0.105–0.111 (alarm thresholds D25 not hit), ratio q0.001–q0.999 within 0.91–1.10, clip fractions ≤ 1.2e-4, device memory ≤ 38.8 GiB. Rounds 114–216 s.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** GPU 2/2 general; preempt 0 starts; `/data/user_data` 163/500 GB used (account-wide). Harness quirk: `ae harvest` waits while `squeue` still shows COMPLETING after `sacct` reports COMPLETED; read the distillate directly or harvest later.
+6. **Most important.** Same critical path: both asym runs end ~13:30Z → move the 2e-6 pair to general at once.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b87y26pwf).
