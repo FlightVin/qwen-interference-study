@@ -481,3 +481,40 @@ execution mandate: this project may use **3 concurrent general GPUs and 6 preemp
 its activities. Reconcile running and pending jobs against the project ledger, use the third general
 GPU for the highest-priority ready task, move an eligible pending job when that gives an earlier
 start, verify each job runs only once, and keep the slot filled while useful work is ready.
+
+## 22. Amendment A8 (owner, 2026-11-07 ~20:15Z): close the thinking-mode diagnostic; non-thinking priorities
+
+Recorded faithfully from the owner's message. It closes A6 (§20) early and sets priorities for the
+frozen non-thinking study.
+
+1. **Close A6.** Preserve D62 and D63 as completed evidence. Withdraw the remaining A6 work,
+   including the 16,384-token profile: cancel job 11078421 if pending or running (after ownership
+   check) and record its cost; if finished, keep its artifacts and spend no more compute on it.
+   Reassign the slot to the highest-priority ready main run, checking H-s303 first to avoid a
+   duplicate. Stay within 3 general and 6 preempt GPUs.
+2. **Narrow D63.** Report its counts as observations from 16 sampled failures per mode: in 9
+   non-thinking cases the visible text showed no factoring attempt and 2 showed an incorrect
+   factorization; 10 thinking cases were classified as truncated after factoring. A response tail
+   cannot establish what happened earlier, and an alternative method can be mathematically valid.
+   The hypothesis under test is whether direct practice helps the learner recognize and use
+   factoring in harder problems.
+3. **Baseline error audit (checklist §3.7).** Complete it on saved non-thinking screening attempts.
+   Give the reviewer the problem statement and the full response where available. Distinguish:
+   failure to recognize an opportunity to factor; incorrect execution; a valid alternative approach
+   followed by a different error; final-answer extraction failure; insufficient evidence. Record the
+   first identifiable error and keep unknowns. Check for mathematically complete answers split
+   across boxes. Keep the frozen primary grading rule; report verified extraction misses separately.
+4. **Cap and truncation reporting.** Keep the 8,192-token cap and the frozen completion rule for all
+   main and sensitivity runs. Report truncation with pass@1 at scheduled evaluations. During
+   training, log capped counts with denominators separately for hard and auxiliary prompts by arm,
+   and compare R and U on their shared hard schedule. The 5% threshold governed calibration
+   selection only; a later crossing triggers inspection and reporting, with no automatic change to
+   the training cap.
+5. **Records reconciliation at the next hourly review.** Correct stale STATE text. Document why the
+   calibration panels hold 59/56 items against the original 64-per-split minimum. Reconcile
+   checklist §§3.12 and 3.16 with the count of native candidates (of 184) that received 32 fresh
+   attempts at 8,192 and the count excluded using 4,096-token scores. Keep frozen cohorts intact.
+   Refresh the compute forecast from observed production round times and check peak storage before
+   filling more slots.
+Continue healthy main runs while doing the CPU-side tasks. Keep sealed test outcomes out of training
+decisions and proceed autonomously through the prespecified analysis and report.

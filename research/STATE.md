@@ -22,6 +22,7 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 ## Owner amendments in force
 A6 thinking-mode baseline diagnostic (§20; D56).
 A7 GPU ceilings 3 general + 6 preempt (§21; D60).
+A8 A6 closed; D63 narrowed; §3.7 error audit; cap fixed, truncation by role reported; records reconciliation (§22; D64–D66).
 A1 precision audit + report figures (§15); A2 aux pool target 64 pairs, supplementation rules (§16);
 A3 up to 30 CPUs on `preempt_cpu_qos` (§17); D21 `registry/` and `ops/` untracked (local only).
 A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + moderate 9–12/32, proceed at 48–64, external/authored/smaller-pilot paths owned by the agent.
@@ -39,8 +40,8 @@ GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 - Endpoint T=128 (≤ 21 GPU-h per run). PROTOCOL frozen. Risk: lr 2e-6 lengthens responses; truncation per arm monitored.
 - Eval noise: sd 0.020 per within-run gain; cross-job reproduction partial (D50, D51).
 
-## A6 thinking-mode diagnostic (D56)
-- Same-cap (8,192) result (D62): thinking raises pass@1 by +0.23–0.25 in every pool, but truncates 51.6% of H and 46% of dev responses; auxiliary practice becomes near-trivial (0.97–0.98; mixed groups 13–25%); R/U stay matched; 5.5–8.1× GPU time. 16,384 profile queued (11078421). Failures (D63): non-thinking fails at the factoring step (11/16); thinking at 8,192 mostly truncates after doing it (10/16).
+## A6 thinking-mode diagnostic — closed (A8, D64)
+- Completed evidence: same-cap comparison (D62) and 32-record failure sample (D63, interpretation narrowed in D65: tail-only observations). No longer-cap profile.
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.

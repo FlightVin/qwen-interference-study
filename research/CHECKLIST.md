@@ -12,6 +12,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 0.6 Keep failed/superseded attempts in the ledger and registry; charge their compute.
 - 0.12 Amendment A6 (2026-11-07, `project.md` §20): thinking-mode baseline diagnostic on an 80-item seeded panel (32 H stratified by source × technique, 16 R + 16 matched U, 16 dev; sealed test untouched), 8 attempts per item per mode; same cap 8,192 first, only `enable_thinking` changes; reasoning + answer count against the cap; grade only the final answer after reasoning (tests); report per pool; 16,384 profile only if thinking truncation > 5%; separate thinking study only after re-screen, matching, calibration and a 32-round truncation check; distinct manifests/run IDs; main study and hourly review continue.
 - 0.13 Amendment A7 (2026-11-07, `project.md` §21): 3 concurrent general + 6 preempt GPUs; reconcile with the ledger; fill the third general GPU with the highest-priority ready task; move an eligible pending job if it starts earlier; verify single execution; keep the slot filled while useful work is ready.
+- 0.14 Amendment A8 (2026-11-07, `project.md` §22): close A6 (keep D62/D63; cancel 11078421; slot → main run, no duplicate H-s303); narrow D63 to tail observations; complete §3.7 error audit with full responses and the five categories (first error; unknowns kept; split-box check; extraction misses reported separately, frozen grading kept); 8,192 cap fixed, truncation reported with pass@1 and by role per arm during training, R vs U on shared hard schedule, 5% crossing → inspect/report only; reconcile records at next hourly review; refresh forecast and storage before filling slots.
 - 0.11 Amendment A5 (2026-11-07, `project.md` §19): technique coverage — primary technique per H_train/E_related item (F1–F8, frozen); each technique ≥ 10% of H_train needs E_related share ≥ ½ of it (ceil to whole items); check after R/U matching; repair via authorized E_related selection/augmentation only, re-match; H_train fixed; residual shortfall recorded; table in report.
 - 0.10 Amendment A4 (2026-11-07, `project.md` §18): H_train via full native stage 2 (184 candidates, ≤5,888 attempts), core 2–8/32 + moderate 9–12/32, target 64 (≥½ core), proceed at 48–64; else Omni-MATH tranche (≤200), smaller pilot with uniform endpoint shortening, or one authored tranche; one H_train manifest; decisions before treatment outcomes.
 - 0.9 Amendment A3 (2026-11-07, `project.md` §17): ≤30 CPUs total on `preempt_cpu_qos`; enforced by `ops/qis-submit`.
@@ -39,7 +40,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.4 done — Length probe 11072430: truncation 2.83% at 4096, 0% at 8192, success identical (0.6406) → cap 4096 frozen (D18). H reserve tranche pre-registered (D19).
 - 3.5 done (superseded at 8,192 by 3.16) — stage 1 running: study pools 11072609 (general), calibration 11072610 (preempt). Screening stage 1 (16 samples) → shortlist; stage 2 (32 samples) → selection; stage 3 (16 fresh, report only).
 - 3.6 done (D47/D48; pass 2 + third read) — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
-- 3.7 pending — Error audit: ≤64 incorrect screening attempts on H candidates.
+- 3.7 active (A8.3) — Error audit: ≤64 incorrect non-thinking screening attempts on H candidates; reviewer gets problem statement + full response; categories: missed factoring opportunity / incorrect execution / valid alternative then other error / extraction failure / insufficient evidence; first identifiable error; unknowns kept; split-box check; extraction misses reported separately.
 - 3.8 done (D48: 63 pairs, |SMD| ≤ 0.19; mixed-group fraction from stage-3 baseline 11075046) — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
 - 3.9 done (D34, D46) — calibration panels done (D33). target_dev/target_test selection by rubric pending (pass 2 + third read done).
 - 3.10 done (D34: J_H 32, J_R 28, J_U 32) — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
@@ -71,8 +72,8 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 6A.1 done — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
 - 6A.2 done (D62; job 11078115) — Same-cap run (8,192): both modes, 8 attempts, template check; report per pool: paired Δpass@1, mixed-group frequency, truncation, lengths, GPU cost; R vs U match; H occasional successes.
 - 6A.3 done (D63) — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
-- 6A.4 active (triggered: H truncation 51.6%; job 11078421 queued) — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
-- 6A.5 pending — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
+- 6A.4 withdrawn (A8; 11078421 cancelled before start, D64) — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
+- 6A.5 withdrawn (A8) — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6. Main runs (after G3)
 - 6.1 active (D61: canary passed; R-s101, U-s101 running on general; 6 primary runs queued on preempt; H-s303 waits) — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.
@@ -80,6 +81,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 6.3 pending — Local update diagnostic (R seed 101, rounds 0 and halfway; 4 branches × 4 seeds).
 
 ## 7. Evaluation, audit, report
+- 7.0 active (D66) — Truncation monitor: capped/total by role per arm per round; R vs U on shared hard schedule; 5% crossing → inspect + report.
 - 7.1 pending — Dev curves; test at baseline and endpoint (32 samples/problem).
 - 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests 33/33 passed in job 11075445 (11075419 failed: scipy absent from venv; replaced by a verified t table, ~7 CPU-min charged); figures and pass@8 tables pending. Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
 - 7.3 pending — Independent recomputation entry point; verifier sample audit.

@@ -86,3 +86,13 @@ A6: a separate thinking-mode baseline diagnostic (D56) does not alter this proto
 
 ## Freeze
 Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS D57 follow-up and in every main run's config `code_sha`). Main runs: `qis-main-{H,R,U}-s{101,202,303}-sym`, `qis-sens-{R,U}-s{101,202,303}-asym`, lr 2e-6, 128 rounds.
+
+## Amendment A8 (2026-11-07, after freeze; project.md §22)
+- A6 thinking-mode diagnostic closed after the same-cap comparison (D62) and failure sample (D63); no longer-cap profile.
+- The 8,192 cap and the completion rule (capped → reward 0) stay fixed for every main and sensitivity run. The 5%
+  truncation threshold applied to calibration selection only. During training, capped counts with denominators are
+  reported per arm separately for hard and auxiliary prompts (from the per-response training records), and R vs U are
+  compared on their shared hard schedule; a crossing of 5% triggers inspection and reporting, never a cap change.
+  Scheduled evaluations report truncation alongside pass@1.
+- Baseline error audit (§3.7) on saved non-thinking screening attempts, with the categories of project.md §22.3;
+  extraction misses (e.g., complete answers split across boxes) are reported separately and never regraded.
