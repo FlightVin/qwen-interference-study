@@ -1,11 +1,13 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 22:10Z (A9 deadline scope).
+Updated 2026-11-07 22:50Z (A10 8k-to-16k schedule).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
-**Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds; cap 8,192.
+**Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds.
+**Response cap (A10, D73): 8k-to-16k training schedule** — rounds 1–64 at 8,192, rounds 65–128 at 16,384 (pending smoke
+test; a smaller common cap if 16k is infeasible); questions screened at 8k; test evaluations at 16,384 with an 8,192 view.
 Seed 303 and clipping sensitivity deferred. Deadline: report by 10 Nov 01:00Z (target), 14:30Z (hard).
 No endpoint result exists yet (none viewed at the A9 amendment).
 
@@ -25,7 +27,7 @@ Qwen3-1.7B @ `70d244cc`, non-thinking.
 
 ## Owner amendments in force
 A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (§17); A4 H_train authority (§18);
-A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A8 priorities (§22): cap fixed,
+A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A10 8k-to-16k cap at round 64 (§24); A8 priorities (§22): cap fixed,
 truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
 (evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
 
@@ -36,8 +38,9 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Each s101 completion (~8 Nov 07:00–10:00Z) → move matching s202 job to general at once.
-2. Done: diagnostic code (tests 41/41), test-eval recipes, endpoint validation script, A9 table code. Queued on preempt: base test eval (11079315), diagnostic r0 (11079411). Next: figures script, report skeleton, independent recomputation entry point.
-3. On each s101 endpoint: validate → submit its test eval (preempt) → move to general as s202 runs end. Submit diagnostic r64 after round_0064 exists.
-4. Hourly: forecast from actual throughput, truncation by arm and role, storage.
-5. Analysis → audited REPORT by 10 Nov 01:00Z; verified partial delivery by 14:30Z if anything slips.
+1. Smoke test `qis-smoke-k16` (preempt, or R-s101's GPU at round 64) → confirm 16,384 or pick the largest feasible cap.
+2. Each s101 run at round 64 (R ~01:30Z, U ~03:30Z, H ~05:30Z on 8 Nov): watcher fires → cancel old job → replacement resumes at 64 with the schedule.
+3. Replace queued s202 jobs with schedule-aware recipes after the smoke test; move to general as s101 runs finish.
+4. Base test eval (11079548, cap 16,384) and diagnostic r0 queued on preempt; r64 diagnostic after the boundary.
+5. Hourly: forecast from actual throughput (16k rounds slower), truncation by arm/role incl. the A10 breakdown, storage.
+6. Analysis → audited REPORT by 10 Nov 01:00Z; verified partial delivery by 14:30Z if anything slips.
