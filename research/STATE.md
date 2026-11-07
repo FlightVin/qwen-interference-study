@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 03:00Z.
+Updated 2026-11-07 03:10Z (review 1).
 
 ## Phase
 Setup → data construction and trainer implementation (in parallel). No GPU training yet.
@@ -32,7 +32,10 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Model Qwen3-
 ## Active / queued owned jobs
 See `slurm-agentic-engineering/bin/ae status` (env build `qis-env-v1`, data build `qis-data-v1`).
 
+- Pass-1 annotation done; rubric v1.1 roles give construction pools H 154 / R 110 / U 152 (pre-screening).
+- GPU probe passed; checkpoints are 20.6 GB and NFS writes ~40 MB/s → background validated writer; one validated + one in-flight checkpoint per run (storage).
+
 ## Next actions
-1. GPU probe `qis-probe-gpu-v1` (queued on general): template, generation, logprob agreement, memory.
-2. Annotation pass 1 (running, 6 agents) → screening candidate lists.
-3. Write the trainer (`src/qis/train/`), its unit tests and the precision audit (gate G2).
+1. Length probe → freeze response cap → stage-1 screening (study pools + calibration subsets).
+2. Trainer smoke (G2): precision audit, resume equality, real-round profile.
+3. Pass-2 blind annotation on screened/selected items; error audit; matching.
