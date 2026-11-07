@@ -7,6 +7,7 @@ selected-clipping run retains its halfway full checkpoint for the local-update d
 Usage: python -m qis.make_main_exps --lr 1e-6 --clip-selected sym --rounds 128 --expdir DIR
 """
 import argparse
+import json
 import os
 
 CLIP = {"sym": 0.2, "asym": 0.28}
@@ -14,7 +15,7 @@ CLIP = {"sym": 0.2, "asym": 0.28}
 TEMPLATE = r'''#!/usr/bin/env bash
 #EXP gpus=1 cpus=8 mem=64G time=40:00:00 part=preempt constraint=VRAM_48GB
 # HYPOTHESIS: main study ({phase}) — arm {arm}, seed {seed}, lr {lr}, clip (0.2,{eh}), {rounds} rounds,
-# cap 8,192, bundle main-v1 (sha 0e255243…). Primary contrast R−U on held-out target_test (separate job).
+# cap schedule {sched_txt} (A10), bundle main-v1 (sha 0e255243…). Primary contrast R−U on target_test (separate job).
 export PROJ_DATA="/data/user_data/$USER/qis"
 export VENV="$PROJ_DATA/env/venv-v1"
 export HF_HOME="$PROJ_DATA/hf"
@@ -38,13 +39,13 @@ phase precheck "false" '
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv > "$AE_RESULTS/gpu.txt"
     mkdir -p "$W" "$CK"
 '
-phase config "test -s $W/config.json" '
+phase config "false" '
     cat > "$W/config.json" <<JSON
-{{"run_id": "$RUN", "attempt_id": "a1", "phase": "{phase}", "arm": "{arm}", "seed": {seed},
+{{"run_id": "$RUN", "attempt_id": "{attempt}", "phase": "{phase}", "arm": "{arm}", "seed": {seed},
  "lr": {lr}, "eps_low": 0.2, "eps_high": {eh}, "rounds": {rounds}, "ckpt_every": 4,
  "eval_rounds": {evals}, "eval_panels": {{"dev": 8, "probe_J_R": 8, "probe_J_U": 8}},
  "retain_rounds": {retain},
- "bundle": "$BUNDLE", "model": "$MODEL", "max_tokens": 8192, "gpu_mem_util": 0.30,
+ "bundle": "$BUNDLE", "model": "$MODEL", "max_tokens": {maxtok}, "cap_schedule": {sched}, "gpu_mem_util": 0.30,
  "out_dir": "$W", "ckpt_dir": "$CK", "ckpt_lock_root": "$PROJ_DATA/ckpt",
  "wandb": {{"enabled": true, "project": "qis-qwen-interference"}}}}
 JSON
@@ -67,18 +68,25 @@ def main():
     ap.add_argument("--clip-selected", choices=list(CLIP), required=True)
     ap.add_argument("--rounds", type=int, required=True)
     ap.add_argument("--expdir", required=True)
+    ap.add_argument("--cap-schedule", default="0:8192", help="start_round:cap,... (A10: 0:8192,64:16384)")
+    ap.add_argument("--attempt", default="a1")
+    ap.add_argument("--seeds", default="101,202,303")
+    ap.add_argument("--no-sensitivity", action="store_true")
     a = ap.parse_args()
+    sched = [[int(x.split(":")[0]), int(x.split(":")[1])] for x in a.cap_schedule.split(",")]
+    seed_list = [int(x) for x in a.seeds.split(",")]
     T = a.rounds
     evals = [0, T // 4, T // 2, 3 * T // 4, T]
     other = "asym" if a.clip_selected == "sym" else "sym"
-    runs = [("primary", arm, s, a.clip_selected) for arm in "HRU" for s in (101, 202, 303)] + \
-           [("sensitivity", arm, s, other) for arm in "RU" for s in (101, 202, 303)]
+    runs = [("primary", arm, s, a.clip_selected) for arm in "HRU" for s in seed_list] + \
+           ([] if a.no_sensitivity else [("sensitivity", arm, s, other) for arm in "RU" for s in seed_list])
     for phase, arm, seed, clip in runs:
         run = f"qis-main-{arm}-s{seed}-{clip}" if phase == "primary" else f"qis-sens-{arm}-s{seed}-{clip}"
         retain = [T // 2] if (phase == "primary" and arm == "R" and seed == 101) else []
         with open(os.path.join(a.expdir, f"{run}.sh"), "w") as f:
             f.write(TEMPLATE.format(phase=phase, arm=arm, seed=seed, lr=a.lr, eh=CLIP[clip], rounds=T, run=run,
-                                    evals=evals, retain=retain))
+                                    evals=evals, retain=retain, attempt=a.attempt, maxtok=max(c for _, c in sched),
+                                    sched=json.dumps(sched), sched_txt=a.cap_schedule))
         print(run)
 
 

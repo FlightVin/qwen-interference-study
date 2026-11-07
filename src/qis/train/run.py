@@ -86,16 +86,34 @@ class Log:
         self.write("event", what=what, **kv)
 
 
+def cap_for(cfg, rnd):
+    """Response cap for 0-based training round `rnd` (A10). cap_schedule = [[start_round, cap], ...] sorted by start;
+    rounds rnd >= start use cap. Without a schedule: cfg["max_tokens"]."""
+    sched = cfg.get("cap_schedule")
+    if not sched:
+        return cfg["max_tokens"]
+    cap = sched[0][1]
+    for start, c in sched:
+        if rnd >= start:
+            cap = c
+    return cap
+
+
+def eval_cap(cfg, done_rounds):
+    """Evaluation cap after `done_rounds` completed rounds = cap of the last trained round (round 0: first cap)."""
+    return cap_for(cfg, max(done_rounds - 1, 0))
+
+
 def load_bundle(path):
     b = json.load(open(path))
     return b, hashlib.sha256(open(path, "rb").read()).hexdigest()
 
 
-def evaluate(rollout, verifier, tok, panel_name, items, n, rnd, rec_dir):
+def evaluate(rollout, verifier, tok, panel_name, items, n, rnd, rec_dir, max_tokens=None):
     ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
     req_seeds = [seeds.int_seed(EVAL_SEED, f"eval/{panel_name}/{it['id']}/r{rnd}/n{n}") for it in items]
     t0 = time.time()
-    outs = rollout.generate(ids, n, req_seeds, logprobs=False)
+    outs = rollout.generate(ids, n, req_seeds, logprobs=False, max_tokens=max_tokens)
     scored = verifier.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
                               "truncated": o["finish"] == "length"} for it, g in zip(items, outs) for o in g])
     per, k, recs, unknown = [], 0, [], 0
@@ -117,7 +135,8 @@ def evaluate(rollout, verifier, tok, panel_name, items, n, rnd, rec_dir):
             "pass1": float(np.mean([p["c"] / n for p in per])),
             "pass8": float(np.mean([grpo.pass_at_k(n, p["c"], 8) for p in per])) if n >= 8 else None,
             "truncated": sum(x["finish"] == "length" for x in recs) / len(recs),
-            "unknown": unknown, "tokens": toks, "seconds": time.time() - t0, "per_problem": per}
+            "unknown": unknown, "tokens": toks, "seconds": time.time() - t0, "per_problem": per,
+            "max_tokens": max_tokens or rollout.max_tokens}
 
 
 def main():
@@ -137,7 +156,9 @@ def main():
     tok = AutoTokenizer.from_pretrained(cfg["model"])
     from qis.train.learner import Learner
     from qis.train.rollout import Rollout
-    rollout = Rollout(cfg["model"], cfg["max_tokens"], cfg["gpu_mem_util"], cfg.get("max_num_seqs", 256))
+    max_cap = max([cfg["max_tokens"]] + [c for _, c in cfg.get("cap_schedule", [])])
+    rollout = Rollout(cfg["model"], cap_for(cfg, 0), cfg["gpu_mem_util"], cfg.get("max_num_seqs", 256),
+                      max_model_tokens=max_cap)
     learner = Learner(cfg["model"], cfg["lr"])
     verifier = Verifier(cfg.get("verify_workers", 6))
 
@@ -188,7 +209,7 @@ def main():
             done = os.path.join(rec_dir, f"eval_{panel}_r{rnd:04d}.jsonl.gz")
             if os.path.exists(done):
                 continue
-            r = evaluate(rollout, verifier, tok, panel, pools[panel], n, rnd, rec_dir)
+            r = evaluate(rollout, verifier, tok, panel, pools[panel], n, rnd, rec_dir, max_tokens=eval_cap(cfg, rnd))
             if r["unknown"]:
                 log.event("eval_verifier_unknown", panel=panel, round=rnd, n=r["unknown"])
             log.write("eval", **{k: v for k, v in r.items() if k != "per_problem"},
@@ -214,7 +235,8 @@ def main():
         assert all(len(p) <= prompts.PROMPT_CAP for p in p_ids), "prompt over cap (bundle must pre-filter)"
         req_seeds = [seeds.int_seed(cfg["seed"], f"gen/r{rnd}/p{j}") for j in range(len(items))]
         t0 = time.time()
-        groups = rollout.generate(p_ids, N_PER_PROMPT, req_seeds, logprobs=True)
+        cap = cap_for(cfg, rnd)
+        groups = rollout.generate(p_ids, N_PER_PROMPT, req_seeds, logprobs=True, max_tokens=cap)
         t_gen = time.time() - t0
         mem_gen = gpu_used()
         rollout.sleep()
@@ -297,7 +319,7 @@ def main():
         ng = rewards.sum(1)
         counters["gen_tokens"] += int(lens.sum()); counters["prompt_tokens"] += sum(len(p) * N_PER_PROMPT for p in p_ids)
         counters["hard_responses"] += N_PER_PROMPT * sum(r.startswith("hard") for r in roles)
-        rm = {"round": rnd + 1, "success": succ,
+        rm = {"round": rnd + 1, "max_tokens": cap, "success": succ,
               "groups_all0": int((ng == 0).sum()), "groups_all1": int((ng == N_PER_PROMPT).sum()),
               "groups_mixed": int(((ng > 0) & (ng < N_PER_PROMPT)).sum()),
               "len_mean": float(lens.mean()), "len_q": qtiles(lens),
