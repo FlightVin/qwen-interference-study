@@ -180,3 +180,12 @@
 5. **Next jobs / limits.** GPU 3/3 general (s101); preempt 6/6 queued (3 s202, base test eval, diagnostic r0, smoke). CPU: 3 watchers + tests. Storage 200/500 GB.
 6. **Most important.** Pass the smoke test before round 64 (~01:30Z on 8 Nov) and execute the transition without losing completed rounds.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher re-armed.
+
+## Review 21 — 2026-11-07 23:05Z
+1. **Changes.** A10 code tests 44/44 (11079542). Boundary watchers running. Smoke test, base test eval, diagnostic r0 and s202 runs queued on preempt (no preempt start).
+2. **Alignment.** Rounds 1–64 at 8,192 in all runs; nothing has trained under the amendment yet.
+3. **Mechanics.** Healthy: mismatch p99 0.115–0.128, train memory ≤ 41.2 GiB; rounds 316–449 s; mean length 2,808–3,617.
+4. **Confounds.** Capped hard training responses (cumulative): R-s101 5.1%, U-s101 7.7%, H-s101 2.5%; shared hard schedule (40 rounds) R 4.4% vs U 7.7%. Under the 8,192 phase these are capped → reward 0; A10 addresses rounds 65–128. Reported per A8.4.
+5. **Next jobs / limits.** GPU 3/3 general; preempt 6/6 queued; CPU 3 watchers. Storage 201/500 GB. Round 64 forecast: R ~01:00Z, U ~01:30Z, H ~03:00Z (8 Nov).
+6. **Most important.** The smoke test gates the transition; if still pending at R-s101 round 64, run it on R's GPU before releasing any 16k round.
+7. **Reconciliation.** Slurm ↔ ledger agree (12 live owned jobs). Watcher alive (bfer77hh1).
