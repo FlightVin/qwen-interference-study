@@ -72,6 +72,6 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 
 ## 7. Evaluation, audit, report
 - 7.1 pending — Dev curves; test at baseline and endpoint (32 samples/problem).
-- 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests in job 11075445 (11075419 failed: scipy absent from venv; replaced by a verified t table, ~7 CPU-min charged); figures and pass@8 tables pending. Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
+- 7.2 partial — `src/qis/analysis/stats.py` (t interval, crossed bootstrap seed 2027, per-problem change), tests 33/33 passed in job 11075445 (11075419 failed: scipy absent from venv; replaced by a verified t table, ~7 CPU-min charged); figures and pass@8 tables pending. Analysis: primary R−U, t interval, crossed bootstrap (seed 2027), pass@8.
 - 7.3 pending — Independent recomputation entry point; verifier sample audit.
 - 7.4 pending — Cost reconciliation; `reports/REPORT.md` with figures in `reports/figures/` (A1.2), plotting script and source tables committed, verified from a clean checkout.
