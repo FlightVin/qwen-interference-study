@@ -37,7 +37,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 
 ## Next actions
 1. Each s101 completion (~8 Nov 07:00–10:00Z) → move matching s202 job to general at once.
-2. Now (CPU): local-update diagnostic code + tests; sealed test-evaluation recipe; endpoint validation script (attempt counts, verifier outputs, checkpoint identity, cost); report skeleton with the A9 two-row table and incremental figures.
-3. Queue base-model test eval, s101 endpoint evals and the diagnostic on preempt; move to general as s202 runs end.
+2. Done: diagnostic code (tests 41/41), test-eval recipes, endpoint validation script, A9 table code. Queued on preempt: base test eval (11079315), diagnostic r0 (11079411). Next: figures script, report skeleton, independent recomputation entry point.
+3. On each s101 endpoint: validate → submit its test eval (preempt) → move to general as s202 runs end. Submit diagnostic r64 after round_0064 exists.
 4. Hourly: forecast from actual throughput, truncation by arm and role, storage.
 5. Analysis → audited REPORT by 10 Nov 01:00Z; verified partial delivery by 14:30Z if anything slips.
