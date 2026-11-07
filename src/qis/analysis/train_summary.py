@@ -37,7 +37,7 @@ def main(runs, out):
                            "ratio_q001": round(float(np.mean([r["ratio_q"]["q0.001"] if "ratio_q" in r else r.get("ratio_q001", np.nan) for r in rs])), 3),
                            "ratio_q999": round(float(np.mean([r["ratio_q"]["q0.999"] if "ratio_q" in r else r.get("ratio_q999", np.nan) for r in rs])), 3),
                            "mism_q99": round(float(np.mean([r["logprob_mismatch_absq"]["q0.99"] if "logprob_mismatch_absq" in r else np.nan for r in rs])), 3),
-                           "entropy": round(float(np.mean([r.get("entropy_sample_mean", np.nan) for r in rs])), 3),
+                           "entropy": (round(float(np.nanmean([r.get("entropy_sample_mean", np.nan) for r in rs])), 3) if any("entropy_sample_mean" in r for r in rs) else None),
                            "t_round": round(float(np.mean([r["t_round"] for r in rs]))),
                            "grad_norm": round(float(np.mean([s["grad_norm_preclip"] for s in st])), 3) if st else None,
                            "grad_clipped_share": round(float(np.mean([s["grad_clipped"] for s in st])), 3) if st else None,
