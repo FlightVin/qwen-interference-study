@@ -1,0 +1,48 @@
+{
+ "rounds_A": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "rounds_B": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "B_duplicated_rounds": [],
+ "B_missing_rounds": [],
+ "success_equal": {
+  "1": true,
+  "2": true,
+  "3": false,
+  "4": false
+ },
+ "opt_step_equal": {
+  "1": true,
+  "2": true,
+  "3": true,
+  "4": true
+ },
+ "len_mean": {
+  "1": [
+   444.5859375,
+   444.5859375
+  ],
+  "2": [
+   474.171875,
+   458.9609375
+  ],
+  "3": [
+   420.84375,
+   423.2734375
+  ],
+  "4": [
+   484.109375,
+   481.625
+  ]
+ },
+ "final_weight_maxabs_diff": 1.8902122974395752e-05,
+ "final_weights_bitexact": false
+}

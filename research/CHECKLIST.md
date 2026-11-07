@@ -46,11 +46,11 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 4.1 done — Custom single-GPU trainer, verl as reference (D10, D11). Code: `src/qis/train/`.
 - 4.2 done — GPU probe 11072268 (RTX 6000 Ada): template fixture ok; 1,721 tok/s at 32 seqs; step 13.3 s/32 responses; logprob |Δ| p99 0.127 (BF16 head); ckpt 20.6 GB, write 512 s → background writer added.
 - 4.3 done (CPU part) — 30/30 (job 11072715, incl. exact checkpoint checksum): advantages, clip cases, accumulation, verl parity, minibatch balance, schedules, verifier, splits. GPU part in 4.4–4.7. Unit tests: template/mask/EOS, group boundaries, zero advantages, population std, loss reduction + accumulation, all-param trainability, 4 steps/round, balanced minibatches, signed objective.
-- 4.4 pending — Rollout vs teacher-forced logprob agreement; update changes the rollout model.
-- 4.5 active — (`qis-trainer-smoke-v1` 11072622, with 4.4 and 4.7; attempts: 11072408 cancelled before start [skipped precheck]; 11072428 failed 6 min [float64 checksum order-dependence]; 11072527 failed 7 min [audit OOM]; 11072622 current) Interruption + resume test vs uninterrupted short run; repeated-seed variation.
-- 4.6 pending — Profile a real round; checkpoint size/write time; telemetry overhead <3%.
-- 4.7 done (pending harvest of table) — job 11072622: restart weights + moments bit-exact, updates accumulate. (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
-- **G2** — all tests pass on the pinned backend.
+- 4.4 done — mismatch median ~1e-7, p99 0.10–0.11, p99.9 0.21–0.23; alarm thresholds D25; update reaches rollout (probe: mean |Δlp| 0.0026 after one step).
+- 4.5 done — resume test (11072622): no duplicated/missing rounds, counters equal; A/B diverge from round 2 (pre-interruption) = kernel nondeterminism tolerance (D24). Attempts 11072408 (cancelled), 11072428, 11072527 (failed, fixed).
+- 4.6 partial — smoke rounds 42–51 s (short items), 36/44.4 GiB device memory, ckpt 21.9 GB in 197–245 s background (D26). Real-length round profile and telemetry overhead: first calibration run.
+- 4.7 done — `research/evidence/g2/precision_audit.md` (D24). (A1) Precision audit after the first optimizer step: checkpoint/rollout/compute/param/grad/moment dtypes per parameter; nonzero grad norm on a mixed batch; sampled-weight deltas; repeated updates accumulate; sync at BF16; restart restores FP32 weights and moments bit-exactly; peak memory; table + code revision.
+- **G2** — PASSED 2026-11-07 (D24).
 
 ## 5. Calibration and freeze (gate G3)
 - 5.1 pending — 6 configs (lr × clip), seed 11, 32 rounds; validation at 0/16/32.

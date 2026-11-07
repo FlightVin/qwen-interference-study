@@ -1,0 +1,99 @@
+{
+ "code_sha": "d1b38a09372005449fc177f796466545eb853d3e",
+ "gpu": "NVIDIA RTX 6000 Ada Generation",
+ "lr": 1e-06,
+ "checkpoint_dtypes": {
+  "BF16": 311
+ },
+ "rollout_param_dtypes": {
+  "torch.bfloat16": 226
+ },
+ "mixed_groups_found": 3,
+ "optimizer_param_dtypes": {
+  "torch.float32": 310
+ },
+ "n_param_groups": 1,
+ "n_params": 1720574976,
+ "all_params_require_grad": true,
+ "learner_hidden_dtype_under_autocast": "torch.float32",
+ "lm_head_logprob_dtype": "torch.float32",
+ "n_param_tensors_1to1_with_vllm": 170,
+ "step_seconds": 8.257258176803589,
+ "grad_norm_first_step": 1.1425613164901733,
+ "grad_dtypes": {
+  "torch.float32": 310
+ },
+ "params_without_grad": 0,
+ "moment_dtypes": {
+  "exp_avg": {
+   "torch.float32": 310
+  },
+  "exp_avg_sq": {
+   "torch.float32": 310
+  },
+  "step": {
+   "torch.float32": 310
+  }
+ },
+ "sample_weight_change_step1": {
+  "model.layers.13.post_attention_layernorm.weight": {
+   "mean_abs": 1.0004732757806778e-06,
+   "frac_changed": 1.0
+  },
+  "model.layers.26.post_attention_layernorm.weight": {
+   "mean_abs": 9.5367431640625e-07,
+   "frac_changed": 1.0
+  },
+  "model.layers.26.self_attn.o_proj.weight": {
+   "mean_abs": 9.593759386916645e-07,
+   "frac_changed": 1.0
+  },
+  "model.layers.21.input_layernorm.weight": {
+   "mean_abs": 9.834766387939453e-07,
+   "frac_changed": 1.0
+  }
+ },
+ "frac_bf16_changed_step1": 0.0,
+ "sample_weight_change_step4_mean_abs": 3.7537049593083793e-06,
+ "accumulates": true,
+ "frac_bf16_changed_step4": 0.00390625,
+ "peak_gpu_gib_training": 44.58323812484741,
+ "sync_bf16_exact": {
+  "model.layers.13.post_attention_layernorm.weight": true,
+  "model.layers.26.post_attention_layernorm.weight": true,
+  "model.layers.26.self_attn.o_proj.weight": true,
+  "model.layers.21.input_layernorm.weight": true
+ },
+ "rollout_param_dtypes_after_sync": {
+  "torch.bfloat16": 226
+ },
+ "gpu_used_gib_device_after_steps": 22.356689453125,
+ "ckpt_snapshot_s": 3.175814390182495,
+ "ckpt": {
+  "round": 4,
+  "ok": true,
+  "snapshot_s": 3.175814390182495,
+  "lock_wait_s": 0.0008571147918701172,
+  "write_s": 244.8947024345398,
+  "total_s": 271.3221471309662,
+  "bytes": 21892013805
+ },
+ "restart_weights_bitexact": true,
+ "restart_weight_dtypes": {
+  "torch.float32": 310
+ },
+ "restart_moments_bitexact": true,
+ "restart_moment_dtypes": {
+  "torch.float32": 620
+ },
+ "restart_moment_device": [
+  "cuda:0"
+ ],
+ "peak_gpu_gib_overall": 44.58323812484741,
+ "note_peak": "torch allocator stats include vLLM sleep-mode pool; device-level reading is gpu_used_gib_device_after_steps",
+ "documented_not_measured": [
+  "BF16 autocast matmuls accumulate in FP32 inside cuBLAS (documented torch/cuBLAS behaviour; not inspectable)",
+  "SDPA attention kernel internal precision under autocast (documented: BF16 inputs, FP32 softmax accumulation)",
+  "vLLM sampling log-softmax precision (documented FP32 in vLLM sampler)"
+ ]
+}

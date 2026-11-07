@@ -1,0 +1,67 @@
+{
+ "torch": "2.13.0+cu130",
+ "cuda": "13.0",
+ "gpu": "NVIDIA RTX 6000 Ada Generation",
+ "gpu_total_gib": 44.4180908203125,
+ "template_fixture": {
+  "rendered_nonthinking": "<|im_start|>user\nSolve the following problem. Show your working and put your final answer in \\boxed{}.\n\nWhat is 1+1?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "rendered_thinking": "<|im_start|>user\nSolve the following problem. Show your working and put your final answer in \\boxed{}.\n\nWhat is 1+1?<|im_end|>\n<|im_start|>assistant\n",
+  "ok": true
+ },
+ "vllm": "0.31.0",
+ "vllm_init_s": 63.63619065284729,
+ "generation": {
+  "seconds": 34.547441244125366,
+  "responses": 32,
+  "tokens": 59447,
+  "tok_per_s": 1720.735251561031,
+  "lengths": {
+   "0.0": 651.0,
+   "0.5": 1606.0,
+   "0.9": 2878.7000000000003,
+   "0.99": 3980.0600000000004,
+   "0.999": 4084.4060000000004,
+   "1.0": 4096.0
+  },
+  "truncated": 1,
+  "ends_with_eos": 31,
+  "eos_token": "<|im_end|>",
+  "eos_id": 151645
+ },
+ "gpu_used_after_gen_gib": 13.446533203125,
+ "gpu_used_after_sleep_gib": 1.057861328125,
+ "dropout": {
+  "attention_dropout": 0.0
+ },
+ "n_params": 1720574976,
+ "n_trainable": 1720574976,
+ "logprob_absdiff": {
+  "0.0": 0.0,
+  "0.5": 2.3748725652694702e-07,
+  "0.9": 0.01692403107881546,
+  "0.99": 0.1268950545787812,
+  "0.999": 0.2444535574913009,
+  "1.0": 0.6205615997314453
+ },
+ "opt_step": {
+  "seconds": 13.348255634307861,
+  "grad_norm": 0.44748374819755554,
+  "peak_alloc_gib": 45.51881122589111,
+  "changed": {
+   "model.embed_tokens.weight": true,
+   "model.layers.0.self_attn.q_proj.weight": true,
+   "model.layers.0.self_attn.k_proj.weight": true
+  }
+ },
+ "ckpt": {
+  "write_s": 512.4642343521118,
+  "bytes": 20647302077,
+  "read_s": 15.618040800094604,
+  "reload_equal_first20": true,
+  "opt_state_tensors": 310
+ },
+ "sync_method": "collective_rpc(load_weights), in-process engine",
+ "sync_s": 0.1380784511566162,
+ "post_sync_lp_change_mean_abs": 0.002585351001471281,
+ "top_k_value_used": 0
+}
