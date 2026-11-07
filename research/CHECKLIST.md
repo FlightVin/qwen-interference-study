@@ -53,7 +53,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - **G2** — PASSED 2026-11-07 (D24).
 
 ## 5. Calibration and freeze (gate G3)
-- 5.1 pending — 6 configs (lr × clip), seed 11, 32 rounds; validation at 0/16/32.
+- 5.1 queued — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Jobs 11072991, 11072995–11072999 (preempt; move to general as slots free, D23 rule). Depend on panels job 11072990 ← calib16 screening 11072944.
 - 5.2 pending — Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
 - 5.3 pending — Cost estimate → 128 or 64 rounds. Write and commit `research/PROTOCOL.md` (freeze).
 
