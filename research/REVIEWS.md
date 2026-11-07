@@ -144,3 +144,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; CPU 0/30.
 6. **Most important.** Process issue found and fixed: I ran a read-only preview of the selection script, and earlier one-line metric summaries, on the laptop, which breaks the "no project code on the laptop" rule (D55). From now on every reported statistic is computed in a CPU job.
 7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (bke26mee7).
+
+## Review 17 — 2026-11-07 19:08Z
+1. **Changes.** Calibration selected lr 2e-6 / clip (0.2, 0.2) (D57; CPU job 11078053, tests 4/4); protocol frozen at `b8f36ca`, T=128 (D58). Owner amendment A6 recorded (project.md §20, D56); thinking-mode diagnostic code and grading tests committed before output. Canary `qis-main-R-s101-sym` (11078086) running on general since 19:07Z; A6 job `qis-a6-modes-k8` (11078087) pending on general.
+2. **Alignment.** Main study runs the frozen design; A6 is a separate diagnostic with distinct IDs and outputs.
+3. **Mechanics.** First main-arm (R) run: new code path (mixed minibatches, dev/probe evals, retained round-64 checkpoint) → canary rule; first-round check due ~19:30Z. Selection attempt 11078035 failed (parsing bug, fixed with a test).
+4. **Confounds.** lr 2e-6 lengthens responses; asymmetric sensitivity arm exceeded 5% truncation in calibration. Both monitored per arm.
+5. **Next jobs / limits.** GPU 2/2 general (1 running, 1 pending); preempt 0/6. 14 main runs wait for the canary check.
+6. **Most important.** Canary first-round check, then release 14 runs (preempt first, general as slots free).
+7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (b8h8tyfqi).

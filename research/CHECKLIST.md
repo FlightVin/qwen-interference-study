@@ -74,7 +74,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 6A.5 pending — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6. Main runs (after G3)
-- 6.1 pending — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.
+- 6.1 active (canary 11078086 running; D58) — H/R/U × seeds 101, 202 on 6 preempt slots; seed 303 on general or released slots.
 - 6.2 pending — Clipping sensitivity: R/U × 3 seeds, other clipping.
 - 6.3 pending — Local update diagnostic (R seed 101, rounds 0 and halfway; 4 branches × 4 seeds).
 
