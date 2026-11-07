@@ -21,13 +21,14 @@ def main():
     ap.add_argument("--s1", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--pools", nargs="+", default=["hard", "hard_reserve", "related", "unrelated"])
+    ap.add_argument("--stage", default="s1")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     summary = {}
     for pool in a.pools:
         lo, hi = BANDS[pool]
         order = [json.loads(line) for line in open(os.path.join(a.cand, f"{pool}.jsonl"))]
-        counts = {json.loads(line)["id"]: json.loads(line) for line in open(os.path.join(a.s1, pool, "s1_counts.jsonl"))}
+        counts = {json.loads(line)["id"]: json.loads(line) for line in open(os.path.join(a.s1, pool, f"{a.stage}_counts.jsonl"))}
         keep, held, missing, hist = [], [], [], {}
         for it in order:
             c = counts.get(it["id"])
