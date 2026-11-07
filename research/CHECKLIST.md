@@ -44,7 +44,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.12 active — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
 - 3.13 pending — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
 - 3.14 pending — (A4.3–5) Only if native < 48 or missing structures: Omni-MATH tranche (≤200, pinned) / smaller pilot (record families, core share, 16T/N and 8T/N repetitions) / authored tranche / fallback.
-- 3.16 pending — (D45) Re-screen at 8,192: H candidates with 4k c ≤ 12/32 (native + Omni, audit-eligible), auxiliary candidates with 4k c ≤ 24/32 or stage-1 ≤ 14/16, calibration panels (400 × 16); then re-run selection, matching, coverage.
+- 3.16 active (jobs 11074495, 11074499) — (D45) Re-screen at 8,192: H candidates with 4k c ≤ 12/32 (native + Omni, audit-eligible), auxiliary candidates with 4k c ≤ 24/32 or stage-1 ≤ 14/16, calibration panels (400 × 16); then re-run selection, matching, coverage.
 - 3.15 pending — (A5) Primary + secondary technique tags for every H_train and E_related item (blind annotators; F1–F8); coverage check after R/U matching; repair loop; coverage table → PROTOCOL and report.
 - 3.11 pending — (A2) Pool decision after stage-2 screening: count matched pairs, coverage (factoring forms), diversity (template families), balance (SMD). If short: record gap + finite synthetic budget, OR retain smaller natural set, OR fallback skill — choose and record before freeze.
 - **G1** — ≥64 H_train, ≥32 dev, ≥64 test, ≥64 per calib split (hard minima). Aux pools: 64 matched pairs target (A2); a modest shortfall needs documented coverage/diversity/balance. Else supplementation or the linear-equation fallback, before any treatment run.
@@ -61,7 +61,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 
 ## 5. Calibration and freeze (gate G3)
 - 5.0 done — 4,096-cap calibration run lr1e-6/sym (11072995): gain +0.081 but validation truncation 11.5% → cap raised to 8,192 (D45); 4,096 runs superseded/cancelled.
-- 5.1 pending (8,192 cap) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Jobs 11072991, 11072995–11072999 (preempt; move to general as slots free, D23 rule). Depend on panels job 11072990 ← calib16 screening 11072944.
+- 5.1 queued (8,192 cap; jobs 11074519–11074527; first run is the 8,192 canary) — 6 configs (lr × clip), seed 11, 32 rounds; calib_val eval (16/problem) at 0/16/32. Jobs 11072991, 11072995–11072999 (preempt; move to general as slots free, D23 rule). Depend on panels job 11072990 ← calib16 screening 11072944.
 - 5.2 pending — Top 2 with seed 22; select by rule; extension to 64 rounds only if the gain gate fails.
 - 5.3 pending — Cost estimate → 128 or 64 rounds. Write and commit `research/PROTOCOL.md` (freeze).
 

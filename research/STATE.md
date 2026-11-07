@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-07 05:10Z (review 3).
+Updated 2026-11-07 06:30Z (after D45).
 
 ## Phase
 Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
@@ -26,17 +26,19 @@ A4 H_train construction authority (§18): full native stage 2, core 2–8/32 + m
 A5 technique coverage (§19): techniques ≥ 10% of H_train need ≥ ½ that share in E_related (primary tags F1–F8).
 GPU ceilings unchanged: 2 general, 6 preempt.
 
-## Dataset status (pre-freeze)
-- H_train: native 29 eligible (18 core / 11 moderate); Omni-MATH tranche 73 annotation-eligible, screening pending (job 11073332). Combined rule fixed (D38).
-- Auxiliary: natural R 7 / U 18 in band; authored tranche (198 R / 196 U after intake; 114 R / 196 U annotation-eligible) screening (job 11073304). Matching + A5 coverage code fixed (D39).
-- Targets frozen (D34): target_dev 53, target_test 128, probes J_H 32 / J_R 28 / J_U 32.
-- Calibration panels frozen (D33); calibration run 1 of 6 at round 4 (baseline calib_val 0.4265).
+## Dataset status (pre-freeze; cap 8,192 per D45)
+- At 4,096 (superseded, kept): H_train selection 49 (D43); auxiliary in band R 16 / U 48 + tranche 2 pending.
+- Re-screen at 8,192 running: H (11074495, with calibration candidates) and auxiliary (11074499). Then re-run the frozen selection (D38), matching + coverage (D39).
+- Targets frozen (D34), unaffected by the cap.
+
+## Calibration
+- 4,096 run lr1e-6/sym superseded (truncation 11.5%). Six 8,192 runs queued (11074519–527) behind panels job 11074507; first run = canary for 8,192 memory/round time.
 
 ## Uncertain
 - Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.
 - Preempt availability (D37): main matrix may run on 2 general GPUs (~50 h wall).
 
 ## Next actions
-1. Omni screening → combined H selection → independent baseline (stage 3) → mixed-group fraction.
-2. Authored screening → R/U matching, balance, coverage → freeze dataset + PROTOCOL.
-3. Calibration: remaining 5 runs on general as slots free; then seed-22 finalists; select config.
+1. 8,192 re-screen results → H selection, R/U matching + A5 coverage → stage-3 baseline → freeze dataset.
+2. Calibration at 8,192: canary first round check, then all six, then seed-22 finalists → select → freeze PROTOCOL.
+3. Cost estimate at 8,192 → endpoint (128 vs 64 rounds) → launch main matrix.
