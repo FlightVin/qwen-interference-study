@@ -1,0 +1,66 @@
+20422 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-asym-s11/LATEST.json
+20407 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s11/round_0032/model.pt
+20406 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr1e-6-sym-s22/round_0032/model.pt
+20490 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-asym-s11/round_0032/state.json
+20446 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s11/LATEST.json
+20459 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr2e-6-sym-s22/LATEST.json
+20375 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-asym-s11/round_0032/state.json
+20372 MiB /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11/round_0032/state.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal8k-lr5e-7-sym-s11/round_0032/model.pt
+1 MiB /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-asym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-asym-s11
+20431 MiB /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11/LATEST.json
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11/round_0032
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11/round_0032/model.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11/round_0032/optim.pt
+  /data/user_data/vineethb/qis/ckpt/qis-cal-lr1e-6-sym-s11/round_0032/state.json
+nas5:/srv/nfs/data/user_data/vineethb  500G  359G  142G  72% /data/user_data/vineethb
