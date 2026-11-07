@@ -68,3 +68,9 @@ Frozen rule (`select_hard.py`, D28/D31; job 11073309, `data/screening/hsel_nativ
 **29 eligible** = 18 core + 11 moderate (source: 28 L4–5, 1 L3). Primary operations: F1 5, F2 8, F3 5,
 F4 6, F8 5. Exclusions: 128 outside bands, 26 audit disagreement, 1 verifier unknown.
 29 < 48 → external Omni-MATH tranche (D36), screening job 11073332.
+
+## Authored tranche 2 annotation (blind; 2026-11-07)
+`authored2_pass{1,2}.jsonl`, `authored2_third_read.jsonl`. Unrelated 120/120 eligible. Related: 214 agreed
+eligible + 4 via third read = 218 (of 300; intake kept 296). Third read (35 items, all direct_practice
+disputes): substitution/transcendental equations → direct_practice=no (rubric names polynomial equations
+only); "find the hole" → yes. Authored items are auxiliary-only, so `no` items are excluded, not moved to H.
