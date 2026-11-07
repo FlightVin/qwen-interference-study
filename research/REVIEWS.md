@@ -153,3 +153,12 @@
 5. **Next jobs / limits.** GPU 2/2 general (1 running, 1 pending); preempt 0/6. 14 main runs wait for the canary check.
 6. **Most important.** Canary first-round check, then release 14 runs (preempt first, general as slots free).
 7. **Reconciliation.** Slurm ↔ ledger agree (2 live owned jobs). Watcher alive (b8h8tyfqi).
+
+## Review 18 — 2026-11-07 20:07Z
+1. **Changes.** A7 applied (3 general GPUs, D60). Canary passed; main matrix released (D61): R-s101, U-s101, H-s101 running on general; R-s202, U-s202, H-s202, R-s303, U-s303 queued on preempt. A6 same-cap result (D62): thinking raises pass@1 +0.23–0.25 in every pool but truncates 51.6% of H responses; auxiliary practice near-trivial (mixed groups 13–25%); R/U still matched; 5.5–8.1× GPU time. 16,384 profile queued (11078421); H-s303 (never started) cancelled to stay within 6 preempt GPUs.
+2. **Alignment.** Main study runs the frozen design; A6 is separate (own IDs, outputs, evidence directory).
+3. **Mechanics.** Canary round 1 healthy (175 s, 38.6 GiB, mismatch p99 0.103, truncation 1/128).
+4. **Confounds.** None new for the main study. A6: auxiliary pools lose GRPO signal under thinking mode — a design problem for any thinking-mode transfer study.
+5. **Next jobs / limits.** GPU 3/3 general running; preempt 6/6 queued (0 started). H-s303 and 6 sensitivity runs wait for slots.
+6. **Most important.** Keep all three general GPUs busy (move the oldest queued primary run on each free slot); finish A6 failure inspection (agent running) and the 16,384 profile.
+7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs; cancelled 11078412 kept in the ledger). Watcher alive (b5j64v5my).
