@@ -9,6 +9,7 @@ Panel calib_val (56 problems × 16 samples). Gain = pass@1(round 32) − pass@1(
 | lr1e-6 / sym | 11074520 | 0.4386 | 0.4665 | 0.5603 | +0.122 | 1.12% | 237 | 2.70 | 41.3 | valid |
 | lr5e-7 / asym | 11074526 | 0.4866 | 0.4955 | 0.4833 | −0.003 | 0.67% | 145 | 1.77 | 40.0 | valid |
 | lr1e-6 / asym | 11074519 | 0.4866 | 0.4665 | 0.5525 | +0.066 | 1.45% | 164 | 2.04 | 42.2 | valid |
+| lr2e-6 / sym | 11074522 | 0.4866 | 0.5603 | 0.6328 | +0.146 | 4.69% | 196 | 2.52 | 41.7 | valid (truncation near the 5% limit) |
 
 Note: `mem_peak_gib` in metrics is the torch allocator peak including the vLLM sleep pool (47.5); the
 device-level reading is `gpu_used_gib_train`/`gpu_used_gib_gen`.
