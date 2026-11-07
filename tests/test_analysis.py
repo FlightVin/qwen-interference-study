@@ -61,3 +61,10 @@ def test_calib_select_tie_prefers_1e6_and_rejects_truncation(tmp_path):
     out = cs.select(str(tmp_path))
     assert out["ranking"][:2] == ["lr2e-6-sym", "lr1e-6-sym"] and "lr2e-6-asym" not in out["ranking"]
     assert out["status"] == "selected" and out["tie"] and out["selected"] == "lr1e-6-sym"   # 0.1225 vs 0.12: tie
+
+
+def test_all_boxed_split_and_nested():
+    from qis.analysis.audit_export import all_boxed
+    assert all_boxed("so $\\boxed{8}, \\boxed{12}$") == ["8", "12"]
+    assert all_boxed("\\boxed{\\frac{1}{2}} and none") == ["\\frac{1}{2}"]
+    assert all_boxed("no box") == []
