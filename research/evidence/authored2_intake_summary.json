@@ -1,0 +1,38 @@
+{
+ "n": 420,
+ "kept": {
+  "related": 296,
+  "unrelated": 118
+ },
+ "excluded": [
+  {
+   "id": "syn-R3-014",
+   "reason": "near-duplicate of syn-R1-009 (authored-earlier, J=0.58)"
+  },
+  {
+   "id": "syn-R3-022",
+   "reason": "near-duplicate of syn-R1-022 (authored-earlier, J=0.55)"
+  },
+  {
+   "id": "syn-R3-078",
+   "reason": "near-duplicate of syn-R1-058 (authored-earlier, J=0.83)"
+  },
+  {
+   "id": "syn-R3-088",
+   "reason": "near-duplicate of syn-R1-001 (authored-earlier, J=0.56)"
+  },
+  {
+   "id": "syn-U3-001",
+   "reason": "near-duplicate of syn-U1-035 (authored-earlier, J=0.71)"
+  },
+  {
+   "id": "syn-U3-114",
+   "reason": "near-duplicate of syn-U2-092 (authored-earlier, J=0.67)"
+  }
+ ],
+ "families": {
+  "related": 108,
+  "unrelated": 27
+ },
+ "max_jaccard_overall": 0.833
+}
