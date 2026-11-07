@@ -309,6 +309,9 @@ def main():
                               "attempt_id": cfg["attempt_id"]},
                              keep=2, retain=ckpt_retain)
             log.event("checkpoint", round=done_rounds, **info)
+        if os.environ.get("QIS_EXIT_AFTER_ROUND") == str(done_rounds) and not os.path.exists(os.path.join(out, "FORCED_EXIT_DONE")):
+            open(os.path.join(out, "FORCED_EXIT_DONE"), "w").close()     # test hook: simulated preemption
+            log.event("forced_exit_test", round=done_rounds); sys.exit(143)
 
     log.event("complete", rounds=cfg["rounds"], **counters)
     with open(os.path.join(out, "RUN_COMPLETE"), "w") as f:
