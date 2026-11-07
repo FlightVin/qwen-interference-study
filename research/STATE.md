@@ -4,7 +4,8 @@ Purpose: where the study stands now. Scientific authority; the harness `state/ST
 Updated 2026-11-07 20:10Z (review 18; main matrix running).
 
 ## Phase
-Dataset construction (H, auxiliary) and optimizer calibration, in parallel. Gate G2 passed. No treatment run yet.
+Main study running (treatment runs started 2026-11-07 19:07Z). Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca`.
+Matrix: 9 primary (H/R/U × 101/202/303, clip (0.2,0.2)) + 6 sensitivity (R/U × 3 seeds, clip (0.2,0.28)); lr 2e-6; 128 rounds.
 
 ## Question
 Does easier practice on polynomial factorization (E_related) improve GRPO learning on hard MATH
@@ -16,7 +17,8 @@ Primary contrast: seed-mean R − U endpoint pass@1 on target_test. Qwen3-1.7B @
 - Data: MATH @ `21a56338`, split manifest sha `6580712d…`; pass-1 annotation of 1,496 items; rubric v1.1 roles (D16).
 - Response cap raised to 8,192 (D45): at 4,096, calibration training pushed validation truncation to 11.5% in 32 rounds (genuine long reasoning, not loops). 4,096 screening/calibration superseded; re-screen and recalibrate at 8,192.
 - Trainer (D10, D11): custom single-GPU GRPO, verl-parity of the loss reduction tested.
-- Precision audit (A1) passed on job 11072622: restart weights and AdamW moments bit-exact after reload; repeated updates accumulate. Full table pending harvest.
+- Precision audit (A1) passed on job 11072622: restart weights and AdamW moments bit-exact after reload; repeated updates accumulate (`research/evidence/g2/precision_audit.md`).
+- Canary main run healthy (D61): round-1 hard success 0.203, 12/16 mixed groups, 1/128 capped, 175 s/round.
 - Checkpoints: 20.6 GB, NFS ~40 MB/s → background validated writer, project-wide write lock.
 
 ## Owner amendments in force
@@ -44,10 +46,12 @@ GPU ceilings (A7, §21, supersedes 2 general): **3 general, 6 preempt**.
 - Completed evidence: same-cap comparison (D62) and 32-record failure sample (D63, interpretation narrowed in D65: tail-only observations). No longer-cap profile.
 
 ## Uncertain
-- Final H_train size and Omni share; whether R/U reach 64 matched pairs with A5 coverage.
-- Preempt availability (D37): main matrix may run on 2 general GPUs (~50 h wall).
+- Preempt starts remain rare (D37); wall time depends on them (3 general GPUs guaranteed).
+- Response growth at lr 2e-6 over 128 rounds: truncation per arm/role monitored (D66); the asymmetric sensitivity arm likely exceeds 5%.
+- Calibration panels 59/56 vs the §3 "64 per calibration split" minimum: documentation pending (A8.5).
 
 ## Next actions
-1. 8,192 re-screen results → H selection, R/U matching + A5 coverage → stage-3 baseline → freeze dataset.
-2. Calibration at 8,192: canary first round check, then all six, then seed-22 finalists → select → freeze PROTOCOL.
-3. Cost estimate at 8,192 → endpoint (128 vs 64 rounds) → launch main matrix.
+1. Keep 3 general GPUs busy with main runs; move the oldest queued primary run on each free slot; sensitivity runs after the primary ones.
+2. A8 CPU tasks (job 11078552): §3.7 audit sample → reviewer annotation; reconciliation counts; truncation monitor; storage.
+3. Local-update diagnostic when R-s101 reaches round 64; sealed test evaluation at each endpoint (never used for training decisions).
+4. Prespecified analysis → figures → REPORT, independent recomputation, audit.
