@@ -82,7 +82,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6A.5 withdrawn (A8) — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6B. A10 cap transition (D73, D74)
-- 6B.1 active — Code: cap schedule in trainer/rollout/evals; recipe generator options; tests (job 11079542).
+- 6B.1 done — Code: cap schedule in trainer/rollout/evals; recipe generator options; tests 44/44 (job 11079542).
 - 6B.2 active — Smoke test `qis-smoke-k16` (11079543): full round at 16,384 with forced long responses; pass criteria in D74.
 - 6B.3 pending — Watchers fire at round_0064 (11079553/5/6) → cancel old s101 job → confirm ended → submit replacement (`qis-main-*-s101-sym`, attempt a2, same run dir).
 - 6B.4 pending — Replace queued s202 jobs (11078181/4/5) with schedule-aware recipes.
