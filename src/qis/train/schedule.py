@@ -10,45 +10,47 @@ Streams are shuffled cycles from named seed streams; the schedule is a pure func
 from qis import seeds
 
 
-class Cycle:
-    """Infinite stream over range(n): concatenated seeded permutations, one per cycle."""
+from functools import lru_cache
 
-    def __init__(self, n: int, seed: int, name: str):
-        self.n, self.seed, self.name = n, seed, name
 
-    def perm(self, c: int):
-        return seeds.rng(self.seed, f"{self.name}/cycle{c}").permutation(self.n)
+@lru_cache(maxsize=None)
+def _perm(n: int, seed: int, name: str, c: int) -> tuple:
+    return tuple(int(i) for i in seeds.rng(seed, f"{name}/cycle{c}").permutation(n))
 
-    def take(self, start: int, k: int) -> list:
-        out = []
-        for pos in range(start, start + k):
-            out.append(int(self.perm(pos // self.n)[pos % self.n]))
-        return out
+
+@lru_cache(maxsize=None)
+def _draws(n: int, seed: int, name: str, k: int, rnd: int, excl_name: str = "") -> tuple:
+    """Round `rnd` draw of k DISTINCT items from a shuffled-cycle stream over range(n).
+
+    The stream is walked in order; an item already drawn this round (or excluded by the
+    `excl_name` stream's draw for the same round) is skipped and will reappear next cycle.
+    The stream position before round rnd is reproduced by replaying rounds 0..rnd-1, so the
+    draw is a pure function of its arguments."""
+    if k > n:
+        raise ValueError(f"cannot draw {k} distinct items from {n}")
+    pos = 0 if rnd == 0 else _draws(n, seed, name, k, rnd - 1, excl_name)[1]
+    excluded = set(_draws(n, seed, excl_name, k, rnd)[0]) if excl_name else set()
+    if len(excluded) + k > n:
+        raise ValueError("pool too small for exclusion")
+    got = []
+    while len(got) < k:
+        i = _perm(n, seed, name, pos // n)[pos % n]
+        pos += 1
+        if i in excluded or i in got:
+            continue
+        got.append(i)
+    return tuple(got), pos
 
 
 def round_plan(arm: str, seed: int, rnd: int, n_hard: int, n_pairs: int = 0, n_calib: int = 0):
     """Returns list of (role, pool, index) for the 16 prompts of round `rnd` (0-based)."""
     if arm == "C":
-        idx = Cycle(n_calib, seed, "sched/calib").take(16 * rnd, 16)
-        return [("calib", "calib_train", i) for i in idx]
-    common = Cycle(n_hard, seed, "sched/hard_common").take(8 * rnd, 8)
-    if len(set(common)) != 8:
-        raise ValueError("hard pool smaller than 8 or cycle boundary duplicate")
+        return [("calib", "calib_train", i) for i in _draws(n_calib, seed, "sched/calib", 16, rnd)[0]]
+    common = _draws(n_hard, seed, "sched/hard_common", 8, rnd)[0]
+    plan = [("hard_common", "hard", i) for i in common]
     if arm == "H":
-        # extra stream: walk the extra cycle, skipping items already used this round; the
-        # number of positions consumed before round rnd is recomputed deterministically.
-        extra_cycle = Cycle(n_hard, seed, "sched/hard_extra")
-        pos = 0
-        for r in range(rnd + 1):
-            used = set(Cycle(n_hard, seed, "sched/hard_common").take(8 * r, 8))
-            got = []
-            while len(got) < 8:
-                i = extra_cycle.take(pos, 1)[0]
-                pos += 1
-                if i in used or i in got:
-                    continue   # skipped item; it reappears in the next cycle
-                got.append(i)
-        return [("hard_common", "hard", i) for i in common] + [("hard_extra", "hard", i) for i in got]
-    pairs = Cycle(n_pairs, seed, "sched/aux_pairs").take(8 * rnd, 8)
+        extra = _draws(n_hard, seed, "sched/hard_extra", 8, rnd, "sched/hard_common")[0]
+        return plan + [("hard_extra", "hard", i) for i in extra]
+    pairs = _draws(n_pairs, seed, "sched/aux_pairs", 8, rnd)[0]
     pool = {"R": "related", "U": "unrelated"}[arm]
-    return [("hard_common", "hard", i) for i in common] + [("aux", pool, p) for p in pairs]
+    return plan + [("aux", pool, p) for p in pairs]
