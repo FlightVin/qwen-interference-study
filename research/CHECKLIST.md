@@ -68,10 +68,10 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 5.3 done (D57: T=128; PROTOCOL frozen) — cost estimate done (T=128 under both outcomes; recipe wall 40 h). PROTOCOL draft committed (all but calibration result, lr/clip, endpoint T, freeze line). Recipe generator `qis.make_main_exps`, evaluator `qis.evaluate_ckpt` ready. Remaining: cost estimate → 128 or 64 rounds; sign freeze.
 
 ## 6A. A6 thinking-mode diagnostic (owner amendment, project.md §20; D56)
-- 6A.1 active — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
-- 6A.2 pending — Same-cap run (8,192): both modes, 8 attempts, template check; report per pool: paired Δpass@1, mixed-group frequency, truncation, lengths, GPU cost; R vs U match; H occasional successes.
-- 6A.3 pending — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
-- 6A.4 conditional — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
+- 6A.1 done — Panel code + grading tests committed before any output (`src/qis/mode_diag.py`, `tests/test_mode_diag.py`).
+- 6A.2 done (D62; job 11078115) — Same-cap run (8,192): both modes, 8 attempts, template check; report per pool: paired Δpass@1, mixed-group frequency, truncation, lengths, GPU cost; R vs U match; H occasional successes.
+- 6A.3 active (agent annotation of 32 records) — Fixed failure sample (≤ 16 per mode): is the focal factoring operation still implicated?
+- 6A.4 active (triggered: H truncation 51.6%; job 11078421 queued) — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
 - 6A.5 pending — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
 ## 6. Main runs (after G3)
