@@ -15,7 +15,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 1.1 done — Harness workspace, unique names, `config.sh` (DECISIONS D1–D7).
 - 1.2 done — Self-tests pass: `qis-smoke` pin+CPU QOS, `qis-smoke-dep` chain, `qis-smoke-gen` general GPU (RTX 6000 Ada) + `/data/user_data` (harness `results/qis-smoke*/`).
 - 1.3 done — Limits verified (harness `cluster/CARD.md`, 2026-11-07).
-- 1.4 done — Hourly review: session cron at :47 local, `ops/qis-review` record/lock/overdue detection; one-shot test trigger scheduled.
+- 1.4 done — Hourly review: session cron at :47 local, `ops/qis-review` record/lock/overdue detection; one-shot test trigger received 2026-11-07T02:30:02Z (`research/REVIEWS.md`).
 - 1.5 done — Event watcher: `ae-watch` background task, 120 s poll.
 - 1.6 active — Environment `venv-v1` (verl 0.9.0, vLLM, math-verify 0.9.0), model download (`qis-env-v1`, job 11072074).
 - 1.7 pending — W&B credentials check on Babel (no secret printed); fallback: local JSONL + offline W&B.
