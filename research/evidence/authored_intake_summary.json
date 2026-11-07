@@ -1,0 +1,38 @@
+{
+ "n": 400,
+ "kept": {
+  "related": 198,
+  "unrelated": 196
+ },
+ "excluded": [
+  {
+   "id": "syn-R1-058",
+   "reason": "near-duplicate of algebra/train/01516 (study_dev, J=0.50)"
+  },
+  {
+   "id": "syn-R1-059",
+   "reason": "near-duplicate of algebra/train/01516 (study_dev, J=0.50)"
+  },
+  {
+   "id": "syn-U1-021",
+   "reason": "near-duplicate of number_theory/train/00676 (construction, J=0.50)"
+  },
+  {
+   "id": "syn-U1-082",
+   "reason": "near-duplicate of number_theory/train/00233 (construction, J=0.60)"
+  },
+  {
+   "id": "syn-U2-085",
+   "reason": "near-duplicate of number_theory/test/00176 (test, J=0.50)"
+  },
+  {
+   "id": "syn-U2-097",
+   "reason": "near-duplicate of number_theory/train/00676 (construction, J=0.50)"
+  }
+ ],
+ "families": {
+  "related": 82,
+  "unrelated": 45
+ },
+ "max_jaccard_overall": 0.6
+}
