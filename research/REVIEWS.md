@@ -27,3 +27,12 @@
 5. **Next jobs / limits.** GPU 2/2 general used; preempt unusable now. Cost model: main run ≈ 128 × 2.7 min + evals ≈ 6.5 GPU-h (< 24 h threshold → 128 rounds feasible); 15 runs ≈ 100 GPU-h ≈ 50 h wall on 2 GPUs.
 6. **Most important.** Omni screening is the critical path for H_train but waits for a GPU slot. Action: it takes the next free general slot (before remaining calibration runs).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 live owned jobs). Watcher was found not re-armed after the last event; re-armed now (rule: re-arm in the same step as harvesting).
+
+## Review 4 — 2026-11-07 06:06Z
+1. **Changes.** Omni screening done (195 after intake; core 33, moderate 14 before audit filters; 2 test-overlap items excluded at intake). Authored tranche 1 screened (R 9 / U 30 eligible in band); tranche 2 (D40) authored, intake (296 R / 118 U), blindly annotated (218 R / 120 U eligible), screening running on general (11073719). Combined H selection queued on CPU (11073966, partition Priority). Calibration run 1 at ~1 h 35 min.
+2. **Alignment.** All work is dataset construction or calibration. Selection/matching rules were committed before their outcome data (D38, D39). Difficulty calibration given to authors used auxiliary screening counts only (no treatment data exists).
+3. **Mechanics.** Omni truncation 5.4% of attempts (selection excludes truncation-driven items). Verifier unknowns: 1 native, 1 Omni — excluded and logged, never dropped silently. Calibration rounds healthy (review 3).
+4. **Confounds.** Authored items now dominate the auxiliary pools: within-provenance matching (D32/D39) keeps synthetic share equal between R and U. Parameterized authoring (D41) handled by family counting. H_train may be majority external (Omni): MATH-target transfer must be reported separately from training-pool performance (A4.6).
+5. **Next jobs / limits.** GPU 2/2 general; preempt still not starting (D37). CPU: 1 job pending (queue of 85 on the CPU partition).
+6. **Most important.** Finish H selection + R/U matching → freeze dataset; stage-3 baseline. Calibration throughput (2 GPUs) is the next bottleneck: 5 runs + 2 seed-22 runs ≈ 13 GPU-h.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned live jobs). Watcher alive (re-armed 06:0x after the Omni event).
