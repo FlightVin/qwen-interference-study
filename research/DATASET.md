@@ -53,3 +53,10 @@ Calibration (16 samples): calib_train 200 → low 1–5/16: 27, high 6–12/16: 
 Both splits meet ≥ 16 per band. Full native stage 2 over all 184 hard candidates: job 11073157 (A4.1).
 
 ## Auxiliary gap and authored tranche (A2; recorded BEFORE any item is authored) — see D32
+
+## Authored tranche annotation (blind, opaque ids; 2026-11-07)
+`data/annotations/authored_pass{1,2}.jsonl`, `authored_third_read.jsonl`. Unrelated 200/200 eligible
+(absent, modular=yes, both passes). Related: 112 eligible in both passes + 2 via third read = 114;
+the rest incidental (numeric identities, one-line Vieta/square-root routes) or direct_practice=no
+(SFFT integer problems, systems, word problems). Primary agreement 111/112. Eligible related by
+primary (pass 2): F1 33, F4 30, F8 24, F3 14, F2 11. Authored items are auxiliary-only (D32).
