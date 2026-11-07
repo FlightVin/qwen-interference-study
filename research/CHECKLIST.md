@@ -39,7 +39,7 @@ Purpose: the live plan from setup to the final report. Status: **done** / **acti
 - 3.6 pending — Blind annotation pass 2 on all selected items; resolve disagreements; exclude unresolved.
 - 3.7 pending — Error audit: ≤64 incorrect screening attempts on H candidates.
 - 3.8 pending — Match E_related/E_unrelated 1:1; balance table (|SMD| ≤ 0.25); mixed-group probability.
-- 3.9 pending — target_dev (64) / target_test (128) by rubric only; calibration panels (≥16 per band per split).
+- 3.9 partial — calibration panels done (D33). target_dev/target_test selection by rubric pending (pass 2 + third read done).
 - 3.10 pending — (A1) Fixed probe panels, IDs frozen before any probe result: J_H = target_dev subset; J_R = study_dev E_related-rubric items; J_U = study_dev modular items. Size chosen from cost before evaluation.
 - 3.12 active — (A4.1) Stage 2 over all 184 hard + reserve candidates (32 attempts each, reuse s2 from 11072896); report counts by band (core/moderate) and source; record exclusions.
 - 3.13 pending — (A4.2) Structure-family labels for hard candidates (blind); selection: 64 target, ≥½ core, diversity, seeded ties; independent baseline (stage 3) after selection; measured mixed-group fraction.
