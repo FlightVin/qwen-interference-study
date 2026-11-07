@@ -28,3 +28,16 @@ fallback cannot be expected to produce more H_train items than the primary skill
 seeded order, probe_related_dev 31, probe_unrelated_dev 47), three isolated agents, rubric v1+v1.1,
 no access to pass-1 labels. All support quotes verbatim. Agreement with pass 1: 258/291 (88.7%);
 disagreements: label 22, direct_practice 7, modular 4 → third read (both rationales) pending.
+
+## Pass 2 (blind) — hard candidates; third read (2026-11-07)
+- `data/annotations/pass2_hard.jsonl`: 184 hard + reserve candidates, two isolated agents, rubric
+  v1+v1.1+v1.2. Agreement with pass 1 on (label, direct_practice): 158/184; all 158 central multi-step.
+- `data/annotations/third_read.jsonl`: 59 disagreements (26 hard, 33 targets/probes). 59 resolved,
+  0 unresolved; 58 follow pass 2, 1 follows pass 1 (`intermediate_algebra/test/00211`). Pass 1
+  predates the v1.1 edge-case rules, which explains the split. Outcome: absent 26, incidental 21,
+  central/direct 11, central/multi-step 1.
+- Rubric gaps the third reader resolved by the nearest rule (medium confidence): completing a cube
+  or fourth power (→ absent, like completing the square); perfect-square recognition then cancel
+  (→ central via v1.3 F2); undetermined-coefficient factorizations (→ absent); rational equations
+  count as polynomial equations for `direct_practice`; remainder used only as an inner step →
+  `modular = no`.
