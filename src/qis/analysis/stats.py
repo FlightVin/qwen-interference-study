@@ -9,7 +9,11 @@ paired across all runs. Every run must cover the same problem set, equally weigh
   for both arms (pairing preserved); percentile interval; fixed RNG seed (2027 by protocol).
 """
 import numpy as np
-from scipy import stats
+
+# Two-sided 95% Student t critical values t_{0.975, df} (scipy is not in the frozen environment).
+T975 = {1: 12.706204736174698, 2: 4.302652729749464, 3: 3.182446305284263, 4: 2.7764451051977934,
+        5: 2.570581835636314, 6: 2.4469118511449692, 7: 2.3646242515927844, 8: 2.306004135204166,
+        9: 2.2621571628540993, 10: 2.2281388519649385}
 
 BOOT_SEED = 2027
 BOOT_DRAWS = 10_000
@@ -38,12 +42,12 @@ def seed_contrasts(rates, a, b):
     return dict(zip(seeds, d.tolist()))
 
 
-def t_interval(diffs, level=0.95):
+def t_interval(diffs):
     d = np.asarray(diffs, dtype=np.float64)
     n = len(d)
     m = float(d.mean())
     se = float(d.std(ddof=1) / np.sqrt(n))
-    h = float(stats.t.ppf(0.5 + level / 2, n - 1) * se)
+    h = float(T975[n - 1] * se)
     return {"mean": m, "se": se, "lo": m - h, "hi": m + h, "n": n, "df": n - 1}
 
 

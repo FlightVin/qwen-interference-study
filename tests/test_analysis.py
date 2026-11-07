@@ -1,6 +1,5 @@
 import numpy as np
 import pytest
-from scipy import stats
 
 from qis.analysis import stats as qs
 
@@ -19,7 +18,7 @@ def test_seed_contrasts_and_t_interval():
     sc = qs.seed_contrasts(toy(), "R", "U")
     assert sc == pytest.approx({101: 0.05, 202: 0.10, 303: 0.15})
     t = qs.t_interval(list(sc.values()))
-    h = stats.t.ppf(0.975, 2) * 0.05 / np.sqrt(3)
+    h = 4.302652729749464 * 0.05 / np.sqrt(3)   # t_{0.975,2}
     assert t["mean"] == pytest.approx(0.10) and t["hi"] - t["mean"] == pytest.approx(h)
 
 
