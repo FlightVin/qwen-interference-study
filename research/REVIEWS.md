@@ -45,3 +45,12 @@
 5. **Next jobs / limits.** GPU 2/2 general; preempt still not starting. Storage ~120 GB used account-wide.
 6. **Most important.** The 8,192 canary (memory, round time) — risk of OOM with 9k-token sequences. Action at first cal8k start: check first-round metrics within ~10 min.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 live owned jobs). Watcher alive.
+
+## Review 6 — 2026-11-07 08:05Z
+1. **Changes.** Aux re-screen 11074499 failed after stage 1 (shortlist script hard-coded the `s1` stage filename; my bug); fixed and resubmitted as 11074744, resuming at shortlist (stage-1 8k counts reused, 541 items). H+calibration re-screen 11074495 finished H (107 items), now screening calibration candidates.
+2. **Alignment.** Unchanged: dataset + calibration at the 8,192 cap; no treatment run.
+3. **Mechanics.** 8k generation 3.8–6.5k tok/s; no verifier errors reported in logs.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** GPU 2/2 general (both re-screens); 7 jobs waiting on dependencies (panels-k8, six cal8k).
+6. **Most important.** Calibration remains the long pole (≈6 runs × ~3 h at 8k on 2 GPUs). Action: when the H job ends, move the first cal8k run (canary) to general immediately.
+7. **Reconciliation.** Slurm ↔ ledger agree; failed attempt 11074499 kept in ledger (cost ~41 GPU-min, stage-1 output reused). Watcher alive.
