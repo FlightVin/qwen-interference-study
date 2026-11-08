@@ -270,3 +270,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; seed-202 order on general H, U, R (D90).
 6. **Most important.** Keep the general GPUs filled when the first s101 run ends (≈18:00–20:00Z).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).
+
+## Review 31 — 2026-11-08 09:05Z
+1. **Changes.** Monitor 11084097: R-s101 round 52, U-s101 round 48, H-s101 round 32. capcheck2 replaced (D91).
+2. **Valid?** Yes. All rounds ≥ 33 in R and U log `max_tokens` 12288; H round 32 logs 8192. Evaluations at round 32 used 8,192.
+3. **Surprises.** My error: D89 named round 40 as the first 12k evaluation; the schedule is every 32 rounds, so it is round 64 (D91).
+4. **Risks.** H truncation at 8k is 11–18% per round (report-only). Forecast unchanged (D90).
+5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; CPU capcheck2 11084106.
+6. **Most important.** capcheck2 result for U and H; then the round-64 eval-cap check.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).

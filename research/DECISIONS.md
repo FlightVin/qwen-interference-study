@@ -195,3 +195,13 @@ was used beyond run duration. Preempt submissions stay queued in case preempt ca
 Risk: if H-s202 starts ≈ 19:00Z today and takes 25 h, it ends ≈ 9 Nov 20:00Z. U-s202 and R-s202 start ≈ 9 Nov 00:00–08:00Z
 and end ≈ 9 Nov 19:00Z – 10 Nov 03:00Z. Test evaluations (~4 h each, 3 GPUs) then end ≈ 10 Nov 07:00Z, before the
 14:30Z deadline. The margin is ≈ 7 h; the 10 Nov 01:00Z report target will be missed.
+
+## D91 — 2026-11-08 09:20Z — correction to D89 (evaluation rounds); capcheck2 replaced
+- **Correction.** `eval_rounds` is [0, 32, 64, 96, 128] (main recipes). D89 said the first evaluation at 12,288 is at
+  round 40; it is at round 64 (`eval_cap(64)` = cap of round 64 = 12,288). Checked against the recipe config.
+- `qis-a11-capcheck2` 11083320 waited for round 41, which served no purpose and risked its 4 h limit. Cancelled after
+  2:33 h of a waiting CPU job (charged: 2.55 CPU-job-hours, 2 CPUs). Replacement 11084106 waits for round 36 in all three
+  s101 runs (transition rounds 31-35). The round-64 evaluation cap is checked after round 64.
+- Progress at 09:05Z (monitor 11084097): R-s101 round 52, U-s101 round 48, H-s101 round 32. 12k round times: R 285–965 s,
+  U 294–568 s. H at 8k: 521–626 s, capped 14–23 of 128 per round (report-only, A8).
+- Dev at round 32 (a2; viewed, not used for decisions): H 0.540, R 0.542, U 0.601.
