@@ -207,3 +207,12 @@
 5. **Next jobs / limits.** General 3/3 (2 dev evals + smoke rerun pending); preempt: diag r0 queued, 4 held.
 6. **Most important.** Pass the smoke rerun, finish the truncation study, freeze the cap, resume.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (beb24mu29).
+
+## Review 24 — 2026-11-08 02:05Z
+1. **Changes.** Smoke test passed at 16,384 (D79: peak 37.8 GiB, worst-case round 12.2 min). Evaluator throughput fix and weight-load read-back check (D79, D80); slow old dev evals cancelled (3.6 GPU-h) and rerun.
+2. **Alignment.** Main matrix paused; sealed test closed; cap not frozen.
+3. **Mechanics.** Memory feasible at 16k; throughput is the binding constraint.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** General 3/3: dev16k H (new evaluator, 40 min in), R and U reruns. Preempt: diag r0 queued; s202 and base test eval held.
+6. **Most important.** Freeze the cap as soon as the dev truncation study lands (~03:00–03:15Z), then resume all six runs. Pause has cost ~2 h of training time so far.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b0nchn972).
