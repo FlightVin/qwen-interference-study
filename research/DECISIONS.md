@@ -220,7 +220,7 @@ every capped response ends exactly at its round's cap and is graded truncated wi
 H still caps 2–9% of responses at 12,288 (report-only under A8). Remaining: the seed-202 runs (same check after
 their round 35) and the round-64 evaluation cap.
 
-## D93 — 2026-11-08 11:20Z — deadline risk: seed-202 order changed to R, U first; H-s202 only if capacity allows
+## D93 — 2026-11-08 11:08Z — deadline risk: seed-202 order changed to R, U first; H-s202 only if capacity allows
 Measured round times at 12,288 (monitor 11084490, rounds shown in peek; include no evaluation round):
 R-s101 615–919 s (mean ≈ 743 s), U-s101 377–637 s (≈ 515 s), H-s101 802–1,109 s (≈ 950 s). H caps 7–16% at 12,288.
 Progress at ≈11:05Z: R round 63, U round 62, H round 40. Preempt: no start estimate for any queued job (825 pending).

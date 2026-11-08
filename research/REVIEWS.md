@@ -289,7 +289,7 @@
 6. **Most important.** Keep the general GPUs filled when the first s101 run ends; check the round-64 evaluation cap.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
 
-## Review 33 — 2026-11-08 11:05–11:25Z
+## Review 33 — 2026-11-08 11:05–11:08Z
 1. **Changes.** Monitor 11084490: R-s101 round 63, U-s101 round 62, H-s101 round 40. All rounds ≥ 33 log 12,288.
 2. **Valid?** Yes; no restarts. Storage 265/500 GB.
 3. **Surprises.** H-s101 rounds at 12,288 take ≈ 950 s (7–16% capped), much slower than R (≈ 743 s) and U (≈ 515 s).
