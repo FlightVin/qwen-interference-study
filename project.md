@@ -595,3 +595,18 @@ Owner's words: "You may move the deadline to 11AM on Tuesday."
 Effect: the delivery deadline of A9 moves from Tuesday 2026-11-10 09:30 ET (14:30Z) to **Tuesday 2026-11-10 11:00 AM
 EST (16:00Z)**. Scope, report rules and GPU limits of A9 are unchanged. Supersedes the deadline in §23 only.
 Also (same session): report all times and timelines to the owner in EST.
+
+## 27. Amendment A13 (owner, received 2026-11-08 ~16:20Z = 11:20 AM EST): round-32 provenance and report lead
+Owner's request (faithful summary of the pasted instruction):
+1. Record the revised report deadline, Tuesday 2026-11-10 11:00 a.m. Eastern (16:00 UTC), in project.md, STATE and
+   CHECKLIST (same deadline as A12). Keep all six authorized runs progressing.
+2. Reconcile the seed-101 round-32 development results: the earlier report gave R = 0.507, U = 0.547; the latest gives
+   R = 0.542, U = 0.601. Trace each value to run and attempt ID, checkpoint hash, evaluation panel and sampling seeds,
+   response cap, verifier version and raw attempt records. Recompute pass@1 from correct-answer counts and
+   denominators. Check whether the round-32 replay, a repeated evaluation or a reporting error explains it.
+3. Select the canonical series by provenance: the prespecified evaluation of the checkpoint on the retained training
+   trajectory. Record the explanation and evidence in DECISIONS, preserve both evaluations, use the canonical values
+   consistently in tables and figures. If unresolved, flag it and qualify any round-32-to-64 comparison.
+4. Lead the final report with sealed-test pass@1 for H, R, U and the paired R−U and R−H differences for each of seeds
+   101 and 202, then their means. Keep test outcomes out of training decisions. Deliver the audited Markdown report by
+   the revised deadline.

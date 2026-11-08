@@ -9,7 +9,7 @@ Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL fr
 **Schedule (A11, D81): 8k-to-12k** — rounds 1–32 at 8,192, rounds 33–128 at **12,288** (16,384 fit in memory but not the
 deadline). All six runs restarted at round 0 as attempt a2 (D82); old s101 attempts superseded (13.9 GPU-h + 3.6 GPU-h of
 cancelled evaluations). Questions screened at 8k; evaluations after round 32 and test at 12,288 with an 8,192 view.
-Seed 303 and clipping sensitivity deferred. Deadline (A12): Tue 10 Nov 16:00Z = 11:00 AM EST (hard); 01:00Z target (A9) will be missed.
+Seed 303 and clipping sensitivity deferred. Deadline (A12, restated A13): audited Markdown report by Tue 10 Nov 11:00 a.m. EST = 16:00Z (hard); 01:00Z target (A9) will be missed.
 No endpoint result exists yet (none viewed at the A9 amendment).
 
 ## Question
@@ -31,6 +31,8 @@ A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (
 A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A10 cap raise (§24) with A11 boundary at round 32 + pause (§25); A8 priorities (§22): cap fixed,
 truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
 (evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
+
+- Round-32 dev (D99): canonical a2 values R 0.542, U 0.601, H 0.540; earlier 0.507/0.547/0.552 were the superseded a1 trajectory (A11 replay is not bitwise reproducible).
 
 ## Uncertain
 - Preempt starts are rare (D37); wall time depends mostly on 3 general GPUs.

@@ -279,3 +279,34 @@ Projected ends (incl. evaluations at 96 and 128, ≈ 0.8 h each): U-s101 ≈ 9 N
 00:45Z; test evaluations from ≈ 9 Nov 09:30Z on the third slot, then on the U-s202 and R-s202 slots; last (R-s202) ends
 ≈ 10 Nov 10:40Z (5:40 AM EST). Margin to 16:00Z ≈ 5 h. H-s202 (≈ 27 h + 5 h evaluation from 09:30Z → ≈ 17:30Z) still
 does not fit; it stays on preempt only.
+
+## D99 — 2026-11-08 17:10Z — A13: round-32 dev discrepancy explained by the A11 replay; canonical = a2
+Source: job 11086589 (`qis.analysis.r32_provenance`, commit ade7e1e), output `research/evidence/a11/r32_provenance.json`.
+
+| Run | Attempt | Job | Code sha | Logged pass@1 | Correct / denominator (raw records) | Capped at 8,192 | Records sha256 (prefix) |
+|---|---|---|---|---|---|---|---|
+| R-s101 | a1 (superseded) | 11078086 | b8f36ca | 0.507 | 215 / 424 = 0.5071 | 49 | 15426dcf67e78896 |
+| R-s101 | **a2 (retained)** | 11081724 | 9d6349a | 0.542 | 230 / 424 = 0.5425 | 47 | b45d98758453a3ba |
+| U-s101 | a1 (superseded) | 11078164 | efdafdd | 0.547 | 232 / 424 = 0.5472 | 71 | 51faa5dadb112ab7 |
+| U-s101 | **a2 (retained)** | 11081725 | 9d6349a | 0.601 | 255 / 424 = 0.6014 | 73 | afd87b4eec5d9239 |
+| H-s101 | a1 (superseded) | 11078180 | 0a83a74 | 0.552 | 234 / 424 = 0.5519 | 66 | 86cdb1c12fe21b80 |
+| H-s101 | **a2 (retained)** | 11081726 | 9d6349a | 0.540 | 229 / 424 = 0.5401 | 72 | de338f0a7405b126 |
+
+Common to all six: panel dev (53 problems × 8 samples = 424); bundle sha 0e255243; sampling seeds identical per
+(problem, sample) across attempts (EVAL_SEED 4242, key `eval/dev/<id>/r32/n8`); cap 8,192 (all capped responses end at
+8,192); verifier, prompts and seed code byte-identical between the a1 commits and 9d6349a (`git diff`); exactly one dev
+round-32 row per attempt (no repeated evaluation); logged per-problem counts equal the raw-record recomputation in all
+six (no reporting error); macro and micro pass@1 agree (n = 8 for every problem).
+Cause: the A11 replay. The a2 runs retrained rounds 1–32 from the base model with the same prompts and seeds, but the
+rollouts are not bitwise reproducible: already in training round 1 (base weights) only 36/128 (R), 126/128 (U) and
+3/128 (H) responses are token-identical between attempts (engine context 9,216 → 13,312 and rollout code changed in
+A11; vLLM sampling is batch-dependent). The trajectories then diverge, so a2 round 32 is a different policy from a1
+round 32. None of the 424 dev responses is token-identical across attempts; rewards agree on 319/333/327 of 424.
+Checkpoint hash: unavailable for both attempts; neither retains round_0032 (rolling deletion; a1 holds 52/48/36 only,
+a2 holds 64+/88/60). The policy is identified by run, attempt, round and the records sha256 above.
+Decision: canonical round-32 series = a2 (prespecified round-32 evaluation on the retained trajectory, A11.4). a1 values
+stay in D73/D77 and in `runs/superseded/<run>-a1` as superseded evidence; they appear in no table or figure. Status:
+resolved. Qualification that remains: round 32 (cap 8,192) vs round 64 (cap 12,288) mixes training progress with the
+cap change; any 32→64 comparison is labelled accordingly. Size check: a1→a2 differences (+0.035, +0.054, −0.012) are
+of the order of evaluation sampling sd (≈ 0.02 per value) plus trajectory variation; R−U at round 32 is −0.040 (a1)
+and −0.059 (a2); dev is a monitoring panel only.

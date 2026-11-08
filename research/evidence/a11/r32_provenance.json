@@ -1,0 +1,528 @@
+{
+ "qis-main-R-s101-sym": {
+  "a1": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/superseded/qis-main-R-s101-sym-a1",
+   "attempt_id": "a1",
+   "starts": [
+    {
+     "utc": 1794079090.1628945,
+     "job": "11078086",
+     "restart": "0",
+     "code_sha": "b8f36ca1312da0cc2d55a614d0918a02d615dd62",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a1",
+    "max_tokens": 8192,
+    "cap_schedule": null,
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794088244.461568,
+     "attempt_id": "a1",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.5070754716981132,
+     "truncated": 0.11556603773584906,
+     "max_tokens": null,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/superseded/qis-main-R-s101-sym-a1/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "15426dcf67e788966afa0f97ca715ce38db53d175793b85e454d480e3f6daecd",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0052"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 215,
+    "denominator": 424,
+    "pass1_macro": 0.5070754716981132,
+    "pass1_micro": 0.5070754716981132,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 49,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 49,
+     "wrong": 160,
+     "correct": 215
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a2": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/qis-main-R-s101-sym",
+   "attempt_id": "a2",
+   "starts": [
+    {
+     "utc": 1794107175.0148532,
+     "job": "11081724",
+     "restart": "0",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a2",
+    "max_tokens": 12288,
+    "cap_schedule": [
+     [
+      0,
+      8192
+     ],
+     [
+      32,
+      12288
+     ]
+    ],
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794118439.7739255,
+     "attempt_id": "a2",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.5424528301886793,
+     "truncated": 0.11084905660377359,
+     "max_tokens": 8192,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/qis-main-R-s101-sym/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "b45d98758453a3bacc423cf324860dce4f42a97a063450b54074e499783e87ed",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0064",
+    "round_0084"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 230,
+    "denominator": 424,
+    "pass1_macro": 0.5424528301886793,
+    "pass1_micro": 0.5424528301886793,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 47,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 47,
+     "wrong": 147,
+     "correct": 230
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a1_vs_a2": {
+   "same_keys": true,
+   "same_seeds": true,
+   "identical_responses": 0,
+   "responses": 424,
+   "reward_agree": 319,
+   "train_first_divergence": {
+    "round_0based": 0,
+    "same_prompts": true,
+    "same_seeds": true,
+    "identical_responses": 36,
+    "responses": 128
+   }
+  }
+ },
+ "qis-main-U-s101-sym": {
+  "a1": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/superseded/qis-main-U-s101-sym-a1",
+   "attempt_id": "a1",
+   "starts": [
+    {
+     "utc": 1794080019.5865612,
+     "job": "11078164",
+     "restart": "0",
+     "code_sha": "efdafdd401bf557c848e72dbef1f1bb9aae6523f",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a1",
+    "max_tokens": 8192,
+    "cap_schedule": null,
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794089846.8579354,
+     "attempt_id": "a1",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.5471698113207547,
+     "truncated": 0.16745283018867924,
+     "max_tokens": null,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/superseded/qis-main-U-s101-sym-a1/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "51faa5dadb112ab7dccf1b408f0de3d39103bb0bf4adf62b7377016057cadc9c",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0048"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 232,
+    "denominator": 424,
+    "pass1_macro": 0.5471698113207547,
+    "pass1_micro": 0.5471698113207547,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 71,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 71,
+     "wrong": 121,
+     "correct": 232
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a2": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/qis-main-U-s101-sym",
+   "attempt_id": "a2",
+   "starts": [
+    {
+     "utc": 1794110687.5307865,
+     "job": "11081725",
+     "restart": "0",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a2",
+    "max_tokens": 12288,
+    "cap_schedule": [
+     [
+      0,
+      8192
+     ],
+     [
+      32,
+      12288
+     ]
+    ],
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794120696.066758,
+     "attempt_id": "a2",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.6014150943396226,
+     "truncated": 0.1721698113207547,
+     "max_tokens": 8192,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/qis-main-U-s101-sym/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "afd87b4eec5d9239d4758004b553d3d22ae1133c2cf4c619f2f1ce29c21b2c15",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0088"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 255,
+    "denominator": 424,
+    "pass1_macro": 0.6014150943396226,
+    "pass1_micro": 0.6014150943396226,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 73,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 73,
+     "correct": 255,
+     "wrong": 96
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a1_vs_a2": {
+   "same_keys": true,
+   "same_seeds": true,
+   "identical_responses": 0,
+   "responses": 424,
+   "reward_agree": 333,
+   "train_first_divergence": {
+    "round_0based": 0,
+    "same_prompts": true,
+    "same_seeds": true,
+    "identical_responses": 126,
+    "responses": 128
+   }
+  }
+ },
+ "qis-main-H-s101-sym": {
+  "a1": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/superseded/qis-main-H-s101-sym-a1",
+   "attempt_id": "a1",
+   "starts": [
+    {
+     "utc": 1794081915.4074142,
+     "job": "11078180",
+     "restart": "0",
+     "code_sha": "0a83a741d8f21b68e19beac327f0519cd1d36b3f",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a1",
+    "max_tokens": 8192,
+    "cap_schedule": null,
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794093670.0312421,
+     "attempt_id": "a1",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.5518867924528302,
+     "truncated": 0.15566037735849056,
+     "max_tokens": null,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/superseded/qis-main-H-s101-sym-a1/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "86cdb1c12fe21b8031aefd9e0a3ecd03d524f7c123ec47dd15827869133a6b1c",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0036"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 234,
+    "denominator": 424,
+    "pass1_macro": 0.5518867924528302,
+    "pass1_micro": 0.5518867924528302,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 66,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 66,
+     "correct": 234,
+     "wrong": 124
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a2": {
+   "run_dir": "/data/user_data/vineethb/qis/runs/qis-main-H-s101-sym",
+   "attempt_id": "a2",
+   "starts": [
+    {
+     "utc": 1794111611.4246507,
+     "job": "11081726",
+     "restart": "0",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "resume_round": 0
+    }
+   ],
+   "config": {
+    "attempt_id": "a2",
+    "max_tokens": 12288,
+    "cap_schedule": [
+     [
+      0,
+      8192
+     ],
+     [
+      32,
+      12288
+     ]
+    ],
+    "eval_rounds": [
+     0,
+     32,
+     64,
+     96,
+     128
+    ],
+    "eval_panels": {
+     "dev": 8,
+     "probe_J_R": 8,
+     "probe_J_U": 8
+    },
+    "seed": 101,
+    "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json"
+   },
+   "dev_r32_logged_rows": [
+    {
+     "utc": 1794128115.312132,
+     "attempt_id": "a2",
+     "round": 32,
+     "ckpt_round": 32,
+     "n": 8,
+     "problems": 53,
+     "pass1": 0.5400943396226415,
+     "truncated": 0.16981132075471697,
+     "max_tokens": 8192,
+     "unknown": 0
+    }
+   ],
+   "records_file": "/data/user_data/vineethb/qis/runs/qis-main-H-s101-sym/records/eval_dev_r0032.jsonl.gz",
+   "records_sha256": "de338f0a7405b126f8f0ff1f18c83e82e219167dfb9c82abc746ab5ab4b537af",
+   "checkpoints": [
+    "LATEST.json",
+    "round_0060"
+   ],
+   "recomputed": {
+    "records": 424,
+    "problems": 53,
+    "correct": 229,
+    "denominator": 424,
+    "pass1_macro": 0.5400943396226415,
+    "pass1_micro": 0.5400943396226415,
+    "n_per_problem": [
+     8
+    ],
+    "max_n_tokens": 8192,
+    "capped": 72,
+    "capped_lengths": [
+     8192
+    ],
+    "status_counts": {
+     "truncated": 72,
+     "wrong": 123,
+     "correct": 229
+    },
+    "matches_logged_per_problem": true
+   }
+  },
+  "a1_vs_a2": {
+   "same_keys": true,
+   "same_seeds": true,
+   "identical_responses": 0,
+   "responses": 424,
+   "reward_agree": 327,
+   "train_first_divergence": {
+    "round_0based": 0,
+    "same_prompts": true,
+    "same_seeds": true,
+    "identical_responses": 3,
+    "responses": 128
+   }
+  }
+ }
+}
