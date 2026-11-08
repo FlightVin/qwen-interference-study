@@ -235,7 +235,7 @@
 6. **Most important.** Verify round 33 uses 12,288 in R-s101 (expected ~05:30Z); move H-s101 to general when dev16k-U ends.
 7. **Reconciliation.** Slurm ↔ ledger agree: 8 owned live jobs, all with ledger rows. `registry/runs.jsonl` is untracked and unused (D21); the ledger is the run record. Watcher alive (blc1tl7lp).
 
-## Review 27 — 2026-11-08 05:05–05:35Z
+## Review 27 — 2026-11-08 05:05–05:19Z
 1. **Changes.** Truncation study done for H/R/U (D86) and the inspection sample labelled (D87: no extraction misses; long responses mostly no-progress or wrong). All three s101 a2 runs train on general. At 05:06Z (monitor 11082493): R-s101 round 23, U-s101 round 15, H-s101 round 8. W&B companions `*-a2-curves` and `qis-RvU-s101-sym-a2-curves` populate.
 2. **Valid?** Yes. All rounds so far are ≤ 32, so they run at 8,192 by design. Round times: R 388 s, U/H 230 s.
 3. **Surprises.** `peek` did not export `max_tokens`, and `curves` defaults a missing value to 8,192, so neither could prove the transition. Fixed `peek` (d12cf9c); added `qis.analysis.capcheck` (59d3927).
