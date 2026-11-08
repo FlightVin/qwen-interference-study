@@ -41,6 +41,6 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 ## Next actions
 1. All six a2 runs submitted. R-s101, U-s101 run on general; move H-s101 to general when dev16k-U (11081334) ends.
 2. ~2.5 h after each start: verify round 33 logs `max_tokens` 12288 in rollout records, training and grading.
-3. Finish the truncation report (H r36, R r52 done; U r48 running; arms differ in round, so compare at matched rounds; inspection sample review).
+3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
 5. Report target 10 Nov 01:00Z is now unlikely on 3 general GPUs alone (forecast ≈ 07:00–08:00Z); hard deadline 14:30Z.

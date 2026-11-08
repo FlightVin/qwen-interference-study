@@ -1,0 +1,218 @@
+[
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00165",
+  "sample": 27,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail re-derives the same root-product ratio already set up at 8k, with tautologies like 'prod (r^2-r-1)/(r^2+r+1) = prod (r^2-r-1)/(r^2+r+1)', then boxes 1 without derivation."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00277",
+  "sample": 4,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Re-tries n=10, 11, 13 already checked near 8k and admits 'S_n = 20736/145, which is not an integer' before boxing 12 anyway; correct answer reached by assertion, not derivation."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00120",
+  "sample": 29,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Keeps evaluating new permutations ('Try (2, 1, 5, 3, 4)'), but final N is guessed: 'without a computer, this is hard to confirm' -> 56."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00232",
+  "sample": 28,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "New parametric work on S, P and b, but the final value comes from an arbitrary choice: 'Let's choose a specific value for a ... a = 1' -> -59."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00508",
+  "sample": 30,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail repeats the exact c=6 check from near 8k ('13k - 119 = 42 ... k = 12.3846') and ends with an off-by-one total 12377."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00347",
+  "sample": 11,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail repeats the near-8k block verbatim ('But what is 0.67? It's close to 4/6 = 2/3'); the answer is a numerical guess: 'the exact answer might be 2/3'."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00347",
+  "sample": 18,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Re-derives AP^2 - BP^2 = (4/3)(x1-x2) again and calls it 'still not helpful'; 2/3 is chosen because 'it is plausible'."
+ },
+ {
+  "source": "H-s101-r36",
+  "prompt_id": "intermediate_algebra/train/00683",
+  "sample": 2,
+  "outcome": "correct",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Systematic case search for x^4 - y^4 = 175 then a new area computation: 'rectangle with width 8 and height 6, area 48'."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "algebra/train/01341",
+  "sample": 26,
+  "outcome": "capped_16384",
+  "category": "repetition",
+  "ended_with_answer": "no",
+  "reason": "Enumerates the same face tuples repeatedly ('Try 5, 3, 2, 2, 1, 1 -> sum = 14' three times) until the 16,384 cap, no final box."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00409",
+  "sample": 25,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail restates the same Vieta reduction from 8k after a wrong 'abc = -1/3' step, then a numeric estimate gives 'boxed{45}'."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00120",
+  "sample": 12,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Enumeration of new permutations continues ('Try [3, 1, 5, 4, 2]') but stops early: 'we have 4 permutations' -> 52."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00107",
+  "sample": 28,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail duplicates the near-8k limit argument ('Let's make a generating function') and keeps getting '0/0'; ends with boxed 0."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00688",
+  "sample": 13,
+  "outcome": "capped_16384",
+  "category": "productive",
+  "ended_with_answer": "no",
+  "reason": "After a contradiction at 8k it opens a new case ('suppose r + 4 = s') and tests rational roots; cut off at 16,384 mid-search."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00409",
+  "sample": 3,
+  "outcome": "correct",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Notes 'we are back to the same place' but this time the cancellation is done correctly and gives '= 170'."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00482",
+  "sample": 15,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Tests new d values and checks perpendicularity, finds 'they are not perpendicular', yet still boxes 5/4."
+ },
+ {
+  "source": "R-s101-r52-v2",
+  "prompt_id": "intermediate_algebra/train/00508",
+  "sample": 0,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Tries new parameter values ('Try n = -2', 'Try n = 0') but concludes wrongly 'All a_i = 0 / All a_i = 16' -> 2."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00683",
+  "sample": 22,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Not literal cycling (loop_score 0) but no progress: after wrongly deciding x^2+y^2=175 has no solutions it speculates 'this is all speculative' and boxes 175."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/01262",
+  "sample": 27,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Re-derives 'a^2+b^2+c^2 = 6/5 + 2c^2' repeatedly ('which is again consistent'); picks 6/5 as 'the constant term', admitted 'not provable'."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00120",
+  "sample": 27,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Circles over cycle-counting without computing ('But this is still unclear'), then asserts 5 x 5 = 25 -> 73."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00295",
+  "sample": 30,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail repeats the near-8k Case 4 and summary table verbatim ('Summary of Valid Cases') before boxing 15."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00688",
+  "sample": 11,
+  "outcome": "wrong",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Tests a new b = 0 case ('Let's assume that b = 0'), shows it contradicts, then boxes 0 anyway."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00107",
+  "sample": 16,
+  "outcome": "wrong",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail duplicates the near-8k paragraph verbatim ('here's the final, elegant idea') and asserts 2^6 without computation."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/01190",
+  "sample": 23,
+  "outcome": "correct",
+  "category": "repetition",
+  "ended_with_answer": "yes",
+  "reason": "Tail repeats the near-8k text verbatim ('The answer is: (C) ... and (E)') and wavers between 'C and E' and C."
+ },
+ {
+  "source": "U-s101-r48-v2",
+  "prompt_id": "intermediate_algebra/train/00409",
+  "sample": 26,
+  "outcome": "correct",
+  "category": "productive",
+  "ended_with_answer": "yes",
+  "reason": "Finds the identity at the end: 'r^3 + s^3 + t^3 = a^3 + b^3 + c^3 + 1' = 170."
+ }
+]

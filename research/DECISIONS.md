@@ -137,3 +137,20 @@ responses per arm, cap 16,384. Rounds differ (H 36, R 52, U 48), so this is a ca
 Reading: crossing responses do not loop (mean loop score 0.03–0.05). Most crossers end wrong; the 12,288 cap
 recovers 1.5–2.7 points of pass@1 on dev and 12,288–16,384 adds 0.3–0.6 more. The cap decision (D81, 12,288) stands;
 no test data was used. The fixed 24-response inspection sample is being labelled productive / repetition / extraction.
+
+## D87 — 2026-11-08 04:35Z — inspection sample labelled (24 crossing responses)
+An independent subagent labelled the fixed sample (`inspection_sample_HRU.jsonl`, seed 1701 "a11/sample", 8 per arm) from
+the text alone; labels in `research/evidence/a11/inspection_labels.json`. Counts verified by script; I checked 3 cases
+(00508 s30: boxed 12377 vs gold 12378; 00347 s11/s18: 2/3 chosen from a numerical estimate) against the excerpts.
+
+| | productive | repetition | extraction miss |
+|---|---|---|---|
+| H r36 | 3 | 5 | 0 |
+| R r52 | 5 | 3 | 0 |
+| U r48 | 2 | 6 | 0 |
+
+- No extraction misses: every extracted answer equals the final box; the grader's reward is right in all 24.
+- "Repetition" here means no progress (restating or re-verifying), not token loops: loop score stays ≤ 0.06; 4 cases
+  copy an earlier block verbatim. 22/24 end with an answer; the 2 capped ones do not.
+- 5 of 9 correct crossers reach the answer by a guess or contradictory reasoning (e.g. picking 2/3 from a numerical
+  estimate). Extra length past 8,192 buys few, and partly unreliable, correct answers. n = 8 per arm: descriptive only.
