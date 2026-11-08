@@ -252,3 +252,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; 1 CPU job running.
 6. **Most important.** Read the capcheck result for R-s101 (round 33 at 12,288 in rollout, training, grading) when it fires (≈06:20–06:40Z).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bmi015fu4).
+
+## Review 29 — 2026-11-08 07:05–07:30Z
+1. **Changes.** R-s101 round-33 transition verified (D89). Monitor 11083516: R-s101 round 39, U-s101 round 33, H-s101 round 23. `qis-a11-capcheck2` 11083320 waits for round 41 in all three.
+2. **Valid?** Yes. No restarts; round metrics carry `max_tokens` as expected.
+3. **Surprises.** H-s101 rounds are slow (569 s at 8,192) with 13/128 capped at round 23 — longer responses than R or U at this stage. Report-only under A8.
+4. **Risks.** H is now the critical path; margin to the deadline ≈ 7 h (D90). Seed-202 runs still pending on preempt.
+5. **Next jobs / limits.** General 3/3. Seed-202 start order on general: H, U, R (D90).
+6. **Most important.** When the first s101 run ends, move H-s202 (11082192) to general first.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).

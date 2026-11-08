@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-08 06:05Z (Review 28; A11 resume; cap 12,288).
+Updated 2026-11-08 07:30Z (Review 29; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -39,8 +39,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. All six a2 runs submitted. R-s101, U-s101 run on general; move H-s101 to general when dev16k-U (11081334) ends.
+1. All six a2 runs submitted; s101 runs train on general. When an s101 run ends, move seed-202 runs to general in order H, U, R (D90).
 2. Verify round 33 at 12,288 with `qis-a11-capcheck` (R-s101 ≈06:20Z; rerun for U, H after their round 34).
 3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
-5. Report target 10 Nov 01:00Z is now unlikely on 3 general GPUs alone (forecast ≈ 07:00–08:00Z); hard deadline 14:30Z.
+5. Forecast (D90): test evaluations end ≈ 10 Nov 07:00Z; margin to the 14:30Z deadline ≈ 7 h; 01:00Z target missed. H is the critical path.

@@ -173,3 +173,25 @@ Source `qis-a11-capcheck` 11082618; evidence `research/evidence/a11/capcheck_R-s
 - Evaluations at round 32 used 8,192 (`eval_cap(32)` = cap of round 32), as designed. The first evaluation at 12,288 is at
   round 40. `qis-a11-capcheck2` (11083320) checks it and U-s101, H-s101 once all three have logged round 41.
 - Note for the report: R-s101 a2 dev truncation at round 32 was 11.1% at 8,192 (dev outcome, not used for any decision).
+
+## D90 — 2026-11-08 07:25Z — forecast from measured round times; seed-202 start order
+Measured (monitor 11083516, last ≤6 rounds per run; `t_round` includes evaluation rounds):
+
+| Run | Last round | Mean round time | Cap of those rounds | Capped at last round |
+|---|---|---|---|---|
+| R-s101 | 39 | 422 s | 12,288 | 2/128 |
+| U-s101 | 33 | 294 s (8k), 720 s (one 12k round) | mixed | 6/128 |
+| H-s101 | 23 | 569 s | 8,192 | 13/128 |
+
+H-s101 responses are longer (13/128 capped at 8,192 at round 23). Under A8 a training truncation rate above 5% is
+inspect-and-report only; it is not a cancellation criterion and no change follows.
+
+Forecast (general only, 3 GPUs): R-s101 ends ≈ 18:00–20:00Z today; U-s101 ≈ 20:00–24:00Z; H-s101 ≈ 9 Nov 02:00–08:00Z
+(12k round time for H unknown; assumed 10–15 min). If seed 202 waits for general, the run that starts last finishes
+≈ 19–25 h later.
+Decision: start the seed-202 runs on general in order H, U, R (longest first). The first general slot to free goes to
+H-s202, so the slowest run is not last. This changes only the order of identical, pre-specified runs; no outcome data
+was used beyond run duration. Preempt submissions stay queued in case preempt capacity appears first.
+Risk: if H-s202 starts ≈ 19:00Z today and takes 25 h, it ends ≈ 9 Nov 20:00Z. U-s202 and R-s202 start ≈ 9 Nov 00:00–08:00Z
+and end ≈ 9 Nov 19:00Z – 10 Nov 03:00Z. Test evaluations (~4 h each, 3 GPUs) then end ≈ 10 Nov 07:00Z, before the
+14:30Z deadline. The margin is ≈ 7 h; the 10 Nov 01:00Z report target will be missed.
