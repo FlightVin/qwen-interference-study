@@ -288,3 +288,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 (R/U/H-s202, diag r0, diag r64).
 6. **Most important.** Keep the general GPUs filled when the first s101 run ends; check the round-64 evaluation cap.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
+
+## Review 33 — 2026-11-08 11:05–11:25Z
+1. **Changes.** Monitor 11084490: R-s101 round 63, U-s101 round 62, H-s101 round 40. All rounds ≥ 33 log 12,288.
+2. **Valid?** Yes; no restarts. Storage 265/500 GB.
+3. **Surprises.** H-s101 rounds at 12,288 take ≈ 950 s (7–16% capped), much slower than R (≈ 743 s) and U (≈ 515 s).
+4. **Risks.** All six runs plus the 7 sealed-test evaluations no longer fit before 10 Nov 14:30Z on 3 general GPUs; preempt gives no start estimate. Plan changed (D93): R−U for both seeds first; H-s202 conditional; partial delivery of R−H for seed 202 if needed (A9).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued. Next slot ≈ 21:40Z (U-s101 end) → R-s202.
+6. **Most important.** Re-forecast hourly from round times; act at the first free slot per D93.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).

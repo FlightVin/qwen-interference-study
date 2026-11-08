@@ -100,7 +100,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6B.5 pending — Verify each replacement's first 16k round: `max_tokens` 16384 logged, resume round 64, counters continuous, memory.
 
 ## 6. Main runs (after G3)
-- 6.1 active (A9, D71) — six primary runs. Running on general: R-s101 11078086, U-s101 11078164, H-s101 11078180. Queued on preempt: R-s202 11078181, U-s202 11078184, H-s202 11078185. Rule: each s101 completion → matching s202 to general (`ae slurm update`), single execution checked. Seed-303 jobs cancelled (D71).
+- 6.1 active (A9, D71; superseded attempt a1 per A11/D82) — six primary runs, attempt a2. General: R-s101 11081724, U-s101 11081725, H-s101 11081726. Preempt queue: R-s202 11081729, U-s202 11081731, H-s202 11082192. Order on general (D93): R-s202 → U-s202 → test evals; H-s202 only if a re-forecast fits (decision at first slot ≈ 21:40Z).
 - 6.2 deferred (A9) — Clipping sensitivity (R/U × 3 seeds, clip (0.2, 0.28)); recipes in `exp-deferred/`; reported as deferred.
 - 6.3 pending — Local update diagnostic (§7; PROTOCOL §8): source R-s101 at rounds 0 and 64 (round 64 retained; reached ~8 Nov 00:30Z).
   - 6.3a done (tests 41/41, job 11079320) — `src/qis/diag_local.py`: clone model + optimizer per branch (none / hard / related / unrelated), one 4×8 minibatch update with seeds 4101–4104, evaluate J_H 32 + J_R + J_U at 16 responses/problem with paired eval seeds; source checkpoints untouched. CPU tests of branch cloning and seed mapping.
