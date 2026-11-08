@@ -38,6 +38,8 @@ phase precheck "false" '
     [ "$used" -lt 2048 ] || {{ echo "GPU already holds ${{used}} MiB on $(hostname)"; exit 1; }}
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv > "$AE_RESULTS/gpu.txt"
     mkdir -p "$W" "$CK"
+    if [ -f "$W/metrics.jsonl" ] && ! head -1 "$W/metrics.jsonl" | grep -q "\"attempt_id\": \"{attempt}\""; then echo "STALE RUN DIR (other attempt) in $W"; exit 1; fi
+    if [ -f "$CK/LATEST.json" ] && [ ! -f "$W/metrics.jsonl" ]; then echo "STALE CHECKPOINTS in $CK"; exit 1; fi
 '
 phase config "false" '
     cat > "$W/config.json" <<JSON

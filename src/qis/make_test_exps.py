@@ -14,7 +14,7 @@ TEST_SHA = "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca"
 
 HEAD = r'''#!/usr/bin/env bash
 #EXP gpus=1 cpus=8 mem=64G time=05:00:00 part=preempt constraint=VRAM_48GB
-# HYPOTHESIS: none -- sealed target_test evaluation (A9; PROTOCOL §7): {what}; 128 problems x 32 samples, cap 16,384 (A10; also success within 8,192 from the same traces).
+# HYPOTHESIS: none -- sealed target_test evaluation (A9; PROTOCOL §7): {what}; 128 problems x 32 samples, cap 12,288 (A11, D81; also success within 8,192 from the same traces).
 export PROJ_DATA="/data/user_data/$USER/qis"
 export VENV="$PROJ_DATA/env/venv-v1"
 export HF_HOME="$PROJ_DATA/hf"
@@ -36,7 +36,7 @@ phase precheck "false" '
     mkdir -p "$OUT"
 {extra}'
 phase eval "test -s $OUT/summary.json" '
-    "$VENV/bin/python" -m qis.evaluate_ckpt --model "$MODEL" --ckpt "$CKPT" --panel "$TEST" --panel-key test --n 32 --out "$OUT" --seed-label test-final --max-tokens 16384
+    "$VENV/bin/python" -m qis.evaluate_ckpt --model "$MODEL" --ckpt "$CKPT" --panel "$TEST" --panel-key test --n 32 --out "$OUT" --seed-label test-final --max-tokens 12288
 '
 phase export "test -s $AE_RESULTS/summary.json" '
     cp "$OUT/summary.json" "$AE_RESULTS/"
