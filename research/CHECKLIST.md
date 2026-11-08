@@ -86,8 +86,8 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6C.1 done (D77) — Pause: guard, holds, cancels; last rounds/checkpoints recorded (R 55/r52, U 51/r48, H 37/r36); 13.9 GPU-h superseded.
 - 6C.2 active — Truncation study: dev 16,384 evals (11080483, 11080484, H queued); loop scores + fixed-sample inspection; extra GPU cost.
 - 6C.3 done (D78, D79) — Smoke OOM → LM-head recompute fix; rerun 11080758 passed (peak 37.8 GiB; worst-case round 12.2 min).
-- 6C.4 pending — Freeze cap (record in DECISIONS + PROTOCOL).
-- 6C.5 pending — Supersede a1 dirs; new recipes (attempt a2, schedule 0:8192,32:CAP); resume six runs; s101 replay from round 0.
+- 6C.4 done (D81) — Cap frozen at 12,288.
+- 6C.5 active (D82) — a1 dirs superseded; a2 recipes (0:8192,32:12288); R-s101 11081724 general; U/H-s101, R/U-s202 queued; H-s202 waits for a slot.
 - 6C.6 pending — Verify round 33 cap in rollout/training/grading logs per run; curves and W&B select resumed trajectory only.
 
 ## 6B. A10 cap transition (D73, D74) — boundary superseded by A11

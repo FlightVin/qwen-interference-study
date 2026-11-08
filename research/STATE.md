@@ -1,14 +1,14 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-08 02:10Z (review 24; A11 pause, smoke passed).
+Updated 2026-11-08 03:15Z (A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
 **Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds.
-**Main matrix PAUSED (A11, D77).** New schedule: rounds 1–32 at 8,192, rounds 33–128 at the amended cap (16,384 unless
-the smoke test/deadline force one intermediate cap, frozen before resuming). No round-32 state survived → all s101 runs
-replay rounds 1–32 from round 0; old attempts (13.9 GPU-h) superseded. Truncation study + smoke test running.
+**Schedule (A11, D81): 8k-to-12k** — rounds 1–32 at 8,192, rounds 33–128 at **12,288** (16,384 fit in memory but not the
+deadline). All six runs restarted at round 0 as attempt a2 (D82); old s101 attempts superseded (13.9 GPU-h + 3.6 GPU-h of
+cancelled evaluations). Questions screened at 8k; evaluations after round 32 and test at 12,288 with an 8,192 view.
 Seed 303 and clipping sensitivity deferred. Deadline: report by 10 Nov 01:00Z (target), 14:30Z (hard).
 No endpoint result exists yet (none viewed at the A9 amendment).
 
@@ -39,8 +39,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Truncation study on dev at 16,384 from R r52 / U r48 / H r36 (crossing 8,192, crossing-then-correct, extra GPU cost) + fixed-sample inspection (productive / repetition / extraction).
-2. Smoke test (11079543, general). Freeze the exact cap; record it.
-3. Move superseded a1 run/ckpt dirs to `superseded/`; regenerate recipes (cap schedule 0:8192,32:CAP, attempt a2, new W&B ids); resume all six (s101 on general, s202 queued; move as slots free).
-4. Verify from logs that round 33 uses the new cap in rollout, training, grading. Curves mark the transition.
-5. Forecast from measured 16k throughput and the replay; report by 10 Nov 01:00Z, hard deadline 14:30Z.
+1. Move U-s101 and H-s101 to general when the R/U dev 16k evaluations finish; submit H-s202 when a preempt slot frees.
+2. ~2.5 h after each start: verify round 33 logs `max_tokens` 12288 in rollout records, training and grading.
+3. Finish the truncation report (R r52, U r48 at 16,384; fixed inspection sample review).
+4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
+5. Report target 10 Nov 01:00Z is now unlikely on 3 general GPUs alone (forecast ≈ 07:00–08:00Z); hard deadline 14:30Z.
