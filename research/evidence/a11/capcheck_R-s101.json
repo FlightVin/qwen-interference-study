@@ -1,0 +1,104 @@
+{
+ "qis-main-H-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 20,
+  "rounds": {},
+  "evals": []
+ },
+ "qis-main-R-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 34,
+  "rounds": {
+   "31": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 4,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 4
+   },
+   "32": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 7,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 7
+   },
+   "33": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 11,
+    "capped": 1,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 1
+   },
+   "34": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12154,
+    "over_8192": 9,
+    "capped": 0,
+    "capped_lengths": [],
+    "capped_graded_truncated": 0
+   }
+  },
+  "evals": [
+   {
+    "round": 32,
+    "panel": "dev",
+    "max_tokens": 8192,
+    "pass1": 0.5424528301886793,
+    "truncated": 0.11084905660377359
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_H",
+    "max_tokens": null,
+    "pass1": 0.52734375,
+    "truncated": null
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_R",
+    "max_tokens": 8192,
+    "pass1": 0.8392857142857143,
+    "truncated": 0.004464285714285714
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_U",
+    "max_tokens": 8192,
+    "pass1": 0.87109375,
+    "truncated": 0.01171875
+   }
+  ]
+ },
+ "qis-main-U-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 31,
+  "rounds": {
+   "31": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 2,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 2
+   }
+  },
+  "evals": []
+ }
+}

@@ -158,3 +158,18 @@ the text alone; labels in `research/evidence/a11/inspection_labels.json`. Counts
 ## D88 — 2026-11-08 05:25Z — capcheck recipe fix
 `qis-a11-capcheck` 11082575 FAILED at 0 s: the recipe did not define `PROJ_DATA` (my error). Added the standard
 `PROJ_DATA` line; resubmitted as 11082618 (running, waiting for R-s101 round 34). Compute charged: 0 s CPU.
+
+## D89 — 2026-11-08 06:40Z — A11.6 verified for R-s101: round 33 runs at 12,288
+Source `qis-a11-capcheck` 11082618; evidence `research/evidence/a11/capcheck_R-s101.json` (attempt a2).
+
+| Round | Logged cap | Max response tokens | Responses > 8,192 | Capped (all at the cap, all graded truncated, reward 0) |
+|---|---|---|---|---|
+| 31 | 8,192 | 8,192 | 0 | 4 at 8,192 |
+| 32 | 8,192 | 8,192 | 0 | 7 at 8,192 |
+| 33 | 12,288 | 12,288 | 11 | 1 at 12,288 |
+| 34 | 12,288 | 12,154 | 9 | 0 |
+
+- Rollout, training and grading switch together at round 33, as A11 requires. 128 records per round.
+- Evaluations at round 32 used 8,192 (`eval_cap(32)` = cap of round 32), as designed. The first evaluation at 12,288 is at
+  round 40. `qis-a11-capcheck2` (11083320) checks it and U-s101, H-s101 once all three have logged round 41.
+- Note for the report: R-s101 a2 dev truncation at round 32 was 11.1% at 8,192 (dev outcome, not used for any decision).
