@@ -225,3 +225,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s101 + 2 dev 16k evals ending soon); preempt 5/6 queued (U/H-s101, R/U-s202, diag r0); H-s202 waits for a slot.
 6. **Most important.** Move U-s101 and H-s101 onto the general GPUs as the dev evals end; verify round 33 cap at ~05:30Z (R-s101).
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b1hmgiolw).
+
+## Review 26 — 2026-11-08 04:05–04:20Z
+1. **Changes.** dev16k-R (11081333) completed: R-s101 round 52, pass@1 0.592 at 16,384, 0.572 within 8,192; 19.6% cross 8,192; weight check passed (D83). D83 mislabelled the round as 36; corrected in D84. U-s101 moved to general and started 04:03Z. H-s202 submitted (11082192). Monitor resubmitted (11082191).
+2. **Valid?** Yes so far. All a2 prechecks passed (stale-run guard included); `boundary_eval` skipped by design. No round metrics inspected yet this hour; the monitor will show them.
+3. **Surprises.** My own labelling error (round 52 vs 36). The H/R crossing-rate gap is confounded by round, not evidence of an arm effect.
+4. **Risks.** U-s101 waited ~1 h in the general queue. Report target 10 Nov 01:00Z unlikely; deadline 14:30Z holds on current forecast.
+5. **Next jobs / limits.** General 3/3 (R-s101, U-s101, dev16k-U). Preempt 5/6 queued (H-s101, R/U/H-s202, diag r0).
+6. **Most important.** Verify round 33 uses 12,288 in R-s101 (expected ~05:30Z); move H-s101 to general when dev16k-U ends.
+7. **Reconciliation.** Slurm ↔ ledger agree: 8 owned live jobs, all with ledger rows. `registry/runs.jsonl` is untracked and unused (D21); the ledger is the run record. Watcher alive (blc1tl7lp).

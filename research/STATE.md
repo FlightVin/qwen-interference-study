@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-08 03:15Z (A11 resume; cap 12,288).
+Updated 2026-11-08 04:15Z (Review 26; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -39,8 +39,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Move U-s101 and H-s101 to general when the R/U dev 16k evaluations finish; submit H-s202 when a preempt slot frees.
+1. All six a2 runs submitted. R-s101, U-s101 run on general; move H-s101 to general when dev16k-U (11081334) ends.
 2. ~2.5 h after each start: verify round 33 logs `max_tokens` 12288 in rollout records, training and grading.
-3. Finish the truncation report (R r52, U r48 at 16,384; fixed inspection sample review).
+3. Finish the truncation report (H r36, R r52 done; U r48 running; arms differ in round, so compare at matched rounds; inspection sample review).
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
 5. Report target 10 Nov 01:00Z is now unlikely on 3 general GPUs alone (forecast ≈ 07:00–08:00Z); hard deadline 14:30Z.
