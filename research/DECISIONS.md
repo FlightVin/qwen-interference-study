@@ -154,3 +154,7 @@ the text alone; labels in `research/evidence/a11/inspection_labels.json`. Counts
   copy an earlier block verbatim. 22/24 end with an answer; the 2 capped ones do not.
 - 5 of 9 correct crossers reach the answer by a guess or contradictory reasoning (e.g. picking 2/3 from a numerical
   estimate). Extra length past 8,192 buys few, and partly unreliable, correct answers. n = 8 per arm: descriptive only.
+
+## D88 — 2026-11-08 05:25Z — capcheck recipe fix
+`qis-a11-capcheck` 11082575 FAILED at 0 s: the recipe did not define `PROJ_DATA` (my error). Added the standard
+`PROJ_DATA` line; resubmitted as 11082618 (running, waiting for R-s101 round 34). Compute charged: 0 s CPU.
