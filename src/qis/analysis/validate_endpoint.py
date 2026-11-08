@@ -7,8 +7,9 @@ Checks, each reported as pass/fail with its numbers:
 - optimizer: 4 steps per round (512 total), no non-finite step;
 - evaluations: dev, probe_J_R, probe_J_U at rounds 0, 32, 64, 96, 128 (8 responses/problem);
 - checkpoint identity: round_0128 model.pt/optim.pt sha256 equal the values recorded in state.json;
+- attempt: every metrics row and the round_0128 state.json carry the retained attempt id (A11/D99; default a2);
 - truncation: capped/total for hard and auxiliary training prompts; cost inputs: start/complete times per attempt.
-Usage: python -m qis.analysis.validate_endpoint RUN_DIR CKPT_DIR OUT.json
+Usage: python -m qis.analysis.validate_endpoint RUN_DIR CKPT_DIR OUT.json [ATTEMPT_ID]
 """
 import glob
 import gzip
@@ -29,9 +30,10 @@ def sha(path, bs=1 << 24):
     return h.hexdigest()
 
 
-def main(run_dir, ckpt_dir, out):
+def main(run_dir, ckpt_dir, out, attempt="a2"):
     M = [json.loads(l) for l in open(os.path.join(run_dir, "metrics.jsonl"))]
     res, ok = {}, True
+    att = sorted({str(r.get("attempt_id")) for r in M})
     rounds = [r["round"] for r in M if r.get("kind") == "round"]
     res["rounds"] = {"n": len(rounds), "distinct": len(set(rounds)), "missing": sorted(set(range(1, ROUNDS + 1)) - set(rounds)),
                      "pass": sorted(set(rounds)) == list(range(1, ROUNDS + 1))}
@@ -77,8 +79,11 @@ def main(run_dir, ckpt_dir, out):
     else:
         ident["pass"] = False
     res["checkpoint_identity"] = ident
+    st = os.path.join(fin, "state.json")
+    ck_att = json.load(open(st)).get("attempt_id") if os.path.exists(st) else None
+    res["attempt"] = {"expected": attempt, "metrics": att, "checkpoint": ck_att, "pass": att == [attempt] and ck_att == attempt}
     res["truncation_train"] = {k: {"capped": a, "total": b, "frac": a / b if b else None} for k, (a, b) in tr.items()}
-    for k in ("rounds", "optimizer", "attempts", "evaluations", "verifier", "checkpoint_identity"):
+    for k in ("rounds", "optimizer", "attempts", "evaluations", "verifier", "checkpoint_identity", "attempt"):
         ok &= bool(res[k]["pass"])
     res["all_pass"] = ok
     json.dump(res, open(out, "w"), indent=1)
@@ -86,4 +91,4 @@ def main(run_dir, ckpt_dir, out):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])
