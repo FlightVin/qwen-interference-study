@@ -306,3 +306,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued. First slot ≈ 22:20Z → R-s202 (D93).
 6. **Most important.** Act at the first free general slot per D93; keep re-forecasting.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
+
+## Review 35 — 2026-11-08 13:05Z
+1. **Changes.** None in job state. s101 runs continue on general (R 10:04, U 9:02, H 8:47 elapsed).
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** None.
+4. **Risks.** Unchanged (D93/D94): first general slot ≈ 22:20Z; H-s202 conditional.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
+6. **Most important.** On the U-s101 completion event: validate its endpoint, move R-s202 (11081729) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty); main-run completions are not suppressed.
