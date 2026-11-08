@@ -39,8 +39,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. All six a2 runs submitted; s101 runs train on general. When an s101 run ends, move seed-202 runs to general in order H, U, R (D90).
+1. All six a2 runs submitted; s101 runs train on general. Seed-202 order on general (D93): R-s202, U-s202, then test evaluations; H-s202 only if capacity allows.
 2. Verify round 33 at 12,288 with `qis-a11-capcheck` (R-s101 ≈06:20Z; rerun for U, H after their round 34).
 3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
-5. Forecast (D90): test evaluations end ≈ 10 Nov 07:00Z; margin to the 14:30Z deadline ≈ 7 h; 01:00Z target missed. H is the critical path.
+5. Forecast (D93): six runs + 7 test evals do not fit by 14:30Z on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional; report ≈ 10 Nov 08:00Z.

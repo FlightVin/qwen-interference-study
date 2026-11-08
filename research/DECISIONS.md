@@ -219,3 +219,24 @@ every capped response ends exactly at its round's cap and is graded truncated wi
 
 H still caps 2–9% of responses at 12,288 (report-only under A8). Remaining: the seed-202 runs (same check after
 their round 35) and the round-64 evaluation cap.
+
+## D93 — 2026-11-08 11:20Z — deadline risk: seed-202 order changed to R, U first; H-s202 only if capacity allows
+Measured round times at 12,288 (monitor 11084490, rounds shown in peek; include no evaluation round):
+R-s101 615–919 s (mean ≈ 743 s), U-s101 377–637 s (≈ 515 s), H-s101 802–1,109 s (≈ 950 s). H caps 7–16% at 12,288.
+Progress at ≈11:05Z: R round 63, U round 62, H round 40. Preempt: no start estimate for any queued job (825 pending).
+
+Projected ends of seed 101 (incl. ≈1 h of evaluations): U ≈ 21:40Z today; R ≈ 9 Nov 01:30Z; H ≈ 9 Nov 11:30Z.
+Projected seed-202 durations from the same profiles: U ≈ 18 h, R ≈ 25 h, H ≈ 32 h.
+Sealed-test evaluations: 7 × ≈ 4 h GPU (128 problems × 32 at ≈ 1,200 tok/s, measured on dev).
+
+D90's order (H first) gives last training end ≈ 10 Nov 05:40Z; the 7 test evaluations then need ≈ 10 h on 3 GPUs
+→ ≈ 15:40Z, after the 14:30Z deadline. Under A9 (deliver verified partial results if the deadline is at risk) and the
+A10 continuation (prioritize paired R−U), the plan becomes:
+1. First general slot (U-s101 end) → R-s202 (≈ 25 h → ≈ 9 Nov 22:40Z).
+2. Second slot (R-s101 end) → U-s202 (≈ 18 h → ≈ 9 Nov 19:30Z).
+3. Third slot (H-s101 end) → sealed-test evaluations: base, then H/R/U-s101; R/U-s202 evaluations as they finish.
+   All evaluations end ≈ 10 Nov 03:30Z; report ≈ 08:00Z.
+4. H-s202 stays queued on preempt (11082192). It moves to general only if a re-forecast shows it and its evaluation
+   finish by ≈ 10 Nov 10:00Z. Otherwise the report gives R−H for seed 101 only, marked partial.
+This uses only run durations, never outcomes. Supersedes the order in D90. Re-forecast hourly; the decision binds at
+the first slot (≈ 21:40Z).
