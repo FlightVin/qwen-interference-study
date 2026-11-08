@@ -33,24 +33,24 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--seed-label", required=True)
     ap.add_argument("--max-tokens", type=int, default=8192)
+    ap.add_argument("--gpu-mem-util", type=float, default=0.85)
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     items = json.load(open(a.panel))["pools"][a.panel_key]
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(a.model)
     from qis.train.rollout import Rollout
-    roll = Rollout(a.model, a.max_tokens, 0.85 if a.ckpt == "base" else 0.30)
+    # vLLM gets most of the GPU; checkpoint weights are read on the CPU and pushed into vLLM (no learner on GPU).
+    roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
     ck_hash = "base"
     if a.ckpt != "base":
-        from qis.train.learner import Learner
-        L = Learner(a.model, 1e-6)
         mpath = os.path.join(a.ckpt, "model.pt")
         ck_hash = json.load(open(os.path.join(a.ckpt, "state.json"))).get("file_sha256", {}).get("model.pt") \
             or hashlib.sha256(open(mpath, "rb").read()).hexdigest()
-        L.model.load_state_dict(torch.load(mpath, map_location="cpu", weights_only=True))
-        prompts.sync_weights(roll.llm, L.model)
-        del L
-        torch.cuda.empty_cache()
+        sd = torch.load(mpath, map_location="cpu", weights_only=True)
+        params = [(n, t.to(torch.bfloat16)) for n, t in sd.items()]
+        roll.llm.collective_rpc(lambda w: w.model_runner.model.load_weights(iter(params)) and True)
+        del sd, params
     ver = Verifier(8)
     ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
     req = [seeds.int_seed(EVAL_SEED, f"eval/{a.panel_key}/{it['id']}/{a.seed_label}/n{a.n}") for it in items]
