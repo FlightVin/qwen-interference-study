@@ -333,3 +333,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
 6. **Most important.** On U-s101 completion (≈ 7:40 PM EST): validate endpoint, move R-s202 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
+
+## Review 38 — 2026-11-08 16:05Z (11:05 AM EST)
+1. **Changes.** Monitor 11086128: U-s101 85, R-s101 81, H-s101 61; checkpoints at 80/84/60 written ok.
+2. **Valid?** Yes; caps 12,288 in rounds; no restarts; capped per round U 13, R 16, H 6 (report-only, A8).
+3. **Surprises.** H rounds got faster (806 s vs 965 s); U rounds slower (744 s vs 615 s).
+4. **Risks.** U-s101 end slips to ≈ 9:40 PM EST; last test evaluation ≈ Tue 5:40 AM EST; margin ≈ 5 h (D98).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
+6. **Most important.** On U-s101 completion: validate endpoint, move R-s202 (11081729) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs + monitor 11086128 done). Watcher alive (b9sm9buty).

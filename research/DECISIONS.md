@@ -271,3 +271,11 @@ Expected run time per test evaluation: 128 × 32 = 4,096 completions; at the mea
 (1,134–1,393 tok/s, D83/D85) and ≈ 4,700–5,000 mean tokens (later policies are longer) this is ≈ 4.0–5.0 h, too close
 to the old 5 h limit; the eval phase is not resumable, so a timeout loses all work. Raised to 9 h in
 `make_test_exps.py` and the 7 `exp/qis-test-*` recipes. No change to n, cap, seeds or problems.
+
+## D98 — 2026-11-08 16:15Z — forecast refresh (U slower, H faster); plan D93 kept
+Monitor 11086128 (≈16:10Z): U-s101 round 85 (mean last-8 round 744 s), R-s101 81 (845 s), H-s101 61 (806 s; was 965 s).
+Projected ends (incl. evaluations at 96 and 128, ≈ 0.8 h each): U-s101 ≈ 9 Nov 02:40Z (9:40 PM EST Sun); R-s101 ≈ 04:45Z
+(11:45 PM EST); H-s101 ≈ 09:30Z (4:30 AM EST Mon). D93 order: R-s202 ≈ 27 h → ≈ 10 Nov 05:40Z; U-s202 ≈ 20 h → ≈ 10 Nov
+00:45Z; test evaluations from ≈ 9 Nov 09:30Z on the third slot, then on the U-s202 and R-s202 slots; last (R-s202) ends
+≈ 10 Nov 10:40Z (5:40 AM EST). Margin to 16:00Z ≈ 5 h. H-s202 (≈ 27 h + 5 h evaluation from 09:30Z → ≈ 17:30Z) still
+does not fit; it stays on preempt only.
