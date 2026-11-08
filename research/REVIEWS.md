@@ -261,3 +261,12 @@
 5. **Next jobs / limits.** General 3/3. Seed-202 start order on general: H, U, R (D90).
 6. **Most important.** When the first s101 run ends, move H-s202 (11082192) to general first.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).
+
+## Review 30 — 2026-11-08 08:05Z
+1. **Changes.** None in job state. All three s101 runs keep running on general (R 5:04, U 4:02, H 3:47 elapsed).
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** None new.
+4. **Risks.** `qis-a11-capcheck2` (started 06:36Z, 4 h limit) waits for H-s101 round 41; at ≈10 min per round H reaches it ≈10:15–10:45Z, so the check may time out. If it does, resubmit it with a longer limit (no study impact).
+5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; seed-202 order on general H, U, R (D90).
+6. **Most important.** Keep the general GPUs filled when the first s101 run ends (≈18:00–20:00Z).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).
