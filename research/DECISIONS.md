@@ -241,7 +241,7 @@ A10 continuation (prioritize paired R−U), the plan becomes:
 This uses only run durations, never outcomes. Supersedes the order in D90. Re-forecast hourly; the decision binds at
 the first slot (≈ 21:40Z).
 
-## D94 — 2026-11-08 12:20Z — round-64 evaluations run at 12,288 (A11.6 grading cap verified); forecast refresh
+## D94 — 2026-11-08 12:08Z — round-64 evaluations run at 12,288 (A11.6 grading cap verified); forecast refresh
 - Monitor 11084694: R-s101 and U-s101 logged their round-64 evaluations with `max_tokens` 12288 (R: dev; U: dev,
   probe_J_R, probe_J_U; R's probes were still running). Training and evaluation caps now verified for the transition.
 - Viewed, not used for decisions (dev, round 64, cap 12,288): R 0.736 (truncated 19.8%), U 0.710 (14.9%); derived
