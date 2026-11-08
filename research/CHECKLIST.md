@@ -88,7 +88,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6C.3 done (D78, D79) — Smoke OOM → LM-head recompute fix; rerun 11080758 passed (peak 37.8 GiB; worst-case round 12.2 min).
 - 6C.4 done (D81) — Cap frozen at 12,288.
 - 6C.5 active (D82) — a1 dirs superseded; a2 recipes (0:8192,32:12288); R-s101 11081724 + U-s101 11081725 general; H-s101 11081726, R-s202 11081729, U-s202 11081731, H-s202 11082192 (D84) queued on preempt.
-- 6C.6 active — R-s101 verified (D89). `qis-a11-capcheck2` 11084106 checks U-s101, H-s101 (rounds 31–35); eval cap check after round 64 (D91). Verify round 33 cap in rollout/training/grading logs per run; curves and W&B select resumed trajectory only.
+- 6C.6 active — training transition verified for R-, U-, H-s101 (D89, D92). Pending: seed-202 runs after their round 35; eval cap at round 64 (D91). Verify round 33 cap in rollout/training/grading logs per run; curves and W&B select resumed trajectory only.
 
 ## 6B. A10 cap transition (D73, D74) — boundary superseded by A11
 - 6B.1 done — Code: cap schedule in trainer/rollout/evals; recipe generator options; tests 44/44 (job 11079542).

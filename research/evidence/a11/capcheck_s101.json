@@ -1,0 +1,273 @@
+{
+ "qis-main-H-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 36,
+  "rounds": {
+   "31": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 14,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 14
+   },
+   "32": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 23,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 23
+   },
+   "33": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 21,
+    "capped": 12,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 12
+   },
+   "34": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 10,
+    "capped": 3,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 3
+   },
+   "35": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 28,
+    "capped": 11,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 11
+   }
+  },
+  "evals": [
+   {
+    "round": 32,
+    "panel": "dev",
+    "max_tokens": 8192,
+    "pass1": 0.5400943396226415,
+    "truncated": 0.16981132075471697
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_H",
+    "max_tokens": null,
+    "pass1": 0.5703125,
+    "truncated": null
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_R",
+    "max_tokens": 8192,
+    "pass1": 0.8214285714285714,
+    "truncated": 0.0
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_U",
+    "max_tokens": 8192,
+    "pass1": 0.8359375,
+    "truncated": 0.02734375
+   }
+  ]
+ },
+ "qis-main-R-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 57,
+  "rounds": {
+   "31": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 4,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 4
+   },
+   "32": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 7,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 7
+   },
+   "33": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 11,
+    "capped": 1,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 1
+   },
+   "34": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12154,
+    "over_8192": 9,
+    "capped": 0,
+    "capped_lengths": [],
+    "capped_graded_truncated": 0
+   },
+   "35": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 8,
+    "capped": 1,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 1
+   }
+  },
+  "evals": [
+   {
+    "round": 32,
+    "panel": "dev",
+    "max_tokens": 8192,
+    "pass1": 0.5424528301886793,
+    "truncated": 0.11084905660377359
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_H",
+    "max_tokens": null,
+    "pass1": 0.52734375,
+    "truncated": null
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_R",
+    "max_tokens": 8192,
+    "pass1": 0.8392857142857143,
+    "truncated": 0.004464285714285714
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_U",
+    "max_tokens": 8192,
+    "pass1": 0.87109375,
+    "truncated": 0.01171875
+   }
+  ]
+ },
+ "qis-main-U-s101-sym": {
+  "attempt_id": "a2",
+  "last_round": 54,
+  "rounds": {
+   "31": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 2,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 2
+   },
+   "32": {
+    "metric_max_tokens": 8192,
+    "records": 128,
+    "max_n_tokens": 8192,
+    "over_8192": 0,
+    "capped": 12,
+    "capped_lengths": [
+     8192
+    ],
+    "capped_graded_truncated": 12
+   },
+   "33": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 8,
+    "capped": 6,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 6
+   },
+   "34": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 15,
+    "capped": 5,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 5
+   },
+   "35": {
+    "metric_max_tokens": 12288,
+    "records": 128,
+    "max_n_tokens": 12288,
+    "over_8192": 5,
+    "capped": 2,
+    "capped_lengths": [
+     12288
+    ],
+    "capped_graded_truncated": 2
+   }
+  },
+  "evals": [
+   {
+    "round": 32,
+    "panel": "dev",
+    "max_tokens": 8192,
+    "pass1": 0.6014150943396226,
+    "truncated": 0.1721698113207547
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_H",
+    "max_tokens": null,
+    "pass1": 0.62109375,
+    "truncated": null
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_R",
+    "max_tokens": 8192,
+    "pass1": 0.8303571428571429,
+    "truncated": 0.004464285714285714
+   },
+   {
+    "round": 32,
+    "panel": "probe_J_U",
+    "max_tokens": 8192,
+    "pass1": 0.890625,
+    "truncated": 0.01953125
+   }
+  ]
+ }
+}

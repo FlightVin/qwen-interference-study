@@ -205,3 +205,17 @@ and end ≈ 9 Nov 19:00Z – 10 Nov 03:00Z. Test evaluations (~4 h each, 3 GPUs)
 - Progress at 09:05Z (monitor 11084097): R-s101 round 52, U-s101 round 48, H-s101 round 32. 12k round times: R 285–965 s,
   U 294–568 s. H at 8k: 521–626 s, capped 14–23 of 128 per round (report-only, A8).
 - Dev at round 32 (a2; viewed, not used for decisions): H 0.540, R 0.542, U 0.601.
+
+## D92 — 2026-11-08 09:55Z — A11.6 verified for all three s101 runs
+Source `qis-a11-capcheck2` 11084106; evidence `research/evidence/a11/capcheck_s101.json` (all attempt a2).
+In R-, U- and H-s101, rounds 31–32 log `max_tokens` 8192 and rounds 33–35 log 12288. Every round has 128 records;
+every capped response ends exactly at its round's cap and is graded truncated with reward 0.
+
+| Capped / responses > 8,192 (of 128) | Round 32 | Round 33 | Round 34 | Round 35 |
+|---|---|---|---|---|
+| H | 23 / 0 | 12 / 21 | 3 / 10 | 11 / 28 |
+| R | 7 / 0 | 1 / 11 | 0 / 9 | 1 / 8 |
+| U | 12 / 0 | 6 / 8 | 5 / 15 | 2 / 5 |
+
+H still caps 2–9% of responses at 12,288 (report-only under A8). Remaining: the seed-202 runs (same check after
+their round 35) and the round-64 evaluation cap.
