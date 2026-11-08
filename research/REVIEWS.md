@@ -342,3 +342,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** On U-s101 completion: validate endpoint, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs + monitor 11086128 done). Watcher alive (b9sm9buty).
+
+## Review 39 — 2026-11-08 17:05Z (12:05 PM EST)
+1. **Changes.** A13 recorded (`project.md` §27). Round-32 dev provenance resolved (D99, job 11086589): earlier values were the superseded a1 trajectory; canonical = a2 (R 0.542, U 0.601, H 0.540).
+2. **Valid?** Yes; s101 runs continuous on general (R 14:04, U 13:02, H 12:47 elapsed); no restarts.
+3. **Surprises.** The A11 replay is not bitwise reproducible from the base model (D99); no effect on validity, recorded for the report.
+4. **Risks.** Unchanged from D98: margin ≈ 5 h to Tue 11:00 AM EST.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts). Next monitor ≈ 18:05Z.
+6. **Most important.** On U-s101 completion (≈ 9:40 PM EST): validate endpoint, move R-s202 (11081729) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bn30h9a02). Review cron created 7 Nov 02:13Z; expiry ≈ 14 Nov (no action).
