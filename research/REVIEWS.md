@@ -351,3 +351,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts). Next monitor ≈ 18:05Z.
 6. **Most important.** On U-s101 completion (≈ 9:40 PM EST): validate endpoint, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bn30h9a02). Review cron created 7 Nov 02:13Z; expiry ≈ 14 Nov (no action).
+
+## Review 40 — 2026-11-08 18:05Z (1:05 PM EST)
+1. **Changes.** Monitor 11087148: U-s101 95, R-s101 90, H-s101 68; H dev at round 64 logged (12,288).
+2. **Valid?** Yes; caps 12,288; checkpoints ok; no restarts. Capped per round U 3–17, R 8–16, H 6–12 of 128 (report-only).
+3. **Surprises.** None; H rounds faster again (682 s).
+4. **Risks.** Margin ≈ 5.5 h (D100); H-s202 still does not fit on general.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
+6. **Most important.** On U-s101 completion (≈ 9:20 PM EST): validate endpoint, move R-s202 (11081729) to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs + monitor done). Watcher alive (bn30h9a02).

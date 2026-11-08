@@ -310,3 +310,10 @@ resolved. Qualification that remains: round 32 (cap 8,192) vs round 64 (cap 12,2
 cap change; any 32→64 comparison is labelled accordingly. Size check: a1→a2 differences (+0.035, +0.054, −0.012) are
 of the order of evaluation sampling sd (≈ 0.02 per value) plus trajectory variation; R−U at round 32 is −0.040 (a1)
 and −0.059 (a2); dev is a monitoring panel only.
+
+## D100 — 2026-11-08 18:20Z — forecast refresh; plan D93 kept
+Monitor 11087148 (≈18:15Z): U-s101 round 95 (mean last-8 723 s), R-s101 90 (792 s), H-s101 68 (682 s). H dev round 64
+logged (12,288 cap; monitoring only). Projected ends: U-s101 ≈ 9 Nov 02:20Z (9:20 PM EST Sun), R-s101 ≈ 04:05Z (11:05 PM
+EST), H-s101 ≈ 07:05Z (2:05 AM EST Mon). R-s202 (≈ 27 h) → ≈ 10 Nov 05:20Z; U-s202 (≈ 20 h) → ≈ 10 Nov 00:05Z; test
+evaluations from ≈ 9 Nov 07:05Z; last (R-s202) ≈ 10 Nov 10:20Z (5:20 AM EST); margin ≈ 5.5 h. H-s202 from the H-s101 slot
+(≈ 27.7 h + ≈ 5 h test evaluation) would end ≈ 10 Nov 15:45Z and would block four test evaluations: still does not fit.
