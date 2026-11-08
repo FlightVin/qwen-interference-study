@@ -111,3 +111,11 @@ Dated decisions with their reasons. Newest last. Times are UTC.
   Its pinned commit is `7c44fa5`; the other five a2 runs use `9d6349a`. The only change between them is
   `wandb_companion.py` (skip run dirs without metrics), which the trainer does not import.
 - Resubmitted `qis-monitor` (11082191): the last monitor output predates the A11 pause.
+
+## D85 — 2026-11-08 04:20Z — dev16k-U harvested; H-s101 on general; truncation study rerun
+- `qis-a11-dev16k-U` (11081334) COMPLETED. U-s101 round 48 (superseded a1), dev, cap 16,384, n=32: pass@1 0.591 at 16,384,
+  0.558 within 8,192; crossing 8,192 19.5%; crossing then correct 3.3% of all; capped 2.3%; 1,134 tok/s; weight check passed.
+  Evidence `research/evidence/a11/dev16k_U-s101-r48_summary.json`. Dev outcomes only; rounds differ by arm (H 36, R 52, U 48).
+- Moved `qis-main-H-s101-sym` (11081726) to general; it started 04:18Z on babel-w5-24. General: 3/3 = R-s101, U-s101, H-s101.
+- Resubmitted `qis-a11-truncstudy` (11082251) over H r36, R r52, U r48.
+- R-s101 a2 reached round ~14 by 04:07Z (≈4.7 min/round at 8,192); round 33 expected ≈05:35Z.
