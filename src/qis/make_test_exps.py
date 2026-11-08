@@ -13,7 +13,7 @@ RUNS = [f"qis-main-{a}-s{s}-sym" for s in (101, 202) for a in "HRU"]
 TEST_SHA = "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca"
 
 HEAD = r'''#!/usr/bin/env bash
-#EXP gpus=1 cpus=8 mem=64G time=05:00:00 part=preempt constraint=VRAM_48GB
+#EXP gpus=1 cpus=8 mem=64G time=09:00:00 part=preempt constraint=VRAM_48GB
 # HYPOTHESIS: none -- sealed target_test evaluation (A9; PROTOCOL §7): {what}; 128 problems x 32 samples, cap 12,288 (A11, D81; also success within 8,192 from the same traces).
 export PROJ_DATA="/data/user_data/$USER/qis"
 export VENV="$PROJ_DATA/env/venv-v1"

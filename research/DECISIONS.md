@@ -265,3 +265,9 @@ The extra 1.5 h does not make H-s202 fit. With H-s202 on the first general slot 
 U-s202 move to the later slots, and no general GPU is free for the sealed-test evaluations until ≈ 10 Nov 07:00Z;
 7 evaluations × 4–5 h on 3 GPUs then end ≈ 17:00–18:00Z, after 16:00Z. D93 (R-s202, U-s202, then evaluations; H-s202
 on preempt only) keeps all evaluations ≈ 10 Nov 08:00Z; margin to the deadline ≈ 8 h. Re-checked at every slot.
+
+## D97 — 2026-11-08 15:15Z — sealed-test evaluation time limit 5 h → 9 h
+Expected run time per test evaluation: 128 × 32 = 4,096 completions; at the measured `evaluate_ckpt` throughput
+(1,134–1,393 tok/s, D83/D85) and ≈ 4,700–5,000 mean tokens (later policies are longer) this is ≈ 4.0–5.0 h, too close
+to the old 5 h limit; the eval phase is not resumable, so a timeout loses all work. Raised to 9 h in
+`make_test_exps.py` and the 7 `exp/qis-test-*` recipes. No change to n, cap, seeds or problems.
