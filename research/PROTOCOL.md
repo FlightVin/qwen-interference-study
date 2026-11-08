@@ -121,3 +121,8 @@ Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS 
   Replayed rounds are a new trajectory (sampling is not bitwise reproducible across jobs, D24, D50). Old attempts
   (a1) are superseded; their directories move to `superseded/` and their compute is charged.
 - The report describes an 8k-to-amended-cap training schedule with questions screened at 8k.
+
+### A11 cap frozen (D81, 2026-11-08 ~03:00Z)
+**Amended cap = 12,288** (rounds 33–128, all six runs; engine context 13,312). Evaluation cap after round 32 and for
+all sealed test evaluations (base and endpoints) = 12,288, with success within 8,192 reported from the same traces.
+The study uses an **8k-to-12k training schedule**; its questions were screened at 8k.
