@@ -324,3 +324,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
 6. **Most important.** On U-s101 completion: validate endpoint, move R-s202 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
+
+## Review 37 — 2026-11-08 15:05Z (10:05 AM EST)
+1. **Changes.** A12: deadline Tue 10 Nov 11:00 AM EST (16:00Z) (D96; plan D93 kept). Test-evaluation time limit raised to 9 h (D97).
+2. **Valid?** Yes; s101 runs continuous on general (R 12:04, U 11:02, H 10:47 elapsed).
+3. **Surprises.** None.
+4. **Risks.** Test evaluations may take ≈ 5 h each; all done ≈ Tue 4:30 AM EST; margin ≈ 6 h.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
+6. **Most important.** On U-s101 completion (≈ 7:40 PM EST): validate endpoint, move R-s202 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
