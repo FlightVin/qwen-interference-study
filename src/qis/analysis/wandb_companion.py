@@ -7,7 +7,8 @@ W&B run `<run>-curves` (same project, group = run id, job_type "derived") from t
   entropy (every 8 rounds), round/max_tokens (cap; marks the 8k→16k transition);
 - curves/<hard|aux|hard_common|hard_extra>/{all_wrong,mixed,all_correct,success,capped_frac,mean_tokens};
 - eval/<panel>/{pass1,pass8,truncated} for dev, probe_J_R, probe_J_U, and probe_J_H derived from dev per-problem.
-One extra run `qis-RvU-s<seed>-sym-curves` logs R and U on the shared hard schedule at matched rounds.
+Run ids carry the trajectory's attempt id (`<run>-<attempt>-curves`) so superseded and resumed trajectories never
+mix (A11). One extra run `qis-RvU-s<seed>-sym-<attempt>-curves` logs R and U on the shared hard schedule at matched rounds.
 Incremental: a state file under PROJ_DATA records the last logged round per companion run; reruns resume the same
 W&B run id and log only newer rounds. No account-wide sync; only these project runs.
 Usage: python -m qis.analysis.wandb_companion RUNS_DIR BUNDLE STATE.json PROJECT
@@ -81,11 +82,16 @@ def main(runs, bundle, state_path, project):
     jh = {it["id"] for it in pools.get("probe_J_H", [])}
     state = json.load(open(state_path)) if os.path.exists(state_path) else {}
     names = sorted(n for n in os.listdir(runs) if n.startswith("qis-main-"))
+    att = {}
+    for n in names:                                   # attempt id of the CURRENT trajectory (A11: a2 after the restart)
+        with open(os.path.join(runs, n, "metrics.jsonl")) as f:
+            att[n] = json.loads(f.readline()).get("attempt_id", "a1")
     all_rows = {}
     for n in names:
         all_rows[n] = run_rows(os.path.join(runs, n), jh)
         arm = n.split("-")[2]
-        state[f"{n}-curves"] = push(project, f"{n}-curves", n, all_rows[n], state.get(f"{n}-curves", -1), ["derived", arm])
+        rid = f"{n}-{att[n]}-curves"
+        state[rid] = push(project, rid, n, all_rows[n], state.get(rid, -1), ["derived", arm, att[n]])
     for n in names:
         if "-R-" in n and n.replace("-R-", "-U-") in all_rows:
             a, b = round_rows(os.path.join(runs, n)), round_rows(os.path.join(runs, n.replace("-R-", "-U-")))
@@ -97,7 +103,7 @@ def main(runs, bundle, state_path, project):
                                "rvu/diff_success": ra["success"] - rb["success"],
                                "rvu/R_capped_frac": ra["capped"] / ra["total"], "rvu/U_capped_frac": rb["capped"] / rb["total"],
                                "rvu/R_mixed": ra["mixed"], "rvu/U_mixed": rb["mixed"], "rvu/cap": a[r]["cap"]}
-            rid = n.replace("qis-main-R-", "qis-RvU-") + "-curves"
+            rid = n.replace("qis-main-R-", "qis-RvU-") + f"-{att[n]}-curves"
             state[rid] = push(project, rid, n.replace("qis-main-R-", "qis-RvU-"), rows, state.get(rid, -1), ["derived", "RvU"])
     json.dump(state, open(state_path, "w"), indent=1)
     print(json.dumps(state, indent=1))
