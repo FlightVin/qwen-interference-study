@@ -297,3 +297,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued. Next slot ≈ 21:40Z (U-s101 end) → R-s202.
 6. **Most important.** Re-forecast hourly from round times; act at the first free slot per D93.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
+
+## Review 34 — 2026-11-08 12:05Z
+1. **Changes.** Monitor 11084694: R-s101 64, U-s101 64, H-s101 44. Round-64 evaluations ran at 12,288 (D94).
+2. **Valid?** Yes; caps verified in rollout, training, grading and evaluation for s101 runs.
+3. **Surprises.** Dev truncation at 12,288 at round 64 is 15–20%, higher than the a1 study suggested (report-only).
+4. **Risks.** Deadline plan D93 stands; projections unchanged within ±1 h.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued. First slot ≈ 22:20Z → R-s202 (D93).
+6. **Most important.** Act at the first free general slot per D93; keep re-forecasting.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).

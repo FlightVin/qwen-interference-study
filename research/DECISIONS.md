@@ -240,3 +240,14 @@ A10 continuation (prioritize paired R−U), the plan becomes:
    finish by ≈ 10 Nov 10:00Z. Otherwise the report gives R−H for seed 101 only, marked partial.
 This uses only run durations, never outcomes. Supersedes the order in D90. Re-forecast hourly; the decision binds at
 the first slot (≈ 21:40Z).
+
+## D94 — 2026-11-08 12:20Z — round-64 evaluations run at 12,288 (A11.6 grading cap verified); forecast refresh
+- Monitor 11084694: R-s101 and U-s101 logged their round-64 evaluations with `max_tokens` 12288 (R: dev; U: dev,
+  probe_J_R, probe_J_U; R's probes were still running). Training and evaluation caps now verified for the transition.
+- Viewed, not used for decisions (dev, round 64, cap 12,288): R 0.736 (truncated 19.8%), U 0.710 (14.9%); derived
+  J_H R 0.738, U 0.734. Dev truncation at 12,288 is higher than in the a1 dev-16k study (7.2–7.4% exceed 12,288 at
+  rounds 48–52): responses lengthen with training. Report-only (A8).
+- A dev evaluation at 12,288 takes 2,378–2,826 s (≈ 40–47 min).
+- Forecast refresh (round times last 6 rounds: R ≈ 735 s, U ≈ 496 s, H ≈ 926 s): U-s101 ends ≈ 22:20Z, R-s101 ≈
+  9 Nov 02:20Z, H-s101 ≈ 9 Nov 11:30Z. D93 plan unchanged. R-s101 `round_0064` now exists, so `qis-diag-local-r64`
+  can pass its precheck when it starts.
