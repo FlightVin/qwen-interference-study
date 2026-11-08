@@ -9,7 +9,7 @@ Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL fr
 **Schedule (A11, D81): 8k-to-12k** — rounds 1–32 at 8,192, rounds 33–128 at **12,288** (16,384 fit in memory but not the
 deadline). All six runs restarted at round 0 as attempt a2 (D82); old s101 attempts superseded (13.9 GPU-h + 3.6 GPU-h of
 cancelled evaluations). Questions screened at 8k; evaluations after round 32 and test at 12,288 with an 8,192 view.
-Seed 303 and clipping sensitivity deferred. Deadline: report by 10 Nov 01:00Z (target), 14:30Z (hard).
+Seed 303 and clipping sensitivity deferred. Deadline (A12): Tue 10 Nov 16:00Z = 11:00 AM EST (hard); 01:00Z target (A9) will be missed.
 No endpoint result exists yet (none viewed at the A9 amendment).
 
 ## Question
@@ -43,4 +43,4 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 2. Verify round 33 at 12,288 with `qis-a11-capcheck` (R-s101 ≈06:20Z; rerun for U, H after their round 34).
 3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
-5. Forecast (D93): six runs + 7 test evals do not fit by 14:30Z on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional; report ≈ 10 Nov 08:00Z.
+5. Forecast (D93): six runs + 7 test evals do not fit by the deadline on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional; report ≈ 10 Nov 08:00Z.

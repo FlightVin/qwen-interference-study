@@ -259,3 +259,9 @@ Projected ends (incl. evaluations at 96 and 128, ≈ 0.8 h each): U-s101 ≈ 9 N
 D93 plan: R-s202 (≈ 27 h) from ≈ 00:40Z → ≈ 10 Nov 03:40Z; U-s202 (≈ 20 h) from ≈ 04:20Z → ≈ 10 Nov 00:20Z; test
 evaluations from ≈ 9 Nov 13:00Z, all done ≈ 10 Nov 08:00Z if each takes 4–5 h. Margin to 14:30Z ≈ 6 h. H-s202 does
 not fit on general under these projections; it remains queued on preempt only.
+
+## D96 — 2026-11-08 15:05Z — A12: deadline 10 Nov 16:00Z (11:00 AM EST); plan D93 kept
+The extra 1.5 h does not make H-s202 fit. With H-s202 on the first general slot (≈ 9 Nov 00:40Z, ≈ 34 h), R-s202 and
+U-s202 move to the later slots, and no general GPU is free for the sealed-test evaluations until ≈ 10 Nov 07:00Z;
+7 evaluations × 4–5 h on 3 GPUs then end ≈ 17:00–18:00Z, after 16:00Z. D93 (R-s202, U-s202, then evaluations; H-s202
+on preempt only) keeps all evaluations ≈ 10 Nov 08:00Z; margin to the deadline ≈ 8 h. Re-checked at every slot.

@@ -589,3 +589,9 @@ seed (H, R, U × 101, 202), through round 128.
    from each run's logs that round 33 uses the new cap in rollout, training and grading. Mark the transition on
    learning curves and report truncation by arm and prompt type. Update the delivery forecast after measuring
    longer-cap throughput and replay. Within 3 general / 6 preempt GPUs.
+
+## 26. Amendment A12 (owner, received 2026-11-08 ~15:00Z = 10:00 AM EST): deadline moved
+Owner's words: "You may move the deadline to 11AM on Tuesday."
+Effect: the delivery deadline of A9 moves from Tuesday 2026-11-10 09:30 ET (14:30Z) to **Tuesday 2026-11-10 11:00 AM
+EST (16:00Z)**. Scope, report rules and GPU limits of A9 are unchanged. Supersedes the deadline in §23 only.
+Also (same session): report all times and timelines to the owner in EST.
