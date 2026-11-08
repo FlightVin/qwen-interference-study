@@ -198,3 +198,12 @@
 5. **Next jobs / limits.** GPU 3/3 general; preempt 6/6 queued (none started); CPU: 3 watchers. Storage ~200/500 GB.
 6. **Most important.** The R-s101 boundary (~01:00Z): watcher event → cancel old job → smoke on R's GPU → replacement with boundary dev eval. Process fix: ae-watch was not running after the probe-table failure; re-armed now (rule: re-arm after every event, including failures I caused).
 7. **Reconciliation.** Slurm ↔ ledger agree (12 live owned jobs + probe-table finishing).
+
+## Review 23 — 2026-11-08 01:06Z
+1. **Changes.** A11 pause executed (D77): s101 jobs stopped at rounds 55/51/37 (13.9 GPU-h superseded), s202 and base test eval held; no round-32 state → replay from round 0. Truncation study: dev 16,384 evals of R r52 / U r48 running. Smoke test OOM at 16k (D78) → LM-head recompute fix; smoke rerun queued.
+2. **Alignment.** No main training; sealed test closed; cap not yet frozen.
+3. **Mechanics.** The OOM is a real constraint found before any 16k training — the smoke test did its job.
+4. **Confounds.** None new.
+5. **Next jobs / limits.** General 3/3 (2 dev evals + smoke rerun pending); preempt: diag r0 queued, 4 held.
+6. **Most important.** Pass the smoke rerun, finish the truncation study, freeze the cap, resume.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (beb24mu29).
