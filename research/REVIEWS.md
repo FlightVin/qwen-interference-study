@@ -216,3 +216,12 @@
 5. **Next jobs / limits.** General 3/3: dev16k H (new evaluator, 40 min in), R and U reruns. Preempt: diag r0 queued; s202 and base test eval held.
 6. **Most important.** Freeze the cap as soon as the dev truncation study lands (~03:00–03:15Z), then resume all six runs. Pause has cost ~2 h of training time so far.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b0nchn972).
+
+## Review 25 — 2026-11-08 03:05Z
+1. **Changes.** Cap frozen at 12,288 (D81) from H r36 dev at 16,384 (12,288 keeps 88% of the beyond-8k gain; 16,384 infeasible for the deadline). A11 resume (D82): a1 dirs superseded; six runs restarted at round 0 as attempt a2; R-s101 11081724 training on general since 03:01Z (precheck incl. stale guard ok; boundary_eval skipped as designed).
+2. **Alignment.** Rounds 1–32 at 8,192, 33–128 at 12,288 for every arm; sealed test closed until endpoints.
+3. **Mechanics.** Training restarted cleanly; first-round health check pending.
+4. **Confounds.** The R-s101 round-64 diagnostic source is now a mixed 8k/12k state (rounds 33–64 at 12,288); reported as such.
+5. **Next jobs / limits.** General 3/3 (R-s101 + 2 dev 16k evals ending soon); preempt 5/6 queued (U/H-s101, R/U-s202, diag r0); H-s202 waits for a slot.
+6. **Most important.** Move U-s101 and H-s101 onto the general GPUs as the dev evals end; verify round 33 cap at ~05:30Z (R-s101).
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b1hmgiolw).
