@@ -110,3 +110,14 @@ Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS 
   three-seed t interval and crossed bootstrap of §9 for the current scope.
 - **Local update diagnostic** (R-s101, rounds 0 and 64) reported separately. **Clipping sensitivity: deferred.**
 - Deadline: complete audited report by 2026-11-10 01:00 UTC; hard deadline 2026-11-10 14:30 UTC.
+
+## Amendment A11 (2026-11-08 ~00:10Z; project.md §25) — supersedes the A10 round-64 boundary
+- Cap schedule: rounds 1–32 at 8,192; rounds 33–128 at the frozen amended cap (16,384 unless the smoke test or the
+  deadline forces one intermediate cap, frozen before any arm resumes). Evaluation cap = cap of the last trained round
+  (round-32 evaluation at 8,192; rounds 64, 96, 128 at the amended cap); test evaluations at the amended cap with an
+  8,192 view from the same traces.
+- No end-of-round-32 state exists for the seed-101 runs (rolling checkpoints kept only rounds 52/48/36); the nearest
+  verified full state is round 0, so all three replay rounds 1–32 at 8,192 from the base model with a fresh optimizer.
+  Replayed rounds are a new trajectory (sampling is not bitwise reproducible across jobs, D24, D50). Old attempts
+  (a1) are superseded; their directories move to `superseded/` and their compute is charged.
+- The report describes an 8k-to-amended-cap training schedule with questions screened at 8k.

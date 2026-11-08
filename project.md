@@ -566,3 +566,26 @@ the frozen correctness rule at the applicable cap. Use the amended evaluation ca
 endpoint, and also report success when completion is required within 8,192 tokens from the same traces. Mark the
 cap transition on learning curves; report generated tokens and GPU-hours. Keep the six primary comparisons and
 their verification ahead of secondary plots. No further cap increases.
+
+## 25. Amendment A11 (owner, received 2026-11-08 ~00:10Z): pause; cap transition moved to the end of round 32
+
+Recorded faithfully from the owner's message. Supersedes the round-64 boundary of A10 (§24); everything else in A10
+stands. Rounds 1–32 use the 8,192 cap; **round 33 is the first training round under the new cap** for every arm and
+seed (H, R, U × 101, 202), through round 128.
+1. Pause all six main runs now: freeze automatic submissions and requeues for the main matrix, reconcile Slurm with
+   the ledger, hold pending main jobs, stop active main jobs after preserving their latest valid checkpoints, and
+   verify that no main job advances. Keep the truncation study, CPU analysis and the hourly review active. Record each
+   run's last completed round and checkpoint.
+2. Finish the non-thinking truncation study before resuming: on the fixed development panel distinguish productive
+   long solutions, repetition and final-answer extraction failures; report how often answers cross 8,192, how often
+   those finish correctly with the longer allowance, and the additional GPU cost. Smoke-test 16,384 through generation,
+   grading and a full optimizer step. Use 16,384 if feasible within memory and the deadline, otherwise one feasible
+   intermediate cap on the same evidence. Freeze the exact cap before resuming any arm. Keep the sealed test closed.
+3. Recovery: runs past round 32 restore the complete end-of-round-32 state (FP32 weights, optimizer moments, sampler
+   and RNG states, counters); if unavailable, restore the nearest earlier verified full checkpoint and replay through
+   round 32 at 8,192. Runs below 32 finish that phase at 8,192. Mark old round-33-and-later attempts superseded, keep
+   provenance, charge compute. Analysis and W&B summaries select only the resumed trajectory.
+4. Record the amendment (truncation evidence, interim outcomes viewed). Resume all six runs through round 128. Verify
+   from each run's logs that round 33 uses the new cap in rollout, training and grading. Mark the transition on
+   learning curves and report truncation by arm and prompt type. Update the delivery forecast after measuring
+   longer-cap throughput and replay. Within 3 general / 6 preempt GPUs.

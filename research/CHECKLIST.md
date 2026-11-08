@@ -18,6 +18,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 0.15 Storage cap (D67 → D70): ≤ 7 concurrent main runs until completed runs free space; calibration checkpoints pruned; keep R-s101 round-64 checkpoint for the local-update diagnostic.
 - 0.16 Amendment A9 (2026-11-07 ~22:00Z, `project.md` §23; endpoint results viewed: none): six primary runs only (H/R/U × 101, 202; clip (0.2, 0.2); 128 rounds); seed 303 + clipping sensitivity deferred (cancelled, recipes in `exp-deferred/`, guard refuses); keep R-s101 round-64 checkpoint + local-update diagnostic; spare GPUs only for base eval, endpoint evals, diagnostic; report leads with two-row per-seed table, conditional problem-resampling intervals, two-seed caveat; audited report by 10 Nov 01:00Z, hard deadline 14:30Z; verified partial delivery if late.
 - 0.17 Amendment A10 (2026-11-07 ~22:22Z, `project.md` §24): 8k-to-16k schedule at common boundary round 64 (D73, recorded before further comparative results); preserve weights, FP32 optimizer, sampler position, counters; smoke test with a genuinely long response before release; largest feasible common cap if 16k fails or threatens the deadline; truncation diagnosis by arm and prompt type; test evals at 16,384 with an 8,192 view from the same traces; mark the transition on curves; report tokens and GPU-h; no further cap increases.
+- 0.18 Amendment A11 (2026-11-08 ~00:10Z, `project.md` §25; supersedes the A10 boundary): pause; transition at end of round 32 (round 33 first under the new cap); finish truncation study + smoke before resuming; freeze exact cap; restore end-of-round-32 state or replay from the nearest verified earlier state at 8,192; supersede old attempts (charge compute, keep provenance); analysis/W&B select only the resumed trajectory; verify round 33 cap in logs; update forecast.
 - 0.11 Amendment A5 (2026-11-07, `project.md` §19): technique coverage — primary technique per H_train/E_related item (F1–F8, frozen); each technique ≥ 10% of H_train needs E_related share ≥ ½ of it (ceil to whole items); check after R/U matching; repair via authorized E_related selection/augmentation only, re-match; H_train fixed; residual shortfall recorded; table in report.
 - 0.10 Amendment A4 (2026-11-07, `project.md` §18): H_train via full native stage 2 (184 candidates, ≤5,888 attempts), core 2–8/32 + moderate 9–12/32, target 64 (≥½ core), proceed at 48–64; else Omni-MATH tranche (≤200), smaller pilot with uniform endpoint shortening, or one authored tranche; one H_train manifest; decisions before treatment outcomes.
 - 0.9 Amendment A3 (2026-11-07, `project.md` §17): ≤30 CPUs total on `preempt_cpu_qos`; enforced by `ops/qis-submit`.
@@ -81,7 +82,15 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 - 6A.4 withdrawn (A8; 11078421 cancelled before start, D64) — If thinking truncation > 5% (H or either aux pool): 16,384 profile on the same panel; longer only if context/memory permit; reported separately.
 - 6A.5 withdrawn (A8) — Judgment: is a separate thinking-mode study warranted (would need its own re-screen, matching, calibration, 32-round truncation check, distinct manifests).
 
-## 6B. A10 cap transition (D73, D74)
+## 6C. A11 pause and round-32 transition (D77)
+- 6C.1 done (D77) — Pause: guard, holds, cancels; last rounds/checkpoints recorded (R 55/r52, U 51/r48, H 37/r36); 13.9 GPU-h superseded.
+- 6C.2 active — Truncation study: dev 16,384 evals (11080483, 11080484, H queued); loop scores + fixed-sample inspection; extra GPU cost.
+- 6C.3 active — Smoke test 11079543 (general).
+- 6C.4 pending — Freeze cap (record in DECISIONS + PROTOCOL).
+- 6C.5 pending — Supersede a1 dirs; new recipes (attempt a2, schedule 0:8192,32:CAP); resume six runs; s101 replay from round 0.
+- 6C.6 pending — Verify round 33 cap in rollout/training/grading logs per run; curves and W&B select resumed trajectory only.
+
+## 6B. A10 cap transition (D73, D74) — boundary superseded by A11
 - 6B.1 done — Code: cap schedule in trainer/rollout/evals; recipe generator options; tests 44/44 (job 11079542).
 - 6B.2 active — Smoke test `qis-smoke-k16` (11079543): full round at 16,384 with forced long responses; pass criteria in D74.
 - 6B.3 pending — Watchers fire at round_0064 (11079553/5/6) → cancel old s101 job → confirm ended → submit replacement (`qis-main-*-s101-sym`, attempt a2, same run dir).

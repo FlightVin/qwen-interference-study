@@ -1,13 +1,14 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-08 00:10Z (review 22).
+Updated 2026-11-08 00:25Z (A11 pause).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
 **Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds.
-**Response cap (A10, D73): 8k-to-16k training schedule** — rounds 1–64 at 8,192, rounds 65–128 at 16,384 (pending smoke
-test; a smaller common cap if 16k is infeasible); questions screened at 8k; test evaluations at 16,384 with an 8,192 view.
+**Main matrix PAUSED (A11, D77).** New schedule: rounds 1–32 at 8,192, rounds 33–128 at the amended cap (16,384 unless
+the smoke test/deadline force one intermediate cap, frozen before resuming). No round-32 state survived → all s101 runs
+replay rounds 1–32 from round 0; old attempts (13.9 GPU-h) superseded. Truncation study + smoke test running.
 Seed 303 and clipping sensitivity deferred. Deadline: report by 10 Nov 01:00Z (target), 14:30Z (hard).
 No endpoint result exists yet (none viewed at the A9 amendment).
 
@@ -27,7 +28,7 @@ Qwen3-1.7B @ `70d244cc`, non-thinking.
 
 ## Owner amendments in force
 A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (§17); A4 H_train authority (§18);
-A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A10 8k-to-16k cap at round 64 (§24); A8 priorities (§22): cap fixed,
+A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A10 cap raise (§24) with A11 boundary at round 32 + pause (§25); A8 priorities (§22): cap fixed,
 truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
 (evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
 
@@ -38,9 +39,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Smoke test `qis-smoke-k16` (preempt, or R-s101's GPU at round 64) → confirm 16,384 or pick the largest feasible cap.
-2. Each s101 run at round 64 (R ~01:30Z, U ~03:30Z, H ~05:30Z on 8 Nov): watcher fires → cancel old job → replacement resumes at 64 with the schedule.
-3. Replace queued s202 jobs with schedule-aware recipes after the smoke test; move to general as s101 runs finish.
-4. Base test eval (11079548, cap 16,384) and diagnostic r0 queued on preempt; r64 diagnostic after the boundary.
-5. Hourly: forecast from actual throughput (16k rounds slower), truncation by arm/role incl. the A10 breakdown, storage.
-6. Analysis → audited REPORT by 10 Nov 01:00Z; verified partial delivery by 14:30Z if anything slips.
+1. Truncation study on dev at 16,384 from R r52 / U r48 / H r36 (crossing 8,192, crossing-then-correct, extra GPU cost) + fixed-sample inspection (productive / repetition / extraction).
+2. Smoke test (11079543, general). Freeze the exact cap; record it.
+3. Move superseded a1 run/ckpt dirs to `superseded/`; regenerate recipes (cap schedule 0:8192,32:CAP, attempt a2, new W&B ids); resume all six (s101 on general, s202 queued; move as slots free).
+4. Verify from logs that round 33 uses the new cap in rollout, training, grading. Curves mark the transition.
+5. Forecast from measured 16k throughput and the replay; report by 10 Nov 01:00Z, hard deadline 14:30Z.
