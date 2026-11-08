@@ -1,0 +1,358 @@
+{
+ "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0052",
+ "ckpt_model_sha256": "e051defd1729b82a4c86665c89e745c0416bddfd83eb3c93fc5eff9787c527b8",
+ "weight_check": {
+  "model.embed_tokens.weight": [
+   -34819.1875,
+   -34819.18359375
+  ],
+  "model.norm.weight": [
+   4536.099609375,
+   4536.099609375
+  ],
+  "model.layers.0.input_layernorm.weight": [
+   179.1044921875,
+   179.1044921875
+  ],
+  "model.layers.27.mlp.down_proj.weight": [
+   -11.183601379394531,
+   -11.183551788330078
+  ]
+ },
+ "panel": "dev",
+ "n": 32,
+ "problems": 53,
+ "pass1": 0.5919811320754716,
+ "pass8": 0.8471836542206135,
+ "pass1_within_8192": 0.5719339622641509,
+ "over_8192": 0.1957547169811321,
+ "max_tokens": 16384,
+ "over_8192_then_correct": 0.020047169811320754,
+ "tokens_per_second": 1215.532914734491,
+ "completions": 1696,
+ "truncated": 0.024174528301886794,
+ "unknown": 0,
+ "tokens": 7902498,
+ "seconds": 6501.26210641861,
+ "seed_label": "a11-dev16k",
+ "per_problem": [
+  {
+   "id": "intermediate_algebra/train/01148",
+   "c": 0,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00791",
+   "c": 19,
+   "c_within_8192": 15,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00542",
+   "c": 7,
+   "c_within_8192": 6,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00508",
+   "c": 0,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00870",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01041",
+   "c": 8,
+   "c_within_8192": 8,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01241",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00409",
+   "c": 16,
+   "c_within_8192": 14,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01190",
+   "c": 15,
+   "c_within_8192": 15,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00760",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00482",
+   "c": 4,
+   "c_within_8192": 4,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00494",
+   "c": 7,
+   "c_within_8192": 7,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01341",
+   "c": 13,
+   "c_within_8192": 12,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01391",
+   "c": 27,
+   "c_within_8192": 27,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01026",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00683",
+   "c": 18,
+   "c_within_8192": 12,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00929",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00999",
+   "c": 19,
+   "c_within_8192": 18,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00709",
+   "c": 5,
+   "c_within_8192": 5,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01047",
+   "c": 28,
+   "c_within_8192": 28,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00115",
+   "c": 0,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01211",
+   "c": 29,
+   "c_within_8192": 29,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00165",
+   "c": 0,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01285",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01516",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00278",
+   "c": 31,
+   "c_within_8192": 29,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01571",
+   "c": 26,
+   "c_within_8192": 26,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00659",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00643",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00347",
+   "c": 7,
+   "c_within_8192": 6,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00295",
+   "c": 6,
+   "c_within_8192": 6,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01212",
+   "c": 28,
+   "c_within_8192": 25,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01264",
+   "c": 27,
+   "c_within_8192": 27,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01262",
+   "c": 23,
+   "c_within_8192": 23,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00282",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01172",
+   "c": 30,
+   "c_within_8192": 30,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00688",
+   "c": 1,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00120",
+   "c": 5,
+   "c_within_8192": 3,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01116",
+   "c": 23,
+   "c_within_8192": 23,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01083",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00530",
+   "c": 2,
+   "c_within_8192": 1,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00525",
+   "c": 31,
+   "c_within_8192": 31,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/01291",
+   "c": 30,
+   "c_within_8192": 30,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00599",
+   "c": 26,
+   "c_within_8192": 26,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/01153",
+   "c": 0,
+   "c_within_8192": 0,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00121",
+   "c": 21,
+   "c_within_8192": 19,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00289",
+   "c": 25,
+   "c_within_8192": 24,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00767",
+   "c": 28,
+   "c_within_8192": 28,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00619",
+   "c": 32,
+   "c_within_8192": 32,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00232",
+   "c": 10,
+   "c_within_8192": 5,
+   "n": 32
+  },
+  {
+   "id": "algebra/train/00006",
+   "c": 4,
+   "c_within_8192": 4,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00107",
+   "c": 5,
+   "c_within_8192": 5,
+   "n": 32
+  },
+  {
+   "id": "intermediate_algebra/train/00277",
+   "c": 21,
+   "c_within_8192": 20,
+   "n": 32
+  }
+ ]
+}
