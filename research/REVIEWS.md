@@ -243,3 +243,12 @@
 5. **Next jobs / limits.** General 3/3. Preempt 4 GPU jobs queued (R/U/H-s202, diag r0). CPU: `qis-a11-capcheck` 11082575 waits for R-s101 round 34 (≈06:20Z).
 6. **Most important.** The A11.6 check: round 33 at 12,288 in rollout, training and grading (capcheck, R-s101 first; U and H later).
 7. **Reconciliation.** Slurm ↔ ledger agree (7 owned GPU jobs + 1 CPU job, all ledger rows). Harness note: `ae harvest` skipped the new monitor output (stale `.harvested`); I copied the distillates directly. Watcher alive (b87d137fw).
+
+## Review 28 — 2026-11-08 06:05Z
+1. **Changes.** `qis-a11-capcheck` first attempt failed at 0 s (missing `PROJ_DATA`, D88); 11082618 is running and waits for R-s101 round 34. No other job changed state.
+2. **Valid?** Yes. The three s101 runs run continuously on general (R 3:04, U 2:02, H 1:47 elapsed); no restarts.
+3. **Surprises.** None new.
+4. **Risks.** Seed-202 runs still queued on preempt (Priority). Forecast unchanged (report ≈ 10 Nov 07:00–08:00Z; deadline 14:30Z).
+5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; 1 CPU job running.
+6. **Most important.** Read the capcheck result for R-s101 (round 33 at 12,288 in rollout, training, grading) when it fires (≈06:20–06:40Z).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bmi015fu4).
