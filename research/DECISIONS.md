@@ -251,3 +251,11 @@ the first slot (≈ 21:40Z).
 - Forecast refresh (round times last 6 rounds: R ≈ 735 s, U ≈ 496 s, H ≈ 926 s): U-s101 ends ≈ 22:20Z, R-s101 ≈
   9 Nov 02:20Z, H-s101 ≈ 9 Nov 11:30Z. D93 plan unchanged. R-s101 `round_0064` now exists, so `qis-diag-local-r64`
   can pass its precheck when it starts.
+
+## D95 — 2026-11-08 14:15Z — forecast refresh (rounds lengthen)
+Monitor 11085378 (≈14:10Z): U-s101 round 76 (mean last-6 round 615 s), R-s101 72 (808 s), H-s101 52 (965 s).
+Capped per round (of 128): U 3–12, R 6–16, H 10–31. Round times grow as responses lengthen.
+Projected ends (incl. evaluations at 96 and 128, ≈ 0.8 h each): U-s101 ≈ 9 Nov 00:40Z; R-s101 ≈ 04:20Z; H-s101 ≈ 13:00Z.
+D93 plan: R-s202 (≈ 27 h) from ≈ 00:40Z → ≈ 10 Nov 03:40Z; U-s202 (≈ 20 h) from ≈ 04:20Z → ≈ 10 Nov 00:20Z; test
+evaluations from ≈ 9 Nov 13:00Z, all done ≈ 10 Nov 08:00Z if each takes 4–5 h. Margin to 14:30Z ≈ 6 h. H-s202 does
+not fit on general under these projections; it remains queued on preempt only.

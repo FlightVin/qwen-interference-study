@@ -315,3 +315,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
 6. **Most important.** On the U-s101 completion event: validate its endpoint, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty); main-run completions are not suppressed.
+
+## Review 36 — 2026-11-08 14:05Z
+1. **Changes.** Monitor 11085378: U-s101 76, R-s101 72, H-s101 52.
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** Round times keep growing (U 615 s, R 808 s, H 965 s mean of last 6).
+4. **Risks.** First slot slips to ≈ 9 Nov 00:40Z; margin to deadline ≈ 6 h under D93 (D95). H-s202 does not fit on general.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued.
+6. **Most important.** On U-s101 completion: validate endpoint, move R-s202 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
