@@ -51,7 +51,13 @@ def main(bundle, model, out, *dirs):
             "loop_gt_0.5_by_outcome": {k: sum(loop_score(r["ids"]) > 0.5 for r in v) for k, v in by.items()},
             "tokens": toks, "tokens_beyond_8192": sum(max(0, r["n_tokens"] - LIM) for r in recs),
             "extra_token_share": sum(max(0, r["n_tokens"] - LIM) for r in recs) / toks if toks else None,
-            "eval_seconds": summ.get("seconds"), "tokens_per_second": summ.get("tokens_per_second")}
+            "eval_seconds": summ.get("seconds"), "tokens_per_second": summ.get("tokens_per_second"),
+            # cap alternatives from the same traces: correct within each band, and share exhausting each cap
+            "correct_by_band": {"le_8192": sum(r["reward"] == 1 and r["n_tokens"] <= 8192 for r in recs) / len(recs),
+                                "8193_12288": sum(r["reward"] == 1 and 8192 < r["n_tokens"] <= 12288 for r in recs) / len(recs),
+                                "12289_16384": sum(r["reward"] == 1 and 12288 < r["n_tokens"] <= 16384 for r in recs) / len(recs)},
+            "exceed_frac": {str(c): sum(r["n_tokens"] > c for r in recs) / len(recs) for c in (8192, 10240, 12288, 14336)},
+            "tokens_if_cap": {str(c): sum(min(r["n_tokens"], c) for r in recs) for c in (8192, 12288, 16384)}}
         rng = seeds.rng(seeds.CONSTRUCTION_SEED, f"a11/sample/{name}")
         for i in rng.permutation(len(cross))[:8].tolist():
             r = cross[i]
