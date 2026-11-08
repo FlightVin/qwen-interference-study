@@ -119,3 +119,21 @@ Dated decisions with their reasons. Newest last. Times are UTC.
 - Moved `qis-main-H-s101-sym` (11081726) to general; it started 04:18Z on babel-w5-24. General: 3/3 = R-s101, U-s101, H-s101.
 - Resubmitted `qis-a11-truncstudy` (11082251) over H r36, R r52, U r48.
 - R-s101 a2 reached round ~14 by 04:07Z (≈4.7 min/round at 8,192); round 33 expected ≈05:35Z.
+
+## D86 — 2026-11-08 04:25Z — A11 truncation study, all three arms (dev, superseded a1 checkpoints)
+Source `qis-a11-truncstudy` (11082251); evidence `research/evidence/a11/trunc_study_HRU.json`. Dev panel, n=32, 1,696
+responses per arm, cap 16,384. Rounds differ (H 36, R 52, U 48), so this is a cap study, not an arm comparison.
+
+| | H r36 | R r52 | U r48 |
+|---|---|---|---|
+| Cross 8,192 | 13.7% | 19.6% | 19.5% |
+| Crossers: correct / wrong / capped 16,384 | 43 / 173 / 16 | 34 / 257 / 41 | 56 / 236 / 39 |
+| Correct with 8,193–12,288 tokens (share of all) | 2.24% | 1.47% | 2.71% |
+| Correct with 12,289–16,384 tokens | 0.29% | 0.53% | 0.59% |
+| Exceed 12,288 | 3.1% | 7.2% | 7.4% |
+| Loop score > 0.5 among crossers | 0 | 0 | 0 |
+| Generated tokens, cap 12,288 vs 8,192 | +8.6% | +13.1% | +13.6% |
+
+Reading: crossing responses do not loop (mean loop score 0.03–0.05). Most crossers end wrong; the 12,288 cap
+recovers 1.5–2.7 points of pass@1 on dev and 12,288–16,384 adds 0.3–0.6 more. The cap decision (D81, 12,288) stands;
+no test data was used. The fixed 24-response inspection sample is being labelled productive / repetition / extraction.
