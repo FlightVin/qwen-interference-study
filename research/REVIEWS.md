@@ -189,3 +189,12 @@
 5. **Next jobs / limits.** GPU 3/3 general; preempt 6/6 queued; CPU 3 watchers. Storage 201/500 GB. Round 64 forecast: R ~01:00Z, U ~01:30Z, H ~03:00Z (8 Nov).
 6. **Most important.** The smoke test gates the transition; if still pending at R-s101 round 64, run it on R's GPU before releasing any 16k round.
 7. **Reconciliation.** Slurm ↔ ledger agree (12 live owned jobs). Watcher alive (bfer77hh1).
+
+## Review 22 — 2026-11-08 00:07Z
+1. **Changes.** Owner continuation of A10 recorded (D75): boundary dev eval at 16,384 from `boundary_0064` (both budgets, crossing-then-correct, throughput benchmark), learning curves by role and R vs U shared schedule. W&B mirror defects fixed and companion runs backfilled (D76). Probe table at round 32 (J_H derived from dev): J_H p@1 H 0.555, R 0.523, U 0.555 (base 0.434). Tests 44/44 (11080163).
+2. **Alignment.** No training under the new cap yet; boundary 64 unchanged; sealed test unopened.
+3. **Mechanics.** s101 runs healthy; R-s101 ~round 55, U ~50, H ~40 (estimates from round rates).
+4. **Confounds.** Truncation at 8,192 differs by arm (dev r32: R 11.6%, H 15.6%, U 16.7%) and lowers p@1; the 16k boundary evaluation quantifies it.
+5. **Next jobs / limits.** GPU 3/3 general; preempt 6/6 queued (none started); CPU: 3 watchers. Storage ~200/500 GB.
+6. **Most important.** The R-s101 boundary (~01:00Z): watcher event → cancel old job → smoke on R's GPU → replacement with boundary dev eval. Process fix: ae-watch was not running after the probe-table failure; re-armed now (rule: re-arm after every event, including failures I caused).
+7. **Reconciliation.** Slurm ↔ ledger agree (12 live owned jobs + probe-table finishing).
