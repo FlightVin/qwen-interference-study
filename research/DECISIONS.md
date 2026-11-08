@@ -196,7 +196,7 @@ Risk: if H-s202 starts ≈ 19:00Z today and takes 25 h, it ends ≈ 9 Nov 20:00Z
 and end ≈ 9 Nov 19:00Z – 10 Nov 03:00Z. Test evaluations (~4 h each, 3 GPUs) then end ≈ 10 Nov 07:00Z, before the
 14:30Z deadline. The margin is ≈ 7 h; the 10 Nov 01:00Z report target will be missed.
 
-## D91 — 2026-11-08 09:20Z — correction to D89 (evaluation rounds); capcheck2 replaced
+## D91 — 2026-11-08 09:08Z — correction to D89 (evaluation rounds); capcheck2 replaced
 - **Correction.** `eval_rounds` is [0, 32, 64, 96, 128] (main recipes). D89 said the first evaluation at 12,288 is at
   round 40; it is at round 64 (`eval_cap(64)` = cap of round 64 = 12,288). Checked against the recipe config.
 - `qis-a11-capcheck2` 11083320 waited for round 41, which served no purpose and risked its 4 h limit. Cancelled after

@@ -271,7 +271,7 @@
 6. **Most important.** Keep the general GPUs filled when the first s101 run ends (≈18:00–20:00Z).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).
 
-## Review 31 — 2026-11-08 09:05Z
+## Review 31 — 2026-11-08 09:05–09:09Z
 1. **Changes.** Monitor 11084097: R-s101 round 52, U-s101 round 48, H-s101 round 32. capcheck2 replaced (D91).
 2. **Valid?** Yes. All rounds ≥ 33 in R and U log `max_tokens` 12288; H round 32 logs 8192. Evaluations at round 32 used 8,192.
 3. **Surprises.** My error: D89 named round 40 as the first 12k evaluation; the schedule is every 32 rounds, so it is round 64 (D91).
