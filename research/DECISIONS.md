@@ -174,7 +174,7 @@ Source `qis-a11-capcheck` 11082618; evidence `research/evidence/a11/capcheck_R-s
   round 40. `qis-a11-capcheck2` (11083320) checks it and U-s101, H-s101 once all three have logged round 41.
 - Note for the report: R-s101 a2 dev truncation at round 32 was 11.1% at 8,192 (dev outcome, not used for any decision).
 
-## D90 — 2026-11-08 07:25Z — forecast from measured round times; seed-202 start order
+## D90 — 2026-11-08 07:10Z — forecast from measured round times; seed-202 start order
 Measured (monitor 11083516, last ≤6 rounds per run; `t_round` includes evaluation rounds):
 
 | Run | Last round | Mean round time | Cap of those rounds | Capped at last round |
