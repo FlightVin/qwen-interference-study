@@ -42,7 +42,7 @@ def main():
     from qis.train.rollout import Rollout
     # vLLM gets most of the GPU; checkpoint weights are read on the CPU and pushed into vLLM (no learner on GPU).
     roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
-    ck_hash = "base"
+    ck_hash, weight_check = "base", None
     if a.ckpt != "base":
         mpath = os.path.join(a.ckpt, "model.pt")
         ck_hash = json.load(open(os.path.join(a.ckpt, "state.json"))).get("file_sha256", {}).get("model.pt") \
@@ -50,6 +50,18 @@ def main():
         sd = torch.load(mpath, map_location="cpu", weights_only=True)
         params = [(n, t.to(torch.bfloat16)) for n, t in sd.items()]
         roll.llm.collective_rpc(lambda w: w.model_runner.model.load_weights(iter(params)) and True)
+        # weight-load check: non-fused tensors read back from vLLM must equal the checkpoint's BF16 values
+        names = [n for n in ("model.embed_tokens.weight", "model.norm.weight", "model.layers.0.input_layernorm.weight",
+                             "model.layers.27.mlp.down_proj.weight") if n in sd]
+        want = {n: float(sd[n].to(torch.bfloat16).float().sum()) for n in names}
+
+        def _readback(w):
+            ps = dict(w.model_runner.model.named_parameters())
+            return {n: float(ps[n].detach().float().sum()) for n in names if n in ps}
+        got = roll.llm.collective_rpc(_readback)[0]
+        weight_check = {n: (want[n], got.get(n)) for n in names}
+        assert got and all(abs(want[n] - got[n]) <= 1e-3 * max(1.0, abs(want[n])) for n in got), f"weight load mismatch {weight_check}"
+        print("weight check ok", weight_check, flush=True)
         del sd, params
     ver = Verifier(8)
     ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
@@ -71,7 +83,7 @@ def main():
                                     "finish": o["finish"], "extracted": r["extracted"], "status": r["status"],
                                     "reward": r["reward"], "ids": o["ids"]}) + "\n")
             per.append({"id": it["id"], "c": c, "c_within_8192": c_8k, "n": a.n})
-    summ = {"ckpt": a.ckpt, "ckpt_model_sha256": ck_hash, "panel": a.panel_key, "n": a.n, "problems": len(items),
+    summ = {"ckpt": a.ckpt, "ckpt_model_sha256": ck_hash, "weight_check": weight_check, "panel": a.panel_key, "n": a.n, "problems": len(items),
             "pass1": float(np.mean([p["c"] / a.n for p in per])),
             "pass8": float(np.mean([grpo.pass_at_k(a.n, p["c"], 8) for p in per])),
             "pass1_within_8192": float(np.mean([p["c_within_8192"] / a.n for p in per])),
