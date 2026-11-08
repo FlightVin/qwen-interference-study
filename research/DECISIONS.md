@@ -101,3 +101,13 @@ Dated decisions with their reasons. Newest last. Times are UTC.
 - Evidence: `research/evidence/a11/dev16k_R-s101-r36_summary.json`. These are dev outcomes, not test outcomes.
 - Moved `qis-main-U-s101-sym` (11081725, ledger row verified) from preempt to general with `ae slurm update`.
   This project now has 2 running + 1 pending on general (limit 3). H-s101 moves when dev16k-U (11081334) ends.
+
+## D84 — 2026-11-08 04:15Z — correction to D83; H-s202 submitted; monitor refreshed
+- **Correction.** `qis-a11-dev16k-R` evaluated checkpoint `round_0052` (summary `ckpt` field), not round 36. D83's numbers
+  are right; its round label was wrong. Evidence renamed to `dev16k_R-s101-r52_summary.json`.
+  Consequence: R (round 52) and H (round 36) differ in training length, so the higher crossing rate of R (19.6% vs 13.7%)
+  does not show an arm difference. Compare arms only at matched rounds (U is round 48).
+- Submitted `qis-main-H-s202-sym` (11082192, preempt, attempt a2) through `ops/qis-submit` after U-s101 left preempt.
+  Its pinned commit is `7c44fa5`; the other five a2 runs use `9d6349a`. The only change between them is
+  `wandb_companion.py` (skip run dirs without metrics), which the trainer does not import.
+- Resubmitted `qis-monitor` (11082191): the last monitor output predates the A11 pause.
