@@ -81,7 +81,8 @@ def main(runs, bundle, state_path, project):
     pools = json.load(open(bundle))["pools"]
     jh = {it["id"] for it in pools.get("probe_J_H", [])}
     state = json.load(open(state_path)) if os.path.exists(state_path) else {}
-    names = sorted(n for n in os.listdir(runs) if n.startswith("qis-main-"))
+    started = lambda n: os.path.isfile(p := os.path.join(runs, n, "metrics.jsonl")) and os.path.getsize(p) > 0   # noqa: E731
+    names = sorted(n for n in os.listdir(runs) if n.startswith("qis-main-") and started(n))
     att = {}
     for n in names:                                   # attempt id of the CURRENT trajectory (A11: a2 after the restart)
         with open(os.path.join(runs, n, "metrics.jsonl")) as f:
