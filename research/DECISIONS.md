@@ -317,3 +317,10 @@ logged (12,288 cap; monitoring only). Projected ends: U-s101 ≈ 9 Nov 02:20Z (9
 EST), H-s101 ≈ 07:05Z (2:05 AM EST Mon). R-s202 (≈ 27 h) → ≈ 10 Nov 05:20Z; U-s202 (≈ 20 h) → ≈ 10 Nov 00:05Z; test
 evaluations from ≈ 9 Nov 07:05Z; last (R-s202) ≈ 10 Nov 10:20Z (5:20 AM EST); margin ≈ 5.5 h. H-s202 from the H-s101 slot
 (≈ 27.7 h + ≈ 5 h test evaluation) would end ≈ 10 Nov 15:45Z and would block four test evaluations: still does not fit.
+
+## D101 — 2026-11-08 21:10Z — base-model test evaluation queued early on preempt
+`qis-test-base` (job 11089196, commit 779c54d, recipe 21506d37a4f3; 128 × 32, cap 12,288, limit 9 h) submitted to the
+free sixth preempt slot (preempt now 6/6). It depends on no training output and informs no training decision; its
+result stays unread until the report stage. If it starts and finishes, the D93 test queue on general shrinks by one
+evaluation (≈ 5 h). If it is still pending when H-s101 ends, it moves to general (`ae slurm update ... Partition=general
+QOS=normal`). If preempted mid-run it restarts from scratch (not resumable; compute charged).

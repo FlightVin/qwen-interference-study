@@ -378,3 +378,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** On U-s101 completion: submit `qis-validate-endpoints`, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs + monitor done). Watcher alive (bn30h9a02).
+
+## Review 43 — 2026-11-08 21:05Z (4:05 PM EST)
+1. **Changes.** None in training jobs (R 18:04, U 17:02, H 16:47 elapsed). `qis-test-base` 11089196 queued on preempt (D101).
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** None.
+4. **Risks.** Unchanged (margin ≈ 5.5 h); D101 can only shorten the test queue.
+5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts).
+6. **Most important.** On U-s101 completion (≈ 9:10 PM EST): submit `qis-validate-endpoints`, move R-s202 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs). Watcher alive (bn30h9a02); test completions are not suppressed.
