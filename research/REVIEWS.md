@@ -360,3 +360,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** On U-s101 completion (≈ 9:20 PM EST): validate endpoint, move R-s202 (11081729) to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs + monitor done). Watcher alive (bn30h9a02).
+
+## Review 41 — 2026-11-08 19:05Z (2:05 PM EST)
+1. **Changes.** None in job state (R 16:04, U 15:02, H 14:47 elapsed).
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** None.
+4. **Risks.** Unchanged (D100, margin ≈ 5.5 h).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued. Next monitor ≈ 20:05Z.
+6. **Most important.** Endpoint readiness: `validate_endpoint` now also checks attempt id a2 in metrics and the round_0128 checkpoint (D99); new recipe `qis-validate-endpoints` (all runs with round_0128) for the U-s101 completion event.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bn30h9a02).
