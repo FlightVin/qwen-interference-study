@@ -279,3 +279,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 4 GPU jobs queued; CPU capcheck2 11084106.
 6. **Most important.** capcheck2 result for U and H; then the round-64 eval-cap check.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (bibndpl0v).
+
+## Review 32 — 2026-11-08 10:05Z
+1. **Changes.** Round-33 cap transition verified in all three s101 runs (D92). Submitted `qis-diag-local-r64` (11084344, preempt) to gain queue age; its precheck refuses to run until R-s101 `round_0064` (retained) has `optim.pt` and `state.json`.
+2. **Valid?** Yes; s101 runs continuous on general (R 7:04, U 6:01, H 5:47); no restarts.
+3. **Surprises.** None.
+4. **Risks.** Preempt queue still blocks seed 202 and both diagnostics. If r64 starts before R-s101 reaches round 64 (≈11:00Z), its precheck fails and it needs one resubmission. Forecast unchanged (D90).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 (R/U/H-s202, diag r0, diag r64).
+6. **Most important.** Keep the general GPUs filled when the first s101 run ends; check the round-64 evaluation cap.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned jobs). Watcher alive (b9sm9buty).
