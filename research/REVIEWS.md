@@ -234,3 +234,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s101, U-s101, dev16k-U). Preempt 5/6 queued (H-s101, R/U/H-s202, diag r0).
 6. **Most important.** Verify round 33 uses 12,288 in R-s101 (expected ~05:30Z); move H-s101 to general when dev16k-U ends.
 7. **Reconciliation.** Slurm ↔ ledger agree: 8 owned live jobs, all with ledger rows. `registry/runs.jsonl` is untracked and unused (D21); the ledger is the run record. Watcher alive (blc1tl7lp).
+
+## Review 27 — 2026-11-08 05:05–05:35Z
+1. **Changes.** Truncation study done for H/R/U (D86) and the inspection sample labelled (D87: no extraction misses; long responses mostly no-progress or wrong). All three s101 a2 runs train on general. At 05:06Z (monitor 11082493): R-s101 round 23, U-s101 round 15, H-s101 round 8. W&B companions `*-a2-curves` and `qis-RvU-s101-sym-a2-curves` populate.
+2. **Valid?** Yes. All rounds so far are ≤ 32, so they run at 8,192 by design. Round times: R 388 s, U/H 230 s.
+3. **Surprises.** `peek` did not export `max_tokens`, and `curves` defaults a missing value to 8,192, so neither could prove the transition. Fixed `peek` (d12cf9c); added `qis.analysis.capcheck` (59d3927).
+4. **Risks.** Preempt has 866 pending jobs; the seed-202 runs may not start there, so they run on general after seed 101. Forecast unchanged: report ≈ 10 Nov 07:00–08:00Z; deadline 14:30Z holds. Storage 266/500 GB.
+5. **Next jobs / limits.** General 3/3. Preempt 4 GPU jobs queued (R/U/H-s202, diag r0). CPU: `qis-a11-capcheck` 11082575 waits for R-s101 round 34 (≈06:20Z).
+6. **Most important.** The A11.6 check: round 33 at 12,288 in rollout, training and grading (capcheck, R-s101 first; U and H later).
+7. **Reconciliation.** Slurm ↔ ledger agree (7 owned GPU jobs + 1 CPU job, all ledger rows). Harness note: `ae harvest` skipped the new monitor output (stale `.harvested`); I copied the distillates directly. Watcher alive (b87d137fw).
