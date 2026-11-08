@@ -9,8 +9,31 @@
 - Dropout modules are forced to eval mode in every forward.
 """
 import torch
+import torch.utils.checkpoint
 
 CHUNK = 512
+
+
+def _chunk_lp(hc, w, tc):
+    """FP32 selected-token log probs for one chunk of hidden states (TF32 off, autocast disabled)."""
+    with torch.autocast("cuda", enabled=False):
+        logits = hc.float() @ w.t()
+        lse = torch.logsumexp(logits, dim=-1)
+        sel = logits.gather(-1, tc[:, None])[:, 0]
+    return sel - lse
+
+
+def lm_head_logprobs(h, w, tgt, recompute: bool):
+    """Chunked FP32 LM head. recompute=True (training, A11) recomputes each chunk's logits in backward instead of
+    storing them (identical arithmetic; memory O(chunk) instead of O(sequence x vocab))."""
+    out = []
+    for c in range(0, h.shape[0], CHUNK):
+        hc, tc = h[c:c + CHUNK], tgt[c:c + CHUNK]
+        if recompute and torch.is_grad_enabled():
+            out.append(torch.utils.checkpoint.checkpoint(_chunk_lp, hc, w, tc, use_reentrant=False))
+        else:
+            out.append(_chunk_lp(hc, w, tc))
+    return torch.cat(out)
 
 
 class Learner:
@@ -44,15 +67,7 @@ class Learner:
         h = hid[P - 1:-1]                       # positions predicting each response token
         tgt = ids[0, P:]
         w = self.model.lm_head.weight           # FP32 (tied to embeddings in Qwen3-1.7B)
-        out = []
-        for c in range(0, h.shape[0], CHUNK):
-            hc = h[c:c + CHUNK].float()
-            with torch.autocast("cuda", enabled=False):
-                logits = hc @ w.t()
-                lse = torch.logsumexp(logits, dim=-1)
-                sel = logits.gather(-1, tgt[c:c + CHUNK, None])[:, 0]
-            out.append(sel - lse)
-        return torch.cat(out)
+        return lm_head_logprobs(h, w, tgt, recompute=train)
 
     def token_entropy(self, prompt_ids: list, resp_ids: list) -> torch.Tensor:
         """Mean token entropy (FP32) of the policy over the response; no grad."""
