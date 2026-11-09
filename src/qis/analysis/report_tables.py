@@ -14,6 +14,7 @@ Usage: python -m qis.analysis.report_tables EVAL_DIR OUT_PREFIX
 import json
 import os
 import sys
+from math import comb
 
 import numpy as np
 
@@ -23,16 +24,24 @@ from qis.analysis.stats import T975
 SEEDS, ARMS, DRAWS = (101, 202), ("H", "R", "U"), 10_000
 
 
+def pass8(c, n, k=8):
+    return 1.0 if n - c < k else 1.0 - comb(n - c, k) / comb(n, k)
+
+
 def load(d):
-    rates = {}
+    rates, p8 = {}, {}
     for arm in ARMS:
         for s in SEEDS:
             p = os.path.join(d, f"qis-test-{arm}-s{s}-sym", "summary.json")
             if os.path.exists(p):
-                rates.setdefault(arm, {})[s] = {x["id"]: x["c"] / x["n"] for x in json.load(open(p))["per_problem"]}
+                pp = json.load(open(p))["per_problem"]
+                rates.setdefault(arm, {})[s] = {x["id"]: x["c"] / x["n"] for x in pp}
+                p8.setdefault(arm, {})[s] = {x["id"]: pass8(x["c"], x["n"]) for x in pp}
     b = os.path.join(d, "qis-test-base", "summary.json")
-    base = {x["id"]: x["c"] / x["n"] for x in json.load(open(b))["per_problem"]} if os.path.exists(b) else None
-    return rates, base
+    bpp = json.load(open(b))["per_problem"] if os.path.exists(b) else None
+    base = {x["id"]: x["c"] / x["n"] for x in bpp} if bpp else None
+    base8 = {x["id"]: pass8(x["c"], x["n"]) for x in bpp} if bpp else None
+    return rates, base, p8, base8
 
 
 def boot(diff_rows, name):
@@ -45,15 +54,17 @@ def boot(diff_rows, name):
 
 
 def main(d, out):
-    rates, base = load(d)
+    rates, base, p8, base8 = load(d)
     probs = sorted(next(iter(next(iter(rates.values())).values()))) if rates else []
-    rows, diffs = [], {"R-U": [], "R-H": []}
+    rows, diffs = [], {"R-U": [], "R-H": [], "U-H": []}
     for s in SEEDS:
         row = {"seed": s}
         for arm in ARMS:
             v = rates.get(arm, {}).get(s)
             row[arm] = float(np.mean([v[p] for p in probs])) if v else "missing"
-        for name, (a, b) in (("R-U", ("R", "U")), ("R-H", ("R", "H"))):
+            v8 = p8.get(arm, {}).get(s)
+            row[arm + "_pass8"] = float(np.mean([v8[p] for p in probs])) if v8 else "missing"
+        for name, (a, b) in (("R-U", ("R", "U")), ("R-H", ("R", "H")), ("U-H", ("U", "H"))):
             va, vb = rates.get(a, {}).get(s), rates.get(b, {}).get(s)
             if va and vb:
                 assert sorted(va) == probs and sorted(vb) == probs, "problem sets must match"
@@ -79,15 +90,21 @@ def main(d, out):
         else:
             mean[name] = "missing"
     res = {"rows": rows, "mean": mean, "agreement": agree, "n_problems": len(probs),
+           "base_pass8": float(np.mean([base8[p] for p in probs])) if base8 and probs else "missing",
            "base_pass1": float(np.mean([base[p] for p in probs])) if base and probs else (float(np.mean(list(base.values()))) if base else "missing"),
            "interval_note": "95% paired bootstrap over the 128 target_test problems (10,000 draws, seed 2027); conditional on these trained policies"}
     json.dump(res, open(out + ".json", "w"), indent=1)
     f = lambda x: "missing" if x == "missing" else f"{x:.3f}"                              # noqa: E731
     g = lambda x: "missing" if x == "missing" else f"{x['est']:+.3f} [{x['lo']:+.3f}, {x['hi']:+.3f}]"   # noqa: E731
-    md = ["| Seed | H | R | U | R − U (95% CI, conditional) | R − H (95% CI, conditional) |", "|---|---|---|---|---|---|"]
+    md = ["| Seed | H | R | U | R − U (95% CI, conditional) | R − H (95% CI, conditional) | U − H (95% CI, conditional) |",
+          "|---|---|---|---|---|---|---|"]
     for r in rows:
-        md.append(f"| {r['seed']} | {f(r['H'])} | {f(r['R'])} | {f(r['U'])} | {g(r['R-U'])} | {g(r['R-H'])} |")
-    md.append(f"| **Mean** | {f(mean['H'])} | {f(mean['R'])} | {f(mean['U'])} | {g(mean['R-U'])} | {g(mean['R-H'])} |")
+        md.append(f"| {r['seed']} | {f(r['H'])} | {f(r['R'])} | {f(r['U'])} | {g(r['R-U'])} | {g(r['R-H'])} | {g(r['U-H'])} |")
+    md.append(f"| **Mean** | {f(mean['H'])} | {f(mean['R'])} | {f(mean['U'])} | {g(mean['R-U'])} | {g(mean['R-H'])} | {g(mean['U-H'])} |")
+    md += ["", f"Base model pass@1 {f(res['base_pass1'])}, pass@8 {f(res['base_pass8'])}.", "",
+           "| Seed | H pass@8 | R pass@8 | U pass@8 |", "|---|---|---|---|"]
+    for r in rows:
+        md.append(f"| {r['seed']} | {f(r['H_pass8'])} | {f(r['R_pass8'])} | {f(r['U_pass8'])} |")
     open(out + ".md", "w").write("\n".join(md) + "\n")
     print("\n".join(md)); print(json.dumps(agree, indent=1))
 

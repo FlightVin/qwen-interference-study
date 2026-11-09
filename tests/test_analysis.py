@@ -68,3 +68,29 @@ def test_all_boxed_split_and_nested():
     assert all_boxed("so $\\boxed{8}, \\boxed{12}$") == ["8", "12"]
     assert all_boxed("\\boxed{\\frac{1}{2}} and none") == ["\\frac{1}{2}"]
     assert all_boxed("no box") == []
+
+
+def test_report_tables_synthetic(tmp_path):
+    """A9 table on synthetic summaries: paired differences, pass@8, missing cells (no real test data)."""
+    import numpy as np
+    from qis.analysis import report_tables as rt
+    rng = np.random.default_rng(0)
+    ids = [f"t{i}" for i in range(128)]
+    def write(name, shift):
+        d = tmp_path / name; d.mkdir()
+        pp = [{"id": i, "c": int(min(32, max(0, rng.binomial(32, 0.4) + shift))), "n": 32} for i in ids]
+        (d / "summary.json").write_text(json.dumps({"per_problem": pp}))
+        return pp
+    pps = {(a, s): write(f"qis-test-{a}-s{s}-sym", {"H": 0, "R": 3, "U": 1}[a]) for a in "HRU" for s in (101, 202)
+           if (a, s) != ("H", 202)}                                      # H-s202 missing on purpose
+    write("qis-test-base", -2)
+    rt.main(str(tmp_path), str(tmp_path / "t"))
+    res = json.load(open(tmp_path / "t.json"))
+    r101 = res["rows"][0]
+    exp = np.mean([x["c"] / 32 for x in pps[("R", 101)]]) - np.mean([x["c"] / 32 for x in pps[("U", 101)]])
+    assert abs(r101["R-U"]["est"] - exp) < 1e-12 and r101["R-U"]["lo"] <= exp <= r101["R-U"]["hi"]
+    assert res["rows"][1]["H"] == "missing" and res["rows"][1]["R-H"] == "missing" and res["mean"]["R-H"] == "missing"
+    assert isinstance(res["mean"]["R-U"], dict) and res["agreement"]["R-U"]["same_sign"] in (True, False)
+    assert abs(rt.pass8(2, 32) - (1 - (30 * 29 * 28 * 27 * 26 * 25 * 24 * 23) / (32 * 31 * 30 * 29 * 28 * 27 * 26 * 25))) < 1e-12
+    assert rt.pass8(30, 32) == 1.0 and rt.pass8(0, 32) == 0.0
+    assert "pass@8" in open(tmp_path / "t.md").read()
