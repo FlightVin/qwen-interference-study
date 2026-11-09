@@ -568,3 +568,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 owned, all pending.
 6. **Most important.** Monitor ≈ 18:15Z to confirm R-s202 round-96 save. On test U-s101 end (≈ 18:45Z): move test-base to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, PID 77279; DNS errors during the 16:00Z outage, recovered).
+
+## Review 64 — 2026-11-09 18:10Z (1:10 PM EST Mon)
+1. **Changes.** U-s202 11094037 FAILED 17:40Z (Errno 512 on metrics write); recover-prep 11097803 done; retry 11097811 started 17:45Z on general (D111). Monitor 11098014 (≈18:08Z): R-s202 completed round 96; its round-96 save and evaluations not yet logged. U-s202 retry: no `start`/`resume` row yet (checkpoint load ≈ 25 min expected; latest rows are the failed attempt's).
+2. **Valid?** Yes. R-s202 last 6 rounds: mean 575 s; truncation 50/384; clip ≤ 4.3e-4; ratio quantiles within [0.85, 1.14].
+3. **Surprises.** Errno 512 now also hits metrics writes (not only checkpoint writes): a write fault can kill a run at any step.
+4. **Risks.** R-s202: last valid checkpoint round 64; round-96 save in progress. Forecast R-s202 ≈ 32 rounds × 575 s + 2 evaluations → ends ≈ 00:00–01:00Z Tue; U-s202 ≈ 03:30–05:00Z Tue (D111). U-s202 has used its one retry.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202 retry, test U-s101); preempt 5/6 owned, all pending.
+6. **Most important.** Confirm U-s202 resume at round 64 and R-s202 round-96 commit (monitor ≈ 19:10Z). On test U-s101 end (≈ 18:45Z): move test-base to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bx36np6gr).
