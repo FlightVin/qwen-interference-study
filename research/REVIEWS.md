@@ -468,3 +468,12 @@
 5. **Next jobs / limits.** General 3/3 (H-s101, R-s101 retry, R-s202); preempt 5/6 queued.
 6. **Most important.** On R-s101 retry completion: validate; move U-s202 11094037 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (bjphtsetd).
+
+## Review 53 — 2026-11-09 07:14Z (2:14 AM EST Mon)
+1. **Changes.** R-s101 retry 11092945 COMPLETED 07:01:52Z (0:0, 2:34:37; final save succeeded). U-s202 11094037 moved to general, running since ≈07:04Z (ckpt_every 16). Endpoint validation 11094459 running (re-hashes 22 GB checkpoints on slow /data).
+2. **Valid?** R-s101 pending validation; U-s101 validated.
+3. **Surprises.** None new.
+4. **Risks.** H-s101 final save under slow /data (blocking; failure → exit 5, retry from round 124/128-4 per D103 rule: one retry only for R-s101; H-s101 would get its own one recorded retry).
+5. **Next jobs / limits.** General 3/3 (H-s101, R-s202, U-s202); preempt 5/6 queued. On H-s101 end: test evaluations on its general slot (`qis-test-base` first unless it started on preempt).
+6. **Most important.** Confirm R-s101 endpoint validation (attempt a2, round_0128 sha, rounds 125–128 from the retry).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (bvtqg1k0t).
