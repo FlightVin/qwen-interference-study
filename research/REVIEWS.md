@@ -523,3 +523,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test R-s101); preempt 6/6 owned, all pending.
 6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3).
+
+## Review 59 — 2026-11-09 13:05Z (8:05 AM EST Mon)
+1. **Changes.** None since Review 58. R-s202 and U-s202 training on general; test R-s101 running (3:14 elapsed of a 9 h limit).
+2. **Valid?** Yes; no new failures (the FAILED rows in `ae status` are old, already recorded jobs).
+3. **Surprises.** None.
+4. **Risks.** Unchanged (D108 margin ≈ 8–13 h; /data save risk, D104).
+5. **Next jobs / limits.** General 3/3; preempt 6/6 owned, all pending.
+6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107). Next monitor ≈ 14:15Z.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3, no events).
