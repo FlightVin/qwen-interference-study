@@ -459,3 +459,19 @@ model writes ≈ 3× fewer tokens, and long sequences lower throughput (≈ 1,26
 Test H-s101 11095486 (ledger-owned) moved preempt → general/normal at 19:14Z (last step of D107 on this slot); ends
 ≈ 23:45Z. This slot is then free ≈ 4 h earlier than D112 assumed; its use (diagnostics 11079411/11084344 or idle) is
 decided then, without reference to test outcomes.
+
+## D114 — 2026-11-09 20:45Z — local-update diagnostic made resumable; slot plan for the remaining GPU work
+The local-update diagnostic (A9.2, A1.2 "Local update effects"; jobs 11079411 r0, 11084344 r64) has never started on
+preempt. Size: 1 source + 3 branches × 4 minibatch seeds = 13 evaluations × 92 problems × 16 = 19,136 completions at
+cap 8,192. Estimates from the s101 test throughput (D113): r0 (base source, ≈ 1,500 tokens/answer, ≈ 3,500 tok/s)
+≈ 2.5–3 h; r64 (trained source, ≈ 3,000 tokens/answer, ≈ 1,300–1,500 tok/s) ≈ 10–12 h, above its 8 h limit. The old
+code ran branch-major (all hard seeds, then related, then unrelated) and could not resume, so a timeout would lose the
+unrelated branch entirely.
+Change (commit 020b08b; operational, per-branch results unchanged: each branch restores the same snapshot and draws
+seeds fixed by (branch, seed)): seed-major order (hard, related, unrelated for 4101, then 4102, …) and resume that skips
+(branch, seed) rows already in `diag_<label>.jsonl` (partial last line ignored). Test added; full suite job 11099032.
+r64 recipe: time 8 h → 14 h; precheck now asserts the source `state.json` has attempt_id a2 (D99).
+Slot plan (general, 3 GPUs; from ≈ 23:45Z): slot of test H-s101 → diagnostic r64 (longest first); R-s202 slot →
+R-s202 endpoint validation + test, then diagnostic r0; U-s202 slot → U-s202 validation + test. Expected: all GPU work
+done ≈ 10 Nov 10:00–12:00Z; a partial r64 (complete seed sets only) is reported as partial (A9). Old diagnostic jobs
+(pending, never started, cost 0) are cancelled and resubmitted at commit 020b08b after the suite passes.
