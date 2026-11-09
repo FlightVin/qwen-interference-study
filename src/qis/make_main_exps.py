@@ -44,7 +44,7 @@ phase precheck "false" '
 phase config "false" '
     cat > "$W/config.json" <<JSON
 {{"run_id": "$RUN", "attempt_id": "{attempt}", "phase": "{phase}", "arm": "{arm}", "seed": {seed},
- "lr": {lr}, "eps_low": 0.2, "eps_high": {eh}, "rounds": {rounds}, "ckpt_every": 4,
+ "lr": {lr}, "eps_low": 0.2, "eps_high": {eh}, "rounds": {rounds}, "ckpt_every": {ckpt_every},
  "eval_rounds": {evals}, "eval_panels": {{"dev": 8, "probe_J_R": 8, "probe_J_U": 8}},
  "retain_rounds": {retain},
  "bundle": "$BUNDLE", "model": "$MODEL", "max_tokens": {maxtok}, "cap_schedule": {sched}, "gpu_mem_util": 0.30,
@@ -78,6 +78,7 @@ def main():
     ap.add_argument("--attempt", default="a1")
     ap.add_argument("--seeds", default="101,202,303")
     ap.add_argument("--no-sensitivity", action="store_true")
+    ap.add_argument("--ckpt-every", type=int, default=4, help="checkpoint cadence in rounds (operational; D104)")
     a = ap.parse_args()
     sched = [[int(x.split(":")[0]), int(x.split(":")[1])] for x in a.cap_schedule.split(",")]
     seed_list = [int(x) for x in a.seeds.split(",")]
@@ -92,7 +93,7 @@ def main():
         with open(os.path.join(a.expdir, f"{run}.sh"), "w") as f:
             f.write(TEMPLATE.format(phase=phase, arm=arm, seed=seed, lr=a.lr, eh=CLIP[clip], rounds=T, run=run,
                                     evals=evals, retain=retain, attempt=a.attempt, maxtok=max(c for _, c in sched),
-                                    sched=json.dumps(sched), sched_txt=a.cap_schedule))
+                                    sched=json.dumps(sched), sched_txt=a.cap_schedule, ckpt_every=a.ckpt_every))
         print(run)
 
 
