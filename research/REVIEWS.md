@@ -432,3 +432,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts). H-s101 projected ≈ 3:10 AM EST Mon.
 6. **Most important.** On U-s101 completion: submit `qis-validate-endpoints`, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs + monitor done). Watcher alive (bn30h9a02).
+
+## Review 49 — 2026-11-09 03:05Z (10:05 PM EST Sun)
+1. **Changes.** U-s101 COMPLETED 02:41Z; endpoint validation 11092019 all_pass (attempt a2, round_0128 sha; hard truncation over 128 rounds 984/8,192 = 12.0%, aux 21/8,192 = 0.3%). R-s202 moved to general and running since 02:42Z (D102).
+2. **Valid?** Yes; U-s101 endpoint validated; R-s101 in its round-128 evaluation; H-s101 running.
+3. **Surprises.** None new (R-s101 Errno 512 noted in Review 48).
+4. **Risks.** R-s101 final blocking checkpoint pending (a failure exits 5, recover from round 124).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
+6. **Most important.** On R-s101 completion: validate endpoint; move U-s202 (11081731) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (b68d3juv3).
