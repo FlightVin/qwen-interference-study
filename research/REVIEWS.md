@@ -550,3 +550,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test U-s101); preempt 5/6 owned, all pending.
 6. **Most important.** On test U-s101 end (≈ 1:45 PM EST): move test-base 11089196 to general (D107). Next monitor ≈ 16:10Z.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, no events).
+
+## Review 62 — 2026-11-09 16:40Z (11:40 AM EST Mon; delayed ≈ 30 min by a laptop network outage)
+1. **Changes.** Monitor 11097078: R-s202 completed round 85, U-s202 round 74; both logged round-64 evaluations. R-s202 round-80 save failed (Errno 512, D110); U-s202 checkpoint 64 committed. Test U-s101 running (2:24 elapsed).
+2. **Valid?** Yes. Last 6 rounds: mean 505 s (R), 543 s (U); truncation R 40/384, U 48/384; clip fraction ≤ 4.9e-4; ratio quantiles within [0.86, 1.15].
+3. **Surprises.** Errno 512 recurred (first since D105).
+4. **Risks.** R-s202 last valid checkpoint is round 64; final-save failure would cost ≈ 3 h (D110). Forecast: R ≈ 42 rounds left → ends ≈ 23:00Z; U ≈ 53 left → ends ≈ 01:00Z Tue. Inside D108.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 owned, all pending.
+6. **Most important.** Watch R-s202 round-96 save (next monitor ≈ 18:15Z). On test U-s101 end (≈ 1:45 PM EST): move test-base to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, no events).

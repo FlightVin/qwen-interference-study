@@ -416,3 +416,13 @@ stands; H-s202 (≈ 29.5 h on 12k, by H-s101) still cannot finish by the deadlin
 Test R-s101 11095106 COMPLETED 14:14Z (general, 4:23 elapsed; allocation ended, verified with sacct and squeue). Test
 U-s101 11095118 (ledger-owned) moved preempt → general/normal at 14:16Z, the next step of the D107 order. Test outcomes
 remain unread until all training ends (A13).
+
+## D110 — 2026-11-09 16:40Z — R-s202 round-80 save failed (Errno 512); continue, no action
+Monitor 11097078: R-s202 (11094190) `checkpoint_failed` round 80 at 15:25Z, `OSError: [Errno 512]`, 8 min after start;
+the run continued and completed round 85 (last-6 mean 505 s/round). Same /data fault as D103/D104; the H-s101 precedent
+(round 120 failed, round 124 committed) shows a failed asynchronous save does not stop training. Last valid R-s202
+checkpoint: round 64 (13:13Z, 815 s write). U-s202 committed round 64 (no failure). A failed save is not a cancellation
+criterion (owner rule). Exposure: a node failure before round 96 commits would lose ≤ 32 rounds (≈ 4.5 h); a failed
+final save at 128 exits 5 and needs one recorded retry from round 112 (≈ 16 rounds + load ≈ 2.5–3 h, D103 precedent).
+D108 margin (≈ 8–13 h) absorbs either. A `round_0080.tmp` directory (≤ 22 GB) is left; storage cleanup only under the
+owner's rule. Next check: round-96 save in the next monitor.
