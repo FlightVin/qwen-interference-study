@@ -72,6 +72,7 @@ def test_all_boxed_split_and_nested():
 
 def test_report_tables_synthetic(tmp_path):
     """A9 table on synthetic summaries: paired differences, pass@8, missing cells (no real test data)."""
+    import json
     import numpy as np
     from qis.analysis import report_tables as rt
     rng = np.random.default_rng(0)
