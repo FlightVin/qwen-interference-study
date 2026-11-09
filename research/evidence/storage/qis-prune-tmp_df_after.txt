@@ -1,0 +1,2 @@
+Filesystem                             Size  Used Avail Use% Mounted on
+nas5:/srv/nfs/data/user_data/vineethb  500G  425G   76G  85% /data/user_data/vineethb

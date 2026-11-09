@@ -1,0 +1,9 @@
+2026-11-09T21:24:01Z rm -rf /data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0120.tmp  8.1 GB
+2026-11-09T21:24:02Z rm -rf /data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0108.tmp  19.6 GB
+2026-11-09T21:25:17Z rm -rf /data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0120.tmp  18.8 GB
+2026-11-09T21:26:21Z rm -rf /data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0080.tmp  21.9 GB
+2026-11-09T21:27:39Z rm -rf /data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0096.tmp  8.1 GB
+2026-11-09T21:28:11Z rm -rf /data/user_data/vineethb/qis/ckpt/superseded/qis-main-H-s101-sym-a1  21.9 GB
+2026-11-09T21:28:12Z rm -rf /data/user_data/vineethb/qis/ckpt/superseded/qis-main-R-s101-sym-a1  21.9 GB
+2026-11-09T21:28:12Z rm -rf /data/user_data/vineethb/qis/ckpt/superseded/qis-main-U-s101-sym-a1  21.9 GB
+done

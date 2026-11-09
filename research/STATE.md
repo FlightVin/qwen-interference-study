@@ -41,7 +41,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. s101 runs done and validated (U, R, H all_pass). Seed 202 on general: R-s202 ends ≈ 23:00Z (D108); U-s202 failed (Errno 512) and retries from round 64 as 11097811, ends ≈ 10 Nov 03:30–05:00Z (D111; retry used, a second failure goes to the owner). H-s202 cannot finish by the deadline; stays preempt-only (H−R rests on seed 101; report marks it partial).
+1. s101 runs done and validated (U, R, H all_pass). Seed 202 on general: R-s202 ends ≈ 23:00Z (D108); U-s202 failed twice (D111, D117; cause: account quota full, D116); resumed from round 64 as 11100159, ends ≈ 10 Nov 09:30Z, test ≈ 14:00Z. H-s202 cannot finish by the deadline; stays preempt-only (H−R rests on seed 101; report marks it partial).
 2. Cap transition verified for all six runs (D89, D92, D94; seed 202 capcheck 11095700).
 3. Test evaluations (D107, D109): R-s101 done (unread); U-s101 done (unread); base 11089196 done (D113); H-s101 11095486 on general (ends ≈ 23:45Z); seed-202 tests on their own slots after endpoint validation. Outcomes unread until all training ends (A13).
 4. R-s202 last valid checkpoint round 64 (round-80 save failed, D110); confirm round-96 save at next monitor.

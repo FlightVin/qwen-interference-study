@@ -536,3 +536,7 @@ Storage for peak writes: `qis-prune-optim` 11100135 retires optimizer state of R
 evaluations reloaded model.pt with matching sha256; endpoint validation passed; no planned branch uses them; model.pt
 and state.json kept) and removes U-s202's dead round_0080.tmp. Forecast: U-s202 from round 64 ≈ 25 min load + 64 rounds
 × ≈ 600 s + 2 evaluations ≈ 11.5 h → ends ≈ 10 Nov 09:30Z; test ≈ 4.5 h → ≈ 14:00Z; report must then finish in ≈ 2 h.
+D117 execution (21:57Z): `qis-prune-optim` 11100135 deleted R-s101 and U-s101 round_0128/optim.pt (13.8 GB each) and
+U-s202 round_0080.tmp (21.9 GB); model.pt (8,127,059,673 bytes) and state.json kept in both. Quota now 366/500 GB used
+(≥ 135 GB free). Deletion logs: `research/evidence/storage/qis-prune-tmp_deleted.txt`, `qis-prune-optim_deleted.txt`.
+U-s202 resume 11100159 submitted at d90dd8c (recipe d01e221ecd03, unchanged) and moved to general/normal.
