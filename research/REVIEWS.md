@@ -586,3 +586,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test-base); preempt 4/6 owned, all pending.
 6. **Most important.** Confirm R-s202 round-96 commit at next monitor (≈ 21:10Z). On test-base end (≈ 23:15Z): move test H-s101 to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (brhzz0nec).
+
+## Review 66 — 2026-11-09 20:05Z (3:05 PM EST Mon)
+1. **Changes.** Test-base 11089196 COMPLETED 19:12Z (30 min; structure verified, D113). Test H-s101 11095486 moved to general, started 19:15Z, precheck ok (model sha 052c8a62… recorded = on-disk). All four s101-slot tests now done or running.
+2. **Valid?** Yes. Test outcome fields unread (A13); only structural fields (completions 4,096, cap 12,288, tokens, truncation) checked.
+3. **Surprises.** Base test ran 30 min vs ≈ 4.4 h for trained models (explained in D113: ≈ 3× fewer tokens, higher throughput).
+4. **Risks.** R-s202 round-96 save status unknown since 19:08Z (next monitor ≈ 21:10Z). U-s202 retry used.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test H-s101); preempt 3/6 owned, all pending (H-s202, diag r0, diag r64).
+6. **Most important.** Report pipeline (CHECKLIST 7.2–7.4) is the critical path once training is stable: build tables, figures and cost reconciliation from non-sealed inputs now, so only the test rows remain at unsealing.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b8stf9lw7, no events).
