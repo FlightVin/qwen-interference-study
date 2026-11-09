@@ -541,3 +541,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 owned, all pending.
 6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3, no events).
+
+## Review 61 — 2026-11-09 15:05Z (10:05 AM EST Mon)
+1. **Changes.** Test R-s101 11095106 COMPLETED 14:14Z (4:23). Test U-s101 11095118 moved to general (D109); started 14:16Z on babel-q5-20; precheck ok (model sha 92aef0d2… recorded = on-disk); eval phase running.
+2. **Valid?** Yes. Test outcomes not read (A13).
+3. **Surprises.** None.
+4. **Risks.** Unchanged (D108 margin ≈ 8–13 h; /data save risk, D104). Test U-s101 ends ≈ 18:45Z; then base, then H-s101 (≈ 4.5 h each) → last s101-slot test ≈ 10 Nov 04:00Z.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test U-s101); preempt 5/6 owned, all pending.
+6. **Most important.** On test U-s101 end (≈ 1:45 PM EST): move test-base 11089196 to general (D107). Next monitor ≈ 16:10Z.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, no events).
