@@ -604,3 +604,12 @@
 5. **Next jobs / limits.** General 3/3 once U-s202 starts (R-s202, test H-s101, U-s202); preempt: H-s202, diag r0, diag r64 pending.
 6. **Most important.** Confirm U-s202 resumes and R-s202's round-112 save commits; move diag r64 to general when test H-s101 ends (≈ 23:45Z).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize).
+
+## Review 68 — 2026-11-09 22:10Z (5:10 PM EST Mon)
+1. **Changes.** Monitor 11100269: R-s202 round-112 checkpoint committed 21:56Z in 276 s (vs 815 s at round 64 and failures at 80/96) — the quota fix (D116/D117) restored write speed. R-s202 now at round 113; last valid checkpoint 112. U-s202 11100159 `start` + `resume` round 64 at 21:55Z (checkpoint load < 1 min vs ≈ 24 min before).
+2. **Valid?** Yes. R-s202 last 6 rounds: mean 643 s, truncation 62/384, clip ≤ 3.5e-4, ratio within [0.87, 1.14]. U-s202 rows shown are the failed attempt's until new rounds log.
+3. **Surprises.** None; the faster load and save confirm the storage diagnosis.
+4. **Risks.** U-s202 is the critical path: 64 rounds × ≈ 600 s + 2 evaluations → ends ≈ 09:00Z Tue; test ≈ 13:30Z. R-s202 ends ≈ 01:00–01:30Z.
+5. **Next jobs / limits.** General 3/3; preempt: H-s202, diag r0, diag r64 pending. Quota ≤ 366/500 GB.
+6. **Most important.** Move diag r64 to general when test H-s101 ends (≈ 23:45Z); validate R-s202's endpoint and start its test when it ends.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize; one ssh timeout logged, recovered).
