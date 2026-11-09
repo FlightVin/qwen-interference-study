@@ -449,3 +449,13 @@ The base test waits for test U-s101's slot (D107); the freed slot goes to the cr
 Test U-s101 11095118 COMPLETED 18:40:36Z (general, 4:24; allocation ended, not in squeue). Test-base 11089196
 (ledger-owned) moved preempt → general/normal at 18:43Z. Remaining on this slot after base: test H-s101 11095486
 (≈ 4.5 h each → slot free ≈ 10 Nov 04:00Z). Test outcomes unread (A13).
+
+## D113 — 2026-11-09 19:15Z — test-base done in 30 min (verified complete); test H-s101 moved to general
+Test-base 11089196 COMPLETED 19:12Z after 29:59. Short runtime checked before use (outcome fields not read):
+128 problems × n 32 = 4,096 completions, max_tokens 12,288, seed_label test-final, 6.27 M tokens (≈ 1,530 per
+completion), truncated 0.05%, 3,566 tok/s. Trained s101 tests (same structure, 4,096 completions, cap 12,288,
+test-final): R 18.7 M tokens, truncated 10.7%, 4:04 h of generation; U 19.1 M tokens, truncated 12.2%, 4:15 h. The base
+model writes ≈ 3× fewer tokens, and long sequences lower throughput (≈ 1,260 tok/s), which explains the gap.
+Test H-s101 11095486 (ledger-owned) moved preempt → general/normal at 19:14Z (last step of D107 on this slot); ends
+≈ 23:45Z. This slot is then free ≈ 4 h earlier than D112 assumed; its use (diagnostics 11079411/11084344 or idle) is
+decided then, without reference to test outcomes.
