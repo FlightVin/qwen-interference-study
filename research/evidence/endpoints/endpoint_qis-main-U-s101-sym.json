@@ -1,0 +1,95 @@
+{
+ "rounds": {
+  "n": 128,
+  "distinct": 128,
+  "missing": [],
+  "pass": true
+ },
+ "optimizer": {
+  "steps": 512,
+  "nonfinite": 0,
+  "pass": true
+ },
+ "events": {
+  "starts": 1,
+  "complete": true,
+  "held": 0,
+  "attempt_windows": [
+   [
+    "11081725",
+    "0",
+    1794110687.5307865
+   ],
+   [
+    null,
+    null,
+    1794192002.7295322
+   ]
+  ]
+ },
+ "attempts": {
+  "files": 128,
+  "bad": [],
+  "pass": true
+ },
+ "evaluations": {
+  "found": {
+   "dev@0": 424,
+   "dev@32": 424,
+   "dev@64": 424,
+   "dev@96": 424,
+   "dev@128": 424,
+   "probe_J_R@0": 224,
+   "probe_J_R@32": 224,
+   "probe_J_R@64": 224,
+   "probe_J_R@96": 224,
+   "probe_J_R@128": 224,
+   "probe_J_U@0": 256,
+   "probe_J_U@32": 256,
+   "probe_J_U@64": 256,
+   "probe_J_U@96": 256,
+   "probe_J_U@128": 256
+  },
+  "missing": [],
+  "pass": true
+ },
+ "verifier": {
+  "unknown_train": 0,
+  "unknown_eval": 0,
+  "held_rounds": 0,
+  "pass": true
+ },
+ "checkpoint_identity": {
+  "path": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+  "model.pt": {
+   "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "on_disk": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+  },
+  "optim.pt": {
+   "recorded": "5bf32e044434b1bb4dc20c737de45877332bce72ecad82ff81e3e22e2e05ae01",
+   "on_disk": "5bf32e044434b1bb4dc20c737de45877332bce72ecad82ff81e3e22e2e05ae01"
+  },
+  "pass": true
+ },
+ "attempt": {
+  "expected": "a2",
+  "metrics": [
+   "a2"
+  ],
+  "checkpoint": "a2",
+  "pass": true
+ },
+ "truncation_train": {
+  "hard": {
+   "capped": 984,
+   "total": 8192,
+   "frac": 0.1201171875
+  },
+  "aux": {
+   "capped": 21,
+   "total": 8192,
+   "frac": 0.0025634765625
+  }
+ },
+ "all_pass": true
+}
