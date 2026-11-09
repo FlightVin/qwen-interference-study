@@ -610,3 +610,11 @@ Owner's request (faithful summary of the pasted instruction):
 4. Lead the final report with sealed-test pass@1 for H, R, U and the paired R−U and R−H differences for each of seeds
    101 and 202, then their means. Keep test outcomes out of training decisions. Deliver the audited Markdown report by
    the revised deadline.
+
+## 28. Amendment A14 (owner, received 2026-11-09 ~23:25Z = 6:25 PM EST): deadline extended
+
+Verbatim: "You may extend deadline to 2PM on Tuesday."
+
+Given in reply to the orchestrator's note that U-s202's test would end only ≈ 2.5 h before the A13 deadline and that a
+third U-s202 failure would leave its seed-202 row missing. The report deadline is now **Tuesday 2026-11-10 2:00 p.m.
+Eastern (19:00 UTC)**. Supersedes the deadline of A12/A13; every other A13 requirement stands.

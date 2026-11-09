@@ -547,3 +547,12 @@ and moved to general/normal, so each GPU passes from training to its test withou
 Their prechecks require RUN_COMPLETE and round_0128 model.pt sha256 = state.json, so a failed run makes its test stop in
 seconds. Endpoint validation (`qis-validate-endpoints`, CPU) runs after each run ends, in parallel with the test; a
 validation failure would void the test row (recorded, not hidden). Test outcomes stay unread until all training ends.
+
+## D119 — 2026-11-09 23:30Z — A14: deadline 19:00Z; U-s202 third-failure rule revised
+A14 (project.md §28): report due Tue 10 Nov 2:00 p.m. EST (19:00Z), 3 h later. Plan unchanged: U-s202 ends ≈ 09:00Z,
+its test ≈ 13:30Z; margin to 19:00Z ≈ 5.5 h. Revised contingency (replaces D117's "a third failure stops the run",
+decided before any further result): on a third U-s202 failure, resume from its latest committed checkpoint only if the
+projected test end is ≤ 17:00Z (2 h for final tables, audit and delivery); otherwise stop it and report the U-s202 row,
+and therefore seed-202 R − U, as missing (A9.5). The cause must first be checked: a recurrence of the storage fault with
+the quota healthy would be a new problem and is reported to the owner. R-s202's contingency (D116) uses the same 17:00Z
+test-end limit. Report finalization, audit and delivery move by 3 h: audit ≈ 13:30–16:30Z, delivery by 19:00Z.
