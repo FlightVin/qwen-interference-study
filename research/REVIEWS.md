@@ -514,3 +514,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 owned.
 6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b2b9jx0s7).
+
+## Review 58 — 2026-11-09 12:15Z (7:15 AM EST Mon)
+1. **Changes.** Monitor 11095848: R-s202 at round 62, U-s202 at round 51; both on cap 12,288; checkpoint 48 committed in both (19 and 22 min). Test R-s101 running (2:24 elapsed).
+2. **Valid?** Yes. Last-6 rounds: no failures; truncation R 26/384, U 34/384 hard-and-practice samples; clip fractions ≤ 3e-4; ratio quantiles within [0.88, 1.13].
+3. **Surprises.** Round times 467 s (R) and 548 s (U), faster than D106's 720–780 s.
+4. **Risks.** Margin now ≈ 8–13 h (D108). Remaining risk: /data save failures (D104); each run has 5 more saves.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test R-s101); preempt 6/6 owned, all pending.
+6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3).

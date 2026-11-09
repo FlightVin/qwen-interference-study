@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-09 11:10Z (Review 57; A11 resume; cap 12,288).
+Updated 2026-11-09 12:15Z (Review 58; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -45,4 +45,4 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 2. Cap transition verified for all s101 runs (D89, D92, D94); repeat capcheck for seed-202 runs after their round 35.
 3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
 4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
-5. Forecast (D93): six runs + 7 test evals do not fit by the deadline on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional. D106: last test evaluation ≈ 10 Nov 12:30–13:00Z (7:30–8:00 AM EST); margin ≈ 3 h.
+5. Forecast (D93): six runs + 7 test evals do not fit by the deadline on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional. D108 (supersedes D106): seed-202 runs end ≈ 9 Nov 21:30Z–10 Nov 02:30Z; last test evaluation ≈ 10 Nov 03:00–07:30Z; margin ≈ 8–13 h.

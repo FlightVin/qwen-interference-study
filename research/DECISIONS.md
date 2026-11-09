@@ -403,3 +403,11 @@ slots (preempt 6/6 owned; they start there only if preempt frees). When H-s101 e
 U-s101 → base (11089196) → H-s101 (submitted after its validation). Each ≈ 5 h (limit 9 h). Seed-202 test evaluations run
 on the seed-202 slots when those runs end (≈ 10 Nov 07:30Z). Test outcomes are not read until all training has ended and
 inform no training decision (A13).
+
+## D108 — 2026-11-09 12:15Z — forecast refresh (seed 202 faster than D106)
+Monitor 11095848 (≈12:10Z): R-s202 completed round 62 (last-6 mean 467 s/round; checkpoint 48 committed in 19 min);
+U-s202 completed round 51 (last-6 mean 548 s; checkpoint 48 in 22 min). D106 assumed 720–780 s/round. Remaining:
+R-s202 65 rounds ≈ 8.5 h + 3 evaluations → ends ≈ 21:30–23:00Z today; U-s202 76 rounds ≈ 11.6 h + 3 evaluations →
+ends ≈ 10 Nov 00:30–02:30Z. Ranges allow round times to rise to D106's rate in the remaining rounds. Seed-202 test evaluations
+(≈ 5 h each) then end ≈ 10 Nov 03:00–07:30Z. Margin to 16:00Z ≈ 8–13 h (D106: ≈ 3 h). No action changes: the D107 order
+stands; H-s202 (≈ 29.5 h on 12k, by H-s101) still cannot finish by the deadline and stays pending on preempt only.
