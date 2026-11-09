@@ -22,6 +22,7 @@ import matplotlib.pyplot as plt                                         # noqa: 
 
 ARM_COLOR = {"H": "#4c72b0", "R": "#dd8452", "U": "#55a868"}
 SEED_STYLE = {101: "-", 202: "--"}
+SEED_MARK = {101: "o", 202: "s"}
 CAP_ROUND = 32
 
 
@@ -48,7 +49,7 @@ def learning(data, out, drawn):
             else:
                 xs = [v["exposure"].get(str(r), v["exposure"].get(r, {})).get("cum_hard_responses", 0) if r else 0
                       for r, _ in pts]
-            ax.plot(xs, [p for _, p in pts], SEED_STYLE.get(seed, ":"), marker="o", color=ARM_COLOR[arm],
+            ax.plot(xs, [p for _, p in pts], SEED_STYLE.get(seed, ":"), marker=SEED_MARK.get(seed, "^"), color=ARM_COLOR[arm],
                     label=f"{arm} seed {seed}")
         if xkey == "round":
             ax.axvline(CAP_ROUND, color="grey", lw=0.8, ls=":")
@@ -60,13 +61,13 @@ def learning(data, out, drawn):
 
 
 def pope(data, out, drawn):
-    lims = []
-    for v in data["runs"].values():
-        for p in ("probe_J_H", "probe_J_R", "probe_J_U"):
-            lims += [x for _, x in ev(v, p)]
-    if not lims:
+    """x and y limits are each common to both figures (same axis definition for every arm), not equal to each other."""
+    def span(panels):
+        v = [x for r in data["runs"].values() for p in panels for _, x in ev(r, p)]
+        return (min(v) - 0.02, max(v) + 0.02) if v else None
+    xl, yl = span(("probe_J_R", "probe_J_U")), span(("probe_J_H",))
+    if not (xl and yl):
         return
-    lo, hi = min(lims) - 0.03, max(lims) + 0.03
     for aux in ("R", "U"):
         fig, ax = plt.subplots(figsize=(5.2, 5.0))
         for run, v in sorted(data["runs"].items()):
@@ -81,7 +82,7 @@ def pope(data, out, drawn):
             for i in range(len(rs) - 1):
                 ax.annotate("", (xs[i + 1], ys[i + 1]), (xs[i], ys[i]),
                             arrowprops={"arrowstyle": "->", "color": ARM_COLOR[arm], "lw": 1})
-        ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
+        ax.set_xlim(*xl); ax.set_ylim(*yl)
         ax.set_xlabel(f"J_{aux}: pass@1 on the fixed {'related' if aux == 'R' else 'unrelated'} probe panel")
         ax.set_ylabel("J_H: pass@1 on the fixed 32-problem hard-dev panel")
         ax.legend(fontsize=7); ax.grid(alpha=0.3)
