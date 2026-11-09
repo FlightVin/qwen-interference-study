@@ -505,3 +505,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test R-s101); preempt 6/6 owned.
 6. **Most important.** On test R-s101 end (≈ 15:00Z): move test U-s101 to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 owned nonterminal jobs). Watcher alive (b2b9jx0s7).
+
+## Review 57 — 2026-11-09 11:05Z (6:05 AM EST Mon)
+1. **Changes.** H-s101 endpoint validation 11095270 all_pass (128 rounds, 1 start; hard truncation 1,140/16,384 = 7.0%). Test H-s101 queued 11095486 (preempt; last in D107 order). Capcheck for seed 202 submitted (`qis-a11-capcheck-s202` 11095700; waits for round 36 in both).
+2. **Valid?** Yes; all s101 endpoints validated; test R-s101 running (1:14 elapsed).
+3. **Surprises.** None.
+4. **Risks.** Margin ≈ 3 h (D106).
+5. **Next jobs / limits.** General 3/3; preempt 6/6 owned.
+6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (b2b9jx0s7).
