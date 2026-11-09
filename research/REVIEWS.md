@@ -532,3 +532,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 owned, all pending.
 6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107). Next monitor ≈ 14:15Z.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3, no events).
+
+## Review 60 — 2026-11-09 14:10Z (9:10 AM EST Mon)
+1. **Changes.** Monitor 11096244: R-s202 completed round 71 (round-64 evaluations logged; checkpoint 64 committed); U-s202 completed round 64 (its round-64 evaluations are next). Test R-s101 running (4:19 elapsed).
+2. **Valid?** Yes. Last 6 rounds: mean 477 s (R) and 508 s (U); truncation R 31/384, U 42/384; clip fraction ≤ 2.4e-4; ratio quantiles within [0.87, 1.13]; no checkpoint stall.
+3. **Surprises.** None. Round-64 dev values not read for any decision (logged only).
+4. **Risks.** On track inside D108: R-s202 ≈ 56 rounds left → ends ≈ 22:00Z; U-s202 ≈ 63 left → ends ≈ 00:00–01:00Z Tue. /data save risk remains (D104).
+5. **Next jobs / limits.** General 3/3; preempt 6/6 owned, all pending.
+6. **Most important.** On test R-s101 end (≈ 10 AM EST): move test U-s101 to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (ber64mxk3, no events).
