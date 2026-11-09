@@ -444,3 +444,8 @@ Cost: 16 rounds of lost progress (≈ 2.4 h) + ≈ 25 min checkpoint load. Forec
 final save → ends ≈ 10 Nov 03:30–05:00Z; its test evaluation then ends ≈ 08:00–10:00Z. Margin to 16:00Z ≈ 6–8 h.
 A second infrastructure failure of U-s202 gets no automatic retry: it goes to the owner with the then-current forecast.
 The base test waits for test U-s101's slot (D107); the freed slot goes to the critical-path retry.
+
+## D112 — 2026-11-09 18:43Z — test-base moved to general (D107 step)
+Test U-s101 11095118 COMPLETED 18:40:36Z (general, 4:24; allocation ended, not in squeue). Test-base 11089196
+(ledger-owned) moved preempt → general/normal at 18:43Z. Remaining on this slot after base: test H-s101 11095486
+(≈ 4.5 h each → slot free ≈ 10 Nov 04:00Z). Test outcomes unread (A13).
