@@ -595,3 +595,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test H-s101); preempt 3/6 owned, all pending (H-s202, diag r0, diag r64).
 6. **Most important.** Report pipeline (CHECKLIST 7.2–7.4) is the critical path once training is stable: build tables, figures and cost reconciliation from non-sealed inputs now, so only the test rows remain at unsealing.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b8stf9lw7, no events).
+
+## Review 67 — 2026-11-09 21:05Z–22:00Z (4:05–5:00 PM EST Mon)
+1. **Changes.** Monitor 11099614: R-s202 round 108; its round-96 save failed (Errno 512, 19:44Z). Storage check found the account quota at 495/500 GB — root cause of all Errno 512 failures (D116). Prunes freed ≥ 191 GB (D116, D117); quota now ≤ 366 GB. U-s202 retry 11097811 FAILED 21:31Z (EINTR, same mechanism); resumed from round 64 as 11100159 (D117). Diagnostics resubmitted resumable (D114). Report pipeline dry run passed (D115).
+2. **Valid?** Yes for committed checkpoints and records (sha256-checked); failed writes left only `.tmp` dirs (deleted, logged).
+3. **Surprises.** Quota exhaustion was not detected earlier because monitors checked project usage, not account free space (rule added to the harness log).
+4. **Risks.** U-s202 now ends ≈ 09:30Z and its test ≈ 14:00Z (2 h before the deadline). R-s202 last valid checkpoint still round 64 until round 112 commits.
+5. **Next jobs / limits.** General 3/3 once U-s202 starts (R-s202, test H-s101, U-s202); preempt: H-s202, diag r0, diag r64 pending.
+6. **Most important.** Confirm U-s202 resumes and R-s202's round-112 save commits; move diag r64 to general when test H-s101 ends (≈ 23:45Z).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize).
