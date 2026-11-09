@@ -414,3 +414,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts).
 6. **Most important.** On U-s101 completion: submit `qis-validate-endpoints`, move R-s202 (11081729) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs + monitor done). Watcher alive (bn30h9a02).
+
+## Review 47 — 2026-11-09 01:05Z (8:05 PM EST Sun)
+1. **Changes.** None in job state (R 22:04, U 21:02, H 20:47 elapsed).
+2. **Valid?** Yes; no restarts.
+3. **Surprises.** None.
+4. **Risks.** Unchanged (Review 46 projections). R-s202 time limit 40 h fits general's 2-day wall.
+5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts).
+6. **Most important.** On U-s101 completion (≈ 9:25 PM EST): submit `qis-validate-endpoints`, move R-s202 (11081729) to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs). Watcher alive (bn30h9a02).
