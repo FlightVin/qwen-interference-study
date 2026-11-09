@@ -423,3 +423,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts).
 6. **Most important.** On U-s101 completion (≈ 9:25 PM EST): submit `qis-validate-endpoints`, move R-s202 (11081729) to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs). Watcher alive (bn30h9a02).
+
+## Review 48 — 2026-11-09 02:05Z (9:05 PM EST Sun)
+1. **Changes.** Monitor 11091807 (≈02:10Z): U-s101 finished round 128 (final evaluation + blocking checkpoint in progress); R-s101 126; H-s101 104.
+2. **Valid?** Yes. R-s101 logged `checkpoint_failed` at rounds 108 (22:42Z) and 120 (01:04Z): `OSError: [Errno 512]` on the /data write (transient filesystem error); 112, 116 and 124 then wrote ok (sha-verified). Training is unaffected; only fewer restart points existed for those 4-round windows.
+3. **Surprises.** Errno 512 on /data checkpoint writes (first seen in this study).
+4. **Risks.** A failed blocking round-128 write makes the run exit 5 with `final_checkpoint_failed`, never `complete` (run.py:378–380); recovery = one recorded transient retry resuming from round 124 (≈ 1 h). Endpoint validation checks round_0128 sha.
+5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts). H-s101 projected ≈ 3:10 AM EST Mon.
+6. **Most important.** On U-s101 completion: submit `qis-validate-endpoints`, move R-s202 (11081729) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs + monitor done). Watcher alive (bn30h9a02).
