@@ -23,6 +23,25 @@ from qis.train import grpo
 
 MB_SEEDS = (4101, 4102, 4103, 4104)
 BRANCHES = ("hard", "related", "unrelated")
+
+
+def branch_order():
+    """Seed-major order: a partial run holds complete (hard, related, unrelated) sets for its first seeds."""
+    return [(s, b) for s in MB_SEEDS for b in BRANCHES]
+
+
+def completed(path):
+    """(branch, seed) pairs already written by an earlier attempt; they are skipped on resume."""
+    if not os.path.exists(path):
+        return set()
+    out = set()
+    for line in open(path):
+        try:
+            r = json.loads(line)
+        except json.JSONDecodeError:
+            continue                                                  # partial last line of a killed attempt
+        out.add((r["branch"], r["seed"]))
+    return out
 PANELS = ("probe_J_H", "probe_J_R", "probe_J_U")
 N_PROMPTS, N_RESP, N_EVAL = 4, 8, 16
 EVAL_ROUND_LABEL = 7064          # constant label in the eval seed key -> identical seeds for every branch/source
@@ -101,7 +120,9 @@ def main():
     snap = snapshot(learner.model, learner.opt)
     roll = Rollout(a.model, 8192, 0.30)
     ver = Verifier(8)
-    results = open(os.path.join(a.out, f"diag_{a.label}.jsonl"), "a")
+    res_path = os.path.join(a.out, f"diag_{a.label}.jsonl")
+    done = completed(res_path)
+    results = open(res_path, "a")
 
     def evaluate_all(tag):
         rec = os.path.join(a.out, "records", tag)
@@ -115,32 +136,34 @@ def main():
         return out
 
     t0 = time.time()
-    roll.load_weights(learner.model)
-    results.write(json.dumps({"label": a.label, "branch": "none", "seed": None, **src_meta,
-                              "eval": evaluate_all(f"{a.label}-none")}) + "\n"); results.flush()
-    for branch in BRANCHES:
-        for s in MB_SEEDS:
-            restore(learner.model, learner.opt, snap)
-            roll.load_weights(learner.model)                          # generate from the SOURCE policy
-            items, idx = branch_prompts(pools, branch, s)
-            p_ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
-            req = [seeds.int_seed(s, f"diag/{branch}/p{j}") for j in range(len(items))]
-            groups = roll.generate(p_ids, N_RESP, req, logprobs=False)
-            roll.sleep()
-            sc = ver.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
-                             "truncated": o["finish"] == "length"} for it, g in zip(items, groups) for o in g])
-            if any(x["status"] == UNKNOWN for x in sc):
-                raise RuntimeError(f"{branch} seed {s}: verifier unknown in update batch")
-            rewards = torch.tensor([x["reward"] for x in sc], dtype=torch.float32).view(len(items), N_RESP)
-            gn, mixed = one_update(learner, groups, p_ids, rewards, a.eps_low, a.eps_high)
-            roll.load_weights(learner.model)                          # evaluate the UPDATED branch
-            ev = evaluate_all(f"{a.label}-{branch}-{s}")
-            results.write(json.dumps({"label": a.label, "branch": branch, "seed": s, "prompt_idx": idx,
-                                      "prompt_ids": [it["id"] for it in items], "batch_reward": float(rewards.mean()),
-                                      "mixed_groups": mixed, "grad_norm_preclip": gn,
-                                      "capped": sum(o["finish"] == "length" for g in groups for o in g),
-                                      **src_meta, "eval": ev}) + "\n"); results.flush()
-            print(a.label, branch, s, {p: round(ev[p]["pass1"], 4) for p in PANELS}, f"{time.time() - t0:.0f}s", flush=True)
+    if ("none", None) not in done:
+        roll.load_weights(learner.model)
+        results.write(json.dumps({"label": a.label, "branch": "none", "seed": None, **src_meta,
+                                  "eval": evaluate_all(f"{a.label}-none")}) + "\n"); results.flush()
+    for s, branch in branch_order():
+        if (branch, s) in done:
+            continue
+        restore(learner.model, learner.opt, snap)
+        roll.load_weights(learner.model)                          # generate from the SOURCE policy
+        items, idx = branch_prompts(pools, branch, s)
+        p_ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
+        req = [seeds.int_seed(s, f"diag/{branch}/p{j}") for j in range(len(items))]
+        groups = roll.generate(p_ids, N_RESP, req, logprobs=False)
+        roll.sleep()
+        sc = ver.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
+                         "truncated": o["finish"] == "length"} for it, g in zip(items, groups) for o in g])
+        if any(x["status"] == UNKNOWN for x in sc):
+            raise RuntimeError(f"{branch} seed {s}: verifier unknown in update batch")
+        rewards = torch.tensor([x["reward"] for x in sc], dtype=torch.float32).view(len(items), N_RESP)
+        gn, mixed = one_update(learner, groups, p_ids, rewards, a.eps_low, a.eps_high)
+        roll.load_weights(learner.model)                          # evaluate the UPDATED branch
+        ev = evaluate_all(f"{a.label}-{branch}-{s}")
+        results.write(json.dumps({"label": a.label, "branch": branch, "seed": s, "prompt_idx": idx,
+                                  "prompt_ids": [it["id"] for it in items], "batch_reward": float(rewards.mean()),
+                                  "mixed_groups": mixed, "grad_norm_preclip": gn,
+                                  "capped": sum(o["finish"] == "length" for g in groups for o in g),
+                                  **src_meta, "eval": ev}) + "\n"); results.flush()
+        print(a.label, branch, s, {p: round(ev[p]["pass1"], 4) for p in PANELS}, f"{time.time() - t0:.0f}s", flush=True)
     ver.close()
 
 

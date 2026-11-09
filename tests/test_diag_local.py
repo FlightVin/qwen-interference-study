@@ -44,3 +44,14 @@ def test_restore_fresh_optimizer_clears_state():
     _step(model, opt)
     dl.restore(model, opt, snap)
     assert len(opt.state) == 0
+
+
+def test_branch_order_seed_major_and_resume(tmp_path):
+    from qis import diag_local as d
+    order = d.branch_order()
+    assert order[:3] == [(4101, "hard"), (4101, "related"), (4101, "unrelated")]
+    assert sorted(order) == sorted((s, b) for s in d.MB_SEEDS for b in d.BRANCHES)
+    p = tmp_path / "diag_r0.jsonl"
+    assert d.completed(str(p)) == set()
+    p.write_text('{"branch": "none", "seed": null}\n{"branch": "hard", "seed": 4101}\n{"branch": "rel')
+    assert d.completed(str(p)) == {("none", None), ("hard", 4101)}
