@@ -441,3 +441,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** On R-s101 completion: validate endpoint; move U-s202 (11081731) to general (D93).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (b68d3juv3).
+
+## Review 50 — 2026-11-09 04:05Z (11:05 PM EST Sun)
+1. **Changes.** R-s101 finished round 128 and its round-128 evaluations (dev 2,835 s); its blocking final save is slow, not hung: `round_0128.tmp` model.pt complete 03:51Z, optim.pt full size (13.76 GB) 04:12Z (job 11092886 listing); sha read-back and rename pending. Monitor 11092858: H-s101 112, R-s202 12.
+2. **Valid?** Yes so far. /data writes are slow tonight: R-s202 round-4 save failed with Errno 512 after 36 min (no R-s202 checkpoint yet; round 8 save in progress). Failed saves left partial dirs: R-s101 round_0108.tmp (19.5 GB), round_0120.tmp (18.8 GB), R-s202 round_0004.tmp (21.9 GB) ≈ 60 GB; not deleted (no cleanup rule triggered; space was 195/500 GB).
+3. **Surprises.** My `srun --overlap` diagnostic into 11081724 printed nothing in 90 s and was killed by `timeout` (its own step .0 cancelled; batch step unaffected, sacct verified). Rule: inspect /data from a separate CPU job, not by srun into a training job.
+4. **Risks.** If R-s101's final save fails, the job exits 5; recovery resumes from round_0124 (≈ 1 h + evals). Slow /data also lengthens H-s101 and R-s202 saves (asynchronous for non-final rounds).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
+6. **Most important.** On R-s101 completion: validate endpoint; move U-s202 (11081731) to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs; monitor and inspect jobs done). Watcher alive (b68d3juv3).
