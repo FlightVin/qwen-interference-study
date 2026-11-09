@@ -43,6 +43,6 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 ## Next actions
 1. s101 runs done and validated (U, R, H all_pass). Seed 202 on general: R-s202 ends ≈ 23:00Z (D108); U-s202 failed twice (D111, D117; cause: account quota full, D116); resumed from round 64 as 11100159, ends ≈ 10 Nov 09:30Z, test ≈ 14:00Z. H-s202 cannot finish by the deadline; stays preempt-only (H−R rests on seed 101; report marks it partial).
 2. Cap transition verified for all six runs (D89, D92, D94; seed 202 capcheck 11095700).
-3. Test evaluations (D107, D109): R-s101 done (unread); U-s101 done (unread); base 11089196 done (D113); H-s101 11095486 on general (ends ≈ 23:45Z); seed-202 tests on their own slots after endpoint validation. Outcomes unread until all training ends (A13).
+3. Test evaluations (D107, D109): R-s101 done (unread); U-s101 done (unread); base 11089196 done (D113); H-s101 done (D120); diag r64 on that slot; seed-202 tests on their own slots after endpoint validation. Outcomes unread until all training ends (A13).
 4. R-s202 round-112 checkpoint committed (276 s) after the quota fix; U-s202 resumed at round 64 (D117).
 5. Report (CHECKLIST 7.4): A13 lead table, attempt-a2 assertion, truncation by arm and prompt type after round 32, compute incl. failed attempts; audit; `reports/REPORT.md` by 10 Nov 16:00Z.

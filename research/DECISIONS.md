@@ -556,3 +556,9 @@ projected test end is ≤ 17:00Z (2 h for final tables, audit and delivery); oth
 and therefore seed-202 R − U, as missing (A9.5). The cause must first be checked: a recurrence of the storage fault with
 the quota healthy would be a new problem and is reported to the owner. R-s202's contingency (D116) uses the same 17:00Z
 test-end limit. Report finalization, audit and delivery move by 3 h: audit ≈ 13:30–16:30Z, delivery by 19:00Z.
+
+## D120 — 2026-11-09 23:46Z — test H-s101 done; diagnostic r64 moved to general (D114 slot plan)
+Test H-s101 11095486 COMPLETED 23:42Z (4:27; general). Structure checked, outcome fields unread: test panel, 128 × 32 =
+4,096 completions, cap 12,288, test-final, 20.1 M tokens, truncated 10.9%. All four s101-slot tests are done (base, R,
+U, H). Diagnostic r64 11099088 (ledger-owned; pending since submission) moved preempt → general/normal at 23:45Z
+(allocation of 11095486 ended).
