@@ -405,3 +405,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts). Next monitor ≈ 00:05Z.
 6. **Most important.** On U-s101 completion (≈ 9:20 PM EST): submit `qis-validate-endpoints`, move R-s202 (11081729) to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs). Watcher alive (bn30h9a02).
+
+## Review 46 — 2026-11-09 00:05Z (7:05 PM EST Sun)
+1. **Changes.** Monitor 11091008 (≈00:10Z): U-s101 121, R-s101 116, H-s101 96 (H dev round 96 logged; monitoring only).
+2. **Valid?** Yes; caps 12,288; checkpoints ok; no restarts. Capped per round U 3–17, R 2–17, H 3–11 of 128 (report-only).
+3. **Surprises.** None.
+4. **Risks.** Projected ends: U ≈ 9:25 PM EST, R ≈ 10:15 PM EST, H ≈ 1:55 AM EST Mon; margin ≥ 5.5 h.
+5. **Next jobs / limits.** General 3/3; preempt 6/6 queued (no starts).
+6. **Most important.** On U-s101 completion: submit `qis-validate-endpoints`, move R-s202 (11081729) to general (D93).
+7. **Reconciliation.** Slurm ↔ ledger agree (9 owned jobs + monitor done). Watcher alive (bn30h9a02).
