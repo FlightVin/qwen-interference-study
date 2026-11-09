@@ -324,3 +324,9 @@ free sixth preempt slot (preempt now 6/6). It depends on no training output and 
 result stays unread until the report stage. If it starts and finishes, the D93 test queue on general shrinks by one
 evaluation (≈ 5 h). If it is still pending when H-s101 ends, it moves to general (`ae slurm update ... Partition=general
 QOS=normal`). If preempted mid-run it restarts from scratch (not resumable; compute charged).
+
+## D102 — 2026-11-09 02:45Z — first general slot: U-s101 done → R-s202 on general (D93)
+U-s101 (11081725) COMPLETED 0:0 at 02:40:59Z (elapsed 22:37:01; allocation ended per sacct). R-s202 (11081729, ledger row
+qis-main-R-s202-sym, sha 9d6349a) moved preempt → general/normal at ≈02:42Z and started immediately on babel-w5-24.
+Endpoint validation `qis-validate-endpoints` (11092019, commit c430002) submitted for every run with round_0128.
+Preempt now 5/6 owned (diag r0, U-s202, H-s202, diag r64, test-base). R-s202 projected ≈ 25–27 h → ≈ 10 Nov 04:00–06:00Z.
