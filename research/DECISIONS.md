@@ -481,3 +481,17 @@ f3c70b5: r0 11099083 (8 h), r64 11099088 (14 h), both queued on preempt; r64 mov
 Report pipeline: training venv has no matplotlib; figures use a separate venv `$PROJ_DATA/env/venv-report`
 (matplotlib 3.9.2, built by `qis-report-dry`; training venv untouched). First dry run 11099043 failed on the import
 (no output; ≈ 0 CPU-min); retry 11099061.
+
+## D115 — 2026-11-09 20:35Z — report pipeline dry run; interim dev curves viewed
+`qis-report-dry` 11099061 (commit f3c70b5): `report_data` over the six runs: attempt a2 on every row of every run
+(attempt_ok True); evaluations one canonical row per (panel, round) — R-s101 dev round 128 was logged twice (the failed
+final-save job and the D103 retry each evaluated it; records of the first were moved aside), the last is canonical.
+Truncation of hard training responses, rounds 33-128 so far: H-s101 7.1%, R-s101 10.6%, U-s101 14.0%, R-s202 7.9%
+(to round 104), U-s202 9.2% (to round 80); auxiliary 0.0-1.6%. Active training hours on the canonical trajectory: H-s101
+26.3, R-s101 21.0, U-s101 19.3 (failed and superseded segments are charged separately from sacct). Figures drawn:
+learning vs rounds and vs cumulative hard responses, POPE (J_R, J_H) and (J_U, J_H).
+**Viewed (orchestrator):** dev pass@1 curves of all runs to their latest scheduled evaluation (s101 to 128, R-s202 to 96,
+U-s202 to 64) and the probe trajectories. Not test data. No decision remains that these could influence: training
+configuration, schedules and the analysis are fixed; the remaining actions (test evaluations, diagnostics) are fixed in
+D107/D114. Note for the report: round-0 dev values differ across runs (0.403-0.422) although model and seeds are
+identical — vLLM generation is not bitwise reproducible (D99); this is a floor on evaluation noise.
