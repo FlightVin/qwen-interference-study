@@ -495,3 +495,24 @@ U-s202 to 64) and the probe trajectories. Not test data. No decision remains tha
 configuration, schedules and the analysis are fixed; the remaining actions (test evaluations, diagnostics) are fixed in
 D107/D114. Note for the report: round-0 dev values differ across runs (0.403-0.422) although model and seeds are
 identical — vLLM generation is not bitwise reproducible (D99); this is a floor on evaluation noise.
+
+## D116 — 2026-11-09 21:20Z — ROOT CAUSE of the Errno 512 failures: account quota full (495/500 GB); prune under §11
+Evidence: `qis-storage-df` 11099700 (21:11Z): `nas5:/srv/nfs/data/user_data/vineethb  500G  495G  5.4G  99%`. The
+quota is shared with the owner's other projects. A 22 GB checkpoint cannot fit; small metrics writes also fail when the
+quota is exhausted, which explains U-s202's crash (D111) and the save failures D103/D104/D110 and R-s202 round 96
+(`checkpoint_failed` 19:44Z after 76 min). Errno 512 is the kernel's ERESTARTSYS surfacing from the NFS client, not a
+data-corruption signal; committed checkpoints (state.json + sha256) remain valid. Our earlier diagnosis "slow /data"
+(D104) was incomplete: the slowness and failures track the quota filling, partly with our own failed `.tmp` writes.
+Rule (project.md §11): keep ≥ 50 GiB free; below the floor, pause new large writes; prune superseded project-owned
+copies after verifying references and recording deletions; never use other projects' space.
+Action: `qis-prune-tmp` 11099764 deletes only (1) failed partial writes `round_*.tmp` of the completed s101 runs and
+R-s202's dead round_0080.tmp / round_0096.tmp (U-s202 skipped: a save is running) and (2) the superseded attempt-a1
+checkpoint trees under `ckpt/superseded/` (A11/D82; references checked: no active or pending recipe uses them; their
+evidence use — truncation study D86/D87, provenance D99 — is complete and recorded). Each deletion is logged with its
+size (`deleted.txt`, copied to research/evidence/storage/). Not touched: logs, metrics, records, valid checkpoints,
+R-s101 round_0064 (diagnostic source), s101 round_0128 (endpoints).
+Next, if still below the floor: retire optimizer state of s101 endpoints whose test evaluation completed (R, U; H after
+its test ends), keeping model.pt + state.json (§11 retirement rule; the test evaluator reloaded and verified model.pt).
+Contingency fixed now, before any further result: if R-s202's final save fails (exit 5), it gets its one recorded
+retry from its latest committed checkpoint (112 if that commits, else 64). From 64 the retry cannot finish with a test
+before 16:00Z; R-s202's test row is then reported as missing (A9.5).
