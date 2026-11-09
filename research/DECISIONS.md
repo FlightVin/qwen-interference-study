@@ -426,3 +426,21 @@ criterion (owner rule). Exposure: a node failure before round 96 commits would l
 final save at 128 exits 5 and needs one recorded retry from round 112 (≈ 16 rounds + load ≈ 2.5–3 h, D103 precedent).
 D108 margin (≈ 8–13 h) absorbs either. A `round_0080.tmp` directory (≤ 22 GB) is left; storage cleanup only under the
 owner's rule. Next check: round-96 save in the next monitor.
+
+## D111 — 2026-11-09 17:45Z — U-s202 failed (Errno 512 on metrics write); one recorded retry from round 64
+Evidence: job 11094037 (general, babel-s5-32) FAILED 1:0 at 17:40:24Z after 10:36:29 (10.6 GPU-h, charged). Traceback:
+`run.py:312 log.write("step", ...)` → `OSError: [Errno 512]` on `metrics.jsonl` flush; the following CUDA allocator error
+is shutdown noise. Same /data fault as D103/D104/D110. Last train record r0079 (17:02Z); last metrics row
+`checkpoint_started` round 80 (17:02Z); round 80 never committed (`round_0080.tmp` left). LATEST = round 64 (14:47Z,
+state.json present). Classified as a transient infrastructure error → the one recorded retry allowed by agent.md/§owner
+rules. U-s202 has had no earlier failure retry (11081731 was replaced before starting, D105).
+Actions:
+1. `qis-u202-recover-prep` 11097803: moved train_r0064–r0079 (16 files) to `records/superseded-11094037/`; no eval file
+   after round 64 existed; metrics.jsonl last line valid (no repair). Nothing deleted.
+2. Allocation of 11094037 ended (sacct End 17:40:24Z; not in squeue). Retry 11097811 submitted via `ops/qis-submit`
+   (QIS_A11_RESUME=1; same recipe d01e221ecd03, ckpt_every 16; commit 6724cce, no code change) and moved to general/normal
+   at 17:45Z. It resumes from round 64 (attempt a2; duplicate metrics rows after resume: last occurrence canonical).
+Cost: 16 rounds of lost progress (≈ 2.4 h) + ≈ 25 min checkpoint load. Forecast: 64 rounds × ≈ 540 s + 2 evaluations +
+final save → ends ≈ 10 Nov 03:30–05:00Z; its test evaluation then ends ≈ 08:00–10:00Z. Margin to 16:00Z ≈ 6–8 h.
+A second infrastructure failure of U-s202 gets no automatic retry: it goes to the owner with the then-current forecast.
+The base test waits for test U-s101's slot (D107); the freed slot goes to the critical-path retry.
