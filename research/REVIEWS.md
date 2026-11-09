@@ -478,3 +478,12 @@
 6. **Most important.** Confirm R-s101 endpoint validation (attempt a2, round_0128 sha, rounds 125–128 from the retry).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (bvtqg1k0t).
 - 07:22Z addendum: R-s101 endpoint validation 11094459 all_pass (attempt a2 in metrics and round_0128; sha match; 132 round rows = 128 distinct; hard truncation 777/8,192 = 9.5%, aux 126/8,192 = 1.5%). Evidence `research/evidence/endpoints/endpoint_qis-main-R-s101-sym.json`.
+
+## Review 54 — 2026-11-09 08:05Z (3:05 AM EST Mon)
+1. **Changes.** Monitor 11094805: H-s101 127; R-s202 33 (12,288 from round 33); U-s202 19.
+2. **Valid?** Yes; R-s101 and U-s101 endpoints validated; R-s202 resume at 16 confirmed (`resume` event).
+3. **Surprises.** H-s101 round-120 save failed (Errno 512); round 124 committed.
+4. **Risks.** Margin ≈ 3 h (D106). H-s101 final save under slow /data.
+5. **Next jobs / limits.** General 3/3; preempt 4/6 queued (no starts).
+6. **Most important.** On H-s101 completion: validate; start test evaluations on its slot. Capcheck for seed-202 after both pass round 35.
+7. **Reconciliation.** Slurm ↔ ledger agree (7 owned nonterminal jobs). Watcher alive (bvtqg1k0t).

@@ -386,3 +386,13 @@ Actions:
 Provenance: canonical R-s202 rounds 17+ = the resumed job's; metrics rows after its `resume` event win (last occurrence).
 Rounds 1–16 at cadence 4 and 17–128 at 16 is a logging/recovery difference only. Risk accepted: a node failure on general
 loses ≤ 16 rounds.
+
+## D106 — 2026-11-09 08:30Z — forecast after D103/D105
+Monitor 11094805 (≈08:25Z): H-s101 round 127 (mean last-6 921 s); R-s202 33 distinct rounds (resumed at 16 at 06:24Z; round 33
+is its first 12,288 round; checkpoint 32 writing); U-s202 19 (started 07:06Z; checkpoint 16 committed in 15 min).
+H-s101 also had an Errno 512 failure at round 120 (124 committed). Projections: H-s101 ends ≈ 10:00–10:30Z (round-128
+evaluations + blocking save); R-s202 ≈ 95 rounds × 780 s + 3 evaluations → ≈ 10 Nov 07:30Z; U-s202 ≈ 13 × 300 s + 96 × 720 s
++ 4 evaluations → ≈ 10 Nov 07:30Z. Test evaluations: s101 runs and base on the H-s101 slot from ≈ 10:30Z (≈ 5 h each);
+s202 runs on their own slots from ≈ 07:30Z → last ends ≈ 10 Nov 12:30–13:00Z (7:30–8:00 AM EST). Margin to 16:00Z ≈ 3 h,
+down from 5.5 h (D100) because of the failed final save and the restarts. Report drafting proceeds in parallel on the
+s101 results so that only the seed-202 rows remain at the end.
