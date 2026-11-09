@@ -411,3 +411,8 @@ R-s202 65 rounds ≈ 8.5 h + 3 evaluations → ends ≈ 21:30–23:00Z today; U-
 ends ≈ 10 Nov 00:30–02:30Z. Ranges allow round times to rise to D106's rate in the remaining rounds. Seed-202 test evaluations
 (≈ 5 h each) then end ≈ 10 Nov 03:00–07:30Z. Margin to 16:00Z ≈ 8–13 h (D106: ≈ 3 h). No action changes: the D107 order
 stands; H-s202 (≈ 29.5 h on 12k, by H-s101) still cannot finish by the deadline and stays pending on preempt only.
+
+## D109 — 2026-11-09 14:16Z — test U-s101 moved to general (D107 step)
+Test R-s101 11095106 COMPLETED 14:14Z (general, 4:23 elapsed; allocation ended, verified with sacct and squeue). Test
+U-s101 11095118 (ledger-owned) moved preempt → general/normal at 14:16Z, the next step of the D107 order. Test outcomes
+remain unread until all training ends (A13).
