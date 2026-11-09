@@ -475,3 +475,9 @@ Slot plan (general, 3 GPUs; from ≈ 23:45Z): slot of test H-s101 → diagnostic
 R-s202 endpoint validation + test, then diagnostic r0; U-s202 slot → U-s202 validation + test. Expected: all GPU work
 done ≈ 10 Nov 10:00–12:00Z; a partial r64 (complete seed sets only) is reported as partial (A9). Old diagnostic jobs
 (pending, never started, cost 0) are cancelled and resubmitted at commit 020b08b after the suite passes.
+D114 execution (21:20Z): suite job 11099032 46/46 passed (includes the new resume test). Old diagnostic jobs 11079411 (r0)
+and 11084344 (r64) cancelled (ledger-owned; pending since submission, never started; cost 0). Resubmitted at commit
+f3c70b5: r0 11099083 (8 h), r64 11099088 (14 h), both queued on preempt; r64 moves to general when test H-s101 ends.
+Report pipeline: training venv has no matplotlib; figures use a separate venv `$PROJ_DATA/env/venv-report`
+(matplotlib 3.9.2, built by `qis-report-dry`; training venv untouched). First dry run 11099043 failed on the import
+(no output; ≈ 0 CPU-min); retry 11099061.
