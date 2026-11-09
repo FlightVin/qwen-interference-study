@@ -577,3 +577,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202 retry, test U-s101); preempt 5/6 owned, all pending.
 6. **Most important.** Confirm U-s202 resume at round 64 and R-s202 round-96 commit (monitor ≈ 19:10Z). On test U-s101 end (≈ 18:45Z): move test-base to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bx36np6gr).
+
+## Review 65 — 2026-11-09 19:10Z (2:10 PM EST Mon)
+1. **Changes.** Test U-s101 11095118 COMPLETED 18:40Z; test-base 11089196 moved to general (D112), started 18:42Z, precheck ok. Monitor 11098508 (≈19:08Z): U-s202 retry 11097811 `start` + `resume` round 64 at 18:10Z (load ≈ 24 min); now at round 70. R-s202 at round 97; round-96 evaluations logged; round-96 save started 18:28Z and not committed after ≈ 40 min.
+2. **Valid?** Yes. Last 6 rounds: R mean 665 s (includes round-96 evaluations), truncation 47/384; U mean 557 s, truncation 54/384; clip ≤ 4.3e-4; ratio quantiles within [0.85, 1.14].
+3. **Surprises.** None new; /data writes slow again (round-96 save ≥ 40 min).
+4. **Risks.** R-s202 last valid checkpoint still round 64 until round 96 commits. Forecast: R-s202 ≈ 31 rounds → ends ≈ 00:45–01:45Z Tue; U-s202 ≈ 58 rounds → ends ≈ 03:30–05:00Z Tue (D111). Last test ≈ 08:00–10:00Z. Margin ≈ 6–8 h.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, test-base); preempt 4/6 owned, all pending.
+6. **Most important.** Confirm R-s202 round-96 commit at next monitor (≈ 21:10Z). On test-base end (≈ 23:15Z): move test H-s101 to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (brhzz0nec).
