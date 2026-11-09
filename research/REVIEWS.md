@@ -559,3 +559,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 owned, all pending.
 6. **Most important.** Watch R-s202 round-96 save (next monitor ≈ 18:15Z). On test U-s101 end (≈ 1:45 PM EST): move test-base to general (D107).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, no events).
+
+## Review 63 — 2026-11-09 17:05Z (12:05 PM EST Mon)
+1. **Changes.** None in Slurm since Review 62. STATE "Next actions" rewritten (stale items: s202 capcheck done; s101 runs done; D108–D110 state).
+2. **Valid?** Yes. General 3/3 in use (R-s202, U-s202, test U-s101; checked 16:46Z).
+3. **Surprises.** None.
+4. **Risks.** R-s202 last valid checkpoint is round 64 (D110); round-96 save pending.
+5. **Next jobs / limits.** General 3/3; preempt 5/6 owned, all pending.
+6. **Most important.** Monitor ≈ 18:15Z to confirm R-s202 round-96 save. On test U-s101 end (≈ 18:45Z): move test-base to general (D107).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b93cczsj4, PID 77279; DNS errors during the 16:00Z outage, recovered).

@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-09 16:40Z (Review 62; A11 resume; cap 12,288).
+Updated 2026-11-09 17:05Z (Review 63; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -41,8 +41,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. All six a2 runs submitted; s101 runs train on general. Seed-202 order on general (D93): R-s202, U-s202, then test evaluations; H-s202 only if capacity allows.
-2. Cap transition verified for all s101 runs (D89, D92, D94); repeat capcheck for seed-202 runs after their round 35.
-3. Truncation study done on dev (D86, D87). Remaining for the report: truncation by arm and prompt type from a2 training records after round 33.
-4. Hourly: forecast, truncation by arm and role, storage; companions `*-a2-curves` on W&B.
-5. Forecast (D93): six runs + 7 test evals do not fit by the deadline on 3 general GPUs (H 12k ≈ 16 min/round). Plan: R−U both seeds first; H-s202 conditional. D108 (supersedes D106): seed-202 runs end ≈ 9 Nov 21:30Z–10 Nov 02:30Z; last test evaluation ≈ 10 Nov 03:00–07:30Z; margin ≈ 8–13 h.
+1. s101 runs done and validated (U, R, H all_pass). Seed 202 on general: R-s202 ends ≈ 23:00Z, U-s202 ≈ 01:00Z Tue (D108, Review 62). H-s202 cannot finish by the deadline; stays preempt-only (H−R rests on seed 101; report marks it partial).
+2. Cap transition verified for all six runs (D89, D92, D94; seed 202 capcheck 11095700).
+3. Test evaluations (D107, D109): R-s101 done (unread); U-s101 running; then base 11089196, then H-s101 11095486 on that slot; seed-202 tests on their own slots after endpoint validation. Outcomes unread until all training ends (A13).
+4. R-s202 last valid checkpoint round 64 (round-80 save failed, D110); confirm round-96 save at next monitor.
+5. Report (CHECKLIST 7.4): A13 lead table, attempt-a2 assertion, truncation by arm and prompt type after round 32, compute incl. failed attempts; audit; `reports/REPORT.md` by 10 Nov 16:00Z.
