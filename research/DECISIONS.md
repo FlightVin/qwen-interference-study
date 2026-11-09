@@ -516,3 +516,23 @@ its test ends), keeping model.pt + state.json (§11 retirement rule; the test ev
 Contingency fixed now, before any further result: if R-s202's final save fails (exit 5), it gets its one recorded
 retry from its latest committed checkpoint (112 if that commits, else 64). From 64 the retry cannot finish with a test
 before 16:00Z; R-s202's test row is then reported as missing (A9.5).
+
+## D117 — 2026-11-09 21:55Z — prune result; U-s202 failed again; resumed after the root cause was fixed
+Prune `qis-prune-tmp` 11099764 (21:24–21:28Z) deleted 164 GB, every path logged (`research/evidence/storage/
+prune_11099764_deleted.txt`): `.tmp` failed writes H-s101 r120 8.1, R-s101 r108 19.6 and r120 18.8, R-s202 r80 21.9 and
+r96 8.1 GB; superseded a1 trees H/R/U-s101 21.9 GB each. Account quota 495 → 425 GB used (76 GB free; floor 50 GiB).
+U-s202 retry 11097811 FAILED at 21:31:06Z (3:45 h): `InterruptedError: [Errno 4]` closing `train_r0080.jsonl.gz`
+(run.py:355). Errno 4 (EINTR) and Errno 512 (ERESTARTSYS) are the same mechanism: a signal interrupts a slow NFS call
+and Python does not retry close(). The NFS calls were slow because the account quota was full (D116); this failure
+came 3 min after the prune ended, while the in-flight close was still affected. LATEST = round 64 (round-80 save
+started 20:38Z, never committed); `qis-u202-recover-prep2` 11100079 moved train_r0064–r0080 (17 files) to
+`records/superseded-11097811/`; metrics last line valid. 3.75 GPU-h charged.
+Decision: resume U-s202 a second time (its D111 retry is used; D111 said a second failure goes to the owner). Reasons:
+the owner authorised resuming project jobs without asking and asked that all six runs keep progressing (A13); the
+one-retry rule guards against repeating an undiagnosed failure, and this cause is now diagnosed and removed (quota 99% →
+85% → ≈ 80% after the optimizer retirement below). The owner is told at once and may cancel. A third failure stops the
+run; U-s202 is then reported as missing (A9.5).
+Storage for peak writes: `qis-prune-optim` 11100135 retires optimizer state of R-s101 and U-s101 round_0128 (their test
+evaluations reloaded model.pt with matching sha256; endpoint validation passed; no planned branch uses them; model.pt
+and state.json kept) and removes U-s202's dead round_0080.tmp. Forecast: U-s202 from round 64 ≈ 25 min load + 64 rounds
+× ≈ 600 s + 2 evaluations ≈ 11.5 h → ends ≈ 10 Nov 09:30Z; test ≈ 4.5 h → ≈ 14:00Z; report must then finish in ≈ 2 h.
