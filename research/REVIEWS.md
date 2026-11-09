@@ -613,3 +613,12 @@
 5. **Next jobs / limits.** General 3/3; preempt: H-s202, diag r0, diag r64 pending. Quota ≤ 366/500 GB.
 6. **Most important.** Move diag r64 to general when test H-s101 ends (≈ 23:45Z); validate R-s202's endpoint and start its test when it ends.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize; one ssh timeout logged, recovered).
+
+## Review 69 — 2026-11-09 23:05Z (6:05 PM EST Mon)
+1. **Changes.** No job state change since Review 68. Seed-202 tests queued behind their runs on general (D118). Suite 47/47 (11100305); REPORT.md draft committed.
+2. **Valid?** Yes.
+3. **Surprises.** None.
+4. **Risks.** U-s202 critical path (ends ≈ 09:00Z, test ≈ 13:30Z). Quota ≤ 366/500 GB.
+5. **Next jobs / limits.** General: R-s202, U-s202, test H-s101 running; tests R/U-s202 pending on dependencies. Preempt: H-s202, diag r0, diag r64 pending.
+6. **Most important.** Move diag r64 to general when test H-s101 ends (≈ 23:45Z).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize, PID 3025).

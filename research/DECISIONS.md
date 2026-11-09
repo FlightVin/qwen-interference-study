@@ -540,3 +540,10 @@ D117 execution (21:57Z): `qis-prune-optim` 11100135 deleted R-s101 and U-s101 ro
 U-s202 round_0080.tmp (21.9 GB); model.pt (8,127,059,673 bytes) and state.json kept in both. Quota now 366/500 GB used
 (≥ 135 GB free). Deletion logs: `research/evidence/storage/qis-prune-tmp_deleted.txt`, `qis-prune-optim_deleted.txt`.
 U-s202 resume 11100159 submitted at d90dd8c (recipe d01e221ecd03, unchanged) and moved to general/normal.
+
+## D118 — 2026-11-09 23:10Z — seed-202 tests queued behind their runs on general
+Test R-s202 11100782 (afterany R-s202 11094190) and test U-s202 11100785 (afterany U-s202 11100159) submitted at 73597a9
+and moved to general/normal, so each GPU passes from training to its test without an orchestrator wake-up overnight.
+Their prechecks require RUN_COMPLETE and round_0128 model.pt sha256 = state.json, so a failed run makes its test stop in
+seconds. Endpoint validation (`qis-validate-endpoints`, CPU) runs after each run ends, in parallel with the test; a
+validation failure would void the test row (recorded, not hidden). Test outcomes stay unread until all training ends.
