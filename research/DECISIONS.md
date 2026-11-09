@@ -330,3 +330,25 @@ U-s101 (11081725) COMPLETED 0:0 at 02:40:59Z (elapsed 22:37:01; allocation ended
 qis-main-R-s202-sym, sha 9d6349a) moved preempt → general/normal at ≈02:42Z and started immediately on babel-w5-24.
 Endpoint validation `qis-validate-endpoints` (11092019, commit c430002) submitted for every run with round_0128.
 Preempt now 5/6 owned (diag r0, U-s202, H-s202, diag r64, test-base). R-s202 projected ≈ 25–27 h → ≈ 10 Nov 04:00–06:00Z.
+
+## D103 — 2026-11-09 04:30Z — R-s101 final checkpoint failed (transient /data error); one recorded retry from round 124
+Evidence: job 11081724 FAILED 5:0 at 04:19:06Z (elapsed 1-01:17:31 = 25.3 GPU-h, charged). Exit 5 = `final_checkpoint_failed`
+(run.py:378–380). `round_0128.tmp` holds full-size model.pt and optim.pt but no state.json (listing job 11092924); the
+blocking save ran ≈ 03:26–04:19Z. Same pattern as the Errno 512 failures at rounds 108 and 120 and R-s202 round 4 on another
+node (Reviews 48, 50) → transient /data infrastructure error, not code or data. Last valid checkpoint: round_0124
+(LATEST.json; sha-verified at write). Rounds 1–128, all scheduled evaluations up to round 128 and the training curve were
+complete; only the final checkpoint is missing, and the test evaluation needs it.
+Action (one recorded retry, agent.md): (1) job 11092933 moved the failed trajectory's records train_r0124–r0127 and
+eval_{dev,probe_J_R,probe_J_U}_r0128 into `runs/qis-main-R-s101-sym/records/superseded-11081724/` (nothing deleted),
+because the trainer skips an evaluation whose records file exists and would otherwise pair stale round-128 evaluations
+with the replayed policy; (2) resubmitted qis-main-R-s101-sym as 11092945 (commit 0afd6e8: no diff to 9d6349a in
+src/qis/train, verify, prompts, seeds; recipe hash 71f6f8b7ef45 = original; attempt a2) after confirming 11081724's
+allocation ended; moved to general; running since 04:27Z. It resumes from round_0124 and replays rounds 125–128
+(≈ 1 h), reruns the round-128 evaluations (≈ 1 h) and saves round_0128.
+Provenance: canonical rounds 125–128 and round-128 evaluations = the retry's (retained trajectory). metrics.jsonl holds
+both; analysis keeps the rows after the retry's `resume` event (last occurrence per round/panel; wandb_companion and
+curves already take the last occurrence / the records files). The superseded records and the round-128 dev 0.710 of the
+failed trajectory are kept as evidence only. If this retry's final save fails too, stop and investigate /data (no
+further automatic retries).
+Slot effect: this general slot runs the R-s101 retry (≈ 2–2.5 h) before U-s202 (D93 order otherwise unchanged). U-s202
+then ends ≈ Mon 10 PM EST; its test evaluation ≈ Tue 3 AM EST, still before R-s202's (≈ 5:30 AM EST).
