@@ -396,3 +396,10 @@ evaluations + blocking save); R-s202 ≈ 95 rounds × 780 s + 3 evaluations → 
 s202 runs on their own slots from ≈ 07:30Z → last ends ≈ 10 Nov 12:30–13:00Z (7:30–8:00 AM EST). Margin to 16:00Z ≈ 3 h,
 down from 5.5 h (D100) because of the failed final save and the restarts. Report drafting proceeds in parallel on the
 s101 results so that only the seed-202 rows remain at the end.
+
+## D107 — 2026-11-09 09:15Z — test-evaluation order on the H-s101 general slot
+Primary contrast first: `qis-test-R-s101-sym` (11095106) and `qis-test-U-s101-sym` (11095118) queued on the two free preempt
+slots (preempt 6/6 owned; they start there only if preempt frees). When H-s101 ends, move to general in order: R-s101 →
+U-s101 → base (11089196) → H-s101 (submitted after its validation). Each ≈ 5 h (limit 9 h). Seed-202 test evaluations run
+on the seed-202 slots when those runs end (≈ 10 Nov 07:30Z). Test outcomes are not read until all training has ended and
+inform no training decision (A13).
