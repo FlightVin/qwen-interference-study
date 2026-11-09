@@ -477,3 +477,4 @@
 5. **Next jobs / limits.** General 3/3 (H-s101, R-s202, U-s202); preempt 5/6 queued. On H-s101 end: test evaluations on its general slot (`qis-test-base` first unless it started on preempt).
 6. **Most important.** Confirm R-s101 endpoint validation (attempt a2, round_0128 sha, rounds 125–128 from the retry).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (bvtqg1k0t).
+- 07:22Z addendum: R-s101 endpoint validation 11094459 all_pass (attempt a2 in metrics and round_0128; sha match; 132 round rows = 128 distinct; hard truncation 777/8,192 = 9.5%, aux 126/8,192 = 1.5%). Evidence `research/evidence/endpoints/endpoint_qis-main-R-s101-sym.json`.
