@@ -352,3 +352,17 @@ failed trajectory are kept as evidence only. If this retry's final save fails to
 further automatic retries).
 Slot effect: this general slot runs the R-s101 retry (≈ 2–2.5 h) before U-s202 (D93 order otherwise unchanged). U-s202
 then ends ≈ Mon 10 PM EST; its test evaluation ≈ Tue 3 AM EST, still before R-s202's (≈ 5:30 AM EST).
+
+## D104 — 2026-11-09 05:20Z — /data write slowdown threatens R-s202; checkpoint-cadence option prepared, trigger set
+Evidence (monitor 11093383, ≈05:10Z): R-s101 retry 11092945 resumed at round 124 (`resume` event 04:51Z; checkpoint load
+24 min) and completed round 125. Checkpoint writes (22 GB each) now take 55–75 min (≈ 6 MB/s) vs 2–5 min before:
+H-s101 round 112 04:01→04:57Z; R-s202 round 8 03:44Z → still busy when round 12 finished (Saver serialises writes, so
+round 12's save waited ≈ 57 min while the GPU idled; rounds 9–12 took 1,017 s of compute). Errno 512 failures on 4 saves
+in 3 runs on 3 nodes. Projection without stalls: R-s202 ends ≈ 10 Nov 07:10Z, test evaluation ≈ 12:10Z (margin ≈ 4 h).
+With a ≈ 1 h stall every 4 rounds it would not finish before the deadline.
+Option (operational, not scientific; PROTOCOL does not fix `ckpt_every`): raise `ckpt_every` 4 → 16 for seed-202 runs
+on general (non-preemptible), cutting writes 4×; cost: restart R-s202 from its latest committed checkpoint (≤ 4 rounds +
+≈ 25 min load) and a larger loss window on a node failure. U-s202 (not started) could take it at no restart cost.
+Trigger: `qis-ckpt-watch` 11093453 reports when R-s202's round-12 checkpoint commits. If that write takes > 20 min,
+implement the change through `make_main_exps.py` (no hand edits), validate the generated config, and apply it to U-s202
+before it starts and to R-s202 by restart. If writes are back to ≤ 10 min, no change.

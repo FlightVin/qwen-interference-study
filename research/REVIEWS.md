@@ -450,3 +450,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** On R-s101 completion: validate endpoint; move U-s202 (11081731) to general.
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs; monitor and inspect jobs done). Watcher alive (b68d3juv3).
+
+## Review 51 — 2026-11-09 05:05Z (12:05 AM EST Mon)
+1. **Changes.** R-s101 11081724 FAILED at the final save (Errno 512); records preserved; retry 11092945 resumed at round 124 on general (D103). Monitor 11093383: retry at 125, H-s101 115, R-s202 12.
+2. **Valid?** Yes; the retry continues the retained a2 trajectory from a sha-verified checkpoint; superseded round-125–128 records kept.
+3. **Surprises.** /data writes ≈ 6 MB/s (22 GB in 55–75 min); GPU idles while a save waits for the previous one (R-s202 ≈ 57 min).
+4. **Risks.** R-s202 cannot meet the deadline if stalls persist (D104).
+5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
+6. **Most important.** Decide the checkpoint-cadence change on the `qis-ckpt-watch` 11093453 result (D104).
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs + ckpt-watch). Watcher alive (bm5hr0tck).
