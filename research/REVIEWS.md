@@ -459,3 +459,12 @@
 5. **Next jobs / limits.** General 3/3; preempt 5/6 queued (no starts).
 6. **Most important.** Decide the checkpoint-cadence change on the `qis-ckpt-watch` 11093453 result (D104).
 7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs + ckpt-watch). Watcher alive (bm5hr0tck).
+
+## Review 52 — 2026-11-09 06:05Z (1:05 AM EST Mon)
+1. **Changes.** D104 trigger met → D105: R-s202 restarted from round 16 with `ckpt_every` 16 (11094190, general); U-s202 resubmitted with 16 (11094037, preempt queue). R-s101 retry 11092945 replaying rounds 125–128.
+2. **Valid?** Yes; both seed-202 recipes generated (not hand-edited), default regeneration verified identical; superseded records preserved.
+3. **Surprises.** R-s202 round-12 save failed after ≈ 51 min (Errno 512 pattern); round 16 committed in ≈ 14 min (/data slightly better).
+4. **Risks.** R-s101 retry's final save under slow /data (no further automatic retry, D103). R-s202 restart cost ≈ 3 rounds + load.
+5. **Next jobs / limits.** General 3/3 (H-s101, R-s101 retry, R-s202); preempt 5/6 queued.
+6. **Most important.** On R-s101 retry completion: validate; move U-s202 11094037 to general.
+7. **Reconciliation.** Slurm ↔ ledger agree (8 owned nonterminal jobs). Watcher alive (bjphtsetd).
