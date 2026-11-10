@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-10 07:15Z (Review 77; A11 resume; cap 12,288).
+Updated 2026-11-10 08:10Z (Review 78; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -44,5 +44,5 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 1. Five of six runs done and validated (H/R/U-s101, R-s202 all_pass). U-s202 (11100159) at round 114 of 128 at 07:08Z; ends ≈ 09:10Z (4:10 AM EST). H-s202 is a partial run only (A16, D128; stop by 19:00Z).
 2. Sealed tests done, outcomes unread (A13): base, H-s101, R-s101, U-s101, R-s202. Test U-s202 (11100785) runs after U-s202 (≈ 09:10–13:40Z).
 3. At U-s202 end: validate its endpoint; `qis-report-final` (11103418) unseals the five completed tests; rerun after test U-s202.
-4. A15 exploratory items: diagnostics r64 (11101908) and r0 (11102499) running; cue panel 11104738 (now with analysis, D129) after diag r0 and U-s202; interference trace rerun at the end.
+4. A15 exploratory items: diag r0 (11102499) ends ≈ 08:20Z, then partial H-s202; diag r64 (11101908) ends ≈ 10:30–11:00Z, then cue panel 11104738 (with analysis, D129; chains D130); interference trace rerun at the end.
 5. Then: cost table, independent recomputation and audit, `reports/REPORT.md` (A13 table, three A15 questions, cue panel separate, A16 appendix, omissions), by Wed 11 Nov 00:30Z (Tue 7:30 PM EST).

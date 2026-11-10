@@ -694,3 +694,12 @@
 5. **Next jobs / limits.** General 3/3 (U-s202, diag r64, diag r0); chains: A → cue 11104738; B → test U-s202 11100785; C → H-s202 partial. Preempt CPU: report-final 11103418.
 6. **Most important.** U-s202 end → endpoint validation and report-final.
 7. **Reconciliation.** Slurm ↔ ledger agree (11102440 CANCELLED by me, in ledger, 0 GPU-h). Watcher re-armed (bw7mm9jmc).
+
+## Review 78 — 2026-11-10 08:05Z (3:05 AM EST Tue)
+1. **Changes.** Diag r0: 11 of 12 seed-branch rows done (last ends ≈ 08:20Z). Diag r64: seeds 4101–4103 done (9 rows); seed 4104 left, ends ≈ 10:30–11:00Z. U-s202 on schedule (ends ≈ 09:10Z).
+2. **Valid?** Yes. J values seen in logs only; analysis waits for the full JSONL.
+3. **Surprises.** None.
+4. **Risks.** One general GPU would have idled ≈ 50 min after diag r0. Fixed (D130).
+5. **Next jobs / limits.** Chains now: A diag r0 → H-s202 partial; B U-s202 → test U-s202; C diag r64 → cue. General 3/3.
+6. **Most important.** Keep GPUs busy: chain swap done (D130). Next: U-s202 end → validation, report-final.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bw7mm9jmc).

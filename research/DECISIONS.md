@@ -697,3 +697,11 @@ panel positions 0, 6, 12, 18; sample 0; every policy and form). The sample posit
 exists. Recipe `qis-cue-eval` gained phase `analyse`; generation settings are unchanged. Pending job 11102440 (never
 started; 0 GPU-h) was cancelled and replaced by 11104738 with the same dependencies (afterany diag r0 11102499 and
 U-s202 11100159), moved to general/normal as in D123. The 3-GPU ceiling holds: it starts only after slot A frees.
+
+## D130 — 2026-11-10 08:10Z — general chains swapped so no GPU idles
+At 08:05Z diag r0 (11102499) had one branch left (≈ 10 min per branch; ends ≈ 08:20Z). The cue job 11104738 also waits
+for U-s202 (ends ≈ 09:10Z), so its slot would idle ≈ 50 min. Diag r64 (11101908) has seed 4104 left (≈ 47 min per
+branch; ends ≈ 10:30–11:00Z). Change: H-s202 11082192 now afterany diag r0; cue 11104738 now afterany diag r64 AND
+U-s202. Chains: A diag r0 → H-s202 (partial; stop rule 19:00Z unchanged, D128); B U-s202 → test U-s202; C diag r64 →
+cue. Each chain is serial, so the 3-GPU ceiling holds. Cost: the cue panel starts ≈ 1.5 h later (ends ≈ 13:30Z), still
+far before the deadline; H-s202 gains ≈ 2 h. Interim diag progress read from job logs (J values only; not analysed).
