@@ -777,3 +777,12 @@
 5. **Next jobs / limits.** General 1/3 (H-s202). Preempt CPU: monitor.
 6. **Most important.** Confirm H-s202 is still advancing (stall check); then the 19:00Z steps.
 7. **Reconciliation.** Slurm ↔ ledger agree (1 live job + monitor). Watcher alive (bb1hd5lk6).
+
+## Review 87 — 2026-11-10 17:05Z (12:05 PM EST Tue)
+1. **Changes.** None in Slurm. Appendix inputs gathered: R-s202 / U-s202 dev pass@1 at rounds 0, 32, 64 = 0.403 / 0.422, 0.599 / 0.611, 0.613 / 0.679.
+2. **Valid?** Yes.
+3. **Surprises.** Round-0 dev of the same base model: 0.403 (H, R) vs 0.422 (U). Same size as the D138 evaluation noise; the appendix will state it.
+4. **Risks.** None new.
+5. **Next jobs / limits.** General 1/3 (H-s202).
+6. **Most important.** 18:05Z review: check H-s202 progress toward round 64 (D139).
+7. **Reconciliation.** Slurm ↔ ledger agree (1 live job). Watcher alive (bb1hd5lk6).
