@@ -731,3 +731,12 @@
 5. **Next jobs / limits.** General 3/3 (cue, test U-s202, H-s202); chain C → reference check.
 6. **Most important.** Wait for test U-s202 → final report-final; meanwhile cost table prep.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (buy5w20ki).
+
+## Review 82 — 2026-11-10 12:05Z (7:05 AM EST Tue)
+1. **Changes.** Interim cost 220.8 GPU-h over 205 allocations (11106097). Cue 11104738 loaded its 6th of 10 policy-forms at 11:51Z (≈ 16 min each). Monitor 11106458 submitted for an H-s202 progress snapshot.
+2. **Valid?** Yes. Each cue policy load passed its weight check.
+3. **Surprises.** None.
+4. **Risks.** Cue ends ≈ 13:00Z, not 12:35Z (16 min per form). Reference check then ends ≈ 15:00Z. Still well before the 00:30Z deadline.
+5. **Next jobs / limits.** General 3/3 (cue, test U-s202, H-s202); chain cue → diag-ref. Preempt CPU: monitor.
+6. **Most important.** Test U-s202 end (≈ 13:40Z) → report-final → seed-202 rows of the lead table.
+7. **Reconciliation.** Slurm ↔ ledger agree (4 live jobs, all project-owned). Watcher alive (bthhtqk89).
