@@ -562,3 +562,15 @@ Test H-s101 11095486 COMPLETED 23:42Z (4:27; general). Structure checked, outcom
 4,096 completions, cap 12,288, test-final, 20.1 M tokens, truncated 10.9%. All four s101-slot tests are done (base, R,
 U, H). Diagnostic r64 11099088 (ledger-owned; pending since submission) moved preempt → general/normal at 23:45Z
 (allocation of 11095486 ended).
+
+## D121 — 2026-11-10 01:05Z — diagnostic r64 OOM (code defect, fixed); both diagnostics resubmitted
+Job 11099088 (general, babel-x5-28) FAILED 00:58Z after 1:09:50 (1.16 GPU-h charged): `torch.OutOfMemoryError` in
+`opt.load_state_dict` inside `restore()` (44.38 of 44.42 GiB in use). Cause: the no-update branch's evaluation leaves the
+vLLM engine awake, and restoring the 13.8 GB optimizer snapshot to the GPU then exceeds memory. Training always sleeps the
+engine before learner work; the diagnostic loop did not. The defect was in the original code too: the diagnostic had
+never run on a GPU (CPU unit tests only, D72), so it was not caught. Deterministic code defect, not infrastructure.
+Fix (commit 4b47386): `roll.sleep()` before each `restore()`. Results unchanged in definition. The no-update ("none")
+row for r64 was written and flushed before the crash; the resume (D114) skips it. Resubmitted r64 11101908 (general) and
+replaced pending r0 11099083 (old commit with the same defect; never started; cost 0) by 11101910 (preempt; moves to the
+R-s202 slot after its test). r64 now has ≈ 12 branch evaluations left (≈ 9–11 h) → ends ≈ 10:00–12:00Z; a partial run
+reports complete seed sets only (A9.5).
