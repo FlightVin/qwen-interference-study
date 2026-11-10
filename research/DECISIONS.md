@@ -614,3 +614,22 @@ C: diag r64 (≈ 9–11 h). Projected GPU work ends ≈ 14:30Z; report finalizat
 3. *Local update (A15.3).* As PROTOCOL §8; ΔJ_H per branch and minibatch seed vs the matching source's no-update row.
 4. *Strategy cue (A15.4).* Dropped first if time tightens. Selection rule and IDs frozen in a later decision before any
    trained-policy evaluation.
+
+## D123 — 2026-11-10 02:20Z — strategy-cue panel frozen (A15.4, EXPLORATORY); cost forecast; diag r0 slot
+**Panel.** 24 unused official MATH test items (intermediate_algebra 14, algebra 10; L5 19, L4 5), selected by a delegated
+read-only agent from local annotations and the pinned MATH parquet (rev 21a5633) — no model output or difficulty number
+used. Rule (verbatim in `research/evidence/cue/panel_selection.json`): eligible = MATH test, final label central and not
+direct practice, confidence not low, no figure, unused in manifest/panels/calibration/a11 sample and never screened, no
+close text variant of any used item (word 3-gram Jaccard ≥ 0.5 or template match), single verifiable answer; order by
+sha256("cue-v1:"+id); manual structure check (factoring central AND another decision: construct an equation, choose a
+substitution, convert factors to a count, other named); first 24 accepted (rank 34 of 51 eligible). Orchestrator check:
+24 unique IDs, none in the manifest or panels by exact ID (one substring hit was `intermediate_algebra/test/00778`, a
+different item). Caveats: ≥ 18 items rest on annotation pass 1 only; three items share a construction template
+(00474, 00091, 00715) and two the sum-of-cubes idea (00819, 00561); two interval-answer items excluded untested.
+Frozen files: `data/cue/cue_v1_uncued.json` (sha256 c3399a42…), `data/cue/cue_v1_cued.json` (1b3aa7bf…; problem +
+"\n\nConsider whether a factorization could simplify the problem."). Same pool key and seed label → identical sampling
+seeds per (item, sample) across forms (paired). Frozen before any policy was evaluated on it.
+**Cost forecast** (measured throughput, D122): base 2 × 192 completions ≈ 5 min; each trained endpoint 2 × 192
+completions ≈ 10–15 min plus ≈ 3 min load → total ≈ 2–2.5 GPU-h; recipe `qis-cue-eval` (time 5 h), queued afterany
+U-s202 on general so all five policies run in one job (≈ 10:00–12:30Z). Dropped first if the schedule tightens.
+**Diag r0** 11101910 moved to general now; it takes the first free general GPU (test R-s202 ends ≈ 06:00Z).

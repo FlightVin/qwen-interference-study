@@ -1,0 +1,226 @@
+{
+ "name": "strategy_cue_explore_v1",
+ "status": "frozen before evaluating trained policies (IDs + rubric)",
+ "created": "2026-11-09",
+ "selection_rule": "Eligibility (all must hold): (1) official MATH test split (EleutherAI/hendrycks_math rev 21a5633); (2) final annotation label 'central' and direct_practice 'no' (third read > pass 2 > pass 1; pass-1-only items allowed and flagged); (3) annotation confidence not 'low'; figure 'no'; (4) ID not used in data/main_v1_manifest.json, data/panels/panels.json, the calibration panels (in-band items of data/screening/calib_*_calib16k8_counts.jsonl), research/evidence/a11 inspection sample, and never screened (any data/screening file); (5) not a close variant of any used or screened item (word-3-gram Jaccard >= 0.5, or >= 0.7 with numbers masked, or a manual same-template match); (6) gold answer is one verifier-checkable value (number, radical, polynomial expression, ordered pair); intervals and multi-value lists excluded; (7) manual reading of the reference solution confirms that factoring produces the answer and that the solution needs another decision (construct an equation, choose a substitution, convert factors into a count, or another named decision). Order: sort eligible items by sha256('cue-v1:' + id) ascending; review in that order; take the first 24 that pass (7). No model output or difficulty measurement was used.",
+ "rubric": "Strategy-cue rubric (exploratory panel). Include an item when: (a) the reference solution rewrites a polynomial expression as a product (trinomial, special product, grouping/SFFT, factor theorem/known root, common factor, or a product built from roots and then evaluated) and the answer is obtained through that product form (zero-product, sign analysis, divisor pairs, evaluation, cancellation); (b) factoring is not replaceable by a one-line computation, is not a side step inside a different main method (AM-GM, Cauchy-Schwarz, equality-case guessing), is not grouping on plain numbers, and is not a product built from roots only to expand and match coefficients (rubric v1.1 edge rules); (c) the solution also needs another decision, classed as: 'construct an equation' (translate words/geometry/conditions into the polynomial equation or inequality), 'choose a substitution' (new variable or argument such as x->1-x, x/y ratios, p(x^4)), 'convert factors into a count' (enumerate factor pairs/divisors/cases to count or sum), or 'other: <named>' (e.g. construct an auxiliary polynomial q(x)=p(x)-x). Labels follow research/RUBRIC.md v1-v1.3.",
+ "n": 24,
+ "items": [
+  {
+   "id": "intermediate_algebra/test/00474",
+   "problem": "Let $a,$ $b,$ $c$ be complex numbers satisfying\n\\begin{align*}\n(a + 1)(b + 1)(c + 1) &= 1, \\\\\n(a + 2)(b + 2)(c + 2) &= 2, \\\\\n(a + 3)(b + 3)(c + 3) &= 3.\n\\end{align*}Find $(a + 4)(b + 4)(c + 4).$",
+   "gold": "10",
+   "level": "Level 5",
+   "order_rank": 0,
+   "other_decision": "other: construct an auxiliary polynomial",
+   "rationale": "Builds q(x)=p(x)-x with roots 1,2,3, then uses the factored form: 'q(x) = (x - 1)(x - 2)(x - 3)' and evaluates p(4)."
+  },
+  {
+   "id": "intermediate_algebra/test/00458",
+   "problem": "The polynomial $p(x)$ satisfies $p(1) = 210$ and\n\\[(x + 10) p(2x) = 8(x - 4) p(x + 6)\\]for all real numbers $x.$  Find $p(10).$",
+   "gold": "336",
+   "level": "Level 5",
+   "order_rank": 1,
+   "other_decision": "other: choose special x-values, then a degree argument",
+   "rationale": "Plugs x=4,-10,-2 to find roots, writes 'p(x) = (x - 8)(x - 4)(x + 4) q(x)', then shows q is constant."
+  },
+  {
+   "id": "algebra/test/00996",
+   "problem": "Find the sum of the $x$-coordinates of all possible positive integer solutions to $\\frac1x+\\frac1y=\\frac17$.",
+   "gold": "78",
+   "level": "Level 5",
+   "order_rank": 2,
+   "other_decision": "convert factors into a count",
+   "rationale": "Clears denominators, then SFFT: '(x - 7)(y - 7) = 49'; the divisors 1,7,49 give x=8,14,56."
+  },
+  {
+   "id": "algebra/test/00778",
+   "problem": "Given that the absolute value of the difference of the two roots of $ax^2 + 5x - 3 = 0$ is $\\frac{\\sqrt{61}}{3}$, and $a$ is positive, what is the value of $a$?",
+   "gold": "3",
+   "level": "Level 5",
+   "order_rank": 3,
+   "other_decision": "construct an equation",
+   "rationale": "Builds an equation from the root difference, then 'factors as (a - 3)(61a + 75) = 0' and keeps the positive root."
+  },
+  {
+   "id": "intermediate_algebra/test/00159",
+   "problem": "There is a polynomial $P$ such that for every real number $x$,\n\\[\n  x^{512} + x^{256} + 1 = (x^2 + x + 1) P(x).\n\\]When $P$ is written in standard polynomial form, how many of its coefficients are nonzero?",
+   "gold": "341",
+   "level": "Level 5",
+   "order_rank": 5,
+   "other_decision": "convert factors into a count",
+   "rationale": "Splits off (x^3-1) factors to get P(x) explicitly, then counts nonzero coefficients: '170 ... another 170 ... total of 341'."
+  },
+  {
+   "id": "intermediate_algebra/test/00091",
+   "problem": "Let $p(x)$ be a polynomial of degree 5 such that\n\\[p(n) = \\frac{n}{n^2 - 1}\\]for $n = 2,$ 3, 4, $\\dots,$ 7.  Find $p(8).$",
+   "gold": "\\frac{3}{56}",
+   "level": "Level 5",
+   "order_rank": 6,
+   "other_decision": "other: construct an auxiliary polynomial",
+   "rationale": "Defines q(x)=(x^2-1)p(x)-x with roots 2..7: 'q(x) = (ax + b)(x - 2)(x - 3) ... (x - 7)', then solves for a,b."
+  },
+  {
+   "id": "algebra/test/01094",
+   "problem": "The harmonic mean of two positive integers is the reciprocal of the arithmetic mean of their reciprocals. For how many ordered pairs $(x,y)$ of positive integers is the harmonic mean of $x$ and $y$ equal to $20$?",
+   "gold": "9",
+   "level": "Level 5",
+   "order_rank": 7,
+   "other_decision": "convert factors into a count",
+   "rationale": "Turns the harmonic-mean condition into '(x-10)(y-10) = 100'; '100 ... has 9 factors' gives 9 pairs."
+  },
+  {
+   "id": "algebra/test/00992",
+   "problem": "What is the greatest possible value of $a$ in the system of equations $5a + 2b = 0$ and $ab = -10$?",
+   "gold": "2",
+   "level": "Level 4",
+   "order_rank": 8,
+   "other_decision": "construct an equation",
+   "rationale": "Adds the two equations to get one that factors: '(a+2)(b+5) = 0', then picks the case that maximises a."
+  },
+  {
+   "id": "algebra/test/00863",
+   "problem": "The sum of the product and the sum of two positive integers is $454$. Find the largest possible value of the product of their sum and their product.",
+   "gold": "33840",
+   "level": "Level 5",
+   "order_rank": 9,
+   "other_decision": "construct an equation",
+   "rationale": "Translates the words into 'ab+a+b=454', SFFT gives '(a+1)(b+1)=455'; factor pairs of 455 are enumerated and compared."
+  },
+  {
+   "id": "intermediate_algebra/test/00715",
+   "problem": "A cubic polynomial $f$ satisfies $f(0)=0, f(1)=1, f(2)=2, f(3)=4$. What is $f(5)$?",
+   "gold": "15",
+   "level": "Level 4",
+   "order_rank": 10,
+   "other_decision": "other: construct an auxiliary polynomial",
+   "rationale": "Sets g(x)=f(x)-x with roots 0,1,2: 'g(x) = kx(x - 1)(x - 2)', finds k from g(3)=1, evaluates f(5)."
+  },
+  {
+   "id": "intermediate_algebra/test/00430",
+   "problem": "Given that both $i - 3$ and $b$ are roots of $ax^3 + 9x^2 + ax - 30,$ where $a$ and $b$ are real numbers, find $a + b.$",
+   "gold": "\\frac{7}{2}",
+   "level": "Level 4",
+   "order_rank": 11,
+   "other_decision": "other: use the conjugate root to build a factor",
+   "rationale": "Finds a=2 from the complex root, builds '(x - i + 3)(x + i + 3) = x^2 + 6x + 10' and factors out (2x-3)."
+  },
+  {
+   "id": "intermediate_algebra/test/00860",
+   "problem": "For $0 < k < 6,$ the graphs of $\\frac{(x - k)^2}{9} + y^2 = 1$ and $\\frac{x^2}{9} + y^2 = 1$ intersect at $A$ and $C,$ and have $x$-intercepts at $B$ and $D$ respectively.  Compute the value of $k$ for which $ABCD$ is a square.\n\n[asy]\nunitsize(1 cm);\n\npath ellone = xscale(3)*Circle((0,0),1);\npath elltwo = shift((24/5,0))*xscale(3)*Circle((0,0),1);\npair A, B, C, D;\n\nA = intersectionpoints(ellone,elltwo)[0];\nC = intersectionpoints(ellone,elltwo)[1];\nB = (-3 + 24/5,0);\nD = (3,0);\n\ndraw(ellone);\ndraw(elltwo);\n\ndraw((-3.5,0)--(9,0));\ndraw((0,-1.5)--(0,1.5));\ndraw(A--B--C--D--cycle);\n\nlabel(\"$A$\", A, N, fontsize(10));\nlabel(\"$B$\", B, NW, fontsize(10));\nlabel(\"$C$\", C, S, fontsize(10));\nlabel(\"$D$\", D, NE, fontsize(10));\n[/asy]",
+   "gold": "\\frac{24}{5}",
+   "level": "Level 5",
+   "order_rank": 12,
+   "other_decision": "construct an equation",
+   "rationale": "Builds the square condition as an equation in k: '5k^2 - 54k + 144 = 0, which factors as (k - 6)(5k - 24) = 0', rejects k=6. Note: problem text contains Asymptote code; the text alone defines the configuration."
+  },
+  {
+   "id": "intermediate_algebra/test/00110",
+   "problem": "Let $p(x) = x^3 + ax^2 + bx + c$, where $a$, $b$, and $c$ are complex numbers.  Suppose that \\begin{align*} p(2009 + 9002\\pi i) = p(2009) = p(9002) = 0 \\end{align*}What is the number of nonreal zeros of $x^{12} + ax^8 + bx^4 + c$?",
+   "gold": "8",
+   "level": "Level 4",
+   "order_rank": 13,
+   "other_decision": "choose a substitution",
+   "rationale": "Recognises the polynomial as p(x^4), uses 'p(x^4) = (x^4 - (2009 + 9002 pi i))(x^4 - 2009)(x^4 - 9002)', counts nonreal roots per factor."
+  },
+  {
+   "id": "intermediate_algebra/test/00819",
+   "problem": "Let $a,$ $b,$ $c$ be nonzero real numbers such that\n\\[\\frac{a}{b} + \\frac{b}{c} + \\frac{c}{a} = 7 \\quad \\text{and} \\quad \\frac{b}{a} + \\frac{c}{b} + \\frac{a}{c} = 9.\\]Find\n\\[\\frac{a^3}{b^3} + \\frac{b^3}{c^3} + \\frac{c^3}{a^3}.\\]",
+   "gold": "157",
+   "level": "Level 5",
+   "order_rank": 14,
+   "other_decision": "choose a substitution",
+   "rationale": "Substitutes x=a/b, y=b/c, z=c/a, then uses 'x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + ... - yz)'."
+  },
+  {
+   "id": "algebra/test/01153",
+   "problem": "How many non-congruent right triangles are there, all of whose sides have positive integer lengths, and one of whose legs (i.e. not the hypotenuse) has length $162$?",
+   "gold": "4",
+   "level": "Level 5",
+   "order_rank": 15,
+   "other_decision": "convert factors into a count",
+   "rationale": "Writes 'x^2-y^2=162^2', factors '(x+y)(x-y)=2^2 x 3^8', counts valid factor pairs: 4 triangles."
+  },
+  {
+   "id": "algebra/test/00830",
+   "problem": "Two numbers are independently selected from the set of positive integers less than or equal to 5. What is the probability that the sum of the two numbers is greater than their product? Express your answer as a common fraction.",
+   "gold": "\\frac{9}{25}",
+   "level": "Level 5",
+   "order_rank": 19,
+   "other_decision": "convert factors into a count",
+   "rationale": "SFFT on the inequality: '(a-1)(b-1)<1' holds iff a=1 or b=1; counts 9 of 25 outcomes."
+  },
+  {
+   "id": "algebra/test/00561",
+   "problem": "If the sum of three real numbers is $0$ and their product is $17$, then what is the sum of their cubes?",
+   "gold": "51",
+   "level": "Level 5",
+   "order_rank": 20,
+   "other_decision": "other: relate symmetric sums by grouping",
+   "rationale": "Expands (x+y+z)^3, then groups terms to 'factor out a x+y+z term', e.g. 'xy(x+y+z) = 0', giving 3xyz=51."
+  },
+  {
+   "id": "algebra/test/01057",
+   "problem": "An audience of $450$ people is seated in an auditorium. Each row contains the same number of seats and each seat in the auditorium is occupied. With three fewer seats per row, and five extra rows, the same audience could still be seated, occupying all seats. How many rows does the auditorium have?",
+   "gold": "25",
+   "level": "Level 5",
+   "order_rank": 21,
+   "other_decision": "construct an equation",
+   "rationale": "Builds rs=450 and (r+5)(s-3)=450 from the words; reduces to 'r^2 + 5r - 750 = 0, which factors as (r + 30)(r - 25) = 0'."
+  },
+  {
+   "id": "intermediate_algebra/test/00304",
+   "problem": "Find the number of polynomials $P(x)$ of degree 4, with real coefficients, that satisfy\n\\[P(x^2) = P(x) P(-x).\\]",
+   "gold": "10",
+   "level": "Level 5",
+   "order_rank": 24,
+   "other_decision": "convert factors into a count",
+   "rationale": "Matches coefficients of P(x^2)=P(x)P(-x), factors several resulting equations, e.g. '(b - d)(b + d + 1) = 0' and '(b + 4)(b + 1)(b - 1)(b - 2) = 0', counts 10 polynomials."
+  },
+  {
+   "id": "intermediate_algebra/test/00329",
+   "problem": "Compute the number of ordered pairs $(a,b)$ of integers such that the polynomials $x^2 - ax + 24$ and $x^2 - bx + 36$ have one root in common.",
+   "gold": "12",
+   "level": "Level 5",
+   "order_rank": 28,
+   "other_decision": "convert factors into a count",
+   "rationale": "Eliminates the common root, factors '(b - a)(3a - 2b) = 12', and counts the 12 divisors of 12."
+  },
+  {
+   "id": "intermediate_algebra/test/00870",
+   "problem": "Let $f(x) = x^2 + 6x + 1$, and let $R$ denote the set of points $(x, y)$ in the coordinate plane such that $$\nf(x) + f(y) \\le 0\\quad {\\text{and}}\\quad f(x) - f(y) \\le 0.\n$$What integer is the area of $R$ closest to?",
+   "gold": "25",
+   "level": "Level 4",
+   "order_rank": 29,
+   "other_decision": "other: turn factor signs into a plane region",
+   "rationale": "Factors 'f(x) - f(y) = (x-y)(x+y+6)', reads the sign condition as two half-plane pairs, area = half the circle."
+  },
+  {
+   "id": "intermediate_algebra/test/00803",
+   "problem": "The function $f : \\mathbb{R} \\to \\mathbb{R}$ satisfies\n\\[x^2 f(x) + f(1 - x) = -x^4 + 2x\\]for all real numbers $x.$  Then $f(x)$ can be uniquely determined for all values of $x,$ except $f(\\alpha)$ and $f(\\beta)$ for some real numbers $\\alpha$ and $\\beta.$  Compute $\\alpha^2 + \\beta^2.$",
+   "gold": "3",
+   "level": "Level 5",
+   "order_rank": 32,
+   "other_decision": "choose a substitution",
+   "rationale": "Substitutes x -> 1-x, eliminates f(1-x), factors '(x^2 - x + 1)(x^2 - x - 1) f(x) = -(...)(x^2 - 1)'; exceptions are roots of x^2-x-1."
+  },
+  {
+   "id": "algebra/test/01144",
+   "problem": "Consider the function \\[ f(x) =\n\\begin{cases}\nax^2 & \\text{if } x \\geq a,\\\\\nax +2a& \\text{if } x <a,\n\\end{cases}\n\\]where $a$ is some number.\n\nWhat is the largest value of $a$ such that the graph of $y=f(x)$ intersects every horizontal line at least once?",
+   "gold": "2",
+   "level": "Level 5",
+   "order_rank": 33,
+   "other_decision": "construct an equation",
+   "rationale": "Turns 'every horizontal line is hit' into 'a^2 + 2a >= a^3', then '(a-2)(a+1) <= 0' gives a <= 2."
+  },
+  {
+   "id": "intermediate_algebra/test/00168",
+   "problem": "Find the number of second-degree polynomials $f(x)$ with integer coefficients and integer zeros for which $f(0)=2010.$",
+   "gold": "163",
+   "level": "Level 5",
+   "order_rank": 34,
+   "other_decision": "convert factors into a count",
+   "rationale": "Writes 'f(x) = k(x-a)(x-b)', so '2010 = kab'; counts assignments of prime factors and signs: 163."
+  }
+ ]
+}

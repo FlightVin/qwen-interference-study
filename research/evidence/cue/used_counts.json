@@ -1,0 +1,21 @@
+{
+ "_screened_not_used": 1464,
+ "_union_screened": 1751,
+ "_union_used": 528,
+ "_used_or_screened": 1992,
+ "a11_inspection": 15,
+ "calib_train_panel(reconstructed)": 59,
+ "calib_val_panel(reconstructed)": 56,
+ "manifest:dev": 53,
+ "manifest:hard": 46,
+ "manifest:probe_J_H": 32,
+ "manifest:probe_J_R": 28,
+ "manifest:probe_J_U": 32,
+ "manifest:related": 63,
+ "manifest:unrelated": 63,
+ "panels:probe_J_H": 32,
+ "panels:probe_J_R": 28,
+ "panels:probe_J_U": 32,
+ "panels:target_dev": 53,
+ "panels:target_test": 128
+}
