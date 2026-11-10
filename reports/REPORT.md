@@ -119,13 +119,34 @@ least one correct answer at an earlier appearance in the same run.
 groups than R in both seeds (5.0% vs 4.2%; 4.0% vs 3.4%). In U-s101, 34 of its 48 such groups included a response
 cut off at the length cap, so much of the loss is truncation, not wrong reasoning. Groups that left the "mixed" state
 went mostly to all-correct (mastery), not all-wrong (signal loss): H 124 vs 14, R-s101 121 vs 22, U-s101 106 vs 29,
-R-s202 94 vs 25, U-s202 122 vs 23. H trains on twice as many hard prompts per round, so it is not a dose-matched
+R-s202 94 vs 25, U-s202 122 vs 23. On matched cells (same prompt, same round, R and U), all-wrong in R only versus U
+only: 39 vs 41 (seed 101) and 30 vs 36 (seed 202), with 19 and 18 all-wrong in both. The U excess is small. H trains on twice as many hard prompts per round, so it is not a dose-matched
 comparison with R and U. Figure `figures/interference_windows.png`; the cap change after round 32 is marked.
 
-**Dev panel comparison.** [PENDING: lost/gained counts between scheduled dev evaluations per run.]
+**Dev panel comparison.** On the 53 dev problems, a problem is "lost" between two scheduled evaluations if it went
+from ≥ 1 correct of 16 to 0, and "gained" if the reverse. Totals over rounds 0 → 32 → 64 → 96 → 128:
 
-**Which links the evidence supports.** [PENDING final paragraph: practice choice → test success (section 2); update →
-local hard change (section 3); signal loss on solvable problems (section 4); with uncertainty for each.]
+| Run | Lost | Gained | Problems with 0 correct, round 0 → 128 |
+|---|---|---|---|
+| H-s101 | 10 | 20 | 18 → 8 |
+| R-s101 | 4 | 15 | 17 → 6 |
+| U-s101 | 5 | 17 | 18 → 6 |
+| R-s202 | 6 | 18 | 19 → 7 |
+| U-s202 | 7 | 19 | 18 → 6 |
+
+Every run gained 2 to 4 problems for each one it lost (H 2, the others 2.7–3.8). R and U lose within one problem of
+each other in each seed and gain within two. The dev panel
+shows the same picture as the training records: losses happen, but gains outnumber them, and the arms do not differ.
+
+**Which links the evidence supports.**
+1. Practice choice → test success: not supported. R − U is +0.042 in seed 101 and −0.044 in seed 202 (section 2).
+2. One unrelated update → lower hard success: not detected. Single-step changes stay below the ≈ 0.03 noise floor at
+   both checkpoints (section 3).
+3. Training → lost signal on solvable hard problems: present but rare (2.5–5.0% of later appearances), outnumbered by
+   problems mastered, and similar for R and U on matched cells. Much of U-s101's excess is length-cap truncation.
+
+The study therefore finds no interference effect large enough to separate the arms at this scale (two seeds, 128 rounds,
+1.7B model). Effects below about 4 test points, or 0.03 on the probes, remain possible.
 
 ## 5. Strategy-cue panel (separate from the interference evidence)
 
