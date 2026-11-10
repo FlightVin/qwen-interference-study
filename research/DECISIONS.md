@@ -660,3 +660,17 @@ and R/U-s202 have RUN_COMPLETE, so no test outcome is read before all training h
 interference (final), report_tables (A9/A13 table on the test summaries present), per_problem (A15.1) and all figures
 (adds per-problem change and interference-window plots). The U-s202 test (≈ 14:00Z) will be missing in this first pass;
 the job is rerun after it ends. Storage at 03:48Z: 292/500 GB (209 GB free).
+
+## D127 — 2026-11-10 04:35Z — R-s202 validation: optimizer-step label offset after resume (bookkeeping defect)
+Validation 11102674 (validator 1125a1e): H-s101, R-s101, U-s101 all_pass (R/U-s101 optim.pt listed as retired, D117).
+R-s202: every check passes except "optimizer": 524 distinct `opt_step` labels vs 512 expected (rounds 128 distinct,
+attempts, evaluations, verifier, checkpoint identity, attempt a2 all pass). Cause: `run.py` passed the live `counters`
+dict to the asynchronous `Saver`, which serialises the metadata when the write finishes, so a checkpoint carries the
+counters of a few rounds later than its round. R-s202 resumed from round 16 (D105) after the cancelled job had run to
+round ≈ 19 → labels offset by 12 (3 rounds × 4 steps). **Not a training defect:** model, optimizer state (AdamW's own
+step count, used for bias correction), and RNG state are copied to host at `save()`; the data schedule is indexed by
+round; `opt_step` is only a log label. Affected bookkeeping in resumed runs (R-s202, R-s101 retry, U-s202): opt_step
+labels, `gen_tokens`, `prompt_tokens`, `hard_responses` counters in metrics.
+Fixes (0151edc): validator counts (round, minibatch) pairs and reports label count separately; `report_data` takes
+generated tokens from the training records; trainer snapshots `dict(counters)` at save (affects no running or queued
+job — all are pinned). Validation rerun queued. Report notes the counter defect.
