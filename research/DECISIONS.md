@@ -574,3 +574,43 @@ row for r64 was written and flushed before the crash; the resume (D114) skips it
 replaced pending r0 11099083 (old commit with the same defect; never started; cost 0) by 11101910 (preempt; moves to the
 R-s202 slot after its test). r64 now has ≈ 12 branch evaluations left (≈ 9–11 h) → ends ≈ 10:00–12:00Z; a partial run
 reports complete seed sets only (A9.5).
+
+## D122 — 2026-11-10 01:50Z — A15 recorded; reconciliation; exploratory analysis rules frozen before any test outcome
+A15 (project.md §29) took effect 01:45Z. Deadline: Tue 10 Nov 19:30 EST = Wed 11 Nov 00:30Z. Added analyses are
+exploratory. Endpoint results visible at that moment: listed in project.md §29 (no test outcome read; test structural
+fields incl. truncated share for base/R/U/H-s101; dev curves per D115).
+
+**Reconciliation (01:47Z).** Slurm ↔ ledger (184 rows): owned live jobs U-s202 11100159 (general, running, round ≈ 85),
+test R-s202 11100782 (general, running since 01:31Z), diag r64 11101908 (general, running since 01:01Z), test U-s202
+11100785 (general, dependency), H-s202 11082192, diag r0 11101910, validation 11102275 (preempt, pending). Agree.
+Retained checkpoints: H-s101 r128 (model + optim); R-s101 r64 (model + optim; diagnostic source) and r128 (model);
+U-s101 r128 (model); R-s202 r128 (written 01:30Z; validation pending); U-s202 r64 (latest). **U-s101 round 64 was never
+retained** (`retain_rounds: []`): the optional U-checkpoint diagnostic would need a 64-round replay (≈ 7–8 GPU-h, and not
+bitwise reproducible, D99) → **skipped** per A15.3. Measured throughput: trained-model test 4,096 completions in 4.1–4.5 h
+(≈ 1,250–1,280 tok/s, 4,600–4,900 tokens/answer at cap 12,288); base test 30 min (3,566 tok/s, 1,530 tokens/answer).
+
+**Six runs: H-s202 cannot finish by the A15 deadline.** H-s101 took 26.3 h of active training (29.5 h wall) for 128
+rounds; 22.7 h remain to 00:30Z, all 3 general GPUs are busy until ≈ 06:00Z, and the preempt pool has not started any
+main job in this study (D37). Even an immediate start would end ≈ 28 h later, after the deadline and before its test.
+H-s202 stays queued; its seed-202 H cells are reported as missing (A9.5). Told to the owner.
+
+**Slot plan.** General A: test R-s202 → diag r0 (≈ 3 h) → strategy-cue evaluations if launched. B: U-s202 → its test.
+C: diag r64 (≈ 9–11 h). Projected GPU work ends ≈ 14:30Z; report finalization, recomputation and audit 14:30–23:30Z.
+
+**Frozen exploratory rules (before any test outcome is read):**
+1. *Per-problem reliability (A15.1).* pass@1 = c/32; pass@8 = 1 − C(32−c, 8)/C(32, 8) per problem, averaged with equal
+   weight; paired R−U and R−H per seed for both metrics, problem bootstrap as the primary table. Per-problem change =
+   arm pass@1 − base pass@1, plotted sorted per arm and seed. Difficulty bands from base test samples with index 0–15
+   (k of 16 correct): B0 k = 0; B1 1–5; B2 6–10; B3 11–15; B4 16. Baseline accuracy within a band is estimated from base
+   samples 16–31 only. Same bands for every arm; band sizes reported; zero successes written "0/32".
+2. *Interference trace (A15.2).* Shared hard prompts = role `hard_common` (identical prompt at identical round in R and
+   U of one seed). Windows of 16 rounds: 1–16, 17–32 | cap change | 33–48, …, 113–128. Per window and arm: hard success;
+   share of 8-answer groups all-wrong / mixed / all-correct; all-wrong groups split into "all 8 finished" and "≥ 1
+   capped". Mastery vs signal loss: groups that leave "mixed" are classed by destination (all-correct vs all-wrong).
+   "Previously solvable": a shared hard problem with ≥ 1 correct answer in an earlier appearance in that run; outcome =
+   share of its later appearances that are all-wrong (split finished/capped), R vs U per seed. Dev comparison: per dev
+   problem across scheduled evaluations (0/32/64/96/128), the share of problems with c > 0 at one evaluation and 0/8 at
+   the next. Training-set results describe repeated questions; dev results describe held-out ones.
+3. *Local update (A15.3).* As PROTOCOL §8; ΔJ_H per branch and minibatch seed vs the matching source's no-update row.
+4. *Strategy cue (A15.4).* Dropped first if time tightens. Selection rule and IDs frozen in a later decision before any
+   trained-policy evaluation.

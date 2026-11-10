@@ -126,3 +126,12 @@ Frozen 2026-11-07 by the commit that adds this line (hash recorded in DECISIONS 
 **Amended cap = 12,288** (rounds 33–128, all six runs; engine context 13,312). Evaluation cap after round 32 and for
 all sealed test evaluations (base and endpoints) = 12,288, with success within 8,192 reported from the same traces.
 The study uses an **8k-to-12k training schedule**; its questions were screened at 8k.
+
+## Amendment A15 (2026-11-10 01:45Z; project.md §29) — deadline and EXPLORATORY analyses
+Deadline Wed 11 Nov 00:30Z (19:30 EST Tue). Primary estimand, matrix, decoding, evaluation and A9 analysis unchanged.
+Added, all **exploratory** (rules frozen in D122 before any test outcome was read): per-problem reliability and difficulty
+bands on the existing sealed-test attempts (pass@1, pass@8, paired R−U and R−H, base-split 16/16 bands); interference
+trace on shared hard prompts by 16-round window (all-wrong/mixed/all-correct, finished vs capped, mastery vs signal loss,
+previously-solvable problems) with a dev-panel comparison; the prespecified local-update diagnostic (base and R-s101 r64;
+the optional U-s101 r64 extension is skipped: checkpoint not retained); an optional strategy-cue panel (24 items, cued vs
+uncued, 1,920 completions), dropped first if time tightens. H-s202 cannot finish by the deadline (D122).

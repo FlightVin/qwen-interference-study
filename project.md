@@ -618,3 +618,77 @@ Verbatim: "You may extend deadline to 2PM on Tuesday."
 Given in reply to the orchestrator's note that U-s202's test would end only ≈ 2.5 h before the A13 deadline and that a
 third U-s202 failure would leave its seed-202 row missing. The report deadline is now **Tuesday 2026-11-10 2:00 p.m.
 Eastern (19:00 UTC)**. Supersedes the deadline of A12/A13; every other A13 requirement stands.
+
+## 29. Amendment A15 (owner, received 2026-11-10 ~01:35Z = Mon 9 Nov 8:35 PM EST): deadline 19:30 EST; exploratory analyses
+
+Took effect 2026-11-10 01:45Z, when recorded. Supersedes the A14 deadline. Every analysis added here is **exploratory**;
+the primary estimand, protocol and analysis plan are unchanged.
+
+**Endpoint results visible when A15 took effect (D122):** no sealed-test outcome (pass@1, pass@8, per-problem counts) of
+any model had been read. Visible from the sealed test: structural fields of the completed test evaluations (base,
+R-s101, U-s101, H-s101: completions 4,096, cap 12,288, token totals, throughput, and the truncated share — base 0.05%,
+R-s101 10.7%, U-s101 12.2%, H-s101 10.9%). Visible non-sealed: dev and probe curves of all runs to round 128 (s101), 96
+(R-s202) and 64 (U-s202) (D115). Test R-s202 was running; U-s202 still training (round ≈ 85).
+
+Verbatim:
+
+> The revised deadline is Tuesday, November 10, 2026, at 19:30 America/New_York (Wednesday, November 11 at 00:30 UTC).
+> Update project.md, PROTOCOL, DECISIONS, STATE, and CHECKLIST. Record when this amendment took effect and which endpoint
+> results were already visible. Label the added analyses exploratory.
+>
+> Complete the six authorized H/R/U runs for seeds 101 and 202 under the frozen protocol. First reconcile Slurm, the run
+> ledger, retained checkpoints, and measured evaluation throughput. Reserve enough time for all six endpoints, the original
+> local-update diagnostic, independent recomputation, and the Markdown report. Use the extra time in the following priority
+> order.
+>
+> 1. Determine which problems improve and how reliably. Use the existing 32 sealed-test attempts per problem to report
+> pass@1 and estimated pass@8 for each arm and seed. Show paired R−U and R−H differences for both metrics. Plot per-problem
+> changes from the base model so we can see whether gains are broad or concentrated in a few questions. For a breakdown by
+> initial difficulty, assign bands using a fixed 16 of the 32 base attempts, then use the other 16 to estimate baseline
+> accuracy within those bands. Use the same bands for every arm and report their sizes. Describe zero observed successes as
+> 0/32. This analysis requires no new generations.
+>
+> 2. Trace interference on the hard problems shared by R and U. Within each seed, align observations by problem ID and
+> training round using the matched hard-prompt schedule. In fixed round windows, report hard success and the fractions of
+> eight-answer groups that are all wrong, mixed, or all correct. A decline in mixed groups can mean either mastery or loss of
+> reward signal; show which occurred. Report truncation separately, distinguishing all-wrong groups in which every answer
+> finished from those containing capped answers. Mark the round-33 response-cap change. Compare these training trajectories
+> with the fixed development panel to see which patterns extend beyond repeated questions.
+>
+> 3. Finish the prespecified local-update diagnostic at the base and round-64 R-s101 checkpoints. Report the change in hard
+> development success after hard, related, and unrelated updates relative to the corresponding no-update control. Show
+> individual minibatch repeats. If the round-64 U-s101 checkpoint and its optimizer state are already available, repeat the
+> diagnostic there using the same panel, minibatches, seeds, update size, response cap, and controls. This tests whether the
+> effect of an auxiliary update depends on the preceding training mixture. Skip the U extension if it requires replaying a
+> substantial training trajectory or puts primary delivery at risk.
+>
+> 4. If time permits, run one paired strategy-cue diagnostic on harder factoring problems. Its question is whether related
+> practice helps the model use factorization when prompted and whether that benefit also appears when the model must
+> recognize the opportunity itself.
+>
+> Select 24 previously unused, verifier-compatible MATH problems whose worked solutions centrally use factoring and require
+> another decision, such as constructing an equation, choosing a substitution, or converting factors into a count. Prefer
+> unused official MATH test items. Exclude overlaps and close variants of every training, calibration, development, probe,
+> and sealed-test item. Freeze the IDs and rubric before evaluating trained policies. Select by solution structure and report
+> the measured baseline difficulty afterward.
+>
+> Evaluate each question as written and with one fixed cue appended: "Consider whether a factorization could simplify the
+> problem." Keep the decoding settings, answer format, verifier, and response cap identical. Evaluate the base model and the
+> four R/U endpoints across the two seeds, with eight attempts per item per form: 24 × 2 × 5 × 8 = 1,920 completions.
+> Forecast the cost from measured throughput before launching.
+>
+> Report uncued pass@1, cued pass@1, and the cue gain for each policy. For each seed, report (R cued − R uncued) − (U cued −
+> U uncued), preserving item pairing when estimating uncertainty. Include truncation and response lengths, and inspect a
+> fixed sample to see whether the cue changed the solution method. A larger cue gain for R would suggest that naming the
+> strategy helps R express what it learned. Treat that interpretation as tentative on this 24-item panel.
+>
+> Lead reports/REPORT.md with the sealed-test H, R, and U scores and paired R−U and R−H differences for each seed, followed
+> by their means. Then address three questions separately: Did the choice of auxiliary practice affect held-out success? Did
+> an unrelated update reduce hard success at a measured checkpoint? Did previously solvable hard problems subsequently
+> produce more all-wrong groups? State which links the evidence supports and how uncertain they are. Keep the strategy-cue
+> diagnostic separate from the evidence for ray interference.
+>
+> Continue autonomously within three general and six preempt GPUs. Use existing records before spending GPU time. Keep
+> training decisions independent of exploratory outcomes. If the schedule tightens, drop the strategy-cue panel first, then
+> the optional U-checkpoint branches. Deliver the verified primary results, figures, and cost reconciliation by the
+> deadline, with any omitted diagnostic identified.

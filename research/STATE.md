@@ -9,7 +9,7 @@ Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL fr
 **Schedule (A11, D81): 8k-to-12k** — rounds 1–32 at 8,192, rounds 33–128 at **12,288** (16,384 fit in memory but not the
 deadline). All six runs restarted at round 0 as attempt a2 (D82); old s101 attempts superseded (13.9 GPU-h + 3.6 GPU-h of
 cancelled evaluations). Questions screened at 8k; evaluations after round 32 and test at 12,288 with an 8,192 view.
-Seed 303 and clipping sensitivity deferred. Deadline (A14, supersedes A12/A13): audited Markdown report by Tue 10 Nov 2:00 p.m. EST = 19:00Z (hard); 01:00Z target (A9) will be missed.
+Seed 303 and clipping sensitivity deferred. Deadline (A15, supersedes A12–A14): audited Markdown report by Tue 10 Nov 7:30 p.m. EST = Wed 11 Nov 00:30Z (hard); A15 analyses exploratory (D122); H-s202 cannot finish; 01:00Z target (A9) will be missed.
 No endpoint result exists yet (none viewed at the A9 amendment).
 
 ## Question
