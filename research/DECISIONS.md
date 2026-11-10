@@ -726,3 +726,17 @@ became runnable at that moment, before U-s202's endpoint was validated; I held i
 11105454 (sha 9b9da6d), set the report to afterok 11105454, and released it. Validation COMPLETED 09:35Z: all five
 endpoints (H/R/U-s101, R/U-s202) all_pass; evidence `research/evidence/endpoints/`. Report-final now queued (CPU). It
 unseals the five completed tests; it reruns after test U-s202 ends (≈ 13:40Z).
+
+## D133 — 2026-11-10 09:45Z — sealed test outcomes read (five of six tests); interim, seed 101 complete only
+Unsealing gate met: all five planned complete runs have RUN_COMPLETE and passed endpoint validation (D132); H-s202 is a
+partial run without a test (A16). Report-final 11103418 (pinned 1e03098) ran 09:37–09:38Z; tables and figures copied to
+`reports/tables/`, `reports/figures/`. First read of sealed outcomes: 09:45Z. Test U-s202 is still running, so seed 202
+has R only.
+**Primary (seed 101).** pass@1 H 0.770, R 0.819, U 0.777 (base 0.526). R − U +0.042 [+0.021, +0.063]; R − H +0.049
+[+0.020, +0.080]; U − H +0.007 [−0.020, +0.035]. Intervals: 128-problem paired bootstrap, conditional on these policies.
+R-s202 0.748, which is 0.071 below R-s101: the seed-to-seed spread of one arm exceeds the seed-101 R − U effect, so the
+seed-202 R − U pair decides how far the result generalises. No change to any plan or job follows from these numbers.
+**Exploratory (A15.1).** pass@8 R − U +0.017 [−0.000, +0.036], R − H +0.024 [+0.005, +0.046] (seed 101). By base band
+(held-out baseline): R-s101 exceeds U-s101 mostly in B1 (base 1–5 of 16; 0.755 vs 0.658) and B3 (0.959 vs 0.935); B0
+(0/16 at base; 15 problems) is equal (0.306 vs 0.298). Problems improved / worse vs base: H 94/13, R 102/6, U 101/9.
+Note: `diag_r64.jsonl` in that report is a partial copy taken while the diagnostic ran; it is replaced at the rerun.
