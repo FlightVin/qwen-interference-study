@@ -770,3 +770,8 @@ independent evidence.
 - R − U pass@1: seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.018]; mean −0.001 [−0.018, +0.015]. pass@8 R − U: +0.017 (s101), −0.026 (s202).
 - Recomputed with stdlib Python from per-problem counts; all match (`research/audits/2026-11-10-recompute.md`).
 - Interpretation written into REPORT §1–2: the seeds disagree in sign, and the seed-to-seed spread in R (0.071) exceeds either effect. The study does not show that practice choice changes held-out success; it cannot exclude an effect below ~4 points. The intervals are conditional on the trained models. No further runs: seed 303 was deferred (A9) and the deadline is 00:30Z.
+
+## D137 — 2026-11-10 12:50Z — Cue panel result (A15.4, exploratory)
+- Cue-eval 11104738 COMPLETED 12:36Z (exit 0); `cue_analysis.json`/`.txt` in `research/evidence/a15/`.
+- Cue raises "factor" mentions in all five policies (+9 to +15 points); no cue gain excludes zero. DiD (R gain − U gain): s101 +0.021 [−0.063, +0.120]; s202 −0.094 [−0.193, −0.016]. Opposite signs → no evidence the cue helps R more than U. Written to REPORT §5, separate from interference.
+- Fixed-sample inspection (40 responses): grader consistent on problems 0 and 12 (correct answer 10 for problem 0 checked by hand). Counts toward the CHECKLIST 7.3 verifier audit.

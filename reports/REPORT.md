@@ -118,9 +118,30 @@ local hard change (section 3); signal loss on solvable problems (section 4); wit
 
 24 unused MATH test problems where factoring is central, asked as written and with one fixed sentence appended
 ("Consider whether a factorization could simplify the problem."). 8 samples per problem per form, paired seeds.
-[PENDING: uncued and cued pass@1 and cue gain per policy; per seed (R cued − R uncued) − (U cued − U uncued) with item
-bootstrap; truncation and length; fixed-sample inspection.] This panel asks whether naming the strategy helps R more
-than U. It does not test interference.
+This panel asks whether naming the strategy helps R more than U. It does not test interference. Intervals: 95% item
+bootstrap over the 24 problems (10,000 draws).
+
+| Policy | pass@1 uncued | pass@1 cued | Cue gain (95% CI) | Truncated uncued → cued | Mentions "factor" uncued → cued |
+|---|---|---|---|---|---|
+| Base | 0.422 | 0.411 | −0.010 [−0.078, +0.057] | 0.000 → 0.000 | 0.40 → 0.49 |
+| R-s101 | 0.682 | 0.693 | +0.010 [−0.036, +0.068] | 0.188 → 0.177 | 0.56 → 0.71 |
+| U-s101 | 0.724 | 0.714 | −0.010 [−0.073, +0.042] | 0.182 → 0.203 | 0.52 → 0.60 |
+| R-s202 | 0.620 | 0.573 | −0.047 [−0.099, +0.000] | 0.188 → 0.219 | 0.56 → 0.69 |
+| U-s202 | 0.646 | 0.693 | +0.047 [−0.005, +0.109] | 0.156 → 0.078 | 0.57 → 0.70 |
+
+Difference in cue gain, (R cued − R uncued) − (U cued − U uncued): seed 101 +0.021 [−0.063, +0.120]; seed 202 −0.094
+[−0.193, −0.016].
+
+**Answer.** The cue changes what the models write but not how often they succeed. Every policy mentions "factor" more
+often when cued (+9 to +15 points). No policy's cue gain has an interval that excludes zero. The R-versus-U difference
+points in opposite directions in the two seeds, so naming the strategy does not help R more than U. Uncued, U
+scores above R on this panel in both seeds, although R led on the sealed test in seed 101. With 24
+problems × 8 samples, the panel detects only differences of about 10 points or more.
+
+**Inspection.** The fixed sample (problems at panel positions 0, 6, 12 and 18, sample 0, all 10 policy-forms; 40
+responses) is in `research/evidence/a15/cue_analysis.txt`. The grader was consistent in all 40: on problem 0 every
+\boxed{10} scored 1 and every \boxed{28} scored 0 (10 is correct); on problem 12 every \boxed{8} scored 1 and every 4
+or 6 scored 0. Problem 18 hit the 12,288-token cap in 4 of the 8 trained-policy responses.
 
 ## 6. Question and design
 

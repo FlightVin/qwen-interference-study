@@ -1,0 +1,135 @@
+{
+ "items": 24,
+ "policies": {
+  "base": {
+   "uncued": {
+    "pass1": 0.421875,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 1721.8541666666667,
+    "median_tokens": 1370.5,
+    "mentions_factor": 0.4010416666666667
+   },
+   "cued": {
+    "pass1": 0.4114583333333333,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 1562.5729166666667,
+    "median_tokens": 1417.5,
+    "mentions_factor": 0.4895833333333333
+   }
+  },
+  "R-s101": {
+   "uncued": {
+    "pass1": 0.6822916666666666,
+    "completions": 192,
+    "truncated": 0.1875,
+    "mean_tokens": 5686.65625,
+    "median_tokens": 5034.5,
+    "mentions_factor": 0.5625
+   },
+   "cued": {
+    "pass1": 0.6927083333333334,
+    "completions": 192,
+    "truncated": 0.17708333333333334,
+    "mean_tokens": 5561.552083333333,
+    "median_tokens": 4246.0,
+    "mentions_factor": 0.7135416666666666
+   }
+  },
+  "U-s101": {
+   "uncued": {
+    "pass1": 0.7239583333333334,
+    "completions": 192,
+    "truncated": 0.18229166666666666,
+    "mean_tokens": 5635.322916666667,
+    "median_tokens": 4067.0,
+    "mentions_factor": 0.515625
+   },
+   "cued": {
+    "pass1": 0.7135416666666666,
+    "completions": 192,
+    "truncated": 0.203125,
+    "mean_tokens": 5581.057291666667,
+    "median_tokens": 3710.0,
+    "mentions_factor": 0.6041666666666666
+   }
+  },
+  "R-s202": {
+   "uncued": {
+    "pass1": 0.6197916666666666,
+    "completions": 192,
+    "truncated": 0.1875,
+    "mean_tokens": 5264.520833333333,
+    "median_tokens": 3092.5,
+    "mentions_factor": 0.5625
+   },
+   "cued": {
+    "pass1": 0.5729166666666666,
+    "completions": 192,
+    "truncated": 0.21875,
+    "mean_tokens": 5772.151041666667,
+    "median_tokens": 3914.5,
+    "mentions_factor": 0.6875
+   }
+  },
+  "U-s202": {
+   "uncued": {
+    "pass1": 0.6458333333333334,
+    "completions": 192,
+    "truncated": 0.15625,
+    "mean_tokens": 4876.473958333333,
+    "median_tokens": 3052.5,
+    "mentions_factor": 0.5729166666666666
+   },
+   "cued": {
+    "pass1": 0.6927083333333334,
+    "completions": 192,
+    "truncated": 0.078125,
+    "mean_tokens": 4635.552083333333,
+    "median_tokens": 2973.5,
+    "mentions_factor": 0.6979166666666666
+   }
+  }
+ },
+ "cue_gain": {
+  "base": {
+   "est": -0.010416666666666666,
+   "lo": -0.078125,
+   "hi": 0.057291666666666664
+  },
+  "R-s101": {
+   "est": 0.010416666666666666,
+   "lo": -0.036458333333333336,
+   "hi": 0.06770833333333333
+  },
+  "U-s101": {
+   "est": -0.010416666666666666,
+   "lo": -0.07291666666666667,
+   "hi": 0.041666666666666664
+  },
+  "R-s202": {
+   "est": -0.046875,
+   "lo": -0.09895833333333333,
+   "hi": 0.0
+  },
+  "U-s202": {
+   "est": 0.046875,
+   "lo": -0.005208333333333333,
+   "hi": 0.109375
+  }
+ },
+ "did": {
+  "s101": {
+   "est": 0.020833333333333332,
+   "lo": -0.0625,
+   "hi": 0.11979166666666667
+  },
+  "s202": {
+   "est": -0.09375,
+   "lo": -0.19270833333333334,
+   "hi": -0.015625
+  }
+ },
+ "missing": []
+}
