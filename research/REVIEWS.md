@@ -768,3 +768,12 @@
 5. **Next jobs / limits.** General 1/3 (H-s202). No study GPU work waiting.
 6. **Most important.** 19:00Z: cancel 11082192 → interference + report-final → A16 appendix; regenerate and run the cost table.
 7. **Reconciliation.** Slurm ↔ ledger agree (1 live job). Watcher alive (bb1hd5lk6).
+
+## Review 86 — 2026-11-10 16:05Z (11:05 AM EST Tue)
+1. **Changes.** None since Review 85. Monitor 11107872 submitted for an H-s202 progress check.
+2. **Valid?** Yes.
+3. **Surprises.** None.
+4. **Risks.** None new. 19:00Z stop; deadline 00:30Z.
+5. **Next jobs / limits.** General 1/3 (H-s202). Preempt CPU: monitor.
+6. **Most important.** Confirm H-s202 is still advancing (stall check); then the 19:00Z steps.
+7. **Reconciliation.** Slurm ↔ ledger agree (1 live job + monitor). Watcher alive (bb1hd5lk6).
