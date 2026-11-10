@@ -653,3 +653,10 @@ capped answer), U-s101 48/966 (5.0%; 34 capped), R-s202 33/963 (3.4%; 10 capped)
 partial). (3) Paired R vs U cells (same problem, same round) where only one arm is all-wrong: small counts per 16-round
 window (0–15). (4) Dev panel: problems lost (c > 0 → 0/8) between evaluations 0–5 per interval per run. No training
 decision depends on this.
+
+## D126 — 2026-11-10 04:00Z — post-training analysis queued; unsealing gate in code
+`qis-report-final` 11103165 (commit bea479c) queued afterany U-s202 (11100159). Its precheck refuses unless R/U/H-s101
+and R/U-s202 have RUN_COMPLETE, so no test outcome is read before all training has ended (A13). It runs report_data,
+interference (final), report_tables (A9/A13 table on the test summaries present), per_problem (A15.1) and all figures
+(adds per-problem change and interference-window plots). The U-s202 test (≈ 14:00Z) will be missing in this first pass;
+the job is rerun after it ends. Storage at 03:48Z: 292/500 GB (209 GB free).
