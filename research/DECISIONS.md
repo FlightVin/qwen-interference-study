@@ -719,3 +719,10 @@ at r0 the optimizer is fresh, so Adam's first step moves every weight by ≈ lr 
 11105174 on general, afterany cue 11104738 (chain C, ceiling holds). Reading rule fixed now: if none_cycled − none_rerun
 is within ±0.01 on J_R, the cycle does not explain the shift; differences between branches are unaffected in either case
 because every branch shares the same reference. The report will state the reference result next to each ΔJ.
+
+## D132 — 2026-11-10 09:40Z — U-s202 complete and validated; report gated on validation
+U-s202 11100159 COMPLETED 09:10Z (11:16 elapsed). Test U-s202 11100785 started 09:10Z (chain B). Report-final 11103418
+became runnable at that moment, before U-s202's endpoint was validated; I held it, submitted `qis-validate-endpoints`
+11105454 (sha 9b9da6d), set the report to afterok 11105454, and released it. Validation COMPLETED 09:35Z: all five
+endpoints (H/R/U-s101, R/U-s202) all_pass; evidence `research/evidence/endpoints/`. Report-final now queued (CPU). It
+unseals the five completed tests; it reruns after test U-s202 ends (≈ 13:40Z).
