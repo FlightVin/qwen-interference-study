@@ -145,10 +145,46 @@ def local_update(paths, out, drawn):
     drawn.append("local_update")
 
 
+def per_problem_change(path, out, drawn):
+    """EXPLORATORY (A15.1): per-problem pass@1 change from the base model, sorted, one line per arm and seed."""
+    P = json.load(open(path))
+    fig, ax = plt.subplots(figsize=(6.4, 4.2))
+    base = {p: int(v["base"].split("/")[0]) / 32 for p, v in P["per_problem"].items()}
+    for key in sorted(P["arms"]):
+        arm, seed = key.split("-s")
+        ch = sorted((int(v[key].split("/")[0]) / 32 - base[p] for p, v in P["per_problem"].items() if key in v), reverse=True)
+        ax.plot(range(len(ch)), ch, SEED_STYLE.get(int(seed), ":"), color=ARM_COLOR[arm], label=f"{arm} seed {seed}")
+    ax.axhline(0, color="grey", lw=0.8)
+    ax.set_xlabel("target_test problems, sorted by change"); ax.set_ylabel("pass@1 change from base (32 samples each)")
+    ax.legend(fontsize=7); ax.grid(alpha=0.3)
+    fig.tight_layout(); fig.savefig(os.path.join(out, "per_problem_change.png"), dpi=150); plt.close(fig)
+    drawn.append("per_problem_change")
+
+
+def interference_windows(path, out, drawn):
+    """EXPLORATORY (A15.2): shared hard prompts per 16-round window: success and all-wrong (finished / capped) share."""
+    D = json.load(open(path))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 4.0))
+    for run, v in sorted(D["runs"].items()):
+        arm, seed = run_key(run)
+        ws = list(v["windows"])
+        x = [int(w.split("-")[0]) + 7.5 for w in ws]
+        a1.plot(x, [v["windows"][w]["success"] for w in ws], SEED_STYLE.get(seed, ":"), marker="o", color=ARM_COLOR[arm], label=f"{arm} seed {seed}")
+        a2.plot(x, [v["windows"][w]["all_wrong_finished"] for w in ws], SEED_STYLE.get(seed, ":"), marker="o", color=ARM_COLOR[arm])
+        a2.plot(x, [v["windows"][w]["all_wrong_capped"] for w in ws], SEED_STYLE.get(seed, ":"), marker="x", color=ARM_COLOR[arm], alpha=0.6)
+    for ax in (a1, a2):
+        ax.axvline(32.5, color="grey", lw=0.8, ls=":"); ax.grid(alpha=0.3); ax.set_xlabel("training round (16-round windows)")
+    a1.set_ylabel("success on shared hard prompts"); a1.legend(fontsize=7)
+    a2.set_ylabel("share of groups all wrong (o: all finished, x: some capped)")
+    fig.tight_layout(); fig.savefig(os.path.join(out, "interference_windows.png"), dpi=150); plt.close(fig)
+    drawn.append("interference_windows")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("data"); ap.add_argument("out")
     ap.add_argument("--table"); ap.add_argument("--diag", nargs="*", default=[])
+    ap.add_argument("--per-problem"); ap.add_argument("--interference")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     data, drawn = json.load(open(a.data)), []
@@ -157,6 +193,10 @@ def main():
     if a.table and os.path.exists(a.table):
         main_result(a.table, a.out, drawn)
     local_update(a.diag, a.out, drawn)
+    if a.per_problem and os.path.exists(a.per_problem):
+        per_problem_change(a.per_problem, a.out, drawn)
+    if a.interference and os.path.exists(a.interference):
+        interference_windows(a.interference, a.out, drawn)
     json.dump({"drawn": drawn, "inputs": {"data": a.data, "table": a.table, "diag": a.diag}},
               open(os.path.join(a.out, "figures.json"), "w"), indent=1)
     print("drawn:", drawn)
