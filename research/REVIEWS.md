@@ -640,3 +640,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, diag r64); test R-s202 starts on R-s202's GPU (dependency). Preempt: H-s202, diag r0.
 6. **Most important.** Confirm diag r64 passes its first branch (background check); on R-s202 end, validate its endpoint (CPU) while its test runs.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bbha8sifn).
+
+## Review 72 — 2026-11-10 02:05Z (9:05 PM EST Mon)
+1. **Changes.** A15 recorded (D122). R-s202 COMPLETED 01:30Z (19:11 h); test R-s202 running since 01:31Z. Diag r64 11101908 passed its first branch (≈ 40 min per branch). Cue panel frozen (D123). Exploratory code committed (per_problem, interference). Diag r0 briefly ran as a 4th general job (99 s; D124) — cancelled and chained.
+2. **Valid?** Yes. R-s202 endpoint validation 11102275 and the interference job 11102391 are waiting in the CPU queue (86 pending CPU jobs on preempt_cpu_qos).
+3. **Surprises.** The normal QOS did not enforce the owner's 3-GPU ceiling (D124).
+4. **Risks.** CPU queue delay for analysis jobs. U-s202 ends ≈ 09:45Z; GPU chain ends ≈ 14:00Z; deadline 00:30Z Wed.
+5. **Next jobs / limits.** General 3/3; chains: A test R-s202 → diag r0 → cue; B U-s202 → test U-s202; C diag r64.
+6. **Most important.** Get R-s202 validated (CPU queue); review interference output when it lands.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree after D124. Watcher alive (b4exdi1r0).

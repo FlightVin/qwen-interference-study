@@ -635,7 +635,7 @@ U-s202 on general so all five policies run in one job (≈ 10:00–12:30Z). Drop
 **Diag r0** 11101910 moved to general now; it takes the first free general GPU (test R-s202 ends ≈ 06:00Z).
 
 ## D124 — 2026-11-10 02:10Z — general GPU ceiling exceeded for 99 s; corrected; slot chain made structural
-At 02:04Z diag r0 11101910, moved to general at 02:20Z-plan time (D123), started as a FOURTH owned general job (with
+At 02:04Z diag r0 11101910, moved to general at ≈ 02:00Z (D123), started as a FOURTH owned general job (with
 U-s202, test R-s202, diag r64), above the owner's ceiling of 3 (A7). Slurm's normal QOS did not refuse it; my move did
 not check the running count. Cancelled at 02:06Z after 1:39 (≈ 0.03 GPU-h, charged); squeue confirmed 3 owned general
 jobs. Resubmitted as 11102499 afterany test R-s202 (11100782) on general; cue evaluation 11102440 now afterany 11102499
