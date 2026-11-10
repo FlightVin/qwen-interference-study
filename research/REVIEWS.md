@@ -622,3 +622,12 @@
 5. **Next jobs / limits.** General: R-s202, U-s202, test H-s101 running; tests R/U-s202 pending on dependencies. Preempt: H-s202, diag r0, diag r64 pending.
 6. **Most important.** Move diag r64 to general when test H-s101 ends (≈ 23:45Z).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bgybgcize, PID 3025).
+
+## Review 70 — 2026-11-10 00:05Z (7:05 PM EST Mon)
+1. **Changes.** A14: deadline 19:00Z (D119). Test H-s101 done 23:42Z (D120); diag r64 11099088 running on general since 23:48Z (precheck: source attempt a2; tests 4/4). Monitor 11101332: R-s202 at round 125 (checkpoint 112 valid); U-s202 at round 77 after resuming at 64.
+2. **Valid?** Yes. Last 6 rounds: R mean 629 s, truncation 54/384; U mean 641 s, truncation 76/384; clip ≤ 4.2e-4; ratio within [0.87, 1.14].
+3. **Surprises.** None.
+4. **Risks.** U-s202: 51 rounds left × ≈ 640 s + 2 evaluations → ends ≈ 09:45Z; test ≈ 14:15Z (D119 limit 17:00Z). R-s202 ends ≈ 00:45–01:15Z; its test then starts automatically (D118).
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, diag r64); tests R/U-s202 pending on dependencies; preempt: H-s202, diag r0.
+6. **Most important.** When R-s202 ends: run endpoint validation (CPU) alongside its test; then put diag r0 on that slot after the test.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bpnb6ehp9).
