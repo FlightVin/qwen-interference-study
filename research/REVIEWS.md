@@ -667,3 +667,12 @@
 5. **Next jobs / limits.** General 3/3 (U-s202, test R-s202, diag r64) + chains; preempt: H-s202, report-final (dependency).
 6. **Most important.** Read R-s202 endpoint validation when it lands.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b2lujg5q2).
+
+## Review 75 — 2026-11-10 05:05Z (12:05 AM EST Tue)
+1. **Changes.** D127 (counter bookkeeping offset after resume; fixes 0151edc); report-final replaced at HEAD (11103418, afterany U-s202). A16: partial H-s202 chained after diag r64 on general (D128). Validation rerun 11103416 running.
+2. **Valid?** Yes; training state unaffected by D127.
+3. **Surprises.** None new.
+4. **Risks.** Unchanged: U-s202 ends ≈ 09:30Z; test ≈ 14:00Z; deadline 00:30Z Wed.
+5. **Next jobs / limits.** General 3/3 running (U-s202, test R-s202, diag r64); chains: A → diag r0 → cue; B → test U-s202; C → H-s202 (partial, stop by 19:00Z).
+6. **Most important.** R-s202 validation result; then test R-s202 end (≈ 06:00Z).
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bw72lypja).
