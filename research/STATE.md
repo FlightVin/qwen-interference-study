@@ -42,6 +42,6 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 
 ## Next actions
 1. Primary result final (D136, report-final 11106560, audited): R − U seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.018]; mean −0.001 [−0.018, +0.015]. Seeds disagree in sign: no evidence that practice choice changes test success; seed spread (~4 pts) ≥ effect. R − H seed 101 +0.049. U-s202 0.792.
-2. H-s202 partial running (A16; round 32 at 12:20Z; stop 19:00Z); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
+2. H-s202 partial running (A16; round 52 at 16:07Z; stop at round-64 dev eval or 20:00Z, D139); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
 3. Diag r0 and r64 done (D131, D134). Cue panel done (D137): cue changes wording, not success; R−U cue DiD opposite signs across seeds. Reference check 11105174 started early (D135; ≈ 14:30Z or earlier).
 4. Remaining: 19:00Z stop → A16 appendix, final interference + report-final, final cost; verifier sample audit; finalise `reports/REPORT.md`. Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).

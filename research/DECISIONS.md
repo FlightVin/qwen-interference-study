@@ -781,3 +781,10 @@ independent evidence.
 - The original r0 "none" (L40, babel-w5-24) was J_H 0.4004, J_R 0.8281. The update rows' mean J_R (0.802) matches the rerun. Reading: the uniform J_R drop came from one high reference draw shared by all Δs, not from the update.
 - r64 none_rerun (L40S) J_H 0.6309, J_R 0.8929, J_U 0.9512 vs original (6000 Ada) 0.6055, 0.9018, 0.9395. none_cycled identical (diag-ref 11105174 COMPLETED 14:33Z; `research/evidence/a15/diag_r*_ref.jsonl`).
 - Noise floor: two evaluations of the same model differ by 0.025–0.031 in J_H. Answer written to REPORT §3: the unrelated update did not measurably lower J_H at r0 or r64; the design detects only drops ≥ ≈ 0.03.
+
+## D139 — 2026-11-10 16:15Z — H-s202 stop rule: wait for the round-64 dev evaluation, bounded at 20:00Z
+- Monitor 11107872: H-s202 at round 52 (checkpoint started 16:07Z); 11–16 min per round at the 12,288 cap. Storage 180 GB free.
+- Round 64 has a scheduled dev evaluation, which D128 named as a comparison point "if reached". Forecast: round 64 ≈ 18:55–19:10Z, plus its evaluations.
+- Rule change: cancel 11082192 when the round-64 dev evaluation is recorded, or at 20:00Z (3 PM EST), whichever comes first. Earlier if the report needs the slot or storage (unchanged).
+- Why it is safe: no other GPU work is waiting (general 1/3); the remaining report work is CPU-side and takes < 1 h; 20:00Z leaves 4.5 h before the 00:30Z deadline. A16 stays lowest priority: it does not delay any other item.
+- Not a training decision based on test data: H-s202 has no test evaluation.
