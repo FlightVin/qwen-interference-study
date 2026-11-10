@@ -740,3 +740,4 @@
 5. **Next jobs / limits.** General 3/3 (cue, test U-s202, H-s202); chain cue → diag-ref. Preempt CPU: monitor.
 6. **Most important.** Test U-s202 end (≈ 13:40Z) → report-final → seed-202 rows of the lead table.
 7. **Reconciliation.** Slurm ↔ ledger agree (4 live jobs, all project-owned). Watcher alive (bthhtqk89).
+- Addendum 12:25Z (monitor 11106458): H-s202 has 32 rounds (hard_common 0.516 at r32; ≈ 8–9 min per round at the 8,192 cap). Checkpoints every 4 rounds. Forecast at the 19:00Z stop: about round 70–75 (rounds slow after the 12,288 cap). Storage 184 GB free (was 207 GB at 07:08Z); projected ≥ 150 GB at 19:00Z, above the 50 GiB floor.
