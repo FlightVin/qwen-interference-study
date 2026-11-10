@@ -273,10 +273,38 @@ R-s202 18.0 h, U-s202 16.0 h.
 
 ## Appendix A. Partial H-s202 run (A16)
 
-[PENDING at 19:00Z stop: rounds reached; dev pass@1 at rounds 0 and 32 (if reached) next to R-s202 and U-s202 at the
-same rounds; shared-hard success in 8-round bins the partial run completed. Figure `figures/a16_partial.png`.] H, R and
-U see identical shared hard prompts in every round (verified on the rounds run so far). This comparison is not an
-endpoint and has no test result.
+H-s202 (job 11082192) started late: under the 3-GPU limit, a full H-s202 run did not fit before the deadline (D100), so it ran last, as a
+partial run (D128). It was stopped at 19:16Z on 10 Nov
+after its round-64 evaluations (D139, D140), so it covers rounds 1–64 of 128. It has no test evaluation, so this
+comparison is not an endpoint. H, R and U saw identical shared hard prompts in all 64 rounds (64/64 verified).
+
+**Dev panel** (53 problems × 8 samples, pass@1):
+
+| Round | H-s202 (partial) | R-s202 | U-s202 | For reference: H / R / U seed 101 |
+|---|---|---|---|---|
+| 0 | 0.403 | 0.403 | 0.422 | 0.417 / 0.417 / 0.422 |
+| 32 | 0.566 | 0.599 | 0.611 | 0.540 / 0.542 / 0.601 |
+| 64 | 0.658 | 0.613 | 0.679 | 0.637 / 0.736 / 0.710 |
+
+Round 0 is the same base model in every run. Its scores still differ by up to 0.019, which is the evaluation noise
+found in section 3. Differences of that size between arms are not meaningful.
+
+**Shared hard prompts in training** (success over the 8 shared prompts × 8 answers, 8-round bins):
+
+| Rounds | 1–8 | 9–16 | 17–24 | 25–32 | 33–40 | 41–48 | 49–56 | 57–64 |
+|---|---|---|---|---|---|---|---|---|
+| H-s202 | 0.266 | 0.488 | 0.584 | 0.605 | 0.693 | 0.740 | 0.779 | 0.777 |
+| R-s202 | 0.238 | 0.416 | 0.520 | 0.572 | 0.559 | 0.631 | 0.691 | 0.699 |
+| U-s202 | 0.217 | 0.383 | 0.500 | 0.574 | 0.619 | 0.676 | 0.684 | 0.680 |
+| H-s101 | 0.213 | 0.318 | 0.424 | 0.578 | 0.625 | 0.680 | 0.730 | 0.727 |
+| R-s101 | 0.260 | 0.393 | 0.449 | 0.486 | 0.596 | 0.734 | 0.713 | 0.771 |
+| U-s101 | 0.258 | 0.412 | 0.529 | 0.559 | 0.635 | 0.678 | 0.719 | 0.734 |
+
+**Reading.** In seed 202, H leads both R and U on the shared hard prompts in every bin, by 0.03–0.09 over the better of the two. H trains on twice as
+many hard prompts per round, so this lead is expected and is not a dose-matched comparison. In seed 101, H led in only 2
+of the 8 bins. On the dev panel at round 64, H-s202 sits between R-s202 and U-s202; in seed 101, H was lowest. The
+partial run therefore repeats the main finding: the order of the arms changes between seeds. Figure
+`figures/a16_partial.png`.
 
 ## Reproduction
 
