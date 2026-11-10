@@ -64,7 +64,18 @@ size in every branch may come from the reference row, which is evaluated before 
 every update branch goes through. A reference check measures this (D131): [PENDING result]. Comparisons between
 branches do not depend on it, because every branch shares the same reference.
 
-**R-s101 round 64:** [PENDING final rows; table in the same form].
+**R-s101 round 64** (its saved optimizer state), ΔJ_H versus the no-update row, per minibatch seed:
+
+| Branch | 4101 | 4102 | 4103 | 4104 | Mixed groups (of 4) |
+|---|---|---|---|---|---|
+| hard | −0.006 | +0.002 | +0.012 | −0.004 | 2, 3, 2, 1 |
+| related | +0.006* | +0.006* | +0.016 | +0.014 | 0, 0, 2, 1 |
+| unrelated | −0.006 | +0.027 | +0.006* | −0.014 | 1, 2, 0, 2 |
+
+\* No mixed group, so the gradient is exactly 0. AdamW still steps from its stored moments, so these three rows are one
+"step without signal". They give identical J_H, J_R and J_U, so evaluation is exactly repeatable for identical weights.
+That momentum-only step changes J_H by +0.006, J_R by −0.007 and J_U by −0.008. By round 64, R-s101 solved most
+practice prompts in all 8 answers, so half the related draws carried no learning signal.
 
 **Answer.** [PENDING: state whether the unrelated branch lowered J_H at either source, against the reference check
 and the per-seed spread.] One step of 32 responses is small; a change below ≈ 0.02 on 512 samples is within evaluation
