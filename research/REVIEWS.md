@@ -741,3 +741,12 @@
 6. **Most important.** Test U-s202 end (≈ 13:40Z) → report-final → seed-202 rows of the lead table.
 7. **Reconciliation.** Slurm ↔ ledger agree (4 live jobs, all project-owned). Watcher alive (bthhtqk89).
 - Addendum 12:25Z (monitor 11106458): H-s202 has 32 rounds (hard_common 0.516 at r32; ≈ 8–9 min per round at the 8,192 cap). Checkpoints every 4 rounds. Forecast at the 19:00Z stop: about round 70–75 (rounds slow after the 12,288 cap). Storage 184 GB free (was 207 GB at 07:08Z); projected ≥ 150 GB at 19:00Z, above the 50 GiB floor.
+
+## Review 83 — 2026-11-10 13:05Z (8:05 AM EST Tue)
+1. **Changes.** Test U-s202 done 12:21Z; report-final 11106560 → lead table final, audited (D136: R − U s101 +0.042, s202 −0.044, mean −0.001). Cue panel done (D137). Diag-ref started 12:24Z (D135); r0 reference done 12:43Z.
+2. **Valid?** Yes. Lead numbers recomputed independently; grader consistent on 40 inspected cue responses.
+3. **Surprises.** Seeds disagree in sign on the primary contrast. r0 reference: none_cycled = none_rerun exactly (cycle has no effect, D131 rule met), but the fresh rerun on an L40S differs from the original "none" (L40, babel-w5-24) by J_H +0.031, J_R −0.020, J_U −0.014.
+4. **Risks.** ΔJ values below ≈ 0.03 are near the evaluation noise floor; REPORT §3 must say so.
+5. **Next jobs / limits.** General 2/3 (H-s202, diag-ref). No runnable GPU work waiting.
+6. **Most important.** Finish diag-ref r64 (≈ 13:30Z) → write REPORT §3 answer with the reference result.
+7. **Reconciliation.** Slurm ↔ ledger agree (2 live jobs, both project-owned). Watcher alive (ba3kivn6h).
