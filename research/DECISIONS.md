@@ -745,3 +745,17 @@ figure and drawn only in `a16_partial.png` (exact 8-round bins the partial run c
 report-final 11105647 (fb4f344) outputs copied to `reports/`. H vs R hard_common prompt sets identical in 128/128 rounds
 (s101) and 15/15 rounds so far (s202): the A16 comparison uses the same shared prompts. Dev at round 128 (non-sealed):
 U-s202 0.703 vs R-s202 0.656, the reverse of seed 101 (R 0.729 vs U 0.691); it agrees with R-s202's lower test score.
+
+## D134 — 2026-11-10 10:35Z — diag r64 complete; zero-gradient rows give a momentum-only reference (EXPLORATORY)
+Diag r64 11101908 COMPLETED 10:21Z: 13 rows, `research/evidence/a15/diag_r64.jsonl` (source R-s101 round_0064, its
+saved AdamW state). Cue 11104738 started 10:22Z on that GPU (chain C).
+**Zero-gradient rows.** Related 4101 and 4102 (all 8 answers correct in every group) and unrelated 4103 had no mixed
+group, so the advantage and the gradient are 0 (grad norm 0.0). AdamW still steps from its stored moments, so these
+rows are a "step without signal". All three give identical J_H, J_R and J_U (0.6113, 0.8951, 0.9316): evaluation after
+the cycle is exactly repeatable for identical weights. Against "none" this momentum-only step gives ΔJ_H +0.006,
+ΔJ_R −0.007, ΔJ_U −0.008 (part may be the cycle; reference check 11105174 separates it).
+**Informative rows (ΔJ_H vs none).** hard +0.001 mean (−0.006, +0.002, +0.012, −0.004); related (4103, 4104) +0.016,
++0.014; unrelated (4101, 4102, 4104) −0.006, +0.027, −0.014. Against the momentum-only row: related +0.010, +0.008;
+unrelated −0.012, +0.021, −0.020. No branch moves J_H consistently at r64; the spread across seeds (≈ 0.04) exceeds
+every mean. Reported as finite changes after one update, per seed, without pooling the zero-gradient rows as
+independent evidence.
