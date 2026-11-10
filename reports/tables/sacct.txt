@@ -1,0 +1,211 @@
+11072037|ae-qis-smoke|COMPLETED|preempt|0|billing=1,cpu=1,mem=1000M,node=1|2026-11-06T21:19:11|2026-11-06T21:19:11
+11072041|ae-qis-smoke-dep|COMPLETED|preempt|0|billing=1,cpu=1,mem=1000M,node=1|2026-11-06T21:20:13|2026-11-06T21:20:13
+11072042|ae-qis-smoke-gen|COMPLETED|general|2|billing=16,cpu=1,gres/gpu:6000ada=1,gres/gpu=1,mem=32000M,node=1|2026-11-06T21:19:42|2026-11-06T21:19:44
+11072074|ae-qis-env-v1|COMPLETED|preempt|357|billing=10,cpu=4,mem=24G,node=1|2026-11-06T21:26:40|2026-11-06T21:32:37
+11072095|ae-qis-data-v1|COMPLETED|preempt|27|billing=8,cpu=4,mem=16G,node=1|2026-11-06T21:33:22|2026-11-06T21:33:49
+11072118|ae-qis-probe-gpu-v1|FAILED|general|2|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T21:36:09|2026-11-06T21:36:11
+11072208|ae-qis-probe-gpu-v1|FAILED|general|113|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T21:38:22|2026-11-06T21:40:15
+11072230|ae-qis-tests-a|FAILED|preempt|13|billing=3,cpu=1,mem=8G,node=1|2026-11-06T21:40:03|2026-11-06T21:40:16
+11072262|ae-qis-env-v1b|COMPLETED|preempt|23|billing=3,cpu=1,mem=8G,node=1|2026-11-06T21:44:35|2026-11-06T21:44:58
+11072268|ae-qis-probe-gpu-v1|COMPLETED|general|669|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-06T21:46:11|2026-11-06T21:57:20
+11072286|ae-qis-lenprobe-v1|FAILED|general|22|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T21:59:38|2026-11-06T22:00:00
+11072408|ae-qis-trainer-smoke-v1|CANCELLED by 6010497|general|1|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:01:55|2026-11-06T22:01:56
+11072428|ae-qis-trainer-smoke-v1|FAILED|general|380|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:03:03|2026-11-06T22:09:23
+11072430|ae-qis-lenprobe-v1|COMPLETED|general|859|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:03:03|2026-11-06T22:17:22
+11072527|ae-qis-trainer-smoke-v1|FAILED|general|395|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:15:06|2026-11-06T22:21:41
+11072609|ae-qis-screen1-study|COMPLETED|general|1850|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:19:19|2026-11-06T22:50:09
+11072610|ae-qis-screen1-calib|CANCELLED by 6010497|preempt|0||None|2026-11-06T22:58:18
+11072622|ae-qis-trainer-smoke-v1|COMPLETED|general|1994|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:23:48|2026-11-06T22:57:02
+11072715|ae-qis-tests-a|COMPLETED|preempt|28|billing=8,cpu=4,mem=16G,node=1|2026-11-06T22:36:03|2026-11-06T22:36:31
+11072896|ae-qis-screen2-study|COMPLETED|general|1881|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T22:52:17|2026-11-06T23:23:38
+11072903|ae-qis-export-cand|COMPLETED|preempt|6|billing=2,cpu=1,mem=4G,node=1|2026-11-06T22:55:16|2026-11-06T22:55:22
+11072944|ae-qis-screen1-calib|COMPLETED|general|1254|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T23:02:50|2026-11-06T23:23:44
+11072990|ae-qis-calib-panels|COMPLETED|preempt|0|billing=2,cpu=1,mem=4G,node=1|2026-11-06T23:24:40|2026-11-06T23:24:40
+11072991|ae-qis-cal-lr1e-6-asym-s11|CANCELLED by 6010497|general|293|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T01:51:25|2026-11-07T01:56:18
+11072995|ae-qis-cal-lr1e-6-sym-s11|COMPLETED|general|8304|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T23:31:04|2026-11-07T01:49:28
+11072996|ae-qis-cal-lr2e-6-asym-s11|CANCELLED by 6010497|preempt|0||None|2026-11-07T01:56:18
+11072997|ae-qis-cal-lr2e-6-sym-s11|CANCELLED by 6010497|preempt|0||None|2026-11-07T01:56:18
+11072998|ae-qis-cal-lr5e-7-asym-s11|CANCELLED by 6010497|preempt|0||None|2026-11-07T01:56:18
+11072999|ae-qis-cal-lr5e-7-sym-s11|CANCELLED by 6010497|preempt|0||None|2026-11-07T01:56:18
+11073027|ae-qis-prune-smoke|COMPLETED|preempt|351|billing=1,cpu=1,mem=2G,node=1|2026-11-06T23:07:01|2026-11-06T23:12:52
+11073157|ae-qis-screen2-full|COMPLETED|general|1021|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T23:25:10|2026-11-06T23:42:11
+11073178|ae-qis-targets-v1|COMPLETED|preempt|20|billing=2,cpu=1,mem=4G,node=1|2026-11-06T23:29:23|2026-11-06T23:29:43
+11073226|ae-qis-authored-intake|COMPLETED|preempt|232|billing=8,cpu=4,mem=16G,node=1|2026-11-06T23:34:11|2026-11-06T23:38:03
+11073301|ae-qis-peek|COMPLETED|preempt|0|billing=1,cpu=1,mem=2G,node=1|2026-11-06T23:43:23|2026-11-06T23:43:23
+11073304|ae-qis-screen-authored|COMPLETED|general|1468|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-06T23:42:42|2026-11-07T00:07:10
+11073309|ae-qis-select-hard-native|COMPLETED|preempt|8|billing=2,cpu=1,mem=4G,node=1|2026-11-06T23:44:30|2026-11-06T23:44:38
+11073332|ae-qis-screen-omni|COMPLETED|general|3315|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T00:09:18|2026-11-07T01:04:33
+11073498|ae-qis-peek|COMPLETED|preempt|0|billing=1,cpu=1,mem=2G,node=1|2026-11-07T00:07:43|2026-11-07T00:07:43
+11073694|ae-qis-authored2-intake|COMPLETED|preempt|32|billing=8,cpu=4,mem=16G,node=1|2026-11-07T00:22:12|2026-11-07T00:22:44
+11073719|ae-qis-screen-authored2|CANCELLED by 6010497|general|3099|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-07T01:05:30|2026-11-07T01:57:09
+11073966|ae-qis-select-hard-combined|COMPLETED|preempt|88|billing=2,cpu=1,mem=4G,node=1|2026-11-07T01:07:20|2026-11-07T01:08:48
+11074473|ae-qis-diag-trunc|COMPLETED|preempt|10|billing=4,cpu=2,mem=8G,node=1|2026-11-07T01:53:08|2026-11-07T01:53:18
+11074495|ae-qis-rescreen-k8-h|COMPLETED|general|4237|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T01:59:10|2026-11-07T03:09:47
+11074499|ae-qis-rescreen-k8-aux|FAILED|general|2445|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-07T01:59:10|2026-11-07T02:39:55
+11074507|ae-qis-calib-panels-k8|COMPLETED|preempt|0|billing=2,cpu=1,mem=4G,node=1|2026-11-07T03:11:36|2026-11-07T03:11:36
+11074519|ae-qis-cal8k-lr1e-6-asym-s11|COMPLETED|general|7579|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T05:58:38|2026-11-07T08:04:57
+11074520|ae-qis-cal8k-lr1e-6-sym-s11|COMPLETED|general|9838|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-07T03:13:18|2026-11-07T05:57:16
+11074521|ae-qis-cal8k-lr2e-6-asym-s11|COMPLETED|general|11046|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T08:07:33|2026-11-07T11:11:39
+11074522|ae-qis-cal8k-lr2e-6-sym-s11|COMPLETED|general|9137|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T07:50:00|2026-11-07T10:22:17
+11074526|ae-qis-cal8k-lr5e-7-asym-s11|COMPLETED|general|7078|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T05:51:08|2026-11-07T07:49:06
+11074527|ae-qis-cal8k-lr5e-7-sym-s11|COMPLETED|general|7874|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T03:38:40|2026-11-07T05:49:54
+11074744|ae-qis-rescreen-k8-aux|COMPLETED|general|3194|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T02:43:14|2026-11-07T03:36:28
+11074898|ae-qis-select-hard-k8|COMPLETED|preempt|1|billing=2,cpu=1,mem=4G,node=1|2026-11-07T03:14:00|2026-11-07T03:14:01
+11075024|ae-qis-match-k8|COMPLETED|preempt|111|billing=2,cpu=1,mem=4G,node=1|2026-11-07T03:40:30|2026-11-07T03:42:21
+11075045|ae-qis-bundle-main|COMPLETED|preempt|93|billing=3,cpu=1,mem=8G,node=1|2026-11-07T03:47:37|2026-11-07T03:49:10
+11075046|ae-qis-stage3-k8|COMPLETED|preempt|1686|billing=40,cpu=8,gres/gpu:a6000=1,gres/gpu=1,mem=64G,node=1|2026-11-07T08:47:37|2026-11-07T09:15:43
+11075047|ae-qis-peek|COMPLETED|preempt|23|billing=1,cpu=1,mem=2G,node=1|2026-11-07T03:48:47|2026-11-07T03:49:10
+11075419|ae-qis-tests-b|FAILED|preempt|405|billing=8,cpu=4,mem=16G,node=1|2026-11-07T05:07:11|2026-11-07T05:13:56
+11075445|ae-qis-tests-c|COMPLETED|preempt|190|billing=8,cpu=4,mem=16G,node=1|2026-11-07T05:16:17|2026-11-07T05:19:27
+11075838|ae-qis-peek|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-07T07:06:37|2026-11-07T07:06:38
+11075978|ae-qis-cal8k-lr1e-6-sym-s22|COMPLETED|general|9964|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T10:24:15|2026-11-07T13:10:19
+11076551|ae-qis-cal8k-lr2e-6-sym-s22|COMPLETED|general|9893|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-07T11:13:44|2026-11-07T13:58:37
+11076768|ae-qis-peek|COMPLETED|preempt|2|billing=1,cpu=1,mem=2G,node=1|2026-11-07T11:06:42|2026-11-07T11:06:44
+11078035|ae-qis-calib-select|FAILED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-07T14:01:09|2026-11-07T14:01:10
+11078053|ae-qis-calib-select-b|COMPLETED|preempt|24|billing=4,cpu=2,mem=8G,node=1|2026-11-07T14:04:01|2026-11-07T14:04:25
+11078086|ae-qis-main-R-s101-sym|CANCELLED by 6010497|general|18275|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T14:07:18|2026-11-07T19:11:53
+11078087|ae-qis-a6-modes-k8|FAILED|general|170|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T14:08:12|2026-11-07T14:11:02
+11078115|ae-qis-a6-modes-k8-b|COMPLETED|general|2923|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T14:13:52|2026-11-07T15:02:35
+11078156|ae-qis-peek|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-07T14:20:46|2026-11-07T14:20:47
+11078164|ae-qis-main-U-s101-sym|CANCELLED by 6010497|general|16940|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T14:29:35|2026-11-07T19:11:55
+11078175|ae-qis-peek|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-07T14:29:05|2026-11-07T14:29:06
+11078180|ae-qis-main-H-s101-sym|CANCELLED by 6010497|general|14837|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T15:04:41|2026-11-07T19:11:58
+11078181|ae-qis-main-R-s202-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T21:59:16
+11078184|ae-qis-main-U-s202-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T21:59:17
+11078185|ae-qis-main-H-s202-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T21:59:19
+11078186|ae-qis-main-R-s303-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T17:02:55
+11078187|ae-qis-main-U-s303-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T17:02:57
+11078412|ae-qis-main-H-s303-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T15:05:14
+11078421|ae-qis-a6-think-k16|CANCELLED by 6010497|preempt|0||None|2026-11-07T15:17:22
+11078506|ae-qis-main-H-s303-sym|CANCELLED by 6010497|preempt|0||None|2026-11-07T17:02:59
+11078552|ae-qis-a8-cpu|COMPLETED|preempt|44|billing=8,cpu=4,mem=16G,node=1|2026-11-07T15:21:20|2026-11-07T15:22:04
+11078608|ae-qis-storage-scan|FAILED|preempt|0|billing=1,cpu=1,mem=2G,node=1|2026-11-07T15:24:27|2026-11-07T15:24:27
+11078641|ae-qis-prune-cal|COMPLETED|preempt|11|billing=1,cpu=1,mem=2G,node=1|2026-11-07T15:27:35|2026-11-07T15:27:46
+11078827|ae-qis-monitor|COMPLETED|preempt|18|billing=3,cpu=2,mem=4G,node=1|2026-11-07T16:06:13|2026-11-07T16:06:31
+11079315|ae-qis-test-base|CANCELLED by 6010497|preempt|0||None|2026-11-07T17:28:53
+11079320|ae-qis-tests-d|COMPLETED|preempt|566|billing=8,cpu=4,mem=16G,node=1|2026-11-07T17:07:43|2026-11-07T17:17:09
+11079411|ae-qis-diag-local-r0|CANCELLED by 6010497|preempt|0||None|2026-11-09T15:15:07
+11079420|ae-qis-monitor|COMPLETED|preempt|42|billing=3,cpu=2,mem=4G,node=1|2026-11-07T17:20:27|2026-11-07T17:21:09
+11079455|ae-qis-trunc-inspect-r32|COMPLETED|preempt|29|billing=4,cpu=2,mem=8G,node=1|2026-11-07T17:23:43|2026-11-07T17:24:12
+11079542|ae-qis-tests-e|COMPLETED|preempt|14|billing=8,cpu=4,mem=16G,node=1|2026-11-07T17:29:09|2026-11-07T17:29:23
+11079543|ae-qis-smoke-k16|CANCELLED by 6010497|general|3177|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T19:13:48|2026-11-07T20:06:45
+11079548|ae-qis-test-base|CANCELLED by 6010497|preempt|0||None|2026-11-07T21:57:24
+11079553|ae-qis-boundary-watch-R-s101|CANCELLED by 6010497|preempt|6032|billing=1,cpu=1,mem=1G,node=1|2026-11-07T17:31:14|2026-11-07T19:11:46
+11079555|ae-qis-boundary-watch-U-s101|CANCELLED by 6010497|preempt|6035|billing=2,cpu=2,mem=1G,node=1|2026-11-07T17:31:14|2026-11-07T19:11:49
+11079556|ae-qis-boundary-watch-H-s101|CANCELLED by 6010497|preempt|5973|billing=2,cpu=2,mem=1G,node=1|2026-11-07T17:32:17|2026-11-07T19:11:50
+11079825|ae-qis-monitor|COMPLETED|preempt|38|billing=3,cpu=2,mem=4G,node=1|2026-11-07T18:07:01|2026-11-07T18:07:39
+11079863|ae-qis-train-summary|COMPLETED|preempt|8|billing=2,cpu=1,mem=4G,node=1|2026-11-07T18:13:25|2026-11-07T18:13:33
+11079930|ae-qis-monitor|COMPLETED|preempt|10|billing=3,cpu=2,mem=4G,node=1|2026-11-07T18:21:04|2026-11-07T18:21:14
+11080162|ae-qis-monitor|COMPLETED|preempt|74|billing=4,cpu=2,mem=8G,node=1|2026-11-07T18:46:53|2026-11-07T18:48:07
+11080163|ae-qis-tests-f|COMPLETED|preempt|41|billing=8,cpu=4,mem=16G,node=1|2026-11-07T18:46:53|2026-11-07T18:47:34
+11080274|ae-qis-probe-table|FAILED|preempt|5|billing=2,cpu=1,mem=4G,node=1|2026-11-07T18:54:45|2026-11-07T18:54:50
+11080368|ae-qis-probe-table|COMPLETED|preempt|272|billing=2,cpu=1,mem=4G,node=1|2026-11-07T19:03:25|2026-11-07T19:07:57
+11080461|ae-qis-a11-scan|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-07T19:14:22|2026-11-07T19:14:23
+11080483|ae-qis-a11-dev16k-R|CANCELLED by 6010497|general|6568|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T19:17:10|2026-11-07T21:06:38
+11080484|ae-qis-a11-dev16k-U|CANCELLED by 6010497|general|6570|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T19:17:10|2026-11-07T21:06:40
+11080736|ae-qis-tests-g|FAILED|preempt|46|billing=8,cpu=4,mem=16G,node=1|2026-11-07T20:08:54|2026-11-07T20:09:40
+11080758|ae-qis-smoke-k16b|COMPLETED|general|844|billing=32,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=64G,node=1|2026-11-07T20:08:13|2026-11-07T20:22:17
+11080817|ae-qis-tests-h|COMPLETED|preempt|16|billing=8,cpu=4,mem=16G,node=1|2026-11-07T20:12:25|2026-11-07T20:12:41
+11080946|ae-qis-a11-dev16k-H|COMPLETED|general|5148|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T20:26:00|2026-11-07T21:51:48
+11081333|ae-qis-a11-dev16k-R|COMPLETED|general|6884|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T21:07:37|2026-11-07T23:02:21
+11081334|ae-qis-a11-dev16k-U|COMPLETED|general|7768|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-07T21:07:37|2026-11-07T23:17:05
+11081665|ae-qis-a11-truncstudy|COMPLETED|preempt|15|billing=4,cpu=2,mem=8G,node=1|2026-11-07T21:55:33|2026-11-07T21:55:48
+11081697|ae-qis-a11-supersede|COMPLETED|preempt|29|billing=1,cpu=1,mem=2G,node=1|2026-11-07T21:58:50|2026-11-07T21:59:19
+11081724|ae-qis-main-R-s101-sym|FAILED|general|91051|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T22:01:35|2026-11-08T23:19:06
+11081725|ae-qis-main-U-s101-sym|COMPLETED|general|81421|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-07T23:03:58|2026-11-08T21:40:59
+11081726|ae-qis-main-H-s101-sym|COMPLETED|general|106172|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-07T23:18:30|2026-11-09T04:48:02
+11081729|ae-qis-main-R-s202-sym|CANCELLED by 6010497|general|12973|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-08T21:41:48|2026-11-09T01:18:01
+11081731|ae-qis-main-U-s202-sym|CANCELLED by 6010497|preempt|0||None|2026-11-09T01:06:01
+11082191|ae-qis-monitor|COMPLETED|preempt|21|billing=4,cpu=2,mem=8G,node=1|2026-11-07T23:07:32|2026-11-07T23:07:53
+11082192|ae-qis-main-H-s202-sym|CANCELLED by 6010497|general|39649|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-10T03:15:38|2026-11-10T14:16:27
+11082251|ae-qis-a11-truncstudy|COMPLETED|preempt|10|billing=4,cpu=2,mem=8G,node=1|2026-11-07T23:20:04|2026-11-07T23:20:14
+11082493|ae-qis-monitor|COMPLETED|preempt|593|billing=4,cpu=2,mem=8G,node=1|2026-11-08T00:06:35|2026-11-08T00:16:28
+11082575|ae-qis-a11-capcheck|FAILED|preempt|0|billing=4,cpu=2,mem=8G,node=1|2026-11-08T00:19:28|2026-11-08T00:19:28
+11082618|ae-qis-a11-capcheck|COMPLETED|preempt|4252|billing=4,cpu=2,mem=8G,node=1|2026-11-08T00:22:46|2026-11-08T01:33:38
+11083320|ae-qis-a11-capcheck2|CANCELLED by 6010497|preempt|9189|billing=4,cpu=2,mem=8G,node=1|2026-11-08T01:35:41|2026-11-08T04:08:50
+11083516|ae-qis-monitor|COMPLETED|preempt|248|billing=4,cpu=2,mem=8G,node=1|2026-11-08T02:07:04|2026-11-08T02:11:12
+11084097|ae-qis-monitor|COMPLETED|preempt|67|billing=4,cpu=2,mem=8G,node=1|2026-11-08T04:07:03|2026-11-08T04:08:10
+11084106|ae-qis-a11-capcheck2|COMPLETED|preempt|2569|billing=4,cpu=2,mem=8G,node=1|2026-11-08T04:10:00|2026-11-08T04:52:49
+11084344|ae-qis-diag-local-r64|CANCELLED by 6010497|preempt|0||None|2026-11-09T15:15:09
+11084490|ae-qis-monitor|COMPLETED|preempt|61|billing=4,cpu=2,mem=8G,node=1|2026-11-08T06:06:12|2026-11-08T06:07:13
+11084694|ae-qis-monitor|COMPLETED|preempt|52|billing=4,cpu=2,mem=8G,node=1|2026-11-08T07:07:04|2026-11-08T07:07:56
+11085378|ae-qis-monitor|COMPLETED|preempt|333|billing=4,cpu=2,mem=8G,node=1|2026-11-08T09:06:09|2026-11-08T09:11:42
+11086128|ae-qis-monitor|COMPLETED|preempt|58|billing=4,cpu=2,mem=8G,node=1|2026-11-08T11:06:54|2026-11-08T11:07:52
+11086589|ae-qis-r32-provenance|COMPLETED|preempt|5|billing=6,cpu=2,mem=16G,node=1|2026-11-08T12:00:35|2026-11-08T12:00:40
+11087148|ae-qis-monitor|COMPLETED|preempt|141|billing=4,cpu=2,mem=8G,node=1|2026-11-08T13:06:07|2026-11-08T13:08:28
+11088493|ae-qis-monitor|PREEMPTED|preempt|151|billing=4,cpu=2,mem=8G,node=1|2026-11-08T15:06:39|2026-11-08T15:09:10
+11088493|ae-qis-monitor|COMPLETED|preempt|269|billing=4,cpu=2,mem=8G,node=1|2026-11-08T15:12:22|2026-11-08T15:16:51
+11089196|ae-qis-test-base|COMPLETED|general|1799|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T13:42:11|2026-11-09T14:12:10
+11089798|ae-qis-monitor|COMPLETED|preempt|406|billing=4,cpu=2,mem=8G,node=1|2026-11-08T17:06:13|2026-11-08T17:12:59
+11091008|ae-qis-monitor|COMPLETED|preempt|255|billing=4,cpu=2,mem=8G,node=1|2026-11-08T19:06:53|2026-11-08T19:11:08
+11091807|ae-qis-monitor|COMPLETED|preempt|229|billing=4,cpu=2,mem=8G,node=1|2026-11-08T21:06:50|2026-11-08T21:10:39
+11092019|ae-qis-validate-endpoints|COMPLETED|preempt|62|billing=6,cpu=2,mem=16G,node=1|2026-11-08T21:43:23|2026-11-08T21:44:25
+11092858|ae-qis-monitor|COMPLETED|preempt|85|billing=4,cpu=2,mem=8G,node=1|2026-11-08T23:07:00|2026-11-08T23:08:25
+11092886|ae-qis-ckpt-inspect|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-08T23:12:23|2026-11-08T23:12:24
+11092924|ae-qis-ckpt-inspect|FAILED|preempt|0|billing=1,cpu=1,mem=2G,node=1|2026-11-08T23:21:00|2026-11-08T23:21:00
+11092933|ae-qis-r101-recover-prep|COMPLETED|preempt|0|billing=1,cpu=1,mem=2G,node=1|2026-11-08T23:23:18|2026-11-08T23:23:18
+11092945|ae-qis-main-R-s101-sym|COMPLETED|general|9277|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-08T23:27:15|2026-11-09T02:01:52
+11093383|ae-qis-monitor|COMPLETED|preempt|315|billing=4,cpu=2,mem=8G,node=1|2026-11-09T00:06:23|2026-11-09T00:11:38
+11093453|ae-qis-ckpt-watch|COMPLETED|preempt|3782|billing=1,cpu=1,mem=1G,node=1|2026-11-09T00:14:28|2026-11-09T01:17:30
+11094037|ae-qis-main-U-s202-sym|FAILED|general|38189|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T02:03:55|2026-11-09T12:40:24
+11094187|ae-qis-r202-recover-prep|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-09T01:19:22|2026-11-09T01:19:23
+11094190|ae-qis-main-R-s202-sym|COMPLETED|general|69062|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T01:19:53|2026-11-09T20:30:55
+11094459|ae-qis-validate-endpoints|COMPLETED|preempt|1057|billing=6,cpu=2,mem=16G,node=1|2026-11-09T02:04:31|2026-11-09T02:22:08
+11094805|ae-qis-monitor|PREEMPTED|preempt|433|billing=4,cpu=2,mem=8G,node=1|2026-11-09T03:06:24|2026-11-09T03:13:37
+11094805|ae-qis-monitor|PREEMPTED|preempt|238|billing=4,cpu=2,mem=8G,node=1|2026-11-09T03:17:56|2026-11-09T03:21:54
+11094805|ae-qis-monitor|COMPLETED|preempt|112|billing=4,cpu=2,mem=8G,node=1|2026-11-09T03:26:27|2026-11-09T03:28:19
+11095106|ae-qis-test-R-s101-sym|COMPLETED|general|15786|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-09T04:51:05|2026-11-09T09:14:11
+11095118|ae-qis-test-U-s101-sym|COMPLETED|general|15843|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T09:16:33|2026-11-09T13:40:36
+11095270|ae-qis-validate-endpoints|PREEMPTED|preempt|978|billing=6,cpu=2,mem=16G,node=1|2026-11-09T04:51:46|2026-11-09T05:08:04
+11095270|ae-qis-validate-endpoints|PREEMPTED|preempt|1278|billing=6,cpu=2,mem=16G,node=1|2026-11-09T05:10:45|2026-11-09T05:32:03
+11095270|ae-qis-validate-endpoints|COMPLETED|preempt|106|billing=6,cpu=2,mem=16G,node=1|2026-11-09T05:34:51|2026-11-09T05:36:37
+11095486|ae-qis-test-H-s101-sym|COMPLETED|general|16035|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T14:14:57|2026-11-09T18:42:12
+11095700|ae-qis-a11-capcheck-s202|COMPLETED|preempt|3|billing=4,cpu=2,mem=8G,node=1|2026-11-09T06:06:29|2026-11-09T06:06:32
+11095848|ae-qis-monitor|COMPLETED|preempt|414|billing=4,cpu=2,mem=8G,node=1|2026-11-09T07:07:07|2026-11-09T07:14:01
+11096244|ae-qis-monitor|COMPLETED|preempt|135|billing=4,cpu=2,mem=8G,node=1|2026-11-09T09:07:16|2026-11-09T09:09:31
+11097078|ae-qis-monitor|COMPLETED|preempt|222|billing=4,cpu=2,mem=8G,node=1|2026-11-09T11:07:13|2026-11-09T11:10:55
+11097803|ae-qis-u202-recover-prep|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-09T12:44:16|2026-11-09T12:44:17
+11097811|ae-qis-main-U-s202-sym|FAILED|general|13515|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T12:45:51|2026-11-09T16:31:06
+11098014|ae-qis-monitor|COMPLETED|preempt|243|billing=4,cpu=2,mem=8G,node=1|2026-11-09T13:06:44|2026-11-09T13:10:47
+11098508|ae-qis-monitor|COMPLETED|preempt|126|billing=4,cpu=2,mem=8G,node=1|2026-11-09T14:07:23|2026-11-09T14:09:29
+11099032|ae-qis-tests-i|COMPLETED|preempt|263|billing=8,cpu=4,mem=16G,node=1|2026-11-09T15:10:22|2026-11-09T15:14:45
+11099043|ae-qis-report-dry|FAILED|preempt|0|billing=4,cpu=2,mem=8G,node=1|2026-11-09T15:11:51|2026-11-09T15:11:51
+11099061|ae-qis-report-dry|COMPLETED|preempt|43|billing=4,cpu=2,mem=8G,node=1|2026-11-09T15:26:50|2026-11-09T15:27:33
+11099083|ae-qis-diag-local-r0|CANCELLED by 6010497|preempt|0||None|2026-11-09T20:00:29
+11099088|ae-qis-diag-local-r64|FAILED|general|4190|billing=40,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=96G,node=1|2026-11-09T18:48:10|2026-11-09T19:58:00
+11099614|ae-qis-monitor|COMPLETED|preempt|127|billing=4,cpu=2,mem=8G,node=1|2026-11-09T16:06:52|2026-11-09T16:08:59
+11099700|ae-qis-storage-df|FAILED|preempt|301|billing=1,cpu=1,mem=2G,node=1|2026-11-09T16:11:18|2026-11-09T16:16:19
+11099764|ae-qis-prune-tmp|COMPLETED|preempt|296|billing=1,cpu=1,mem=2G,node=1|2026-11-09T16:23:17|2026-11-09T16:28:13
+11100079|ae-qis-u202-recover-prep2|COMPLETED|preempt|1|billing=1,cpu=1,mem=2G,node=1|2026-11-09T16:45:09|2026-11-09T16:45:10
+11100135|ae-qis-prune-optim|COMPLETED|preempt|2|billing=1,cpu=1,mem=2G,node=1|2026-11-09T16:52:10|2026-11-09T16:52:12
+11100159|ae-qis-main-U-s202-sym|COMPLETED|general|40568|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-09T16:54:10|2026-11-10T04:10:18
+11100269|ae-qis-monitor|COMPLETED|preempt|128|billing=4,cpu=2,mem=8G,node=1|2026-11-09T17:06:53|2026-11-09T17:09:01
+11100305|ae-qis-tests-j|COMPLETED|preempt|348|billing=8,cpu=4,mem=16G,node=1|2026-11-09T17:13:59|2026-11-09T17:19:47
+11100782|ae-qis-test-R-s202-sym|COMPLETED|general|16386|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-09T20:31:05|2026-11-10T01:04:11
+11100785|ae-qis-test-U-s202-sym|COMPLETED|general|11446|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T04:10:26|2026-11-10T07:21:12
+11101332|ae-qis-monitor|COMPLETED|preempt|161|billing=4,cpu=2,mem=8G,node=1|2026-11-09T19:06:56|2026-11-09T19:09:37
+11101908|ae-qis-diag-local-r64|COMPLETED|general|33688|billing=40,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=96G,node=1|2026-11-09T20:01:11|2026-11-10T05:22:39
+11101910|ae-qis-diag-local-r0|CANCELLED by 6010497|general|99|billing=40,cpu=8,gres/gpu:6000ada=1,gres/gpu=1,mem=96G,node=1|2026-11-09T21:04:06|2026-11-09T21:05:45
+11102275|ae-qis-validate-endpoints|FAILED|preempt|611|billing=6,cpu=2,mem=16G,node=1|2026-11-09T21:15:31|2026-11-09T21:25:42
+11102391|ae-qis-interference|COMPLETED|preempt|85|billing=8,cpu=4,mem=16G,node=1|2026-11-09T21:15:31|2026-11-09T21:16:56
+11102440|ae-qis-cue-eval|CANCELLED by 6010497|general|0||None|2026-11-10T02:07:38
+11102499|ae-qis-diag-local-r0|COMPLETED|general|7793|billing=40,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=96G,node=1|2026-11-10T01:05:13|2026-11-10T03:15:06
+11102674|ae-qis-validate-endpoints|COMPLETED|preempt|2421|billing=6,cpu=2,mem=16G,node=1|2026-11-09T22:43:44|2026-11-09T23:24:05
+11102871|ae-qis-monitor|COMPLETED|preempt|292|billing=4,cpu=2,mem=8G,node=1|2026-11-09T22:43:44|2026-11-09T22:48:36
+11103165|ae-qis-report-final|CANCELLED by 6010497|preempt|0||None|2026-11-09T23:25:47
+11103416|ae-qis-validate-endpoints|COMPLETED|preempt|1198|billing=6,cpu=2,mem=16G,node=1|2026-11-09T23:50:53|2026-11-10T00:10:51
+11103418|ae-qis-report-final|COMPLETED|preempt|77|billing=8,cpu=4,mem=16G,node=1|2026-11-10T04:37:06|2026-11-10T04:38:23
+11104730|ae-qis-monitor|COMPLETED|preempt|162|billing=4,cpu=2,mem=8G,node=1|2026-11-10T02:07:27|2026-11-10T02:10:09
+11104737|ae-qis-tests-k|COMPLETED|preempt|20|billing=8,cpu=4,mem=16G,node=1|2026-11-10T02:08:52|2026-11-10T02:09:12
+11104738|ae-qis-cue-eval|COMPLETED|general|7947|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T05:22:50|2026-11-10T07:35:17
+11105173|ae-qis-tests-k|COMPLETED|preempt|14|billing=8,cpu=4,mem=16G,node=1|2026-11-10T03:19:27|2026-11-10T03:19:41
+11105174|ae-qis-diag-ref|COMPLETED|general|7749|billing=40,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=96G,node=1|2026-11-10T07:23:58|2026-11-10T09:33:07
+11105454|ae-qis-validate-endpoints|COMPLETED|preempt|1391|billing=6,cpu=2,mem=16G,node=1|2026-11-10T04:12:21|2026-11-10T04:35:32
+11105646|ae-qis-tests-k|COMPLETED|preempt|75|billing=8,cpu=4,mem=16G,node=1|2026-11-10T04:43:13|2026-11-10T04:44:28
+11105647|ae-qis-report-final|COMPLETED|preempt|70|billing=8,cpu=4,mem=16G,node=1|2026-11-10T04:45:35|2026-11-10T04:46:45
+11106097|ae-qis-cost|COMPLETED|preempt|12|billing=4,cpu=2,mem=8G,node=1|2026-11-10T06:07:21|2026-11-10T06:07:33
+11106458|ae-qis-monitor|COMPLETED|preempt|140|billing=4,cpu=2,mem=8G,node=1|2026-11-10T07:08:01|2026-11-10T07:10:21
+11106560|ae-qis-report-final|COMPLETED|preempt|122|billing=8,cpu=4,mem=16G,node=1|2026-11-10T07:24:36|2026-11-10T07:26:38
+11107872|ae-qis-monitor|COMPLETED|preempt|232|billing=4,cpu=2,mem=8G,node=1|2026-11-10T11:07:41|2026-11-10T11:11:33
+11108988|ae-qis-monitor|CANCELLED by 6010497|preempt|0||None|2026-11-10T14:17:29
+11109597|ae-qis-report-final|COMPLETED|general|114|billing=16,cpu=4,gres/gpu:l40=1,gres/gpu=1,mem=16G,node=1|2026-11-10T14:17:48|2026-11-10T14:19:42

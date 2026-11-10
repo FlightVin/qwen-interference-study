@@ -1,0 +1,166 @@
+{
+ "categories": {
+  "CPU jobs": {
+   "jobs": 126,
+   "allocations": 131,
+   "gpu_h": 0.0,
+   "cpu_h": 30.993888888888886,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "COMPLETED": 103,
+    "FAILED": 11,
+    "CANCELLED": 12,
+    "PREEMPTED": 5
+   }
+  },
+  "other GPU jobs (screening, calibration, smoke, A10/A11 studies)": {
+   "jobs": 41,
+   "allocations": 41,
+   "gpu_h": 41.960833333333326,
+   "cpu_h": 335.556111111111,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "COMPLETED": 28,
+    "FAILED": 7,
+    "CANCELLED": 6
+   }
+  },
+  "main R-s101": {
+   "jobs": 3,
+   "allocations": 3,
+   "gpu_h": 32.945277777777775,
+   "cpu_h": 263.5622222222222,
+   "gpu_h_canonical": 27.868888888888886,
+   "states": {
+    "CANCELLED": 1,
+    "FAILED": 1,
+    "COMPLETED": 1
+   }
+  },
+  "main U-s101": {
+   "jobs": 2,
+   "allocations": 2,
+   "gpu_h": 27.3225,
+   "cpu_h": 218.58,
+   "gpu_h_canonical": 22.616944444444446,
+   "states": {
+    "CANCELLED": 1,
+    "COMPLETED": 1
+   }
+  },
+  "main H-s101": {
+   "jobs": 2,
+   "allocations": 2,
+   "gpu_h": 33.61361111111111,
+   "cpu_h": 268.9088888888889,
+   "gpu_h_canonical": 29.49222222222222,
+   "states": {
+    "CANCELLED": 1,
+    "COMPLETED": 1
+   }
+  },
+  "main R-s202": {
+   "jobs": 3,
+   "allocations": 3,
+   "gpu_h": 22.787499999999998,
+   "cpu_h": 182.29999999999998,
+   "gpu_h_canonical": 22.787499999999998,
+   "states": {
+    "CANCELLED": 2,
+    "COMPLETED": 1
+   }
+  },
+  "main U-s202": {
+   "jobs": 5,
+   "allocations": 5,
+   "gpu_h": 25.63111111111111,
+   "cpu_h": 205.04888888888888,
+   "gpu_h_canonical": 25.63111111111111,
+   "states": {
+    "CANCELLED": 2,
+    "FAILED": 2,
+    "COMPLETED": 1
+   }
+  },
+  "main H-s202": {
+   "jobs": 2,
+   "allocations": 2,
+   "gpu_h": 11.01361111111111,
+   "cpu_h": 88.10888888888888,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 2
+   }
+  },
+  "main R-s303": {
+   "jobs": 1,
+   "allocations": 1,
+   "gpu_h": 0.0,
+   "cpu_h": 0.0,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 1
+   }
+  },
+  "main U-s303": {
+   "jobs": 1,
+   "allocations": 1,
+   "gpu_h": 0.0,
+   "cpu_h": 0.0,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 1
+   }
+  },
+  "main H-s303": {
+   "jobs": 2,
+   "allocations": 2,
+   "gpu_h": 0.0,
+   "cpu_h": 0.0,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 2
+   }
+  },
+  "sealed test evaluation": {
+   "jobs": 8,
+   "allocations": 8,
+   "gpu_h": 21.47083333333333,
+   "cpu_h": 171.76666666666665,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 2,
+    "COMPLETED": 6
+   }
+  },
+  "local-update diagnostic": {
+   "jobs": 8,
+   "allocations": 8,
+   "gpu_h": 14.86638888888889,
+   "cpu_h": 118.93111111111112,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 4,
+    "FAILED": 1,
+    "COMPLETED": 3
+   }
+  },
+  "strategy-cue panel (A15.4)": {
+   "jobs": 2,
+   "allocations": 2,
+   "gpu_h": 2.2075,
+   "cpu_h": 17.66,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 1,
+    "COMPLETED": 1
+   }
+  }
+ },
+ "total": {
+  "jobs": 206,
+  "allocations": 211,
+  "gpu_h": 233.81916666666666,
+  "cpu_h": 1901.4166666666665
+ }
+}

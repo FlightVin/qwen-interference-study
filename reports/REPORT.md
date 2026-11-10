@@ -1,7 +1,6 @@
 # Does related practice help GRPO learn hard math? Qwen3-1.7B, H vs R vs U
 
-DRAFT (10 Nov 14:50Z). Sections 1–5 are final. Values marked `[PENDING …]` arrive with the H-s202 stop (19:00Z)
-and the final cost table. Sections 3–5 are EXPLORATORY analyses added by owner
+Final, 10 Nov 2026 (2:40 PM EST). Sections 3–5 are EXPLORATORY analyses added by owner
 amendment A15 after the primary design was fixed; section 2 is the primary result.
 
 ## 1. Lead table (A13)
@@ -13,7 +12,7 @@ bootstrap over the 128 problems; they describe these trained models, not run-to-
 |---|---|---|---|---|---|
 | 101 | 0.770 | 0.819 | 0.777 | +0.042 [+0.021, +0.063] | +0.049 [+0.020, +0.080] |
 | 202 | not run (partial, A16) | 0.748 | 0.792 | −0.044 [−0.072, −0.018] | not available |
-| Mean | seed 101 only | 0.783 | 0.785 | −0.001 [−0.018, +0.015] | seed 101 only |
+| Mean | not available (seed 101 only: 0.770) | 0.783 | 0.785 | −0.001 [−0.018, +0.015] | not available (seed 101 only: +0.049) |
 
 Base model: pass@1 0.526, pass@8 0.835.
 
@@ -215,7 +214,7 @@ Scope (A9): H/R/U × seeds 101 and 202. All runs are attempt a2; attempt a1 data
 | U-s101 | complete, validated | — |
 | R-s202 | complete, validated | restarted once at round 16 for checkpoint cadence (D105) |
 | U-s202 | complete, validated | failed twice on storage write errors; resumed from round 64 (D111, D117) |
-| H-s202 | partial (A16) | did not fit before the deadline; runs until 19:00Z; no test; appendix A |
+| H-s202 | partial (A16) | did not fit before the deadline; stopped at round 64 (19:16Z, D140); no test; appendix A |
 
 **Storage incident.** The account's 500 GB quota (shared with other projects) reached 495 GB on 9 Nov. Writes became
 slow and failed with `Errno 512`/`EINTR` (D116). This caused every checkpoint-save failure and both U-s202 crashes.
@@ -251,15 +250,43 @@ separate error.
 
 ## 10. Compute
 
-[PENDING `qis.analysis.cost_table`] GPU-hours per category, every allocation charged, including failed, cancelled and
-superseded attempts. Active training time on the canonical trajectory: H-s101 26.3 h, R-s101 21.0 h, U-s101 19.3 h,
-R-s202 18.0 h, U-s202 16.0 h.
+Every Slurm allocation in the project ledger is charged, including failed, cancelled and superseded attempts (`sacct`,
+job 11109623, 19:22Z on 10 Nov; table `tables/cost.md`). GPU-hours = elapsed time × GPUs allocated.
+
+| Category | Jobs | Allocations | GPU-h | of which canonical | CPU-h | Final states |
+|---|---|---|---|---|---|---|
+| CPU jobs | 126 | 131 | 0.0 | 0.0 | 31.0 | CANCELLED 12, COMPLETED 103, FAILED 11, PREEMPTED 5 |
+| local-update diagnostic | 8 | 8 | 14.9 | 0.0 | 118.9 | CANCELLED 4, COMPLETED 3, FAILED 1 |
+| main H-s101 | 2 | 2 | 33.6 | 29.5 | 268.9 | CANCELLED 1, COMPLETED 1 |
+| main H-s202 | 2 | 2 | 11.0 | 0.0 | 88.1 | CANCELLED 2 |
+| main H-s303 | 2 | 2 | 0.0 | 0.0 | 0.0 | CANCELLED 2 |
+| main R-s101 | 3 | 3 | 32.9 | 27.9 | 263.6 | CANCELLED 1, COMPLETED 1, FAILED 1 |
+| main R-s202 | 3 | 3 | 22.8 | 22.8 | 182.3 | CANCELLED 2, COMPLETED 1 |
+| main R-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
+| main U-s101 | 2 | 2 | 27.3 | 22.6 | 218.6 | CANCELLED 1, COMPLETED 1 |
+| main U-s202 | 5 | 5 | 25.6 | 25.6 | 205.0 | CANCELLED 2, COMPLETED 1, FAILED 2 |
+| main U-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
+| other GPU jobs (screening, calibration, smoke, A10/A11 studies) | 41 | 41 | 42.0 | 0.0 | 335.6 | CANCELLED 6, COMPLETED 28, FAILED 7 |
+| sealed test evaluation | 8 | 8 | 21.5 | 0.0 | 171.8 | CANCELLED 2, COMPLETED 6 |
+| strategy-cue panel (A15.4) | 2 | 2 | 2.2 | 0.0 | 17.7 | CANCELLED 1, COMPLETED 1 |
+| **Total** | 206 | 211 | 233.8 | | 1901.4 | |
+
+**Total: 233.8 GPU-h** (211 allocations) **and 1,901 CPU-h.** The canonical trajectories of the five complete runs used
+128.4 GPU-h (55%). The rest went to sealed-test evaluation (21.5), the partial H-s202 run (11.0), the exploratory A15
+analyses (local-update diagnostic 14.9, cue panel 2.2), screening, calibration and protocol studies (42.0), and
+superseded or failed attempts of the main runs (13.8). Active training time on the canonical trajectories: H-s101
+26.3 h, R-s101 21.0 h, U-s101 19.3 h, R-s202 18.0 h, U-s202 16.0 h. The cost job itself (≈ 0.01 GPU-h) is not in the
+table. GPU limit (A15: 3 general + 6 preempt): exceeded once, for 99 s at 02:04Z on 10 Nov, when a moved job started as
+a fourth general job; it was cancelled at once and replaced by a dependency chain (D124). Otherwise general use stayed
+at or below 3 GPUs and preempt at or below 1 GPU after A15 (from `tables/sacct.txt`).
 
 ## 11. Omitted or partial items
 
 - H-s202: partial run only (A16); no test result, so R − H and the H mean rest on seed 101.
 - Local-update extension from U-s101 round 64: skipped; that checkpoint and optimizer state were not retained.
-- [PENDING any further omission.]
+- Seed 303 and the clipping sensitivity runs: deferred under A9; not run.
+- Two seeds only: the study cannot estimate training variation, and the seeds disagree on the primary contrast.
+- The A15.2 interference trace uses training records; it has no independent evaluation per round.
 
 ## 12. Limitations
 
@@ -308,5 +335,5 @@ partial run therefore repeats the main finding: the order of the arms changes be
 
 ## Reproduction
 
-Code: commit [PENDING]. Tables and figures: `qis.analysis.report_data`, `report_tables`, `per_problem`,
+Code: commit `41f055f` (the tree that produced the final tables and figures, job 11109597). Tables and figures: `qis.analysis.report_data`, `report_tables`, `per_problem`,
 `interference`, `figures`, `cue`, `cost_table`; source tables in `reports/tables/`. Decisions: `research/DECISIONS.md`.
