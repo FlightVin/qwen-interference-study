@@ -759,3 +759,12 @@
 5. **Next jobs / limits.** General 2/3 (H-s202, diag-ref). No runnable GPU work waiting.
 6. **Most important.** Fill r64 none_cycled; then prepare the 19:00Z steps (stop, A16 appendix, final report, cost).
 7. **Reconciliation.** Slurm ↔ ledger agree (2 live jobs). Watcher alive (ba3kivn6h).
+
+## Review 85 — 2026-11-10 15:05Z (10:05 AM EST Tue)
+1. **Changes.** Diag-ref COMPLETED 14:33Z (r64 cycle: no effect). REPORT §1–5 final; §4 dev-panel table and evidence-links paragraph added (6cce3f8).
+2. **Valid?** Yes.
+3. **Surprises.** None.
+4. **Risks.** None new. Remaining work waits for the 19:00Z H-s202 stop; deadline 00:30Z leaves ≈ 5 h after it.
+5. **Next jobs / limits.** General 1/3 (H-s202). No study GPU work waiting.
+6. **Most important.** 19:00Z: cancel 11082192 → interference + report-final → A16 appendix; regenerate and run the cost table.
+7. **Reconciliation.** Slurm ↔ ledger agree (1 live job). Watcher alive (bb1hd5lk6).
