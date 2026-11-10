@@ -704,3 +704,12 @@
 6. **Most important.** Keep GPUs busy: chain swap done (D130). Next: U-s202 end → validation, report-final.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bw7mm9jmc).
 - 08:25Z addendum: diag r0 complete (13 rows). All update rows lower J_R by 0.020–0.040 vs "none"; reference check 11105174 queued (D131). H-s202 partial started 08:15Z.
+
+## Review 79 — 2026-11-10 09:05Z (4:05 AM EST Tue)
+1. **Changes.** Diag r0 done (D131). H-s202 partial running since 08:15Z. Diag r64: 10 of 13 rows (seed 4104 hard done at 08:51Z); ends ≈ 10:30Z. Suite 11105173 50/50 on 042cebd (reference mode).
+2. **Valid?** Yes. Diag r0 J_R shift under check (D131).
+3. **Surprises.** Uniform J_R drop in all r0 update rows (D131).
+4. **Risks.** U-s202 round 128 + final evaluations: ends ≈ 09:30–09:45Z, slightly later than the 09:10Z forecast (final dev and probe evaluations not counted).
+5. **Next jobs / limits.** General 3/3 (U-s202, diag r64, H-s202). Chains: B → test U-s202; C → cue → reference check. Preempt CPU: report-final.
+6. **Most important.** U-s202 end → endpoint validation; report-final unseals.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bzq5mh36x).
