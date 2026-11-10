@@ -631,3 +631,12 @@
 5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, diag r64); tests R/U-s202 pending on dependencies; preempt: H-s202, diag r0.
 6. **Most important.** When R-s202 ends: run endpoint validation (CPU) alongside its test; then put diag r0 on that slot after the test.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bpnb6ehp9).
+
+## Review 71 — 2026-11-10 01:05Z (8:05 PM EST Mon)
+1. **Changes.** Diag r64 11099088 FAILED 00:58Z (OOM in snapshot restore: code defect, fixed in 4b47386, D121); resubmitted 11101908 (running on general since 01:01Z, skips the stored no-update row); pending r0 replaced by 11101910 (same fix).
+2. **Valid?** Yes. The r64 no-update row from the failed job is complete and is reused; nothing else from that job is used.
+3. **Surprises.** A latent defect in a never-GPU-tested path; caught by its first GPU run.
+4. **Risks.** Diag r64 now ends ≈ 10:00–12:00Z (partial seed sets acceptable, A9.5). R-s202 in its final round/evaluation/save (12 rounds since 00:10Z monitor → ends ≈ 01:15–01:45Z). U-s202 ends ≈ 09:45Z.
+5. **Next jobs / limits.** General 3/3 (R-s202, U-s202, diag r64); test R-s202 starts on R-s202's GPU (dependency). Preempt: H-s202, diag r0.
+6. **Most important.** Confirm diag r64 passes its first branch (background check); on R-s202 end, validate its endpoint (CPU) while its test runs.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bbha8sifn).
