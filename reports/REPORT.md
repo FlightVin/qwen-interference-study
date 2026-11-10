@@ -66,10 +66,13 @@ samples per problem. Four minibatch seeds per branch. Sources: the base model (f
 | related | +0.027 | +0.016, +0.039, +0.033, +0.020 | −0.025 | −0.022 |
 | unrelated | +0.005 | +0.006, +0.025, +0.004, −0.016 | −0.027 | +0.001 |
 
-All 12 update rows score 0.020–0.040 below the no-update row on J_R, including the related branch. A shift of that
-size in every branch may come from the reference row, which is evaluated before the save–restore–reload cycle that
-every update branch goes through. A reference check measures this (D131): [PENDING result]. Comparisons between
-branches do not depend on it, because every branch shares the same reference.
+All 12 update rows score 0.020–0.040 below the no-update row on J_R, including the related branch. A reference check
+(D131, job 11105174) tested two explanations. First, the save–restore–reload cycle that every update branch goes
+through: evaluating the base model before and after the cycle gives identical scores (J_H 0.4316, J_R 0.808, J_U 0.793
+both times), so the cycle has no effect. Second, chance in the single no-update evaluation: a fresh no-update evaluation
+on another GPU type (L40S; the original ran on an L40) gives J_R 0.808, close to the update rows' mean of 0.802, and
+J_H 0.432 instead of 0.400. The original no-update row was therefore a high J_R draw and a low J_H draw. Every Δ in the
+table above shares that one draw, so the uniform J_R drop is not a measured effect of the update.
 
 **R-s101 round 64** (its saved optimizer state), ΔJ_H versus the no-update row, per minibatch seed:
 
@@ -84,9 +87,19 @@ branches do not depend on it, because every branch shares the same reference.
 That momentum-only step changes J_H by +0.006, J_R by −0.007 and J_U by −0.008. By round 64, R-s101 solved most
 practice prompts in all 8 answers, so half the related draws carried no learning signal.
 
-**Answer.** [PENDING: state whether the unrelated branch lowered J_H at either source, against the reference check
-and the per-seed spread.] One step of 32 responses is small; a change below ≈ 0.02 on 512 samples is within evaluation
-noise.
+**Reference at round 64.** A fresh no-update evaluation of R-s101 round 64 on an L40S gives J_H 0.631, J_R 0.893, J_U
+0.951; the original (RTX 6000 Ada) gave 0.606, 0.902, 0.940. [PENDING: none_cycled at r64.]
+
+**How large a change can this design detect?** On one GPU, identical weights give identical scores (the starred rows).
+Any change of weights or hardware gives a new sample of 512 responses per probe. Two such samples of the same model
+differed by 0.025 (r64) and 0.031 (r0) in J_H. The 12 update rows at r64 span 0.592–0.633. A single ΔJ_H smaller than
+about 0.03 cannot be told apart from this sampling variation.
+
+**Answer.** No. The unrelated update did not measurably lower hard success at either checkpoint. Its mean ΔJ_H is
++0.005 at r0 and +0.003 at r64. Its largest single drop (−0.016 at r0, −0.014 at r64) is smaller than the 0.025–0.031
+difference between two evaluations of the same model. At r0 its mean is 0.009 below the hard branch and 0.022 below
+the related branch; at r64 it is 0.003 above hard and 0.007 below related. These gaps are smaller still. One step on 32 responses
+is a small update; this design can detect only a drop of about 0.03 or more.
 
 ## 4. Did previously solvable hard problems produce more all-wrong groups?
 

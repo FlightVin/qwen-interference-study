@@ -775,3 +775,9 @@ independent evidence.
 - Cue-eval 11104738 COMPLETED 12:36Z (exit 0); `cue_analysis.json`/`.txt` in `research/evidence/a15/`.
 - Cue raises "factor" mentions in all five policies (+9 to +15 points); no cue gain excludes zero. DiD (R gain − U gain): s101 +0.021 [−0.063, +0.120]; s202 −0.094 [−0.193, −0.016]. Opposite signs → no evidence the cue helps R more than U. Written to REPORT §5, separate from interference.
 - Fixed-sample inspection (40 responses): grader consistent on problems 0 and 12 (correct answer 10 for problem 0 checked by hand). Counts toward the CHECKLIST 7.3 verifier audit.
+
+## D138 — 2026-11-10 14:20Z — Reference check result; REPORT §3 answer (EXPLORATORY)
+- r0 (L40S, babel-o5-28): none_rerun = none_cycled exactly (J_H 0.4316, J_R 0.808, J_U 0.793). D131 rule: the cycle does not explain the J_R shift.
+- The original r0 "none" (L40, babel-w5-24) was J_H 0.4004, J_R 0.8281. The update rows' mean J_R (0.802) matches the rerun. Reading: the uniform J_R drop came from one high reference draw shared by all Δs, not from the update.
+- r64 none_rerun (L40S) J_H 0.6309, J_R 0.8929, J_U 0.9512 vs original (6000 Ada) 0.6055, 0.9018, 0.9395. none_cycled pending (≈ 14:30Z).
+- Noise floor: two evaluations of the same model differ by 0.025–0.031 in J_H. Answer written to REPORT §3: the unrelated update did not measurably lower J_H at r0 or r64; the design detects only drops ≥ ≈ 0.03.

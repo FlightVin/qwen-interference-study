@@ -750,3 +750,12 @@
 5. **Next jobs / limits.** General 2/3 (H-s202, diag-ref). No runnable GPU work waiting.
 6. **Most important.** Finish diag-ref r64 (≈ 13:30Z) → write REPORT §3 answer with the reference result.
 7. **Reconciliation.** Slurm ↔ ledger agree (2 live jobs, both project-owned). Watcher alive (ba3kivn6h).
+
+## Review 84 — 2026-11-10 14:05Z (9:05 AM EST Tue)
+1. **Changes.** Diag-ref r64 none_rerun done 13:41Z; none_cycled running (≈ 14:30Z). REPORT §3 answer written (D138).
+2. **Valid?** Yes. Same-node evaluation is exactly repeatable; cross-hardware reruns differ by up to 0.031.
+3. **Surprises.** The original r0 "none" was a lucky draw that made all 12 ΔJ_R negative (D138).
+4. **Risks.** None new. H-s202 stop 19:00Z; deadline 00:30Z.
+5. **Next jobs / limits.** General 2/3 (H-s202, diag-ref). No runnable GPU work waiting.
+6. **Most important.** Fill r64 none_cycled; then prepare the 19:00Z steps (stop, A16 appendix, final report, cost).
+7. **Reconciliation.** Slurm ↔ ledger agree (2 live jobs). Watcher alive (ba3kivn6h).
