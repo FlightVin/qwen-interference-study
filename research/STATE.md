@@ -41,7 +41,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. All five planned complete runs done and validated (D132). Sealed outcomes read 09:45Z for five tests (D133): seed 101 R − U +0.042 [+0.021, +0.063], R − H +0.049; R-s202 0.748 (0.071 below R-s101). Seed 202 pair waits for test U-s202 (11100785, ends ≈ 13:40Z).
-2. H-s202 partial running (A16; stop 19:00Z); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
-3. Diag r0 and r64 done (D131, D134: no branch moves J_H consistently at r64; zero-gradient rows = momentum-only reference). Cue 11104738 running (4 of 10 policy-forms; ends ≈ 12:35Z), then reference check 11105174 (≈ 14:30Z).
-4. After test U-s202: rerun report-final, final interference, cost table, independent recomputation + audit, finalise `reports/REPORT.md` (A13 table, three A15 questions, cue separate, A16 appendix, omissions). Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
+1. Primary result final (D136, report-final 11106560, audited): R − U seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.018]; mean −0.001 [−0.018, +0.015]. Seeds disagree in sign: no evidence that practice choice changes test success; seed spread (~4 pts) ≥ effect. R − H seed 101 +0.049. U-s202 0.792.
+2. H-s202 partial running (A16; round 32 at 12:20Z; stop 19:00Z); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
+3. Diag r0 and r64 done (D131, D134). Cue 11104738 running (ends ≈ 13:00Z). Reference check 11105174 started early (D135; ≈ 14:30Z or earlier).
+4. Remaining: cue → REPORT §5; reference check → REPORT §3 answer; 19:00Z stop → A16 appendix, final interference + report-final, final cost; verifier sample audit; finalise `reports/REPORT.md`. Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).

@@ -764,3 +764,9 @@ independent evidence.
 - Test U-s202 11100785 COMPLETED 12:21Z (exit 0): pass@1 0.792, pass@8 0.949. Seed 202 reverses seed 101: R-s202 0.748, so R−U ≈ −0.044 at seed 202 (interval from report-final). Reported as observed (A13); no change to plans.
 - Report-final 11106560 submitted (938edaa) to build the full lead table, seed means and agreement.
 - A general GPU slot freed. Diag-ref 11105174 depended on the cue job only to respect the 3-GPU ceiling. Dependency cleared at 12:24Z; general use stays at 3 (cue, H-s202, diag-ref).
+
+## D136 — 2026-11-10 12:40Z — Primary result: seeds disagree
+- Report-final 11106560 (938edaa) COMPLETED; outputs fetched into `reports/tables` and `reports/figures`. All six test summaries present.
+- R − U pass@1: seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.018]; mean −0.001 [−0.018, +0.015]. pass@8 R − U: +0.017 (s101), −0.026 (s202).
+- Recomputed with stdlib Python from per-problem counts; all match (`research/audits/2026-11-10-recompute.md`).
+- Interpretation written into REPORT §1–2: the seeds disagree in sign, and the seed-to-seed spread in R (0.071) exceeds either effect. The study does not show that practice choice changes held-out success; it cannot exclude an effect below ~4 points. The intervals are conditional on the trained models. No further runs: seed 303 was deferred (A9) and the deadline is 00:30Z.

@@ -3,3 +3,4 @@
 /data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym/summary.json
 /data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym/summary.json
 /data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym/summary.json
+/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym/summary.json

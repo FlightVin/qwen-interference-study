@@ -16,5 +16,9 @@ All five files hold the same 128 problem ids.
 | R−U s101 | +0.0417 [+0.0203, +0.0630] | +0.0417 [+0.0212, +0.0632] | yes |
 | R−H s101 | +0.0491 [+0.0198, +0.0796] | +0.0491 [+0.0195, +0.0798] | yes |
 | U−H s101 | +0.0073 [−0.0200, +0.0359] | +0.0073 [−0.0195, +0.0349] | yes |
+| U-s202 pass@1 | 0.7922 | 0.7922 | yes |
+| R−U s202 | −0.0444 [−0.0728, −0.0178] | −0.0444 [−0.0723, −0.0181] | yes |
+| R−U mean of seeds | −0.0013 [−0.0181, +0.0154] | −0.0013 [−0.0182, +0.0150] | yes |
 
-Verdict: verified for seed 101 and R-s202. Pending: U-s202 (test running) and the seed means.
+
+Verdict: verified for every lead-table number (12:40Z, report-final 11106560).

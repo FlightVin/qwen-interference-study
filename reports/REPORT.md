@@ -1,7 +1,7 @@
 # Does related practice help GRPO learn hard math? Qwen3-1.7B, H vs R vs U
 
-DRAFT (10 Nov 10:30Z). Values marked `[PENDING …]` arrive with the U-s202 test (≈ 13:40Z), the final diagnostic and
-cue jobs, and the cost table. Every other number is final. Sections 3–5 are EXPLORATORY analyses added by owner
+DRAFT (10 Nov 12:40Z). All sealed-test values are final. Values marked `[PENDING …]` arrive with the reference check,
+the cue panel, the H-s202 stop (19:00Z) and the final cost table. Every other number is final. Sections 3–5 are EXPLORATORY analyses added by owner
 amendment A15 after the primary design was fixed; section 2 is the primary result.
 
 ## 1. Lead table (A13)
@@ -12,36 +12,43 @@ bootstrap over the 128 problems; they describe these trained models, not run-to-
 | Seed | H | R | U | R − U | R − H |
 |---|---|---|---|---|---|
 | 101 | 0.770 | 0.819 | 0.777 | +0.042 [+0.021, +0.063] | +0.049 [+0.020, +0.080] |
-| 202 | not run (partial, A16) | 0.748 | [PENDING] | [PENDING] | not available |
-| Mean | seed 101 only | 0.783 | [PENDING] | [PENDING] | seed 101 only |
+| 202 | not run (partial, A16) | 0.748 | 0.792 | −0.044 [−0.072, −0.018] | not available |
+| Mean | seed 101 only | 0.783 | 0.785 | −0.001 [−0.018, +0.015] | seed 101 only |
 
 Base model: pass@1 0.526, pass@8 0.835.
 
-[PENDING one sentence on what the two seeds show together.] The R score differs by 0.071 between seeds. That spread is
-larger than the seed-101 R − U effect, so the conclusion rests on whether the two seeds agree in sign.
+The two seeds disagree. R beat U by 4.2 points in seed 101; U beat R by 4.4 points in seed 202. The mean is −0.001.
+The R score differs by 0.071 between seeds, more than either R − U effect. Training variation between seeds is
+therefore as large as the effect under test, and two seeds cannot separate them. Each interval excludes zero only
+because it holds the trained models fixed.
 
 ## 2. Did the choice of auxiliary practice affect held-out success?
 
 **Primary answer (R − U, paired, per seed).** Seed 101: R beat U by 4.2 points, and the interval excludes zero. Seed
-202: [PENDING]. With two seeds, agreement in sign is the main evidence; the intervals do not cover training variation.
+202: U beat R by 4.4 points, and the interval excludes zero. The seeds disagree in sign, so this study does not show
+that the choice of auxiliary practice changes held-out success. It also does not show that the choice has no effect:
+an effect smaller than the seed-to-seed spread (about 4 points) cannot be detected with two seeds.
 
-**pass@8 (exploratory, A15.1).** Seed 101: R − U +0.017 [−0.000, +0.036]; R − H +0.024 [+0.005, +0.046]. The gain at
-pass@1 is larger than at pass@8: R mainly made already-reachable problems more reliable, not newly reachable.
+**pass@8 (exploratory, A15.1).** Seed 101: R − U +0.017 [−0.000, +0.036]; R − H +0.024 [+0.005, +0.046]. Seed 202:
+R − U −0.026 [−0.057, +0.001]. In both seeds the R − U difference is smaller at pass@8 than at pass@1. The winning
+arm mainly made already-reachable problems more reliable, not newly reachable.
 
 **Where the gain sits (exploratory).** Problems are banded by the base model's successes in 16 of its 32 attempts; the
 other 16 give the band's baseline, so band and baseline do not share noise.
 
 | Band (base k of 16) | Problems | Baseline | H-s101 | R-s101 | U-s101 | R-s202 | U-s202 |
 |---|---|---|---|---|---|---|---|
-| B0 (0) | 15 | 0.021 | 0.210 | 0.306 | 0.298 | 0.181 | [PENDING] |
-| B1 (1–5) | 34 | 0.232 | 0.696 | 0.755 | 0.658 | 0.592 | [PENDING] |
-| B2 (6–10) | 26 | 0.555 | 0.833 | 0.881 | 0.851 | 0.855 | [PENDING] |
-| B3 (11–15) | 32 | 0.773 | 0.913 | 0.959 | 0.935 | 0.938 | [PENDING] |
-| B4 (16) | 21 | 0.979 | 0.991 | 0.997 | 0.979 | 0.982 | [PENDING] |
+| B0 (0) | 15 | 0.021 | 0.210 | 0.306 | 0.298 | 0.181 | 0.283 |
+| B1 (1–5) | 34 | 0.232 | 0.696 | 0.755 | 0.658 | 0.592 | 0.710 |
+| B2 (6–10) | 26 | 0.555 | 0.833 | 0.881 | 0.851 | 0.855 | 0.883 |
+| B3 (11–15) | 32 | 0.773 | 0.913 | 0.959 | 0.935 | 0.938 | 0.912 |
+| B4 (16) | 21 | 0.979 | 0.991 | 0.997 | 0.979 | 0.982 | 0.994 |
 
-In seed 101, R's lead over U comes from B1 (+0.097) and B3 (+0.024). On problems the base model never solved (B0), R
-and U are equal. Problems improved / unchanged / worse versus base: H 94/21/13, R-s101 102/20/6, U-s101 101/18/9, R-s202
-94/26/8. Per-problem counts are in `tables/per_problem.json` (written as c/32; "0/32" for no success). Figure
+In seed 101, R's lead over U comes from B1 (+0.097), B2 (+0.030) and B3 (+0.024); in B0 they are equal (+0.008). In seed 202, U's lead
+comes from the hard bands: B0 (+0.102), B1 (+0.118) and B2 (+0.028); R leads only in B3 (+0.026). The band where the
+winner gains most (B1) is the same in both seeds, but the winner is not. Problems improved / unchanged / worse versus
+base: H 94/21/13, R-s101 102/20/6, U-s101 101/18/9, R-s202 94/26/8, U-s202 100/17/11.
+Per-problem counts are in `tables/per_problem.json` (written as c/32; "0/32" for no success). Figure
 `figures/per_problem_change.png`.
 
 ## 3. Did an unrelated update reduce hard success at a measured checkpoint?

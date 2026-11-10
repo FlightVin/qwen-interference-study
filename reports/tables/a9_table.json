@@ -30,9 +30,13 @@
    "H_pass8": "missing",
    "R": 0.747802734375,
    "R_pass8": 0.9220936494312294,
-   "U": "missing",
-   "U_pass8": "missing",
-   "R-U": "missing",
+   "U": 0.792236328125,
+   "U_pass8": 0.9485036109685026,
+   "R-U": {
+    "est": -0.04443359375,
+    "lo": -0.07177734375,
+    "hi": -0.017333984375
+   },
    "R-H": "missing",
    "U-H": "missing"
   }
@@ -40,12 +44,31 @@
  "mean": {
   "H": "missing",
   "R": 0.783203125,
-  "U": "missing",
-  "R-U": "missing",
+  "U": 0.7845458984375,
+  "R-U": {
+   "est": -0.0013427734375,
+   "lo": -0.018191528320312497,
+   "hi": 0.0150146484375
+  },
   "R-H": "missing",
   "U-H": "missing"
  },
- "agreement": {},
+ "agreement": {
+  "R-U": {
+   "per_seed": [
+    0.041748046875,
+    -0.04443359375
+   ],
+   "same_sign": false,
+   "abs_gap": 0.086181640625,
+   "gap_over_mean": 64.18181818181819,
+   "t_two_seed_df1": {
+    "lo": -0.5488635585778403,
+    "hi": 0.5461780117028403,
+    "warning": "two seeds, df = 1: not strong evidence about training variability"
+   }
+  }
+ },
  "n_problems": 128,
  "base_pass8": 0.8352163617516615,
  "base_pass1": 0.525634765625,
