@@ -692,3 +692,16 @@ Verbatim:
 > training decisions independent of exploratory outcomes. If the schedule tightens, drop the strategy-cue panel first, then
 > the optional U-checkpoint branches. Deliver the verified primary results, figures, and cost reconciliation by the
 > deadline, with any omitted diagnostic identified.
+
+## 30. Amendment A16 (owner, received 2026-11-10 ~04:45Z = Mon 9 Nov 11:45 PM EST): partial H-s202
+
+In reply to the orchestrator's note that H-s202 cannot finish by the deadline and the offer of a partial run. Verbatim:
+
+> I'd prefer the partial run, and an appendix explaining results on the partial run at similar rounds for R-202 and
+> U-202. This is not very important, and should not take precedence over suggestions and nice-to-haves as elaborated on
+> earlier.
+
+Implementation (D128): H-s202 runs under its frozen a2 recipe at the **lowest priority**, only on a general GPU no A15
+item needs (after the round-64 diagnostic), and is stopped in time for the report. It is not an endpoint: no sealed-test
+evaluation; seed-202 H cells of the primary table stay missing. A report appendix compares it with R-s202 and U-s202 at
+matching rounds (dev evaluations and shared-schedule training windows).

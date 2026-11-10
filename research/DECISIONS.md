@@ -674,3 +674,14 @@ labels, `gen_tokens`, `prompt_tokens`, `hard_responses` counters in metrics.
 Fixes (0151edc): validator counts (round, minibatch) pairs and reports label count separately; `report_data` takes
 generated tokens from the training records; trainer snapshots `dict(counters)` at save (affects no running or queued
 job — all are pinned). Validation rerun queued. Report notes the counter defect.
+
+## D128 — 2026-11-10 04:50Z — A16: partial H-s202 at lowest priority
+H-s202 11082192 (ledger-owned; pending since 8 Nov; pinned 7c44fa5, recipe 97c04ad04599 = frozen a2 protocol, ckpt_every 4;
+the only training-code change since is the D127 counter copy, bookkeeping only) chained afterany diag r64 (11101908) and
+moved to general/normal. It starts on slot C only when the diagnostic ends (≈ 08:30–10:00Z); slots A (test R-s202 →
+diag r0 → cue) and B (U-s202 → test U-s202) are unaffected, so it takes no GPU from any A15 item and the 3-GPU ceiling
+holds. **Stop rule (fixed now):** cancel H-s202 at 19:00Z (2 PM EST) or earlier if the report needs the slot or storage;
+expected progress ≈ rounds 45–60 (H-s101 pace: ≈ 5 min/round to 32 at 8k, ≈ 13–16 min/round after). Scheduled dev
+evaluations at rounds 0 and 32 (64 if reached) give the comparison points. Not an endpoint; no test evaluation. Appendix
+(exploratory): H-s202 vs R-s202 vs U-s202 dev pass@1 at matching rounds and shared-hard-schedule windows (H's
+hard_common role sees the same hard stream position as R/U only if the schedules coincide — checked before comparing).
