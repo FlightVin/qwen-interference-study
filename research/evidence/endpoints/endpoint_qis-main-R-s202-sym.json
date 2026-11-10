@@ -1,0 +1,102 @@
+{
+ "rounds": {
+  "n": 131,
+  "distinct": 128,
+  "missing": [],
+  "pass": true
+ },
+ "optimizer": {
+  "steps": 512,
+  "distinct_opt_step_labels": 524,
+  "nonfinite": 0,
+  "pass": true
+ },
+ "events": {
+  "starts": 2,
+  "complete": true,
+  "held": 0,
+  "attempt_windows": [
+   [
+    "11081729",
+    "0",
+    1794192274.0715594
+   ],
+   [
+    "11094190",
+    "0",
+    1794205479.899588
+   ],
+   [
+    null,
+    null,
+    1794274242.8851755
+   ]
+  ]
+ },
+ "attempts": {
+  "files": 128,
+  "bad": [],
+  "pass": true
+ },
+ "evaluations": {
+  "found": {
+   "dev@0": 424,
+   "dev@32": 424,
+   "dev@64": 424,
+   "dev@96": 424,
+   "dev@128": 424,
+   "probe_J_R@0": 224,
+   "probe_J_R@32": 224,
+   "probe_J_R@64": 224,
+   "probe_J_R@96": 224,
+   "probe_J_R@128": 224,
+   "probe_J_U@0": 256,
+   "probe_J_U@32": 256,
+   "probe_J_U@64": 256,
+   "probe_J_U@96": 256,
+   "probe_J_U@128": 256
+  },
+  "missing": [],
+  "pass": true
+ },
+ "verifier": {
+  "unknown_train": 0,
+  "unknown_eval": 0,
+  "held_rounds": 0,
+  "pass": true
+ },
+ "checkpoint_identity": {
+  "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+  "model.pt": {
+   "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "on_disk": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+  },
+  "optim.pt": {
+   "recorded": "c5bf95c52e7914e8ca7fe44d077b4f80642e6ffca4ce394195d8ddffb1ae6022",
+   "on_disk": "c5bf95c52e7914e8ca7fe44d077b4f80642e6ffca4ce394195d8ddffb1ae6022"
+  },
+  "retired": [],
+  "pass": true
+ },
+ "attempt": {
+  "expected": "a2",
+  "metrics": [
+   "a2"
+  ],
+  "checkpoint": "a2",
+  "pass": true
+ },
+ "truncation_train": {
+  "hard": {
+   "capped": 698,
+   "total": 8192,
+   "frac": 0.085205078125
+  },
+  "aux": {
+   "capped": 92,
+   "total": 8192,
+   "frac": 0.01123046875
+  }
+ },
+ "all_pass": true
+}

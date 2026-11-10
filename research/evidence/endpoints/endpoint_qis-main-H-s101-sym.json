@@ -7,6 +7,7 @@
  },
  "optimizer": {
   "steps": 512,
+  "distinct_opt_step_labels": 512,
   "nonfinite": 0,
   "pass": true
  },
@@ -69,6 +70,7 @@
    "recorded": "ca7f80216b640a4255d9822b2ad4e2ae411eace1e613d32ac986177af0b18a20",
    "on_disk": "ca7f80216b640a4255d9822b2ad4e2ae411eace1e613d32ac986177af0b18a20"
   },
+  "retired": [],
   "pass": true
  },
  "attempt": {

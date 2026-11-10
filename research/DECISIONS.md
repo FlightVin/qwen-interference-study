@@ -685,3 +685,5 @@ expected progress ≈ rounds 45–60 (H-s101 pace: ≈ 5 min/round to 32 at 8k, 
 evaluations at rounds 0 and 32 (64 if reached) give the comparison points. Not an endpoint; no test evaluation. Appendix
 (exploratory): H-s202 vs R-s202 vs U-s202 dev pass@1 at matching rounds and shared-hard-schedule windows (H's
 hard_common role sees the same hard stream position as R/U only if the schedules coincide — checked before comparing).
+D127 result (05:10Z): validation 11103416 (validator 0151edc) — H-s101, R-s101, U-s101, R-s202 all_pass (R-s202 512
+(round, minibatch) steps; 524 opt_step labels reported separately). Evidence `research/evidence/endpoints/`.

@@ -7,6 +7,7 @@
  },
  "optimizer": {
   "steps": 512,
+  "distinct_opt_step_labels": 512,
   "nonfinite": 0,
   "pass": true
  },
@@ -70,10 +71,9 @@
    "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
    "on_disk": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
   },
-  "optim.pt": {
-   "recorded": "39754bab5316cbc19564f4a2b3f58e56409e9c5847c2a92dac46fd7049d93cf4",
-   "on_disk": "39754bab5316cbc19564f4a2b3f58e56409e9c5847c2a92dac46fd7049d93cf4"
-  },
+  "retired": [
+   "optim.pt"
+  ],
   "pass": true
  },
  "attempt": {
