@@ -713,3 +713,12 @@
 5. **Next jobs / limits.** General 3/3 (U-s202, diag r64, H-s202). Chains: B → test U-s202; C → cue → reference check. Preempt CPU: report-final.
 6. **Most important.** U-s202 end → endpoint validation; report-final unseals.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bzq5mh36x).
+
+## Review 80 — 2026-11-10 10:05Z (5:05 AM EST Tue)
+1. **Changes.** U-s202 COMPLETED 09:10Z; all five endpoints all_pass (11105454; D132). Sealed outcomes read 09:45Z for five tests (D133). Figure fix fb4f344 (partial runs out of main figures; A16 figure); suite 51/51. Diag r64 12 of 13 rows.
+2. **Valid?** Yes. Report gated on validation (afterok).
+3. **Surprises.** R-s202 test 0.071 below R-s101; seed-202 dev at r128 favours U (0.703 vs 0.656). Recorded, no action.
+4. **Risks.** Seed 202 may reverse R − U; the report must lead with per-seed values (A13). Test U-s202 ends ≈ 13:40Z.
+5. **Next jobs / limits.** General 3/3 (test U-s202, H-s202, diag r64); chain C → cue → reference check.
+6. **Most important.** Draft REPORT.md structure now so the final numbers drop in after 13:40Z.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bgpfn8u2p).

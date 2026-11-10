@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-10 09:10Z (Review 79; A11 resume; cap 12,288).
+Updated 2026-11-10 10:10Z (Review 80; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -41,8 +41,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. Five of six runs done and validated (H/R/U-s101, R-s202 all_pass). U-s202 (11100159) at round 114 of 128 at 07:08Z; ends ≈ 09:10Z (4:10 AM EST). H-s202 is a partial run only (A16, D128; stop by 19:00Z).
-2. Sealed tests done, outcomes unread (A13): base, H-s101, R-s101, U-s101, R-s202. Test U-s202 (11100785) runs after U-s202 (≈ 09:10–13:40Z).
-3. At U-s202 end: validate its endpoint; `qis-report-final` (11103418) unseals the five completed tests; rerun after test U-s202.
-4. A15 exploratory items: diag r0 done (D131; all update rows lower J_R vs "none" → reference check 11105174 queued after cue); H-s202 partial running since 08:15Z (stop 19:00Z); diag r64 (11101908) ends ≈ 10:30Z, then cue 11104738, then the reference check; interference trace rerun at the end.
-5. Then: cost table, independent recomputation and audit, `reports/REPORT.md` (A13 table, three A15 questions, cue panel separate, A16 appendix, omissions), by Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
+1. All five planned complete runs done and validated (D132). Sealed outcomes read 09:45Z for five tests (D133): seed 101 R − U +0.042 [+0.021, +0.063], R − H +0.049; R-s202 0.748 (0.071 below R-s101). Seed 202 pair waits for test U-s202 (11100785, ends ≈ 13:40Z).
+2. H-s202 partial running (A16; stop 19:00Z); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
+3. Diag r64 (11101908): last row ends ≈ 10:25Z; then cue 11104738 (≈ 2.5 h), then reference check 11105174 (D131).
+4. After test U-s202: rerun report-final, final interference, cost table, independent recomputation + audit, finalise `reports/REPORT.md` (A13 table, three A15 questions, cue separate, A16 appendix, omissions). Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
