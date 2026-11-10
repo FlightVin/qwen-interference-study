@@ -807,3 +807,4 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 5. **Next jobs / limits.** None planned. 0 GPUs in use.
 6. **Most important.** Nothing open; wait for owner feedback on the report.
 7. **Reconciliation.** Slurm: 0 live project jobs; ledger has no nonterminal rows to watch. Watcher not re-armed (nothing to watch).
+- 20:10Z (3:10 PM EST): hourly review cron cancelled at the owner's request; study closed.
