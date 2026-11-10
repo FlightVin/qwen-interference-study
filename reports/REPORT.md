@@ -88,7 +88,7 @@ That momentum-only step changes J_H by +0.006, J_R by −0.007 and J_U by −0.0
 practice prompts in all 8 answers, so half the related draws carried no learning signal.
 
 **Reference at round 64.** A fresh no-update evaluation of R-s101 round 64 on an L40S gives J_H 0.631, J_R 0.893, J_U
-0.951; the original (RTX 6000 Ada) gave 0.606, 0.902, 0.940. [PENDING: none_cycled at r64.]
+0.951; the original (RTX 6000 Ada) gave 0.606, 0.902, 0.940. Evaluating it again after the save–restore–reload cycle gives the same three scores exactly, as at r0.
 
 **How large a change can this design detect?** On one GPU, identical weights give identical scores (the starred rows).
 Any change of weights or hardware gives a new sample of 512 responses per probe. Two such samples of the same model

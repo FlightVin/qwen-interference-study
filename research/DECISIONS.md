@@ -779,5 +779,5 @@ independent evidence.
 ## D138 — 2026-11-10 14:20Z — Reference check result; REPORT §3 answer (EXPLORATORY)
 - r0 (L40S, babel-o5-28): none_rerun = none_cycled exactly (J_H 0.4316, J_R 0.808, J_U 0.793). D131 rule: the cycle does not explain the J_R shift.
 - The original r0 "none" (L40, babel-w5-24) was J_H 0.4004, J_R 0.8281. The update rows' mean J_R (0.802) matches the rerun. Reading: the uniform J_R drop came from one high reference draw shared by all Δs, not from the update.
-- r64 none_rerun (L40S) J_H 0.6309, J_R 0.8929, J_U 0.9512 vs original (6000 Ada) 0.6055, 0.9018, 0.9395. none_cycled pending (≈ 14:30Z).
+- r64 none_rerun (L40S) J_H 0.6309, J_R 0.8929, J_U 0.9512 vs original (6000 Ada) 0.6055, 0.9018, 0.9395. none_cycled identical (diag-ref 11105174 COMPLETED 14:33Z; `research/evidence/a15/diag_r*_ref.jsonl`).
 - Noise floor: two evaluations of the same model differ by 0.025–0.031 in J_H. Answer written to REPORT §3: the unrelated update did not measurably lower J_H at r0 or r64; the design detects only drops ≥ ≈ 0.03.
