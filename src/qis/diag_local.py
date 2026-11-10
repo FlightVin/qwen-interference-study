@@ -143,6 +143,7 @@ def main():
     for s, branch in branch_order():
         if (branch, s) in done:
             continue
+        roll.sleep()                                                  # free vLLM memory before the optimizer restore
         restore(learner.model, learner.opt, snap)
         roll.load_weights(learner.model)                          # generate from the SOURCE policy
         items, idx = branch_prompts(pools, branch, s)
