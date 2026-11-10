@@ -685,3 +685,12 @@
 5. **Next jobs / limits.** General 3/3 (U-s202, diag r64, diag r0); chains: A → cue; B → test U-s202; C → H-s202 partial.
 6. **Most important.** U-s202 end → validation + analysis job (queued).
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (bw72lypja).
+
+## Review 77 — 2026-11-10 07:10Z (2:10 AM EST Tue)
+1. **Changes.** U-s202 finished round 114 of 128 at 07:08Z (checkpoint round 112 committed in 115 s); ends ≈ 09:10Z. Diag r64 at 6 h, diag r0 at 1 h, both running. Storage 207 GB free. Cue analysis module written (6d4e33a; suite 11104737 50/50); pending cue job 11102440 replaced by 11104738 with the same dependencies (D129).
+2. **Valid?** Yes. No outcome read.
+3. **Surprises.** None.
+4. **Risks.** Unchanged: test U-s202 ends ≈ 13:40Z; deadline 00:30Z Wed.
+5. **Next jobs / limits.** General 3/3 (U-s202, diag r64, diag r0); chains: A → cue 11104738; B → test U-s202 11100785; C → H-s202 partial. Preempt CPU: report-final 11103418.
+6. **Most important.** U-s202 end → endpoint validation and report-final.
+7. **Reconciliation.** Slurm ↔ ledger agree (11102440 CANCELLED by me, in ledger, 0 GPU-h). Watcher re-armed (bw7mm9jmc).

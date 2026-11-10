@@ -687,3 +687,13 @@ evaluations at rounds 0 and 32 (64 if reached) give the comparison points. Not a
 hard_common role sees the same hard stream position as R/U only if the schedules coincide — checked before comparing).
 D127 result (05:10Z): validation 11103416 (validator 0151edc) — H-s101, R-s101, U-s101, R-s202 all_pass (R-s202 512
 (round, minibatch) steps; 524 opt_step labels reported separately). Evidence `research/evidence/endpoints/`.
+
+## D129 — 2026-11-10 07:15Z — cue analysis added to the cue job; pending job replaced
+The A15.4 analysis needs per-response text (method marker and the fixed inspection sample), and response text exists
+only on compute. New module `qis.analysis.cue` (commit 6d4e33a; synthetic test added; suite job 11104737). It reports
+uncued and cued pass@1, cue gain per policy, the per-seed difference in differences (R cue gain − U cue gain) with an item
+bootstrap, truncation, mean and median tokens, the share of responses that contain "factor", and a fixed sample (items at
+panel positions 0, 6, 12, 18; sample 0; every policy and form). The sample positions were fixed before any cue output
+exists. Recipe `qis-cue-eval` gained phase `analyse`; generation settings are unchanged. Pending job 11102440 (never
+started; 0 GPU-h) was cancelled and replaced by 11104738 with the same dependencies (afterany diag r0 11102499 and
+U-s202 11100159), moved to general/normal as in D123. The 3-GPU ceiling holds: it starts only after slot A frees.

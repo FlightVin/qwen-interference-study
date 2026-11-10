@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-10 06:05Z (Review 76; A11 resume; cap 12,288).
+Updated 2026-11-10 07:15Z (Review 77; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -41,8 +41,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
 ## Next actions
-1. s101 runs done and validated (U, R, H all_pass). Seed 202 on general: R-s202 ends ≈ 23:00Z (D108); U-s202 failed twice (D111, D117; cause: account quota full, D116); resumed from round 64 as 11100159, ends ≈ 10 Nov 09:30Z, test ≈ 14:00Z. H-s202 cannot finish by the deadline; stays preempt-only (H−R rests on seed 101; report marks it partial).
-2. Cap transition verified for all six runs (D89, D92, D94; seed 202 capcheck 11095700).
-3. Test evaluations (D107, D109): R-s101 done (unread); U-s101 done (unread); base 11089196 done (D113); H-s101 done (D120); diag r64 on that slot; seed-202 tests on their own slots after endpoint validation. Outcomes unread until all training ends (A13).
-4. R-s202 round-112 checkpoint committed (276 s) after the quota fix; U-s202 resumed at round 64 (D117).
-5. Report (CHECKLIST 7.4): A13 lead table, attempt-a2 assertion, truncation by arm and prompt type after round 32, compute incl. failed attempts; audit; `reports/REPORT.md` by 10 Nov 16:00Z.
+1. Five of six runs done and validated (H/R/U-s101, R-s202 all_pass). U-s202 (11100159) at round 114 of 128 at 07:08Z; ends ≈ 09:10Z (4:10 AM EST). H-s202 is a partial run only (A16, D128; stop by 19:00Z).
+2. Sealed tests done, outcomes unread (A13): base, H-s101, R-s101, U-s101, R-s202. Test U-s202 (11100785) runs after U-s202 (≈ 09:10–13:40Z).
+3. At U-s202 end: validate its endpoint; `qis-report-final` (11103418) unseals the five completed tests; rerun after test U-s202.
+4. A15 exploratory items: diagnostics r64 (11101908) and r0 (11102499) running; cue panel 11104738 (now with analysis, D129) after diag r0 and U-s202; interference trace rerun at the end.
+5. Then: cost table, independent recomputation and audit, `reports/REPORT.md` (A13 table, three A15 questions, cue panel separate, A16 appendix, omissions), by Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
