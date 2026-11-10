@@ -23,8 +23,10 @@ def category(name, gpus):
         return "main " + n[5:].replace("-sym", "")
     if n.startswith("test-"):
         return "sealed test evaluation"
-    if n.startswith("diag-local"):
+    if n.startswith("diag-local") or n.startswith("diag-ref"):
         return "local-update diagnostic"
+    if n.startswith("cue-"):
+        return "strategy-cue panel (A15.4)"
     return "other GPU jobs (screening, calibration, smoke, A10/A11 studies)" if gpus else "CPU jobs"
 
 
