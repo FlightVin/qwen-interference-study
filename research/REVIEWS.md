@@ -786,3 +786,15 @@
 5. **Next jobs / limits.** General 1/3 (H-s202).
 6. **Most important.** 18:05Z review: check H-s202 progress toward round 64 (D139).
 7. **Reconciliation.** Slurm ↔ ledger agree (1 live job). Watcher alive (bb1hd5lk6).
+
+## Review 88 — 2026-11-10 18:05Z (1:05 PM EST Tue)
+Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 11108988 submitted (still PENDING in the CPU queue at 19:05Z). No other change.
+
+## Review 89 — 2026-11-10 19:05Z (2:05 PM EST Tue)
+1. **Changes.** H-s202 checkpoints at rounds 56 (17:09Z) and 60 (17:57Z); round 64 trained by 18:33Z. Round-64 evaluations running (GPU 100%, read by `srun --overlap` inside 11082192; monitor 11108988 still queued).
+2. **Valid?** Yes. Not stalled: GPU busy; evaluation length matches other runs (dev ≈ 34–37 min).
+3. **Surprises.** CPU queue wait > 1 h for the monitor.
+4. **Risks.** None for the deadline. Dev-64 expected ≈ 19:10Z; D139 bound 20:00Z.
+5. **Next jobs / limits.** General 1/3 (H-s202). Wait script `wait_dev64.sh` (2-min poll) exits on dev-64 or at 20:00Z.
+6. **Most important.** On dev-64: cancel 11082192 by ID, confirm the allocation ended, then interference + report-final + cost.
+7. **Reconciliation.** Slurm ↔ ledger agree (H-s202 running, monitor pending). Watcher alive (bb1hd5lk6).
