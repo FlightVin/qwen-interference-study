@@ -788,3 +788,8 @@ independent evidence.
 - Rule change: cancel 11082192 when the round-64 dev evaluation is recorded, or at 20:00Z (3 PM EST), whichever comes first. Earlier if the report needs the slot or storage (unchanged).
 - Why it is safe: no other GPU work is waiting (general 1/3); the remaining report work is CPU-side and takes < 1 h; 20:00Z leaves 4.5 h before the 00:30Z deadline. A16 stays lowest priority: it does not delay any other item.
 - Not a training decision based on test data: H-s202 has no test evaluation.
+
+## D140 — 2026-11-10 19:20Z — H-s202 stopped after the round-64 evaluations
+- Round-64 evaluations recorded: dev 19:10Z (pass@1 0.658), probes J_H, J_R, J_U by 19:16Z. Waited 6 min past the dev line for the probe set (inside the D139 bound).
+- 11082192 checked against the ledger, cancelled by ID at 19:16Z; sacct CANCELLED, allocation ended. Last checkpoint round 60 retained; logs and metrics kept. Rounds 65+ not run.
+- Next: report-final (interference + tables + A16 figure) and the final cost table.
