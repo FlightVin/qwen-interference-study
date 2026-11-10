@@ -95,3 +95,48 @@ def test_report_tables_synthetic(tmp_path):
     assert abs(rt.pass8(2, 32) - (1 - (30 * 29 * 28 * 27 * 26 * 25 * 24 * 23) / (32 * 31 * 30 * 29 * 28 * 27 * 26 * 25))) < 1e-12
     assert rt.pass8(30, 32) == 1.0 and rt.pass8(0, 32) == 0.0
     assert "pass@8" in open(tmp_path / "t.md").read()
+
+
+def _write_gz(path, rows):
+    import gzip
+    import json
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, "wt") as f:
+        for r in rows:
+            f.write(json.dumps(r) + "\n")
+
+
+def test_per_problem_bands_and_pairs(tmp_path):
+    import json
+    from qis.analysis import per_problem as pp
+    ids = [f"t{i}" for i in range(20)]
+    def recs(fn):
+        return [{"prompt_id": p, "sample": j, "reward": int(fn(i, j))} for i, p in enumerate(ids) for j in range(32)]
+    _write_gz(tmp_path / "qis-test-base" / "records.jsonl.gz", recs(lambda i, j: j < i))           # base c = min(i, 32)
+    _write_gz(tmp_path / "qis-test-R-s101-sym" / "records.jsonl.gz", recs(lambda i, j: j < i + 4))
+    _write_gz(tmp_path / "qis-test-U-s101-sym" / "records.jsonl.gz", recs(lambda i, j: j < i + 1))
+    pp.main(str(tmp_path), str(tmp_path / "pp"))
+    res = json.load(open(tmp_path / "pp.json"))
+    assert res["bands"]["B0"]["size"] == 1 and sum(b["size"] for b in res["bands"].values()) == 20
+    assert res["bands"]["B4"]["size"] == 4                                    # i = 16..19 have all of samples 0-15 correct
+    assert abs(res["paired"]["R-U/s101"]["pass1"]["est"] - 3 / 32) < 1e-12
+    assert res["paired"]["R-H/s101"] == "missing" and res["per_problem"]["t0"]["base"] == "0/32"
+    assert res["arms"]["R-s101"]["improved"] == 20 and pp.pass8(0) == 0.0
+
+
+def test_interference_windows_and_transitions(tmp_path):
+    import json
+    from qis.analysis import interference as itf
+    def rnd_rows(pid, c, capped=0):
+        return [{"role": "hard_common", "slot": 0, "prompt_id": pid, "sample": j, "reward": int(j < c),
+                 "finish": "length" if j >= 8 - capped else "stop", "n_tokens": 10} for j in range(8)]
+    run = tmp_path / "qis-main-R-s101-sym"
+    # p1: mixed (r1) -> all-correct (r2) = mastery; p2: mixed (r3) -> all-wrong with a capped answer (r40) = signal loss
+    for rnd, rows in ((1, rnd_rows("p1", 3)), (2, rnd_rows("p1", 8)), (3, rnd_rows("p2", 2)), (40, rnd_rows("p2", 0, capped=1))):
+        _write_gz(run / "records" / f"train_r{rnd - 1:04d}.jsonl.gz", rows)
+    (run / "metrics.jsonl").write_text("")
+    itf.main(str(tmp_path), str(tmp_path / "i.json"))
+    v = json.load(open(tmp_path / "i.json"))["runs"]["qis-main-R-s101-sym"]
+    assert v["windows"]["1-16"]["groups"] == 3 and v["windows"]["33-48"]["all_wrong_capped"] == 1.0
+    assert v["from_mixed"]["1-16"]["to_all_correct"] == 1 and v["from_mixed"]["33-48"]["to_all_wrong"] == 1
+    assert v["previously_solvable"]["33-48"]["all_wrong_capped"] == 1
