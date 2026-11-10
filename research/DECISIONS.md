@@ -793,4 +793,4 @@ independent evidence.
 - Round-64 evaluations recorded: dev 19:10Z (pass@1 0.658), probes J_H, J_R, J_U by 19:16Z. Waited 6 min past the dev line for the probe set (inside the D139 bound).
 - 11082192 checked against the ledger, cancelled by ID at 19:16Z; sacct CANCELLED, allocation ended. Last checkpoint round 60 retained; logs and metrics kept. Rounds 65+ not run.
 - Next: report-final (interference + tables + A16 figure) and the final cost table.
-- 19:25Z: the CPU queue had 148 pending jobs and monitor 11108988 had waited > 1 h. Cancelled 11108988 by ID (superseded: H-s202 stopped). Moved report-final 11109597 to general/normal with 1 GPU (GPU QOS needs ≥ 1 GPU; general use 0/3 after the stop). It started at once. Same treatment planned for the cost job. The GPU-hours are charged in the cost table.
+- 19:18Z: the CPU queue had 148 pending jobs and monitor 11108988 had waited > 1 h. Cancelled 11108988 by ID (superseded: H-s202 stopped). Moved report-final 11109597 to general/normal with 1 GPU (GPU QOS needs ≥ 1 GPU; general use 0/3 after the stop). It started at once. Same treatment planned for the cost job. The GPU-hours are charged in the cost table.

@@ -867,6 +867,47 @@
       "all_correct": 12,
       "all_wrong_finished": 2
      }
+    },
+    "33-48": {
+     "groups": 128,
+     "success": 0.716796875,
+     "capped_share": 0.0439453125,
+     "all_wrong": 0.015625,
+     "mixed": 0.7265625,
+     "all_correct": 0.2578125,
+     "all_wrong_finished": 0.015625,
+     "all_wrong_capped": 0.0,
+     "counts": {
+      "groups": 128,
+      "responses": 1024,
+      "correct": 734,
+      "capped": 45,
+      "all_correct": 33,
+      "mixed": 93,
+      "all_wrong": 2,
+      "all_wrong_finished": 2
+     }
+    },
+    "49-64": {
+     "groups": 128,
+     "success": 0.7783203125,
+     "capped_share": 0.0732421875,
+     "all_wrong": 0.0234375,
+     "mixed": 0.59375,
+     "all_correct": 0.3828125,
+     "all_wrong_finished": 0.0078125,
+     "all_wrong_capped": 0.015625,
+     "counts": {
+      "groups": 128,
+      "responses": 1024,
+      "correct": 797,
+      "capped": 75,
+      "mixed": 76,
+      "all_correct": 49,
+      "all_wrong": 3,
+      "all_wrong_capped": 2,
+      "all_wrong_finished": 1
+     }
     }
    },
    "from_mixed": {
@@ -881,6 +922,18 @@
      "to_mixed": 101,
      "to_all_correct": 8,
      "to_all_wrong": 5
+    },
+    "33-48": {
+     "from_mixed": 105,
+     "to_mixed": 79,
+     "to_all_correct": 25,
+     "to_all_wrong": 1
+    },
+    "49-64": {
+     "from_mixed": 78,
+     "to_mixed": 56,
+     "to_all_correct": 19,
+     "to_all_wrong": 3
     }
    },
    "previously_solvable": {
@@ -894,6 +947,17 @@
      "all_wrong": 6,
      "all_wrong_finished": 2,
      "all_wrong_capped": 4
+    },
+    "33-48": {
+     "later_appearances": 128,
+     "all_wrong": 2,
+     "all_wrong_finished": 2
+    },
+    "49-64": {
+     "later_appearances": 128,
+     "all_wrong": 3,
+     "all_wrong_finished": 1,
+     "all_wrong_capped": 2
     }
    },
    "dev_changes": [
@@ -905,6 +969,15 @@
      "gained": 10,
      "zero_at_from": 19,
      "zero_at_to": 9
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 1,
+     "gained": 3,
+     "zero_at_from": 9,
+     "zero_at_to": 7
     }
    ],
    "problems": 46,
@@ -1036,6 +1109,134 @@
     ],
     "32": [
      33,
+     64
+    ],
+    "33": [
+     45,
+     64
+    ],
+    "34": [
+     42,
+     64
+    ],
+    "35": [
+     47,
+     64
+    ],
+    "36": [
+     42,
+     64
+    ],
+    "37": [
+     46,
+     64
+    ],
+    "38": [
+     45,
+     64
+    ],
+    "39": [
+     42,
+     64
+    ],
+    "40": [
+     46,
+     64
+    ],
+    "41": [
+     48,
+     64
+    ],
+    "42": [
+     45,
+     64
+    ],
+    "43": [
+     39,
+     64
+    ],
+    "44": [
+     53,
+     64
+    ],
+    "45": [
+     52,
+     64
+    ],
+    "46": [
+     46,
+     64
+    ],
+    "47": [
+     53,
+     64
+    ],
+    "48": [
+     43,
+     64
+    ],
+    "49": [
+     50,
+     64
+    ],
+    "50": [
+     42,
+     64
+    ],
+    "51": [
+     48,
+     64
+    ],
+    "52": [
+     49,
+     64
+    ],
+    "53": [
+     57,
+     64
+    ],
+    "54": [
+     47,
+     64
+    ],
+    "55": [
+     56,
+     64
+    ],
+    "56": [
+     50,
+     64
+    ],
+    "57": [
+     45,
+     64
+    ],
+    "58": [
+     51,
+     64
+    ],
+    "59": [
+     58,
+     64
+    ],
+    "60": [
+     48,
+     64
+    ],
+    "61": [
+     47,
+     64
+    ],
+    "62": [
+     53,
+     64
+    ],
+    "63": [
+     53,
+     64
+    ],
+    "64": [
+     43,
      64
     ]
    }
@@ -4424,9 +4625,9 @@
    "max_common_round": 128
   },
   "s202": {
-   "common_rounds": 32,
-   "identical": 32,
-   "max_common_round": 32
+   "common_rounds": 64,
+   "identical": 64,
+   "max_common_round": 64
   }
  }
 }

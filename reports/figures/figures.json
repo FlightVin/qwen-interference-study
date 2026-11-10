@@ -11,11 +11,11 @@
   "a16_partial"
  ],
  "inputs": {
-  "data": "/home/vineethb/ae-qis/results/qis-report-final/938edaa-5351afa0c1c8/tables/report_data.json",
-  "table": "/home/vineethb/ae-qis/results/qis-report-final/938edaa-5351afa0c1c8/tables/a9_table.json",
+  "data": "/home/vineethb/ae-qis/results/qis-report-final/41f055f-5351afa0c1c8/tables/report_data.json",
+  "table": "/home/vineethb/ae-qis/results/qis-report-final/41f055f-5351afa0c1c8/tables/a9_table.json",
   "diag": [
-   "/home/vineethb/ae-qis/results/qis-report-final/938edaa-5351afa0c1c8/tables/diag_r0.jsonl",
-   "/home/vineethb/ae-qis/results/qis-report-final/938edaa-5351afa0c1c8/tables/diag_r64.jsonl"
+   "/home/vineethb/ae-qis/results/qis-report-final/41f055f-5351afa0c1c8/tables/diag_r0.jsonl",
+   "/home/vineethb/ae-qis/results/qis-report-final/41f055f-5351afa0c1c8/tables/diag_r64.jsonl"
   ]
  }
 }
