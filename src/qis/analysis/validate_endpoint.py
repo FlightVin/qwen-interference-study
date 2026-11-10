@@ -6,7 +6,8 @@ Checks, each reported as pass/fail with its numbers:
 - verifier: no reward=None / status=unknown in training or scheduled evaluation records; no held rounds;
 - optimizer: 4 steps per round (512 total), no non-finite step;
 - evaluations: dev, probe_J_R, probe_J_U at rounds 0, 32, 64, 96, 128 (8 responses/problem);
-- checkpoint identity: round_0128 model.pt/optim.pt sha256 equal the values recorded in state.json;
+- checkpoint identity: round_0128 model.pt (required) and every other file still present have the sha256 recorded in
+  state.json; files retired under project.md §11 (e.g. optim.pt after the test evaluation) are listed as retired;
 - attempt: every metrics row and the round_0128 state.json carry the retained attempt id (A11/D99; default a2);
 - truncation: capped/total for hard and auxiliary training prompts; cost inputs: start/complete times per attempt.
 Usage: python -m qis.analysis.validate_endpoint RUN_DIR CKPT_DIR OUT.json [ATTEMPT_ID]
@@ -74,8 +75,12 @@ def main(run_dir, ckpt_dir, out, attempt="a2"):
     ident = {"path": fin}
     if os.path.exists(os.path.join(fin, "state.json")):
         meta = json.load(open(os.path.join(fin, "state.json")))
-        ident.update({n: {"recorded": h, "on_disk": sha(os.path.join(fin, n))} for n, h in meta.get("file_sha256", {}).items()})
-        ident["pass"] = all(v["recorded"] == v["on_disk"] for k, v in ident.items() if isinstance(v, dict))
+        files = meta.get("file_sha256", {})
+        ident.update({n: {"recorded": h, "on_disk": sha(os.path.join(fin, n))} for n, h in files.items()
+                      if os.path.exists(os.path.join(fin, n))})
+        ident["retired"] = sorted(n for n in files if not os.path.exists(os.path.join(fin, n)))   # §11 retirement (D117)
+        ident["pass"] = ("model.pt" in ident and "model.pt" not in ident["retired"]
+                         and all(v["recorded"] == v["on_disk"] for k, v in ident.items() if isinstance(v, dict)))
     else:
         ident["pass"] = False
     res["checkpoint_identity"] = ident
