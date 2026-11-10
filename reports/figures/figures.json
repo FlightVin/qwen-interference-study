@@ -7,14 +7,15 @@
   "main_result",
   "local_update",
   "per_problem_change",
-  "interference_windows"
+  "interference_windows",
+  "a16_partial"
  ],
  "inputs": {
-  "data": "/home/vineethb/ae-qis/results/qis-report-final/1e03098-5351afa0c1c8/tables/report_data.json",
-  "table": "/home/vineethb/ae-qis/results/qis-report-final/1e03098-5351afa0c1c8/tables/a9_table.json",
+  "data": "/home/vineethb/ae-qis/results/qis-report-final/fb4f344-5351afa0c1c8/tables/report_data.json",
+  "table": "/home/vineethb/ae-qis/results/qis-report-final/fb4f344-5351afa0c1c8/tables/a9_table.json",
   "diag": [
-   "/home/vineethb/ae-qis/results/qis-report-final/1e03098-5351afa0c1c8/tables/diag_r0.jsonl",
-   "/home/vineethb/ae-qis/results/qis-report-final/1e03098-5351afa0c1c8/tables/diag_r64.jsonl"
+   "/home/vineethb/ae-qis/results/qis-report-final/fb4f344-5351afa0c1c8/tables/diag_r0.jsonl",
+   "/home/vineethb/ae-qis/results/qis-report-final/fb4f344-5351afa0c1c8/tables/diag_r64.jsonl"
   ]
  }
 }

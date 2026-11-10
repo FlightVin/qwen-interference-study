@@ -740,3 +740,8 @@ seed-202 R − U pair decides how far the result generalises. No change to any p
 (held-out baseline): R-s101 exceeds U-s101 mostly in B1 (base 1–5 of 16; 0.755 vs 0.658) and B3 (0.959 vs 0.935); B0
 (0/16 at base; 15 problems) is equal (0.306 vs 0.298). Problems improved / worse vs base: H 94/13, R 102/6, U 101/9.
 Note: `diag_r64.jsonl` in that report is a partial copy taken while the diagnostic ran; it is replaced at the rerun.
+D133 addendum (09:50Z): figure fix fb4f344 — runs without RUN_COMPLETE (H-s202, A16) are excluded from every main
+figure and drawn only in `a16_partial.png` (exact 8-round bins the partial run completed). Suite 11105646 51/51; rerun
+report-final 11105647 (fb4f344) outputs copied to `reports/`. H vs R hard_common prompt sets identical in 128/128 rounds
+(s101) and 15/15 rounds so far (s202): the A16 comparison uses the same shared prompts. Dev at round 128 (non-sealed):
+U-s202 0.703 vs R-s202 0.656, the reverse of seed 101 (R 0.729 vs U 0.691); it agrees with R-s202's lower test score.
