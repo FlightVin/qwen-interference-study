@@ -658,3 +658,12 @@
 5. **Next jobs / limits.** General 3/3 with chains (D124). Preempt: H-s202, validation.
 6. **Most important.** R-s202 endpoint validation result; prepare the post-training analysis job (report_tables, per_problem, report_data, figures, cost) so it runs as soon as U-s202 ends.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b2lujg5q2).
+
+## Review 74 — 2026-11-10 04:05Z (11:05 PM EST Mon)
+1. **Changes.** Post-training analysis 11103165 queued with the unsealing gate (D126); figures for A15.1/A15.2 added (bea479c). Validation rerun 11102674 running (21 min).
+2. **Valid?** Yes; no new failures.
+3. **Surprises.** None.
+4. **Risks.** Unchanged: U-s202 ends ≈ 09:30Z; test ≈ 14:00Z; deadline 00:30Z Wed.
+5. **Next jobs / limits.** General 3/3 (U-s202, test R-s202, diag r64) + chains; preempt: H-s202, report-final (dependency).
+6. **Most important.** Read R-s202 endpoint validation when it lands.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b2lujg5q2).
