@@ -705,3 +705,17 @@ branch; ends ≈ 10:30–11:00Z). Change: H-s202 11082192 now afterany diag r0; 
 U-s202. Chains: A diag r0 → H-s202 (partial; stop rule 19:00Z unchanged, D128); B U-s202 → test U-s202; C diag r64 →
 cue. Each chain is serial, so the 3-GPU ceiling holds. Cost: the cue panel starts ≈ 1.5 h later (ends ≈ 13:30Z), still
 far before the deadline; H-s202 gains ≈ 2 h. Interim diag progress read from job logs (J values only; not analysed).
+
+## D131 — 2026-11-10 08:25Z — diag r0 complete; reference check queued (EXPLORATORY)
+Diag r0 11102499 COMPLETED 08:15Z: 13 rows (none + 3 branches × seeds 4101–4104), `research/evidence/a15/diag_r0.jsonl`.
+H-s202 11082192 started 08:15Z on that GPU (D130).
+**Observation.** Against "none", every update row lowers J_R: 12 of 12 rows, by 0.020–0.040 (means hard −0.026,
+related −0.025, unrelated −0.027). ΔJ_H means: hard +0.014, related +0.027, unrelated +0.005. A shift of the same size in
+every branch, including the related branch, points to the reference row as a possible cause. "none" is evaluated first
+in a fresh process; every update branch is evaluated after a sleep → restore → reload cycle. A second candidate is real:
+at r0 the optimizer is fresh, so Adam's first step moves every weight by ≈ lr regardless of gradient size.
+**Check.** `qis.diag_local --reference-only` (commit 5d95d03) evaluates the source twice with no update: "none_rerun"
+(fresh process, as "none") and "none_cycled" (after the cycle). Recipe `qis-diag-ref` (r0 then r64; ≈ 1.5–2 h), job
+11105174 on general, afterany cue 11104738 (chain C, ceiling holds). Reading rule fixed now: if none_cycled − none_rerun
+is within ±0.01 on J_R, the cycle does not explain the shift; differences between branches are unaffected in either case
+because every branch shares the same reference. The report will state the reference result next to each ΔJ.

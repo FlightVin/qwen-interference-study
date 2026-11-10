@@ -703,3 +703,4 @@
 5. **Next jobs / limits.** Chains now: A diag r0 → H-s202 partial; B U-s202 → test U-s202; C diag r64 → cue. General 3/3.
 6. **Most important.** Keep GPUs busy: chain swap done (D130). Next: U-s202 end → validation, report-final.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bw7mm9jmc).
+- 08:25Z addendum: diag r0 complete (13 rows). All update rows lower J_R by 0.020–0.040 vs "none"; reference check 11105174 queued (D131). H-s202 partial started 08:15Z.
