@@ -649,3 +649,12 @@
 5. **Next jobs / limits.** General 3/3; chains: A test R-s202 → diag r0 → cue; B U-s202 → test U-s202; C diag r64.
 6. **Most important.** Get R-s202 validated (CPU queue); review interference output when it lands.
 7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree after D124. Watcher alive (b4exdi1r0).
+
+## Review 73 — 2026-11-10 03:05–03:50Z (10:05 PM EST Mon)
+1. **Changes.** Monitor 11102871 (03:48Z): U-s202 at round 96; checkpoint 80 committed 00:31Z in 127 s; checkpoint 96 writing. Account quota 292/500 GB (209 GB free; floor 50 GiB). Interim interference trace recorded (D125). Validation rerun 11102674 (validator fixed for retired files, 1125a1e) waiting in the CPU queue.
+2. **Valid?** Yes. U-s202 last 6 rounds: mean 620 s, truncation 60/384, clip ≤ 3.8e-4, ratio within [0.89, 1.12].
+3. **Surprises.** The monitor had written `df` to `storage.txt` all along; the wait script did not fetch it. Now it prints it every pass.
+4. **Risks.** U-s202 ends ≈ 09:30Z (32 rounds × 620 s + evaluation + final save); test ≈ 14:00Z. CPU-queue delays (≈ 1 h) for analysis jobs.
+5. **Next jobs / limits.** General 3/3 with chains (D124). Preempt: H-s202, validation.
+6. **Most important.** R-s202 endpoint validation result; prepare the post-training analysis job (report_tables, per_problem, report_data, figures, cost) so it runs as soon as U-s202 ends.
+7. **Reconciliation.** Slurm ↔ ledger ↔ registry agree. Watcher alive (b2lujg5q2).
