@@ -44,4 +44,4 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 1. Primary result final (D136, report-final 11106560, audited): R − U seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.017]; mean −0.001 [−0.018, +0.015]. Seeds disagree in sign: no evidence that practice choice changes test success; seed spread (~4 pts) ≥ effect. R − H seed 101 +0.049. U-s202 0.792.
 2. H-s202 stopped at round 64 (D140); A16 appendix written (dev r64: H 0.658, R 0.613, U 0.679).
 3. Diag r0 and r64 done (D131, D134). Cue panel done (D137): cue changes wording, not success; R−U cue DiD opposite signs across seeds. Reference check 11105174 started early (D135; ≈ 14:30Z or earlier).
-4. REPORT final (4ff50cf): cost 233.8 GPU-h / 211 allocations (11109623). Independent report audit running; then deliver to the owner. Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
+4. REPORT final and audited (0c5fe04): cost 233.8 GPU-h / 211 allocations (11109623). Delivered to the owner 19:58Z. Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
