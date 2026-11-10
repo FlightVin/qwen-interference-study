@@ -140,6 +140,25 @@ def test_interference_windows_and_transitions(tmp_path):
     assert v["windows"]["1-16"]["groups"] == 3 and v["windows"]["33-48"]["all_wrong_capped"] == 1.0
     assert v["from_mixed"]["1-16"]["to_all_correct"] == 1 and v["from_mixed"]["33-48"]["to_all_wrong"] == 1
     assert v["previously_solvable"]["33-48"]["all_wrong_capped"] == 1
+    assert v["complete"] is False and v["per_round"]["1"] == [3, 8] and v["per_round"]["40"] == [0, 8]
+
+
+def test_interference_schedule_match_h_vs_r(tmp_path):
+    import json
+    from qis.analysis import interference as itf
+    def rows(pid):
+        return [{"role": "hard_common", "slot": 0, "prompt_id": pid, "sample": j, "reward": 0, "finish": "stop",
+                 "n_tokens": 10} for j in range(8)]
+    for run, pids in (("qis-main-R-s202-sym", ("a", "b", "c")), ("qis-main-H-s202-sym", ("a", "x"))):
+        d = tmp_path / run
+        for rnd, pid in enumerate(pids):
+            _write_gz(d / "records" / f"train_r{rnd:04d}.jsonl.gz", rows(pid))
+        (d / "metrics.jsonl").write_text("")
+    (tmp_path / "qis-main-R-s202-sym" / "RUN_COMPLETE").write_text("")
+    itf.main(str(tmp_path), str(tmp_path / "i.json"))
+    r = json.load(open(tmp_path / "i.json"))
+    assert r["schedule_H_vs_R"]["s202"] == {"common_rounds": 2, "identical": 1, "max_common_round": 2}
+    assert r["runs"]["qis-main-R-s202-sym"]["complete"] and not r["runs"]["qis-main-H-s202-sym"]["complete"]
 
 
 def test_cue_gain_and_did(tmp_path, monkeypatch):

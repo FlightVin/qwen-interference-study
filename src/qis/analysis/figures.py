@@ -10,6 +10,9 @@ figures were drawn and from what).
 - pope_R.png / pope_U.png: (J_R, J_H) and (J_U, J_H) per run on common axes; start marked; arrows between successive
   scheduled evaluations.
 - local_update.png: change in J_H (and J_R, J_U) after one AdamW/GRPO step per branch, per minibatch seed, per source.
+Runs without RUN_COMPLETE (flag "complete" false) are left out of every main figure. They appear only in
+a16_partial.png (owner amendment A16): seed-202 dev pass@1 and shared-hard success by window, partial runs dashed-dotted
+and labelled "partial", restricted to rounds the partial run reached.
 Usage: python -m qis.analysis.figures REPORT_DATA.json OUT_DIR [--table T.json] [--diag D1.jsonl D2.jsonl ...]
 """
 import argparse
@@ -31,6 +34,10 @@ def run_key(run):
     return parts[2], int(parts[3][1:])
 
 
+def complete_runs(runs):
+    return {k: v for k, v in runs.items() if v.get("complete", True)}
+
+
 def ev(run, panel):
     return [(e["round"], e["pass1"]) for e in run["evals"] if e["panel"] == panel]
 
@@ -39,7 +46,7 @@ def learning(data, out, drawn):
     for name, xkey, xlabel in (("learning_rounds", "round", "training round"),
                                ("learning_exposure", "hard", "cumulative hard-prompt training responses")):
         fig, ax = plt.subplots(figsize=(6.4, 4.2))
-        for run, v in sorted(data["runs"].items()):
+        for run, v in sorted(complete_runs(data["runs"]).items()):
             arm, seed = run_key(run)
             pts = ev(v, "dev")
             if not pts:
@@ -63,14 +70,14 @@ def learning(data, out, drawn):
 def pope(data, out, drawn):
     """x and y limits are each common to both figures (same axis definition for every arm), not equal to each other."""
     def span(panels):
-        v = [x for r in data["runs"].values() for p in panels for _, x in ev(r, p)]
+        v = [x for r in complete_runs(data["runs"]).values() for p in panels for _, x in ev(r, p)]
         return (min(v) - 0.02, max(v) + 0.02) if v else None
     xl, yl = span(("probe_J_R", "probe_J_U")), span(("probe_J_H",))
     if not (xl and yl):
         return
     for aux in ("R", "U"):
         fig, ax = plt.subplots(figsize=(5.2, 5.0))
-        for run, v in sorted(data["runs"].items()):
+        for run, v in sorted(complete_runs(data["runs"]).items()):
             arm, seed = run_key(run)
             jx, jh = dict(ev(v, f"probe_J_{aux}")), dict(ev(v, "probe_J_H"))
             rs = sorted(set(jx) & set(jh))
@@ -165,7 +172,7 @@ def interference_windows(path, out, drawn):
     """EXPLORATORY (A15.2): shared hard prompts per 16-round window: success and all-wrong (finished / capped) share."""
     D = json.load(open(path))
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 4.0))
-    for run, v in sorted(D["runs"].items()):
+    for run, v in sorted(complete_runs(D["runs"]).items()):
         arm, seed = run_key(run)
         ws = list(v["windows"])
         x = [int(w.split("-")[0]) + 7.5 for w in ws]
@@ -175,9 +182,37 @@ def interference_windows(path, out, drawn):
     for ax in (a1, a2):
         ax.axvline(32.5, color="grey", lw=0.8, ls=":"); ax.grid(alpha=0.3); ax.set_xlabel("training round (16-round windows)")
     a1.set_ylabel("success on shared hard prompts"); a1.legend(fontsize=7)
-    a2.set_ylabel("share of groups all wrong (o: all finished, x: some capped)")
+    a2.set_ylabel("share of groups all wrong"); a2.set_title("o: all 8 finished   x: ≥ 1 capped", fontsize=8)
     fig.tight_layout(); fig.savefig(os.path.join(out, "interference_windows.png"), dpi=150); plt.close(fig)
     drawn.append("interference_windows")
+
+
+def a16_partial(data, path, out, drawn):
+    """A16 appendix (EXPLORATORY): seed-202 runs at matching rounds; partial runs marked; rounds cut to the partial run."""
+    part = [r for r, v in data["runs"].items() if not v.get("complete", True) and run_key(r)[1] == 202]
+    if not part:
+        return
+    D = json.load(open(path)) if path and os.path.exists(path) else {"runs": {}}
+    s202 = {r: v for r, v in data["runs"].items() if run_key(r)[1] == 202}
+    last_dev = max((r for p in part for r, _ in ev(data["runs"][p], "dev")), default=0)
+    pr = {r: {int(k): x for k, x in D["runs"].get(r, {}).get("per_round", {}).items()} for r in s202}
+    full = [b for b in range(1, 129, 8) if all(all(x in pr[p] for x in range(b, b + 8)) for p in part)]  # 8-round bins the partial run covers
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 4.0))
+    for run, v in sorted(s202.items()):
+        arm, _ = run_key(run)
+        partial = not v.get("complete", True)
+        st, lab = ("-." if partial else "--"), f"{arm} seed 202" + (" (partial)" if partial else "")
+        pts = [(r, p) for r, p in ev(v, "dev") if r <= last_dev]
+        a1.plot([r for r, _ in pts], [p for _, p in pts], st, marker="s", color=ARM_COLOR[arm], label=lab)
+        bins = [b for b in full if all(x in pr[run] for x in range(b, b + 8))]
+        ys = [sum(pr[run][x][0] for x in range(b, b + 8)) / sum(pr[run][x][1] for x in range(b, b + 8)) for b in bins]
+        a2.plot([b + 3.5 for b in bins], ys, st, marker="s", color=ARM_COLOR[arm], label=lab)
+    a1.set_xlabel("training round"); a1.set_ylabel("target_dev pass@1 (53 × 8)"); a1.legend(fontsize=7)
+    a2.set_xlabel("training round (8-round bins the partial run completed)"); a2.set_ylabel("success on shared hard prompts"); a2.legend(fontsize=7)
+    for ax in (a1, a2):
+        ax.axvline(32.5, color="grey", lw=0.8, ls=":"); ax.grid(alpha=0.3)
+    fig.tight_layout(); fig.savefig(os.path.join(out, "a16_partial.png"), dpi=150); plt.close(fig)
+    drawn.append("a16_partial")
 
 
 def main():
@@ -197,6 +232,7 @@ def main():
         per_problem_change(a.per_problem, a.out, drawn)
     if a.interference and os.path.exists(a.interference):
         interference_windows(a.interference, a.out, drawn)
+    a16_partial(data, a.interference, a.out, drawn)
     json.dump({"drawn": drawn, "inputs": {"data": a.data, "table": a.table, "diag": a.diag}},
               open(os.path.join(a.out, "figures.json"), "w"), indent=1)
     print("drawn:", drawn)

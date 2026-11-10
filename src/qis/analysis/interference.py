@@ -10,7 +10,9 @@ Per seed, R and U see the same `hard_common` prompt at the same round. From trai
   its later appearances that are all-wrong (finished / capped), per window;
 - paired R vs U per seed on identical (problem, round) cells: counts where one arm is all-wrong and the other is not;
 - dev panel (scheduled evaluations, 8 samples per problem): per pair of successive evaluations, the number of problems
-  with c > 0 then c = 0 ("lost") and c = 0 then c > 0 ("gained"), per run.
+  with c > 0 then c = 0 ("lost") and c = 0 then c > 0 ("gained"), per run;
+- complete flag (RUN_COMPLETE) per run; H vs R schedule check per seed (A16): share of common rounds where the
+  hard_common prompt sets are identical, so H can be compared with R/U on the same shared prompts.
 Usage: python -m qis.analysis.interference RUNS_DIR OUT.json
 """
 import collections
@@ -124,6 +126,26 @@ def dev_changes(run_dir):
     return out
 
 
+def per_round(G):
+    """{round: [correct, responses]} on hard_common, for exact round matching with a partial run (A16)."""
+    out = collections.defaultdict(lambda: [0, 0])
+    for (pid, rnd), g in G.items():
+        out[rnd][0] += g["c"]; out[rnd][1] += g["n"]
+    return {r: out[r] for r in sorted(out)}
+
+
+def schedule_match(GA, GB):
+    """Rounds present in both runs, and how many of them have identical hard_common prompt sets."""
+    ra, rb = collections.defaultdict(set), collections.defaultdict(set)
+    for pid, rnd in GA:
+        ra[rnd].add(pid)
+    for pid, rnd in GB:
+        rb[rnd].add(pid)
+    common = sorted(set(ra) & set(rb))
+    return {"common_rounds": len(common), "identical": sum(ra[r] == rb[r] for r in common),
+            "max_common_round": common[-1] if common else 0}
+
+
 def main(runs, out):
     res = {"windows": [f"{a}-{b}" for a, b in WINDOWS], "cap_change_after_round": 32, "runs": {}, "paired_R_vs_U": {}}
     G = {}
@@ -132,12 +154,20 @@ def main(runs, out):
         G[run] = groups(d)
         T, P = transitions(G[run])
         res["runs"][run] = {"windows": per_window(G[run]), "from_mixed": T, "previously_solvable": P,
-                            "dev_changes": dev_changes(d), "problems": len({k[0] for k in G[run]})}
+                            "dev_changes": dev_changes(d), "problems": len({k[0] for k in G[run]}),
+                            "complete": os.path.exists(os.path.join(d, "RUN_COMPLETE")),
+                            "per_round": per_round(G[run])}
     for run in G:
         m = re.match(r"qis-main-R-(s\d+)-(\w+)", run)
         u = run.replace("-R-", "-U-")
         if m and u in G:
             res["paired_R_vs_U"][m.group(1)] = paired(G[run], G[u])
+    res["schedule_H_vs_R"] = {}
+    for run in G:
+        m = re.match(r"qis-main-H-(s\d+)-(\w+)", run)
+        r = run.replace("-H-", "-R-")
+        if m and r in G:
+            res["schedule_H_vs_R"][m.group(1)] = schedule_match(G[run], G[r])
     json.dump(res, open(out, "w"), indent=1)
     for run, v in res["runs"].items():
         print(run, {w: (round(x["success"], 3), round(x["all_wrong"], 3), round(x["mixed"], 3), round(x["all_correct"], 3))

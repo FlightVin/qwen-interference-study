@@ -7,7 +7,8 @@ Per run (runs/qis-main-*; superseded attempts live elsewhere and are not read):
 - exposure: cumulative hard-prompt responses and generated training tokens at every round (from training records and
   round rows), so curves can be drawn against rounds and against cumulative hard rollouts;
 - active compute on the canonical trajectory: sum of round times (seconds);
-- truncation by role (hard_common, hard_extra, hard, aux) for rounds 1-32 (cap 8,192) and 33-128 (cap 12,288).
+- truncation by role (hard_common, hard_extra, hard, aux) for rounds 1-32 (cap 8,192) and 33-128 (cap 12,288);
+- complete: RUN_COMPLETE exists (a partial run, e.g. H-s202 under A16, is kept but flagged).
 Usage: python -m qis.analysis.report_data RUNS_DIR OUT.json [ATTEMPT_ID]
 """
 import glob
@@ -52,7 +53,7 @@ def run_data(d, attempt):
             if n:
                 t[role] = {"capped": c, "total": n, "share": c / n}
         trunc[name] = t
-    return {"attempt_ok": not bad, "other_attempt_ids": bad, "rounds_logged": len(rounds),
+    return {"complete": os.path.exists(os.path.join(d, "RUN_COMPLETE")), "attempt_ok": not bad, "other_attempt_ids": bad, "rounds_logged": len(rounds),
             "max_round": max(rounds) if rounds else 0, "records_rounds": len(rows),
             "active_seconds": sum(r.get("t_round", 0) for r in rounds.values()),
             "gen_tokens": cum_tokens, "gen_tokens_metrics_counter": max((r.get("gen_tokens", 0) for r in rounds.values()), default=0),
