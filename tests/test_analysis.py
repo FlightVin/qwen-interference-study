@@ -140,3 +140,31 @@ def test_interference_windows_and_transitions(tmp_path):
     assert v["windows"]["1-16"]["groups"] == 3 and v["windows"]["33-48"]["all_wrong_capped"] == 1.0
     assert v["from_mixed"]["1-16"]["to_all_correct"] == 1 and v["from_mixed"]["33-48"]["to_all_wrong"] == 1
     assert v["previously_solvable"]["33-48"]["all_wrong_capped"] == 1
+
+
+def test_cue_gain_and_did(tmp_path, monkeypatch):
+    import gzip, json, sys, types
+    from qis.analysis import cue
+    fake = types.SimpleNamespace(AutoTokenizer=types.SimpleNamespace(
+        from_pretrained=lambda m: types.SimpleNamespace(decode=lambda ids, skip_special_tokens=True: "factor " * len(ids))))
+    monkeypatch.setitem(sys.modules, "transformers", fake)
+    ids = [f"q{i}" for i in range(24)]
+    panel = tmp_path / "panel.json"
+    panel.write_text(json.dumps({"pools": {"cue": [{"id": i} for i in ids]}}))
+    # correct answers per item out of 8: base 2/2, R 2->6 (gain .5), U 2->4 (gain .25); seed 202 missing
+    k = {("base", "uncued"): 2, ("base", "cued"): 2, ("R-s101", "uncued"): 2, ("R-s101", "cued"): 6,
+         ("U-s101", "uncued"): 2, ("U-s101", "cued"): 4}
+    for (pol, form), c in k.items():
+        d = tmp_path / "out" / f"{pol}-{form}"; d.mkdir(parents=True)
+        (d / "summary.json").write_text("{}")
+        with gzip.open(d / "records.jsonl.gz", "wt") as f:
+            for i in ids:
+                for j in range(8):
+                    f.write(json.dumps({"prompt_id": i, "sample": j, "n_tokens": 3, "finish": "stop",
+                                        "reward": int(j < c), "ids": [1, 2, 3]}) + "\n")
+    cue.main(str(tmp_path / "out"), str(panel), "m", str(tmp_path / "cue"))
+    r = json.load(open(tmp_path / "cue.json"))
+    assert r["cue_gain"]["R-s101"]["est"] == pytest.approx(0.5) and r["cue_gain"]["U-s101"]["est"] == pytest.approx(0.25)
+    assert r["did"]["s101"]["est"] == pytest.approx(0.25) and r["did"]["s202"] == "missing"
+    assert r["policies"]["base"]["cued"]["mentions_factor"] == 1.0 and len(r["missing"]) == 4
+    assert (tmp_path / "cue.txt").read_text().count("=== ") == 6 * 4
