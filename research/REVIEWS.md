@@ -798,3 +798,12 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 5. **Next jobs / limits.** General 1/3 (H-s202). Wait script `wait_dev64.sh` (2-min poll) exits on dev-64 or at 20:00Z.
 6. **Most important.** On dev-64: cancel 11082192 by ID, confirm the allocation ended, then interference + report-final + cost.
 7. **Reconciliation.** Slurm ↔ ledger agree (H-s202 running, monitor pending). Watcher alive (bb1hd5lk6).
+
+## Review 90 — 2026-11-10 20:05Z (3:05 PM EST Tue)
+1. **Changes.** Report final and audited (0c5fe04); delivered 19:58Z; commits pushed to origin/main (dc2081d) at the owner's request.
+2. **Valid?** Yes. Independent audit applied (research/audits/2026-11-10-recompute.md).
+3. **Surprises.** None.
+4. **Risks.** None. No live project jobs.
+5. **Next jobs / limits.** None planned. 0 GPUs in use.
+6. **Most important.** Nothing open; wait for owner feedback on the report.
+7. **Reconciliation.** Slurm: 0 live project jobs; ledger has no nonterminal rows to watch. Watcher not re-armed (nothing to watch).
