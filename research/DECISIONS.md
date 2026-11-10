@@ -759,3 +759,8 @@ the cycle is exactly repeatable for identical weights. Against "none" this momen
 unrelated −0.012, +0.021, −0.020. No branch moves J_H consistently at r64; the spread across seeds (≈ 0.04) exceeds
 every mean. Reported as finite changes after one update, per seed, without pooling the zero-gradient rows as
 independent evidence.
+
+## D135 — 2026-11-10 12:25Z — U-s202 test done; reference check started early
+- Test U-s202 11100785 COMPLETED 12:21Z (exit 0): pass@1 0.792, pass@8 0.949. Seed 202 reverses seed 101: R-s202 0.748, so R−U ≈ −0.044 at seed 202 (interval from report-final). Reported as observed (A13); no change to plans.
+- Report-final 11106560 submitted (938edaa) to build the full lead table, seed means and agreement.
+- A general GPU slot freed. Diag-ref 11105174 depended on the cue job only to respect the 3-GPU ceiling. Dependency cleared at 12:24Z; general use stays at 3 (cue, H-s202, diag-ref).
