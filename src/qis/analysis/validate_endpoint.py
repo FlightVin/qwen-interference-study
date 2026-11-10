@@ -39,8 +39,12 @@ def main(run_dir, ckpt_dir, out, attempt="a2"):
     res["rounds"] = {"n": len(rounds), "distinct": len(set(rounds)), "missing": sorted(set(range(1, ROUNDS + 1)) - set(rounds)),
                      "pass": sorted(set(rounds)) == list(range(1, ROUNDS + 1))}
     steps = [r for r in M if r.get("kind") == "step"]
-    res["optimizer"] = {"steps": len({r["opt_step"] for r in steps}), "nonfinite": sum(bool(r.get("nonfinite")) for r in steps),
-                        "pass": len({r["opt_step"] for r in steps}) == ROUNDS * STEPS and not any(r.get("nonfinite") for r in steps)}
+    # Count (round, minibatch) pairs: logged opt_step numbers are offset after a resume because the asynchronous saver
+    # wrote the counters dict at write time, not at the checkpoint round (D127); AdamW's own step state is unaffected.
+    pairs = {(r["round"], r.get("minibatch")) for r in steps}
+    res["optimizer"] = {"steps": len(pairs), "distinct_opt_step_labels": len({r["opt_step"] for r in steps}),
+                        "nonfinite": sum(bool(r.get("nonfinite")) for r in steps),
+                        "pass": len(pairs) == ROUNDS * STEPS and not any(r.get("nonfinite") for r in steps)}
     ev = [r for r in M if r.get("kind") == "event"]
     held = [e for e in ev if "held" in e.get("what", "")]
     res["events"] = {"starts": sum(e["what"] == "start" for e in ev), "complete": any(e["what"] == "complete" for e in ev),

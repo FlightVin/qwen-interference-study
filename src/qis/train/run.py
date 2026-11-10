@@ -365,7 +365,7 @@ def main():
             run_evals(done_rounds)
         if done_rounds % cfg["ckpt_every"] == 0 or done_rounds == cfg["rounds"] or done_rounds in ckpt_retain:
             snap_s = saver.save(done_rounds, learner.model, learner.opt,
-                                {"counters": counters, "config_sha": hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest(),
+                                {"counters": dict(counters), "config_sha": hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest(),
                                  "bundle_sha": bundle_sha, "wandb_id": getattr(log, "wandb_id", None),
                                  "attempt_id": cfg["attempt_id"]},
                                 blocking=bool(os.environ.get("QIS_EXIT_AFTER_ROUND")) or done_rounds == cfg["rounds"])

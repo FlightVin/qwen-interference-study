@@ -40,7 +40,8 @@ def run_data(d, attempt):
     cum_hard, cum_tokens, expo = 0, 0, {}
     for rnd in sorted(rows):
         cum_hard += rows[rnd].get("hard", {}).get("total", 0)
-        cum_tokens = rounds.get(rnd, {}).get("gen_tokens", cum_tokens)
+        # generated tokens from the records (metrics counters are offset after a resume, D127)
+        cum_tokens += sum(rows[rnd][k]["total"] * rows[rnd][k]["mean_tokens"] for k in ("hard_common", "hard_extra", "aux") if k in rows[rnd])
         expo[rnd] = {"cum_hard_responses": cum_hard, "gen_tokens": cum_tokens, "cap": rows[rnd]["cap"]}
     trunc = {}
     for name, lo, hi in (("r1-32", 1, 32), ("r33-128", 33, 128)):
@@ -54,7 +55,7 @@ def run_data(d, attempt):
     return {"attempt_ok": not bad, "other_attempt_ids": bad, "rounds_logged": len(rounds),
             "max_round": max(rounds) if rounds else 0, "records_rounds": len(rows),
             "active_seconds": sum(r.get("t_round", 0) for r in rounds.values()),
-            "gen_tokens": max((r.get("gen_tokens", 0) for r in rounds.values()), default=0),
+            "gen_tokens": cum_tokens, "gen_tokens_metrics_counter": max((r.get("gen_tokens", 0) for r in rounds.values()), default=0),
             "evals": sorted(evals.values(), key=lambda e: (e["panel"], e["round"])),
             "exposure": expo, "truncation": trunc}
 
