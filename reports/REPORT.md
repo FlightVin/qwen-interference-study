@@ -1,7 +1,7 @@
 # Does related practice help GRPO learn hard math? Qwen3-1.7B, H vs R vs U
 
-DRAFT (10 Nov 12:40Z). All sealed-test values are final. Values marked `[PENDING …]` arrive with the reference check,
-the cue panel, the H-s202 stop (19:00Z) and the final cost table. Every other number is final. Sections 3–5 are EXPLORATORY analyses added by owner
+DRAFT (10 Nov 14:50Z). Sections 1–5 are final. Values marked `[PENDING …]` arrive with the H-s202 stop (19:00Z)
+and the final cost table. Sections 3–5 are EXPLORATORY analyses added by owner
 amendment A15 after the primary design was fixed; section 2 is the primary result.
 
 ## 1. Lead table (A13)
