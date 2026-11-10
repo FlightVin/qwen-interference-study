@@ -722,3 +722,12 @@
 5. **Next jobs / limits.** General 3/3 (test U-s202, H-s202, diag r64); chain C → cue → reference check.
 6. **Most important.** Draft REPORT.md structure now so the final numbers drop in after 13:40Z.
 7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (bgpfn8u2p).
+
+## Review 81 — 2026-11-10 11:05Z (6:05 AM EST Tue)
+1. **Changes.** Diag r64 done (D134). Cue 11104738 started 10:22Z: base and R-s101 forms done; U-s101 checkpoint hash verified. REPORT section 3 r64 table added.
+2. **Valid?** Yes. Checkpoint identity checked by sha256 in the cue job.
+3. **Surprises.** Three r64 update draws had zero gradient (all practice groups all-correct); used as momentum-only reference (D134).
+4. **Risks.** None new. Test U-s202 ends ≈ 13:40Z; reference check ≈ 14:30Z; H-s202 stop 19:00Z; deadline 00:30Z.
+5. **Next jobs / limits.** General 3/3 (cue, test U-s202, H-s202); chain C → reference check.
+6. **Most important.** Wait for test U-s202 → final report-final; meanwhile cost table prep.
+7. **Reconciliation.** Slurm ↔ ledger agree. Watcher alive (buy5w20ki).

@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-10 10:10Z (Review 80; A11 resume; cap 12,288).
+Updated 2026-11-10 11:10Z (Review 81; A11 resume; cap 12,288).
 
 ## Phase
 Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
@@ -43,5 +43,5 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 ## Next actions
 1. All five planned complete runs done and validated (D132). Sealed outcomes read 09:45Z for five tests (D133): seed 101 R − U +0.042 [+0.021, +0.063], R − H +0.049; R-s202 0.748 (0.071 below R-s101). Seed 202 pair waits for test U-s202 (11100785, ends ≈ 13:40Z).
 2. H-s202 partial running (A16; stop 19:00Z); appendix figure `a16_partial.png`; H/R shared prompt sets identical.
-3. Diag r64 (11101908): last row ends ≈ 10:25Z; then cue 11104738 (≈ 2.5 h), then reference check 11105174 (D131).
+3. Diag r0 and r64 done (D131, D134: no branch moves J_H consistently at r64; zero-gradient rows = momentum-only reference). Cue 11104738 running (4 of 10 policy-forms; ends ≈ 12:35Z), then reference check 11105174 (≈ 14:30Z).
 4. After test U-s202: rerun report-final, final interference, cost table, independent recomputation + audit, finalise `reports/REPORT.md` (A13 table, three A15 questions, cue separate, A16 appendix, omissions). Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
