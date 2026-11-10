@@ -643,3 +643,13 @@ AND U-s202 11100159. Each general slot is now a dependency chain — A: test R-s
 U-s202; C: diag r64 — so at most 3 can run at once.
 Rule: before moving a job to general, count owned RUNNING + dependency-free PENDING general jobs; move only if < 3, or
 chain it behind a general job with afterany (recorded in the harness log).
+
+## D125 — 2026-11-10 02:25Z — interference trace, interim (EXPLORATORY; U-s202 only to round ≈ 88)
+Job 11102391 (suite 49/49; trace over training records only). Evidence `research/evidence/a15/interference_interim.json`.
+Interim reading, to be rerun after U-s202 ends: (1) groups leaving "mixed" mostly became all-correct (mastery), not
+all-wrong: H-s101 124 vs 14, R-s101 121 vs 22, U-s101 106 vs 29, R-s202 94 vs 25, U-s202 84 vs 21 (partial). (2) Previously
+solvable shared hard problems that later gave an all-wrong group: H-s101 24/957 (2.5%), R-s101 40/960 (4.2%; 22 with ≥ 1
+capped answer), U-s101 48/966 (5.0%; 34 capped), R-s202 33/963 (3.4%; 10 capped), U-s202 30/675 (4.4%; 9 capped,
+partial). (3) Paired R vs U cells (same problem, same round) where only one arm is all-wrong: small counts per 16-round
+window (0–15). (4) Dev panel: problems lost (c > 0 → 0/8) between evaluations 0–5 per interval per run. No training
+decision depends on this.
