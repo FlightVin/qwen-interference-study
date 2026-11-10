@@ -7,8 +7,12 @@ Related and unrelated use the same matched pair indices (related[k] <-> unrelate
 Every branch, and the source itself ("none"), is evaluated on J_H (32 dev problems), J_R and J_U with 16
 responses/problem and evaluation seeds shared across branches and sources (paired). Source checkpoints are only read.
 Reported as finite changes after an actual AdamW/GRPO update, not as gradient cosines.
+Reference check (--reference-only, D131): no update. Writes diag_<label>_ref.jsonl with "none_rerun" (the source
+evaluated first in a fresh process, as "none" was) and "none_cycled" (the source after the same sleep -> restore ->
+reload cycle that every update branch goes through). none vs none_rerun measures evaluation nondeterminism; none_rerun
+vs none_cycled measures any effect of the cycle itself.
 Usage: python -m qis.diag_local --bundle B --model M --source base|CKPT_DIR --label r0|r64 --out DIR
-       [--lr 2e-6 --eps-low 0.2 --eps-high 0.2]
+       [--lr 2e-6 --eps-low 0.2 --eps-high 0.2] [--reference-only]
 """
 import argparse
 import copy
@@ -100,6 +104,7 @@ def main():
     ap.add_argument("--lr", type=float, default=2e-6)
     ap.add_argument("--eps-low", type=float, default=0.2)
     ap.add_argument("--eps-high", type=float, default=0.2)
+    ap.add_argument("--reference-only", action="store_true")
     a = ap.parse_args()
     from transformers import AutoTokenizer
     from qis.train import ckpt
@@ -136,6 +141,21 @@ def main():
         return out
 
     t0 = time.time()
+    if a.reference_only:
+        ref_path = os.path.join(a.out, f"diag_{a.label}_ref.jsonl")
+        if os.path.exists(ref_path):
+            os.remove(ref_path)                                       # both rows must come from one process
+        ref = open(ref_path, "a")
+        for tag in ("none_rerun", "none_cycled"):
+            if tag == "none_cycled":
+                roll.sleep()
+                restore(learner.model, learner.opt, snap)
+            roll.load_weights(learner.model)
+            ev = evaluate_all(f"{a.label}-{tag}")
+            ref.write(json.dumps({"label": a.label, "branch": tag, "seed": None, **src_meta, "eval": ev}) + "\n"); ref.flush()
+            print(a.label, tag, {p: round(ev[p]["pass1"], 4) for p in PANELS}, f"{time.time() - t0:.0f}s", flush=True)
+        ver.close()
+        return
     if ("none", None) not in done:
         roll.load_weights(learner.model)
         results.write(json.dumps({"label": a.label, "branch": "none", "seed": None, **src_meta,
