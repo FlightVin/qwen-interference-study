@@ -11,15 +11,16 @@ bootstrap over the 128 problems; they describe these trained models, not run-to-
 | Seed | H | R | U | R − U | R − H |
 |---|---|---|---|---|---|
 | 101 | 0.770 | 0.819 | 0.777 | +0.042 [+0.021, +0.063] | +0.049 [+0.020, +0.080] |
-| 202 | not run (partial, A16) | 0.748 | 0.792 | −0.044 [−0.072, −0.018] | not available |
+| 202 | not run (partial, A16) | 0.748 | 0.792 | −0.044 [−0.072, −0.017] | not available |
 | Mean | not available (seed 101 only: 0.770) | 0.783 | 0.785 | −0.001 [−0.018, +0.015] | not available (seed 101 only: +0.049) |
 
 Base model: pass@1 0.526, pass@8 0.835.
 
 The two seeds disagree. R beat U by 4.2 points in seed 101; U beat R by 4.4 points in seed 202. The mean is −0.001.
 The R score differs by 0.071 between seeds, more than either R − U effect. Training variation between seeds is
-therefore as large as the effect under test, and two seeds cannot separate them. Each interval excludes zero only
-because it holds the trained models fixed.
+therefore as large as the effect under test, and two seeds cannot separate them. The per-seed intervals exclude zero,
+but they only show that each pair of trained models differs on these 128 problems. They do not show that a run with a
+new seed would give the same sign.
 
 ## 2. Did the choice of auxiliary practice affect held-out success?
 
@@ -29,11 +30,13 @@ that the choice of auxiliary practice changes held-out success. It also does not
 an effect smaller than the seed-to-seed spread (about 4 points) cannot be detected with two seeds.
 
 **pass@8 (exploratory, A15.1).** Seed 101: R − U +0.017 [−0.000, +0.036]; R − H +0.024 [+0.005, +0.046]. Seed 202:
-R − U −0.026 [−0.057, +0.001]. In both seeds the R − U difference is smaller at pass@8 than at pass@1. The winning
-arm mainly made already-reachable problems more reliable, not newly reachable.
+R − U −0.026 [−0.057, +0.001]. In both seeds the R − U difference is smaller at pass@8 than at pass@1, so much of the
+winning arm's lead comes from answering reachable problems more reliably. In seed 202, though, U's largest band leads
+are on problems the base model rarely or never solved (B0, B1; below).
 
 **Where the gain sits (exploratory).** Problems are banded by the base model's successes in 16 of its 32 attempts; the
-other 16 give the band's baseline, so band and baseline do not share noise.
+other 16 give the band's baseline, so a problem's band and its baseline come from separate samples, and chance in one
+does not inflate the other.
 
 | Band (base k of 16) | Problems | Baseline | H-s101 | R-s101 | U-s101 | R-s202 | U-s202 |
 |---|---|---|---|---|---|---|---|
@@ -43,8 +46,8 @@ other 16 give the band's baseline, so band and baseline do not share noise.
 | B3 (11–15) | 32 | 0.773 | 0.913 | 0.959 | 0.935 | 0.938 | 0.912 |
 | B4 (16) | 21 | 0.979 | 0.991 | 0.997 | 0.979 | 0.982 | 0.994 |
 
-In seed 101, R's lead over U comes from B1 (+0.097), B2 (+0.030) and B3 (+0.024); in B0 they are equal (+0.008). In seed 202, U's lead
-comes from the hard bands: B0 (+0.102), B1 (+0.118) and B2 (+0.028); R leads only in B3 (+0.026). The band where the
+In seed 101, R's lead over U comes from B1 (+0.097), B2 (+0.030) and B3 (+0.024), and B4 (+0.018); in B0 they are nearly equal (+0.008). In seed 202, U's lead
+comes from the hard bands: B0 (+0.102), B1 (+0.118) and B2 (+0.029); R leads only in B3 (+0.026). The band where the
 winner gains most (B1) is the same in both seeds, but the winner is not. Problems improved / unchanged / worse versus
 base: H 94/21/13, R-s101 102/20/6, U-s101 101/18/9, R-s202 94/26/8, U-s202 100/17/11.
 Per-problem counts are in `tables/per_problem.json` (written as c/32; "0/32" for no success). Figure
@@ -61,9 +64,9 @@ samples per problem. Four minibatch seeds per branch. Sources: the base model (f
 
 | Branch | ΔJ_H mean | ΔJ_H per seed | ΔJ_R mean | ΔJ_U mean |
 |---|---|---|---|---|
-| hard | +0.014 | +0.010, +0.020, +0.006, +0.022 | −0.026 | −0.013 |
+| hard | +0.014 | +0.010, +0.020, +0.006, +0.021 | −0.026 | −0.013 |
 | related | +0.027 | +0.016, +0.039, +0.033, +0.020 | −0.025 | −0.022 |
-| unrelated | +0.005 | +0.006, +0.025, +0.004, −0.016 | −0.027 | +0.001 |
+| unrelated | +0.005 | +0.006, +0.025, +0.004, −0.016 | −0.027 | +0.000 |
 
 All 12 update rows score 0.020–0.040 below the no-update row on J_R, including the related branch. A reference check
 (D131, job 11105174) tested two explanations. First, the save–restore–reload cycle that every update branch goes
@@ -81,29 +84,33 @@ table above shares that one draw, so the uniform J_R drop is not a measured effe
 | related | +0.006* | +0.006* | +0.016 | +0.014 | 0, 0, 2, 1 |
 | unrelated | −0.006 | +0.027 | +0.006* | −0.014 | 1, 2, 0, 2 |
 
-\* No mixed group, so the gradient is exactly 0. AdamW still steps from its stored moments, so these three rows are one
+"Mixed groups" counts the 4 practice prompts whose 8 answers were neither all right nor all wrong; only these carry a
+GRPO gradient. \* No mixed group, so the gradient is exactly 0. AdamW still steps from its stored moments, so these three rows are one
 "step without signal". They give identical J_H, J_R and J_U, so evaluation is exactly repeatable for identical weights.
 That momentum-only step changes J_H by +0.006, J_R by −0.007 and J_U by −0.008. By round 64, R-s101 solved most
 practice prompts in all 8 answers, so half the related draws carried no learning signal.
 
 **Reference at round 64.** A fresh no-update evaluation of R-s101 round 64 on an L40S gives J_H 0.631, J_R 0.893, J_U
-0.951; the original (RTX 6000 Ada) gave 0.606, 0.902, 0.940. Evaluating it again after the save–restore–reload cycle gives the same three scores exactly, as at r0.
+0.951; the original (RTX 6000 Ada) gave 0.605, 0.902, 0.939. Evaluating it again after the
+save–restore–reload cycle gives the same three scores exactly, as at r0.
 
 **How large a change can this design detect?** On one GPU, identical weights give identical scores (the starred rows).
-Any change of weights or hardware gives a new sample of 512 responses per probe. Two such samples of the same model
+Any change of weights or hardware gives a new sample of responses (512 for J_H and J_U, 448 for J_R). Two such samples of the same model
 differed by 0.025 (r64) and 0.031 (r0) in J_H. The 12 update rows at r64 span 0.592–0.633. A single ΔJ_H smaller than
 about 0.03 cannot be told apart from this sampling variation.
 
-**Answer.** No. The unrelated update did not measurably lower hard success at either checkpoint. Its mean ΔJ_H is
-+0.005 at r0 and +0.003 at r64. Its largest single drop (−0.016 at r0, −0.014 at r64) is smaller than the 0.025–0.031
-difference between two evaluations of the same model. At r0 its mean is 0.009 below the hard branch and 0.022 below
-the related branch; at r64 it is 0.003 above hard and 0.007 below related. These gaps are smaller still. One step on 32 responses
-is a small update; this design can detect only a drop of about 0.03 or more.
+**Answer.** Not detected. Every ΔJ_H shares one no-update reference, and that reference is itself uncertain by about
+0.03. Against the original row, the unrelated branch averages +0.005 (r0) and +0.003 (r64); against the fresh rerun, it
+averages −0.026 and −0.022. The absolute change therefore cannot be read from this design. The comparison between
+branches does not depend on the reference, because all branches share it. At r0 the unrelated branch is 0.009 below
+the hard branch and 0.022 below the related branch; at r64 it is 0.002 above hard and 0.007 below related. Single rows
+spread by up to 0.04 within a branch. An unrelated step that lowered J_H 0.03 or more below the hard or related step
+would show here; none did. One step on 32 responses is a small update.
 
 ## 4. Did previously solvable hard problems produce more all-wrong groups?
 
 Source: training records on the 8 shared hard prompts per round (role `hard_common`; same prompts for H, R and U in
-every round of a seed, verified 128/128 rounds). A group is the 8 answers to one prompt. "Previously solvable" means at
+every round of a seed: verified in 128/128 rounds for seed 101 and in 64/64 for seed 202, the rounds H-s202 ran). A group is the 8 answers to one prompt. "Previously solvable" means at
 least one correct answer at an earlier appearance in the same run.
 
 | Run | Later appearances | All wrong | of which ≥ 1 answer capped | After round 32 |
@@ -118,8 +125,8 @@ least one correct answer at an earlier appearance in the same run.
 groups than R in both seeds (5.0% vs 4.2%; 4.0% vs 3.4%). In U-s101, 34 of its 48 such groups included a response
 cut off at the length cap, so much of the loss is truncation, not wrong reasoning. Groups that left the "mixed" state
 went mostly to all-correct (mastery), not all-wrong (signal loss): H 124 vs 14, R-s101 121 vs 22, U-s101 106 vs 29,
-R-s202 94 vs 25, U-s202 122 vs 23. On matched cells (same prompt, same round, R and U), all-wrong in R only versus U
-only: 39 vs 41 (seed 101) and 30 vs 36 (seed 202), with 19 and 18 all-wrong in both. The U excess is small. H trains on twice as many hard prompts per round, so it is not a dose-matched
+R-s202 94 vs 25, U-s202 122 vs 23. On matched cells (same prompt, same round, R and U; all shared hard groups, not only
+previously solvable ones), all-wrong in R only versus U only: 39 vs 41 (seed 101) and 30 vs 36 (seed 202), with 19 and 18 all-wrong in both. The U excess is small. H trains on twice as many hard prompts per round, so it is not a dose-matched
 comparison with R and U. Figure `figures/interference_windows.png`; the cap change after round 32 is marked.
 
 **Dev panel comparison.** On the 53 dev problems, a problem is "lost" between two scheduled evaluations if it went
@@ -135,12 +142,13 @@ from ≥ 1 correct of 16 to 0, and "gained" if the reverse. Totals over rounds 0
 
 Every run gained 2 to 4 problems for each one it lost (H 2, the others 2.7–3.8). R and U lose within one problem of
 each other in each seed and gain within two. The dev panel
-shows the same picture as the training records: losses happen, but gains outnumber them, and the arms do not differ.
+shows the same picture as the training records: losses happen, but gains outnumber them, and R and U do not differ. H lost more
+problems (10) than R or U (4–7).
 
 **Which links the evidence supports.**
 1. Practice choice → test success: not supported. R − U is +0.042 in seed 101 and −0.044 in seed 202 (section 2).
-2. One unrelated update → lower hard success: not detected. Single-step changes stay below the ≈ 0.03 noise floor at
-   both checkpoints (section 3).
+2. One unrelated update → lower hard success: not detected. At both checkpoints the unrelated step did not lower J_H
+   more than the hard or related step by 0.03 or more (section 3).
 3. Training → lost signal on solvable hard problems: present but rare (2.5–5.0% of later appearances), outnumbered by
    problems mastered, and similar for R and U on matched cells. Much of U-s101's excess is length-cap truncation.
 
@@ -167,7 +175,8 @@ Difference in cue gain, (R cued − R uncued) − (U cued − U uncued): seed 10
 
 **Answer.** The cue changes what the models write but not how often they succeed. Every policy mentions "factor" more
 often when cued (+9 to +15 points). No policy's cue gain has an interval that excludes zero. The R-versus-U difference
-points in opposite directions in the two seeds, so naming the strategy does not help R more than U. Uncued, U
+points in opposite directions in the two seeds, so naming the strategy does not consistently help R more than U. In seed 202 the cue helped U more than R
+(−0.094 [−0.193, −0.016]); in seed 101 the difference is near zero. Uncued, U
 scores above R on this panel in both seeds, although R led on the sealed test in seed 101. With 24
 problems × 8 samples, the panel detects only differences of about 10 points or more.
 
@@ -313,8 +322,8 @@ comparison is not an endpoint. H, R and U saw identical shared hard prompts in a
 | 32 | 0.566 | 0.599 | 0.611 | 0.540 / 0.542 / 0.601 |
 | 64 | 0.658 | 0.613 | 0.679 | 0.637 / 0.736 / 0.710 |
 
-Round 0 is the same base model in every run. Its scores still differ by up to 0.019, which is the evaluation noise
-found in section 3. Differences of that size between arms are not meaningful.
+Round 0 is the same base model in every run. Its scores still differ by up to 0.019. This is the same kind of evaluation
+noise found in section 3 (0.025–0.031 on the hard probe). Differences of that size between arms are not meaningful.
 
 **Shared hard prompts in training** (success over the 8 shared prompts × 8 answers, 8-round bins):
 
