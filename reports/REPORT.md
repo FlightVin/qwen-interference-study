@@ -1,348 +1,292 @@
-# Does related practice help GRPO learn hard math? Qwen3-1.7B, H vs R vs U
+# Does factoring practice help GRPO learn hard math? Qwen3-1.7B, arms H, R and U
 
-Final, 10 Nov 2026 (2:40 PM EST). Sections 3–5 are EXPLORATORY analyses added by owner
-amendment A15 after the primary design was fixed; section 2 is the primary result.
+Final report under owner amendment A17 (deadline Wed 11 Nov 2026, 7:30 PM EST). DRAFT — cells marked ⟨PENDING⟩ await
+jobs that are still running. The first report (10 Nov) is kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
 
-## 1. Lead table (A13)
+**Status of the evidence.** The frozen 128-problem sealed test (section 1) is the primary result. The common-GPU rerun
+(section 1) is a reproducibility check. Everything else — the seed-reversal analyses (section 3), the local-update audit
+(section 4) and the two stress panels (section 5) — is exploratory: it was added after the design was frozen, and it
+uses outputs that were already visible.
 
-Sealed target_test, 128 MATH problems × 32 samples, pass@1 (each problem weighted equally). Intervals: 95% paired
-bootstrap over the 128 problems; they describe these trained models, not run-to-run training variation.
+## What we learned
 
-| Seed | H | R | U | R − U | R − H |
-|---|---|---|---|---|---|
-| 101 | 0.770 | 0.819 | 0.777 | +0.042 [+0.021, +0.063] | +0.049 [+0.020, +0.080] |
-| 202 | not run (partial, A16) | 0.748 | 0.792 | −0.044 [−0.072, −0.017] | not available |
-| Mean | not available (seed 101 only: 0.770) | 0.783 | 0.785 | −0.001 [−0.018, +0.015] | not available (seed 101 only: +0.049) |
+1. **Training gain versus the choice of practice.** On the sealed test, every trained policy beat the base model by a
+   wide margin: the base model scored 52.6% pass@1, and the five finished trained policies scored 74.8%–81.9%, a gain
+   of +22 to +29 points. The choice of practice changed that by much less and in no consistent direction: R − U was
+   +4.2 points in seed 101 (R 81.9% vs U 77.7%) and −4.4 points in seed 202 (R 74.8% vs U 79.2%); their mean is −0.1
+   points. ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
+2. **Which use of the eight practice slots?** The two seeds do not support a choice between factoring and modular
+   practice. In seed 101, factoring practice (R) beat additional hard practice (H) by 4.9 points (R 81.9% vs H 77.0%),
+   and modular practice (U) matched H (U 77.7% vs H 77.0%). ⟨PENDING: seed 202 H.⟩ Cost does not decide it either: per
+   run, R and U generated 52.8–65.1 M tokens and used 22.6–27.9 GPU-h on their canonical trajectories, against 68.6 M
+   tokens and 29.5 GPU-h for H-s101. After round 32, 62–92% of R and U practice groups were all-correct and carried no
+   learning signal, so the practice slots mostly cost generation time without updating the model.
+3. **What produced the seed reversal.** Mostly response length. In seed 202, R's answers were cut off at the
+   12,288-token cap more often than U's (13.1% vs 8.1% of 4,096 attempts). That accounts for −4.3 of the −4.4-point
+   R − U difference; on answers that finished, R and U were equally accurate (86.1% vs 86.2%). In seed 101 the pattern
+   flips (R 10.7% vs U 12.2% truncated) and explains +1.4 of the +4.2 points. The difference is reliability on problems
+   both arms can solve, not coverage: in seed 202, 122 of 128 problems were solved at least once by both arms, and they
+   carry −4.2 of the −4.4 points. Band B1 (34 problems the base model solved 1–5 times in 16) carries −5.7 of the −8.6-point
+   swing between seeds. Per-problem R − U values are unrelated across seeds (Spearman −0.09).
+4. **The ray-interference mechanism.** Link 1 (an auxiliary update lowers hard success): not detected; one unrelated
+   update did not lower the hard probe by 3 points or more relative to a related or hard update, at the base model or at
+   R-s101 round 64. Link 2 (affected problems then produce fewer rewarding attempts): observed rarely and briefly; 2.5–5.0%
+   of later appearances of previously solvable hard prompts were all-wrong, and most such prompts returned to mixed at
+   their next appearance. Link 3 (learning then stalls): not observed. The competing explanation that fits the same
+   evidence best is **length drift**: an arm-and-seed-specific tendency to write longer answers, which hits the cap,
+   zeroes the reward and appears as "forgetting" in the records and as a seed-dependent R − U on the test.
+5. **Transfer to harder problems.** ⟨PENDING: stress panels. SuperHard-126 and Harder-95 are frozen; evaluations
+   queued.⟩
+6. **The one larger experiment to run next.** ⟨Draft:⟩ Rerun R and U with more seeds (at least 6 per arm) **and** a
+   length control (the same cap for every round, with length-matched reward or a larger cap for evaluation), and report
+   R − U both overall and on finished answers. The dominant uncertainty is run-to-run variation that acts through answer
+   length; more seeds without a length control would measure it but not remove it. The recommendation would change if
+   R − U on finished answers (the accuracy term) agreed in sign across seeds and exceeded the seed spread: then the
+   factoring effect is real and a larger single-cap R/U study is the right next step.
 
-Base model: pass@1 0.526, pass@8 0.835.
+## 1. Endpoints: original and common-GPU evaluations
 
-The two seeds disagree. R beat U by 4.2 points in seed 101; U beat R by 4.4 points in seed 202. The mean is −0.001.
-The R score differs by 0.071 between seeds, more than either R − U effect. Training variation between seeds is
-therefore as large as the effect under test, and two seeds cannot separate them. The per-seed intervals exclude zero,
-but they only show that each pair of trained models differs on these 128 problems. They do not show that a run with a
-new seed would give the same sign.
+Sealed target_test: 128 MATH problems × 32 attempts, cap 12,288, frozen verifier. pass@1 weights each problem equally.
+Intervals are 95% paired bootstraps over the 128 problems (10,000 draws). They describe these trained checkpoints. Two
+training seeds say little about the next training run.
 
-## 2. Did the choice of auxiliary practice affect held-out success?
+**Primary: original evaluations**
 
-**Primary answer (R − U, paired, per seed).** Seed 101: R beat U by 4.2 points, and the interval excludes zero. Seed
-202: U beat R by 4.4 points, and the interval excludes zero. The seeds disagree in sign, so this study does not show
-that the choice of auxiliary practice changes held-out success. It also does not show that the choice has no effect:
-an effect smaller than the seed-to-seed spread (about 4 points) cannot be detected with two seeds.
-
-**pass@8 (exploratory, A15.1).** Seed 101: R − U +0.017 [−0.000, +0.036]; R − H +0.024 [+0.005, +0.046]. Seed 202:
-R − U −0.026 [−0.057, +0.001]. In both seeds the R − U difference is smaller at pass@8 than at pass@1, so much of the
-winning arm's lead comes from answering reachable problems more reliably. In seed 202, though, U's largest band leads
-are on problems the base model rarely or never solved (B0, B1; below).
-
-**Where the gain sits (exploratory).** Problems are banded by the base model's successes in 16 of its 32 attempts; the
-other 16 give the band's baseline, so a problem's band and its baseline come from separate samples, and chance in one
-does not inflate the other.
-
-| Band (base k of 16) | Problems | Baseline | H-s101 | R-s101 | U-s101 | R-s202 | U-s202 |
-|---|---|---|---|---|---|---|---|
-| B0 (0) | 15 | 0.021 | 0.210 | 0.306 | 0.298 | 0.181 | 0.283 |
-| B1 (1–5) | 34 | 0.232 | 0.696 | 0.755 | 0.658 | 0.592 | 0.710 |
-| B2 (6–10) | 26 | 0.555 | 0.833 | 0.881 | 0.851 | 0.855 | 0.883 |
-| B3 (11–15) | 32 | 0.773 | 0.913 | 0.959 | 0.935 | 0.938 | 0.912 |
-| B4 (16) | 21 | 0.979 | 0.991 | 0.997 | 0.979 | 0.982 | 0.994 |
-
-In seed 101, R's lead over U comes from B1 (+0.097), B2 (+0.030) and B3 (+0.024), and B4 (+0.018); in B0 they are nearly equal (+0.008). In seed 202, U's lead
-comes from the hard bands: B0 (+0.102), B1 (+0.118) and B2 (+0.029); R leads only in B3 (+0.026). The band where the
-winner gains most (B1) is the same in both seeds, but the winner is not. Problems improved / unchanged / worse versus
-base: H 94/21/13, R-s101 102/20/6, U-s101 101/18/9, R-s202 94/26/8, U-s202 100/17/11.
-Per-problem counts are in `tables/per_problem.json` (written as c/32; "0/32" for no success). Figure
-`figures/per_problem_change.png`.
-
-## 3. Did an unrelated update reduce hard success at a measured checkpoint?
-
-Design: from one saved state (model and optimizer), apply ONE training step on 4 prompts × 8 responses of one kind —
-hard, related (factoring) or unrelated (modular arithmetic) — then measure J_H (32 hard-dev problems), J_R and J_U at 16
-samples per problem. Four minibatch seeds per branch. Sources: the base model (fresh optimizer) and R-s101 at round 64
-(its saved optimizer). The U-s101 round-64 source was not retained, so that extension was skipped.
-
-**Base model (r0), change versus the no-update row:**
-
-| Branch | ΔJ_H mean | ΔJ_H per seed | ΔJ_R mean | ΔJ_U mean |
-|---|---|---|---|---|
-| hard | +0.014 | +0.010, +0.020, +0.006, +0.021 | −0.026 | −0.013 |
-| related | +0.027 | +0.016, +0.039, +0.033, +0.020 | −0.025 | −0.022 |
-| unrelated | +0.005 | +0.006, +0.025, +0.004, −0.016 | −0.027 | +0.000 |
-
-All 12 update rows score 0.020–0.040 below the no-update row on J_R, including the related branch. A reference check
-(D131, job 11105174) tested two explanations. First, the save–restore–reload cycle that every update branch goes
-through: evaluating the base model before and after the cycle gives identical scores (J_H 0.4316, J_R 0.808, J_U 0.793
-both times), so the cycle has no effect. Second, chance in the single no-update evaluation: a fresh no-update evaluation
-on another GPU type (L40S; the original ran on an L40) gives J_R 0.808, close to the update rows' mean of 0.802, and
-J_H 0.432 instead of 0.400. The original no-update row was therefore a high J_R draw and a low J_H draw. Every Δ in the
-table above shares that one draw, so the uniform J_R drop is not a measured effect of the update.
-
-**R-s101 round 64** (its saved optimizer state), ΔJ_H versus the no-update row, per minibatch seed:
-
-| Branch | 4101 | 4102 | 4103 | 4104 | Mixed groups (of 4) |
-|---|---|---|---|---|---|
-| hard | −0.006 | +0.002 | +0.012 | −0.004 | 2, 3, 2, 1 |
-| related | +0.006* | +0.006* | +0.016 | +0.014 | 0, 0, 2, 1 |
-| unrelated | −0.006 | +0.027 | +0.006* | −0.014 | 1, 2, 0, 2 |
-
-"Mixed groups" counts the 4 practice prompts whose 8 answers were neither all right nor all wrong; only these carry a
-GRPO gradient. \* No mixed group, so the gradient is exactly 0. AdamW still steps from its stored moments, so these three rows are one
-"step without signal". They give identical J_H, J_R and J_U, so evaluation is exactly repeatable for identical weights.
-That momentum-only step changes J_H by +0.006, J_R by −0.007 and J_U by −0.008. By round 64, R-s101 solved most
-practice prompts in all 8 answers, so half the related draws carried no learning signal.
-
-**Reference at round 64.** A fresh no-update evaluation of R-s101 round 64 on an L40S gives J_H 0.631, J_R 0.893, J_U
-0.951; the original (RTX 6000 Ada) gave 0.605, 0.902, 0.939. Evaluating it again after the
-save–restore–reload cycle gives the same three scores exactly, as at r0.
-
-**How large a change can this design detect?** On one GPU, identical weights give identical scores (the starred rows).
-Any change of weights or hardware gives a new sample of responses (512 for J_H and J_U, 448 for J_R). Two such samples of the same model
-differed by 0.025 (r64) and 0.031 (r0) in J_H. The 12 update rows at r64 span 0.592–0.633. A single ΔJ_H smaller than
-about 0.03 cannot be told apart from this sampling variation.
-
-**Answer.** Not detected. Every ΔJ_H shares one no-update reference, and that reference is itself uncertain by about
-0.03. Against the original row, the unrelated branch averages +0.005 (r0) and +0.003 (r64); against the fresh rerun, it
-averages −0.026 and −0.022. The absolute change therefore cannot be read from this design. The comparison between
-branches does not depend on the reference, because all branches share it. At r0 the unrelated branch is 0.009 below
-the hard branch and 0.022 below the related branch; at r64 it is 0.002 above hard and 0.007 below related. Single rows
-spread by up to 0.04 within a branch. An unrelated step that lowered J_H 0.03 or more below the hard or related step
-would show here; none did. One step on 32 responses is a small update.
-
-## 4. Did previously solvable hard problems produce more all-wrong groups?
-
-Source: training records on the 8 shared hard prompts per round (role `hard_common`; same prompts for H, R and U in
-every round of a seed: verified in 128/128 rounds for seed 101 and in 64/64 for seed 202, the rounds H-s202 ran). A group is the 8 answers to one prompt. "Previously solvable" means at
-least one correct answer at an earlier appearance in the same run.
-
-| Run | Later appearances | All wrong | of which ≥ 1 answer capped | After round 32 |
-|---|---|---|---|---|
-| H-s101 | 957 | 24 (2.5%) | 4 | 13 / 768 (1.7%) |
-| R-s101 | 960 | 40 (4.2%) | 22 | 29 / 765 (3.8%) |
-| U-s101 | 966 | 48 (5.0%) | 34 | 38 / 768 (4.9%) |
-| R-s202 | 963 | 33 (3.4%) | 10 | 19 / 765 (2.5%) |
-| U-s202 | 963 | 39 (4.0%) | 11 | 26 / 768 (3.4%) |
-
-**Answer.** Yes, rarely, and more often with practice prompts than with hard-only training. U had more all-wrong
-groups than R in both seeds (5.0% vs 4.2%; 4.0% vs 3.4%). In U-s101, 34 of its 48 such groups included a response
-cut off at the length cap, so much of the loss is truncation, not wrong reasoning. Groups that left the "mixed" state
-went mostly to all-correct (mastery), not all-wrong (signal loss): H 124 vs 14, R-s101 121 vs 22, U-s101 106 vs 29,
-R-s202 94 vs 25, U-s202 122 vs 23. On matched cells (same prompt, same round, R and U; all shared hard groups, not only
-previously solvable ones), all-wrong in R only versus U only: 39 vs 41 (seed 101) and 30 vs 36 (seed 202), with 19 and 18 all-wrong in both. The U excess is small. H trains on twice as many hard prompts per round, so it is not a dose-matched
-comparison with R and U. Figure `figures/interference_windows.png`; the cap change after round 32 is marked.
-
-**Dev panel comparison.** On the 53 dev problems, a problem is "lost" between two scheduled evaluations if it went
-from ≥ 1 correct of 16 to 0, and "gained" if the reverse. Totals over rounds 0 → 32 → 64 → 96 → 128:
-
-| Run | Lost | Gained | Problems with 0 correct, round 0 → 128 |
-|---|---|---|---|
-| H-s101 | 10 | 20 | 18 → 8 |
-| R-s101 | 4 | 15 | 17 → 6 |
-| U-s101 | 5 | 17 | 18 → 6 |
-| R-s202 | 6 | 18 | 19 → 7 |
-| U-s202 | 7 | 19 | 18 → 6 |
-
-Every run gained 2 to 4 problems for each one it lost (H 2, the others 2.7–3.8). R and U lose within one problem of
-each other in each seed and gain within two. The dev panel
-shows the same picture as the training records: losses happen, but gains outnumber them, and R and U do not differ. H lost more
-problems (10) than R or U (4–7).
-
-**Which links the evidence supports.**
-1. Practice choice → test success: not supported. R − U is +0.042 in seed 101 and −0.044 in seed 202 (section 2).
-2. One unrelated update → lower hard success: not detected. At both checkpoints the unrelated step did not lower J_H
-   more than the hard or related step by 0.03 or more (section 3).
-3. Training → lost signal on solvable hard problems: present but rare (2.5–5.0% of later appearances), outnumbered by
-   problems mastered, and similar for R and U on matched cells. Much of U-s101's excess is length-cap truncation.
-
-The study therefore finds no interference effect large enough to separate the arms at this scale (two seeds, 128 rounds,
-1.7B model). Effects below about 4 test points, or 0.03 on the probes, remain possible.
-
-## 5. Strategy-cue panel (separate from the interference evidence)
-
-24 unused MATH test problems where factoring is central, asked as written and with one fixed sentence appended
-("Consider whether a factorization could simplify the problem."). 8 samples per problem per form, paired seeds.
-This panel asks whether naming the strategy helps R more than U. It does not test interference. Intervals: 95% item
-bootstrap over the 24 problems (10,000 draws).
-
-| Policy | pass@1 uncued | pass@1 cued | Cue gain (95% CI) | Truncated uncued → cued | Mentions "factor" uncued → cued |
-|---|---|---|---|---|---|
-| Base | 0.422 | 0.411 | −0.010 [−0.078, +0.057] | 0.000 → 0.000 | 0.40 → 0.49 |
-| R-s101 | 0.682 | 0.693 | +0.010 [−0.036, +0.068] | 0.188 → 0.177 | 0.56 → 0.71 |
-| U-s101 | 0.724 | 0.714 | −0.010 [−0.073, +0.042] | 0.182 → 0.203 | 0.52 → 0.60 |
-| R-s202 | 0.620 | 0.573 | −0.047 [−0.099, +0.000] | 0.188 → 0.219 | 0.56 → 0.69 |
-| U-s202 | 0.646 | 0.693 | +0.047 [−0.005, +0.109] | 0.156 → 0.078 | 0.57 → 0.70 |
-
-Difference in cue gain, (R cued − R uncued) − (U cued − U uncued): seed 101 +0.021 [−0.063, +0.120]; seed 202 −0.094
-[−0.193, −0.016].
-
-**Answer.** The cue changes what the models write but not how often they succeed. Every policy mentions "factor" more
-often when cued (+9 to +15 points). No policy's cue gain has an interval that excludes zero. The R-versus-U difference
-points in opposite directions in the two seeds, so naming the strategy does not consistently help R more than U. In seed 202 the cue helped U more than R
-(−0.094 [−0.193, −0.016]); in seed 101 the difference is near zero. Uncued, U
-scores above R on this panel in both seeds, although R led on the sealed test in seed 101. With 24
-problems × 8 samples, the panel detects only differences of about 10 points or more.
-
-**Inspection.** The fixed sample (problems at panel positions 0, 6, 12 and 18, sample 0, all 10 policy-forms; 40
-responses) is in `research/evidence/a15/cue_analysis.txt`. The grader was consistent in all 40: on problem 0 every
-\boxed{10} scored 1 and every \boxed{28} scored 0 (10 is correct); on problem 12 every \boxed{8} scored 1 and every 4
-or 6 scored 0. Problem 18 hit the 12,288-token cap in 4 of the 8 trained-policy responses.
-
-## 6. Question and design
-
-**Question.** When a model learns hard competition problems with GRPO, does easier practice on a technique those problems
-use (polynomial factorization) help more than equally easy practice on an unrelated technique (modular arithmetic)?
-
-**Model.** Qwen3-1.7B (`70d244cc`), full-parameter training, non-thinking mode, T = 1.0.
-
-| Arm | Prompts per round (16 × 8 responses) | Purpose |
-|---|---|---|
-| H (hard only) | 8 shared hard + 8 extra hard | control: hard practice only |
-| R (related practice) | 8 shared hard + 8 factoring practice | treatment |
-| U (unrelated practice) | 8 shared hard + 8 modular-arithmetic practice | control: same practice dose, unrelated skill |
-
-R and U see the same hard prompts in the same rounds, and their practice items are matched one-to-one on difficulty and
-length (D48). The primary comparison is therefore paired: R − U.
-
-**Data.** H_train 46 hard problems (25 MATH + 21 Omni-MATH; 2–12 of 32 base attempts correct). Practice pools 63 + 63
-items. target_dev 53 problems (curves only). target_test 128 MATH test problems, sealed until all training ended.
-
-**Training.** GRPO, lr 2e-6, symmetric clip 0.2, no KL, 4 optimizer steps per round, 128 rounds, FP32 weights and Adam
-moments. Settings chosen by a frozen calibration rule (D57).
-
-**Length cap.** 8,192 tokens for rounds 1–32, then 12,288 for rounds 33–128 in every run (A10/A11). Every comparison
-across round 32 includes this change.
-
-**Evaluation.** Test: 128 problems × 32 samples, cap 12,288. Dev: 53 problems × 8 samples at rounds 0, 32, 64, 96, 128.
-
-## 7. What ran
-
-Scope (A9): H/R/U × seeds 101 and 202. All runs are attempt a2; attempt a1 data are excluded (D99; asserted in code).
-
-| Run | Status | Notes |
-|---|---|---|
-| H-s101 | complete, validated | — |
-| R-s101 | complete, validated | final save failed once (storage); one retry from round 124 (D103) |
-| U-s101 | complete, validated | — |
-| R-s202 | complete, validated | restarted once at round 16 for checkpoint cadence (D105) |
-| U-s202 | complete, validated | failed twice on storage write errors; resumed from round 64 (D111, D117) |
-| H-s202 | partial (A16) | did not fit before the deadline; stopped at round 64 (19:16Z, D140); no test; appendix A |
-
-**Storage incident.** The account's 500 GB quota (shared with other projects) reached 495 GB on 9 Nov. Writes became
-slow and failed with `Errno 512`/`EINTR` (D116). This caused every checkpoint-save failure and both U-s202 crashes.
-Pruning freed ≈ 214 GB (all deletions logged). Committed checkpoints are checksum-verified; no result depends on a
-failed write.
-
-**Bookkeeping defect (D127).** In resumed runs, saved step counters came from later rounds, because the background
-saver serialised a live dictionary. Model weights, optimizer state and random state were saved correctly. Token counts
-in this report are therefore computed from the training records, not from those counters.
-
-## 8. Learning curves and probes
-
-Figures `figures/learning_rounds.png`, `figures/learning_exposure.png` (dev pass@1 vs round and vs cumulative hard
-training responses) and `figures/pope_R.png`, `figures/pope_U.png` (J_R or J_U against J_H). The dotted line marks the
-cap change. The untrained model scores 0.403–0.422 on dev across runs because vLLM sampling is not bitwise reproducible;
-dev differences below ≈ 0.02 are noise. At round 128 the dev panel favours R in seed 101 (0.729 vs 0.691) and U in seed
-202 (0.703 vs 0.656).
-
-## 9. Truncation
-
-Share of training responses cut off at the cap (a cut-off response scores 0):
-
-| Run | Shared hard, r1–32 (8,192) | Shared hard, r33–128 (12,288) | Practice / extra hard, r33–128 |
-|---|---|---|---|
-| H-s101 | 6.6% | 6.9% | 7.3% (extra hard) |
-| R-s101 | 6.1% | 10.6% | 1.6% |
-| U-s101 | 6.1% | 14.0% | 0.3% |
-| R-s202 | 6.2% | 9.3% | 1.0% |
-| U-s202 | 4.5% | 10.3% | 0.1% |
-
-After round 32, U truncated more on shared hard prompts than R in both seeds. Truncation is part of the outcome, not a
-separate error.
-
-## 10. Compute
-
-Every Slurm allocation in the project ledger is charged, including failed, cancelled and superseded attempts (`sacct`,
-job 11109623, 19:22Z on 10 Nov; table `tables/cost.md`). GPU-hours = elapsed time × GPUs allocated.
-
-| Category | Jobs | Allocations | GPU-h | of which canonical | CPU-h | Final states |
+| Seed | H | R | U | R − U | R − H | U − H |
 |---|---|---|---|---|---|---|
-| CPU jobs | 126 | 131 | 0.0 | 0.0 | 31.0 | CANCELLED 12, COMPLETED 103, FAILED 11, PREEMPTED 5 |
-| local-update diagnostic | 8 | 8 | 14.9 | 0.0 | 118.9 | CANCELLED 4, COMPLETED 3, FAILED 1 |
-| main H-s101 | 2 | 2 | 33.6 | 29.5 | 268.9 | CANCELLED 1, COMPLETED 1 |
-| main H-s202 | 2 | 2 | 11.0 | 0.0 | 88.1 | CANCELLED 2 |
-| main H-s303 | 2 | 2 | 0.0 | 0.0 | 0.0 | CANCELLED 2 |
-| main R-s101 | 3 | 3 | 32.9 | 27.9 | 263.6 | CANCELLED 1, COMPLETED 1, FAILED 1 |
-| main R-s202 | 3 | 3 | 22.8 | 22.8 | 182.3 | CANCELLED 2, COMPLETED 1 |
-| main R-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
-| main U-s101 | 2 | 2 | 27.3 | 22.6 | 218.6 | CANCELLED 1, COMPLETED 1 |
-| main U-s202 | 5 | 5 | 25.6 | 25.6 | 205.0 | CANCELLED 2, COMPLETED 1, FAILED 2 |
-| main U-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
-| other GPU jobs (screening, calibration, smoke, A10/A11 studies) | 41 | 41 | 42.0 | 0.0 | 335.6 | CANCELLED 6, COMPLETED 28, FAILED 7 |
-| sealed test evaluation | 8 | 8 | 21.5 | 0.0 | 171.8 | CANCELLED 2, COMPLETED 6 |
-| strategy-cue panel (A15.4) | 2 | 2 | 2.2 | 0.0 | 17.7 | CANCELLED 1, COMPLETED 1 |
-| **Total** | 206 | 211 | 233.8 | | 1901.4 | |
+| 101 | 77.0% | 81.9% | 77.7% | 81.9 − 77.7 = +4.2 [+2.1, +6.3] | 81.9 − 77.0 = +4.9 [+2.0, +8.0] | 77.7 − 77.0 = +0.7 [−2.0, +3.5] |
+| 202 | ⟨PENDING⟩ | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+| Mean | ⟨PENDING⟩ | 78.3% | 78.5% | 78.3 − 78.5 = −0.1 [−1.8, +1.5] | ⟨PENDING⟩ | ⟨PENDING⟩ |
 
-**Total: 233.8 GPU-h** (211 allocations) **and 1,901 CPU-h.** The canonical trajectories of the five complete runs used
-128.4 GPU-h (55%). The rest went to sealed-test evaluation (21.5), the partial H-s202 run (11.0), the exploratory A15
-analyses (local-update diagnostic 14.9, cue panel 2.2), screening, calibration and protocol studies (42.0), and
-superseded or failed attempts of the main runs (13.8). Active training time on the canonical trajectories: H-s101
-26.3 h, R-s101 21.0 h, U-s101 19.3 h, R-s202 18.0 h, U-s202 16.0 h. The cost job itself (≈ 0.01 GPU-h) is not in the
-table. GPU limit (A15: 3 general + 6 preempt): exceeded once, for 99 s at 02:04Z on 10 Nov, when a moved job started as
-a fourth general job; it was cancelled at once and replaced by a dependency chain (D124). Otherwise general use stayed
-at or below 3 GPUs and preempt at or below 1 GPU after A15 (from `tables/sacct.txt`).
+Base model: 52.6% pass@1, 83.5% pass@8. Differences are in percentage points.
 
-## 11. Omitted or partial items
+**Reproducibility check: one GPU type.** The original evaluations did not share hardware. In both seeds, R ran on an
+L40 GPU and U on an L40S (`sacct` node lists, D141). The common recipe (frozen in D141 before any rerun score) uses
+L40S for every cell, unchanged code, and the original per-item sampling seeds. Same seeds isolate the GPU type: a U
+rerun should reproduce its original exactly, and an R rerun changes only the hardware. H-s101 and the base model
+already ran on L40S under this recipe, so their originals are the common cells.
 
-- H-s202: partial run only (A16); no test result, so R − H and the H mean rest on seed 101.
-- Local-update extension from U-s101 round 64: skipped; that checkpoint and optimizer state were not retained.
-- Seed 303 and the clipping sensitivity runs: deferred under A9; not run.
-- Two seeds only: the study cannot estimate training variation, and the seeds disagree on the primary contrast.
-- The A15.2 interference trace uses training records; it has no independent evaluation per round.
+⟨PENDING: common-GPU table and reproducibility table (identical attempts, identical c/32, Δ pass@1).⟩
 
-## 12. Limitations
+![Original and common-GPU endpoints](figures/a17/endpoints.png)
 
-- Two training seeds; intervals do not cover training variation. Seed 202 lacks H.
-- H_train has 46 problems, 21 from Omni-MATH; the test set is MATH only.
-- Practice pools are 86% authored items (equal across R and U).
-- The cap changed after round 32 in every run.
-- vLLM sampling is not bitwise reproducible; replays differ (D99).
-- The agent annotated techniques and audited them; no human reviewed them.
-- Sections 3–5 were added after the design was fixed (A15) and are exploratory.
+## 2. Learning curves
 
-## Appendix A. Partial H-s202 run (A16)
+![Learning curves](figures/a17/learning_curves.png)
 
-H-s202 (job 11082192) started late: under the 3-GPU limit, a full H-s202 run did not fit before the deadline (D100), so it ran last, as a
-partial run (D128). It was stopped at 19:16Z on 10 Nov
-after its round-64 evaluations (D139, D140), so it covers rounds 1–64 of 128. It has no test evaluation, so this
-comparison is not an endpoint. H, R and U saw identical shared hard prompts in all 64 rounds (64/64 verified).
+Rows 1–2: held-out dev (53 problems × 8 attempts) and the three probes against training round and against cumulative
+hard-prompt training responses. Row 3: success on the practised shared hard prompts in training (not a held-out
+evaluation). The dotted line marks the cap change from 8,192 to 12,288 tokens after round 32. H trains on 16 hard prompts
+per round and R/U on 8, so H reaches a given hard exposure in half the rounds. ⟨PENDING: H-s202 a2-r60 to round 128.⟩
 
-**Dev panel** (53 problems × 8 samples, pass@1):
+**Probes.** `J_H`: 32 hard dev problems (held out). `J_R`: 28 factoring practice-style problems (held out from training
+pools). `J_U`: 32 modular-arithmetic practice-style problems (held out). All at 8 attempts during training.
 
-| Round | H-s202 (partial) | R-s202 | U-s202 | For reference: H / R / U seed 101 |
+![J_H against J_R](figures/a17/pope_JH_vs_JR.png)
+![J_H against J_U](figures/a17/pope_JH_vs_JU.png)
+
+## 3. Why the two seeds disagree (exploratory)
+
+### 3.1 Which problems carry the reversal
+
+![Per-problem R − U, seed 101 against seed 202](figures/a17/reversal_scatter.png)
+
+Each point is one test problem: its R − U success difference (c/32) in seed 101 against seed 202. Of 128 problems, 31
+have the same sign in both seeds, 44 opposite signs, and 53 a tie in at least one seed (31 tie in both: 3 at 0/32 for
+all four policies and 26 at 32/32). The per-problem differences are unrelated across seeds (Spearman −0.09 overall,
+−0.04 within B1).
+
+| Band (base k of 16) | Problems | R − U seed 101 | R − U seed 202 | Contribution to the swing (s202 − s101) |
 |---|---|---|---|---|
-| 0 | 0.403 | 0.403 | 0.422 | 0.417 / 0.417 / 0.422 |
-| 32 | 0.566 | 0.599 | 0.611 | 0.540 / 0.542 / 0.601 |
-| 64 | 0.658 | 0.613 | 0.679 | 0.637 / 0.736 / 0.710 |
+| B0 (0) | 15 | 30.6 − 29.8 = +0.8 | 18.1 − 28.3 = −10.2 | −1.3 |
+| B1 (1–5) | 34 | 75.5 − 65.8 = +9.7 | 59.2 − 71.0 = −11.8 | −5.7 |
+| B2 (6–10) | 26 | 88.1 − 85.1 = +3.0 | 85.5 − 88.3 = −2.9 | −1.2 |
+| B3 (11–15) | 32 | 95.9 − 93.5 = +2.4 | 93.8 − 91.2 = +2.6 | +0.0 |
+| B4 (16) | 21 | 99.7 − 97.9 = +1.8 | 98.2 − 99.4 = −1.2 | −0.5 |
+| All | 128 | 81.9 − 77.7 = +4.2 | 74.8 − 79.2 = −4.4 | −8.6 |
 
-Round 0 is the same base model in every run. Its scores still differ by up to 0.019. This is the same kind of evaluation
-noise found in section 3 (0.025–0.031 on the hard probe). Differences of that size between arms are not meaningful.
+Bands use base attempts 0–15; a band's contribution is its share of 128 times its R − U. B1 carries two-thirds of the
+swing. Within B1, the 3 largest item changes carry 30% of B1's share and the top 5 carry 45%; the rest is spread over
+many items whose order changed. Example: `algebra/test/00213` went from R 23/32 vs U 13/32 in seed 101 to R 11/32 vs
+U 24/32 in seed 202.
 
-**Shared hard prompts in training** (success over the 8 shared prompts × 8 answers, 8-round bins):
+### 3.2 Coverage or reliability
 
-| Rounds | 1–8 | 9–16 | 17–24 | 25–32 | 33–40 | 41–48 | 49–56 | 57–64 |
-|---|---|---|---|---|---|---|---|---|
-| H-s202 | 0.266 | 0.488 | 0.584 | 0.605 | 0.693 | 0.740 | 0.779 | 0.777 |
-| R-s202 | 0.238 | 0.416 | 0.520 | 0.572 | 0.559 | 0.631 | 0.691 | 0.699 |
-| U-s202 | 0.217 | 0.383 | 0.500 | 0.574 | 0.619 | 0.676 | 0.684 | 0.680 |
-| H-s101 | 0.213 | 0.318 | 0.424 | 0.578 | 0.625 | 0.680 | 0.730 | 0.727 |
-| R-s101 | 0.260 | 0.393 | 0.449 | 0.486 | 0.596 | 0.734 | 0.713 | 0.771 |
-| U-s101 | 0.258 | 0.412 | 0.529 | 0.559 | 0.635 | 0.678 | 0.719 | 0.734 |
+| Policy | pass@1 | pass@8 | Solved ≥ 1 of 32 | 0/32 | Truncated attempts |
+|---|---|---|---|---|---|
+| base | 52.6% | 83.5% | 116/128 | 12/128 | 2/4,096 |
+| H-s101 | 77.0% | 93.7% | 125/128 | 3/128 | 445/4,096 (10.9%) |
+| R-s101 | 81.9% | 96.1% | 125/128 | 3/128 | 437/4,096 (10.7%) |
+| U-s101 | 77.7% | 94.5% | 125/128 | 3/128 | 501/4,096 (12.2%) |
+| R-s202 | 74.8% | 92.2% | 123/128 | 5/128 | 538/4,096 (13.1%) |
+| U-s202 | 79.2% | 94.9% | 124/128 | 4/128 | 333/4,096 (8.1%) |
+| H-s202 | ⟨PENDING⟩ | | | | |
 
-**Reading.** In seed 202, H leads both R and U on the shared hard prompts in every bin, by 0.03–0.09 over the better of the two. H trains on twice as
-many hard prompts per round, so this lead is expected and is not a dose-matched comparison. In seed 101, H led in only 2
-of the 8 bins. On the dev panel at round 64, H-s202 sits between R-s202 and U-s202; in seed 101, H was lowest. The
-partial run therefore repeats the main finding: the order of the arms changes between seeds. Figure
-`figures/a16_partial.png`.
+Against an independent baseline (base attempts 16–31), training did both, but mostly improved reliability. 14 problems
+were unreachable at baseline (0/16); training made 9–11 of them reachable, at low pass@1 (19–40%). On the 114 reachable
+problems, pass@1 rose from 59.6% to 82.5–88.0%. Of each policy's total gain over base (+21.7 to +28.8 points), the
+reachable problems carry +20.4 to +25.3. For R − U the split is the same: in seed 202 R − U is −4.4 points, of which
+−4.2 comes from the 122 problems both arms reach and −0.2 from the 3 that only one arm reaches.
+
+![Coverage](figures/a17/coverage.png)
+
+### 3.3 Truncation: the main driver of R − U
+
+A truncated answer scores 0. With t the truncated share and a the accuracy on finished answers, pass@1 = (1 − t)·a, and
+R − U = −(t_R − t_U)·ā + (1 − t̄)·(a_R − a_U) exactly (bars are R/U means).
+
+| Seed | R − U pass@1 | Truncation term | Accuracy term |
+|---|---|---|---|
+| 101 | 81.9 − 77.7 = +4.2 | t: 10.7% vs 12.2% → +1.4 [+0.0, +2.8] | a: 91.6% vs 88.5% → +2.8 [+0.9, +4.7] |
+| 202 | 74.8 − 79.2 = −4.4 | t: 13.1% vs 8.1% → −4.3 [−6.1, −2.7] | a: 86.1% vs 86.2% → −0.1 [−2.4, +2.0] |
+
+![Truncation and R − U](figures/a17/truncation.png)
+
+Per problem, R − U success falls as R − U truncation rises (Pearson −0.51 in seed 101, −0.59 in seed 202). Counting
+only answers that finish within 8,192 tokens, R − U is +5.1 [+3.1, +7.3] (R 76.5% vs U 71.4%) in seed 101 and −7.0
+[−10.0, −4.2] (R 68.6% vs U 75.7%) in seed 202. The reversal is therefore not created by the 12,288 cap; it follows
+which policy writes longer answers. In training, R-s202 also generated more tokens than U-s202 late in training (16.4 M
+vs 15.1 M in rounds 97–128); in seed 101 the two were close (19.0 M vs 19.1 M).
+
+### 3.4 How much learning signal each arm received
+
+Groups of 8 answers per prompt. Only mixed groups (some right, some wrong) carry a GRPO gradient. A mixed-group count
+shows reward variation; it does not give the size or direction of the update.
+
+| Run | Rounds | Shared hard: all-wrong / mixed / all-correct | Second pool: all-wrong / mixed / all-correct |
+|---|---|---|---|
+| R-s101 | 1–32 / 97–128 | 27 / 220 / 9 → 9 / 119 / 128 | factoring 0 / 180 / 76 → 0 / 25 / 231 |
+| U-s101 | 1–32 / 97–128 | 22 / 222 / 12 → 13 / 122 / 121 | modular 0 / 168 / 88 → 0 / 20 / 236 |
+| R-s202 | 1–32 / 97–128 | 27 / 214 / 15 → 11 / 130 / 115 | factoring 0 / 180 / 76 → 0 / 44 / 212 |
+| U-s202 | 1–32 / 97–128 | 28 / 212 / 16 → 8 / 119 / 129 | modular 0 / 166 / 90 → 0 / 29 / 227 |
+| H-s101 | 1–32 / 97–128 | 32 / 216 / 8 → 5 / 111 / 140 | extra hard 31 / 212 / 13 → 8 / 102 / 146 |
+
+Each cell counts 256 groups (32 rounds × 8 prompts). The practice pools became easy: after round 32, the share of
+all-correct practice groups was 62–90% for R and 74–92% for U, so most practice prompts gave no reward contrast.
+The shared hard prompts gave similar signal in R and U. Full windows, tokens, gradient norms (logged per optimizer step)
+and clip fractions (per round): `research/evidence/a17/analysis/train/signal.md`.
+
+### 3.5 Did apparent forgetting persist?
+
+Shared hard prompts, same prompt and round matched across arms. "Previously solvable" (PS) means ≥ 1 correct answer at an
+earlier appearance in the same run.
+
+| Run | Rounds | PS → all-wrong (of later PS appearances) | Capped answers in those groups: 0 / some / all 8 | Next appearance: all-wrong / mixed / all-correct / none |
+|---|---|---|---|---|
+| R-s101 | 33–128 | 29 / 765 (3.8%) | 12 / 13 / 4 | 18 / 10 / 0 / 1 |
+| U-s101 | 33–128 | 38 / 768 (4.9%) | 7 / 23 / 8 | 17 / 18 / 0 / 3 |
+| R-s202 | 33–128 | 19 / 765 (2.5%) | 13 / 3 / 3 | 7 / 10 / 0 / 2 |
+| U-s202 | 33–128 | 26 / 768 (3.4%) | 18 / 6 / 2 | 13 / 11 / 1 / 1 |
+| H-s101 | 33–128 | 13 / 768 (1.7%) | 11 / 2 / 0 | 8 / 4 / 0 / 1 |
+
+Rounds 1–32 (cap 8,192) are in `persistence.md`. Matched cells, all-wrong in R only vs U only: seed 101 17 vs 24,
+seed 202 11 vs 16 (rounds 33–128). Losses were rare, not much more frequent in U than R, and usually temporary: at the
+next appearance most such prompts were mixed again or still all-wrong; almost none jumped to all-correct. One capped
+answer in a group does not show that a longer allowance would have rescued it.
+
+![Transitions on the shared hard prompts](figures/a17/transitions.png)
+
+### 3.6 How often sampling alone creates an apparent loss
+
+The first report described dev "losses" as "≥ 1 correct of 16 → 0". That was wrong: every scheduled dev evaluation used
+**8** attempts per problem (all 28 dev rows and the per-attempt records show n = 8; `dev_transitions.md`). The loss
+counts themselves were correct.
+
+At an unchanged checkpoint, two disjoint groups of 8 attempts make a problem look lost (some → none) with probability
+P = (1 − (1 − p)^8)(1 − p)^8, which peaks at 0.25 when p ≈ 0.08. On the 128 test problems, the expected count of
+chance losses per comparison is 1.7–5.7 depending on the policy (observed with fixed splits: 0–5). On the dev panel,
+each run lost 0–5 problems between consecutive evaluations (53 problems × 8 attempts), the same range that sampling
+alone produces. Splits reuse the same attempts, so these rates are a reference, not independent experiments.
+
+![Sampling-only loss rate](figures/a17/sampling_null.png)
+
+## 4. Local evidence for interference (exploratory)
+
+One GRPO/AdamW step on 4 prompts × 8 answers of one kind (hard, related = factoring, unrelated = modular), from the
+base model (fresh optimizer) and from R-s101 round 64 (its saved optimizer), then `J_H`, `J_R`, `J_U` at 16 attempts per
+problem. Four minibatch draws per branch. The U-s101 round-64 checkpoint was not retained, so that source is missing.
+
+![One-step changes](figures/a17/delta_j.png)
+
+| Checkpoint | No-update J_H (original / rerun) | Hard (mean of 4) | Related | Unrelated | Unrelated − related | Unrelated − hard |
+|---|---|---|---|---|---|---|
+| base (r0) | 40.0% / 43.2% | 41.5% | 42.7% | 40.5% | 40.5 − 42.7 = −2.2 | 40.5 − 41.5 = −0.9 |
+| R-s101 r64 | 60.6% / 63.1% | 60.6% | 61.6% | 60.9% | 60.9 − 61.6 = −0.7 | 60.9 − 60.6 = +0.2 |
+
+Full per-draw table with J_R and J_U, mixed groups and gradient norms: `delta_j_table.md` and `branches.md`.
+
+- The no-update reference is itself noisy: two evaluations of the same base weights on different GPUs gave J_H 40.0% and
+  43.2% (r64: 60.6% and 63.1%). A change measured against one reference therefore cannot be read as absolute; the direct
+  branch comparisons above do not depend on it.
+- Single draws spread by up to 4 points within a branch (unrelated at r64: 59.2%–63.3%). We do not claim a detection
+  threshold; differences of 2–3 points between branch means are within this spread.
+- At r64, three draws (related 4101, 4102; unrelated 4103) had no mixed group, so their reward gradient was exactly 0.
+  AdamW still stepped from its stored moments, and the three produced identical scores (J_H 61.1%, J_R 89.5%, J_U 93.2%).
+  This is a "momentum-only" step, not an unchanged checkpoint. At r0 the optimizer is fresh, and no draw had zero mixed
+  groups.
+
+**Mechanism, one link at a time.**
+
+| Link | Evidence | Kind | Finding |
+|---|---|---|---|
+| 1. An auxiliary update lowers hard success | branch experiment (section 4) | direct, 2 checkpoints, 1 arm | not detected; unrelated vs related −2.2 / −0.7 points, within draw spread |
+| 2. Affected problems then produce fewer rewarding attempts | training records (3.5) | observational | rare (2.5–4.9% of later PS appearances after round 32), often with capped answers, mostly temporary |
+| 3. Their learning then stalls | training records, dev curves | observational | not observed; from round 0 to 128, dev pass@1 rose from 40–42% to 66–73% and practised shared-hard success (8-round bins) from 21–26% to 75–87% in every finished run, with dips of up to about 5 points between evaluations |
+| Endpoint difference | sealed test (1, 3.3) | outcome only | R − U flips sign with seed and follows truncation; it cannot establish the chain |
+
+## 5. Stress panels: Harder and SuperHard (exploratory)
+
+**Construction.** Rubric first (`research/evidence/a17/panels/RUBRIC-stress-v1.md`, committed before any candidate was
+exported). Harder: a substantive factoring step must be recognised inside a longer solution, with no cue. SuperHard:
+Harder plus a documented obstacle (hidden substitution, approach choice, case analysis after factoring, non-obvious
+grouping, or several factorizations). Candidates: 2,039 unused problems from MATH (pinned, Levels 4–5), Omni-MATH and
+OlympiadBench; every candidate was annotated by an agent (labelled `agent:claude-sonnet`). Selection by hash order with
+family, source and duplicate rules (`qis.data.stress_panels`); checks against every training, calibration, practice,
+dev, probe, cue and sealed-test text. Frozen before any model was evaluated on them (D143, re-frozen in D145 after the
+second read found one cross-source duplicate).
+
+| Panel | Items | Sources | Notes |
+|---|---|---|---|
+| SuperHard-126 | 126 | MATH 60, Omni-MATH 52, OlympiadBench 14 | obstacles: case analysis 45, hidden substitution 29, non-obvious grouping 26, approach choice 14, several factorizations 12 |
+| Harder-95 | 95 | MATH 69, Omni-MATH 15, OlympiadBench 11 | — |
+
+Fewer than 128 items qualified in each panel: the whole 2,039-item pool was annotated, and only 126 SuperHard and 99
+Harder items met the rubric and the checks. A blind second read (different agents, problem and solution only) agreed
+on eligibility for 207 of 219 items, on the tier for 171 of 219 (78%), and confirmed every gold answer (219/219).
+Absence from the study's sets does not show absence from pretraining data.
+
+⟨PENDING: results table — absolute pass@1, correct/total, truncation, distinct problems solved at 8 attempts, per tier
+and policy (base, R-s101 r64, H-s202 r64, six endpoints); coverage table checkpoint × panel; figure; response audit
+(D144, 16 items × policies, arm-blind) and its answer to "would more direct factoring practice fix these failures?"⟩
+
+## 6. Strategy cue (from the first report; separate from the interference evidence)
+
+24 unused MATH problems where factoring is central, as written and with one appended sentence ("Consider whether a
+factorization could simplify the problem."), 8 attempts each, paired seeds. The cue changed what the models wrote (+9
+to +15 points more mentions of "factor") but not how often they succeeded. Example: R-s202 scored 62.0% uncued and 57.3%
+cued (cue gain −4.7 [−9.9, 0.0]); U-s202 scored 64.6% and 69.3% (+4.7 [−0.5, +10.9]). The difference in cue gain was
++2.1 [−6.3, +12.0] in seed 101 and −9.4 [−19.3, −1.6] in seed 202. Full table: `archive/REPORT-v1-2026-11-10.md` §5.
+
+## 7. Design
+
+| Arm | Prompts per round (16 × 8 answers) | Purpose |
+|---|---|---|
+| H | 8 shared hard + 8 extra hard | control: more hard practice |
+| R | 8 shared hard + 8 factoring practice | treatment |
+| U | 8 shared hard + 8 modular-arithmetic practice | control: same practice dose, unrelated skill |
+
+Qwen3-1.7B (`70d244cc`), full-parameter GRPO, non-thinking mode, T = 1.0, lr 2e-6, symmetric clip 0.2, no KL, 4
+optimizer steps per round, 128 rounds; cap 8,192 tokens for rounds 1–32 and 12,288 from round 33 in every run. H_train
+46 hard problems; practice pools 63 + 63 matched items; dev 53; sealed test 128 MATH test problems.
+
+## 8. What ran, compute, and incomplete cells
+
+⟨PENDING: run table with H-s202 a2-orig / a2-r60; cost table reconciled against the ledger including A17 jobs.⟩
+
+**Incomplete cells.** ⟨PENDING: final list.⟩ Known now: U-s101 round-64 local-update source not retained; seed 303 and
+clipping sensitivity deferred (A9); Harder has 95 and SuperHard 126 items, not 128.
 
 ## Reproduction
 
-Code: commit `41f055f` (the tree that produced the final tables and figures, job 11109597). Tables and figures: `qis.analysis.report_data`, `report_tables`, `per_problem`,
-`interference`, `figures`, `cue`, `cost_table`; source tables in `reports/tables/`. Decisions: `research/DECISIONS.md`.
+⟨PENDING: commit, commands (`qis.analysis.a17_test`, `qis.analysis.a17_train`, `qis.data.stress_panels`, stress
+evaluation recipes), manifests and hashes.⟩
