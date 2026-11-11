@@ -159,8 +159,8 @@ Keep-first order if time tightens: H-s202 sealed test > balanced four-checkpoint
 - 9.2 pending (18:00Z) — D150 fallback (8.1b): label "H-s202 round N (incomplete run)", outside the primary table.
 - 9.3 active — Length diagnostic (exact continuation 12,288 → 16,384; `qis.eval_extend`; L40S):
   - 9.3a done — design + sample fixed before output (D154); boundary tests in `tests/test_eval_extend.py` (run in each job precheck).
-  - 9.3b active — canary `qis-len-R-s202` (11118157, general): check t1 summary (capped count, re-grade assert, tokens ≤ 16,384, time).
-  - 9.3c pending — `qis-len-U-s202` (general), `qis-len-R-s101`, `qis-len-U-s101` (preempt; move to general if they do not start) after the canary t1 passes.
+  - 9.3b done (16:22Z) — canary `qis-len-R-s202` 11118157 tranche 1: 256 attempts, 56 capped at 12,288, 9 recovered, 13 finished wrong, 34 still capped; correct 173 → 182; all 256 stored rewards re-graded identically; 499 s generation, L40S. Cancelled 16:24Z at the start of its "rest" phase (equal coverage first); resubmit for "rest" after 9.3c tranche 1.
+  - 9.3c active (16:24Z) — `qis-len-U-s202` 11118245 (general), `qis-len-R-s101` 11118247 (moved to general), `qis-len-U-s101` 11118248 (preempt): tranche 1, then full panel.
   - 9.3d pending — analysis per arm × seed (and per tier): success at 12,288 and 16,384; attempts reaching 12,288; recovered; finished wrong; still capped; extra tokens per recovered answer; R − U at both caps with paired problem bootstrap; denominators shown. Tranche 1 first (equal coverage), then full panel.
   - 9.3e pending — inspect the preselected sample (3 capped t1 attempts per checkpoint, D154): sound completion / repaired error / loop / delayed wrong answer.
 - 9.4 pending — Divergence timing (no matched intermediate R/U pair survives, D154): locate when lengths and success split within each seed from dev evaluations (rounds 0/32/64/96/128) and training logs; stress table per tier with base success and truncation (Harder-95, SuperHard-126 separately).
