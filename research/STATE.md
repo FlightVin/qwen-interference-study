@@ -40,8 +40,18 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - Two seeds give no real estimate of training variability; conclusions rest on per-seed agreement plus problem-resampling intervals conditional on the trained policies (A9.4).
 - Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
 
+## A17 (owner, 11 Nov ~01:25Z): complete the study by Thu 12 Nov 00:30Z (Wed 7:30 PM EST)
+- Primary result unchanged (original sealed test): R − U s101 +0.042 [+0.021, +0.063]; s202 −0.044 [−0.072, −0.017]; mean −0.001.
+- **Leading explanation of the reversal (D142, exploratory): truncation.** s202 R − U −0.044 = truncation −0.043 + accuracy-on-finished −0.001;
+  s101 +0.042 = +0.014 + +0.028. R−U persists within 8,192 tokens. Reversal sits in B1 (−0.057 of −0.086); per-problem R−U uncorrelated across seeds.
+- GRPO signal: aux pools saturate after round 32 (all-correct groups R 62–90%, U 74–92%); shared-hard signal similar across arms.
+- Original test hardware confounded (R on L40, U on L40S, both seeds) → common-GPU reruns on L40S with original seeds (D141).
+- Stress panels frozen (D143): SuperHard-128, Harder-98 (pool exhausted); audit sample fixed (D144); blind second read running.
+- H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
+
 ## Next actions
-1. Primary result final (D136, report-final 11106560, audited): R − U seed 101 +0.042 [+0.021, +0.063]; seed 202 −0.044 [−0.072, −0.017]; mean −0.001 [−0.018, +0.015]. Seeds disagree in sign: no evidence that practice choice changes test success; seed spread (~4 pts) ≥ effect. R − H seed 101 +0.049. U-s202 0.792.
-2. H-s202 stopped at round 64 (D140); A16 appendix written (dev r64: H 0.658, R 0.613, U 0.679).
-3. Diag r0 and r64 done (D131, D134). Cue panel done (D137): cue changes wording, not success; R−U cue DiD opposite signs across seeds. Reference check 11105174 started early (D135; ≈ 14:30Z or earlier).
-4. REPORT final and audited (0c5fe04): cost 233.8 GPU-h / 211 allocations (11109623). Delivered to the owner 19:58Z. Deadline Wed 11 Nov 00:30Z (Tue 7:30 PM EST).
+1. Watch H-s202 (job 11112377; ETA from s/round); submit its L40S sealed test at RUN_COMPLETE.
+2. Common-GPU: R reruns 11112395/6 running; U 11112397/8 pending (preempt) → move to general when R ends; rerun a17_test.
+3. Stress evals (preempt, pending): base, R-s101, U-s101, R-s202; then H-s101, U-s202, R-s101 r64, H-s202 r64/r128.
+4. Response audit (D144) after stress evals; second-read agreement.
+5. REPORT rewrite (What we learned; figures embedded; absolute values with deltas; dev n=8 fix); verification audit; deliver.
