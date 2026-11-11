@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-11 19:13Z (2:13 PM EST Wed; A19 ~16:03Z; A20–A22: 7 general GPUs until the final report). Timeline and GPU tables per A18 (`project.md` §32).
+Updated 2026-11-11 19:13Z (2:13 PM EST Wed; A19 ~16:03Z; A20–A23: 8 general GPUs until the report ends). Timeline and GPU tables per A18 (`project.md` §32).
 
 ## Phase
 A17 completion plus A19 (`project.md` §31, §33; D154). Deadline: verified `reports/REPORT.md` by **Thu 12 Nov 00:30Z =
@@ -38,14 +38,15 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (20:27Z; limits: general 7 until the final report (A22), preempt 6, 30 CPUs)
+## Work and GPUs (21:05Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
 | running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 126) |
 | queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216, 11119217 | endpoint shards k0–k5 |
 | running | CPU | 11112647 | CPU standby |
 | done | — | 11118845–51; 11119262, 11119264 | fallback (round 116: 74.3%); H-s101 length cells |
-| queued (dependency: training ends) | preempt | 11119925, 11119926, 11119927 | stress shards k0–k2 → general as endpoint shards end |
+| queued (dependency: training ends) | general | 11119925, 11119926 | stress shards k0, k1 (start with the endpoint shards; 8 GPUs, A23) |
+| queued (dependency; preempt until a general slot frees) | preempt | 11119927 | stress shard k2 → general when the first endpoint shard ends |
 Unused: general 6 of 7 until RUN_COMPLETE. Reason: every planned diagnostic is done and verified; A19 prefers idle
 capacity to redundant reruns. Next eligible: endpoint shards (dependency), then stress shards.
 

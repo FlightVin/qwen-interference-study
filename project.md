@@ -892,3 +892,12 @@ Applied: extends A20. General ceiling 8 until the final report (deadline Thu 12 
 Applied: general ceiling 7 (supersedes the 8 of A20/A21) until the final report; then 3 (A7). `ops/qis-submit` set to 7.
 Endpoint shard k5 (11119217) moved to preempt so that the peak at RUN_COMPLETE (two H-s101 length jobs + 5 general
 endpoint shards) is 7; it returns to general only after a general job ends. Recorded as CHECKLIST 0.29 and in D157.
+
+## 37. Amendment A23 (owner, received 2026-11-11 ~21:00Z = Wed 4:00 PM EST): 8 general GPUs until the end of the report
+
+> You may use all 8 general GPUs until the end of your report.
+
+Applied: supersedes the A22 cap of 7. General ceiling 8 until the report is delivered (deadline Thu 12 Nov 00:30Z), then 3
+(A7). `ops/qis-submit` set to 8. Stress shards k0, k1 (11119925, 11119926) moved to general; k2 (11119927) stays on
+preempt until an endpoint shard ends, so the peak at RUN_COMPLETE is 8 (6 endpoint + 2 stress). Recorded as CHECKLIST
+0.30 and D158.

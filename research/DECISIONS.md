@@ -1056,3 +1056,11 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
 - **A22 (~19:11Z): general ≤ 7.** Endpoint k5 (11119217) back to preempt; peak general = 7 (before RUN_COMPLETE: training +
   3 fallback shards + R-s101 continuation + 2 H-s101 jobs; at RUN_COMPLETE: 2 H-s101 jobs + endpoint k0–k4). k5 moves to
   general only when a general job has ended. Stress shards (D156) are submitted only into free slots under 7.
+
+## D158 — 2026-11-11 21:05Z — A23: 8 general GPUs until the report ends; stress shards share the endpoint start
+- **A23** (owner, ~21:00Z; `project.md` §37) restores 8 general GPUs until delivery. `ops/qis-submit` set to 8.
+- **Placement.** At RUN_COMPLETE the six endpoint shards (k0–k5, general) and stress shards k0, k1 (moved to general)
+  start together: 8 GPUs. Stress k2 (11119927) waits on preempt and moves to general when the first endpoint shard ends.
+  Endpoint ≈ 45–50 min after RUN_COMPLETE; stress ≈ 45 min for k0, k1 and ≈ 45 min after the first endpoint shard for k2.
+  The sealed test keeps priority (A19 §1): the stress shards use only GPUs the endpoint does not need.
+
