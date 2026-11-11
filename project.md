@@ -705,3 +705,101 @@ Implementation (D128): H-s202 runs under its frozen a2 recipe at the **lowest pr
 item needs (after the round-64 diagnostic), and is stopped in time for the report. It is not an endpoint: no sealed-test
 evaluation; seed-202 H cells of the primary table stay missing. A report appendix compares it with R-s202 and U-s202 at
 matching rounds (dev evaluations and shared-schedule training windows).
+
+## 31. Amendment A17 (owner, received 2026-11-11 ~01:25Z = Tue 10 Nov 8:25 PM EST): complete the GRPO mixture study
+
+Supersedes the A15 deadline and the A16 "partial H-s202, no test" scope. New deadline: **Wed 11 Nov 2026 7:30 PM EST =
+Thu 12 Nov 00:30Z**. Verbatim:
+
+> # Complete the GRPO mixture study
+>
+> You have until **Wednesday, November 11, 2026 at 7:30 PM EST** to complete the experiments, verify the results, and deliver `reports/REPORT.md` with its figures. Begin immediately. Exercise the judgment of a senior research scientist. You have authority to schedule, resume, cancel, and repair this project’s jobs, resolve routine blockers, and reallocate compute as evidence and throughput warrant.
+>
+> Read `project.md`, the frozen protocol and amendments, `research/STATE.md`, `research/CHECKLIST.md`, `research/DECISIONS.md`, and the current report. Record this instruction as an amendment. **Launch H-s202 as soon as its checkpoint is verified.** Start the common-GPU evaluations, panel construction, and CPU analyses in parallel wherever resources permit.
+>
+> Respect the project limit of **3 general GPUs and 6 preempt GPUs**, account-wide availability, and the shared storage quota. Verify job ownership against the ledger before acting. Resume the **hourly review and monitoring loop** now. At each review, record what changed, which competing explanation remains plausible, which next task would distinguish it, and whether the current schedule still delivers a verified report on time. Update state, checklist, and ETAs from observed throughput.
+>
+> ## 1. Keep the comparisons and their purpose clear
+>
+> The scientific question is whether the choice of easier practice changes how a model learns harder problems during on-policy RL. R and U receive the same eight hard prompts each round. R spends its other eight slots on factoring exercises, U on matched modular-arithmetic exercises, and H on eight additional hard problems.
+>
+> - **R versus U** asks whether the choice of auxiliary skill matters at equal hard-prompt exposure.
+> - **R versus H and U versus H** ask whether either use of those eight slots was more valuable than additional hard practice.
+> - **Base versus trained checkpoints** measures the overall gain during training. It provides context for the smaller differences between mixtures.
+> - **The branch experiments** ask what one update did at particular checkpoints. **The training records** ask whether a loss of success persisted and reduced opportunities to learn. **Held-out tests** ask whether any effect transferred to different problems.
+>
+> Keep the frozen 128-problem test primary. Identify the common-GPU evaluation as a reproducibility check and the new panels and mechanism analyses as exploratory. Publish the original results alongside subsequent measurements. Once trained outputs are visible, use them for analysis only. Freeze panel selection, scoring, and comparison rules before examining those outputs.
+>
+> ## 2. Finish the missing control and verify the endpoint comparison
+>
+> **Complete H-s202.** The report says the run reached round 64, while the latest update identifies round 60 as the resumable checkpoint. Verify the latest durable model, optimizer, RNG state, and prompt schedule. Check storage headroom. If round 60 is the latest valid save, resume there, retain the original round-64 records, and identify the trajectory used for the endpoint. Complete round 128 and run the frozen sealed evaluation. If the deadline intervenes, report the last verified round on the development curves; only a round-128 test belongs in the endpoint comparison.
+>
+> **Evaluate the four R/U endpoints on one GPU type.** First inventory checkpoint hashes, hardware, inference settings, and evaluation seeds for the original evaluations. Establish whether each original R/U pair already shared a GPU type. Freeze one common hardware and evaluation recipe before viewing rerun scores. Use the original 128 problems, 32 attempts, verifier, and 12,288-token cap. Include both H endpoints on that recipe as feasible, avoiding duplicate evaluations where one job satisfies both requirements.
+>
+> Report absolute H, R, and U scores and paired R−U, R−H, and U−H differences for each completed seed. Does the R/U reversal survive the common setup? The earlier 2.5–3.1-point discrepancies came from a smaller hard probe. Measure endpoint reproducibility directly. A rerun that changes hardware and sampled responses cannot isolate a hardware effect. Intervals over problems describe the evaluated checkpoints; two training seeds give limited information about the next training run.
+>
+> ## 3. Explain why the two seeds gave different answers
+>
+> Use existing records for these analyses. They are high priority and can proceed while GPUs run.
+>
+> 1. **Identify the problems behind the reversal.** For each original test problem, plot its R−U difference in seed 101 against its R−U difference in seed 202. Show direction agreement, ties, and sampling uncertainty. Compute each existing difficulty band’s contribution to the overall reversal, weighting by its share of the 128 problems. Examine the 34-problem B1 band in particular. Did a few items dominate, or did the ranking change across much of the band? Give the absolute R and U scores in both seeds.
+> 2. **Separate broader coverage from more reliable answers.** Report per-problem success rates, pass@1, pass@8 where available, and the number of distinct problems solved at least once at a fixed attempt count. Retain the independent baseline split used to define difficulty bands. Describe a problem with zero observed successes as `0/n`. Explain whether training made more problems reachable, improved reliability on already-reachable ones, or did both.
+> 3. **Measure how much GRPO signal each arm received.** By seed, training window, and prompt role, show all-wrong, mixed, and all-correct groups. Separate the eight shared hard prompts, H’s extra hard prompts, and each auxiliary pool. Alongside these fractions show cumulative mixed-group counts, generated tokens, and GPU-hours. Determine whether an auxiliary pool became so easy that its groups frequently contained no reward contrast. A mixed group establishes reward variation; its count does not determine gradient size or direction. Use existing gradient, loss, and clipping logs only at the granularity actually recorded.
+> 4. **Test whether apparent forgetting persisted.** On the shared hard schedule, match R and U by problem and round. Report their discordant all-wrong groups, which previously solvable items later became all-wrong, and what happened at the next appearance of those items. Give eligible denominators and count items with no later observation. Mark the cap change after round 32. For all-wrong groups, distinguish zero, some, and all eight answers hitting the cap. One capped answer in a group does not establish that a larger allowance would have rescued it.
+> 5. **Estimate how often sampling alone creates an apparent loss.** Resolve the report’s discrepancy over whether development transitions used eight or sixteen attempts. Inspect raw records and regenerate affected results. Split repeated attempts at an unchanged checkpoint into two disjoint groups of the appropriate size and measure how often a problem appears to go from some success to zero, or vice versa. Prefer the same development items where records permit. Otherwise use sealed-test attempts and document the panel difference. Repeated splits reuse data. Use this as a reference for interpreting observed misses, rather than counting each split as an independent experiment.
+>
+> ## 4. Audit the local evidence for interference
+>
+> At the base and R-s101 round-64 snapshots, compare the no-update, hard-only, related-only, and unrelated-only branches. Give absolute pre- and post-update values of the hard, factoring, and modular probes (`J_H`, `J_R`, `J_U`), the corresponding changes, the four minibatch draws, and the mixed-group count. Show direct unrelated-versus-related and unrelated-versus-hard comparisons because the branches share a noisy no-update reference.
+>
+> Distinguish an unchanged checkpoint from an AdamW step with zero current reward gradient but nonzero stored moments. Document the unavailable U checkpoint. Use observed variation to qualify the diagnostic’s resolution; avoid claiming a detection threshold without a supporting analysis.
+>
+> Assess the proposed mechanism one link at a time: **Did an auxiliary update lower hard success? Did affected problems subsequently produce fewer rewarding attempts? Did their learning then stall?** Specify which links have direct evidence, which are observational, and which remain unresolved. A held-out endpoint difference alone cannot establish this chain.
+>
+> ## 5. Build two independent factorization stress panels
+>
+> Create **Harder-128** and **SuperHard-128**, each with 128 distinct, verifier-compatible problems from varied, traceable sources. Their purpose is to test whether training gains extend to harder problems and to identify what prevents further gains.
+>
+> - Write the selection rubric first. **Harder** problems should require recognizing a substantive factoring step inside a longer solution without an explicit cue. **SuperHard** problems should add a documented obstacle, such as a hidden substitution, a consequential choice of approach, or a case analysis after factoring. Record the obstacle for each item. Long statements and large coefficients alone do not establish difficulty.
+> - Seek at least three identifiable source collections per panel. Record original provenance, problem ID, answer, factoring technique, answer type, and required reasoning. Check exact text, normalized expressions, near-duplicates, and solution templates against both panels and every training, calibration, practice, dev, probe, cue, and sealed-test set. Keep close variants out of opposite panels. Disjoint panels do not establish that the base model never encountered these problems in pretraining.
+> - Preserve enough overlap in sources and techniques to make the tier comparison interpretable. Publish the actual composition. Verify gold answers and equivalent forms under the frozen grader. Accept valid alternative solution methods. Identify agent annotations as such.
+> - Freeze the manifests, family IDs, answers, rubric, and hashes before evaluating trained checkpoints. Measure actual difficulty with fresh base-model attempts. If the tiers overlap or SuperHard is near the floor, retain and report that result. If fewer than 128 items can be validated by delivery, state exactly how many qualified and why.
+>
+> ## 6. Evaluate the stress panels at baseline, during training, and at the endpoint
+>
+> Inventory retained checkpoints. Evaluate both panels uncued on the common base, at least one comparable saved intermediate round across available arms, and all six final checkpoints as they become available. Prefer round 64 for the intermediate comparison if coverage permits. Publish a checkpoint-by-panel coverage table. Use retained saves and record missing comparisons.
+>
+> Keep the verifier, sampling settings, attempt schedule, and 12,288-token cap common across models. Benchmark throughput on a small representative batch. Target **eight attempts per problem**. If necessary, complete a balanced four-attempt pass across both panels and comparable checkpoints before deepening any cell. Compute comparisons at a common attempt count and report pass@8 only where it is supported.
+>
+> For each tier and seed, give absolute pass@1, coverage at the stated attempt count, truncation, correct/total attempts, and distinct problems solved. Distinguish several successes on one problem from first successes across several problems.
+>
+> For a small fixed sample, inspect full responses alongside the prompt, worked solution, and verifier outcome. Preselect item IDs and attempt indices, compare the same items across policies, and hide arm identities during annotation where practical. Record whether the model missed a useful factoring opportunity, factored incorrectly, factored correctly and failed later, solved by another method, hit the cap, or exposed a grader issue. Allow “unclear.” Give denominators and a few traceable examples. Use this audit to answer **whether more direct factoring practice would plausibly address the failures we observed**.
+>
+> ## 7. Deliver a report the reader can interpret from the figures and absolute scores
+>
+> Embed the actual figures in `reports/REPORT.md` with relative image links. A filename in prose is insufficient. Place each figure beside the claim it informs. Inspect the rendered Markdown from a clean checkout.
+>
+> Required figures:
+>
+> 1. **Original and common-GPU endpoints:** absolute H/R/U scores by seed, with paired contrasts and intervals alongside them.
+> 2. **Learning curves:** absolute dev and probe scores against training round and cumulative hard exposure. Mark the cap change and distinguish practised problems from held-out evaluations.
+> 3. **POPE-style J plots:** plot `J_H` against `J_R`, and separately against `J_U`. Define each probe, connect observed checkpoints in time order, label rounds, and use comparable axes.
+> 4. **Measured ΔJ plots:** show individual one-step changes by branch and checkpoint, including the no-update reference and the corresponding absolute scores in the figure or an adjacent table. Draw only changes the experiment measured.
+> 5. **Explanatory figures:** include the per-problem seed-reversal scatterplot, hard-group transitions and subsequent recovery, and base/intermediate/final results on both stress panels. Combine panels where this improves readability.
+>
+> **Never report a delta alone.** Give the metric, both absolute values, subtraction direction, and panel or denominator in the same sentence, figure, or adjacent table. For example: “On the 128-problem sealed test, seed-101 R scored 81.9% and U scored 77.7%, so R−U was +4.2 percentage points.” Apply this rule to the executive summary, branch diagnostics, cue comparisons, and stress panels. Absolute scores show the remaining headroom.
+>
+> Open the report with a concise **What we learned** section that answers six questions:
+>
+> 1. How much did training improve hard-math success over base, and how much additional difference did the choice of practice make?
+> 2. Given eight discretionary prompt slots, what do the two seeds say about choosing factoring, modular arithmetic, or more hard practice? How do their token and GPU costs affect that judgment?
+> 3. Which problems produced the seed reversal, and did the differences reflect coverage, reliability, or both?
+> 4. Which links in the proposed ray-interference mechanism did we observe? What competing explanation best fits the same evidence?
+> 5. How far did gains transfer across the original, Harder, and SuperHard panels? Where could we distinguish missed strategy recognition, faulty execution, later reasoning errors, and truncation?
+> 6. Which **one** larger experiment is most justified by the dominant uncertainty, and what result would change that recommendation?
+>
+> ## 8. Protect the deadline and verify the deliverable
+>
+> Prioritize H-s202, the four common-GPU R/U evaluations, the CPU analyses, and a balanced stress-panel comparison. If throughput falls short, reduce repeated attempts and optional intermediate rounds before sacrificing balanced coverage or verification. Avoid launching new training seeds, new arms, or another domain. Make routine tradeoffs autonomously and record their consequences.
+>
+> Independently recompute headline tables from attempt records, reconcile costs against the ledger, verify checkpoint and manifest hashes, and check every figure against its source table. Deliver the **Markdown report with embedded figures, both versioned panel manifests, machine-readable results, reproduction commands, and a clear inventory of incomplete cells** by the deadline. The report should leave the reader able to make a training decision, understand why that decision is uncertain, and identify the next experiment that could change it.
