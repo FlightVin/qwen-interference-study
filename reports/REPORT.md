@@ -21,7 +21,8 @@ kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
    wide margin. The base model scored 52.6% pass@1, and the five finished trained policies scored 74.8%–81.9%, a gain
    of +22 to +29 points. The choice of practice changed the result much less, and in no consistent direction. R − U was
    +4.2 points in seed 101 (R 81.9% vs U 77.7%) and −4.4 points in seed 202 (R 74.8% vs U 79.2%); their mean is −0.1
-   points. Rerunning R and U on one GPU type keeps both signs (+4.4 and −3.1 points; section 2). ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
+   points. Rerunning R and U on one GPU type keeps both signs (seed 101: R 82.3% vs U 77.8%, +4.4 points; seed 202: R 76.1% vs U
+   79.2%, −3.1 points; section 2). ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
 2. **Which use of the eight practice slots?** The two seeds do not support a choice between factoring and modular
    practice. In seed 101, factoring practice (R) beat additional hard practice (H) by 4.9 points (R 81.9% vs H 77.0%).
    Modular practice (U) matched H (U 77.7% vs H 77.0%). ⟨PENDING: seed 202 H.⟩ Cost does not decide it either. Per
@@ -32,7 +33,8 @@ kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
    12,288-token cap more often than U's (13.1% vs 8.1% of 4,096 attempts). That accounts for −4.3 of the −4.4-point
    R − U difference. On answers that finished, R and U were equally accurate (86.1% vs 86.2%). In seed 101 the pattern
    flips (R 10.7% vs U 12.2% truncated) and explains +1.4 of the +4.2 points. Continuing every capped answer to 16,384
-   tokens barely moves R − U (sealed test, seed 202: −4.4 → −3.9 points; section 5), so the capped answers were mostly
+   tokens barely moves R − U (sealed test, seed 202: R 74.8% → 76.9% and U 79.2% → 80.8%, so −4.4 → −3.9 points;
+   section 5), so the capped answers were mostly
    stuck, not near-misses.
 
    The difference is reliability on problems both arms can solve, not coverage. In seed 202, 122 of 128 problems were
@@ -79,7 +81,8 @@ and modular practice (U) changed sign between seeds. The table gives sealed-test
 | 101 | 52.6% | 77.0% | 81.9% | 77.7% | 81.9 − 77.7 = +4.2 [+2.1, +6.3] | 81.9 − 77.0 = +4.9 [+2.0, +8.0] | 77.7 − 77.0 = +0.7 [−2.0, +3.5] |
 | 202 | 52.6% | ⟨PENDING⟩ | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | ⟨PENDING⟩ | ⟨PENDING⟩ |
 
-Two results replicate across seeds: trained − base (+22 to +29 points in all five finished runs), and the sign of
+Two results replicate across seeds: trained − base (base 52.6% against 74.8–81.9% for the five finished runs, +22 to
++29 points), and the sign of
 R − U on the stress panels following the seed (section 7). One result does not replicate: the sign of R − U. R − H and
 U − H exist for seed 101 only until the H-s202 endpoint lands. ⟨PENDING: H-s202.⟩
 
@@ -118,7 +121,7 @@ more room.
 **Seed 202 (R behind).** By the descriptive split, R lost nothing on the answers it finished (sealed test 86.1% vs
 86.2%; stress 82.1% vs 77.6%). It lost everything through the cap (13.1% vs 8.1% of sealed-test answers cut off). The
 length experiment shows that those capped answers were not near-misses. With 4,096 more tokens, R recovers 16.2% of its
-capped sealed-test answers and U 19.8% (stress: 12.3% and 15.3%). R − U moves from −4.4 to −3.9 points (stress: −2.7 to
+capped sealed-test answers and U 19.8% (stress: 12.3% and 15.3%). R − U moves from 74.8 − 79.2 = −4.4 to 76.9 − 80.8 = −3.9 points (stress: −2.7 to
 −2.1). In a blind read of preselected continuations, most capped answers kept looping or ended wrong. So R-s202 did not
 lose arithmetic skill. It more often entered long searches that do not converge, and a bigger budget does not convert
 them.
@@ -135,7 +138,7 @@ what training with a longer cap would have produced.
 
 **When.** In both seeds the endpoint sign of R − U appeared between rounds 32 and 64. This is the first window after
 the cap rose from 8,192 to 12,288 tokens (section 3.2). Dev R − U at round 32 → 64 was −5.9 → +2.6 points in seed 101
-and −1.2 → −6.6 points in seed 202. Training success on the shared hard prompts split in the same window (seed 101: R
+(R 54.2% vs U 60.1%, then 73.6% vs 71.0%) and −1.2 → −6.6 points in seed 202 (59.9% vs 61.1%, then 61.3% vs 67.9%). Training success on the shared hard prompts split in the same window (seed 101: R
 ahead from rounds 41–48 on; seed 202: U ahead in rounds 33–48). These are measured trajectories from training records.
 Checkpoint coverage has a gap: no same-seed R/U pair survives below round 128. No intermediate pair could therefore be
 put on the stress panels or the sealed test.
@@ -247,7 +250,7 @@ identical):
 | U-s101 | L40S → L40S | 1,964/4,096 | 79/128 | 77.8 − 77.7 = +0.1 [−1.0, +1.2] |
 | U-s202 | L40S → L40S | 4,096/4,096 | 128/128 | 79.2 − 79.2 = +0.0 |
 
-The GPU type does not explain the seed reversal. On one GPU type, R − U is still +4.4 points in seed 101 and −3.1 in
+The GPU type does not explain the seed reversal. On one GPU type, R − U is still 82.3 − 77.8 = +4.4 points in seed 101 and 76.1 − 79.2 = −3.1 in
 seed 202. A rerun moved pass@1 by at most 1.3 points, even where most token sequences changed. Even the same GPU type
 does not guarantee identical sequences. U-s202 reproduced exactly, but U-s101 matched on only 48% of attempts (a
 different node and a run two days later; the cause is unknown).

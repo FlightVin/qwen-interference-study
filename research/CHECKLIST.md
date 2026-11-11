@@ -212,7 +212,7 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 
 **Delivery (A17 §7–8, A19 §4–5)**
 - 10.26 ok — Figures 1–5 embedded beside their claims with relative links.
-- 10.27 gap — Never a delta alone: sweep every delta for both absolute values (final pass).
+- 10.27 done (22:00Z; script scan flagged 13 lines; 6 fixed with both absolute values; 7 are components of a split or have absolutes in the same sentence/adjacent table) — Never a delta alone: sweep every delta for both absolute values (final pass).
 - 10.28 pend — Final cost table reconciled with the ledger (after H-s202 jobs).
 - 10.29 done (19:48Z) — Deliverables list in the report: both versioned panel manifests, machine-readable results, reproduction commands (add eval_extend, a19 analyses, recompute, stress shards), incomplete-cell inventory.
 - 10.30 ok/pend — Verification: independent recomputation (27/27), J/ΔJ figure checks (done), remaining figures, hashes (add fallback and H-s202 r128), clean-checkout render.
