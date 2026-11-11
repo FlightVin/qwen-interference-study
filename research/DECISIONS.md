@@ -804,3 +804,22 @@ independent evidence.
 - **Frozen common recipe (before any rerun score is seen).** GPU type L40S (Slurm constraint + in-job `nvidia-smi` name check). Code and environment unchanged (`git diff` of evaluate_ckpt, verify, prompts, seeds, rollout since the original commits: empty; venv-v1). Same sealed panel (sha 2ffe70dd…), n = 32, cap 12,288 with the 8,192 view, frozen verifier, and the **original seed label `test-final`**. Same seeds isolate the hardware effect: a U rerun on L40S is a direct reproducibility test (prediction: identical attempts); an R rerun on L40S changes only the GPU type. Outputs go to `test-eval-cgpu/`; the originals are kept and published beside them.
 - **Coverage.** Four reruns: R-s101, R-s202 (general), U-s101, U-s202 (preempt; moved to general when a slot frees). H-s101 and base already ran on L40S with this recipe, so their originals are the common cells (no duplicate run). The H-s202 endpoint test runs on L40S under this recipe, so one job fills both roles.
 - **Primary analysis unchanged.** The original sealed-test table stays primary; the common-GPU table is a reproducibility check.
+
+## D142 — 2026-11-11 ~02:25Z — A17 §3 first results: the seed-202 reversal is a truncation difference (EXPLORATORY)
+Source: `research/evidence/a17/analysis/test/` (`qis.analysis.a17_test` at 353e489, original sealed-test records; run inside
+allocation 11112395 with `--gres=gpu:0`). The original endpoint table reproduces `a9_table.json` exactly (values and intervals).
+- **Truncation decomposition** (exact identity R − U = −Δt·ā + (1 − t̄)·Δa; 95% problem bootstrap). Seed 202: R 0.748 vs U 0.792,
+  R − U −0.044 = truncation term −0.043 [−0.061, −0.027] + accuracy-on-finished term −0.001 [−0.024, +0.020]; R truncated
+  538/4096 (13.1%) vs U 333/4096 (8.1%); accuracy on finished answers R 0.861 vs U 0.862. Seed 101: R 0.819 vs U 0.777,
+  R − U +0.042 = truncation +0.014 [+0.000, +0.028] + accuracy +0.028 [+0.009, +0.047]; R truncated 10.7% vs U 12.2%.
+  Per problem, R − U success vs R − U truncation share: Pearson −0.51 (s101), −0.59 (s202).
+- **Within 8,192 tokens** (same traces): R − U +0.051 [+0.031, +0.073] (s101), −0.070 [−0.100, −0.042] (s202): the reversal persists at the
+  shorter budget, so it is not created by the 12,288 cap; it follows which arm writes longer answers.
+- **Reversal location:** band B1 (34/128) carries −0.057 of the −0.086 reversal; top 5 B1 items carry 45% of that; per-problem R − U is
+  uncorrelated across seeds (Spearman −0.09 overall, −0.04 in B1). Coverage vs reliability: R − U is reliability on problems both
+  reach (s202 −0.042 of −0.044); training gains over base are mostly reliability on base-reachable problems (+0.20 to +0.25).
+- **Sampling null:** at an unchanged checkpoint, two disjoint groups of 8 attempts show 1.7–5.7 of 128 problems "lost" by chance alone
+  (hypergeometric expectation). Dev evaluations used n = 8 (all 28 dev rows), so the report's "≥ 1 correct of 16" is wrong → fix.
+- **Interpretation (competing explanation now leading):** the R/U difference behaves like a seed-dependent difference in response length
+  (truncation) rather than a difference in solving skill. Next distinguishing task: training-record length and truncation by arm and
+  seed (`a17_train` signal/persistence) — does R-s202's length grow earlier/faster on the shared hard prompts, and on aux prompts?

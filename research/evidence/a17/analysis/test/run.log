@@ -1,0 +1,167 @@
+# Seed reversal of R − U (sealed test, 128 problems × 32 attempts)
+
+| Seed | R pass@1 | U pass@1 | R − U (R minus U) |
+|---|---|---|---|
+| 101 | 0.819 | 0.777 | 0.819 − 0.777 = +0.042 |
+| 202 | 0.748 | 0.792 | 0.748 − 0.792 = -0.044 |
+
+Reversal (seed-202 R − U minus seed-101 R − U): -0.044 − 0.042 = -0.086.
+
+Per-problem sign of R − U across seeds (of 128): same sign 31, opposite sign 44, tie in either seed 53, tie in both seeds 31 (all four 0/32: 3; all four 32/32: 26).
+Spearman rank correlation of per-problem R − U, seed 101 vs seed 202: overall -0.091, within B1 -0.039.
+
+| Band | Problems | R − U s101 | Contribution s101 | R − U s202 | Contribution s202 | Reversal contribution (s202 − s101) |
+|---|---|---|---|---|---|---|
+| B0 | 15/128 (0.117) | 0.306 − 0.298 = +0.008 | 15/128 × +0.008 = +0.0010 | 0.181 − 0.283 = -0.102 | 15/128 × -0.102 = -0.0120 | -0.0120 − 0.0010 = -0.0129 |
+| B1 | 34/128 (0.266) | 0.755 − 0.658 = +0.097 | 34/128 × +0.097 = +0.0256 | 0.592 − 0.710 = -0.118 | 34/128 × -0.118 = -0.0313 | -0.0313 − 0.0256 = -0.0569 |
+| B2 | 26/128 (0.203) | 0.881 − 0.851 = +0.030 | 26/128 × +0.030 = +0.0061 | 0.855 − 0.883 = -0.029 | 26/128 × -0.029 = -0.0059 | -0.0059 − 0.0061 = -0.0120 |
+| B3 | 32/128 (0.250) | 0.959 − 0.935 = +0.024 | 32/128 × +0.024 = +0.0061 | 0.938 − 0.912 = +0.026 | 32/128 × +0.026 = +0.0066 | 0.0066 − 0.0061 = +0.0005 |
+| B4 | 21/128 (0.164) | 0.997 − 0.979 = +0.018 | 21/128 × +0.018 = +0.0029 | 0.982 − 0.994 = -0.012 | 21/128 × -0.012 = -0.0020 | -0.0020 − 0.0029 = -0.0049 |
+| Sum | 128/128 | | +0.0417 | | -0.0444 | -0.0862 |
+
+B1: 34 problems; summed item change (seed-202 R − U minus seed-101 R − U) -7.281 (= -0.0569 of the overall reversal). Top 3 items carry 0.296 of it, top 5 carry 0.451. Top 10 by |change| (full list in reversal.json):
+
+| Problem | Base k/16 | R − U s101 (c/32) | R − U s202 (c/32) | Change (s202 − s101) |
+|---|---|---|---|---|
+| algebra/test/00213 | 3/16 | 23/32 − 13/32 = +0.312 | 11/32 − 24/32 = -0.406 | -0.406 − 0.312 = -0.719 |
+| algebra/test/00531 | 4/16 | 32/32 − 32/32 = +0.000 | 9/32 − 32/32 = -0.719 | -0.719 − 0.000 = -0.719 |
+| intermediate_algebra/test/00221 | 4/16 | 29/32 − 21/32 = +0.250 | 15/32 − 30/32 = -0.469 | -0.469 − 0.250 = -0.719 |
+| algebra/test/00806 | 5/16 | 17/32 − 3/32 = +0.438 | 1/32 − 7/32 = -0.188 | -0.188 − 0.438 = -0.625 |
+| intermediate_algebra/test/00210 | 2/16 | 30/32 − 29/32 = +0.031 | 17/32 − 32/32 = -0.469 | -0.469 − 0.031 = -0.500 |
+| intermediate_algebra/test/00354 | 1/16 | 9/32 − 4/32 = +0.156 | 7/32 − 17/32 = -0.312 | -0.312 − 0.156 = -0.469 |
+| intermediate_algebra/test/00114 | 2/16 | 26/32 − 19/32 = +0.219 | 20/32 − 27/32 = -0.219 | -0.219 − 0.219 = -0.438 |
+| intermediate_algebra/test/00383 | 2/16 | 32/32 − 29/32 = +0.094 | 21/32 − 32/32 = -0.344 | -0.344 − 0.094 = -0.438 |
+| intermediate_algebra/test/00150 | 4/16 | 12/32 − 8/32 = +0.125 | 3/32 − 12/32 = -0.281 | -0.281 − 0.125 = -0.406 |
+| intermediate_algebra/test/00220 | 1/16 | 6/32 − 3/32 = +0.094 | 1/32 − 10/32 = -0.281 | -0.281 − 0.094 = -0.375 |
+# Coverage (sealed test, 32 attempts per problem)
+
+| Policy | pass@1 | pass@8 | Solved ≥ 1 of 32 | 0/32 | E[distinct solved], k=1 | E[distinct solved], k=8 | Truncated attempts |
+|---|---|---|---|---|---|---|---|
+| base | 0.526 | 0.835 | 116/128 | 12/128 | 67.3 | 106.9 | 2/4096 (0.000) |
+| H-s101 | 0.770 | 0.937 | 125/128 | 3/128 | 98.5 | 119.9 | 445/4096 (0.109) |
+| H-s202 | missing | | | | | | |
+| R-s101 | 0.819 | 0.961 | 125/128 | 3/128 | 104.8 | 123.0 | 437/4096 (0.107) |
+| R-s202 | 0.748 | 0.922 | 123/128 | 5/128 | 95.7 | 118.0 | 538/4096 (0.131) |
+| U-s101 | 0.777 | 0.945 | 125/128 | 3/128 | 99.4 | 120.9 | 501/4096 (0.122) |
+| U-s202 | 0.792 | 0.949 | 124/128 | 4/128 | 101.4 | 121.4 | 333/4096 (0.081) |
+
+Decomposition against the held-out baseline (base samples 16-31). Base row: samples 0-15 vs 16-31 (null reference).
+
+| Policy | Unreachable at baseline | Became reachable (c > 0) | Their mean pass@1 | Reachable at baseline | Reachable: policy − baseline pass@1 | Reachable now 0 | Overall change = unreachable part + reachable part |
+|---|---|---|---|---|---|---|---|
+| base | 14/128 | 2/14 | 0.062 | 114/128 | 0.583 − 0.596 = -0.013 | 3/114 | -0.010 = +0.001 + -0.011 |
+| H-s101 | 14/128 | 11/14 | 0.193 | 114/128 | 0.845 − 0.596 = +0.249 | 0/114 | +0.239 = +0.017 + +0.222 |
+| R-s101 | 14/128 | 11/14 | 0.401 | 114/128 | 0.880 − 0.596 = +0.285 | 0/114 | +0.288 = +0.034 + +0.253 |
+| R-s202 | 14/128 | 9/14 | 0.191 | 114/128 | 0.825 − 0.596 = +0.229 | 0/114 | +0.217 = +0.013 + +0.204 |
+| U-s101 | 14/128 | 11/14 | 0.341 | 114/128 | 0.839 − 0.596 = +0.243 | 0/114 | +0.246 = +0.029 + +0.217 |
+| U-s202 | 14/128 | 11/14 | 0.293 | 114/128 | 0.861 − 0.596 = +0.265 | 1/114 | +0.261 = +0.025 + +0.236 |
+
+Paired R vs U: R − U split into coverage (exactly one of R/U has 0/32) and reliability (both reach).
+
+| Seed | R − U (R minus U) | R only / U only | Coverage part (R only + U only) | Both reach | Reliability part | Neither |
+|---|---|---|---|---|---|---|
+| s101 | 0.819 − 0.777 = +0.042 | 0/128 / 0/128 | +0.000 = +0.000 + +0.000 | 125/128 | +0.042 | 3/128 |
+| s202 | 0.748 − 0.792 = -0.044 | 1/128 / 2/128 | -0.002 = +0.001 + -0.003 | 122/128 | -0.042 | 3/128 |
+# Sampling null: problems that look lost or gained at an unchanged checkpoint
+
+Lost = group A has ≥ 1 success and group B has none; gained = the reverse. Counts are out of 128 problems.
+
+| Policy | m | Expected lost = expected gained (hypergeometric) | Binomial plug-in (p = c/32) | Empirical lost per split | Empirical gained per split |
+|---|---|---|---|---|---|
+| base | 8 | 5.72 | 5.36 | 5, 5 | 4, 5 |
+| base | 16 | 3.37 | 3.02 | 2 | 3 |
+| H-s101 | 8 | 3.13 | 2.81 | 2, 1 | 6, 3 |
+| H-s101 | 16 | 1.93 | 1.75 | 4 | 2 |
+| H-s202 | | missing | | | |
+| R-s101 | 8 | 1.69 | 1.81 | 1, 2 | 0, 0 |
+| R-s101 | 16 | 0.26 | 0.57 | 1 | 0 |
+| R-s202 | 8 | 2.66 | 2.45 | 2, 3 | 2, 4 |
+| R-s202 | 16 | 2.32 | 1.56 | 1 | 3 |
+| U-s101 | 8 | 2.66 | 2.51 | 2, 2 | 1, 4 |
+| U-s101 | 16 | 1.43 | 1.31 | 3 | 0 |
+| U-s202 | 8 | 1.73 | 1.74 | 0, 1 | 2, 1 |
+| U-s202 | 16 | 0.86 | 0.80 | 1 | 1 |
+
+P_loss(p, m) under independent sampling (per problem; maximum 0.25 at p = 1 − 2^(−1/m)):
+
+| p | 0.010 | 0.020 | 0.050 | 0.042 | 0.083 | 0.100 | 0.200 | 0.300 | 0.500 | 0.700 | 0.900 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| m = 8 | 0.071 | 0.127 | 0.223 | 0.207 | 0.250 | 0.245 | 0.140 | 0.054 | 0.004 | 0.000 | 0.000 |
+| m = 16 | 0.126 | 0.200 | 0.246 | 0.250 | 0.187 | 0.151 | 0.027 | 0.003 | 0.000 | 0.000 | 0.000 |
+
+- Hypergeometric: expectation over random disjoint splits of the observed 32 attempts (conditional on c); lost and gained are equal by symmetry.
+- Empirical: fixed index splits. The two m = 8 splits use disjoint attempts; the m = 16 split reuses the same 32 attempts, so the m = 8 and m = 16 counts are not independent.
+- Pooled bins combine all policies; the same problem appears once per policy, so pooled rows are not independent.
+- Dev panel: 53 problems × 8 attempts per evaluation (reports/tables/report_data.json: all 28 panel=dev eval rows have n=8, problems=53). The per-problem rate depends on p, and the dev panel has a different p distribution, so test-panel counts must not be rescaled to the dev panel; use P_loss(p, 8).
+# Endpoints (sealed test, pass@1, 128 problems × 32 attempts)
+
+Base model: pass@1 0.526, pass@8 0.835.
+
+## Primary: original evaluations
+
+| Seed | H | R | U | R − U | R − H | U − H | pass@8 H / R / U |
+|---|---|---|---|---|---|---|---|
+| 101 | 0.770 | 0.819 | 0.777 | 0.819 − 0.777 = +0.042 [+0.021, +0.063] | 0.819 − 0.770 = +0.049 [+0.020, +0.080] | 0.777 − 0.770 = +0.007 [-0.020, +0.035] | 0.937 / 0.961 / 0.945 |
+| 202 | missing | 0.748 | 0.792 | 0.748 − 0.792 = -0.044 [-0.072, -0.017] | missing | missing | missing / 0.922 / 0.949 |
+| Mean | missing | 0.783 | 0.785 | 0.783 − 0.785 = -0.001 [-0.018, +0.015] | missing | missing | – |
+
+## Reproducibility check: common GPU (L40S, original request seeds)
+
+| Seed | H | R | U | R − U | R − H | U − H | pass@8 H / R / U |
+|---|---|---|---|---|---|---|---|
+| 101 | 0.770 | missing | missing | missing | missing | missing | 0.937 / missing / missing |
+| 202 | missing | missing | missing | missing | missing | missing | missing / missing / missing |
+| Mean | missing | missing | missing | missing | missing | missing | – |
+
+Common-GPU cell sources: H-s101: original evaluation (ran on L40S); H-s202: endpoint /data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym (common-GPU); R-s101: qis-cgpu-R-s101; R-s202: qis-cgpu-R-s202; U-s101: qis-cgpu-U-s101; U-s202: qis-cgpu-U-s202; base: original evaluation (ran on L40S).
+
+## Reproducibility per checkpoint (cgpu vs original)
+
+| Checkpoint | Identical reward | Identical request seed | Identical token ids | Identical c/32 | max abs Δc | pass@1 cgpu − original |
+|---|---|---|---|---|---|---|
+| R-s101 | missing | | | | | |
+| R-s202 | missing | | | | | |
+| U-s101 | missing | | | | | |
+| U-s202 | missing | | | | | |
+
+95% paired bootstrap over the 128 problems (10,000 draws, seed 2027; streams a9/<contrast>/s<seed> for the original table as in report_tables, a9/a17-cgpu/... and a9/a17-repro/... otherwise); conditional on these trained policies.
+# Truncation and the R − U difference (sealed test, cap 12,288 tokens)
+
+Truncated = finish == "length" (always reward 0). t = truncated / attempts; a = correct / finished; pass@1 = (1 − t)·a.
+Identity (exact): R − U = (1 − t_R)·a_R − (1 − t_U)·a_U = −(t_R − t_U)·ā + (1 − t̄)·(a_R − a_U), with ā, t̄ the R/U means.
+
+| Policy | Truncated (t) | Correct / finished (a) | pass@1 | (1 − t)·a | Truncated and correct | Mean tokens: correct / wrong / truncated | pass@1 within 8,192 |
+|---|---|---|---|---|---|---|---|
+| base | 2/4096 (0.0005) | 2153/4094 (0.5259) | 0.5256 | 0.5256 | 0 | 1101 / 1996 / 12288 | 0.525 |
+| H-s101 | 445/4096 (0.1086) | 3152/3651 (0.8633) | 0.7695 | 0.7695 | 0 | 3561 / 6788 / 12288 | 0.704 |
+| H-s202 | missing | | | | | | |
+| R-s101 | 437/4096 (0.1067) | 3353/3659 (0.9164) | 0.8186 | 0.8186 | 0 | 3407 / 6285 / 12288 | 0.765 |
+| R-s202 | 538/4096 (0.1313) | 3063/3558 (0.8609) | 0.7478 | 0.7478 | 0 | 3307 / 5428 / 12288 | 0.686 |
+| U-s101 | 501/4096 (0.1223) | 3182/3595 (0.8851) | 0.7769 | 0.7769 | 0 | 3350 / 5638 / 12288 | 0.714 |
+| U-s202 | 333/4096 (0.0813) | 3245/3763 (0.8623) | 0.7922 | 0.7922 | 0 | 2924 / 5115 / 12288 | 0.757 |
+
+## R − U split per seed (95% problem bootstrap, 10,000 draws, seed 2027, streams a9/a17-trunc/...)
+
+| Seed | R − U pass@1 (R minus U) | Truncation term −Δt·ā | Accuracy term (1 − t̄)·Δa | Sum of terms (residual) |
+|---|---|---|---|---|
+| s101 | 0.819 − 0.777 = +0.042 | −(0.1067 − 0.1223)·0.9007 = +0.0141 [+0.0002, +0.0276] | (1 − 0.1145)·(0.9164 − 0.8851) = +0.0277 [+0.0091, +0.0465] | +0.0417 (1.4e-17) |
+| s202 | 0.748 − 0.792 = -0.044 | −(0.1313 − 0.0813)·0.8616 = -0.0431 [-0.0610, -0.0268] | (1 − 0.1063)·(0.8609 − 0.8623) = -0.0013 [-0.0239, +0.0199] | -0.0444 (-4.9e-17) |
+
+## Per band (bands from base samples 0-15)
+
+| Seed | Band | Problems | R − U pass@1 | Truncation term | Accuracy term |
+|---|---|---|---|---|---|
+| s101 | B0 | 15/128 | 0.306 − 0.298 = +0.008 | −(0.5167 − 0.5437)·0.6433 = +0.0174 [-0.0466, +0.0812] | (1 − 0.5302)·(0.6336 − 0.6530) = -0.0091 [-0.0577, +0.0423] |
+| s101 | B1 | 34/128 | 0.755 − 0.658 = +0.097 | −(0.1342 − 0.1590)·0.8270 = +0.0205 [-0.0059, +0.0452] | (1 − 0.1466)·(0.8715 − 0.7825) = +0.0760 [+0.0262, +0.1262] |
+| s101 | B2 | 26/128 | 0.881 − 0.851 = +0.030 | −(0.0457 − 0.0685)·0.9184 = +0.0210 [-0.0000, +0.0414] | (1 − 0.0571)·(0.9232 − 0.9135) = +0.0091 [-0.0287, +0.0415] |
+| s101 | B3 | 32/128 | 0.959 − 0.935 = +0.024 | −(0.0049 − 0.0098)·0.9537 = +0.0047 [-0.0047, +0.0148] | (1 − 0.0073)·(0.9637 − 0.9438) = +0.0198 [-0.0077, +0.0492] |
+| s101 | B4 | 21/128 | 0.997 − 0.979 = +0.018 | −(0.0000 − 0.0000)·0.9881 = -0.0000 [-0.0000, +0.0000] | (1 − 0.0000)·(0.9970 − 0.9792) = +0.0179 [+0.0000, +0.0446] |
+| s202 | B0 | 15/128 | 0.181 − 0.283 = -0.102 | −(0.5708 − 0.4083)·0.4506 = -0.0732 [-0.1243, -0.0282] | (1 − 0.4896)·(0.4223 − 0.4789) = -0.0289 [-0.0875, +0.0214] |
+| s202 | B1 | 34/128 | 0.592 − 0.710 = -0.118 | −(0.1893 − 0.1075)·0.7626 = -0.0624 [-0.1065, -0.0257] | (1 − 0.1484)·(0.7302 − 0.7951) = -0.0553 [-0.1156, +0.0008] |
+| s202 | B2 | 26/128 | 0.855 − 0.883 = -0.029 | −(0.0553 − 0.0192)·0.9027 = -0.0325 [-0.0528, -0.0151] | (1 − 0.0373)·(0.9046 − 0.9007) = +0.0037 [-0.0287, +0.0331] |
+| s202 | B3 | 32/128 | 0.938 − 0.912 = +0.026 | −(0.0117 − 0.0039)·0.9326 = -0.0073 [-0.0144, -0.0009] | (1 − 0.0078)·(0.9496 − 0.9157) = +0.0337 [-0.0110, +0.0799] |
+| s202 | B4 | 21/128 | 0.982 − 0.994 = -0.012 | −(0.0000 − 0.0000)·0.9881 = -0.0000 [-0.0000, +0.0000] | (1 − 0.0000)·(0.9821 − 0.9940) = -0.0119 [-0.0417, +0.0074] |
+
+## Per problem: Δt = t_R − t_U vs Δsuccess = c_R/32 − c_U/32
+
+| Seed | Pearson | Spearman | Δsuccess same sign as −Δt | Opposite sign | Either zero |
