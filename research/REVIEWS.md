@@ -919,3 +919,19 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 5. **GPUs.** General 2/3 (no runnable job waits). Preempt 5/6 running. Within limits.
 6. **Most important.** D150 fallback; prepare the report so H-s202 cells fill by script.
 7. **Reconciliation.** All live job IDs are ledger rows. Watcher alive (pid 13846).
+
+## Review 98 — 2026-11-11 09:50Z (4:50 AM EST Wed)
+1. **Changes.** U-s202 L40S rerun identical to the original (4,096/4,096 sequences); s202 R − U on a common GPU −0.031
+   [−0.060, −0.004] (D151). Stress: U-s202-r128 and H-s202-r64 done; s202 stress R − U −0.027 [−0.051, −0.002] = truncation
+   −0.063 + accuracy +0.036 (D152). Stress H-s101-r128 11113928 was preempted after ≈ 2 h (requeue; the watcher does not report
+   requeues) and moved to general (pending, Resources: L40S). H-s202 at round 90 (09:42Z).
+2. **Competing explanation still plausible.** Hardware is excluded (D151). Remaining: is the length difference between seeds a
+   property of the run (seed-level drift in termination) or of the arm? With two seeds it cannot be separated (A9.4).
+3. **Distinguishing task.** None within scope (needs more seeds; A17 forbids new seeds). Report it as the open question.
+4. **Schedule.** H-s202 rounds 87–90 averaged 900 s (×1.23 of H-s101); rounds 66→90 ×1.215. Round 128 ≈ 22:15Z, RUN_COMPLETE ≈
+   23:15Z (6:15 PM EST) → endpoint test after the deadline. D150 fallback at 18:00Z stands. Report: on time.
+5. **GPUs.** General 1 running + 1 pending = 2/3. Preempt 2 running = 2/6. Within limits.
+6. **Most important.** Get H-s101-r128 stress done (general). Then the REPORT fill: endpoints with common-GPU table, stress
+   section, What we learned.
+7. **Reconciliation.** Live job IDs 11112377, 11112397, 11113928, 11115377 and standby 11112647 are ledger rows. Watcher alive
+   (pid 22415).
