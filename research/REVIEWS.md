@@ -984,7 +984,7 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 
 ## Review 101 — 2026-11-11 12:50Z (7:50 AM EST Wed)
 1. **Changes.**
-   - H-s202 11112377: round 98 at 13:03Z. The round-96 eval and save took 75.5 min (H-s101: 57.5 min). LATEST = round 96.
+   - H-s202 11112377: round 98 at 12:43Z. The round-96 eval and save took 75.5 min (H-s101: 57.5 min). LATEST = round 96.
      len_mean rose again (r97 5,965; r98 5,354, against 4,292–4,344 at r95–96).
    - No other job ran. REPORT What we learned item 1 now cites the common-GPU rerun (50ac4ed).
 2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
