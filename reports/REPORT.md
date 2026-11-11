@@ -42,7 +42,32 @@ hardware-free cost. After round 32, 62–92% of R and U practice groups were all
 
 ### Q2. Did the policy lose accuracy, or did it stop finishing within budget?
 
-⟨PENDING: descriptive decomposition (section 3.3) beside the within-trajectory length experiment (section 9), per seed.⟩
+It stopped finishing, and more room does not rescue those answers, so in practice the two are the same failure. Two
+kinds of evidence, side by side. The **descriptive split** writes R − U = truncation term + accuracy-on-finished term
+(section 3.3, exact identity). The **length experiment** continues every capped answer from its own 12,288 tokens to
+16,384 and regrades it (section 9.1); it measures what the capped answers would have done with more room.
+
+| Seed | Panel | R − U at 12,288 | Truncation term | Accuracy term | R − U at 16,384 (same trajectories) |
+|---|---|---|---|---|---|
+| 101 | sealed test | 81.9 − 77.7 = +4.2 | +1.4 | +2.8 | ⟨PENDING: sealed-test continuation⟩ |
+| 101 | stress (221) | 69.5 − 65.3 = +4.2 | +2.1 | +2.0 | 72.3 − 68.2 = +4.1 (change −0.1 [−1.1, +1.0]) |
+| 202 | sealed test | 74.8 − 79.2 = −4.4 | −4.3 | −0.1 | ⟨PENDING: sealed-test continuation⟩ |
+| 202 | stress (221) | 63.2 − 65.8 = −2.7 | −6.3 | +3.6 | 66.0 − 68.2 = −2.1 (change +0.5 [−0.5, +1.5]) |
+
+**Seed 202 (R behind).** By the descriptive split, R lost nothing on the answers it finished (sealed test 86.1% vs
+86.2%; stress 82.1% vs 77.6%) and lost everything through the cap (13.1% vs 8.1% of sealed-test answers cut off). The
+length experiment shows those capped answers were not near-misses: with 4,096 more tokens R recovers 12.3% of its
+capped stress answers and U 15.3%, and R − U barely moves. In a blind read of preselected continuations, most capped
+answers kept looping or ended wrong. So R-s202 did not lose arithmetic skill; it more often entered long searches that
+do not converge, and a bigger budget does not convert them.
+
+**Seed 101 (R ahead).** R led on both terms (truncation +1.4, accuracy +2.8 on the sealed test). More room changes
+nothing (−0.1).
+
+**Reading.** The truncation term is real, but it is a symptom, not a budget accident: a capped answer is mostly a failed
+attempt that has not stopped yet. "Less likely to finish within budget" therefore means "more often stuck", and a
+larger inference budget is not a fix for these checkpoints. This concerns inference allowance only; it does not show
+what training with a longer cap would have produced.
 
 ### Q3. When did the difference emerge, and did it reach harder problems?
 
@@ -69,7 +94,22 @@ cannot date the R/U split.
 
 ### Q4. What should the next experiment change?
 
-⟨PENDING: after the length diagnostic.⟩
+**More training seeds, with the auxiliary practice kept informative.** Not length control first.
+
+The observation that decided it: R − U takes the sign of the training seed on every panel (sealed test, common-GPU
+rerun, Harder, SuperHard), and 4,096 more tokens leave it unchanged (stress: +4.2 → +4.1 and −2.7 → −2.1 points). The
+difference lives in the trained policies and varies from run to run; it is not an artefact of the budget. Two seeds
+cannot say whether R or U is better on average, and per-problem R − U is unrelated across seeds (Spearman −0.09). Both
+runs of each pair split in the first window after the cap change (rounds 33–64), in opposite directions, which is what
+run-to-run path differences look like.
+
+Why not length control first: extending the budget did not move R − U, and the capped answers are mostly stuck
+searches, so a length penalty would treat the symptom. Why change the practice: after round 32, 62–92% of R and U
+practice groups were all-correct and gave no gradient, so the arms differed little in what they trained on exactly when
+the runs diverged. The next study should run at least 6 seeds per arm with a fixed cap for the whole run and a practice
+pool that stays at mixed success (harder or adaptively chosen factoring items), and report R − U both overall and on
+finished answers. The judgement would change if the accuracy-on-finished term agreed in sign across the new seeds and
+exceeded the seed spread.
 
 ## What we learned
 
