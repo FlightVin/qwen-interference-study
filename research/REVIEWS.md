@@ -981,3 +981,19 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** REPORT fill continues (What we learned item 1–2 wording with cgpu; section 8 run/cost table;
    incomplete-cell list). Fix the endpoints legend overlap.
 7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger rows. Watcher re-armed (task bo4i0sb9k).
+
+## Review 101 — 2026-11-11 12:50Z (7:50 AM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 98 at 13:03Z. The round-96 eval and save took 75.5 min (H-s101: 57.5 min). LATEST = round 96.
+     len_mean rose again (r97 5,965; r98 5,354, against 4,292–4,344 at r95–96).
+   - No other job ran. REPORT What we learned item 1 now cites the common-GPU rerun (50ac4ed).
+2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
+3. **Distinguishing task.** None within scope (no new seeds). H-s202 r128 adds the seed-202 H cell only.
+4. **Schedule.** Rounds 96→98 ran ×1.30 of H-s101 (eval included); cumulative ×1.24 since round 66. H-s101 needed 481.6 min
+   for rounds 98→128. Round 128 ≈ 20:45Z (×1.0) to 23:10Z (×1.30); RUN_COMPLETE ≈ 1 h later (21:45Z–00:10Z); six-shard
+   endpoint ≈ 1 h after that (22:45Z–01:10Z). The central case (×1.24, RUN_COMPLETE ≈ 23:40Z) meets the D150 fallback trigger
+   (> 22:15Z). Decide at 18:00Z by the rule; recipes ready. Report: on time; H-s202 r128 endpoint unlikely before 00:30Z.
+5. **GPUs.** General 1/3 (H-s202). Preempt 0/6. Within limits. The fallback needs 2 general + 4 preempt: fits.
+6. **Most important.** REPORT fill: fix the endpoints legend overlap, then the section 8 run/cost table and incomplete cells.
+7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger rows; other running jobs are ae-dco-* (another
+   project). Watcher alive (task bo4i0sb9k).

@@ -714,8 +714,9 @@ def plot(out_dir, fig_dir):
                     else:
                         a1.text(x, 0.02, "missing", ha="center", fontsize=6, rotation=90)
         a1.axhline(E["base"]["pass1"], color="black", lw=0.8, ls="--", label=f"base {E['base']['pass1']:.3f}")
-        a1.set_xticks([2.4, 10.4]); a1.set_xticklabels([f"seed {s}" for s in SEEDS]); a1.set_ylim(0, 1.05)
-        a1.set_ylabel("target_test pass@1 (128 × 32)"); a1.legend(fontsize=6, ncol=2, loc="lower right")
+        a1.set_xticks([2.4, 10.4]); a1.set_xticklabels([f"seed {s}" for s in SEEDS]); a1.set_ylim(0, 1.25)
+        a1.set_yticks(np.linspace(0, 1, 6))
+        a1.set_ylabel("target_test pass@1 (128 × 32)"); a1.legend(fontsize=6, ncol=4, loc="upper center")
         k, ticks = 0, []
         for name, _, _ in CONTRASTS:
             for row_key in ("101", "202", "mean"):
