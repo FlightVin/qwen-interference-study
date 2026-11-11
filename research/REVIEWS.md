@@ -1149,3 +1149,24 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    Preempt: endpoint k5 queued.
 6. **Most important.** Check the narrative rewrite (numbers, figures, placeholders) as soon as it lands.
 7. **Reconciliation.** All live jobs are ledger rows or our standby. Watcher alive (bpvqeaz0q).
+
+## Review 109 — 2026-11-11 20:50Z (3:50 PM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 128 at 20:42Z; the round-128 dev evaluation is running (LATEST still 124). RUN_COMPLETE follows
+     the dev eval and the verified save (D154).
+   - Fallback merged: H-s202 round 116 (incomplete run) 74.3% pass@1, 92.8% pass@8, 14.8% capped (section 2, outside the
+     primary table).
+   - H-s101 length cells (D157): sealed test R − H +4.9 → +4.9 (0.0 [−0.8, +0.9]); stress +5.4 → +5.0.
+   - REPORT: scope trace (CHECKLIST 10); gaps fixed; narrative rewrite (0551c10), checked by script (numbers, 225 table
+     rows, 11 figures, 39 placeholders); four consistency fixes; run/job-chain table.
+   - Stress shards `qis-stress-H-s202-r128-k0..k2` submitted (11119925–27, preempt, `--after` training; D156).
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect (unchanged). Budget artefact
+   ruled out for R − U and, in seed 101, for R − H.
+3. **Distinguishing task.** More seeds (out of scope). Within scope: the H-s202 endpoint gives seed-202 R − H and U − H.
+4. **Schedule.** RUN_COMPLETE ≈ 21:45–22:00Z (dev eval 60–75 min after 20:42Z); endpoint (6 shards parallel) ≈ 22:40–22:55Z;
+   stress shards ≈ 23:30Z if they move to general as endpoint shards end; final a17_test/a17_train/a17_stress reruns, cost
+   run, verification and delivery by 00:30Z. On time; little slack for the stress cell.
+5. **GPUs.** General 1 running + 6 endpoint shards queued (7 at RUN_COMPLETE, A22). Preempt 3 stress shards queued.
+6. **Most important.** At RUN_COMPLETE confirm the shards start and pass the provenance check; move stress shards to general
+   as endpoint shards end; prepare the final analysis reruns now so they start the moment the endpoint merges.
+7. **Reconciliation.** 11112377, 11119210–17, 11119925–27 are ledger rows; 11112647 our standby. Watcher alive (bv3l8fwis).

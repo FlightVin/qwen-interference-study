@@ -32,10 +32,10 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 3:00–3:25 PM [20:00–20:25Z] | Narrative rewrite of REPORT.md (checked by script); H-s101 length cells done | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
-| ≈ 3:40 PM [20:40Z] (20:37–20:56Z) | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
-| ≈ 4:40 PM [21:40Z] (21:37–21:56Z) | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| ≈ 5:30 PM [22:30Z] (22:27–22:46Z) | H-s202 round-128 sealed test (shards in parallel) | forecast; before the deadline |
-| ≈ 6:20 PM [23:20Z] | H-s202 stress r128 (3 shards, D156) | forecast |
+| 3:42 PM [20:42Z] | H-s202 round 128 done; dev eval running; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | done |
+| ≈ 4:45–5:00 PM [21:45–22:00Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
+| ≈ 5:40–5:55 PM [22:40–22:55Z] | H-s202 round-128 sealed test (shards in parallel) | forecast; before the deadline |
+| ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
 ## Work and GPUs (20:27Z; limits: general 7 until the final report (A22), preempt 6, 30 CPUs)
@@ -45,7 +45,7 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216, 11119217 | endpoint shards k0–k5 |
 | running | CPU | 11112647 | CPU standby |
 | done | — | 11118845–51; 11119262, 11119264 | fallback (round 116: 74.3%); H-s101 length cells |
-| blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when endpoint shards start |
+| queued (dependency: training ends) | preempt | 11119925, 11119926, 11119927 | stress shards k0–k2 → general as endpoint shards end |
 Unused: general 6 of 7 until RUN_COMPLETE. Reason: every planned diagnostic is done and verified; A19 prefers idle
 capacity to redundant reruns. Next eligible: endpoint shards (dependency), then stress shards.
 
