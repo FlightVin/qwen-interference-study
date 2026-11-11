@@ -20,7 +20,7 @@ Sample: per checkpoint, the 3 tranche-1 attempts capped at 12,288 with the small
 | ZUCB | U-s202 | math:intermediate_algebra/train/00631 | 1 | loop | length | 0 |
 
 Counts: loop 6 (R 3, U 3); delayed_wrong 3 (R 2, U 1); repaired_error 1 (R); completed_sound 1 (U); other 1 (U).
-Before the cut, the reader judged 9 of 12 not on track, 3 on track (PVNM, GBSC, GGLX).
+Before the cut, the reader judged 8 of 12 not on track, 1 unclear (XJCG), 3 on track (PVNM, GBSC, GGLX).
 
 Grader doubt (XJCG): the continuation wrote `\boxed{0}` (= gold) inside its reasoning but reached 16,384 tokens before the
 final write-up. The frozen rule gives a capped answer reward 0 whatever its text says (`qis.verify`), so the 0 is the

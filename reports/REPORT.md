@@ -523,7 +523,7 @@ What did the extra tokens do? An arm-blind reader classified 12 continuations, c
 (3 capped attempts per checkpoint): 6 kept looping (re-deriving the same steps or equation systems), 3 reached a wrong
 answer, 1 finished sound reasoning correctly, and 1 found and fixed an error, wrote the correct boxed answer, and then
 hit 16,384 tokens before its final write-up (scored 0 by the frozen cap rule). One was still making progress when cut
-off. The reader judged 9 of the 12 off track before the 12,288-token cut. Loops were split evenly (R 3, U 3). Source:
+off. The reader judged 8 of the 12 off track before the 12,288-token cut (1 unclear). Loops were split evenly (R 3, U 3). Source:
 `research/evidence/a19/length/t1/inspect_read.md`.
 
 This measures inference allowance for these four checkpoints only. It does not show what training with a longer cap
