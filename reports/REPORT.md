@@ -8,6 +8,51 @@ jobs that are still running. The first report (10 Nov) is kept unchanged in `arc
 (section 4) and the two stress panels (section 5) — is exploratory: it was added after the design was frozen, and it
 uses outputs that were already visible.
 
+## Four practical answers (A19)
+
+### Q1. Was related practice worth the training slots?
+
+Not on this evidence. Training helped every arm by a wide margin, but factoring practice (R) against modular practice
+(U) changed sign between seeds. Sealed test, pass@1, 128 problems × 32 attempts (95% paired problem bootstrap):
+
+| Seed | Base | H | R | U | R − U | R − H | U − H |
+|---|---|---|---|---|---|---|---|
+| 101 | 52.6% | 77.0% | 81.9% | 77.7% | 81.9 − 77.7 = +4.2 [+2.1, +6.3] | 81.9 − 77.0 = +4.9 [+2.0, +8.0] | 77.7 − 77.0 = +0.7 [−2.0, +3.5] |
+| 202 | 52.6% | ⟨PENDING⟩ | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+
+What replicates across seeds: trained − base (+22 to +29 points in all five finished runs), and the sign of R − U
+on the stress panels following the seed (section 5). What does not replicate: the sign of R − U. R − H and U − H exist
+for seed 101 only until the H-s202 endpoint lands. ⟨PENDING: H-s202.⟩
+
+Cost per run on its canonical trajectory. Every run used 128 rounds × 16 prompts × 8 answers = 16,384 answers; H spends
+all 16 prompts on hard problems, R and U spend 8 of 16 on practice.
+
+| Run | Hard answers | Prompt tokens (M) | Generated tokens (M) | GPU-h |
+|---|---|---|---|---|
+| H-s101 | 16,384 | 1.67 | 68.6 | 29.5 |
+| R-s101 | 8,192 | 1.45 | 65.1 | 27.9 |
+| U-s101 | 8,192 | 1.44 | 60.0 | 22.6 |
+| R-s202 | 8,192 | 1.48 * | 54.1 | 22.8 |
+| U-s202 | 8,192 | 1.44 | 52.8 | 25.6 |
+| H-s202 | ⟨running⟩ | 1.45 at round 111 | 62.3 at round 111 | ⟨final cost run⟩ |
+
+Prompt tokens count each prompt once per answer. * R-s202's counter includes 3 rounds replayed after a resume (D127);
+its generated tokens are from the attempt records. GPU-h mix GPU types (training nodes differed), so tokens are the
+hardware-free cost. After round 32, 62–92% of R and U practice groups were all-correct and gave no learning signal.
+
+### Q2. Did the policy lose accuracy, or did it stop finishing within budget?
+
+⟨PENDING: descriptive decomposition (section 3.3) beside the within-trajectory length experiment (section 9), per seed.⟩
+
+### Q3. When did the difference emerge, and did it reach harder problems?
+
+⟨PENDING: dev and training-record timing (section 9.3), stress tiers with base success and truncation (section 5); no
+matched intermediate R/U checkpoint pair survives.⟩
+
+### Q4. What should the next experiment change?
+
+⟨PENDING: after the length diagnostic.⟩
+
 ## What we learned
 
 1. **Training gain versus the choice of practice.** On the sealed test, every trained policy beat the base model by a
