@@ -147,12 +147,10 @@ exceeded the seed spread.
    (82.1% vs 77.6%) but hit the cap more often (23.0% vs 15.2%). A blind audit of 96 responses found that more factoring
    practice would plausibly fix about 40% of the failures: both readers said so for 13 of 33 genuine failed responses
    (29 of 66 judged reads); the rest are later errors or cap hits. Two more failures were grader errors. ⟨PENDING: H-s202 r128.⟩
-6. **The one larger experiment to run next.** ⟨Draft:⟩ Rerun R and U with more seeds (at least 6 per arm) **and** a
-   length control (the same cap for every round, with length-matched reward or a larger cap for evaluation), and report
-   R − U both overall and on finished answers. The dominant uncertainty is run-to-run variation that acts through answer
-   length; more seeds without a length control would measure it but not remove it. The recommendation would change if
-   R − U on finished answers (the accuracy term) agreed in sign across seeds and exceeded the seed spread: then the
-   factoring effect is real and a larger single-cap R/U study is the right next step.
+6. **The one larger experiment to run next.** Run R and U with more training seeds (at least 6 per arm), one fixed cap
+   for the whole run, and a practice pool that stays at mixed success, and report R − U overall and on finished answers.
+   The deciding observation: R − U follows the seed on every panel and does not move when the budget grows by 4,096
+   tokens (section 9.1), so the dominant uncertainty is run-to-run variation, not the budget. Details in Q4.
 
 ## 1. Endpoints: original and common-GPU evaluations
 
