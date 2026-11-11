@@ -1,0 +1,25 @@
+{
+ "rule": "8 SuperHard + 8 Harder items, first by sha256('audit-v1:'+id); attempt index (sample) 0 for every policy: base, H-s101, R-s101, U-s101, R-s202, U-s202, H-s202 r128 if evaluated; responses shown arm-blind under opaque codes; categories: missed_opportunity, factored_incorrectly, factored_then_failed_later, other_method, hit_cap, grader_issue, correct, unclear",
+ "items": {
+  "superhard": [
+   "olympiadbench:2742",
+   "math:intermediate_algebra/train/00331",
+   "olympiadbench:2912",
+   "math:intermediate_algebra/train/00918",
+   "math:number_theory/train/00126",
+   "math:intermediate_algebra/train/00004",
+   "math:precalculus/train/00163",
+   "math:precalculus/train/00152"
+  ],
+  "harder": [
+   "omni:omni/01531",
+   "math:algebra/test/00352",
+   "math:intermediate_algebra/train/00691",
+   "omni:omni/03629",
+   "math:algebra/train/01030",
+   "math:number_theory/test/00090",
+   "omni:omni/00173",
+   "math:intermediate_algebra/train/00196"
+  ]
+ }
+}

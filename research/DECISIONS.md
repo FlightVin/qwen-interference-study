@@ -851,3 +851,12 @@ policies base, six round-128 endpoints, R-s101 round 64, H-s202 a2-r60 round 64.
 original eval files existed (run.py:218–220; found by the a17_train author). Before round 61 finished, the originals were copied
 (train) and moved (eval round 64) to `runs/qis-main-H-s202-sym/records_a2orig_r60-64/` with SHA256SUMS; the original metric rows stay
 in `metrics.jsonl` and `metrics.pre_resume_a17.jsonl`. The resumed trajectory therefore gets its own round-64 dev/probe evaluation.
+
+## D144 — 2026-11-11 02:12Z — Stress-panel response-audit sample fixed before any stress output exists (A17 §6)
+`research/evidence/a17/panels/audit_sample_v1.json`: 8 SuperHard + 8 Harder items, first by sha256("audit-v1:"+id); attempt
+index 0 for every policy (base, H-s101, R-s101, U-s101, R-s202, U-s202, H-s202 r128 if evaluated) → 96–112 responses. Responses
+are shown to annotating agents arm-blind (opaque codes; mapping kept separately) with the prompt, worked solution, gold and verifier
+outcome. Categories: missed_opportunity, factored_incorrectly, factored_then_failed_later, other_method, hit_cap, grader_issue,
+correct, unclear. The question it answers: would more direct factoring practice plausibly fix the observed failures?
+Also started (02:10Z): blind second read of all 226 frozen panel items by 4 new agents (problem + solution + gold only) to measure
+annotation agreement; report-only, panels unchanged.
