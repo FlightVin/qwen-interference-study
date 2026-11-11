@@ -41,7 +41,9 @@ uses outputs that were already visible.
    problems (section 5), the base model scored 37.3% pass@1 and the trained checkpoints 62.4–69.5%. SuperHard pass@1
    roughly doubled (25.8% → 52.1–58.4%). R − U again took the sign of the seed: 69.5 − 65.3 = +4.2 [+1.5, +6.8] in seed
    101 and 63.2 − 65.8 = −2.7 [−5.1, −0.2] in seed 202. In seed 202, R was more accurate on the answers it finished
-   (82.1% vs 77.6%) but hit the cap more often (23.0% vs 15.2%). ⟨PENDING: H-s202 r128; response audit.⟩
+   (82.1% vs 77.6%) but hit the cap more often (23.0% vs 15.2%). A blind audit of 96 responses found that more factoring
+   practice would plausibly fix about 40% of the remaining failures (29 of 70 reads); the rest are later errors, cap hits
+   or one grader limitation. ⟨PENDING: H-s202 r128.⟩
 6. **The one larger experiment to run next.** ⟨Draft:⟩ Rerun R and U with more seeds (at least 6 per arm) **and** a
    length control (the same cap for every round, with length-matched reward or a larger cap for evaluation), and report
    R − U both overall and on finished answers. The dominant uncertainty is run-to-run variation that acts through answer
@@ -303,8 +305,35 @@ What the stress panels show:
    more of its hardest attempts adds harder problems to its finished pool. That is why the two least-truncated policies
    (U-s202 and H) also show the lowest accuracy on finished answers.
 
-⟨PENDING: response audit (D144, preselected items × policies, arm-blind) and its answer to "would more direct factoring
-practice fix these failures?"⟩
+**Response audit.** Would more direct factoring practice fix the failures that remain? 16 items (8 per tier, fixed by
+hash before any stress output existed, D144) × attempt 0 × six policies (base and the five finished round-128
+checkpoints) = 96 responses. Each response was shown under a random code, shuffled within its item, and read
+independently by two annotating agents (Claude Sonnet) with the problem, gold, reference route and verifier result
+(D153). Responses over 8,000 characters were shown as their first 5,000 and last 2,500 characters. The two reads agreed
+on the category for 88 of 96 responses (29 of the 35 failures). Counts below are reads, two per response.
+
+| Policy | Failures of 16 | Missed the factoring | Factored wrongly | Factored, failed later | Hit the cap | Grader | Fixable by factoring practice: yes / no / unclear |
+|---|---|---|---|---|---|---|---|
+| Base | 8 | 6 | 5 | 4 | 0 | 0 | 8 / 5 / 3 |
+| H-s101 | 5 | 4 | 2 | 1 | 0 | 3 | 4 / 3 / 1 |
+| R-s101 | 4 | 2 | 1 | 4 | 1 | 0 | 2 / 5 / 1 |
+| U-s101 | 4 | 6 | 0 | 0 | 2 | 0 | 5 / 1 / 2 |
+| R-s202 | 8 | 4 | 0 | 5 | 4 | 3 | 6 / 8 / 0 |
+| U-s202 | 6 | 4 | 1 | 3 | 4 | 0 | 4 / 5 / 3 |
+| All | 35 | 26 | 9 | 17 | 11 | 6 | 29 / 27 / 10 |
+
+(One base read chose "other method". The Grader column shows reads as given; 2 of its 6 reads, on `00352`, are
+adjudicated below as wrong answers.) The answer is: partly. The readers judged 29 of 70 failure reads fixable by more
+factoring practice, and 27 not. After training, the readers put most failures after the factoring step (a later error
+or the cap): 24 of 54 trained-policy failure reads, against 4 of 16 for the base model. Missed factoring steps remain in
+every arm, R included (6 of 24 R failure reads, 10 of 20 U failure reads). With 4–8 failures per policy, these counts
+describe the sample; they cannot rank the arms.
+
+One grader limitation was confirmed. On `math:precalculus/train/00152` (gold `2,4`), a response that puts 2 and 4 in
+separate boxes is extracted as `4` and scored wrong. That affects at most 7 of 1,768 attempts in any stress cell (≤ 0.4
+points of pass@1) and at most 3 attempts between R and U in either seed (≤ 0.2 points). Scores are left as graded
+(frozen verifier). The two "0, 1" answers on `math:algebra/test/00352` list the integers instead of their count (gold 2):
+they are wrong answers, not grader errors. Data: `research/evidence/a17/audit/`.
 
 ## 6. Strategy cue (from the first report; separate from the interference evidence)
 

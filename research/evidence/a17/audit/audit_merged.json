@@ -1,0 +1,2690 @@
+{
+ "ABTH": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2170,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion of powers of 2+i, real/imag equations, solved to (5,-24,42); no palindromic factoring needed.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Expands powers of 2+i, splits real and imaginary parts, solves linear system to (5,-24,42).",
+    "reader": 1
+   }
+  ]
+ },
+ "ACAG": {
+  "item": "math:algebra/test/00352",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 697,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "other_method",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct quadratic formula and interval [-1/8, 5/3], then listed integers 0,1,2,3 (counted 2,3 outside bound). Counting error.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct 24x^2-37x-5<=0 and roots -1/8, 5/3 (quadratic formula, equivalent), then listed integers 0,1,2,3 instead of 0,1; answered 4.",
+    "reader": 3
+   }
+  ]
+ },
+ "AWGF": {
+  "item": "omni:omni/03629",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 7930,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Ignored that n itself is a square; found 3114 (maps to 4225) by trial. No difference-of-squares equation.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Long muddled search; only n' treated as square; answers 3114 (n+1111=4225) though 3114 is not square. No factoring.",
+    "reader": 1
+   }
+  ]
+ },
+ "AWMM": {
+  "item": "omni:omni/01531",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1979,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta, states factored identity, computes via S^3-3ST giving a^3-3a^2, minimum -4 at a=2.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta, sum-of-cubes identity (factor form quoted, Newton form used) gives a^3-3a^2; calculus minimum -4 at a=2.",
+    "reader": 3
+   }
+  ]
+ },
+ "BMNN": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 10504,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Partial fractions did not telescope; final 1 came from numerical partial sums ('likely'), not proof. Answer correct.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "unclear",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Verifier correct, but visible reasoning is partial fractions with plus sign and numeric partial sums; concluded 1 as 'likely'. No telescoping proof.",
+    "reader": 3
+   }
+  ]
+ },
+ "BRKX": {
+  "item": "olympiadbench:2912",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 2802,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct parity argument (even n needs 4|n), then listed multiples of 4 without 24, counted 7 not 6.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Derives odd or multiple of 4, then miscounts: omits 24 from multiples of 4, gets 12-5=7.",
+    "reader": 1
+   }
+  ]
+ },
+ "BSEE": {
+  "item": "omni:omni/01531",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1782,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "S^3-3ST route, a^2(a-3), calculus minimum -4. Fully valid.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta then S^3-3ST identity (equivalent to factor form) gives a^2(a-3); derivative minimum -4.",
+    "reader": 3
+   }
+  ]
+ },
+ "BZEB": {
+  "item": "olympiadbench:2742",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 3305,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Algebra slip, then tested linear A=x+c and falsely accepted A=x+10; found only x and x+10, answer 30.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Tried only linear A=x+c; falsely checked A=x+10 works; found x and x+10, answered 30. No product-form factoring.",
+    "reader": 3
+   }
+  ]
+ },
+ "BZGH": {
+  "item": "math:precalculus/train/00163",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1143,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Mis-simplified fraction to (x^2+1)/(x^2(x^4-1)), never factored x^4-1 to cancel; solved wrong sextic, gave x=plus/minus sqrt(phi).",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Slip simplifying fraction gave x^2(x^4-1) denominator; never cancelled x^2+1; solved wrong sextic, answered +/-sqrt(phi).",
+    "reader": 3
+   }
+  ]
+ },
+ "CEVW": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2727,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct substitution and linear system, gcd condition gives |c|=42.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion and linear system; parametrises solutions; gcd condition gives |c|=42.",
+    "reader": 1
+   }
+  ]
+ },
+ "CKCM": {
+  "item": "olympiadbench:2912",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 887,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Writes n=xy with same parity, hesitates, then asserts not-2-mod-4 characterization without proof; counts 6 correctly.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Sets n=xy with same parity, states not-2-mod-4 criterion after false starts; counts 6.",
+    "reader": 1
+   }
+  ]
+ },
+ "CRJE": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 3795,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Shift P=-3-x+Q, Q=k(x-a)(x-b)(x-c), k=2 from P(-3)=-16; caught and fixed an arithmetic slip on the constant.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Shift to Q=P+x+3 with roots a,b,c; Q=k(x-a)(x-b)(x-c); k=2 from P(-3). Fixed an arithmetic slip by checking.",
+    "reader": 1
+   }
+  ]
+ },
+ "DAWF": {
+  "item": "math:algebra/test/00352",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1479,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Quadratic formula roots -1/8 and 5/3, integers 0 and 1, verified by substitution.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cleared denominators, roots -1/8 and 5/3 by quadratic formula (equivalent), integers 0 and 1 checked by substitution.",
+    "reader": 3
+   }
+  ]
+ },
+ "DRBJ": {
+  "item": "math:number_theory/test/00090",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1429,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form gives 53361; cross-checked by summing unit digits of 21 cubes (91).",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form 53361, then second check by listing units digits (sum 91); answer 1.",
+    "reader": 2
+   }
+  ]
+ },
+ "DXVD": {
+  "item": "omni:omni/00173",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Wrote (a+b)(c+d)+ab+cd correctly but used r3r4=-62 (product-of-roots sign error); dead end, long guessing, cap hit.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "unclear",
+    "note": "Product-of-roots sign error gave r3r4=-62; correct (a+b)(c+d) grouping but wrong constants, messy guessing until cap.",
+    "reader": 3
+   }
+  ]
+ },
+ "DZTD": {
+  "item": "math:algebra/train/01030",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 920,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors x^3+x^2-20x=x(x+5)(x-4), clears denominators, matches coefficients: G=1, H=2.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored x^2+x-20, cleared denominators, matched coefficients: G=1, H=2.",
+    "reader": 2
+   }
+  ]
+ },
+ "EGEN": {
+  "item": "math:algebra/train/01030",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1092,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors denominator, equates numerators, solves G=1, H=2; one stray remark but result right.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored x^2+x-20, equated numerators, solved G=1, H=2.",
+    "reader": 2
+   }
+  ]
+ },
+ "EGQA": {
+  "item": "math:precalculus/train/00152",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 5910,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "grader_issue",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Briefly claimed 4 and -4, corrected; final text states boxed 2 and boxed 4, but extractor kept only 4 and marked WRONG.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "grader_issue",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Reached 4 and 2 after fixing a +-4 slip; final text boxes 2 and 4 separately; extractor took only last box 4.",
+    "reader": 3
+   }
+  ]
+ },
+ "EKTR": {
+  "item": "math:number_theory/train/00126",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 6890,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Small-case gcds plus a flawed parity argument; no (n-1)(n+1) reduction visible. Reaches 2 by pattern, not proof.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Answer 2 from checking n<=8 and a flawed parity argument; no rigorous maximum proof visible.",
+    "reader": 2
+   }
+  ]
+ },
+ "EPEJ": {
+  "item": "olympiadbench:2742",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 11643,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Wrongly argued numerator must vanish, then tested few A by hand; concluded A in {x, x(x+10)}, sum 210. No product form.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Cleared denominators but no product-form factoring; tried small cases, concluded only x and x(x+10); answered 210.",
+    "reader": 3
+   }
+  ]
+ },
+ "EUUQ": {
+  "item": "omni:omni/03629",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "hit_cap",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Brute-forced squares and digit checks in disorganized order; never used n+1111=m^2 and (b-a)(b+a)=1111. Capped without answer.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "hit_cap",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Muddled start, then long brute-force over squares with listing errors; never uses n+1111=b^2 or factors 1111; no answer at cap.",
+    "reader": 1
+   }
+  ]
+ },
+ "EYZW": {
+  "item": "math:algebra/test/00352",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 2368,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "grader_issue",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Math fully correct and states count is 2, but boxed the integers '0, 1'; extractor took the list, so WRONG verdict is a format artifact.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct roots and interval; boxed the integers '0, 1' instead of the count; last line says 2. Final-assembly format slip.",
+    "reader": 3
+   }
+  ]
+ },
+ "FBRF": {
+  "item": "math:algebra/test/00352",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1188,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Quadratic formula route, interval count gives 0,1, boxed 2.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cleared denominators, roots -1/8 and 5/3, integers 0 and 1, boxed count 2.",
+    "reader": 3
+   }
+  ]
+ },
+ "FCGQ": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 8412,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Correct shift P+x+3 has roots a,b,c, but forced leading constant k=1; got x^3+3x^2+4x+4, then blamed a problem typo.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Sets P+x+3=k(x-a)(x-b)(x-c) but claims k=1; P(-3)=-8 contradiction; blames a typo; answers x^3+3x^2+4x+4.",
+    "reader": 1
+   }
+  ]
+ },
+ "FEVW": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1827,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Subtracted x+1 instead of -3-x, so Q has no roots at a,b,c, yet wrote Q=k(x-a)(x-b)(x-c). Final answer left in a,b,c.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Shifted by x+1 not x+3, so Q does not vanish at a,b,c; asserted Q=k(x-a)(x-b)(x-c) anyway; never found k or P.",
+    "reader": 1
+   }
+  ]
+ },
+ "FNAR": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "missed_opportunity",
+    "factoring_used": "unknown",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Got F(n)=2^n-2^-n and a/(a^2-1), factored denominator only; no numerator split; stuck computing partial sums until cap.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Got F(n)=2^n-2^-n and x/(x^2-1), factored x^2-1, but never split numerator as (x+1)-1; guessed 1 from partial sums until cap.",
+    "reader": 3
+   }
+  ]
+ },
+ "FVWP": {
+  "item": "math:precalculus/train/00152",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 3807,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "grader_issue",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Used the a^3+b^3+c^3-3abc factorization giving 3+S; final answer 2 and 4 in separate boxes, extractor took only 4.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "grader_issue",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Used a^3+b^3+c^3-3abc factorisation to get 3+S; answer 2 and 4 in separate boxes; extractor took only 4.",
+    "reader": 3
+   }
+  ]
+ },
+ "FZFY": {
+  "item": "omni:omni/03629",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 9811,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Long confused restatement, then brute-force over squares checked n+1111; found 2025 (45^2) to 3136 (56^2).",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Confused framing, but ends enumerating square n with digits below 6, adding 1 per digit; finds 2025 to 3136. Brute force.",
+    "reader": 1
+   }
+  ]
+ },
+ "GACF": {
+  "item": "omni:omni/00173",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Took product of roots as +1984 (sign error), so cd=-62; long integer-pair search and botched quadratic split; cap hit without answer.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "unclear",
+    "note": "Used product of roots +1984 (sign error), so cd=-62 and wrong quadratic constants; brute-force pairs, bogus k=-100; capped.",
+    "reader": 3
+   }
+  ]
+ },
+ "GDZT": {
+  "item": "omni:omni/01531",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 5748,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Correct a^3-3a^2 and -4; wasted effort worrying about real roots, finally accepted complex roots.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same identity gives a^3-3a^2; long worry about real roots resolved (roots may be complex); answer -4.",
+    "reader": 3
+   }
+  ]
+ },
+ "GEGB": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2206,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Q=P+3+x=k(x-a)(x-b)(x-c), (3+a)(3+b)(3+c)=8, k=2, expands to 2x^3+6x^2+9x+11.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Q=P+x+3 has roots a,b,c; (3+a)(3+b)(3+c)=8 gives k=2; expands to gold and checks.",
+    "reader": 1
+   }
+  ]
+ },
+ "GNTW": {
+  "item": "math:algebra/train/01030",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1519,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors quadratic via formula, common denominator x(x-4)(x+5), equates numerators; G=1, H=2.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored via quadratic formula, matched coefficients, got H/G=2.",
+    "reader": 2
+   }
+  ]
+ },
+ "GNYA": {
+  "item": "math:algebra/test/00352",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1091,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "grader_issue",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct roots and integers; boxed '0, 1' but wrote 'there are 2 integers'. Extraction artifact, not a reasoning error.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct roots and interval; boxed the integers '0, 1' instead of the count; last line says 2. Final-assembly format slip.",
+    "reader": 3
+   }
+  ]
+ },
+ "HGCX": {
+  "item": "math:precalculus/train/00152",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2600,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same route; briefly wrote 4 or -2 (arithmetic slip), self-corrected to 4 and 2; final boxed 2, 4.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same e1=+-1, e2=0, e3=1; briefly wrote 4 or -2, caught the slip, final 2,4.",
+    "reader": 3
+   }
+  ]
+ },
+ "JBGH": {
+  "item": "math:number_theory/test/00090",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 624,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form, 231^2 mod 10 =1, verified with 53361.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form 231^2, checked mod 10 and by direct squaring; units digit 1.",
+    "reader": 2
+   }
+  ]
+ },
+ "JGTD": {
+  "item": "olympiadbench:2912",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 426,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cites known result (not 4k+2) without derivation; counts 2,6,10,14,18,22 correctly.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cites known not-4k+2 result without deriving it; counts 2,6,10,14,18,22 correctly.",
+    "reader": 1
+   }
+  ]
+ },
+ "JTUZ": {
+  "item": "omni:omni/03629",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 3844,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Stepwise square scan, accepted 3114 though 3114 is not a square; missed the condition that n is square.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Same misread: squares enumerated as n', digits minus 1; accepts 3114 without checking n is square. No factoring.",
+    "reader": 1
+   }
+  ]
+ },
+ "JWQC": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1052,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored r^3-s^3, cancelled r-s, used (r+s)^2-rs = 31/4, answer 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Standard form, factored r^3-s^3, cancelled r-s, used (r+s)^2-rs, got 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "KATP": {
+  "item": "math:precalculus/train/00152",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1264,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct S^3+3 with S=+-1, then computed -1+3 as -2 instead of 2; answer 4 or -2.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct S^3+3 with S=+-1, then arithmetic slip -1+3 written as -2; answer 4 or -2 misses 2.",
+    "reader": 3
+   }
+  ]
+ },
+ "KCVF": {
+  "item": "math:precalculus/train/00163",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 6622,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same x^4-1 factoring and cancellation; long numeric validity checks; eventually rejected (1-sqrt5)/2 since sum is -3pi/4.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same cancellation of x^2+1; long sign check rejected negative root; answer correct.",
+    "reader": 3
+   }
+  ]
+ },
+ "KNGF": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 741,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta first, then cube-difference factoring and cancellation; 4*(31/4) = 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta, factored r^3-s^3, cancelled r-s, r^2+s^2 route gave 31/4, answer 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "KQBY": {
+  "item": "math:number_theory/train/00126",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 7654,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors a_n=n((n-1)!+1) and a_{n+1}=(n+1)(n!+1); general analysis muddled; answer 2 rests on small-n checks.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Reached 2 via small-case gcds and partial Wilson analysis; rigorous factoring not visible, middle omitted.",
+    "reader": 2
+   }
+  ]
+ },
+ "MABS": {
+  "item": "math:number_theory/test/00090",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2214,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Sums unit digits of cubes (45+45+1=91), then cross-checks with closed form 53361.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Summed units digits of cubes (total 91) and cross-checked with closed form; answer 1.",
+    "reader": 2
+   }
+  ]
+ },
+ "MHBM": {
+  "item": "omni:omni/00173",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2945,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Found r3r4=62, grouped to k=30+ab, matched (x^2-ax-32)(x^2-bx+62), solved a=4, b=14, k=86.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "cd=62, k=30+ab, two-quadratic factorisation, solved a+b=18 and 32b-62a=200 giving a=4, b=14, k=86.",
+    "reader": 3
+   }
+  ]
+ },
+ "MSHR": {
+  "item": "omni:omni/01531",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 812,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Uses power-sum identity instead of the factored form; equivalent a^3-3a^2; derivative gives -4.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Newton form of cube sum (equivalent identity) gives a^3-3a^2; derivative minimum -4.",
+    "reader": 3
+   }
+  ]
+ },
+ "MVCT": {
+  "item": "olympiadbench:2912",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 6085,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Uses (a-b)(a+b), same parity gives 4|N for even N, then lists six 2-mod-4 numbers; some wandering.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Parity argument: even n needs 4 dividing n; odd works. Counts six 2 mod 4 numbers after long verification.",
+    "reader": 1
+   }
+  ]
+ },
+ "MYDW": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1829,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion route, solves linear system with integrality, 42.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion and linear system; c=42m; gcd forces m=1.",
+    "reader": 1
+   }
+  ]
+ },
+ "NKPH": {
+  "item": "omni:omni/03629",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 4396,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Scanned squares m, subtracted 1 per digit; accepted 3114 without requiring n to be square.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Lists squares as n', subtracts 1 per digit; accepts 3114 without requiring n square. No factoring.",
+    "reader": 1
+   }
+  ]
+ },
+ "NZRQ": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2889,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Reached a/((a-1)(a+1)) but could not telescope; numeric sum 0.996, guessed exactly 1. Correct answer, no proof.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "unclear",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Verifier correct but answer is a numeric guess (sum about 0.9961, 'likely 1'); telescoping never completed; one term misused 2^n for 2^(2^n).",
+    "reader": 3
+   }
+  ]
+ },
+ "PMKF": {
+  "item": "omni:omni/00173",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 10305,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Grouped k=30+ST, factored as (x^2-Sx-32)(x^2-Tx+62), solved S=4, T=14, k=86.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same quadratic factorisation; briefly misjudged 376/94 but corrected to S=4, T=14, k=86.",
+    "reader": 3
+   }
+  ]
+ },
+ "PPXN": {
+  "item": "math:number_theory/test/00090",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 417,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form (n(n+1)/2)^2 gives 231^2=53361; units digit 1. The alternative route.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Used closed form sum of cubes, 231^2 = 53361, units digit 1; alternative route, no pairing.",
+    "reader": 2
+   }
+  ]
+ },
+ "QFJA": {
+  "item": "math:number_theory/test/00090",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1377,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Lists all 21 cubes, sums unit digits to 91, answer 1. Pure enumeration.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Listed all 21 cubes, summed units digits to 91, units digit 1; brute force but valid.",
+    "reader": 2
+   }
+  ]
+ },
+ "QKVF": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1365,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct real/imaginary system, a=-5m, b=24m, c=-42m, gcd gives 42.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion and linear system; c=-42m, m=+-1, so |c|=42.",
+    "reader": 1
+   }
+  ]
+ },
+ "QPMC": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1500,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Guesses root -sqrt2, long division, quadratic formula; all three roots correct.",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Tested x=-sqrt2, divided exactly, solved quadratic giving -sqrt2 plus/minus i.",
+    "reader": 2
+   }
+  ]
+ },
+ "QUEU": {
+  "item": "math:number_theory/train/00126",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1745,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Wrongly derives gcd=1 for all n, then corrects with small cases n=0..9 and answers 2. Empirical, no key factoring.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Algebra wrongly concluded gcd always 1, then self-corrected by trying small n; answer 2 is empirical, not derived.",
+    "reader": 2
+   }
+  ]
+ },
+ "QVQU": {
+  "item": "olympiadbench:2912",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 2088,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct (a-b)(a+b) parity rule, but listed 24 as 'even, not divisible by 4', so counted 7. Final classification slip.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct same-parity rule (odd or multiple of 4), but listed 24 as not divisible by 4; counted 7 instead of 6.",
+    "reader": 1
+   }
+  ]
+ },
+ "RACD": {
+  "item": "math:algebra/test/00352",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2174,
+  "reads": [
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Quadratic formula route, verbose rechecking of integers, answer 2.",
+    "reader": 0
+   },
+   {
+    "item": "math:algebra/test/00352",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Combined over denominator 10, roots by quadratic formula (equivalent), long recount of integers gave 2.",
+    "reader": 3
+   }
+  ]
+ },
+ "RASU": {
+  "item": "olympiadbench:2742",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Long divisibility analysis of D(x) into a cubic, unresolved polynomial division; never found the shifted product form; no answer.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Long divisibility and polynomial-division attempts on D=10A-x(x+10); no product-form factoring; capped mid-division, no answer.",
+    "reader": 3
+   }
+  ]
+ },
+ "RFVT": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 3154,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same shift and k=2 route; some muddled wording about Q being quadratic but final result correct.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same shift and factor form; k=2 via f(-3)=-8; expands to 2x^3+6x^2+9x+11 and verifies.",
+    "reader": 1
+   }
+  ]
+ },
+ "RHPJ": {
+  "item": "omni:omni/03629",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 756,
+  "reads": [
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Derived n'=n+1111 but forgot n must be a square; took first k with digits <6 (1005). Never wrote difference of squares.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/03629",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Gets n'=n+1111 but drops the condition that n is square; takes k=46, n=1005 without checking or factoring.",
+    "reader": 1
+   }
+  ]
+ },
+ "RKGX": {
+  "item": "math:precalculus/train/00163",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Factored x^4-1 and got both roots correctly, then spiralled into contradictory validity checks about the negative root until the cap; no boxed answer.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Reached x^2-x-1 by cancelling x^2+1, then doubted validity and looped on checks until the cap; no final answer.",
+    "reader": 3
+   }
+  ]
+ },
+ "RPCS": {
+  "item": "omni:omni/00173",
+  "policy": "R-s202-r128",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Correct k=30+ST and equation, but judged 376/94=188/47 non-integer (it equals 4); doubted correct setup, tried rational roots until cap.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Derived k=30+ST and -32T+62S=-200 correctly, then judged 376/94 non-integer (it is 4), abandoned path; rational-root search until cap.",
+    "reader": 3
+   }
+  ]
+ },
+ "RTYF": {
+  "item": "math:algebra/train/01030",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1180,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors denominator, equates numerators, coefficient matching gives G=1, H=2.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Found common denominator, factored quadratic by trial, solved coefficient system.",
+    "reader": 2
+   }
+  ]
+ },
+ "SCVH": {
+  "item": "math:precalculus/train/00163",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Same simplification slip gave x^6-2x^2-1; long detour; later factored x^4-x^3-x-1=(x^2+1)(x^2-x-1) but cap hit before final answer.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "no",
+    "note": "Same fraction slip gave x^6-2x^2-1, numeric check failed; later refactored quartic as (x^2+1)(x^2-x-1) but ran out of tokens.",
+    "reader": 3
+   }
+  ]
+ },
+ "SKQT": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1615,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "unclear",
+    "note": "Missed the cube; used x=sqrt2*y, factored cubic in y correctly, then back-substituted wrongly (+-(sqrt2/2)i instead of +-i).",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Substituted x=sqrt2*y, factored (y+1)(2y^2+4y+3) correctly, then mis-simplified back-substitution to imaginary part sqrt2/2 instead of 1.",
+    "reader": 2
+   }
+  ]
+ },
+ "SQXU": {
+  "item": "olympiadbench:2912",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2460,
+  "reads": [
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factor pairs with same parity, tested examples, found exceptions are n=2 mod 4: 2,6,10,14,18,22. Messy wording but correct.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2912",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Uses (a-b)(a+b) with same parity; finds the six 2 mod 4 exceptions. Wording muddled midway but ends right.",
+    "reader": 1
+   }
+  ]
+ },
+ "SSUW": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 865,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored cube difference, computed r^2+s^2=53/4, then 31/4; answer 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored cube difference, cancelled r-s, r^2+s^2 route, answer 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "STFS": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Wandered through non-telescoping partial fractions; only at the cap began 1/(a-1)-1/(a^2-1) = ((a+1)-1)/(...). Key step arrived too late.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "hit_cap",
+    "factoring_used": "yes",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Long unproductive partial-fraction and numeric detours; reached the key split (a+1)-1 over (a-1)(a+1) only at the cap; no answer.",
+    "reader": 3
+   }
+  ]
+ },
+ "SUBV": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1755,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion route and explicit numeric verification of (5,-24,42); |c|=42.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion, solves system, verifies (5,-24,42) in the original equation.",
+    "reader": 1
+   }
+  ]
+ },
+ "SZJD": {
+  "item": "math:intermediate_algebra/train/00691",
+  "policy": "R-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2526,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Same direct real/imaginary system; solves a=5c/42, b=-4c/7; gcd forces |c|=42.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00691",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Direct expansion and real/imaginary system; a=5n, b=-24n, c=42n; gcd forces n=+-1.",
+    "reader": 1
+   }
+  ]
+ },
+ "TFZY": {
+  "item": "math:intermediate_algebra/train/00918",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 8454,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "After false starts with linear Q, used cubic coefficients and root reduction a^3=-3a^2-5a-7; A=2, gave correct P.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00918",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Early shifts muddled; final route reduces P(a) using a^3=-3a^2-5a-7, matches coefficients, A=2 from P(-3).",
+    "reader": 1
+   }
+  ]
+ },
+ "TPFU": {
+  "item": "omni:omni/01531",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1869,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Uses (sum)(sum squares minus pairs) directly, a(a^2-3a), minimizes by derivative to -4.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Used factor identity with Vieta to get a(a^2-3a); minimised by derivative, -4.",
+    "reader": 3
+   }
+  ]
+ },
+ "TRTW": {
+  "item": "math:number_theory/train/00126",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "hit_cap",
+    "factoring_used": "unknown",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Long small-n gcd table, muddled parity and prime-divisor analysis; no reduction to gcd(a_n,(n-1)(n+1)) visible; no answer at cap.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "hit_cap",
+    "factoring_used": "unknown",
+    "capped": true,
+    "practice_fixable": "unclear",
+    "note": "Long case enumeration and confused parity/prime analysis; no visible reduction to (n-1)(n+1); ran out of tokens without answer.",
+    "reader": 2
+   }
+  ]
+ },
+ "TSPV": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "base",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1024,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Guessed root -sqrt2 but synthetic division wrong (5sqrt2 not 3 as constant); never saw the cube; messy wrong complex roots.",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Found root -sqrt2 but synthetic division with radicals was wrong (quotient x^2+2sqrt2x+5sqrt2); never checked; wrong complex roots.",
+    "reader": 2
+   }
+  ]
+ },
+ "TUSB": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 4398,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Ansatz (x+a*sqrt2)(x^2+bx+c) gives a=1; coefficient check failed, then substitution x=sqrt2*y fixed it; correct roots.",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Ansatz factor failed, switched to x=sqrt2*y, factored cubic in y, back-substituted correctly: -sqrt2, -sqrt2 plus/minus i.",
+    "reader": 2
+   }
+  ]
+ },
+ "TXPZ": {
+  "item": "math:number_theory/test/00090",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 654,
+  "reads": [
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Closed form checked on n=1,2; computes 231^2=53361; units digit 1.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/test/00090",
+    "category": "correct",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Verified closed form on small n, computed 231^2 = 53361, units digit 1.",
+    "reader": 2
+   }
+  ]
+ },
+ "UAVN": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "R-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 3210,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Gets (x+sqrt2)(x^2+2sqrt2x+3) correctly, but reports only the real root; omits -sqrt2+-i from the final answer.",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Obtained correct (x+sqrt2)(x^2+2sqrt2x+3) but answered only the real root, ignoring the complex roots requested by 'all solutions'.",
+    "reader": 2
+   }
+  ]
+ },
+ "UCMV": {
+  "item": "math:number_theory/train/00126",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 6612,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Uses difference n(n!+1); a miscalculation gave gcd 6, later corrected; ends with small cases and prime checks. Weak argument.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "unknown",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Used difference n(n!+1), briefly miscomputed gcd 6 at n=6, later settled on 2 by small cases.",
+    "reader": 2
+   }
+  ]
+ },
+ "UCNF": {
+  "item": "omni:omni/00173",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 6418,
+  "reads": [
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_incorrectly",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Set (x^2-sx-32)(x^2-tx+62) but wrote x-coefficient as -32t+sp (sign error), got t=458/47, then guessed t=12 to reach 102.",
+    "reader": 2
+   },
+   {
+    "item": "omni:omni/00173",
+    "category": "factored_then_failed_later",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "no",
+    "note": "Correct (r1+r2)(r3+r4) grouping and k=st+30; sign error in x-coefficient equation, then invented s=6,t=12 giving 102.",
+    "reader": 3
+   }
+  ]
+ },
+ "UPGK": {
+  "item": "olympiadbench:2742",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Tried linear A, then guessed A in {x, x(x+10)}; never added x(x+10)/10 to both factors. Capped while guessing.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Tried B=x(x+10)(x+a)/(10a-x^2) and guessed two polynomials; never completed the product with x(x+10)/10; answered 210, capped.",
+    "reader": 3
+   }
+  ]
+ },
+ "URXE": {
+  "item": "olympiadbench:2742",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Wrote B=xA(x+10)/D and tried divisibility and trial polynomials (x+10, x+1); long messy division, no SFFT shift, no answer.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Divisibility attempt with D=10A-x(x+10), then trial of linear and quadratic A; no product-form factoring; capped, no answer.",
+    "reader": 3
+   }
+  ]
+ },
+ "VKEC": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 634,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored cube difference, used (r+s)^2-rs = 31/4, answer 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cube-difference factoring, cancelled r-s, (r+s)^2-rs, answer 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "VNXA": {
+  "item": "math:algebra/train/01030",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1123,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors denominator, equates numerators, matches coefficients: G=1, H=2.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored denominators, equated numerators, matched coefficients, checked consistency.",
+    "reader": 2
+   }
+  ]
+ },
+ "VSZE": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "base",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 590,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta, cube-difference factoring, cancellation, 31/4 times 4 equals 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta then cube-difference factoring and cancellation; answer 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "VWVV": {
+  "item": "math:precalculus/train/00152",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2166,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Got a^2+b^2+c^2=1, ab+bc+ca=0, S=+-1, then p3=S^3+3abc gives 4 and 2 (Newton route, equivalent).",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Circulant square gave e1=+-1, e2=0; used cubic-sum identity (Newton form) for 4 and 2.",
+    "reader": 3
+   }
+  ]
+ },
+ "VZNQ": {
+  "item": "math:algebra/train/01030",
+  "policy": "U-s202-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1200,
+  "reads": [
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factors denominator, common denominator, coefficient matching gives G=1, H=2.",
+    "reader": 1
+   },
+   {
+    "item": "math:algebra/train/01030",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored RHS denominator to x(x+5)(x-4), matched coefficients correctly.",
+    "reader": 2
+   }
+  ]
+ },
+ "XNJF": {
+  "item": "olympiadbench:2742",
+  "policy": "U-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 5086,
+  "reads": [
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Assumed A must be a multiple of x(x+10) with no justification; concluded A=x(x+10) only, answer 200.",
+    "reader": 0
+   },
+   {
+    "item": "olympiadbench:2742",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": false,
+    "practice_fixable": "yes",
+    "note": "Wrongly claimed x(x+10) must divide A; concluded only A=x(x+10), answered 200. No product-form factoring.",
+    "reader": 3
+   }
+  ]
+ },
+ "XSND": {
+  "item": "math:intermediate_algebra/train/00196",
+  "policy": "U-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 946,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cube-difference factoring, r^2+rs+s^2=(r+s)^2-rs=31/4, answer 31.",
+    "reader": 2
+   },
+   {
+    "item": "math:intermediate_algebra/train/00196",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored cube difference, cancelled r-s, (r+s)^2-rs=31/4, answer 31.",
+    "reader": 3
+   }
+  ]
+ },
+ "XSQU": {
+  "item": "math:intermediate_algebra/train/00004",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2240,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Tests candidate roots, finds -sqrt2, divides to (x+sqrt2)(x^2+2sqrt2x+3); complex roots -sqrt2+-i.",
+    "reader": 1
+   },
+   {
+    "item": "math:intermediate_algebra/train/00004",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Guessed root -sqrt2, long division gave correct quadratic, complex roots computed correctly.",
+    "reader": 2
+   }
+  ]
+ },
+ "XWSH": {
+  "item": "math:number_theory/train/00126",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 11303,
+  "reads": [
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Euclid step B-(n+1)A=-(n+1)(n-1) gives gcd(A,(n+1)(n-1)); n-1 coprime; checks n+1 part and n=100; answer 2.",
+    "reader": 1
+   },
+   {
+    "item": "math:number_theory/train/00126",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Computed B-(n+1)A = -(n+1)(n-1), reduced gcd correctly, then confirmed with cases; answer 2.",
+    "reader": 2
+   }
+  ]
+ },
+ "YECA": {
+  "item": "math:precalculus/train/00163",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1942,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Simplified tan sum, factored x^4-1, cancelled x^2+1, solved x^2-x-1=0, rejected negative root by sign argument.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Tangent addition, cancelled x^2+1 from x^4-1 factorisation, solved quadratic, rejected negative root.",
+    "reader": 3
+   }
+  ]
+ },
+ "YPTN": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "R-s202-r128",
+  "tier": "superhard",
+  "reward": 0,
+  "finish": "length",
+  "n_tokens": 12288,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "missed_opportunity",
+    "factoring_used": "unknown",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Used 1/2 partial fractions that do not telescope; asserted false 'known' sum 2, then guessed 1 from partial sums; capped.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "missed_opportunity",
+    "factoring_used": "no",
+    "capped": true,
+    "practice_fixable": "yes",
+    "note": "Partial fractions with plus sign, a false 'known' sum of 2, then numeric guess of 1; never split numerator as (x+1)-1; capped.",
+    "reader": 3
+   }
+  ]
+ },
+ "ZQFK": {
+  "item": "math:intermediate_algebra/train/00331",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 8657,
+  "reads": [
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "After detours, split a/(a^2-1) as 1/(a-1) minus 1/(a^2-1); telescopes to 1. Equivalent to key split.",
+    "reader": 0
+   },
+   {
+    "item": "math:intermediate_algebra/train/00331",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored x^2-1, wrote x/(x^2-1) as 1/(x-1)-1/(x^2-1), telescoped to 1.",
+    "reader": 3
+   }
+  ]
+ },
+ "ZSMD": {
+  "item": "math:precalculus/train/00152",
+  "policy": "U-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 2290,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Circulant square gives conditions, S=+-1, p3=S^3+3 gives 4 and 2; boxed '2 and 4'.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00152",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Circulant square gave e1=+-1, e2=0; cubic identity gave 4 and 2; single box.",
+    "reader": 3
+   }
+  ]
+ },
+ "ZSNE": {
+  "item": "math:precalculus/train/00163",
+  "policy": "H-s101-r128",
+  "tier": "superhard",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 4107,
+  "reads": [
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Factored x^4-1, cancelled x^2+1, solved quadratic; numeric check confirmed positive root, rejected negative root.",
+    "reader": 2
+   },
+   {
+    "item": "math:precalculus/train/00163",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Cancelled x^2+1, got golden ratio, rejected negative root by sign argument after some wandering.",
+    "reader": 3
+   }
+  ]
+ },
+ "ZXUE": {
+  "item": "omni:omni/01531",
+  "policy": "H-s101-r128",
+  "tier": "harder",
+  "reward": 1,
+  "finish": "stop",
+  "n_tokens": 1822,
+  "reads": [
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "States factored identity, computes via S^3-3ST; reaches a^3-3a^2 and -4. Some redundant repetition.",
+    "reader": 0
+   },
+   {
+    "item": "omni:omni/01531",
+    "category": "correct",
+    "factoring_used": "yes",
+    "capped": false,
+    "practice_fixable": "na",
+    "note": "Vieta, cube-sum identity, a^3-3a^2, derivative minimum -4 at a=2.",
+    "reader": 3
+   }
+  ]
+ }
+}

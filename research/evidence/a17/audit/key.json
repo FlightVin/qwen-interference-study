@@ -1,0 +1,816 @@
+{
+ "groups": [
+  [
+   "olympiadbench:2742",
+   "omni:omni/01531",
+   "math:intermediate_algebra/train/00331",
+   "math:algebra/test/00352"
+  ],
+  [
+   "olympiadbench:2912",
+   "math:intermediate_algebra/train/00691",
+   "math:intermediate_algebra/train/00918",
+   "omni:omni/03629"
+  ],
+  [
+   "math:number_theory/train/00126",
+   "math:algebra/train/01030",
+   "math:intermediate_algebra/train/00004",
+   "math:number_theory/test/00090"
+  ],
+  [
+   "math:precalculus/train/00163",
+   "omni:omni/00173",
+   "math:precalculus/train/00152",
+   "math:intermediate_algebra/train/00196"
+  ]
+ ],
+ "readers": {
+  "0": [
+   0,
+   1
+  ],
+  "1": [
+   1,
+   2
+  ],
+  "2": [
+   2,
+   3
+  ],
+  "3": [
+   3,
+   0
+  ]
+ },
+ "key": {
+  "UPGK": {
+   "item": "olympiadbench:2742",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "EPEJ": {
+   "item": "olympiadbench:2742",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 11643
+  },
+  "URXE": {
+   "item": "olympiadbench:2742",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "BZEB": {
+   "item": "olympiadbench:2742",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 3305
+  },
+  "XNJF": {
+   "item": "olympiadbench:2742",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 5086
+  },
+  "RASU": {
+   "item": "olympiadbench:2742",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "AWMM": {
+   "item": "omni:omni/01531",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1979
+  },
+  "TPFU": {
+   "item": "omni:omni/01531",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1869
+  },
+  "MSHR": {
+   "item": "omni:omni/01531",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 812
+  },
+  "BSEE": {
+   "item": "omni:omni/01531",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1782
+  },
+  "ZXUE": {
+   "item": "omni:omni/01531",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1822
+  },
+  "GDZT": {
+   "item": "omni:omni/01531",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 5748
+  },
+  "FNAR": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "BMNN": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 10504
+  },
+  "ZQFK": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 8657
+  },
+  "NZRQ": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2889
+  },
+  "STFS": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "YPTN": {
+   "item": "math:intermediate_algebra/train/00331",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "ACAG": {
+   "item": "math:algebra/test/00352",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 697
+  },
+  "DAWF": {
+   "item": "math:algebra/test/00352",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1479
+  },
+  "RACD": {
+   "item": "math:algebra/test/00352",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2174
+  },
+  "FBRF": {
+   "item": "math:algebra/test/00352",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1188
+  },
+  "EYZW": {
+   "item": "math:algebra/test/00352",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 2368
+  },
+  "GNYA": {
+   "item": "math:algebra/test/00352",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1091
+  },
+  "QVQU": {
+   "item": "olympiadbench:2912",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 2088
+  },
+  "SQXU": {
+   "item": "olympiadbench:2912",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2460
+  },
+  "BRKX": {
+   "item": "olympiadbench:2912",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 2802
+  },
+  "JGTD": {
+   "item": "olympiadbench:2912",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 426
+  },
+  "CKCM": {
+   "item": "olympiadbench:2912",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 887
+  },
+  "MVCT": {
+   "item": "olympiadbench:2912",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 6085
+  },
+  "ABTH": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2170
+  },
+  "SZJD": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2526
+  },
+  "CEVW": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2727
+  },
+  "QKVF": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1365
+  },
+  "MYDW": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1829
+  },
+  "SUBV": {
+   "item": "math:intermediate_algebra/train/00691",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1755
+  },
+  "CRJE": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 3795
+  },
+  "TFZY": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 8454
+  },
+  "FEVW": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1827
+  },
+  "FCGQ": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 8412
+  },
+  "GEGB": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2206
+  },
+  "RFVT": {
+   "item": "math:intermediate_algebra/train/00918",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 3154
+  },
+  "EUUQ": {
+   "item": "omni:omni/03629",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "RHPJ": {
+   "item": "omni:omni/03629",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 756
+  },
+  "AWGF": {
+   "item": "omni:omni/03629",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 7930
+  },
+  "NKPH": {
+   "item": "omni:omni/03629",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 4396
+  },
+  "FZFY": {
+   "item": "omni:omni/03629",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 9811
+  },
+  "JTUZ": {
+   "item": "omni:omni/03629",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 3844
+  },
+  "KQBY": {
+   "item": "math:number_theory/train/00126",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 7654
+  },
+  "EKTR": {
+   "item": "math:number_theory/train/00126",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 6890
+  },
+  "QUEU": {
+   "item": "math:number_theory/train/00126",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1745
+  },
+  "XWSH": {
+   "item": "math:number_theory/train/00126",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 11303
+  },
+  "UCMV": {
+   "item": "math:number_theory/train/00126",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 6612
+  },
+  "TRTW": {
+   "item": "math:number_theory/train/00126",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "DZTD": {
+   "item": "math:algebra/train/01030",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 920
+  },
+  "VNXA": {
+   "item": "math:algebra/train/01030",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1123
+  },
+  "VZNQ": {
+   "item": "math:algebra/train/01030",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1200
+  },
+  "RTYF": {
+   "item": "math:algebra/train/01030",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1180
+  },
+  "EGEN": {
+   "item": "math:algebra/train/01030",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1092
+  },
+  "GNTW": {
+   "item": "math:algebra/train/01030",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1519
+  },
+  "SKQT": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1615
+  },
+  "TUSB": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 4398
+  },
+  "TSPV": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1024
+  },
+  "UAVN": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 3210
+  },
+  "XSQU": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2240
+  },
+  "QPMC": {
+   "item": "math:intermediate_algebra/train/00004",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1500
+  },
+  "PPXN": {
+   "item": "math:number_theory/test/00090",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 417
+  },
+  "JBGH": {
+   "item": "math:number_theory/test/00090",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 624
+  },
+  "MABS": {
+   "item": "math:number_theory/test/00090",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2214
+  },
+  "TXPZ": {
+   "item": "math:number_theory/test/00090",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 654
+  },
+  "DRBJ": {
+   "item": "math:number_theory/test/00090",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1429
+  },
+  "QFJA": {
+   "item": "math:number_theory/test/00090",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1377
+  },
+  "YECA": {
+   "item": "math:precalculus/train/00163",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1942
+  },
+  "KCVF": {
+   "item": "math:precalculus/train/00163",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 6622
+  },
+  "BZGH": {
+   "item": "math:precalculus/train/00163",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1143
+  },
+  "RKGX": {
+   "item": "math:precalculus/train/00163",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "ZSNE": {
+   "item": "math:precalculus/train/00163",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 4107
+  },
+  "SCVH": {
+   "item": "math:precalculus/train/00163",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "UCNF": {
+   "item": "omni:omni/00173",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 6418
+  },
+  "GACF": {
+   "item": "omni:omni/00173",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "DXVD": {
+   "item": "omni:omni/00173",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "MHBM": {
+   "item": "omni:omni/00173",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2945
+  },
+  "RPCS": {
+   "item": "omni:omni/00173",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 0,
+   "finish": "length",
+   "n_tokens": 12288
+  },
+  "PMKF": {
+   "item": "omni:omni/00173",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 10305
+  },
+  "VWVV": {
+   "item": "math:precalculus/train/00152",
+   "policy": "U-s202-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2166
+  },
+  "HGCX": {
+   "item": "math:precalculus/train/00152",
+   "policy": "R-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2600
+  },
+  "EGQA": {
+   "item": "math:precalculus/train/00152",
+   "policy": "R-s202-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 5910
+  },
+  "FVWP": {
+   "item": "math:precalculus/train/00152",
+   "policy": "H-s101-r128",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 3807
+  },
+  "ZSMD": {
+   "item": "math:precalculus/train/00152",
+   "policy": "U-s101-r128",
+   "tier": "superhard",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 2290
+  },
+  "KATP": {
+   "item": "math:precalculus/train/00152",
+   "policy": "base",
+   "tier": "superhard",
+   "reward": 0,
+   "finish": "stop",
+   "n_tokens": 1264
+  },
+  "JWQC": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "R-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 1052
+  },
+  "KNGF": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "U-s202-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 741
+  },
+  "XSND": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "U-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 946
+  },
+  "SSUW": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "R-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 865
+  },
+  "VSZE": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "base",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 590
+  },
+  "VKEC": {
+   "item": "math:intermediate_algebra/train/00196",
+   "policy": "H-s101-r128",
+   "tier": "harder",
+   "reward": 1,
+   "finish": "stop",
+   "n_tokens": 634
+  }
+ }
+}

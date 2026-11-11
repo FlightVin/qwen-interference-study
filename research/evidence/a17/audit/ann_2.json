@@ -1,0 +1,70 @@
+{
+"reader": "packet_2",
+"responses": {
+"KQBY": {"item": "math:number_theory/train/00126", "category": "correct", "factoring_used": "unknown", "capped": false, "practice_fixable": "na", "note": "Reached 2 via small-case gcds and partial Wilson analysis; rigorous factoring not visible, middle omitted."},
+"EKTR": {"item": "math:number_theory/train/00126", "category": "correct", "factoring_used": "unknown", "capped": false, "practice_fixable": "na", "note": "Answer 2 from checking n<=8 and a flawed parity argument; no rigorous maximum proof visible."},
+"QUEU": {"item": "math:number_theory/train/00126", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Algebra wrongly concluded gcd always 1, then self-corrected by trying small n; answer 2 is empirical, not derived."},
+"XWSH": {"item": "math:number_theory/train/00126", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Computed B-(n+1)A = -(n+1)(n-1), reduced gcd correctly, then confirmed with cases; answer 2."},
+"UCMV": {"item": "math:number_theory/train/00126", "category": "correct", "factoring_used": "unknown", "capped": false, "practice_fixable": "na", "note": "Used difference n(n!+1), briefly miscomputed gcd 6 at n=6, later settled on 2 by small cases."},
+"TRTW": {"item": "math:number_theory/train/00126", "category": "hit_cap", "factoring_used": "unknown", "capped": true, "practice_fixable": "unclear", "note": "Long case enumeration and confused parity/prime analysis; no visible reduction to (n-1)(n+1); ran out of tokens without answer."},
+
+"DZTD": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored x^2+x-20, cleared denominators, matched coefficients: G=1, H=2."},
+"VNXA": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored denominators, equated numerators, matched coefficients, checked consistency."},
+"VZNQ": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored RHS denominator to x(x+5)(x-4), matched coefficients correctly."},
+"RTYF": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Found common denominator, factored quadratic by trial, solved coefficient system."},
+"EGEN": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored x^2+x-20, equated numerators, solved G=1, H=2."},
+"GNTW": {"item": "math:algebra/train/01030", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored via quadratic formula, matched coefficients, got H/G=2."},
+
+"SKQT": {"item": "math:intermediate_algebra/train/00004", "category": "factored_then_failed_later", "factoring_used": "yes", "capped": false, "practice_fixable": "no", "note": "Substituted x=sqrt2*y, factored (y+1)(2y^2+4y+3) correctly, then mis-simplified back-substitution to imaginary part sqrt2/2 instead of 1."},
+"TUSB": {"item": "math:intermediate_algebra/train/00004", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Ansatz factor failed, switched to x=sqrt2*y, factored cubic in y, back-substituted correctly: -sqrt2, -sqrt2 plus/minus i."},
+"TSPV": {"item": "math:intermediate_algebra/train/00004", "category": "factored_incorrectly", "factoring_used": "yes", "capped": false, "practice_fixable": "yes", "note": "Found root -sqrt2 but synthetic division with radicals was wrong (quotient x^2+2sqrt2x+5sqrt2); never checked; wrong complex roots."},
+"UAVN": {"item": "math:intermediate_algebra/train/00004", "category": "factored_then_failed_later", "factoring_used": "yes", "capped": false, "practice_fixable": "no", "note": "Obtained correct (x+sqrt2)(x^2+2sqrt2x+3) but answered only the real root, ignoring the complex roots requested by 'all solutions'."},
+"XSQU": {"item": "math:intermediate_algebra/train/00004", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Guessed root -sqrt2, long division gave correct quadratic, complex roots computed correctly."},
+"QPMC": {"item": "math:intermediate_algebra/train/00004", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Tested x=-sqrt2, divided exactly, solved quadratic giving -sqrt2 plus/minus i."},
+
+"PPXN": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Used closed form sum of cubes, 231^2 = 53361, units digit 1; alternative route, no pairing."},
+"JBGH": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Closed form 231^2, checked mod 10 and by direct squaring; units digit 1."},
+"MABS": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Summed units digits of cubes (total 91) and cross-checked with closed form; answer 1."},
+"TXPZ": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Verified closed form on small n, computed 231^2 = 53361, units digit 1."},
+"DRBJ": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Closed form 53361, then second check by listing units digits (sum 91); answer 1."},
+"QFJA": {"item": "math:number_theory/test/00090", "category": "correct", "factoring_used": "no", "capped": false, "practice_fixable": "na", "note": "Listed all 21 cubes, summed units digits to 91, units digit 1; brute force but valid."},
+
+"YECA": {"item": "math:precalculus/train/00163", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Simplified tan sum, factored x^4-1, cancelled x^2+1, solved x^2-x-1=0, rejected negative root by sign argument."},
+"KCVF": {"item": "math:precalculus/train/00163", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Same x^4-1 factoring and cancellation; long numeric validity checks; eventually rejected (1-sqrt5)/2 since sum is -3pi/4."},
+"BZGH": {"item": "math:precalculus/train/00163", "category": "missed_opportunity", "factoring_used": "no", "capped": false, "practice_fixable": "yes", "note": "Mis-simplified fraction to (x^2+1)/(x^2(x^4-1)), never factored x^4-1 to cancel; solved wrong sextic, gave x=plus/minus sqrt(phi)."},
+"RKGX": {"item": "math:precalculus/train/00163", "category": "hit_cap", "factoring_used": "yes", "capped": true, "practice_fixable": "no", "note": "Factored x^4-1 and got both roots correctly, then spiralled into contradictory validity checks about the negative root until the cap; no boxed answer."},
+"ZSNE": {"item": "math:precalculus/train/00163", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored x^4-1, cancelled x^2+1, solved quadratic; numeric check confirmed positive root, rejected negative root."},
+"SCVH": {"item": "math:precalculus/train/00163", "category": "hit_cap", "factoring_used": "yes", "capped": true, "practice_fixable": "no", "note": "Same simplification slip gave x^6-2x^2-1; long detour; later factored x^4-x^3-x-1=(x^2+1)(x^2-x-1) but cap hit before final answer."},
+
+"UCNF": {"item": "omni:omni/00173", "category": "factored_incorrectly", "factoring_used": "yes", "capped": false, "practice_fixable": "yes", "note": "Set (x^2-sx-32)(x^2-tx+62) but wrote x-coefficient as -32t+sp (sign error), got t=458/47, then guessed t=12 to reach 102."},
+"GACF": {"item": "omni:omni/00173", "category": "hit_cap", "factoring_used": "yes", "capped": true, "practice_fixable": "no", "note": "Took product of roots as +1984 (sign error), so cd=-62; long integer-pair search and botched quadratic split; cap hit without answer."},
+"DXVD": {"item": "omni:omni/00173", "category": "factored_then_failed_later", "factoring_used": "yes", "capped": true, "practice_fixable": "no", "note": "Wrote (a+b)(c+d)+ab+cd correctly but used r3r4=-62 (product-of-roots sign error); dead end, long guessing, cap hit."},
+"MHBM": {"item": "omni:omni/00173", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Found r3r4=62, grouped to k=30+ab, matched (x^2-ax-32)(x^2-bx+62), solved a=4, b=14, k=86."},
+"RPCS": {"item": "omni:omni/00173", "category": "factored_then_failed_later", "factoring_used": "yes", "capped": true, "practice_fixable": "no", "note": "Correct k=30+ST and equation, but judged 376/94=188/47 non-integer (it equals 4); doubted correct setup, tried rational roots until cap."},
+"PMKF": {"item": "omni:omni/00173", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Grouped k=30+ST, factored as (x^2-Sx-32)(x^2-Tx+62), solved S=4, T=14, k=86."},
+
+"VWVV": {"item": "math:precalculus/train/00152", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Got a^2+b^2+c^2=1, ab+bc+ca=0, S=+-1, then p3=S^3+3abc gives 4 and 2 (Newton route, equivalent)."},
+"HGCX": {"item": "math:precalculus/train/00152", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Same route; briefly wrote 4 or -2 (arithmetic slip), self-corrected to 4 and 2; final boxed 2, 4."},
+"EGQA": {"item": "math:precalculus/train/00152", "category": "grader_issue", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Briefly claimed 4 and -4, corrected; final text states boxed 2 and boxed 4, but extractor kept only 4 and marked WRONG."},
+"FVWP": {"item": "math:precalculus/train/00152", "category": "grader_issue", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Used the a^3+b^3+c^3-3abc factorization giving 3+S; final answer 2 and 4 in separate boxes, extractor took only 4."},
+"ZSMD": {"item": "math:precalculus/train/00152", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Circulant square gives conditions, S=+-1, p3=S^3+3 gives 4 and 2; boxed '2 and 4'."},
+"KATP": {"item": "math:precalculus/train/00152", "category": "factored_then_failed_later", "factoring_used": "yes", "capped": false, "practice_fixable": "no", "note": "Correct S^3+3 with S=+-1, then computed -1+3 as -2 instead of 2; answer 4 or -2."},
+
+"JWQC": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored r^3-s^3, cancelled r-s, used (r+s)^2-rs = 31/4, answer 31."},
+"KNGF": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Vieta first, then cube-difference factoring and cancellation; 4*(31/4) = 31."},
+"XSND": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Cube-difference factoring, r^2+rs+s^2=(r+s)^2-rs=31/4, answer 31."},
+"SSUW": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored cube difference, computed r^2+s^2=53/4, then 31/4; answer 31."},
+"VSZE": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Vieta, cube-difference factoring, cancellation, 31/4 times 4 equals 31."},
+"VKEC": {"item": "math:intermediate_algebra/train/00196", "category": "correct", "factoring_used": "yes", "capped": false, "practice_fixable": "na", "note": "Factored cube difference, used (r+s)^2-rs = 31/4, answer 31."}
+},
+"item_notes": {
+"math:number_theory/train/00126": "Five answers reached 2 mostly by small-case gcd checks with flawed or partial algebra; only XWSH visibly derived -(n+1)(n-1). The capped run drifted into confused parity and prime analysis.",
+"math:algebra/train/01030": "Easy item. All six factored the denominators, cleared fractions and matched coefficients. No failures.",
+"math:intermediate_algebra/train/00004": "Nobody recognised (x+sqrt2)^3. All guessed or scaled to find root -sqrt2. Failures were radical arithmetic (division, back-substitution) and omitting the complex roots.",
+"math:number_theory/test/00090": "All six used the closed form or summed units digits. None used the pairing n and 20-n. Easy item, no failures.",
+"math:precalculus/train/00163": "Success: tan of both sides, factor x^4-1, cancel x^2+1, reject negative root. Failures: an early simplification slip gave a sextic, and two runs burned the cap re-checking the negative root.",
+"omni:omni/00173": "Correct runs used k=30+(r1+r2)(r3+r4) with the quadratic split. Failures: sign slips (product of roots, x-coefficient), a 376/94 reduction error, then long unproductive searches to the cap.",
+"math:precalculus/train/00152": "All used the Newton/cubic identity route with S=+-1. Failures: one arithmetic slip (-1+3=-2) and two grader extraction errors, where separate boxed 2 and 4 were read as only 4.",
+"math:intermediate_algebra/train/00196": "Easy item. All six factored r^3-s^3, cancelled r-s and evaluated with Vieta. No failures."
+}
+}
