@@ -1716,42 +1716,6 @@
     "problem_sha256": "80257733d77de081fc82cf9bb73d82a99eb314b1ee9ba2432560ca52031fd6f8"
    },
    {
-    "id": "math:intermediate_algebra/test/00083",
-    "source_collection": "MATH",
-    "source_ref": "EleutherAI/hendrycks_math@21a5633 intermediate_algebra/test[83]",
-    "level": "Level 5",
-    "subject": "intermediate_algebra",
-    "problem": "Let $z$ be a complex number such that\n\\[z^5 + z^4 + 2z^3 + z^2 + z = 0.\\]Find all possible values of $|z|.$\n\nEnter all possible values, separated by commas.",
-    "gold": "0,1",
-    "tier": "superhard",
-    "family_id": "fam-b48ef10b4e",
-    "gold_forms_checked": [
-     {
-      "form": "{0,1}",
-      "status": "correct"
-     },
-     {
-      "form": "0 and 1",
-      "status": "correct"
-     }
-    ],
-    "annotation": {
-     "technique": "F3",
-     "technique_secondary": [
-      "F2"
-     ],
-     "factoring_quote": "z^2 (z^2 + z + 1) + (z^2 + z + 1) = (z^2 + 1)(z^2 + z + 1) = 0",
-     "required_reasoning": "Factor out z, group the quartic into (z^2+1)(z^2+z+1), then find |z| for each factor's roots.",
-     "obstacle": "nonobvious_grouping",
-     "obstacle_note": "The quartic z^4+z^3+2z^2+z+1 only factors after splitting 2z^2 into z^2+z^2 and grouping with z^2+z+1.",
-     "alt_route": "",
-     "answer_type": "set-or-list",
-     "confidence": "high",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "e1ec8439361d4db8f46c27009eb720700158fc518a6783386e3bdd1503193adc"
-   },
-   {
     "id": "math:precalculus/train/00232",
     "source_collection": "MATH",
     "source_ref": "EleutherAI/hendrycks_math@21a5633 precalculus/train[232]",
@@ -2379,42 +2343,6 @@
      "annotator": "agent:claude-sonnet"
     },
     "problem_sha256": "1ee4621ea7030287060bcedafec67eeb38675a6115ded8a1917a6d47cf53654f"
-   },
-   {
-    "id": "omni:omni/00423",
-    "source_collection": "Omni-MATH",
-    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[423] (usamo)",
-    "level": "8.0",
-    "subject": "Mathematics -> Number Theory -> Prime Numbers; Mathematics -> Algebra -> Algebra -> Polynomial Operations",
-    "problem": "Find all pairs of primes $(p, q)$ for which $p-q$ and $pq-q$ are both perfect squares.",
-    "gold": "The only solution is \\((p, q) = (3, 2)\\).",
-    "tier": "superhard",
-    "family_id": "fam-b9637e3e0b",
-    "gold_forms_checked": [
-     {
-      "form": "(3,2)",
-      "status": "correct"
-     },
-     {
-      "form": "p=3, q=2",
-      "status": "correct"
-     }
-    ],
-    "annotation": {
-     "technique": "F2",
-     "technique_secondary": [
-      "F3"
-     ],
-     "factoring_quote": "\\frac{(ab - 1)(ab + 1)}{b^2 - 1}",
-     "required_reasoning": "Deduce p-1=qb^2 and p-q=a^2, solve for p as a fraction, factor ab-1 and ab+1, use divisibility and primality of p to eliminate cases.",
-     "obstacle": "case_analysis",
-     "obstacle_note": "After writing p=(ab-1)(ab+1)/(b^2-1) and b^2-1 | a^2-1, a case split on the divisor structure shows only one case avoids a split of the prime p.",
-     "alt_route": "",
-     "answer_type": "set-or-list",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "4ac570d9d4178bf6bbec796c587952b2b39e389586f5ca1dad19cad9222dc2dc"
    },
    {
     "id": "omni:omni/01694",
@@ -3097,33 +3025,6 @@
     "problem_sha256": "1f6b704c97038c85e11782c3a53047a195d699d6e299133c087e90b8e9909764"
    },
    {
-    "id": "omni:omni/01329",
-    "source_collection": "Omni-MATH",
-    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[1329] (HMMT_2)",
-    "level": "7.0",
-    "subject": "Mathematics -> Algebra -> Polynomials -> Other; Mathematics -> Algebra -> Intermediate Algebra -> Complex Numbers",
-    "problem": "There exists a polynomial $P$ of degree 5 with the following property: if $z$ is a complex number such that $z^{5}+2004 z=1$, then $P(z^{2})=0$. Calculate the quotient $P(1) / P(-1)$.",
-    "gold": "-2010012 / 2010013",
-    "tier": "superhard",
-    "family_id": "fam-7bbb3769da",
-    "gold_forms_checked": [],
-    "annotation": {
-     "technique": "F4",
-     "technique_secondary": [
-      "F2"
-     ],
-     "factoring_quote": "\\left(1-z_{1}\\right) \\cdots\\left(1-z_{5}\\right)\\right] \\cdot\\left[\\left(1+z_{1}\\right) \\cdots\\left(1+z_{5}\\right)",
-     "required_reasoning": "Write P(1)/P(-1) as a product over the roots z_i^2, split 1-z^2 and -1-z^2 into linear factors over C, and evaluate each product as Q(1), Q(-1), Q(i), Q(-i).",
-     "obstacle": "multi_factorization",
-     "obstacle_note": "Two separate factorizations are chained: z^2 differences split into (1-z)(1+z) and (i-z)(-i-z), and each product over roots is evaluated through the factored form of Q.",
-     "alt_route": "Compute the polynomial P explicitly via resultants or symmetric functions of the z_i^2.",
-     "answer_type": "rational",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "cbebe0378df9e029035316bb35f4b2fa590f41fe0637a7da96c812e70c73312b"
-   },
-   {
     "id": "math:precalculus/train/00409",
     "source_collection": "MATH",
     "source_ref": "EleutherAI/hendrycks_math@21a5633 precalculus/train[409]",
@@ -3586,42 +3487,6 @@
     "problem_sha256": "004be9bcffe613a60e2626a37c90a539d3fcea1957f9d42a1bc9506d5da37eb5"
    },
    {
-    "id": "omni:omni/01428",
-    "source_collection": "Omni-MATH",
-    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[1428] (HMMT_2)",
-    "level": "5.0",
-    "subject": "Mathematics -> Algebra -> Algebra -> Polynomial Operations; Mathematics -> Algebra -> Algebra -> Equations and Inequalit",
-    "problem": "Find all real solutions to $x^{4}+(2-x)^{4}=34$.",
-    "gold": "1 \\pm \\sqrt{2}",
-    "tier": "superhard",
-    "family_id": "fam-2fc5c90e25",
-    "gold_forms_checked": [
-     {
-      "form": "1+\\sqrt{2}, 1-\\sqrt{2}",
-      "status": "correct"
-     },
-     {
-      "form": "1\\pm\\sqrt{2}",
-      "status": "correct"
-     }
-    ],
-    "annotation": {
-     "technique": "F5",
-     "technique_secondary": [
-      "F1"
-     ],
-     "factoring_quote": "or $(x y)^{2}-8 x y-9=0$. Hence $x y=9$ or -1",
-     "required_reasoning": "Let y=2-x, express x^4+y^4 in terms of xy to get a quadratic in xy, factor it, keep xy=-1 (xy=9 is complex), and solve for x.",
-     "obstacle": "hidden_substitution",
-     "obstacle_note": "Setting y=2-x and using symmetric sums x+y=2, xy turns the quartic into a quadratic in xy; the factorable form is not visible in x.",
-     "alt_route": "shift x=1+t to get t^4+6t^2-16=0 and factor as (t^2-2)(t^2+8)",
-     "answer_type": "radical",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "05613ad926f8126f442766efa1e755bb6d7c6089b1a05ed116247d6f666b3f6c"
-   },
-   {
     "id": "olympiadbench:2790",
     "source_collection": "OlympiadBench",
     "source_ref": "Hothan/OlympiadBench@91184b5 OE_TO_maths_en_COMP id=2790",
@@ -3735,6 +3600,63 @@
      "annotator": "agent:claude-sonnet"
     },
     "problem_sha256": "eefac2ef4a0ffbeae0c50b23c1ec35c7e3f90854a00dfd71b4ba65930607db9a"
+   },
+   {
+    "id": "omni:omni/01608",
+    "source_collection": "Omni-MATH",
+    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[1608] (HMMT_2)",
+    "level": "5.0",
+    "subject": "Mathematics -> Algebra -> Intermediate Algebra -> Exponential Functions",
+    "problem": "A sequence $\\left\\{a_{n}\\right\\}_{n \\geq 1}$ of positive reals is defined by the rule $a_{n+1} a_{n-1}^{5}=a_{n}^{4} a_{n-2}^{2}$ for integers $n>2$ together with the initial values $a_{1}=8$ and $a_{2}=64$ and $a_{3}=1024$. Compute $$\\sqrt{a_{1}+\\sqrt{a_{2}+\\sqrt{a_{3}+\\cdots}}}$$",
+    "gold": "3\\sqrt{2}",
+    "tier": "superhard",
+    "family_id": "fam-79d65a9cfd",
+    "gold_forms_checked": [
+     {
+      "form": "\\sqrt{18}",
+      "status": "correct"
+     }
+    ],
+    "annotation": {
+     "technique": "F4",
+     "technique_secondary": [
+      "F5"
+     ],
+     "factoring_quote": "$0=x^{3}-4 x^{2}+5 x-2=(x-1)^{2}(x-2)$",
+     "required_reasoning": "Take log2 to get a linear recurrence, factor its characteristic polynomial, obtain a_n=2^(2n+2^(n-1)), evaluate the nested radical as 3*sqrt2.",
+     "obstacle": "hidden_substitution",
+     "obstacle_note": "The recurrence is multiplicative; the factorable characteristic polynomial x^3-4x^2+5x-2 appears only after taking log base 2.",
+     "alt_route": "Guess a_n from the first terms and verify by induction.",
+     "answer_type": "radical",
+     "confidence": "medium",
+     "annotator": "agent:claude-sonnet"
+    },
+    "problem_sha256": "6069b63aa4d1c61fb78da3cd468ce85e4c620ac5de03a30ddfcb8f15eda11e2a"
+   },
+   {
+    "id": "math:number_theory/test/00433",
+    "source_collection": "MATH",
+    "source_ref": "EleutherAI/hendrycks_math@21a5633 number_theory/test[433]",
+    "level": "Level 5",
+    "subject": "number_theory",
+    "problem": "For how many integers $a$ satisfying $1 \\le a \\le 23$ is it true that $a^{-1} \\equiv a \\pmod{24}$?",
+    "gold": "8",
+    "tier": "superhard",
+    "family_id": "fam-f100b30575",
+    "gold_forms_checked": [],
+    "annotation": {
+     "technique": "F2",
+     "technique_secondary": [],
+     "factoring_quote": "$a^2 - 1 \\equiv (a+1)(a-1) \\equiv 0 \\pmod{24}$",
+     "required_reasoning": "Reduce a^-1=a to a^2=1 mod 24, factor (a-1)(a+1), argue divisibility by 3 and by 8 from parity, so every unit mod 24 works, count 8.",
+     "obstacle": "case_analysis",
+     "obstacle_note": "After factoring, divisibility by 3 and by 8 is decided by cases on a mod 3 and the parity of a+-1 (exactly one divisible by 4).",
+     "alt_route": "Check the 8 units mod 24 directly, or CRT: x^2=1 has 2 roots mod 3 and 4 roots mod 8.",
+     "answer_type": "integer",
+     "confidence": "medium",
+     "annotator": "agent:claude-sonnet"
+    },
+    "problem_sha256": "0c037ef3ad95c1ac8b29579b0c31f4a8a57a56cb6d6fb83feaa69910c35bb296"
    },
    {
     "id": "math:algebra/test/00888",
@@ -5744,33 +5666,6 @@
     "problem_sha256": "2ce0637db470568b1bee1dfed9d7fcecf3e23342aae52d5773426f4819821043"
    },
    {
-    "id": "math:algebra/test/00976",
-    "source_collection": "MATH",
-    "source_ref": "EleutherAI/hendrycks_math@21a5633 algebra/test[976]",
-    "level": "Level 4",
-    "subject": "algebra",
-    "problem": "The graphs of $y=x^4$ and $y=7x^2-10$ intersect at four points with $x$-coordinates $\\pm \\sqrt{m}$ and $\\pm \\sqrt{n}$, where $m > n$. What is $m-n$?",
-    "gold": "3",
-    "tier": "harder",
-    "family_id": "fam-e26bb707e5",
-    "gold_forms_checked": [],
-    "annotation": {
-     "technique": "F5",
-     "technique_secondary": [
-      "F1"
-     ],
-     "factoring_quote": "Factoring, we get $(x^2-2)(x^2-5)=0$",
-     "required_reasoning": "Set the curves equal, get a quadratic in x^2, factor it, and subtract the two values of x^2.",
-     "obstacle": "",
-     "obstacle_note": "",
-     "alt_route": "Quadratic formula in u=x^2.",
-     "answer_type": "integer",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "9dc8dfa543f3040d4494201430bfafa24cc087ebdfcac2540dd13c9f40f7cb5e"
-   },
-   {
     "id": "math:intermediate_algebra/test/00764",
     "source_collection": "MATH",
     "source_ref": "EleutherAI/hendrycks_math@21a5633 intermediate_algebra/test[764]",
@@ -5796,31 +5691,6 @@
      "annotator": "agent:claude-sonnet"
     },
     "problem_sha256": "300d6a6ecdb60f4138f8b41d6f67e41be42e20533f390d9771531baaee499cdf"
-   },
-   {
-    "id": "omni:omni/02611",
-    "source_collection": "Omni-MATH",
-    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[2611] (HMMT_11)",
-    "level": "3.5",
-    "subject": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
-    "problem": "Compute $$100^{2}+99^{2}-98^{2}-97^{2}+96^{2}+95^{2}-94^{2}-93^{2}+\\ldots+4^{2}+3^{2}-2^{2}-1^{2}$$",
-    "gold": "10100",
-    "tier": "harder",
-    "family_id": "fam-49ef42c200",
-    "gold_forms_checked": [],
-    "annotation": {
-     "technique": "F2",
-     "technique_secondary": [],
-     "factoring_quote": "(100^2-98^2)=(100-98)(100+98)=2(100+98), 99^2-97^2=(99-97)(99+97)=2(99+97)",
-     "required_reasoning": "Group terms into differences of squares two apart, factor each, sum the arithmetic series 2(1+...+100).",
-     "obstacle": "",
-     "obstacle_note": "",
-     "alt_route": "The four-term identity (n+3)^2-(n+2)^2-(n+1)^2+n^2=4.",
-     "answer_type": "integer",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "2f538bfd864700323f800f5f575c731129f1d1980124ace65024bda1f450e246"
    },
    {
     "id": "math:intermediate_algebra/test/00097",
@@ -6127,6 +5997,33 @@
     "problem_sha256": "998f1ab2306a982e03c92a6bbcb63196de7118d750f99f2b71b46ad869974c82"
    },
    {
+    "id": "math:number_theory/test/00057",
+    "source_collection": "MATH",
+    "source_ref": "EleutherAI/hendrycks_math@21a5633 number_theory/test[57]",
+    "level": "Level 5",
+    "subject": "number_theory",
+    "problem": "In base $10,$ $44 \\times 55$ does not equal $3506.$ In what base does $44 \\times 55 = 3506$?",
+    "gold": "7",
+    "tier": "harder",
+    "family_id": "fam-f11648b09d",
+    "gold_forms_checked": [],
+    "annotation": {
+     "technique": "F4",
+     "technique_secondary": [
+      "F1"
+     ],
+     "factoring_quote": "If we divide by $b-7$, we get the quadratic $3b^2 + 6b + 2$",
+     "required_reasoning": "Write both numbers in base b, form the cubic 3b^3-15b^2-40b-14=0, find b=7 by rational roots with digit constraint, divide out b-7 and check the quadratic has no integer roots.",
+     "obstacle": "",
+     "obstacle_note": "",
+     "alt_route": "Test bases 7 through 15 directly with the digit constraint b>6.",
+     "answer_type": "integer",
+     "confidence": "high",
+     "annotator": "agent:claude-sonnet"
+    },
+    "problem_sha256": "8dd2e261f527e22d444776ec2d5cf99eb67eeb61f5c264d8ae019d4551263b1e"
+   },
+   {
     "id": "omni:omni/00953",
     "source_collection": "Omni-MATH",
     "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[953] (HMMT_2)",
@@ -6179,33 +6076,6 @@
      "annotator": "agent:claude-sonnet"
     },
     "problem_sha256": "f5d52f729adc0c91c534795ff47e56f847b6f3588fa67f7b08106f6b61e274dc"
-   },
-   {
-    "id": "omni:omni/01670",
-    "source_collection": "Omni-MATH",
-    "source_ref": "KbsdJames/Omni-MATH@40ba231 test.jsonl[1670] (HMMT_11)",
-    "level": "4.0",
-    "subject": "Mathematics -> Algebra -> Algebra -> Polynomial Operations",
-    "problem": "Let $f(x)=x^{4}+a x^{3}+b x^{2}+c x+d$ be a polynomial whose roots are all negative integers. If $a+b+c+d=2009$, find $d$.",
-    "gold": "528",
-    "tier": "harder",
-    "family_id": "fam-476c9b6717",
-    "gold_forms_checked": [],
-    "annotation": {
-     "technique": "F4",
-     "technique_secondary": [
-      "F8"
-     ],
-     "factoring_quote": "$f(x)$ must factor as $(x+x_{1})(x+x_{2})(x+x_{3})(x+x_{4})$. ... $(1+x_{1})(1+x_{2})(1+x_{3})(1+x_{4})=a+b+c+d+1=2010$",
-     "required_reasoning": "Write f as a product of linear factors from its roots, evaluate at x=1 to turn a+b+c+d into a product equal to 2010, factor 2010 = 2*3*5*67 into four factors, then compute d as the product of the roots.",
-     "obstacle": "",
-     "obstacle_note": "",
-     "alt_route": "",
-     "answer_type": "integer",
-     "confidence": "medium",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "611e5990a3cd745f545e284e2dbf2f9ac2164de29249ebb0f8733eea86c62db6"
    },
    {
     "id": "omni:omni/00409",
@@ -6294,33 +6164,6 @@
      "annotator": "agent:claude-sonnet"
     },
     "problem_sha256": "db9d33ea3ab1f524216f175cc7cc04317b39ffde64f7c4cd3a1b44830efca178"
-   },
-   {
-    "id": "math:number_theory/test/00057",
-    "source_collection": "MATH",
-    "source_ref": "EleutherAI/hendrycks_math@21a5633 number_theory/test[57]",
-    "level": "Level 5",
-    "subject": "number_theory",
-    "problem": "In base $10,$ $44 \\times 55$ does not equal $3506.$ In what base does $44 \\times 55 = 3506$?",
-    "gold": "7",
-    "tier": "harder",
-    "family_id": "fam-f11648b09d",
-    "gold_forms_checked": [],
-    "annotation": {
-     "technique": "F4",
-     "technique_secondary": [
-      "F1"
-     ],
-     "factoring_quote": "If we divide by $b-7$, we get the quadratic $3b^2 + 6b + 2$",
-     "required_reasoning": "Write both numbers in base b, form the cubic 3b^3-15b^2-40b-14=0, find b=7 by rational roots with digit constraint, divide out b-7 and check the quadratic has no integer roots.",
-     "obstacle": "",
-     "obstacle_note": "",
-     "alt_route": "Test bases 7 through 15 directly with the digit constraint b>6.",
-     "answer_type": "integer",
-     "confidence": "high",
-     "annotator": "agent:claude-sonnet"
-    },
-    "problem_sha256": "8dd2e261f527e22d444776ec2d5cf99eb67eeb61f5c264d8ae019d4551263b1e"
    },
    {
     "id": "math:intermediate_algebra/test/00147",

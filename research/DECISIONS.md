@@ -860,3 +860,21 @@ outcome. Categories: missed_opportunity, factored_incorrectly, factored_then_fai
 correct, unclear. The question it answers: would more direct factoring practice plausibly fix the observed failures?
 Also started (02:10Z): blind second read of all 226 frozen panel items by 4 new agents (problem + solution + gold only) to measure
 annotation agreement; report-only, panels unchanged.
+
+## D145 — 2026-11-11 ~02:45Z — Stress panels re-frozen before any evaluation: SuperHard-126, Harder-95 (supersedes the D143 freeze)
+The blind second read (4 agents, 219 of the D143 items) found a cross-source duplicate in Harder (`omni:omni/01670` =
+`math:intermediate_algebra/train/00357`; the masked 3-gram check missed it because `x^{4}` and `x^4` tokenised differently) and a
+prose gold (`omni:omni/00423`). No stress evaluation had started: the four submitted jobs (11112846/8/9/50) were held, then
+cancelled by ID; none ran. Selection rules fixed in `qis.data.stress_panels` (1ecd8f5): braces/`$`/LaTeX spacing ignored in text
+normalisation and n-grams; prose golds excluded (rubric 1.1); two items of one family with Jaccard ≥ 0.8 or the same normalised gold
+count as one problem. The brace fix also caught 4 more close variants of study items (11 → 15). Annotations unchanged.
+- **SuperHard-126** (pool exhausted at 126 eligible): MATH 60, Omni-MATH 52, OlympiadBench 14; obstacles case_analysis 45,
+  hidden_substitution 29, nonobvious_grouping 26, approach_choice 14, multi_factorization 12; 126 families.
+- **Harder-95** (pool exhausted): MATH 69, Omni-MATH 15, OlympiadBench 11; 95 families. Cross-panel: 0 shared IDs/families, max
+  Jaccard 0.411. Every family now has one item.
+- SHA-256: `stress_v1.json` 757393be…, `superhard_v1.json` 0cf1cf93…, `harder_v1.json` 0fb34905…; the D143 files are kept as
+  `data/stress/superseded-d143/` and `$PROJ_DATA/data/stress.superseded-d143/` (never evaluated).
+- **Second-read agreement** (first read vs blind second read, 219 of 221 final items read twice): eligible 207/219 (94.5%); gold
+  agrees 219/219; tier SuperHard→SuperHard 105/124, Harder→Harder 66/95 (overall exact tier 171/219 = 78%); obstacle code agrees
+  81/105. Second read calls 12 items ineligible (mostly "short route avoids factoring"). Report these; panels stay as frozen.
+- Audit sample (D144 rule) recomputed on the final panels: identical 16 IDs.

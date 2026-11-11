@@ -4,73 +4,98 @@
  "candidates": 2039,
  "excluded": {
   "annotation: not eligible": 1731,
-  "close variant of a study item (3-gram Jaccard >= 0.5)": 11,
+  "close variant of a study item (3-gram Jaccard >= 0.5)": 15,
   "annotation: low confidence": 19,
   "exact text of a study item": 41,
   "annotation: gold not confirmed": 3,
-  "gold carries units or text (rubric 1.1)": 4
+  "gold carries units or text (rubric 1.1)": 5,
+  "same problem as an accepted item (same family; Jaccard >= 0.8 or same gold)": 2
  },
  "used_files": 66,
  "used_items": 8521,
  "variant_hits": [
   {
+   "id": "omni:omni/01329",
+   "jaccard": 0.721,
+   "file": "/data/user_data/vineethb/qis/data/targets-v1/target_test.jsonl",
+   "item": "intermediate_algebra/test/00824"
+  },
+  {
    "id": "math:number_theory/train/00750",
-   "jaccard": 0.7,
+   "jaccard": 0.654,
    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/calib_val.jsonl",
    "item": "number_theory/train/00743"
   },
   {
    "id": "omni:omni/01063",
-   "jaccard": 0.56,
-   "file": "/home/vineethb/ae-qis/work/a17-4b8b88e/data/authored/R3.jsonl",
+   "jaccard": 0.522,
+   "file": "/home/vineethb/ae-qis/work/a17-1ecd8f5/data/authored/R3.jsonl",
    "item": "syn-R3-021"
   },
   {
    "id": "omni:omni/01328",
-   "jaccard": 0.521,
+   "jaccard": 0.694,
    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/target_test.jsonl",
    "item": "intermediate_algebra/test/00061"
   },
   {
    "id": "math:number_theory/train/00579",
-   "jaccard": 0.619,
-   "file": "/home/vineethb/ae-qis/work/a17-4b8b88e/data/cue/cue_v1_uncued.json",
+   "jaccard": 0.64,
+   "file": "/home/vineethb/ae-qis/work/a17-1ecd8f5/data/cue/cue_v1_uncued.json",
    "item": "algebra/test/01094"
   },
   {
+   "id": "math:intermediate_algebra/test/00083",
+   "jaccard": 0.509,
+   "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/target_test.jsonl",
+   "item": "intermediate_algebra/test/00295"
+  },
+  {
    "id": "math:intermediate_algebra/test/00832",
-   "jaccard": 0.526,
+   "jaccard": 0.604,
    "file": "/data/user_data/vineethb/qis/data/rescreen-k8-h/related_k8.jsonl",
    "item": "intermediate_algebra/train/00775"
   },
   {
    "id": "omni:omni/01202",
-   "jaccard": 0.775,
+   "jaccard": 0.7,
    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/target_test.jsonl",
    "item": "intermediate_algebra/test/00370"
   },
   {
+   "id": "omni:omni/01428",
+   "jaccard": 0.654,
+   "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/hard.jsonl",
+   "item": "intermediate_algebra/train/00827"
+  },
+  {
+   "id": "omni:omni/02611",
+   "jaccard": 0.562,
+   "file": "/home/vineethb/ae-qis/work/a17-1ecd8f5/data/authored/R3.jsonl",
+   "item": "syn-R3-095"
+  },
+  {
    "id": "omni:omni/01239",
-   "jaccard": 0.588,
+   "jaccard": 0.737,
    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/hard_reserve.jsonl",
    "item": "intermediate_algebra/train/00636"
   },
   {
    "id": "omni:omni/00682",
-   "jaccard": 0.923,
-   "file": "/home/vineethb/ae-qis/work/a17-4b8b88e/data/external/omni_tranche_v1.jsonl",
+   "jaccard": 0.889,
+   "file": "/home/vineethb/ae-qis/work/a17-1ecd8f5/data/external/omni_tranche_v1.jsonl",
    "item": "omni/01690"
   },
   {
    "id": "math:intermediate_algebra/train/00037",
-   "jaccard": 0.8,
+   "jaccard": 0.771,
    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/hard.jsonl",
    "item": "intermediate_algebra/train/01058"
   },
   {
    "id": "math:algebra/train/01258",
    "jaccard": 0.864,
-   "file": "/home/vineethb/ae-qis/work/a17-4b8b88e/data/cue/cue_v1_uncued.json",
+   "file": "/home/vineethb/ae-qis/work/a17-1ecd8f5/data/cue/cue_v1_uncued.json",
    "item": "algebra/test/00830"
   },
   {
@@ -81,90 +106,90 @@
   }
  ],
  "eligible_by_tier": {
-  "harder": 100,
-  "superhard": 130
+  "harder": 99,
+  "superhard": 126
  },
  "eligible_by_tier_source": {
-  "harder|Omni-MATH": 17,
-  "superhard|MATH": 61,
+  "harder|Omni-MATH": 16,
+  "superhard|MATH": 60,
   "superhard|OlympiadBench": 14,
-  "superhard|Omni-MATH": 55,
   "harder|OlympiadBench": 11,
+  "superhard|Omni-MATH": 52,
   "harder|MATH": 72
  },
- "superhard_selected": 128,
+ "superhard_selected": 126,
  "superhard_composition": {
   "source": {
-   "Omni-MATH": 54,
+   "Omni-MATH": 52,
    "MATH": 60,
    "OlympiadBench": 14
   },
   "technique": {
    "F4": 23,
-   "F5": 10,
+   "F5": 9,
    "F2": 38,
-   "F3": 34,
+   "F3": 33,
    "F8": 13,
    "F6": 2,
    "F7": 1,
    "F1": 7
   },
   "answer_type": {
-   "integer": 68,
-   "rational": 16,
+   "integer": 69,
+   "rational": 15,
    "expression": 10,
    "radical": 10,
-   "set-or-list": 24
+   "set-or-list": 22
   },
   "obstacle": {
    "approach_choice": 14,
    "hidden_substitution": 29,
-   "nonobvious_grouping": 27,
+   "nonobvious_grouping": 26,
    "case_analysis": 45,
-   "multi_factorization": 13
+   "multi_factorization": 12
   },
-  "families": 127,
-  "eligible_pool": 130
+  "families": 126,
+  "eligible_pool": 126
  },
  "source_cap_relaxed": {
-  "harder": 4
+  "harder": 3
  },
- "harder_selected": 98,
+ "harder_selected": 95,
  "harder_composition": {
   "source": {
-   "MATH": 70,
-   "Omni-MATH": 17,
+   "MATH": 69,
+   "Omni-MATH": 15,
    "OlympiadBench": 11
   },
   "technique": {
    "F6": 7,
    "F1": 19,
-   "F4": 19,
+   "F4": 18,
    "F3": 15,
-   "F2": 26,
+   "F2": 25,
    "F8": 5,
    "F7": 3,
-   "F5": 4
+   "F5": 3
   },
   "answer_type": {
-   "integer": 69,
+   "integer": 66,
    "rational": 14,
    "set-or-list": 6,
    "radical": 3,
    "expression": 6
   },
   "obstacle": {},
-  "families": 97,
-  "eligible_pool": 98
+  "families": 95,
+  "eligible_pool": 97
  },
  "cross_panel_checks": {
   "duplicate_ids": 0,
   "shared_families": 0,
-  "max_cross_jaccard": 0.431
+  "max_cross_jaccard": 0.411
  },
  "sha256": {
-  "superhard_v1.json": "928cc06fe7790dcb1265792781334cb589ba65de3abe753f21af2bf385e24e6a",
-  "harder_v1.json": "d6bd4dc03ebdb48e0e4aa523f4e7b52112e393ada040b152f9cc12e6bb402aa5",
-  "stress_v1.json": "586edc319394b3dddd356fcc5696d9ecdbe8bd44e5d51aa76d7833c6d6a49af8"
+  "superhard_v1.json": "0cf1cf93deb32d9978d1ca610f523589741c843b203e7428ab01b7f6d210f318",
+  "harder_v1.json": "0fb3490b38c5b8789c8f08168c7e8ce4549390f37e56fd87af923146432bd757",
+  "stress_v1.json": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d"
  }
 }
