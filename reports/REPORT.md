@@ -492,7 +492,36 @@ figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its 
 
 ### 9.1 Would capped answers succeed with more room?
 
-⟨PENDING: length diagnostic results (`qis.eval_extend`, D154).⟩
+Method (D154, fixed before any output). The question is what the capped answers would have done with more room. Each
+stress attempt that hit the 12,288-token cap was continued from its own saved tokens, with 4,096 more tokens allowed,
+so the total budget is 16,384 and the first 12,288 tokens are unchanged. Finished attempts were not regenerated. The
+12,288 score is the original stored score (every selected attempt was re-graded and matched); the 16,384 score uses the
+same grader on the full answer (an answer still capped scores 0). Decoding as in every evaluation (T 1.0, top_p 1.0);
+continuation seeds are shared by all four checkpoints; L40S GPUs. Tranche 1 is a fixed sample drawn before generation:
+64 problems (32 per tier, stratified by source), attempts 0–3, so 256 attempts per checkpoint.
+
+**Tranche 1** (counts are attempts out of 256; pass@1 weights problems equally):
+
+| Checkpoint | pass@1 at 12,288 | pass@1 at 16,384 | Capped at 12,288 | Recovered | Finished wrong | Still capped | Extra tokens per recovered answer |
+|---|---|---|---|---|---|---|---|
+| R-s101 | 71.5% | 75.8% | 54 | 11 | 5 | 38 | 16,805 |
+| U-s101 | 67.6% | 69.9% | 47 | 6 | 10 | 31 | 27,348 |
+| R-s202 | 67.6% | 71.1% | 56 | 9 | 13 | 34 | 20,331 |
+| U-s202 | 69.5% | 73.0% | 41 | 9 | 11 | 21 | 12,910 |
+
+| Seed | R − U at 12,288 | R − U at 16,384 | Change |
+|---|---|---|---|
+| 101 | 71.5 − 67.6 = +3.9 [−2.0, +10.2] | 75.8 − 69.9 = +5.9 [−0.4, +12.5] | +2.0 [−1.2, +5.1] |
+| 202 | 67.6 − 69.5 = −2.0 [−9.0, +4.3] | 71.1 − 73.0 = −2.0 [−8.6, +4.3] | 0.0 [−3.1, +3.1] |
+
+Few capped answers recover: 6–11 of 41–56 per checkpoint (11–20%). Most (52–68%) are still capped at 16,384 tokens,
+and the rest finish with a wrong answer. Extra room does not close the seed-202 gap: R and U each recover 9 answers, and
+R − U stays at −2.0 points. In seed 101, R recovers more (11 vs 6, mostly on SuperHard), so R − U widens by 2.0 points;
+the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`. ⟨PENDING: full panel (221 × 8) and
+the inspection of 12 preselected continuations.⟩
+
+This measures inference allowance for these four checkpoints only. It does not show what training with a longer cap
+would have produced.
 
 ### 9.2 When did R and U diverge?
 

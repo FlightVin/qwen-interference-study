@@ -1,0 +1,62 @@
+{
+ "VBED": {
+  "label": "R-s101-r128",
+  "prompt_id": "math:precalculus/train/00145",
+  "sample": 3
+ },
+ "XJCG": {
+  "label": "R-s101-r128",
+  "prompt_id": "math:intermediate_algebra/test/00780",
+  "sample": 1
+ },
+ "YYDG": {
+  "label": "R-s101-r128",
+  "prompt_id": "math:intermediate_algebra/train/00631",
+  "sample": 1
+ },
+ "GGLX": {
+  "label": "U-s101-r128",
+  "prompt_id": "omni:omni/01597",
+  "sample": 3
+ },
+ "JLUN": {
+  "label": "U-s101-r128",
+  "prompt_id": "math:intermediate_algebra/train/00631",
+  "sample": 1
+ },
+ "FWGH": {
+  "label": "U-s101-r128",
+  "prompt_id": "math:precalculus/train/00502",
+  "sample": 1
+ },
+ "GBSC": {
+  "label": "R-s202-r128",
+  "prompt_id": "omni:omni/01597",
+  "sample": 1
+ },
+ "UKKR": {
+  "label": "R-s202-r128",
+  "prompt_id": "omni:omni/03609",
+  "sample": 3
+ },
+ "UYQV": {
+  "label": "R-s202-r128",
+  "prompt_id": "omni:omni/02215",
+  "sample": 2
+ },
+ "ZWCM": {
+  "label": "U-s202-r128",
+  "prompt_id": "omni:omni/02215",
+  "sample": 2
+ },
+ "PVNM": {
+  "label": "U-s202-r128",
+  "prompt_id": "math:intermediate_algebra/test/00780",
+  "sample": 1
+ },
+ "ZUCB": {
+  "label": "U-s202-r128",
+  "prompt_id": "math:intermediate_algebra/train/00631",
+  "sample": 1
+ }
+}
