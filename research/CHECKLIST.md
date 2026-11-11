@@ -181,8 +181,8 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 **Opening: What we learned (A17 §7, six questions)**
 - 10.1 ok/stale — Q1 training gain vs base and the extra difference from the practice choice. Add H-s202 (pend).
 - 10.2 ok/pend — Q2 eight slots: factoring vs modular vs more hard practice, with token and GPU cost. Needs H-s202 for seed 202.
-- 10.3 gap — Q3 which problems produced the reversal; coverage vs reliability. Fix: add the length result (capped answers mostly stuck, not near-misses).
-- 10.4 gap — Q4 mechanism links observed; best competing explanation. Fix: reconcile "length drift" with Q4's run-to-run path dependence (length is how the run difference shows, not its cause).
+- 10.3 done (narrative rewrite 0551c10) — Q3 which problems produced the reversal; coverage vs reliability. Fix: add the length result (capped answers mostly stuck, not near-misses).
+- 10.4 done (0551c10) — Q4 mechanism links observed; best competing explanation. Fix: reconcile "length drift" with Q4's run-to-run path dependence (length is how the run difference shows, not its cause).
 - 10.5 ok/pend — Q5 transfer across original, Harder, SuperHard; where recognition, execution, later errors and truncation were distinguishable (audit). Add H-s202 r128 stress.
 - 10.6 ok — Q6 one larger experiment and what would change it (aligned with A19 Q4).
 
@@ -195,7 +195,7 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 **Body (A17 §1–6, A19 §1–3)**
 - 10.11 ok — Purpose of each comparison (R vs U, R/U vs H, base vs trained, branches, training records, held-out tests); primary vs reproducibility vs exploratory labels.
 - 10.12 ok/pend — Endpoints: absolute H/R/U, paired R − U, R − H, U − H per seed; original and common GPU; reproducibility table. H-s202 row pend; fallback "H-s202 round 116 (incomplete run)" outside the primary table (pend).
-- 10.13 gap — H-s202 provenance: a2-orig vs a2-r60 trajectory, resume checks, gate decision (D154), last verified round on dev curves. Fix: short run-history paragraph + §8 run table.
+- 10.13 done (20:05Z run table in section 9; fallback paragraph in section 2) — H-s202 provenance: a2-orig vs a2-r60 trajectory, resume checks, gate decision (D154), last verified round on dev curves. Fix: short run-history paragraph + §8 run table.
 - 10.14 ok — 3.1 reversal scatter, agreement/opposite/ties, band contributions, B1 detail, absolute R/U.
 - 10.15 ok — 3.2 coverage vs reliability: pass@1, pass@8, solved ≥ 1 of 32, 0/n, independent baseline split.
 - 10.16 done (19:48Z) — 3.3 GRPO signal by seed, window, role. Fix: add cumulative mixed groups, generated tokens and GPU-h per run beside the fractions.
@@ -215,4 +215,4 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 - 10.28 pend — Final cost table reconciled with the ledger (after H-s202 jobs).
 - 10.29 done (19:48Z) — Deliverables list in the report: both versioned panel manifests, machine-readable results, reproduction commands (add eval_extend, a19 analyses, recompute, stress shards), incomplete-cell inventory.
 - 10.30 ok/pend — Verification: independent recomputation (27/27), J/ΔJ figure checks (done), remaining figures, hashes (add fallback and H-s202 r128), clean-checkout render.
-- 10.31 gap — Narrative rewrite: each section opens with its question and a plain answer, then evidence, then caveats; transitions between sections; one term per concept; "What we learned" first (A17), "Four practical answers" next (A19), with cross-references instead of repeated numbers.
+- 10.31 done (0551c10; checked by script: numbers, 225 table rows, 11 figures, 39 placeholders) — Narrative rewrite: each section opens with its question and a plain answer, then evidence, then caveats; transitions between sections; one term per concept; "What we learned" first (A17), "Four practical answers" next (A19), with cross-references instead of repeated numbers.

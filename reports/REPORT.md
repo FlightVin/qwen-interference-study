@@ -844,7 +844,21 @@ H-s202 resume. Preempted allocations (4 rerun, 5 stress) are charged in full, in
 requeue. The H-s202 canonical figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its rounds
 1–60.
 
-⟨PENDING: run table with H-s202 a2-orig / a2-r60; final cost run.⟩
+**Which jobs produced each reported run.** All reported runs are attempt a2 (the A11 restart from round 0, D82); the
+first attempt a1 (jobs 11078086, 11078164, 11078180, 11078181, 11078184, 11078185) was superseded and is only charged
+above. A run that spans several jobs resumed from its last verified checkpoint.
+
+| Run | Canonical job chain (ledger IDs) | Rounds | Status |
+|---|---|---|---|
+| H-s101 | 11081726 | 1–128 | complete |
+| R-s101 | 11081724 → 11092945 | 1–128 | complete |
+| U-s101 | 11081725 | 1–128 | complete |
+| R-s202 | 11081729 → 11094190 (resumed at round 16, D105; counter offset D127) | 1–128 | complete |
+| U-s202 | 11081731 → 11094037 → 11097811 → 11100159 | 1–128 | complete |
+| H-s202 a2-orig | 11082192 | 1–64 | stopped (A16); records kept, not an endpoint |
+| H-s202 a2-r60 | 11082192 (rounds 1–60) → 11112377 (resumed at round 60, D143) | 61–128 | ⟨running⟩; the endpoint trajectory |
+
+⟨PENDING: final cost run.⟩
 
 **Incomplete cells** (status at the final commit; ⟨update at delivery⟩):
 
