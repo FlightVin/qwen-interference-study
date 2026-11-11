@@ -21,8 +21,8 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 11:34 AM [16:34Z] | H-s202 round 112 saved (LATEST); round 113 at 16:48Z | done |
 | 12:02 PM [17:02Z] | Tranche 1 done for all four: recovered 6–11 of 41–56 capped; R − U at 12,288 → 16,384: s101 +3.9 → +5.9, s202 −2.0 → −2.0 | done |
 | 12:33 PM [17:33Z] | H-s202 round 116 saved (LATEST); round 117 at 17:46Z | done |
-| 1:00 PM [18:00Z] | D150 fallback (projection 22:26Z > 22:15Z): copy LATEST (116) on CPU + 6 shards on preempt; move shards to general as length jobs end | planned |
-| ≈ 1:15 PM [18:15Z] | Stress full panels done (all four) | forecast |
+| 1:00 PM [18:00Z] | Fallback submitted: copy 11118844 done 18:02Z (round 116, hash ok); shards 11118845–51 | done |
+| 1:20 PM [18:20Z] | Stress full panels done (all four); R − U unchanged at 16,384 | done |
 | ≈ 2:30 PM [19:30Z] | Sealed-test continuation done (four checkpoints, D155) | forecast |
 | ≈ 2:00–3:30 PM [19:00–20:30Z] | Fallback test (round 116) done; shards move to general as length jobs end | forecast |
 | 4:00 PM [21:00Z] | A20 ends: general back to 3 | fixed |
@@ -32,19 +32,17 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 5:15–6:50 PM [22:15–23:50Z] | H-s202 round-128 sealed test; then stress r128 | forecast; may land before the deadline |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (18:03Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
+## Work and GPUs (18:25Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 118) |
-| running | general 2 | 11118448 | `qis-len-R-s101` stress full panel (last of four) |
-| running | general 3–6 | 11118658, 11118660, 11118661, 11118662 | `qis-lentest-*` sealed-test continuation (D155) |
-| running | CPU | 11118844 | `qis-h202-fallback-copy` (round 116 → `ckpt/qis-main-H-s202-sym-fallback`) |
-| queued (dependency on the copy) | general 7–8 | 11118845, 11118846 | fallback shards k0, k1 |
-| queued (dependency on the copy) | preempt 1–4 | 11118847, 11118849, 11118850, 11118851 | fallback shards k2–k5 (move to general as slots free) |
-| running | CPU | 11112647 | CPU standby (babel-n5-20) |
-| done | — | 11118245, 11118248, 11118444 | stress full panels U-s202, U-s101, R-s202 |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 119) |
+| running | general 2–5 | 11118658, 11118660, 11118661, 11118662 | `qis-lentest-*` sealed-test continuation (D155) |
+| running / starting | general 6–8 | 11118845, 11118846, 11118847 | fallback shards k0, k1, k2 (k2 moved from preempt 18:20Z) |
+| queued (Slurm priority) | preempt 1–3 | 11118849, 11118850, 11118851 | fallback shards k3–k5 → general as lentest jobs end |
+| running | CPU | 11112647 | CPU standby |
+| done | — | 11118844; 11118245, 11118248, 11118444, 11118448 | fallback copy; four stress full panels |
 | blocked (by time) | — | — | endpoint shards and stress r128 at RUN_COMPLETE |
-Unused: preempt 2 of 6 (no other ready GPU work).
+Unused: preempt 3 of 6 (no other ready GPU work).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
@@ -64,8 +62,8 @@ practice (U) or more hard practice (H)? Primary contrast: seed-wise R − U pass
 
 ## Uncertain
 - Seed-level length drift against an arm effect (A9.4). Two seeds cannot separate them; no task within scope can.
-- Would capped answers succeed with more room? Tranche 1 (64 × 4 per checkpoint): few do (13–22% of capped); s202 R − U
-  unchanged at 16,384 (−2.0 → −2.0, change 0.0 [−3.1, +3.1]); s101 +3.9 → +5.9. Full panel running.
+- Would capped answers succeed with more room? Full stress panel (D154): few do (12–15% of capped); R − U at 12,288 →
+  16,384: s101 +4.2 → +4.1 (−0.1 [−1.1, +1.0]); s202 −2.7 → −2.1 (+0.5 [−0.5, +1.5]). Sealed-test continuation running (D155).
 - When R and U diverged within a seed: no matched intermediate checkpoint pair survives; dev evals and logs only.
 - H-s202 r128 endpoint and stress cell: likely after the deadline → reported as incomplete cells.
 - Why U-s101 reran non-identically on the same GPU type (unknown; scores unaffected).
@@ -75,7 +73,7 @@ D146 (3 general GPUs carry A17), D149 (H-s202 test as 6 shards), D150 (fallback 
 D154 (A19: gate kept; length diagnostic by exact continuation; sample fixed).
 
 ## Next actions
-1. Full-panel length phases (U-s202 11118245, U-s101 11118248 running; R-s202 11118444, R-s101 11118448 queued); blind read of 12 preselected continuations (running).
+1. Sealed-test continuation (4 jobs) → fill Q2 sealed-test rows; fallback shards → "H-s202 round 116" row.
 2. 18:00Z: apply D150; submit fallback copy (or `-g`) and `qis-test-H-s202-fb-k0..k5` (8.1b).
 3. Analyses: length diagnostic (9.3d, 9.3e); divergence timing and per-tier stress table (9.4).
 4. REPORT: four questions (9.6); incomplete-cell list; verification (8.8, 9.7).
