@@ -718,6 +718,20 @@ Run on a compute node, never on a login node, with `P=/data/user_data/$USER/qis`
 | Training analyses (sections 2–4) | `python -m qis.analysis.a17_train $P/runs <out> --diag $P/diag-local/r0/diag_r0.jsonl $P/diag-local/r64/diag_r64.jsonl --diag-ref research/evidence/a15/diag_r0_ref.jsonl research/evidence/a15/diag_r64_ref.jsonl --gpu-hours reports/tables/cost.json` |
 | Stress analysis (section 5) | `python -m qis.analysis.a17_stress $P/data/stress/stress_v1.json $P/stress-eval <out>`; figure: `python -m qis.analysis.a17_stress plot <out> <fig dir>` |
 | Response audit packets (section 5) | `python research/evidence/a17/audit/build.py research/evidence/a17/panels/audit_sample_v1.json` |
+| Length diagnostic, stress (section 9.1; D154) | `python -m qis.eval_extend --model $MODEL --ckpt $P/ckpt/<run>/round_0128 --panel $P/data/stress/stress_v1.json --panel-key stress --records $P/stress-eval/<label>/records.jsonl.gz --out <dir>/t1 --select tranche1`, then `--select rest --exclude <dir>/t1 --out <dir>/rest` |
+| Length diagnostic, sealed test (section 9.1; D155) | same with `--panel $P/data/main-v1/target_test_sealed.json --panel-key test --records $P/test-eval/qis-test-<run>/records.jsonl.gz --select all --seed-label extend-test-v1` |
+| Length analysis | `python -m qis.analysis.a19_length $P/data/stress/stress_v1.json $P/length-diag <out> --model $MODEL`; sealed test: `python -m qis.analysis.a19_length $P/data/main-v1/target_test_sealed.json $P/length-test <out> --panel-key test --sets all=all` |
+| Divergence timing (section 9.2) | `python -m qis.analysis.a19_divergence research/evidence/a17/analysis/train <out>` |
+| Independent recomputation (no project code) | `python3 research/audits/a19/recompute.py $P <out.json>` |
+| Stress cell as shards (H-s202, D156) | `python -m qis.eval_merge --split 3 $P/data/stress/stress_v1.json stress <prefix>`, one `evaluate_ckpt` per shard (n 8, seed label stress-v1), then `python -m qis.eval_merge ... stress <out> <shard dirs>` |
+
+**Deliverables in this repository.** Report and figures: `reports/REPORT.md`, `reports/figures/a17/`. Versioned panel
+manifests: `data/stress/harder_v1.json`, `data/stress/superhard_v1.json`, `data/stress/stress_v1.json` (rubric
+`research/evidence/a17/panels/RUBRIC-stress-v1.md`, annotations under `research/evidence/a17/panels/`). Machine-readable
+results: `research/evidence/a17/analysis/{test,test-cgpu,train,stress}/*.json`, `research/evidence/a19/length/{t1,full,test}/length.json`,
+`research/evidence/a19/divergence/divergence.json`, `research/evidence/a17/audit/audit_merged.json`, `reports/tables/cost.json`,
+`research/evidence/a17/manifest/manifest.json`. Verification records: `research/audits/a19/`. Attempt records (large) stay
+on the cluster under `$P/{test-eval,test-eval-cgpu,stress-eval,length-diag,length-test}`.
 
 Frozen inputs and their sha256: sealed test `2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca`,
 stress panel `757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d` (rehashed 14:51Z, 11 Nov).
