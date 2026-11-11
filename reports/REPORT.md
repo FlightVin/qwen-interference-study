@@ -73,7 +73,25 @@ L40S for every cell, unchanged code, and the original per-item sampling seeds. S
 rerun should reproduce its original exactly, and an R rerun changes only the hardware. H-s101 and the base model
 already ran on L40S under this recipe, so their originals are the common cells.
 
-⟨PENDING: common-GPU table and reproducibility table (identical attempts, identical c/32, Δ pass@1).⟩
+| Seed | H | R | U | R − U | R − H | U − H |
+|---|---|---|---|---|---|---|
+| 101 | 77.0% | 82.3% | 77.8% | 82.3 − 77.8 = +4.4 [+2.4, +6.5] | 82.3 − 77.0 = +5.3 [+2.5, +8.2] | 77.8 − 77.0 = +0.9 [−1.8, +3.5] |
+| 202 | ⟨PENDING⟩ | 76.1% | 79.2% | 76.1 − 79.2 = −3.1 [−6.0, −0.4] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+| Mean | ⟨PENDING⟩ | 79.2% | 78.5% | 79.2 − 78.5 = +0.7 [−1.0, +2.3] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+
+How closely each rerun reproduced its original (4,096 attempts each; every request seed identical):
+
+| Checkpoint | GPU: original → rerun | Identical token sequences | Identical score per problem (c/32) | pass@1 rerun − original |
+|---|---|---|---|---|
+| R-s101 | L40 → L40S | 48/4,096 | 62/128 | 82.3 − 81.9 = +0.4 [−0.8, +1.6] |
+| R-s202 | L40 → L40S | 133/4,096 | 46/128 | 76.1 − 74.8 = +1.3 [+0.2, +2.5] |
+| U-s101 | L40S → L40S | 1,964/4,096 | 79/128 | 77.8 − 77.7 = +0.1 [−1.0, +1.2] |
+| U-s202 | L40S → L40S | 4,096/4,096 | 128/128 | 79.2 − 79.2 = +0.0 |
+
+The GPU type does not explain the seed reversal. On one GPU type, R − U is still +4.4 points in seed 101 and −3.1
+in seed 202. A rerun moved pass@1 by at most 1.3 points, even where most token sequences changed. Even the same GPU type
+does not guarantee identical sequences: U-s202 reproduced exactly, but U-s101 matched on only 48% of attempts (a
+different node and a run two days later; the cause is unknown).
 
 ![Original and common-GPU endpoints](figures/a17/endpoints.png)
 

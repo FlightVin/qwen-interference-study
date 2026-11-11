@@ -959,3 +959,25 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    fill REPORT sections from D151/D152.
 7. **Reconciliation.** Live IDs 11112377, 11112397 and standby 11112647 are ledger rows; 11115377 completed. Watcher re-armed
    after the R-s101-r64 event (task bqhmii0g8).
+
+## Review 100 — 2026-11-11 11:50Z (6:50 AM EST Wed)
+1. **Changes.**
+   - Response audit done (D153): 96 responses, two blind reads each, category agreement 88/96. 29 of 70 failure reads judged
+     fixable by more factoring practice. Grader limitation found (separate boxes → last box only); sealed test affected by
+     ≤ 3/4,096 attempts per cell (≤ 0.07 points).
+   - cgpu U-s101 11112397: eval finished 11:18Z at the moment of preemption (third job with this pattern, after 11113928
+     and 11115377). Moved to general; completed 11:53Z; ckpt hash verified. U-s101 L40S 0.778 vs original 0.777.
+   - Common-GPU table complete for R and U: s101 R − U 0.823 − 0.778 = +0.044 [+0.024, +0.065]; s202 −0.031 [−0.060,
+     −0.004]; mean +0.007 [−0.010, +0.023]. New: same GPU type is not always bit-identical (U-s101 1,964/4,096 identical
+     sequences; U-s202 4,096/4,096). pass@1 moved ≤ 1.3 points in every rerun. REPORT §1 filled; endpoints figure redrawn.
+   - CPU standby 11112647 was preempted 11:14Z and requeued on babel-m5-24 (running).
+2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
+3. **Distinguishing task.** None within scope. H-s202's endpoint adds the seed-202 H cell; it cannot separate run from arm.
+4. **Schedule.** H-s202 rounds 94–96 ran ×1.02 of H-s101 (len_mean fell to 4,292–4,344); round 96 at 11:13Z, then the r96
+   eval. Cumulative ×1.24 since round 66. Round 128 ≈ 21:20Z (×1.1) to 22:50Z (×1.27); RUN_COMPLETE ≈ 1 h later
+   (22:20Z–23:50Z); six-shard endpoint ≈ 1 h after that → 23:20Z–00:50Z. Endpoint before 00:30Z: possible, not likely.
+   D150 fallback stays at 18:00Z (decide by the rule then). Report: on time.
+5. **GPUs.** General 1/3 (H-s202). Preempt 0/6. Within limits.
+6. **Most important.** REPORT fill continues (What we learned item 1–2 wording with cgpu; section 8 run/cost table;
+   incomplete-cell list). Fix the endpoints legend overlap.
+7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger rows. Watcher re-armed (task bo4i0sb9k).

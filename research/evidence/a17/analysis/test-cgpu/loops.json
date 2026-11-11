@@ -405,7 +405,12 @@
     "summary_c_mismatch_problems": 0,
     "finish_field": true
    },
-   "U-s101": "missing",
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s101",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
    "U-s202": {
     "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s202",
     "record_lines": 4096,
