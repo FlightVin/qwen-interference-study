@@ -936,3 +936,26 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 7. **Reconciliation.** Live job IDs 11112377, 11112397, 11113928, 11115377 and standby 11112647 are ledger rows. Watcher alive
    (pid 22415).
 - 09:58Z correction to Review 98 item 1: 11113928 was not lost. Its evaluation wrote summary.json at 09:44:33Z, the moment of preemption; the requeued job skipped the completed phases in 26 s on general.
+
+## Review 99 — 2026-11-11 10:51Z (5:51 AM EST Wed)
+1. **Changes.** Stress R-s101-r64 11115377: its evaluation finished at 10:13:43Z (pass@1 0.643, 1,768/1,768 attempts, 0 unknown,
+   ckpt hash verified). Slurm logged that same second as a preemption and requeued it. I moved it to general, where it skipped
+   the finished phases and completed at 10:52Z. `a17_stress` rerun on 8 of 9 cells (H-s202-r128 still missing).
+   - s101, all 221 stress problems: R 0.695, U 0.653, H 0.641. R − H +0.054 [+0.025, +0.082]; U − H +0.012 [−0.014, +0.038].
+   - R-s101 r64 → r128: 0.643 → 0.695, +0.053 [+0.030, +0.076]. Truncation term +0.049, accuracy term +0.003: the late gain is
+     fewer capped answers (26.1% → 20.5%), not better accuracy on finished answers.
+   - Check from 8.5 done: equal solved counts across cells are coincidence. Raw records differ (distinct hashes and correct
+     totals); solved sets differ by 7–16 problems per pair (independent script on the records).
+2. **Competing explanation still plausible.** Seed-level length drift (run property) against an arm effect. Two seeds cannot
+   separate them (A9.4). New this hour: within R-s101, the r64 → r128 gain is also a truncation change, so length is the main
+   moving part in every stress contrast.
+3. **Distinguishing task.** None within scope (needs more seeds). Report it as the open question.
+4. **Schedule.** H-s202 round 93 at 10:36Z. Rounds 66→93 ran ×1.267 of H-s101; rounds 90→93 ×1.75 (len_mean 5,905–6,533).
+   H-s101 needed 35,229 s for rounds 93→128. Round 128 ≈ 22:30Z (×1.215) to 23:20Z (×1.3); RUN_COMPLETE ≈ 23:30Z–00:20Z. The
+   D150 fallback trigger (RUN_COMPLETE later than 22:15Z) is already met; the fallback runs at 18:00Z (expected round 112–116).
+   cgpu U-s101 rerun: running since 07:02Z, ETA ≈ 11:30Z. Report: on time; H-s202 endpoint test after the deadline.
+5. **GPUs.** General 1/3 (H-s202). Preempt 1/6 (cgpu U-s101). CPU standby 11112647. Within limits.
+6. **Most important.** Prepare the D150 fallback recipes now (checkpoint copy + six shards), so 18:00Z needs only a submit. Then
+   fill REPORT sections from D151/D152.
+7. **Reconciliation.** Live IDs 11112377, 11112397 and standby 11112647 are ledger rows; 11115377 completed. Watcher re-armed
+   after the R-s101-r64 event (task bqhmii0g8).
