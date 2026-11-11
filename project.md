@@ -811,3 +811,60 @@ Thu 12 Nov 00:30Z**. Verbatim:
 Applied: `research/STATE.md` carries a "Timeline" table (EST and UTC, from observed throughput) and a "GPUs in use" table,
 updated at every hourly review and at every submission or job end. This overrides the harness rule that STATE holds no job
 states, for these two sections only. Recorded as CHECKLIST 0.25.
+
+## 33. Amendment A19 (owner, received 2026-11-11 ~16:03Z = Wed 11:03 AM EST): use the remaining GPU allocation to finish the study and explain the length effect
+
+Verbatim:
+
+> # Use the remaining GPU allocation to finish the study and explain the length effect
+>
+> Continue autonomously through **Wednesday, November 11 at 7:30 PM EST**. Record this amendment in `project.md`, `research/STATE.md`, `research/CHECKLIST.md`, and `research/DECISIONS.md`. Keep the hourly scientific reviews running. Start by reconciling live Slurm state, the project ledger, retained checkpoints, and free storage. The 10:58 AM snapshot is the starting point; schedule from what is true now.
+>
+> ## 1. Protect the final H-s202 result and shorten its critical path
+>
+> Keep H-s202 training uninterrupted. Prepare the six sealed-test shards, the stress evaluation, and the merge and verification jobs now. Check what actually happens between the final optimizer update, the durable round-128 save, and `RUN_COMPLETE`. If the final model can be verified before the marker, release evaluation as soon as the immutable weights, round number, final-step provenance, and checksum all pass. Verify afterward that the completed run identifies the same weights. If the marker provides an integrity guarantee you cannot independently establish, retain the existing gate.
+>
+> Apply the authorized intermediate fallback rule. Keep its scores clearly labeled with the actual round and outside the primary endpoint table. Once the verified endpoint is available, prioritize its complete 128-problem sealed evaluation, followed by its frozen stress-panel cell. Use independent shards with unique attempt IDs and verify the full set before publishing a score. Do not delay the final endpoint to finish optional diagnostics.
+>
+> ## 2. Use spare GPUs now to test whether longer answers would actually succeed
+>
+> This is the highest-value additional experiment. The original seed-202 test scores were R 74.8% and U 79.2%. Their difference was largely associated with truncation. Accuracy among responses that finished cannot tell us what the capped responses would have done with more room.
+>
+> - Run an **exploratory evaluation-only length diagnostic** on the four final R/U checkpoints, covering both seeds. Use the frozen stress panels, where the reversal also appeared. Before generating anything, draw a fixed sample stratified by panel and source, independent of arm outcomes. A practical first tranche is **64 problems, 32 per tier, four attempts per problem and checkpoint**. Use the same problems and attempt schedule for all four models. Preserve the original sealed-test and stress scores.
+> - First inspect existing raw records. If exact continuation from a saved capped prefix is supported and validated, extend eligible attempts from **12,288 to 16,384 response tokens**. Preserve the original tokens, remaining context capacity, and grading rule. Otherwise, generate fresh trajectories to 16,384 and score **each trajectory twice**: once as it would have scored under the frozen 12,288 rule, and once at 16,384. This gives a within-trajectory comparison even if a fresh rollout differs from the original. Test the cutoff implementation on boundary cases before launching the full batch.
+> - Report, per arm and seed, **success at both caps; attempts reaching the first cap; additional correct answers; answers that eventually finished incorrectly; answers still capped; and extra generated tokens per additional success**. Show whether R−U changes direction or magnitude at the longer cap. Keep denominators visible. Use paired problem-level uncertainty and report sparse counts plainly.
+> - Inspect a small, preselected sample of extended responses. Did extra tokens complete sound reasoning, repair an error, continue a loop, or only delay an incorrect answer? If few answers recover, that is informative. If many recover, quantify whether recovery favors one arm. Either outcome concerns **inference allowance for these checkpoints**. It does not establish what training with a longer cap would have produced.
+>
+> Benchmark a small shard first. Give the four checkpoints equal coverage before adding attempts. Use one GPU type where feasible, and record hardware and sampling settings.
+>
+> ## 3. Fill the most informative checkpoint gaps
+>
+> Inventory actual retained weights before submitting jobs. The current stress table includes **R-s101 at round 64 and H-s202 at round 64**. Those cells come from different arms and seeds, so they cannot show when R and U began to diverge within a seed.
+>
+> If suitable checkpoints exist, evaluate the missing partner for a **same-seed, same-round R/U comparison** on both stress panels. Prefer a round with both partners available. Show absolute success, truncation, and accuracy among finished answers for both arms at that round and at the endpoint. If no matched intermediate pair survives, use the fixed development evaluations and training logs to locate when lengths and success began to diverge. State the limitation and avoid retraining to recreate missing weights.
+>
+> Keep the stress panels frozen at their validated sizes, **Harder-95 and SuperHard-126**. Report each tier separately, including baseline success and truncation, so the reader can judge whether SuperHard was empirically harder. Do not append questions after seeing the results.
+>
+> ## 4. Keep useful work queued and the report audit moving
+>
+> Use up to **3 general GPUs and 6 preempt GPUs**, subject to account availability, with at most 30 CPUs under the existing guard. Submit ready, restartable diagnostic shards to preempt now. Backfill free general slots with shards that can finish or yield before the endpoint needs them. Preserve completed attempt records across preemption. Use exact ledger-owned job IDs, prevent duplicate execution, and leave other projects' jobs and files alone. Do not reserve speculative standbys.
+>
+> At each job completion or preemption, reconcile the queue and refill eligible slots promptly. In `STATE.md`, distinguish **running, queued, and genuinely blocked** work. For unused capacity, give the concrete reason and next eligible job. Keep the CPU verification, figure checks, and clean-checkout render moving in parallel. Once outputs are verified, idle capacity is preferable to another redundant rerun.
+>
+> ## 5. Deliver the scientific answer
+>
+> The report must let us answer four practical questions below. Specifically, update your checklist to necessitate these analyses in the final report in addition to existing item:
+>
+> 1. **Was related practice worth the training slots?** Give base, H, R, and U held-out scores for each seed, plus prompt, token, and GPU costs. State which comparisons replicate across seeds.
+> 2. **Did the policy lose mathematical accuracy, or did it become less likely to finish within budget?** Present the existing descriptive decomposition beside the new within-trajectory length experiment. If the answers differ by seed, explain each seed separately.
+> 3. **When did the difference emerge, and did it extend to harder problems?** Use comparable checkpoints, show absolute scores for both stress tiers, and distinguish measured trajectories from gaps in checkpoint coverage.
+> 4. **What should the next experiment change?** Decide whether the strongest evidence calls for more training seeds, better control of response length, or a different choice of auxiliary practice. Name the observation that most influenced that judgment.
+>
+> Show both absolute values beside every delta. Independently recompute the headline results, check the embedded J and ΔJ figures against their source tables, and reconcile the final costs. One specific audit item: `CHECKLIST.md` reports 29 "yes," 27 "no," and 10 "unclear" judgments out of 70 failure reads. Those counts sum to 66. Resolve the remaining four from raw records and distinguish **35 failed responses** from **70 annotator reads** before interpreting that audit.
+>
+> Deliver the verified Markdown report, figures, tables, and a precise inventory of any incomplete cells by **7:30 PM EST**. If time tightens, preserve the final H-s202 sealed test, a balanced four-checkpoint length diagnostic, and independent verification first.
+
+Reconciliation at receipt (16:05Z): H-s202 11112377 running (general, round 109 at 15:40Z, LATEST round 108); CPU standby
+11112647 pending (Priority). Retained weights: H-s101 r128; H-s202 r64, r108; R-s101 r64, r128; R-s202 r128 (+ two `.tmp`
+partial saves r4, r12, not usable); U-s101 r128; U-s202 r128. No same-seed R/U pair exists at any intermediate round.
+Storage: 359/500 GB used, 142 GB free (project 188 GB).

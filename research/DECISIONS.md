@@ -984,3 +984,31 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   4), so every response is read twice by different agents. Agreement is reported per category.
 - **Use.** Report-only (section 5). It answers "would more direct factoring practice plausibly fix these failures?" It
   changes no panel, score or decision.
+
+## D154 — 2026-11-11 16:30Z — A19 recorded; length diagnostic by exact continuation; H-s202 gate kept (EXPLORATORY design, fixed before any output)
+- **A19** (owner, ~16:03Z; `project.md` §33) recorded verbatim. Deadline unchanged: Thu 12 Nov 00:30Z (Wed 7:30 PM EST).
+- **Reconciliation (16:05Z).** H-s202 11112377 running (general); standby 11112647 pending. Retained weights: H-s101 r128;
+  H-s202 r64, r108 (moving); R-s101 r64, r128; R-s202 r128; U-s101 r128; U-s202 r128 (R-s202 `round_0004.tmp`,
+  `round_0012.tmp` are partial saves, not used). Storage 359/500 GB.
+- **H-s202 critical path (A19 §1).** `qis.train.run` order at round 128: round record → dev evaluation (`eval_rounds`,
+  ≈ 60–75 min) → blocking save (`.tmp`, hash, fsync, re-read hash, rename, LATEST.json) → `saver.wait` → `complete` event →
+  `RUN_COMPLETE`. The round-128 weights reach disk only after the dev evaluation; `RUN_COMPLETE` follows the verified save
+  within seconds and adds the `saver.last.ok` guarantee. Releasing on the checkpoint before the marker would save seconds,
+  so the existing gate stays. To remove reaction delay, the endpoint shards are submitted with `--after` the training job.
+- **No matched intermediate R/U pair (A19 §3).** Only R-s101 and H-s202 keep round 64. Within-seed divergence will be located
+  from the fixed dev evaluations and training logs; no retraining.
+- **Length diagnostic (A19 §2): exact continuation.** Supported: `Rollout.generate` takes token ids; the engine context is
+  PROMPT_CAP + 16,384. Each capped stress-v1 attempt (finish `length`, exactly 12,288 tokens) is continued from prompt ids +
+  its own 12,288 response ids with 4,096 more tokens (T 1.0, top_p 1.0, seed `extend/stress/<id>/extend-v1/s<j>`, the same
+  for all checkpoints). Finished attempts are not regenerated. Score at 12,288 = the stored reward (every selected attempt is
+  re-graded and must match); score at 16,384 = same verifier on the full trajectory (still capped → 0). Code
+  `qis.eval_extend`; boundary tests `tests/test_eval_extend.py` run in each job's precheck.
+- **Sample (fixed now).** Tranche 1: 64 problems, 32 per tier, sources by largest remainder (Harder MATH 23 / Omni 5 / Olympiad
+  4; SuperHard 15 / 13 / 4), items in sha256(`a19-length-v1/<id>`) order, samples 0–3 → 256 attempts per checkpoint.
+  Tranche 2 ("rest") = all other attempts of the 221 × 8 panel, run only after tranche 1 in the same job.
+- **Checkpoints and hardware.** R/U × s101/s202 round 128; L40S only. Canary R-s202 first; the other three after its
+  tranche-1 summary is checked.
+- **Inspection sample (preselected).** Per checkpoint, the 3 tranche-1 attempts capped at 12,288 with the smallest
+  sha256(`a19-inspect/<id>/<sample>`); read after extension and classified: completed sound reasoning / repaired an error /
+  continued a loop / delayed an incorrect answer.
+- **Scope of the claim.** Inference allowance for these checkpoints only; not what training with a longer cap would give.
