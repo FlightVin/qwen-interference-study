@@ -28,6 +28,7 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 2:03 PM [19:03Z] | Endpoint shards pre-submitted `--after` training (11119210–11119217) | done |
 | 2:30 PM [19:30Z] | Sealed-test continuation done (all four R/U): R − U unchanged within 1 point | done |
 | 2:34 PM [19:34Z] | H-s202 round 124 saved (LATEST) | done |
+| 2:54 PM [19:54Z] | Fallback merged: H-s202 round 116 (incomplete run) sealed test 74.3% pass@1, 14.8% capped | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | ≈ 3:40 PM [20:40Z] (20:37–20:56Z) | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
@@ -40,7 +41,6 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | State | Pool | Job | Work |
 |---|---|---|---|
 | running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round 125) |
-| running | general 2 | 11118851 | fallback shard k5 (k0–k4 done) → merge → "H-s202 round 116" |
 | running | general 3–4 | 11119262, 11119264 | `qis-lentest-H-s101`, `qis-len-H-s101` (D157) |
 | queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216 | endpoint shards k0–k4 |
 | queued (dependency; preempt for A22) | preempt | 11119217 | endpoint shard k5 → general when a general job ends |
