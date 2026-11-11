@@ -874,3 +874,23 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    r64 cells. Stress endpoint cells take ≈ 2 h each (R/U-s101 at 1.8 h and still running).
 7. **Reconciliation.** Live jobs 11112377, 11112396–8, 11112937/38/40, 11113928, 11115052 and standby 11112647 are ledger rows.
    Watcher bqye6eecl alive.
+
+## Review 95 — 2026-11-11 06:50Z (1:50 AM EST Wed)
+1. **Changes.** Common-GPU R-s202 rerun done (L40S pass@1 0.761 vs original L40 0.748; truncated 12.4% vs 13.1%); R − U against the
+   original U-s202 (L40S) is −0.031 (original −0.044). Stress R-s202-r128 moved to general (11112940, running). Stress endpoints done:
+   R-s101-r128 pass@1 0.695 (truncated 20.5%), U-s101-r128 0.653 (23.0%); base 0.373. R-s101-r64 11115377 and H-s202-r64 11115378
+   submitted (preempt). H-s202 at round 79 (06:41Z).
+2. **Competing explanation still plausible.** Hardware is no longer a candidate for either seed (R−U keeps its sign on L40S, with
+   shifts of +0.003 and +0.013). Open: whether the seed-202 deficit is purely length/truncation (D142) or partly accuracy; the
+   L40S U-s202 rerun gives the matched-hardware decomposition with intervals.
+3. **Distinguishing task.** U-s202 rerun (general, ETA ≈ 09:00–10:20Z) → a17_test --cgpu-root (truncation term vs accuracy term on
+   matched hardware). Stress U-s202-r128 against R-s202-r128 tests whether the s202 sign holds on harder problems.
+4. **Schedule.** H-s202 rounds 76–79 averaged 851 s; rounds 66→79 took 10,325 s against 9,485 s for H-s101 (×1.09). Round 128 ≈
+   20:20Z, RUN_COMPLETE ≈ 21:20Z (range 20:45–22:15Z); six-shard test ≈ 23:00Z. Verdict: on time, slack ≈ 1.5 h for the H-s202 cell.
+   Preempt has started nothing since 04:02Z; the remaining stress cells (H-s101, U-s202 r128; two r64) and the U-s101 rerun need
+   ≈ 14 GPU-h, and general has ≈ 24 GPU-h free between ≈ 08:30Z and 20:30Z.
+5. **GPUs.** General 3/3 running. Preempt 0 running + 5 pending = 5/6 slots. Within limits.
+6. **Most important.** Move stress cells to general as slots free (order: U-s202-r128, H-s101-r128, R-s101-r64, H-s202-r64,
+   U-s101 rerun). Keep general free of new stress work from ≈ 20:30Z.
+7. **Reconciliation.** Live jobs 11112377, 11112397/98, 11112940, 11113928, 11115052, 11115377/78 and standby 11112647 are ledger
+   rows. Watcher re-armed after the U-s101 stress event.

@@ -50,8 +50,8 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
 
 ## Next actions
-1. Watch H-s202 (job 11112377; round 75 at 05:44Z, ×1.10 of H-s101; RUN_COMPLETE ETA ≈ 21:30Z (20:45–22:15Z), Review 94); at RUN_COMPLETE submit the 6 test shards.
-2. Common-GPU: R-s101 done (0.823 on L40S vs 0.819 on L40: hardware excluded for s101); R-s202 + U-s202 running (general); U-s101 preempted, optional; then rerun a17_test --cgpu-root.
-3. Stress evals (preempt, pending): base, R-s101, U-s101, R-s202; then H-s101, U-s202, R-s101 r64, H-s202 r64/r128.
+1. Watch H-s202 (job 11112377; round 79 at 06:41Z, ×1.09 of H-s101; RUN_COMPLETE ETA ≈ 21:20Z (20:45–22:15Z), Review 95); at RUN_COMPLETE submit the 6 test shards.
+2. Common-GPU: R reruns done (L40S 0.823/0.761 vs L40 0.819/0.748): hardware does not explain either sign. U-s202 rerun running (general); U-s101 optional; then a17_test --cgpu-root.
+3. Stress evals: base 0.373, R-s101-r128 0.695, U-s101-r128 0.653 done; R-s202-r128 running (general); H-s101, U-s202 r128 and two r64 cells pending → general as slots free. H-s202-r128 after RUN_COMPLETE.
 4. Response audit (D144) after stress evals; second-read agreement.
 5. REPORT rewrite (What we learned; figures embedded; absolute values with deltas; dev n=8 fix); verification audit; deliver.
