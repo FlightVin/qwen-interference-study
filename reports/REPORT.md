@@ -460,6 +460,44 @@ figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its 
 **Incomplete cells.** ⟨PENDING: final list.⟩ Known now: U-s101 round-64 local-update source not retained; seed 303 and
 clipping sensitivity deferred (A9); Harder has 95 and SuperHard 126 items, not 128.
 
+## 9. Length diagnostic and divergence timing (A19; exploratory)
+
+### 9.1 Would capped answers succeed with more room?
+
+⟨PENDING: length diagnostic results (`qis.eval_extend`, D154).⟩
+
+### 9.2 When did R and U diverge?
+
+No same-seed R/U checkpoint pair survives below round 128: the trainer kept only the latest checkpoint, plus round 64
+for R-s101 and H-s202. So the timing comes from measurements taken during training, not from new evaluations. Dev =
+53 problems × 8 attempts at fixed rounds (sd ≈ 2 points per value, D50). Shared hard prompts = the same hard prompts
+in the same order in every arm of a seed (2,048 answers per arm per 32-round window).
+
+| Seed | Dev round | R | U | R − U |
+|---|---|---|---|---|
+| 101 | 0 | 41.7% | 42.2% | −0.5 |
+| 101 | 32 | 54.2% | 60.1% | −5.9 |
+| 101 | 64 | 73.6% | 71.0% | +2.6 |
+| 101 | 96 | 74.8% | 68.4% | +6.4 |
+| 101 | 128 | 72.9% | 69.1% | +3.8 |
+| 202 | 0 | 40.3% | 42.2% | −1.9 |
+| 202 | 32 | 59.9% | 61.1% | −1.2 |
+| 202 | 64 | 61.3% | 67.9% | −6.6 |
+| 202 | 96 | 64.2% | 67.9% | −3.8 |
+| 202 | 128 | 65.6% | 70.3% | −4.7 |
+
+In both seeds the endpoint sign appeared between rounds 32 and 64, the first window after the cap rose from 8,192 to
+12,288 tokens at round 33. Training success on the shared hard prompts shows the same timing. In seed 101, R led U by
++3.7 to +7.2 points in 10 of the 11 eight-round bins after round 40 (U led by 0.6 points in rounds 49–56). In seed 202,
+U led by 4.5–6.1 points in rounds 33–48; after that, the gap stayed within ±7 points and changed sign often. Answer length on the shared hard prompts does not track the
+sign. In seed 202, R wrote shorter answers than U in every window after round 32 (4,435 vs 4,755 tokens in rounds
+33–64; 4,874 vs 5,590 in rounds 65–96), yet R was cut off more often on the test (section 3.3). Source:
+`research/evidence/a19/divergence/divergence.md`.
+
+What this cannot show: whether the split in rounds 33–64 is an arm effect or the point where two different runs of each
+arm took different paths. Checkpoint coverage has a gap: no R/U pair exists at rounds 32, 64 or 96 to evaluate on the
+stress panels.
+
 ## Reproduction
 
 Code: branch of this repository at commit ⟨final commit⟩. Every job was pinned to a commit; the ledger
