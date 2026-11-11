@@ -377,7 +377,37 @@ optimizer steps per round, 128 rounds; cap 8,192 tokens for rounds 1–32 and 12
 
 ## 8. What ran, compute, and incomplete cells
 
-⟨PENDING: run table with H-s202 a2-orig / a2-r60; cost table reconciled against the ledger including A17 jobs.⟩
+GPU-hours = elapsed time × GPUs allocated, summed over every allocation of every ledger job (225 jobs, 239
+allocations; `sacct -D` keeps requeued allocations). Failed, cancelled and preempted allocations are charged. CPU
+standby jobs are not ledger jobs and are not charged. "Canonical" = the job chains that produced the reported
+trajectories. Source: `../tables/cost.md`, from `reports/tables/sacct.txt`. PROVISIONAL (13:51Z, 11 Nov): H-s202 job
+11112377 counts its elapsed time so far; the final run replaces this table.
+
+| Category | Jobs | Allocations | GPU-h | of which canonical | CPU-h | Final states |
+|---|---|---|---|---|---|---|
+| CPU jobs | 126 | 131 | 0.0 | 0.0 | 31.0 | CANCELLED 12, COMPLETED 103, FAILED 11, PREEMPTED 5 |
+| common-GPU rerun (A17) | 4 | 8 | 18.9 | 0.0 | 151.1 | COMPLETED 4, PREEMPTED 4 |
+| local-update diagnostic | 8 | 8 | 14.9 | 0.0 | 118.9 | CANCELLED 4, COMPLETED 3, FAILED 1 |
+| main H-s101 | 2 | 2 | 33.6 | 29.5 | 268.9 | CANCELLED 1, COMPLETED 1 |
+| main H-s202 | 4 | 4 | 23.2 | 23.2 | 185.9 | CANCELLED 3, RUNNING 1 |
+| main H-s303 | 2 | 2 | 0.0 | 0.0 | 0.0 | CANCELLED 2 |
+| main R-s101 | 3 | 3 | 32.9 | 27.9 | 263.6 | CANCELLED 1, COMPLETED 1, FAILED 1 |
+| main R-s202 | 3 | 3 | 22.8 | 22.8 | 182.3 | CANCELLED 2, COMPLETED 1 |
+| main R-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
+| main U-s101 | 2 | 2 | 27.3 | 22.6 | 218.6 | CANCELLED 1, COMPLETED 1 |
+| main U-s202 | 5 | 5 | 25.6 | 25.6 | 205.0 | CANCELLED 2, COMPLETED 1, FAILED 2 |
+| main U-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
+| other GPU jobs (screening, calibration, smoke, A10/A11 studies) | 42 | 42 | 42.0 | 0.0 | 335.6 | CANCELLED 6, COMPLETED 29, FAILED 7 |
+| sealed test evaluation | 8 | 8 | 21.5 | 0.0 | 171.8 | CANCELLED 2, COMPLETED 6 |
+| strategy-cue panel (A15.4) | 2 | 2 | 2.2 | 0.0 | 17.7 | CANCELLED 1, COMPLETED 1 |
+| stress evaluation (A17) | 12 | 17 | 18.1 | 0.0 | 144.8 | CANCELLED 4, COMPLETED 8, PREEMPTED 5 |
+| **Total** | 225 | 239 | 283.0 | | 2295.2 | |
+
+A17 so far: common-GPU reruns 18.9 GPU-h, stress evaluations 18.1 GPU-h, H-s202 resume 12.2 GPU-h. Preempted
+allocations (4 rerun, 5 stress) are charged in full, including any work repeated after requeue. The H-s202 canonical
+figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its rounds 1–60.
+
+⟨PENDING: run table with H-s202 a2-orig / a2-r60; final cost run.⟩
 
 **Incomplete cells.** ⟨PENDING: final list.⟩ Known now: U-s101 round-64 local-update source not retained; seed 303 and
 clipping sensitivity deferred (A9); Harder has 95 and SuperHard 126 items, not 128.

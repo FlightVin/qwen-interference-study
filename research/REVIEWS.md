@@ -997,3 +997,20 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** REPORT fill: fix the endpoints legend overlap, then the section 8 run/cost table and incomplete cells.
 7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger rows; other running jobs are ae-dco-* (another
    project). Watcher alive (task bo4i0sb9k).
+
+## Review 102 — 2026-11-11 13:50Z (8:50 AM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 102 at 13:46Z; LATEST = round 100. len_mean 5,084–6,493 at rounds 99–102 (stays high).
+   - REPORT section 8: provisional compute table (sacct over all 225 ledger jobs, 239 allocations): 283.0 GPU-h, 2,295
+     CPU-h. A17 so far: common-GPU reruns 18.9, stress 18.1, H-s202 resume 12.2 GPU-h. `cost_table` gained the two A17
+     categories (3c184ed). Endpoints legend fixed (d0fb202).
+2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
+3. **Distinguishing task.** None within scope (no new seeds).
+4. **Schedule.** Rounds 98→102 ran ×1.11 of H-s101; ×1.21 since round 96 (eval included). Round 128 ≈ 21:35Z (×1.11) to
+   23:00Z (×1.30); RUN_COMPLETE ≈ 22:35Z–00:00Z; six-shard endpoint ≈ 23:35Z–01:00Z. Central case (×1.24): RUN_COMPLETE
+   23:30Z, past the D150 trigger (22:15Z). At 18:00Z LATEST is likely round 112 (round 116 projected ≈ 18:15Z). Report:
+   on time.
+5. **GPUs.** General 1/3, preempt 0/6. Within limits.
+6. **Most important.** Section 8 compute table (done, provisional). Next: incomplete-cell list and manifest table.
+7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger/standby rows; other running jobs are ae-dco-*.
+   Watcher alive (task bo4i0sb9k).

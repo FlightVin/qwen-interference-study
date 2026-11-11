@@ -50,7 +50,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
 
 ## Next actions
-1. Watch H-s202 (job 11112377; round 98 at 12:43Z; LATEST round 96; cumulative ×1.24 of H-s101 → round 128 ≈ 20:45Z–23:10Z, RUN_COMPLETE ≈ 21:45Z–00:10Z, central 23:40Z). D150 fallback decision at 18:00Z (recipes ready, 8.1b; central case meets the trigger). At RUN_COMPLETE submit the 6 endpoint shards.
+1. Watch H-s202 (job 11112377; round 102 at 13:46Z; LATEST round 100; ×1.11–1.30 of H-s101 → round 128 ≈ 21:35Z–23:00Z, RUN_COMPLETE ≈ 22:35Z–00:00Z, central 23:30Z). D150 fallback decision at 18:00Z (recipes ready, 8.1b; central case meets the trigger; LATEST then ≈ round 112). At RUN_COMPLETE submit the 6 endpoint shards.
 2. Common-GPU (D151) complete for R and U: s101 R − U on L40S 0.823 − 0.778 = +0.044 [+0.024, +0.065]; s202 −0.031 [−0.060, −0.004]. Reruns moved pass@1 ≤ 1.3 points. Same GPU type is not always bit-identical (U-s101 48% identical sequences, U-s202 100%).
 3. Stress evals (D152, 8 of 9 cells): s101 R − U +0.042 [+0.015, +0.068], R − H +0.054 [+0.025, +0.082]; s202 R − U −0.027 [−0.051, −0.002] = truncation −0.063 + accuracy +0.036. R-s101 r64 → r128 +0.053, almost all truncation term. H-s202-r128 after RUN_COMPLETE.
 4. Response audit done (D153): 29/70 failure reads fixable by more factoring practice; two-box grader limitation ≤ 0.07 pts on the sealed test.

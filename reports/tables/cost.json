@@ -14,13 +14,13 @@
    }
   },
   "other GPU jobs (screening, calibration, smoke, A10/A11 studies)": {
-   "jobs": 41,
-   "allocations": 41,
-   "gpu_h": 41.960833333333326,
-   "cpu_h": 335.556111111111,
+   "jobs": 42,
+   "allocations": 42,
+   "gpu_h": 41.96444444444444,
+   "cpu_h": 335.5633333333332,
    "gpu_h_canonical": 0.0,
    "states": {
-    "COMPLETED": 28,
+    "COMPLETED": 29,
     "FAILED": 7,
     "CANCELLED": 6
    }
@@ -83,13 +83,14 @@
    }
   },
   "main H-s202": {
-   "jobs": 2,
-   "allocations": 2,
-   "gpu_h": 11.01361111111111,
-   "cpu_h": 88.10888888888888,
-   "gpu_h_canonical": 0.0,
+   "jobs": 4,
+   "allocations": 4,
+   "gpu_h": 23.231944444444444,
+   "cpu_h": 185.85555555555555,
+   "gpu_h_canonical": 23.197499999999998,
    "states": {
-    "CANCELLED": 2
+    "CANCELLED": 3,
+    "RUNNING": 1
    }
   },
   "main R-s303": {
@@ -155,12 +156,35 @@
     "CANCELLED": 1,
     "COMPLETED": 1
    }
+  },
+  "common-GPU rerun (A17)": {
+   "jobs": 4,
+   "allocations": 8,
+   "gpu_h": 18.892222222222223,
+   "cpu_h": 151.13777777777779,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "COMPLETED": 4,
+    "PREEMPTED": 4
+   }
+  },
+  "stress evaluation (A17)": {
+   "jobs": 12,
+   "allocations": 17,
+   "gpu_h": 18.106111111111108,
+   "cpu_h": 144.84888888888887,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 4,
+    "COMPLETED": 8,
+    "PREEMPTED": 5
+   }
   }
  },
  "total": {
-  "jobs": 206,
-  "allocations": 211,
-  "gpu_h": 233.81916666666666,
-  "cpu_h": 1901.4166666666665
+  "jobs": 225,
+  "allocations": 239,
+  "gpu_h": 283.0394444444444,
+  "cpu_h": 2295.157222222222
  }
 }
