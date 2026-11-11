@@ -844,3 +844,16 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    general; finish all stress work on general by ≈ 19:30Z.
 7. **Reconciliation.** All live jobs are ledger rows (exact IDs): 11112377, 11112395–8, 11112932/37/38/40; standby 11112647.
    Other `ae-dco-*` jobs are not this project's. Watcher bnb00222j alive.
+
+## Review 93 — 2026-11-11 04:50Z (11:50 PM EST Tue)
+1. **Changes.** Stress base done (11112932: 1,768/1,768 attempts, pass@1 0.373, pass@8 0.688, 16 min). Stress R-s101-r128 11112937
+   and U-s101-r128 11112938 started on preempt (48 and 42 min). H-s101-r128 submitted (11113928, pending). H-s202 at round 71 (04:49Z).
+2. **Competing explanation still plausible.** Hardware (original R on L40, U on L40S) against length drift/truncation (D142, D148).
+3. **Distinguishing task.** Common-GPU R reruns: R-s101 ≈ 05:50Z, R-s202 ≈ 06:15Z (original durations 4.07 h and 4.48 h).
+4. **Schedule.** H-s202 rounds 67–71 averaged 717 s; rounds 66→71 took 3,584 s against 3,487 s for H-s101 (×1.03). Projection: round
+   128 ≈ 19:25Z, RUN_COMPLETE ≈ 20:25Z (range 20:00–21:30Z) → six-shard test ≈ 21:45–23:00Z → report verified by 00:30Z.
+   Verdict: on time, slack ≈ 1.5 h in the central case.
+5. **GPUs.** General 3/3 running. Preempt 3 running + 3 pending = 6/6 slots. Within limits.
+6. **Most important.** No action needed now; at R-rerun completion move U-s202 rerun and pending stress cells to general.
+7. **Reconciliation.** Live jobs 11112377, 11112395–8, 11112937/38/40, 11113928 and standby 11112647 are ledger rows. Watcher
+   b4frpa46w alive.

@@ -50,7 +50,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
 
 ## Next actions
-1. Watch H-s202 (job 11112377; round 66 at 03:49Z; RUN_COMPLETE ETA 20:00–22:20Z, D149); at RUN_COMPLETE submit the 6 test shards.
+1. Watch H-s202 (job 11112377; round 71 at 04:49Z, ×1.03 of H-s101; RUN_COMPLETE ETA ≈ 20:25Z (20:00–21:30Z), Review 93); at RUN_COMPLETE submit the 6 test shards.
 2. Common-GPU: R reruns 11112395/6 running; U 11112397/8 pending (preempt) → move to general when R ends; rerun a17_test.
 3. Stress evals (preempt, pending): base, R-s101, U-s101, R-s202; then H-s101, U-s202, R-s101 r64, H-s202 r64/r128.
 4. Response audit (D144) after stress evals; second-read agreement.
