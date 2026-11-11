@@ -457,8 +457,18 @@ figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its 
 
 ⟨PENDING: run table with H-s202 a2-orig / a2-r60; final cost run.⟩
 
-**Incomplete cells.** ⟨PENDING: final list.⟩ Known now: U-s101 round-64 local-update source not retained; seed 303 and
-clipping sensitivity deferred (A9); Harder has 95 and SuperHard 126 items, not 128.
+**Incomplete cells** (status at the final commit; ⟨update at delivery⟩):
+
+| Cell | Status | Reason | Where it would appear |
+|---|---|---|---|
+| H-s202 round-128 sealed test | ⟨pending⟩ | run finishes ≈ 6:05–6:45 PM EST; test ≈ 1 h after | section 1, Q1 |
+| H-s202 round-128 stress cell | ⟨pending⟩ | queued after the sealed test | section 5 |
+| H-s202 in the response audit | not done | audit sample fixed on r128 checkpoints before H-s202 existed (D144) | section 5 |
+| R − H and U − H for seed 202 | ⟨pending⟩ | needs the H-s202 endpoint | section 1, Q1 |
+| Same-seed R/U pair below round 128 | not possible | weights not retained (only R-s101 and H-s202 kept round 64) | section 9.2 |
+| U-s101 round-64 local-update source | not possible | checkpoint not retained | section 4 |
+| Seed 303, clipping sensitivity | not run | deferred by A9 | — |
+| Stress panels of 128 items | not possible | candidate pool exhausted: Harder 95, SuperHard 126 (D145) | section 5 |
 
 ## 9. Length diagnostic and divergence timing (A19; exploratory)
 
