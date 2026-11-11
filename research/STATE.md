@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-11 17:37Z (12:37 PM EST Wed; A19 ~16:03Z; A20 ~17:15Z: 8 general GPUs until 21:00Z). Timeline and GPU tables per A18 (`project.md` §32).
+Updated 2026-11-11 19:13Z (2:13 PM EST Wed; A19 ~16:03Z; A20/A21: 8 general GPUs until the final report). Timeline and GPU tables per A18 (`project.md` §32).
 
 ## Phase
 A17 completion plus A19 (`project.md` §31, §33; D154). Deadline: verified `reports/REPORT.md` by **Thu 12 Nov 00:30Z =
@@ -28,25 +28,24 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | ≈ 2:15 PM [19:15Z] | Sealed-test continuation R-s101, R-s202 done | forecast |
 | 2:03 PM [19:03Z] | Endpoint shards pre-submitted `--after` training (11119210–11119217) | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
-| 4:00 PM [21:00Z] | A20 ends: general back to 3 | fixed |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | 3:10–4:10 PM [20:10–21:10Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
 | 4:10–5:10 PM [21:10–22:10Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| 5:10–6:10 PM [22:10–23:10Z] | H-s202 round-128 sealed test | forecast; before the deadline |
-| 6:00–7:15 PM [23:00–00:15Z] | H-s202 stress r128 | forecast; may miss |
+| 5:00–6:00 PM [22:00–23:00Z] | H-s202 round-128 sealed test (6 shards in parallel) | forecast; before the deadline |
+| 5:45–6:45 PM [22:45–23:45Z] | H-s202 stress r128 (3 shards, D156) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (19:05Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
+## Work and GPUs (19:13Z; limits: general 8 until the final report (A21), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 122) |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 123) |
 | running | general 2–4 | 11118849, 11118850, 11118851 | fallback shards k3, k4, k5 (k0–k2 done) |
-| running | general 5 | 11118661 | `qis-lentest-R-s101` sealed-test continuation (last of four) |
-| queued (dependency: training ends) | general 6–7 | 11119210, 11119212 | endpoint shards k0, k1 |
-| queued (dependency: training ends) | preempt 1–4 | 11119213, 11119215, 11119216, 11119217 | endpoint shards k2–k5 → general as slots allow |
+| running | general 5 | 11118661 | `qis-lentest-R-s101` sealed-test continuation (last of four R/U) |
+| queued (Slurm priority) | general 6–7 | 11119262, 11119264 | `qis-lentest-H-s101`, `qis-len-H-s101` (D157) |
+| queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216, 11119217 | endpoint shards k0–k5 (start together at RUN_COMPLETE) |
 | running | CPU | 11112647 | CPU standby |
-| blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when endpoint shards start |
-Unused: general 1 of 8, preempt 2 of 6 (no other ready GPU work). After 21:00Z general = training + endpoint k0, k1 = 3.
+| blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when the endpoint shards start |
+Unused: general 1 of 8 (no other ready work); preempt 6 of 6 (all work fits on general).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic

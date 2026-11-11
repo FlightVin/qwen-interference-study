@@ -1039,3 +1039,17 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   21:00Z: submit endpoint k0, k1 (general) and k2–k5 (preempt) `--after qis-main-H-s202-sym`; general then holds 3
   (training + k0 + k1), within the post-21:00Z ceiling. Stress shards are submitted `--after` the endpoint shards and moved
   to general as endpoint shards end.
+
+## D157 — 2026-11-11 19:12Z — A21: 8 general GPUs until the final report; all six endpoint shards on general; H-s101 length cell
+- **A21** (owner, ~19:08Z; `project.md` §35) extends A20 until the final report. `ops/qis-submit` allows 8 general until
+  00:30Z.
+- **Idle GPUs at 19:05Z.** The owner asked whether all general GPUs were in use: they were not (5 of 8 running; the
+  endpoint shards k0, k1 held 2 guard slots while waiting on the training dependency). Fixes:
+  (1) New: the length diagnostic for H-s101 r128 (`qis-lentest-H-s101` 11119262, sealed test; `qis-len-H-s101` 11119264,
+  stress t1 + rest; same D154/D155 method). Reason: it tests whether R-s101's +4.9-point lead over H survives more room;
+  it is not a rerun.
+  (2) All six endpoint shards moved to general (`ae slurm update`; k0, k1 had been moved to preempt by a command the owner
+  interrupted). They can start only when training ends (≥ 21:08Z); at that time general holds at most the two H-s101 jobs
+  + 6 shards = 8 GPUs. With six shards in parallel the endpoint takes ≈ 45–50 min after RUN_COMPLETE.
+- **Stress H-s202 r128** (D156): 3 shards submitted when the endpoint shards start; general GPUs free up as the H-s101
+  jobs end.
