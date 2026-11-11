@@ -878,3 +878,18 @@ count as one problem. The brace fix also caught 4 more close variants of study i
   agrees 219/219; tier SuperHard→SuperHard 105/124, Harder→Harder 66/95 (overall exact tier 171/219 = 78%); obstacle code agrees
   81/105. Second read calls 12 items ineligible (mostly "short route avoids factoring"). Report these; panels stay as frozen.
 - Audit sample (D144 rule) recomputed on the final panels: identical 16 IDs.
+
+## D146 — 2026-11-11 02:20Z — GPU plan for A17: three general GPUs only; U-s101 rerun and intermediate stress cells lowest priority
+**Measurements.** Preempt: 1,017 jobs pending; this account's preempt starts in 72 h: 5, median wait 41 h (`ae-capacity`, 02:18Z) — treat
+preempt as unavailable. General: median wait 0.01 h; project ceiling 3 (A7), all 3 in use (H-s202, R-s101 rerun, R-s202 rerun).
+H-s202 a2-r60: round 61 800 s (incl. warm-up), round 62 630 s at cap 12,288 → planning 11–13 min/round for 66 rounds + evaluations at
+64/96/128 → round 128 ≈ 14:30–17:00Z; sealed test ≈ 4.4 h on L40S → ≈ 19:00–21:30Z.
+**Order on general** (each freed slot takes the next item): (1) U-s202 common-GPU rerun (the direct reproducibility check; its original
+already ran on L40S with the same seeds, prediction: identical attempts); (2) stress base (throughput benchmark) and stress R/U endpoints
+s101/s202 and H-s101; (3) H-s202 sealed test at RUN_COMPLETE (slot A); (4) stress H-s202 r128; (5) stress R-s101 r64 and H-s202 r64
+(optional intermediates); (6) U-s101 common-GPU rerun (optional: its original is already an L40S cell under the D141 recipe, so the
+common-GPU table is complete without it; it adds a second reproducibility measurement).
+**Fallbacks** (decided now, applied if the ETA slips past 21:30Z for the H-s202 test): split the H-s202 sealed test into two half-panel
+jobs on two GPUs (per-item seeds do not depend on batch composition: `eval/<key>/<id>/<label>/n<n>`); drop optional cells in reverse
+order (6, 5); stress attempts stay at n = 8 unless the measured throughput says the balanced set cannot finish by 19:00Z, then n = 4
+for every cell.
