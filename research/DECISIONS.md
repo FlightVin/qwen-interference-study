@@ -823,3 +823,31 @@ allocation 11112395 with `--gres=gpu:0`). The original endpoint table reproduces
 - **Interpretation (competing explanation now leading):** the R/U difference behaves like a seed-dependent difference in response length
   (truncation) rather than a difference in solving skill. Next distinguishing task: training-record length and truncation by arm and
   seed (`a17_train` signal/persistence) — does R-s202's length grow earlier/faster on the shared hard prompts, and on aux prompts?
+
+## D143 — 2026-11-11 ~02:40Z — Stress panels frozen: SuperHard-128 and Harder-98 (A17 §5; EXPLORATORY); H-s202 records backed up
+**Panels (frozen before any model is evaluated on them).** Rubric `research/evidence/a17/panels/RUBRIC-stress-v1.md` (committed before
+candidate export). Pool `data/external/a17/candidates_v1.jsonl`: 2,039 candidates from MATH (hendrycks_math@21a5633, L4–5, 1,104),
+Omni-MATH (@40ba231, 769), OlympiadBench OE_TO_maths_en_COMP (@91184b5, 166); IDs already used or screened anywhere were removed
+before export. All 2,039 annotated in 16 hash-ordered batches by delegated agents (`annotator: agent:claude-sonnet`), one pass each.
+Selection `qis.data.stress_panels` at 4b8b88e, run inside allocation 11112396 (`--gres=gpu:0`). Excluded: not eligible 1,731; low
+confidence 19; gold not confirmed 3; units/text in gold 4; exact text of a study item 41 (screened candidate lists on compute);
+close variant (3-gram Jaccard ≥ 0.5) 11. Used-item scan: 8,521 texts in 66 files under every `$PROJ_DATA/data/*` directory except
+`splits-v1` and `raw-21a5633` (the full MATH split manifest and raw download; not study sets — a first run that included them
+excluded every MATH item and was discarded), plus repo `data/`.
+- **SuperHard-128**: 128 of 130 eligible; MATH 60, Omni-MATH 54, OlympiadBench 14; obstacles case_analysis 44, nonobvious_grouping 29,
+  hidden_substitution 28, approach_choice 14, multi_factorization 13; 127 families.
+- **Harder-98**: 98 of 100 eligible (2 closed by the one-panel-per-family rule); MATH 70, Omni-MATH 17, OlympiadBench 11; 97 families.
+  **Fewer than 128 qualified** because the whole candidate pool was annotated and only 100 Harder items met the rubric; the MATH cap of
+  64 was exceeded (70) only after the other sources were exhausted (rubric §4/§5). Not extended: a second candidate tranche would
+  cost ≥ 1.5 h of annotation and delay every stress evaluation on a 22-hour deadline (A17 §8 priority: balanced coverage first).
+- Cross-panel: 0 duplicate IDs, 0 shared families, max masked 3-gram Jaccard 0.431. Verifier: every gold passes `gold_eligible`.
+- SHA-256: `superhard_v1.json` 928cc06f…, `harder_v1.json` d6bd4dc0…, `stress_v1.json` (evaluation file, pool "stress", 226 items)
+  586edc31…; identical on compute (`$PROJ_DATA/data/stress/`) and in the repo (`data/stress/`).
+- Caveats to report: one annotation pass per item (no second blind pass before freeze); annotator strictness varied by batch (8–20%
+  qualifying); absence from study sets does not show absence from pretraining data.
+**Evaluation recipe (fixed now):** `qis-stress-<policy>`: L40S, n = 8, seed label `stress-v1`, cap 12,288, frozen verifier, uncued;
+policies base, six round-128 endpoints, R-s101 round 64, H-s202 a2-r60 round 64. One generation pass over all 226 items per policy.
+**H-s202 records (02:02Z).** The resumed run would overwrite `records/train_r0060–0063` and skip its own round-64 evaluation because the
+original eval files existed (run.py:218–220; found by the a17_train author). Before round 61 finished, the originals were copied
+(train) and moved (eval round 64) to `runs/qis-main-H-s202-sym/records_a2orig_r60-64/` with SHA256SUMS; the original metric rows stay
+in `metrics.jsonl` and `metrics.pre_resume_a17.jsonl`. The resumed trajectory therefore gets its own round-64 dev/probe evaluation.
