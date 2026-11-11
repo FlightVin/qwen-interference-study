@@ -182,7 +182,9 @@ searches, so a length penalty would treat the symptom. The practice should chang
 practice groups were all-correct and gave no gradient. The arms therefore differed little in what they trained on,
 exactly when the runs diverged. The next study should run at least 6 seeds per arm with a fixed cap for the whole run.
 Its practice pool should stay at mixed success (harder or adaptively chosen factoring items), and it should report
-R − U both overall and on finished answers. The judgement would change if the accuracy-on-finished term agreed in sign
+R − U both overall and on finished answers. It should keep the H arm: the one comparison that agreed in direction across
+seeds was practice against extra hard problems (R − H +4.9 and +2.4, U − H +0.7 and +6.8 points; Q1), and more seeds
+would show whether that advantage is real. The judgement would change if the accuracy-on-finished term agreed in sign
 across the new seeds and exceeded the seed spread.
 
 ## 1. The study in brief
