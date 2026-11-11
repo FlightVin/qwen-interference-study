@@ -30,17 +30,18 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 6:30–7:30 PM [23:30–00:30Z] | H-s202 round-128 sealed test; then stress r128 | forecast; likely after deadline |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (16:52Z; limits 3 general + 6 preempt GPUs, 30 CPUs)
+## Work and GPUs (16:56Z; limits 3 general + 6 preempt GPUs, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round 113) |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 114) |
 | running | general 2 | 11118245 | `qis-len-U-s202`: t1 done; full panel since 16:32Z |
-| running | general 3 | 11118247 | `qis-len-R-s101`: t1 generating |
-| queued (Slurm priority) | preempt 1 | 11118248 | `qis-len-U-s101` → move to general when R-s101 t1 ends (equal coverage) |
+| running | general 3 | 11118248 | `qis-len-U-s101`: t1 (moved from preempt 16:54Z) |
+| queued (Slurm priority) | preempt 1 | 11118444 | `qis-len-R-s202` full panel (t1 skipped) |
+| queued (Slurm priority) | preempt 2 | 11118448 | `qis-len-R-s101` full panel (t1 skipped) |
 | running | CPU | 11112647 | CPU standby (babel-n5-20) |
-| blocked (by rule) | — | — | `qis-len-R-s202` full panel (t1 done): resubmit after all four t1 |
+| done | — | 11118157, 11118247 | R-s202 and R-s101 tranche 1; each cancelled at the start of its full panel (equal coverage) |
 | blocked (by time) | — | — | fallback until 18:00Z (D150); endpoint shards and stress r128 until RUN_COMPLETE |
-Unused: preempt 5 of 6 — no other ready GPU work (fallback waits for 18:00Z by D150).
+Unused: preempt 4 of 6 — no other ready GPU work (fallback waits for 18:00Z by D150).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
