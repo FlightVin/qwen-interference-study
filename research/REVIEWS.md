@@ -808,3 +808,23 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Nothing open; wait for owner feedback on the report.
 7. **Reconciliation.** Slurm: 0 live project jobs; ledger has no nonterminal rows to watch. Watcher not re-armed (nothing to watch).
 - 20:10Z (3:10 PM EST): hourly review cron cancelled at the owner's request; study closed.
+
+## Review 91 — 2026-11-11 02:50Z (9:50 PM EST Tue) — A17 restart
+1. **Changes since resume (01:25Z).** A17 recorded (§31). H-s202 resumed from round 60 (job 11112377; hashes verified); rounds 61–64 at
+   630–800 s (round 64 ended 02:40Z; round-64 evals running). Original r60–64 records backed up (D143). Common-GPU reruns (D141): R-s101
+   11112395, R-s202 11112396 running on general (L40S, 1:08 h); U-s101 11112397 started on preempt; U-s202 11112398 pending. A17 CPU
+   analyses done: a17_test (D142) and a17_train (signal, persistence, dev n = 8, branches). Stress panels frozen as SuperHard-126 /
+   Harder-95 (D145, after a second-read fix; no evaluation had started). Draft REPORT committed with pending cells.
+2. **Competing explanation still plausible.** Length drift: R − U follows which arm truncates more (s202: −4.3 of −4.4 points from
+   truncation; accuracy on finished answers equal). Not yet excluded: hardware (R on L40, U on L40S in both seeds).
+3. **Distinguishing task.** Common-GPU R reruns (same seeds, L40S): if R − U on L40S keeps both signs and the truncation split,
+   hardware is excluded. Training-record length by arm/seed (tokens per response on shared hard prompts) tests whether length drift
+   started in training.
+4. **Schedule.** H-s202 ≈ 12 min/round → round 128 ≈ 15:30–16:30Z (+ evals) → L40S sealed test ≈ 4.4 h → ≈ 20:30–21:00Z; split test
+   on two GPUs if later (D146). R reruns end ≈ 06:00Z; then U-s202 rerun + stress base/endpoints on the two freed general GPUs
+   (≈ 2–2.5 GPU-h each, benchmark pending). Report verification ≈ 21:30–00:00Z. Verdict: on time, little slack; optional cells
+   (U-s101 rerun now running on preempt, stress r64) drop first.
+5. **GPUs.** General 3/3 (H-s202, two R reruns); preempt 1/6 (U-s101 rerun). Within limits.
+6. **Most important.** Keep general slots full when R reruns end (move U-s202 rerun and stress base to general).
+7. **Reconciliation.** All live jobs are ledger rows (exact IDs). 11112647 is this project's CPU standby (pending). Watcher alive
+   (bnb00222j).
