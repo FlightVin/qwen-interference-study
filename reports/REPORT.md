@@ -46,8 +46,26 @@ hardware-free cost. After round 32, 62–92% of R and U practice groups were all
 
 ### Q3. When did the difference emerge, and did it reach harder problems?
 
-⟨PENDING: dev and training-record timing (section 9.3), stress tiers with base success and truncation (section 5); no
-matched intermediate R/U checkpoint pair survives.⟩
+**When.** In both seeds the endpoint sign of R − U appeared between rounds 32 and 64, the first window after the cap
+rose from 8,192 to 12,288 tokens (section 9.2). Dev R − U at round 32 → 64: seed 101 −5.9 → +2.6 points; seed 202
+−1.2 → −6.6 points. Training success on the shared hard prompts split in the same window (seed 101: R ahead from rounds
+41–48 on; seed 202: U ahead in rounds 33–48). These are measured trajectories from training records. Checkpoint
+coverage has a gap: no same-seed R/U pair survives below round 128, so no intermediate pair could be put on the stress
+panels or the sealed test.
+
+**Harder problems.** Yes, the pattern extends, and SuperHard was harder in fact, not only by label. Stress panels, pass@1
+(share of attempts cut off at 12,288 tokens), 8 attempts per problem:
+
+| Tier | Base | R-s101 | U-s101 | R − U s101 | R-s202 | U-s202 | R − U s202 |
+|---|---|---|---|---|---|---|---|
+| Harder (95) | 52.5% (0.1%) | 84.2% (9.9%) | 80.1% (11.4%) | 84.2 − 80.1 = +4.1 [+0.7, +7.8] | 76.3% (13.4%) | 79.5% (9.2%) | 76.3 − 79.5 = −3.2 [−6.7, +0.3] |
+| SuperHard (126) | 25.8% (0.0%) | 58.4% (28.5%) | 54.2% (31.6%) | 58.4 − 54.2 = +4.3 [+0.5, +8.0] | 53.3% (30.3%) | 55.6% (19.6%) | 53.3 − 55.6 = −2.3 [−5.6, +1.0] |
+
+The base model solved half as often on SuperHard as on Harder (25.8% vs 52.5%), and trained models hit the cap two to
+three times as often there. R − U takes the sign of the seed in both tiers. In seed 202 on SuperHard, R was more
+accurate on finished answers (76.4% vs 69.1%) but was cut off more often (30.3% vs 19.6%). The only round-64 stress
+cells are R-s101 (Harder 78.6%, SuperHard 53.5%) and H-s202 (76.1%, 52.1%); they come from different arms and seeds and
+cannot date the R/U split.
 
 ### Q4. What should the next experiment change?
 
