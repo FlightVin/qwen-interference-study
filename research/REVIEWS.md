@@ -828,3 +828,19 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Keep general slots full when R reruns end (move U-s202 rerun and stress base to general).
 7. **Reconciliation.** All live jobs are ledger rows (exact IDs). 11112647 is this project's CPU standby (pending). Watcher alive
    (bnb00222j).
+
+## Review 92 — 2026-11-11 03:50Z (10:50 PM EST Tue)
+1. **Changes.** H-s202 (11112377) finished round 66 at 03:49Z; the round-64 evaluations and checkpoint ended 03:36Z. Stress base
+   11112932 started on preempt at 03:49Z (L40S constraint). R reruns 11112395/6 at 2:08 h of ~4.3 h; U-s101 rerun 11112397 at 1:03 h.
+   New: `qis.eval_merge` (22aa5e2) and six shard recipes for the H-s202 test (D149).
+2. **Competing explanation still plausible.** Hardware (R on L40, U on L40S originally) against length drift/truncation (D142, D148).
+3. **Distinguishing task.** Common-GPU reruns (first two finish ≈ 06:00Z): R − U on L40S with the original seeds.
+4. **Schedule.** Review 91's ETA was too early (D149). H-s101 rounds grew to ~1,000 s and round 96 added an evaluation; H-s202 runs
+   ×1.0–1.16 of H-s101. RUN_COMPLETE ≈ 20:00–22:20Z (3:00–5:20 PM EST Wed). Six-shard test ≈ 1.3–2.5 h → ≈ 21:30Z–00:50Z.
+   Verdict: report on time; the H-s202 test cell is at risk in the late case (cut-off ≈ 23:45Z, D149). Everything else prepares
+   the report so the H-s202 cell drops in by script.
+5. **GPUs.** General 3/3 running (H-s202, two R reruns). Preempt 2 running + 4 pending = 6/6 slots. Within limits.
+6. **Most important.** Shard the H-s202 test (done, validated). Next: when R reruns end, move U-s202 rerun and stress endpoints to
+   general; finish all stress work on general by ≈ 19:30Z.
+7. **Reconciliation.** All live jobs are ledger rows (exact IDs): 11112377, 11112395–8, 11112932/37/38/40; standby 11112647.
+   Other `ae-dco-*` jobs are not this project's. Watcher bnb00222j alive.

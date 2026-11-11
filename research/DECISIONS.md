@@ -912,3 +912,21 @@ R 538/4096 vs U 333/4096 truncated-not-looping, R − U +5.0 points [+3.1, +7.1]
 patterns with 35 "wait"s and never factors; `intermediate_algebra/test/00482` cycles through Vieta substitutions without converging.
 Reading: the truncation difference is a difference in search behaviour on hard test problems (long unconverged exploration), which
 is plausibly where missed strategy recognition shows up; exact-window matching can miss paraphrased cycling.
+
+## D149 — 2026-11-11 04:10Z — H-s202 sealed test runs as six shards; the D146 ETA was too early
+- **ETA correction.** D146 and Review 91 assumed 12 min per round. H-s101 rounds grew from ~540 s (round 66) to ~1,000 s (rounds
+  114–128), and the round-96 evaluation added ~45 min. H-s101 needed 54,499 s (15.1 h) from round 66 to round 128. H-s202 reached
+  round 66 at 03:49Z; its rounds 64→66 took 4,151 s against 3,586 s for H-s101 (×1.16). Projection: round 128 at 19:00–21:20Z;
+  RUN_COMPLETE (round-128 evaluations + checkpoint) ≈ 20:00–22:20Z.
+- **Problem.** One L40S test job takes 4.1–4.5 h (original tests: 1,205–1,448 tokens/s). It would end 00:10–02:50Z, at or after the deadline.
+- **Decision.** Split the sealed test into 6 interleaved shards (`qis.eval_merge --split 6`: items i mod 6), recipes
+  `qis-test-H-s202-sym-k0..k5` (k0–k2 general, k3–k5 preempt; all L40S, D141 recipe, seed label `test-final`). Per-problem seeds
+  are unchanged because the seed key holds only panel key, problem id, label and n. Shards differ from one job only in vLLM batch
+  composition, which D51 already shows is not bitwise reproducible across jobs. The last shard to finish merges all six into
+  `test-eval/qis-test-H-s202-sym` under a file lock. The unsharded recipe `qis-test-H-s202-sym` is not submitted.
+- **Validation.** `qis.eval_merge` (22aa5e2) re-merged the original U-s202 test split into 6 shards: every summary field and the
+  per-problem list equal the original; the merged records file is byte-identical.
+- **Submission.** At RUN_COMPLETE (watcher event), not now: both slot budgets are full and a pending job counts as a slot
+  (`ops/qis-submit`). General slots must be free of stress work by ≈ 19:30Z.
+- **Cut-off.** The report is delivered by 00:30Z regardless. H-s202 test cells are filled if the merge exists by ≈ 23:45Z;
+  otherwise they are listed as incomplete with the H-s202 round-128 dev and probe values.
