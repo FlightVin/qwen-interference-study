@@ -16,7 +16,7 @@ Steps
 3. Families: union of candidates whose masked 3-gram Jaccard >= 0.5 or whose normalized family_hint is identical.
 4. Order within tier by sha256("stress-v1:" + tier + ":" + id). SuperHard is filled first (scarcer tier); a family
    used in SuperHard is closed to Harder. Accept in order with <= 2 items per family and no source above 64 items
-   while another source still has unused eligible items; two items with Jaccard >= 0.8 are one problem (one
+   while another source still has unused eligible items; two items of one family with Jaccard >= 0.8 or the same gold are one problem (one
    enters); stop at 128.
 Outputs (OUT_DIR): superhard_v1.json, harder_v1.json ({"pools": {"superhard"|"harder": [...]}}), stress_v1.json (both
 tiers in pool "stress", the evaluation file), selection_report.json (counts, exclusions by reason, composition, family
@@ -78,6 +78,11 @@ def used_items(roots):
             except (ValueError, UnicodeDecodeError):
                 continue
     return out
+
+
+def same_problem(a, b):
+    """Same family and either near-identical text or the same normalized gold answer."""
+    return a["family_id"] == b["family_id"] and (jacc(a["grams"], b["grams"]) >= DUP or norm(a["gold"]) == norm(b["gold"]))
 
 
 def sha_file(p):
@@ -183,8 +188,8 @@ def main():
                 break
             if fam[e["family_id"]] >= FAM_CAP:
                 continue
-            if any(a["family_id"] == e["family_id"] and jacc(a["grams"], e["grams"]) >= DUP for a in acc):
-                rep["excluded"]["same problem as an accepted item (Jaccard >= 0.8)"] += 1
+            if any(same_problem(a, e) for a in acc):
+                rep["excluded"]["same problem as an accepted item (same family; Jaccard >= 0.8 or same gold)"] += 1
                 continue
             others_left = any(v > 0 for s, v in remaining.items() if s != e["source_collection"])
             if src[e["source_collection"]] >= SRC_CAP and others_left:
@@ -199,7 +204,7 @@ def main():
                 if len(acc) >= TARGET:
                     break
                 if e["id"] not in taken and fam[e["family_id"]] < FAM_CAP and not any(
-                        a["family_id"] == e["family_id"] and jacc(a["grams"], e["grams"]) >= DUP for a in acc):
+                        same_problem(a, e) for a in acc):
                     acc.append(e)
                     fam[e["family_id"]] += 1
                     rep.setdefault("source_cap_relaxed", Counter())[tier] += 1
