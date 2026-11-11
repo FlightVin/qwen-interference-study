@@ -13,7 +13,8 @@ Outputs in OUT_DIR (length.json, length.md):
 3. inspect.json: the preselected attempts (D154: per checkpoint the 3 t1 attempts capped at 12,288 with the smallest
    sha256("a19-inspect/<id>/<sample>")), with the last 3,000 characters before the cut and the continuation, decoded with
    the tokenizer at --model (skipped without it).
-Usage: python -m qis.analysis.a19_length PANEL ROOT OUT_DIR [--model MODEL_DIR]
+Sealed test (A20, D155): `--panel-key test --sets all=all` reads ROOT/<label>/all; items without a tier count as "all".
+Usage: python -m qis.analysis.a19_length PANEL ROOT OUT_DIR [--model MODEL_DIR] [--panel-key stress] [--sets t1=t1;all=t1,rest]
 """
 import argparse
 import gzip
@@ -112,17 +113,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("panel"); ap.add_argument("root"); ap.add_argument("out")
     ap.add_argument("--model", default=None)
+    ap.add_argument("--panel-key", default="stress")
+    ap.add_argument("--sets", default="t1=t1;all=t1,rest")
     a = ap.parse_args()
+    sets = {k: v.split(",") for k, v in (x.split("=") for x in a.sets.split(";"))}
     os.makedirs(a.out, exist_ok=True)
-    tier = {it["id"]: it["tier"] for it in json.load(open(a.panel))["pools"]["stress"]}
+    tier = {it["id"]: it.get("tier", "all") for it in json.load(open(a.panel))["pools"][a.panel_key]}
+    tiers = TIERS if any(t != "all" for t in tier.values()) else ["all"]
     res, md = {"sets": {}}, ["# Length diagnostic (A19 §2, D154; EXPLORATORY)", ""]
-    for s, parts in SETS.items():
+    for s, parts in sets.items():
         rows = {lab: load(a.root, lab, parts) for lab in LABELS}
         S = res["sets"][s] = {"available": [lab for lab, r in rows.items() if r is not None], "cells": {}, "contrasts": {}}
         md += [f"## Set {s} ({' + '.join(parts)}); available: {', '.join(S['available']) or 'none'}", "",
                "| Tier | Checkpoint | Problems | Attempts | pass@1 12,288 | pass@1 16,384 | Capped at 12,288 | Recovered | "
                "Finished wrong | Still capped | Extra tokens per recovered |", "|---|---|---|---|---|---|---|---|---|---|---|"]
-        for t in TIERS:
+        for t in tiers:
             for lab in LABELS:
                 if rows[lab] is None:
                     continue
@@ -131,7 +136,7 @@ def main():
                 md.append(f"| {t} | {lab} | {c['problems']} | {c['attempts']} | {c['pass1_12288']:.3f} | {c['pass1_16384']:.3f} | "
                           f"{c['capped_12288']} | {c['recovered']} | {c['finished_wrong']} | {c['still_capped']} | {tpr} |")
         md += ["", "| Tier | Seed | Problems | R − U at 12,288 | R − U at 16,384 | Change |", "|---|---|---|---|---|---|"]
-        for t in TIERS:
+        for t in tiers:
             for seed in ("s101", "s202"):
                 R, U = f"R-{seed}-r128", f"U-{seed}-r128"
                 if rows[R] is None or rows[U] is None:
@@ -142,7 +147,7 @@ def main():
                 md.append(f"| {t} | {seed} | {c['problems']} | {c['R_12288']:.3f} − {c['U_12288']:.3f} = {f('d_12288')} | "
                           f"{c['R_16384']:.3f} − {c['U_16384']:.3f} = {f('d_16384')} | {f('change')} |")
         md.append("")
-        if s == "t1":
+        if s == "t1" and a.panel_key == "stress":
             ins = inspect(a.root, {lab: r for lab, r in rows.items() if r is not None}, a.model)
             json.dump(ins, open(os.path.join(a.out, "inspect.json"), "w"), indent=1, ensure_ascii=False)
     json.dump(res, open(os.path.join(a.out, "length.json"), "w"), indent=1)

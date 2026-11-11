@@ -9,7 +9,8 @@ TO_CAP = the same grading rule on the full trajectory (a response still capped g
 checkpoints share one attempt schedule.
 Selection (`select`): per tier, sources by largest remainder, items by sha256(key/id) order; independent of outcomes.
 Usage: python -m qis.eval_extend --model M --ckpt C --panel P --panel-key stress --records R.jsonl.gz --out DIR
-       [--select tranche1 | --select rest --exclude DIR] [--from-cap 12288 --to-cap 16384]
+       [--select tranche1 | --select rest --exclude DIR | --select all] [--from-cap 12288 --to-cap 16384]
+--select all takes every attempt in the records (used on the sealed test, A20/D155).
 """
 import argparse
 import collections
@@ -70,7 +71,7 @@ def main():
     ap = argparse.ArgumentParser()
     for f in ("--model", "--ckpt", "--panel", "--panel-key", "--records", "--out"):
         ap.add_argument(f, required=True)
-    ap.add_argument("--select", default="tranche1", choices=("tranche1", "rest"))
+    ap.add_argument("--select", default="tranche1", choices=("tranche1", "rest", "all"))
     ap.add_argument("--exclude", default=None, help="output dir of an earlier tranche; its attempts are skipped")
     ap.add_argument("--seed-label", default="extend-v1")
     ap.add_argument("--from-cap", type=int, default=12288)
@@ -91,7 +92,7 @@ def main():
         for line in f:
             r = json.loads(line)
             recs[(r["prompt_id"], r["sample"])] = r
-    sel = select(list(items.values()))
+    sel = sorted(recs) if a.select == "all" else select(list(items.values()))
     if a.select == "rest":
         done = set()
         with gzip.open(os.path.join(a.exclude, "rows.jsonl.gz"), "rt") as f:

@@ -868,3 +868,12 @@ Reconciliation at receipt (16:05Z): H-s202 11112377 running (general, round 109 
 11112647 pending (Priority). Retained weights: H-s101 r128; H-s202 r64, r108; R-s101 r64, r128; R-s202 r128 (+ two `.tmp`
 partial saves r4, r12, not usable); U-s101 r128; U-s202 r128. No same-seed R/U pair exists at any intermediate round.
 Storage: 359/500 GB used, 142 GB free (project 188 GB).
+
+## 34. Amendment A20 (owner, received 2026-11-11 ~17:15Z = Wed 12:15 PM EST): all general GPUs until 4 PM EST
+
+> You may use all general GPUs (all 8) until 4PM EST.
+
+Applied: general ceiling 8 until Wed 11 Nov 4:00 PM EST = 2026-11-11T21:00Z, then 3 again (A7). Preempt ceiling 6 and
+the 30-CPU cap unchanged. `ops/qis-submit` sets 8 general slots before 21:00Z and 3 after. Jobs on general must end by
+21:00Z or leave the count at ≤ 3 (the H-s202 endpoint shards need 3 general GPUs at RUN_COMPLETE ≈ 22:30–23:30Z).
+Recorded as CHECKLIST 0.27 and D155.

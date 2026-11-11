@@ -1013,3 +1013,16 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   sha256(`a19-inspect/<id>/<sample>`); read after extension and classified: completed sound reasoning / repaired an error /
   continued a loop / delayed an incorrect answer.
 - **Scope of the claim.** Inference allowance for these checkpoints only; not what training with a longer cap would give.
+
+## D155 — 2026-11-11 17:35Z — A20: use the extra general GPUs for the length diagnostic on the sealed test (EXPLORATORY; fixed before output)
+- **A20** (owner, ~17:15Z; `project.md` §34): 8 general GPUs until 21:00Z, then 3. `ops/qis-submit` enforces both.
+- **Use of the extra slots, in A19 keep-first order.** (1) H-s202 training keeps its GPU. (2) The four stress full-panel
+  length jobs move to general (all running by 17:30Z). (3) New: the same exact-continuation diagnostic (D154) on the
+  **original sealed-test records** of R/U × s101/s202 (128 × 32 attempts each; `--select all`; seed label
+  `extend-test-v1`; L40S; outputs `$P/length-test/<label>/all`). Reason: A19 §2 asks about the sealed-test gap itself
+  (R-s202 74.8% vs U-s202 79.2%); the stress panels only repeat it. The original scores stay unchanged; this is
+  exploratory. Estimated 1–1.5 h per checkpoint (≈ 330–540 capped attempts each), done well before 21:00Z.
+  (4) The D150 fallback at 18:00Z: shards go to whichever pool has free slots; all six fit before 21:00Z.
+- **After 21:00Z** general returns to 3: H-s202 training plus the endpoint shards at RUN_COMPLETE.
+- Analysis: `qis.analysis.a19_length --panel-key test --sets all=all`, R − U per seed at 12,288 and 16,384 with the paired
+  problem bootstrap (128 problems).
