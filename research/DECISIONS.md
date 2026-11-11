@@ -1064,3 +1064,16 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   Endpoint ≈ 45–50 min after RUN_COMPLETE; stress ≈ 45 min for k0, k1 and ≈ 45 min after the first endpoint shard for k2.
   The sealed test keeps priority (A19 §1): the stress shards use only GPUs the endpoint does not need.
 
+
+## D159 — 2026-11-11 21:55Z — H-s202 endpoint shards k3–k5 and stress shards on any 48 GB GPU (deadline; L40S queue)
+- **Evidence.** RUN_COMPLETE 21:45:07Z (round 128, opt_step 512, a2; model.pt `2513456224d4…`). All eight general shards
+  pending. Slurm start estimates (squeue --start, 21:50Z): k0, k1 21:49Z; k2 22:04Z; k3 23:40Z; k4 00:16Z; k5 00:26Z;
+  stress k0, k1 00:50Z, 01:00Z. 95 jobs wait for L40S on general. With L40S only, the endpoint lands ≈ 01:10Z, after
+  the 00:30Z deadline.
+- **Decision.** Keep k0–k2 on L40S (they start now). Cancel and resubmit k3–k5 and stress k0–k2 with `constraint=VRAM_48GB`
+  (L40S, L40, A6000 or 6000 Ada); the precheck records the GPU name instead of refusing a non-L40S GPU. Everything else
+  is unchanged (seeds per item, n, cap, verifier, merge).
+- **Consequence for the report.** The H-s202 endpoint is no longer a pure single-GPU-type cell: each shard's GPU is reported.
+  The common-GPU check (section 2) measured the effect of a GPU type change at ≤ 1.3 points of pass@1 per checkpoint; the
+  same caution applies to H-s202's R − H and U − H. A17 asked for both H endpoints on the common recipe "as feasible"; it
+  is not feasible by the deadline.
