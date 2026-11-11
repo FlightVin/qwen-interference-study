@@ -985,7 +985,7 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
 - **Use.** Report-only (section 5). It answers "would more direct factoring practice plausibly fix these failures?" It
   changes no panel, score or decision.
 
-## D154 — 2026-11-11 16:30Z — A19 recorded; length diagnostic by exact continuation; H-s202 gate kept (EXPLORATORY design, fixed before any output)
+## D154 — 2026-11-11 16:10Z — A19 recorded; length diagnostic by exact continuation; H-s202 gate kept (EXPLORATORY design, fixed before any output)
 - **A19** (owner, ~16:03Z; `project.md` §33) recorded verbatim. Deadline unchanged: Thu 12 Nov 00:30Z (Wed 7:30 PM EST).
 - **Reconciliation (16:05Z).** H-s202 11112377 running (general); standby 11112647 pending. Retained weights: H-s101 r128;
   H-s202 r64, r108 (moving); R-s101 r64, r128; R-s202 r128; U-s101 r128; U-s202 r128 (R-s202 `round_0004.tmp`,
@@ -994,7 +994,8 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   ≈ 60–75 min) → blocking save (`.tmp`, hash, fsync, re-read hash, rename, LATEST.json) → `saver.wait` → `complete` event →
   `RUN_COMPLETE`. The round-128 weights reach disk only after the dev evaluation; `RUN_COMPLETE` follows the verified save
   within seconds and adds the `saver.last.ok` guarantee. Releasing on the checkpoint before the marker would save seconds,
-  so the existing gate stays. To remove reaction delay, the endpoint shards are submitted with `--after` the training job.
+  so the existing gate stays. To remove reaction delay, the endpoint shards will be submitted with `--after` the training job as soon as slots allow
+  (pending jobs count as slots in `ops/qis-submit`; expected after the fallback test ends).
 - **No matched intermediate R/U pair (A19 §3).** Only R-s101 and H-s202 keep round 64. Within-seed divergence will be located
   from the fixed dev evaluations and training logs; no retraining.
 - **Length diagnostic (A19 §2): exact continuation.** Supported: `Rollout.generate` takes token ids; the engine context is
