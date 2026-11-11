@@ -19,8 +19,8 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 11:22 AM [16:22Z] | Canary tranche 1: 56 of 256 capped, 9 recovered, 13 finished wrong, 34 still capped; re-grade exact | done |
 | 11:32 AM [16:32Z] | U-s202 tranche 1: 41 capped, 9 recovered; s202 R − U on t1 −2.0 points at both caps | done |
 | 11:34 AM [16:34Z] | H-s202 round 112 saved (LATEST); round 113 at 16:48Z | done |
+| 12:02 PM [17:02Z] | Tranche 1 done for all four: recovered 6–11 of 41–56 capped; R − U at 12,288 → 16,384: s101 +3.9 → +5.9, s202 −2.0 → −2.0 | done |
 | ≈ 11:35 AM–12:45 PM [16:35–17:45Z] | H-s202 round 112: checkpoint save + dev evaluation | expected |
-| ≈ 12:00 PM [17:00Z] | Tranche 1 for U-s202, R-s101, U-s101 (≈ 10 min each once started) | forecast |
 | 1:00 PM [18:00Z] | D150 fallback: copy round 112 (CPU job, or `-g` if the CPU pool is blocked) + 6 shards | planned |
 | ≈ 2:00 PM [19:00Z] | Length diagnostic, all four checkpoints, tranche 1 + full panel | forecast |
 | ≈ 3:00–4:15 PM [20:00–21:15Z] | Fallback test done | forecast |
@@ -61,7 +61,8 @@ practice (U) or more hard practice (H)? Primary contrast: seed-wise R − U pass
 
 ## Uncertain
 - Seed-level length drift against an arm effect (A9.4). Two seeds cannot separate them; no task within scope can.
-- Would capped answers succeed with more room? Length diagnostic (D154) running: 12,288 → 16,384 continuation.
+- Would capped answers succeed with more room? Tranche 1 (64 × 4 per checkpoint): few do (13–22% of capped); s202 R − U
+  unchanged at 16,384 (−2.0 → −2.0, change 0.0 [−3.1, +3.1]); s101 +3.9 → +5.9. Full panel running.
 - When R and U diverged within a seed: no matched intermediate checkpoint pair survives; dev evals and logs only.
 - H-s202 r128 endpoint and stress cell: likely after the deadline → reported as incomplete cells.
 - Why U-s101 reran non-identically on the same GPU type (unknown; scores unaffected).
@@ -71,7 +72,7 @@ D146 (3 general GPUs carry A17), D149 (H-s202 test as 6 shards), D150 (fallback 
 D154 (A19: gate kept; length diagnostic by exact continuation; sample fixed).
 
 ## Next actions
-1. Tranche 1 for U-s202, R-s101, U-s101 (11118245, 11118247, 11118248) → then full-panel phases incl. R-s202 resubmit.
+1. Full-panel length phases (U-s202 11118245, U-s101 11118248 running; R-s202 11118444, R-s101 11118448 queued); blind read of 12 preselected continuations (running).
 2. 18:00Z: apply D150; submit fallback copy (or `-g`) and `qis-test-H-s202-fb-k0..k5` (8.1b).
 3. Analyses: length diagnostic (9.3d, 9.3e); divergence timing and per-tier stress table (9.4).
 4. REPORT: four questions (9.6); incomplete-cell list; verification (8.8, 9.7).
