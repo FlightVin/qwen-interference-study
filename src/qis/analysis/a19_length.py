@@ -25,7 +25,10 @@ import os
 import numpy as np
 
 DRAWS = 10_000
-LABELS = ["R-s101-r128", "U-s101-r128", "R-s202-r128", "U-s202-r128"]
+LABELS = ["R-s101-r128", "U-s101-r128", "R-s202-r128", "U-s202-r128", "H-s101-r128"]
+# (key, A, B): A − B. H-s101 added by D157; the D154 inspection sample stays on the four R/U checkpoints.
+PAIRS = [("s101", "R-s101-r128", "U-s101-r128"), ("s202", "R-s202-r128", "U-s202-r128"),
+         ("s101 R-H", "R-s101-r128", "H-s101-r128"), ("s101 U-H", "U-s101-r128", "H-s101-r128")]
 TIERS = ["superhard", "harder", "all"]
 SETS = {"t1": ["t1"], "all": ["t1", "rest"]}
 
@@ -135,20 +138,19 @@ def main():
                 tpr = f"{c['extra_tokens_per_recovered']:,.0f}" if c["extra_tokens_per_recovered"] else "—"
                 md.append(f"| {t} | {lab} | {c['problems']} | {c['attempts']} | {c['pass1_12288']:.3f} | {c['pass1_16384']:.3f} | "
                           f"{c['capped_12288']} | {c['recovered']} | {c['finished_wrong']} | {c['still_capped']} | {tpr} |")
-        md += ["", "| Tier | Seed | Problems | R − U at 12,288 | R − U at 16,384 | Change |", "|---|---|---|---|---|---|"]
+        md += ["", "| Tier | Contrast | Problems | A − B at 12,288 | A − B at 16,384 | Change |", "|---|---|---|---|---|---|"]
         for t in tiers:
-            for seed in ("s101", "s202"):
-                R, U = f"R-{seed}-r128", f"U-{seed}-r128"
+            for seed, R, U in PAIRS:
                 if rows[R] is None or rows[U] is None:
                     continue
                 sel = lambda x: [r for r in x if t == "all" or tier[r["prompt_id"]] == t]  # noqa: E731
                 c = S["contrasts"].setdefault(t, {})[seed] = contrast(sel(rows[R]), sel(rows[U]), f"2027/a19-length/{s}/{t}/{seed}")
                 f = lambda k: f"{c[k]['est']:+.3f} [{c[k]['lo']:+.3f}, {c[k]['hi']:+.3f}]"  # noqa: E731
-                md.append(f"| {t} | {seed} | {c['problems']} | {c['R_12288']:.3f} − {c['U_12288']:.3f} = {f('d_12288')} | "
+                md.append(f"| {t} | {seed} ({R[:1]} − {U[:1]}) | {c['problems']} | {c['R_12288']:.3f} − {c['U_12288']:.3f} = {f('d_12288')} | "
                           f"{c['R_16384']:.3f} − {c['U_16384']:.3f} = {f('d_16384')} | {f('change')} |")
         md.append("")
         if s == "t1" and a.panel_key == "stress":
-            ins = inspect(a.root, {lab: r for lab, r in rows.items() if r is not None}, a.model)
+            ins = inspect(a.root, {lab: r for lab, r in rows.items() if r is not None and not lab.startswith("H-")}, a.model)
             json.dump(ins, open(os.path.join(a.out, "inspect.json"), "w"), indent=1, ensure_ascii=False)
     json.dump(res, open(os.path.join(a.out, "length.json"), "w"), indent=1)
     open(os.path.join(a.out, "length.md"), "w").write("\n".join(md) + "\n")
