@@ -446,7 +446,7 @@ optimizer steps per round, 128 rounds; cap 8,192 tokens for rounds 1–32 and 12
 GPU-hours = elapsed time × GPUs allocated, summed over every allocation of every ledger job (225 jobs, 239
 allocations; `sacct -D` keeps requeued allocations). Failed, cancelled and preempted allocations are charged. CPU
 standby jobs are not ledger jobs and are not charged. "Canonical" = the job chains that produced the reported
-trajectories. Source: `../tables/cost.md`, from `reports/tables/sacct.txt`. PROVISIONAL (13:51Z, 11 Nov): H-s202 job
+trajectories. Source: `tables/cost.md`, from `reports/tables/sacct.txt`. PROVISIONAL (13:51Z, 11 Nov): H-s202 job
 11112377 counts its elapsed time so far; the final run replaces this table.
 
 | Category | Jobs | Allocations | GPU-h | of which canonical | CPU-h | Final states |
