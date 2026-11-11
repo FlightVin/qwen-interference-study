@@ -22,12 +22,16 @@ kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
    of +22 to +29 points. The choice of practice changed the result much less, and in no consistent direction. R − U was
    +4.2 points in seed 101 (R 81.9% vs U 77.7%) and −4.4 points in seed 202 (R 74.8% vs U 79.2%); their mean is −0.1
    points. Rerunning R and U on one GPU type keeps both signs (seed 101: R 82.3% vs U 77.8%, +4.4 points; seed 202: R 76.1% vs U
-   79.2%, −3.1 points; section 2). ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
+   79.2%, −3.1 points; section 2). Against eight more hard prompts, both practice arms did at least as well in both
+   seeds: R − H was 81.9 − 77.0 = +4.9 and 74.8 − 72.4 = +2.4 points, U − H 77.7 − 77.0 = +0.7 and 79.2 − 72.4 = +6.8.
 2. **Which use of the eight practice slots?** The two seeds do not support a choice between factoring and modular
    practice. In seed 101, factoring practice (R) beat additional hard practice (H) by 4.9 points (R 81.9% vs H 77.0%).
-   Modular practice (U) matched H (U 77.7% vs H 77.0%). ⟨PENDING: seed 202 H.⟩ Cost does not decide it either. Per
+   Modular practice (U) matched H (U 77.7% vs H 77.0%). In seed 202, H scored lowest (H 72.4%, R 74.8%, U 79.2%). Over
+   both seeds, each practice arm beat extra hard practice on average (R − H +3.6 [+1.6, +5.8], U − H +3.8 [+1.6, +6.0]
+   points), so practice of either kind was a better use of the slots than more hard problems; which practice was better
+   depends on the seed. Cost points the same way. Per
    run, R and U generated 52.8–65.1 M tokens and used 22.6–27.9 GPU-h on their canonical trajectories, against 68.6 M
-   tokens and 29.5 GPU-h for H-s101. After round 32, 62–92% of R and U practice groups were all-correct and carried no
+   tokens and 29.5 GPU-h for H-s101 and 74.7 M tokens for H-s202. After round 32, 62–92% of R and U practice groups were all-correct and carried no
    learning signal. The practice slots therefore mostly cost generation time without updating the model.
 3. **What produced the seed reversal: mostly answers that do not finish.** In seed 202, R's answers were cut off at the
    12,288-token cap more often than U's (13.1% vs 8.1% of 4,096 attempts). That accounts for −4.3 of the −4.4-point
@@ -72,19 +76,23 @@ kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
 
 ### Q1. Was related practice worth the training slots?
 
-Not on this evidence. Training helped every arm by a wide margin, but the difference between factoring practice (R)
-and modular practice (U) changed sign between seeds. The table gives sealed-test pass@1 over 128 problems × 32 attempts
+Related practice specifically: no. Practice of either kind: yes, against more hard problems. Training helped every arm
+by a wide margin. The difference between factoring practice (R) and modular practice (U) changed sign between seeds.
+Both practice arms did at least as well as eight extra hard prompts (H) in both seeds, and generated fewer tokens. The table gives sealed-test pass@1 over 128 problems × 32 attempts
 (95% paired problem bootstrap):
 
 | Seed | Base | H | R | U | R − U | R − H | U − H |
 |---|---|---|---|---|---|---|---|
 | 101 | 52.6% | 77.0% | 81.9% | 77.7% | 81.9 − 77.7 = +4.2 [+2.1, +6.3] | 81.9 − 77.0 = +4.9 [+2.0, +8.0] | 77.7 − 77.0 = +0.7 [−2.0, +3.5] |
-| 202 | 52.6% | ⟨PENDING⟩ | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+| 202 | 52.6% | 72.4% | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | 74.8 − 72.4 = +2.4 [−0.4, +5.4] | 79.2 − 72.4 = +6.8 [+3.5, +10.2] |
+| Mean | 52.6% | 74.7% | 78.3% | 78.5% | 78.3 − 78.5 = −0.1 [−1.8, +1.5] | 78.3 − 74.7 = +3.6 [+1.6, +5.8] | 78.5 − 74.7 = +3.8 [+1.6, +6.0] |
 
 Two results replicate across seeds: trained − base (base 52.6% against 74.8–81.9% for the five finished runs, +22 to
 +29 points), and the sign of
-R − U on the stress panels following the seed (section 7). One result does not replicate: the sign of R − U. R − H and
-U − H exist for seed 101 only until the H-s202 endpoint lands. ⟨PENDING: H-s202.⟩
+R − U on the stress panels following the seed (section 7). The direction of R − H and U − H also replicates: both are
+positive in both seeds, although two of the four intervals include zero (seed-202 R − H, seed-101 U − H). One result
+does not replicate: the sign of R − U. The H-s202 endpoint ran partly on RTX A6000 GPUs (section 2), and two seeds say
+little about the next training run.
 
 The next table gives the cost per run on its canonical trajectory. Every run used 128 rounds × 16 prompts × 8 answers =
 16,384 answers. H spends all 16 prompts on hard problems; R and U spend 8 of 16 on practice.
@@ -217,8 +225,8 @@ graded by a frozen verifier.
 | Seed | H | R | U | R − U | R − H | U − H |
 |---|---|---|---|---|---|---|
 | 101 | 77.0% | 81.9% | 77.7% | 81.9 − 77.7 = +4.2 [+2.1, +6.3] | 81.9 − 77.0 = +4.9 [+2.0, +8.0] | 77.7 − 77.0 = +0.7 [−2.0, +3.5] |
-| 202 | ⟨PENDING⟩ | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | ⟨PENDING⟩ | ⟨PENDING⟩ |
-| Mean | ⟨PENDING⟩ | 78.3% | 78.5% | 78.3 − 78.5 = −0.1 [−1.8, +1.5] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+| 202 | 72.4% | 74.8% | 79.2% | 74.8 − 79.2 = −4.4 [−7.2, −1.7] | 74.8 − 72.4 = +2.4 [−0.4, +5.4] | 79.2 − 72.4 = +6.8 [+3.5, +10.2] |
+| Mean | 74.7% | 78.3% | 78.5% | 78.3 − 78.5 = −0.1 [−1.8, +1.5] | 78.3 − 74.7 = +3.6 [+1.6, +5.8] | 78.5 − 74.7 = +3.8 [+1.6, +6.0] |
 
 The base model scored 52.6% pass@1 and 83.5% pass@8.
 
@@ -226,7 +234,13 @@ The base model scored 52.6% pass@1 and 83.5% pass@8.
 latest saved checkpoint, round 116, was tested on the same sealed recipe (128 problems × 32 attempts, L40S, six shards
 merged; model.pt `7b9ff3a4…`). It scored 74.3% pass@1 and 92.8% pass@8, with 14.8% of answers capped. This value
 stays outside the table above: a run stopped 12 rounds early is not comparable with the 128-round R and U endpoints.
-⟨PENDING: H-s202 round-128 endpoint replaces the H cells above.⟩
+The round-128 endpoint (72.4%, pass@8 90.8%, 15.4% capped) fills the H cells above; it is 1.9 points below the
+round-116 value.
+
+**H-s202 hardware.** The round-128 endpoint ran as six shards (D149) on the same recipe, but not on one GPU type:
+shards k0–k2 ran on L40S and k3–k5 on RTX A6000 (D159), because the L40S queue would have delayed three shards past the
+deadline. Per-item sampling seeds, attempts, cap and verifier are unchanged. A change of GPU type moved pass@1 by at
+most 1.3 points in the reruns below, so the seed-202 R − H and U − H carry that extra uncertainty.
 
 **Reproducibility check: one GPU type.** The original evaluations did not share hardware. In both seeds, R ran on an
 L40 GPU and U on an L40S (`sacct` node lists, D141). The common recipe uses L40S for every cell, unchanged code and the
@@ -237,8 +251,10 @@ already ran on L40S under this recipe, so their originals are the common cells.
 | Seed | H | R | U | R − U | R − H | U − H |
 |---|---|---|---|---|---|---|
 | 101 | 77.0% | 82.3% | 77.8% | 82.3 − 77.8 = +4.4 [+2.4, +6.5] | 82.3 − 77.0 = +5.3 [+2.5, +8.2] | 77.8 − 77.0 = +0.9 [−1.8, +3.5] |
-| 202 | ⟨PENDING⟩ | 76.1% | 79.2% | 76.1 − 79.2 = −3.1 [−6.0, −0.4] | ⟨PENDING⟩ | ⟨PENDING⟩ |
-| Mean | ⟨PENDING⟩ | 79.2% | 78.5% | 79.2 − 78.5 = +0.7 [−1.0, +2.3] | ⟨PENDING⟩ | ⟨PENDING⟩ |
+| 202 | 72.4%* | 76.1% | 79.2% | 76.1 − 79.2 = −3.1 [−6.0, −0.4] | 76.1 − 72.4 = +3.7 [+0.9, +6.6] | 79.2 − 72.4 = +6.8 [+3.5, +10.2] |
+| Mean | 74.7%* | 79.2% | 78.5% | 79.2 − 78.5 = +0.7 [−1.0, +2.3] | 79.2 − 74.7 = +4.5 [+2.6, +6.4] | 78.5 − 74.7 = +3.8 [+1.7, +6.0] |
+
+\* H-s202 is the same evaluation as in the primary table (L40S × 3 and RTX A6000 × 3 shards), not a pure L40S cell.
 
 The next table shows how closely each rerun reproduced its original (4,096 attempts each; every request seed
 identical):
@@ -367,7 +383,7 @@ R − U follows the same pattern.
 | U-s101 | 77.7% | 94.5% | 125/128 | 3/128 | 501/4,096 (12.2%) |
 | R-s202 | 74.8% | 92.2% | 123/128 | 5/128 | 538/4,096 (13.1%) |
 | U-s202 | 79.2% | 94.9% | 124/128 | 4/128 | 333/4,096 (8.1%) |
-| H-s202 | ⟨PENDING⟩ | | | | |
+| H-s202 | 72.4% | 90.8% | 122/128 | 6/128 | 632/4,096 (15.4%) |
 
 The comparison uses an independent baseline: base attempts 16–31. Against it, 14 problems were unreachable at baseline
 (0/16). Training made 9–11 of them reachable, at low pass@1 (19–40%). On the 114 reachable problems, pass@1 rose from
@@ -706,12 +722,12 @@ round 128 runs only after that training run ends (section 9).
 | H-s101 r128 | ✓ | ✓ (original ran on L40S) | ✓ | ✓ | ✓ | ✓ |
 | R-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | U-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| H-s202 r128 | ⟨pending⟩ | ⟨pending⟩ (runs on L40S) | ⟨pending⟩ | — | — | — (sample fixed before it existed) |
+| H-s202 r128 | ✓ (L40S × 3, A6000 × 3 shards; D159) | same evaluation (not pure L40S) | ⟨pending⟩ | — | — | — (sample fixed before it existed) |
 | R-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | U-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | R-s101 r64 | — | — | ✓ | — | — | — |
 | H-s202 r64 (a2-r60) | — | — | ✓ | — | — | — |
-| H-s202 r116 (fallback) | ⟨pending⟩ | — | — | — | — | — |
+| H-s202 r116 (fallback) | ✓ (L40S) | — | — | — | — | — |
 | U-s101, R-s202, U-s202 r64 | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
 
 **Each tier separately.** The table uses 8 attempts per problem. "Solved ≥ 1 of 8" counts distinct problems, so it
@@ -870,7 +886,7 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 | R-s202 | 11081729 → 11094190 (resumed at round 16, D105; counter offset D127) | 1–128 | complete |
 | U-s202 | 11081731 → 11094037 → 11097811 → 11100159 | 1–128 | complete |
 | H-s202 a2-orig | 11082192 | 1–64 | stopped (A16); records kept, not an endpoint |
-| H-s202 a2-r60 | 11082192 (rounds 1–60) → 11112377 (resumed at round 60, D143) | 61–128 | ⟨running⟩; the endpoint trajectory |
+| H-s202 a2-r60 | 11082192 (rounds 1–60) → 11112377 (resumed at round 60, D143) | 61–128 | complete (RUN_COMPLETE 21:45:07Z); the endpoint trajectory |
 
 ⟨PENDING: final cost run.⟩
 
@@ -878,10 +894,8 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 
 | Cell | Status | Reason | Where it would appear |
 |---|---|---|---|
-| H-s202 round-128 sealed test | ⟨pending⟩ | run finishes ≈ 6:05–6:45 PM EST; test ≈ 1 h after | section 2, Q1 |
 | H-s202 round-128 stress cell | ⟨pending⟩ | queued after the sealed test | section 7 |
 | H-s202 in the response audit | not done | audit sample fixed on r128 checkpoints before H-s202 existed (D144) | section 7 |
-| R − H and U − H for seed 202 | ⟨pending⟩ | needs the H-s202 endpoint | section 2, Q1 |
 | Same-seed R/U pair below round 128 | not possible | weights not retained (only R-s101 and H-s202 kept round 64) | section 3.2 |
 | U-s101 round-64 local-update source | not possible | checkpoint not retained | section 6 |
 | Seed 303, clipping sensitivity | not run | deferred by A9 | — |
@@ -923,7 +937,7 @@ Frozen inputs and their sha256: sealed test `2ffe70ddd5f81bee5c9feadee6f08335d8b
 stress panel `757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d` (rehashed 14:51Z, 11 Nov).
 Checkpoint hashes below come from each evaluation's `summary.json` (`ckpt_model_sha256`, recorded by
 `evaluate_ckpt`). Every checkpoint used by more than one evaluation has the same hash in each. Source:
-`research/evidence/a17/manifest/manifest.json`. ⟨PENDING: H-s202 round-128 or fallback row.⟩
+`research/evidence/a17/manifest/manifest.json` (regenerated at delivery).
 
 | Checkpoint (`$P/ckpt/…`) | model.pt sha256 | Used in |
 |---|---|---|
@@ -934,4 +948,6 @@ Checkpoint hashes below come from each evaluation's `summary.json` (`ckpt_model_
 | `qis-main-R-s202-sym/round_0128` | `22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71` | sealed test, common GPU, stress |
 | `qis-main-U-s101-sym/round_0128` | `92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70` | sealed test, common GPU, stress |
 | `qis-main-U-s202-sym/round_0128` | `7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354` | sealed test, common GPU, stress |
+| `qis-main-H-s202-sym/round_0128` | `2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8` | sealed test (stress ⟨pending⟩) |
+| `qis-main-H-s202-sym-fallback/ckpt` (copy of round 116) | `7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d` | sealed test (fallback, outside primary table) |
 | base `Qwen/Qwen3-1.7B` | HF revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e` | sealed test, stress |
