@@ -152,7 +152,8 @@ The base model solved half as often on SuperHard as on Harder (25.8% vs 52.5%), 
 three times as often there. R − U takes the sign of the seed in both tiers. In seed 202 on SuperHard, R was more
 accurate on finished answers (76.4% vs 69.1%) but was cut off more often (30.3% vs 19.6%). The only round-64 stress
 cells are R-s101 (Harder 78.6%, SuperHard 53.5%) and H-s202 (76.1%, 52.1%). They come from different arms and seeds
-and cannot date the R/U split.
+and cannot date the R/U split. Accuracy on finished answers, correct/attempt counts and distinct problems solved for each tier
+and checkpoint are in section 7.2.
 
 ### Q4. What should the next experiment change?
 

@@ -189,7 +189,7 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 **Four practical answers (A19 §5)**
 - 10.7 ok/pend — Q1 related practice worth the slots: base/H/R/U per seed, prompt/token/GPU cost, which comparisons replicate. H-s202 pend.
 - 10.8 ok — Q2 accuracy lost vs finishing within budget: decomposition beside the within-trajectory length experiment, per seed (sealed test and stress).
-- 10.9 ok/gap — Q3 when the difference emerged, harder problems: measured trajectories vs coverage gaps; both tiers with base success and truncation. Fix: add accuracy on finished per tier.
+- 10.9 done (per-tier table with accuracy on finished in 7.2, cited from Q3) — Q3 when the difference emerged, harder problems: measured trajectories vs coverage gaps; both tiers with base success and truncation. Fix: add accuracy on finished per tier.
 - 10.10 ok — Q4 next experiment: seeds vs length control vs other practice, with the deciding observation.
 
 **Body (A17 §1–6, A19 §1–3)**
