@@ -1030,3 +1030,22 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Manifest (done). Next: incomplete-cell list; 18:00Z fallback decision.
 7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ours; other running jobs are ae-dco-*. Watcher alive
    (task bo4i0sb9k).
+
+## Review 104 — 2026-11-11 15:50Z (10:50 AM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 109 at 15:40Z; LATEST = round 108. len_mean 5,388–6,195 at rounds 106–109.
+   - CPU standby 11112647 preempted again; PENDING (Priority). preempt_cpu_qos has 77 pending jobs, preempt_qos 845.
+     `sbatch --test-only` estimates (15–29 Nov) are backfill bounds, not forecasts. Read the metrics through an
+     `srun --overlap` step in 11112377 instead (1 CPU, 1 GB, read-only).
+   - Risk: the D150 copy job (`qis-h202-fallback-copy`, CPU pool) may not start at 18:00Z. Prepared
+     `qis-h202-fallback-copy-g` (same body, 1 general GPU; `bash -n` ok). Use it if the CPU pool is still blocked.
+2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
+3. **Distinguishing task.** None within scope (no new seeds).
+4. **Schedule.** Rounds 105→109 ran ×1.18 of H-s101 (×1.19 since round 96). Round 128 ≈ 22:05Z (×1.18) to 22:45Z (×1.30);
+   RUN_COMPLETE ≈ 23:05Z–23:45Z; six-shard endpoint ≈ 00:05Z–00:45Z. Every case is past the D150 trigger (22:15Z). At
+   18:00Z LATEST will be round 112 (the round-112 eval runs ≈ 16:35Z–17:45Z; round 116 ≈ 18:30Z or later). If preempt GPUs
+   do not start, two general shards at a time finish the fallback in ≈ 3 h (≈ 21:15Z). Report: on time.
+5. **GPUs.** General 1/3, preempt 0/6. Within limits.
+6. **Most important.** Fallback copy path that does not depend on the CPU pool (done). Next: incomplete-cell list.
+7. **Reconciliation.** 11112377 (ledger) running; 11112647 (our standby) pending; other jobs are ae-dco-*. Watcher alive
+   (task bo4i0sb9k).
