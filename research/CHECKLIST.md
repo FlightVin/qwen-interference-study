@@ -173,3 +173,46 @@ Keep-first order if time tightens: H-s202 sealed test > balanced four-checkpoint
 - 9.7 pending — Verification adds: J and ΔJ figures vs source tables; recompute headline results independently; final cost reconciliation.
 - 9.8 done (16:20Z) — Audit counts: 35 failed responses, 70 reads = yes 29 + no 27 + unclear 10 + n.a. 4 (both reads of 2 grader-error responses on `00152`); per response 13/33 both-yes. REPORT §5, What we learned 5 and `audit.md` corrected.
 
+
+## 10. Final report scope and requirement trace (reviewed 2026-11-11 19:45Z; owner request: state the scope)
+The report answers every question below, in narrative prose (owner, 19:40Z: "written in a narrative style to be easily
+read by a person"). Status: ok = in the report and verified; gap = missing or stale (fix listed); pend = waits on a job.
+
+**Opening: What we learned (A17 §7, six questions)**
+- 10.1 ok/stale — Q1 training gain vs base and the extra difference from the practice choice. Add H-s202 (pend).
+- 10.2 ok/pend — Q2 eight slots: factoring vs modular vs more hard practice, with token and GPU cost. Needs H-s202 for seed 202.
+- 10.3 gap — Q3 which problems produced the reversal; coverage vs reliability. Fix: add the length result (capped answers mostly stuck, not near-misses).
+- 10.4 gap — Q4 mechanism links observed; best competing explanation. Fix: reconcile "length drift" with Q4's run-to-run path dependence (length is how the run difference shows, not its cause).
+- 10.5 ok/pend — Q5 transfer across original, Harder, SuperHard; where recognition, execution, later errors and truncation were distinguishable (audit). Add H-s202 r128 stress.
+- 10.6 ok — Q6 one larger experiment and what would change it (aligned with A19 Q4).
+
+**Four practical answers (A19 §5)**
+- 10.7 ok/pend — Q1 related practice worth the slots: base/H/R/U per seed, prompt/token/GPU cost, which comparisons replicate. H-s202 pend.
+- 10.8 ok — Q2 accuracy lost vs finishing within budget: decomposition beside the within-trajectory length experiment, per seed (sealed test and stress).
+- 10.9 ok/gap — Q3 when the difference emerged, harder problems: measured trajectories vs coverage gaps; both tiers with base success and truncation. Fix: add accuracy on finished per tier.
+- 10.10 ok — Q4 next experiment: seeds vs length control vs other practice, with the deciding observation.
+
+**Body (A17 §1–6, A19 §1–3)**
+- 10.11 ok — Purpose of each comparison (R vs U, R/U vs H, base vs trained, branches, training records, held-out tests); primary vs reproducibility vs exploratory labels.
+- 10.12 ok/pend — Endpoints: absolute H/R/U, paired R − U, R − H, U − H per seed; original and common GPU; reproducibility table. H-s202 row pend; fallback "H-s202 round 116 (incomplete run)" outside the primary table (pend).
+- 10.13 gap — H-s202 provenance: a2-orig vs a2-r60 trajectory, resume checks, gate decision (D154), last verified round on dev curves. Fix: short run-history paragraph + §8 run table.
+- 10.14 ok — 3.1 reversal scatter, agreement/opposite/ties, band contributions, B1 detail, absolute R/U.
+- 10.15 ok — 3.2 coverage vs reliability: pass@1, pass@8, solved ≥ 1 of 32, 0/n, independent baseline split.
+- 10.16 gap — 3.3 GRPO signal by seed, window, role. Fix: add cumulative mixed groups, generated tokens and GPU-h per run beside the fractions.
+- 10.17 ok — 3.4 persistence: matched cells, PS → all-wrong with denominators, next appearance, cap 0/some/all 8, cap change marked.
+- 10.18 ok — 3.5 sampling null; dev n = 8 correction.
+- 10.19 ok — Local evidence: absolute pre/post J, four draws, mixed counts, direct comparisons, momentum-only steps, missing U checkpoint, no detection threshold claimed, three links.
+- 10.20 gap — Stress construction: rubric, sources, composition, dedup, base difficulty, agent annotations. Fix: explain 99 → 95 Harder (D145) and point to the versioned manifests.
+- 10.21 gap — Stress evaluation: checkpoint-by-panel coverage table (A17 §6) missing; per tier and seed coverage (solved ≥ 1 of 8) and correct/total missing. Fix: add both tables.
+- 10.22 ok — Response audit: preselected, blind, categories, denominators (35 responses, 70 reads), examples, grader limitation.
+- 10.23 ok/pend — Length diagnostic (A19 §2): method, tranche 1 then full panel, sealed test, all required counts, R − U at both caps, inspection sample, scope caveat. Add H-s101 cell (D157, pend).
+- 10.24 ok — Divergence timing (A19 §3): no matched pair; dev and training records; limitation stated.
+- 10.25 ok — Strategy cue (carried from the first report).
+
+**Delivery (A17 §7–8, A19 §4–5)**
+- 10.26 ok — Figures 1–5 embedded beside their claims with relative links.
+- 10.27 gap — Never a delta alone: sweep every delta for both absolute values (final pass).
+- 10.28 pend — Final cost table reconciled with the ledger (after H-s202 jobs).
+- 10.29 gap — Deliverables list in the report: both versioned panel manifests, machine-readable results, reproduction commands (add eval_extend, a19 analyses, recompute, stress shards), incomplete-cell inventory.
+- 10.30 ok/pend — Verification: independent recomputation (27/27), J/ΔJ figure checks (done), remaining figures, hashes (add fallback and H-s202 r128), clean-checkout render.
+- 10.31 gap — Narrative rewrite: each section opens with its question and a plain answer, then evidence, then caveats; transitions between sections; one term per concept; "What we learned" first (A17), "Four practical answers" next (A19), with cross-references instead of repeated numbers.
