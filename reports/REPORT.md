@@ -517,7 +517,32 @@ continuation seeds are shared by all four checkpoints; L40S GPUs. Tranche 1 is a
 Few capped answers recover: 6–11 of 41–56 per checkpoint (13–22%). Most (51–70%) are still capped at 16,384 tokens,
 and the rest finish with a wrong answer. Extra room does not close the seed-202 gap: R and U each recover 9 answers, and
 R − U stays at −2.0 points. In seed 101, R recovers more (11 vs 6, mostly on SuperHard), so R − U widens by 2.0 points;
-the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`. ⟨PENDING: full panel (221 × 8).⟩
+the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`.
+
+**Full stress panel** (all 221 problems × 8 attempts = 1,768 per checkpoint; tranche 1 included):
+
+| Checkpoint | pass@1 at 12,288 | pass@1 at 16,384 | Capped at 12,288 | Recovered | Finished wrong | Still capped | Extra tokens per recovered answer |
+|---|---|---|---|---|---|---|---|
+| R-s101 | 69.5% | 72.3% | 362 | 49 (13.5%) | 61 | 252 (69.6%) | 25,435 |
+| U-s101 | 65.3% | 68.2% | 406 | 51 (12.6%) | 64 | 291 (71.7%) | 28,075 |
+| R-s202 | 63.2% | 66.0% | 407 | 50 (12.3%) | 96 | 261 (64.1%) | 27,437 |
+| U-s202 | 65.8% | 68.2% | 268 | 41 (15.3%) | 81 | 146 (54.5%) | 19,914 |
+
+| Seed | Tier | R − U at 12,288 | R − U at 16,384 | Change |
+|---|---|---|---|---|
+| 101 | all (221) | 69.5 − 65.3 = +4.2 [+1.6, +6.8] | 72.3 − 68.2 = +4.1 [+1.4, +6.7] | −0.1 [−1.1, +1.0] |
+| 101 | Harder (95) | 84.2 − 80.1 = +4.1 [+0.5, +7.8] | 86.1 − 81.8 = +4.2 [+0.7, +7.8] | +0.1 [−1.1, +1.4] |
+| 101 | SuperHard (126) | 58.4 − 54.2 = +4.3 [+0.6, +8.0] | 61.9 − 57.9 = +4.0 [+0.2, +7.8] | −0.3 [−1.8, +1.3] |
+| 202 | all (221) | 63.2 − 65.8 = −2.7 [−5.1, −0.2] | 66.0 − 68.2 = −2.1 [−4.6, +0.3] | +0.5 [−0.5, +1.5] |
+| 202 | Harder (95) | 76.3 − 79.5 = −3.2 [−6.6, +0.3] | 79.3 − 80.9 = −1.6 [−4.6, +1.4] | +1.6 [+0.1, +3.2] |
+| 202 | SuperHard (126) | 53.3 − 55.6 = −2.3 [−5.6, +1.1] | 56.0 − 58.5 = −2.6 [−6.2, +1.0] | −0.3 [−1.7, +1.1] |
+
+The full panel confirms tranche 1 and removes its one hint. Every checkpoint gains 2.4–3.5 points of pass@1 from 4,096
+more tokens, and the gain is nearly the same in R and U. R − U moves by at most 0.5 points overall in either seed
+(1.6 points on seed-202 Harder, where R had more capped answers to recover). The seed-101 widening seen in tranche 1
+(+2.0) was sampling noise: on the full panel the change is −0.1. Only 12–15% of capped answers recover; 55–72% are
+still capped at 16,384 tokens. R-s202 hits the cap far more than U-s202 (407 vs 268 attempts), but its capped answers
+are no more recoverable (12.3% vs 15.3%). Source: `research/evidence/a19/length/full/length.md`.
 
 What did the extra tokens do? An arm-blind reader classified 12 continuations, chosen by a hash rule before generation
 (3 capped attempts per checkpoint): 6 kept looping (re-deriving the same steps or equation systems), 3 reached a wrong
