@@ -1,0 +1,11 @@
+{
+ "drawn": [
+  "endpoints",
+  "reversal_scatter",
+  "coverage",
+  "sampling_null",
+  "truncation",
+  "loops"
+ ],
+ "inputs": "research/evidence/a17/analysis/test-cgpu"
+}

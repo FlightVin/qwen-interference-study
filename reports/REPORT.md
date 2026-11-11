@@ -66,7 +66,7 @@ kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
    101 and 63.2 − 65.8 = −2.7 [−5.1, −0.2] in seed 202. In seed 202, R was more accurate on the answers it finished
    (82.1% vs 77.6%) but hit the cap more often (23.0% vs 15.2%). A blind audit of 96 responses found that more
    factoring practice would plausibly fix about 40% of the failures. Both readers said so for 13 of 33 genuine failed
-   responses (29 of 66 judged reads); the rest are later errors or cap hits. Two more failures were grader errors. ⟨PENDING: H-s202 r128.⟩
+   responses (29 of 66 judged reads); the rest are later errors or cap hits. Two more failures were grader errors. H-s202 round 128 scored 60.1% on the 221 stress problems, below both seed-202 practice arms (R 63.2%, U 65.8%).
 6. **The one larger experiment to run next.** Run R and U with more training seeds (at least 6 per arm), one fixed cap
    for the whole run, and a practice pool that stays at mixed success. Report R − U overall and on finished answers.
    The deciding observation: R − U follows the seed on every panel and does not move when the budget grows by 4,096
@@ -709,7 +709,7 @@ round 128 runs only after that training run ends (section 9).
 | H-s101 r128 | 64.1% | 52.6% | 79.5% | 17.7% | 77.9% | 183/221 |
 | R-s101 r128 | 69.5% | 58.4% | 84.2% | 20.5% | 87.4% | 184/221 |
 | U-s101 r128 | 65.3% | 54.2% | 80.1% | 23.0% | 84.8% | 184/221 |
-| H-s202 r128 | ⟨PENDING⟩ | | | | | |
+| H-s202 r128 | 60.1% | 49.4% | 74.3% | 25.5% | 80.7% | 177/221 |
 | R-s202 r128 | 63.2% | 53.3% | 76.3% | 23.0% | 82.1% | 180/221 |
 | U-s202 r128 | 65.8% | 55.6% | 79.5% | 15.2% | 77.6% | 188/221 |
 | R-s101 r64 | 64.3% | 53.5% | 78.6% | 26.1% | 87.0% | 183/221 |
@@ -724,7 +724,7 @@ round 128 runs only after that training run ends (section 9).
 | H-s101 r128 | ✓ | ✓ (original ran on L40S) | ✓ | ✓ | ✓ | ✓ |
 | R-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | U-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| H-s202 r128 | ✓ (L40S × 3, A6000 × 3 shards; D159) | same evaluation (not pure L40S) | ⟨pending⟩ | — | — | — (sample fixed before it existed) |
+| H-s202 r128 | ✓ (L40S × 3, A6000 × 3 shards; D159) | same evaluation (not pure L40S) | ✓ (L40 × 2, A6000 × 1 shards; D159) | — | — | — (sample fixed before it existed) |
 | R-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | U-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | R-s101 r64 | — | — | ✓ | — | — | — |
@@ -743,6 +743,7 @@ separates first successes on new problems from repeated successes on the same pr
 | U-s101 r128 | Harder-95 | 80.1% | 609 / 760 | 90/95 | 5 | 11.4% | 90.5% |
 | R-s202 r128 | Harder-95 | 76.3% | 580 / 760 | 89/95 | 6 | 13.4% | 88.1% |
 | U-s202 r128 | Harder-95 | 79.5% | 604 / 760 | 91/95 | 4 | 9.2% | 87.5% |
+| H-s202 r128 | Harder-95 | 74.3% | 565 / 760 | 88/95 | 7 | 15.1% | 87.6% |
 | R-s101 r64 | Harder-95 | 78.6% | 597 / 760 | 89/95 | 6 | 14.6% | 92.0% |
 | H-s202 r64 | Harder-95 | 76.1% | 578 / 760 | 89/95 | 6 | 8.7% | 83.3% |
 | Base | SuperHard-126 | 25.8% | 260 / 1,008 | 74/126 | 52 | 0.0% | 25.8% |
@@ -751,6 +752,7 @@ separates first successes on new problems from repeated successes on the same pr
 | U-s101 r128 | SuperHard-126 | 54.2% | 546 / 1,008 | 94/126 | 32 | 31.6% | 79.2% |
 | R-s202 r128 | SuperHard-126 | 53.3% | 537 / 1,008 | 91/126 | 35 | 30.3% | 76.4% |
 | U-s202 r128 | SuperHard-126 | 55.6% | 560 / 1,008 | 97/126 | 29 | 19.6% | 69.1% |
+| H-s202 r128 | SuperHard-126 | 49.4% | 498 / 1,008 | 89/126 | 37 | 33.3% | 74.1% |
 | R-s101 r64 | SuperHard-126 | 53.5% | 539 / 1,008 | 94/126 | 32 | 34.8% | 82.0% |
 | H-s202 r64 | SuperHard-126 | 52.1% | 525 / 1,008 | 94/126 | 32 | 19.9% | 65.1% |
 
@@ -763,6 +765,8 @@ an accuracy term as section 4.3 (95% paired bootstrap over problems, 10,000 draw
 | R − U, seed 202 | 63.2 − 65.8 = −2.7 [−5.1, −0.2] | t: 23.0% vs 15.2% → −6.3 [−8.2, −4.3] | a: 82.1% vs 77.6% → +3.6 [+1.2, +6.1] | 81.4%, 85.1% |
 | R − H, seed 101 | 69.5 − 64.1 = +5.4 [+2.5, +8.2] | t: 20.5% vs 17.7% → −2.3 [−4.6, +0.0] | a: 87.4% vs 77.9% → +7.7 [+5.2, +10.1] | 83.3%, 82.8% |
 | U − H, seed 101 | 65.3 − 64.1 = +1.2 [−1.4, +3.8] | t: 23.0% vs 17.7% → −4.3 [−6.3, −2.2] | a: 84.8% vs 77.9% → +5.5 [+2.9, +8.0] | 83.3%, 82.8% |
+| R − H, seed 202 | 63.2 − 60.1 = +3.1 [−0.1, +6.3] | t: 23.0% vs 25.5% → +2.0 [−0.3, +4.4] | a: 82.1% vs 80.7% → +1.0 [−1.8, +4.0] | 81.4%, 80.1% |
+| U − H, seed 202 | 65.8 − 60.1 = +5.7 [+2.5, +9.2] | t: 15.2% vs 25.5% → +8.2 [+6.0, +10.4] | a: 77.6% vs 80.7% → −2.5 [−5.6, +0.8] | 85.1%, 80.1% |
 | R-s101 r128 − r64 | 69.5 − 64.3 = +5.3 [+3.0, +7.6] | t: 20.5% vs 26.1% → +4.9 [+3.0, +6.9] | a: 87.4% vs 87.0% → +0.3 [−1.4, +2.0] | 83.3%, 82.8% |
 
 ![Stress panels](figures/a17/stress_panels.png)
@@ -774,7 +778,9 @@ The stress panels show four things:
    a second 8-attempt draw from the base model would lose by chance.
 2. **The arm order follows the seed again.** R − U is positive in seed 101 and negative in seed 202, as on the sealed
    test. pass@8 (solved at least once) differs by at most 3.7 points between arms, so the arms differ in reliability,
-   not reach.
+   not reach. Practice against extra hard problems also repeats the sealed-test direction: in seed 202, R − H is
+   63.2 − 60.1 = +3.1 and U − H 65.8 − 60.1 = +5.7 points (seed 101: +5.4 and +1.2). H-s202 hit the cap most often
+   (25.5%) and fell 2.3 points from round 64 to round 128 (62.4% → 60.1%).
 3. **Length again moves the result.** In seed 202, R loses because more of its attempts hit the cap (23.0% vs 15.2%),
    although it is more accurate on the answers it finishes. In R-s101, the gain from round 64 to round 128 is almost
    all fewer capped answers (26.1% → 20.5%); accuracy on finished answers stays at 87%.
@@ -896,7 +902,6 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 
 | Cell | Status | Reason | Where it would appear |
 |---|---|---|---|
-| H-s202 round-128 stress cell | ⟨pending⟩ | queued after the sealed test | section 7 |
 | H-s202 in the response audit | not done | audit sample fixed on r128 checkpoints before H-s202 existed (D144) | section 7 |
 | Same-seed R/U pair below round 128 | not possible | weights not retained (only R-s101 and H-s202 kept round 64) | section 3.2 |
 | U-s101 round-64 local-update source | not possible | checkpoint not retained | section 6 |
@@ -950,6 +955,6 @@ Checkpoint hashes below come from each evaluation's `summary.json` (`ckpt_model_
 | `qis-main-R-s202-sym/round_0128` | `22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71` | sealed test, common GPU, stress |
 | `qis-main-U-s101-sym/round_0128` | `92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70` | sealed test, common GPU, stress |
 | `qis-main-U-s202-sym/round_0128` | `7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354` | sealed test, common GPU, stress |
-| `qis-main-H-s202-sym/round_0128` | `2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8` | sealed test (stress ⟨pending⟩) |
+| `qis-main-H-s202-sym/round_0128` | `2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8` | sealed test, stress |
 | `qis-main-H-s202-sym-fallback/ckpt` (copy of round 116) | `7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d` | sealed test (fallback, outside primary table) |
 | base `Qwen/Qwen3-1.7B` | HF revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e` | sealed test, stress |
