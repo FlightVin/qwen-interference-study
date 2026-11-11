@@ -1026,3 +1026,16 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
 - **After 21:00Z** general returns to 3: H-s202 training plus the endpoint shards at RUN_COMPLETE.
 - Analysis: `qis.analysis.a19_length --panel-key test --sets all=all`, R − U per seed at 12,288 and 16,384 with the paired
   problem bootstrap (128 problems).
+
+## D156 — 2026-11-11 18:58Z — H-s202 stress cell as three shards; endpoint shards pre-submitted after the fallback
+- **Why.** RUN_COMPLETE ≈ 21:10–22:10Z; endpoint ≈ 22:10–23:10Z. A single stress job (1,768 attempts, ≈ 2 h) after the
+  endpoint would end ≈ 00:10–01:10Z, after the deadline. Three shards (`qis-stress-H-s202-r128-k0..k2`, panel split by
+  index mod 3 with `qis.eval_merge`, as D149 did for the test) take ≈ 45 min. Per-problem seeds are keyed by item, so the
+  shards reproduce the single-job attempt schedule (D149 validated the merge byte-identically). The single-job recipe
+  `qis-stress-H-s202-r128` is superseded and will not be submitted.
+- **Gate (A19 §1).** Each shard checks `RUN_COMPLETE`, the model.pt hash against state.json, provenance (round 128,
+  opt_step 512, attempt a2) and the stress-panel hash. The endpoint shards carry the same checks.
+- **Order.** Endpoint shards first (A19: sealed test, then stress). After the fallback shards end (≈ 19:45Z) and before
+  21:00Z: submit endpoint k0, k1 (general) and k2–k5 (preempt) `--after qis-main-H-s202-sym`; general then holds 3
+  (training + k0 + k1), within the post-21:00Z ceiling. Stress shards are submitted `--after` the endpoint shards and moved
+  to general as endpoint shards end.
