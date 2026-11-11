@@ -130,7 +130,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 
 ## 8. A17 completion (`project.md` §31; D141+). Deadline Thu 12 Nov 00:30Z (Wed 7:30 PM EST)
 Priorities (§8 of A17): H-s202 > common-GPU R/U > CPU analyses > balanced stress-panel comparison > report/audit.
-- 8.1 active — H-s202 resume: checkpoint r60 verified (hashes OK, 01:45Z); job 11112377 general; `retain_rounds` [64]; trajectory a2-r60 is the endpoint; a2-orig kept (`metrics.pre_resume_a17.jsonl`). ETA round 128 from observed s/round (review updates it). Review 107 (18:50Z): round 121 at 18:46Z; LATEST 120; round 128 ≈ 20:10Z–21:10Z; RUN_COMPLETE ≈ 21:10Z–22:10Z; endpoint ≈ 22:10Z–23:10Z.
+- 8.1 active — H-s202 resume: checkpoint r60 verified (hashes OK, 01:45Z); job 11112377 general; `retain_rounds` [64]; trajectory a2-r60 is the endpoint; a2-orig kept (`metrics.pre_resume_a17.jsonl`). ETA round 128 from observed s/round (review updates it). Review 108 (19:50Z): round 124 at 19:34Z; LATEST 124; round 128 ≈ 20:40Z; RUN_COMPLETE ≈ 21:40Z; endpoint ≈ 22:30Z.
   - 8.1b ready (D150; trigger already met at 10:51Z: projected RUN_COMPLETE 23:30Z–00:20Z) — at 18:00Z: `ops/qis-submit qis-h202-fallback-copy` (CPU; copies model.pt + state.json of the round in LATEST.json to `ckpt/qis-main-H-s202-sym-fallback/ckpt/`, verifies the hash, writes ROUND.txt), then `qis-test-H-s202-fb-k0..k5 --after qis-h202-fallback-copy` (k0–1 general, k2–5 preempt; merge into `test-eval/qis-test-H-s202-sym-fallback`). LATEST.json parsing tested on the standby. CPU-pool backup: `qis-h202-fallback-copy-g` (1 general GPU, same body); then submit the shards `--after qis-h202-fallback-copy-g`. Report as "H-s202 at round N (incomplete run)" outside primary tables.
   - 8.1a pending — sealed test as 6 shards `qis-test-H-s202-sym-k0..k5` (D149; merge validated on U-s202, byte-identical). Submit at RUN_COMPLETE (Review 104: ≈ 23:05Z–23:45Z); endpoint ≈ 1 h later (00:05Z–00:45Z), likely after the deadline → incomplete cell unless it lands by ≈ 00:15Z.
 - 8.2 done for R/U (11:55Z; H-s202 cell waits for its endpoint) (D141 frozen before any score) — common-GPU reruns, L40S, seed label `test-final`. H-s101 + base originals already L40S.
@@ -198,12 +198,12 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 - 10.13 gap — H-s202 provenance: a2-orig vs a2-r60 trajectory, resume checks, gate decision (D154), last verified round on dev curves. Fix: short run-history paragraph + §8 run table.
 - 10.14 ok — 3.1 reversal scatter, agreement/opposite/ties, band contributions, B1 detail, absolute R/U.
 - 10.15 ok — 3.2 coverage vs reliability: pass@1, pass@8, solved ≥ 1 of 32, 0/n, independent baseline split.
-- 10.16 gap — 3.3 GRPO signal by seed, window, role. Fix: add cumulative mixed groups, generated tokens and GPU-h per run beside the fractions.
+- 10.16 done (19:48Z) — 3.3 GRPO signal by seed, window, role. Fix: add cumulative mixed groups, generated tokens and GPU-h per run beside the fractions.
 - 10.17 ok — 3.4 persistence: matched cells, PS → all-wrong with denominators, next appearance, cap 0/some/all 8, cap change marked.
 - 10.18 ok — 3.5 sampling null; dev n = 8 correction.
 - 10.19 ok — Local evidence: absolute pre/post J, four draws, mixed counts, direct comparisons, momentum-only steps, missing U checkpoint, no detection threshold claimed, three links.
-- 10.20 gap — Stress construction: rubric, sources, composition, dedup, base difficulty, agent annotations. Fix: explain 99 → 95 Harder (D145) and point to the versioned manifests.
-- 10.21 gap — Stress evaluation: checkpoint-by-panel coverage table (A17 §6) missing; per tier and seed coverage (solved ≥ 1 of 8) and correct/total missing. Fix: add both tables.
+- 10.20 done (19:48Z) — Stress construction: rubric, sources, composition, dedup, base difficulty, agent annotations. Fix: explain 99 → 95 Harder (D145) and point to the versioned manifests.
+- 10.21 done (19:48Z) — Stress evaluation: checkpoint-by-panel coverage table (A17 §6) missing; per tier and seed coverage (solved ≥ 1 of 8) and correct/total missing. Fix: add both tables.
 - 10.22 ok — Response audit: preselected, blind, categories, denominators (35 responses, 70 reads), examples, grader limitation.
 - 10.23 ok/pend — Length diagnostic (A19 §2): method, tranche 1 then full panel, sealed test, all required counts, R − U at both caps, inspection sample, scope caveat. Add H-s101 cell (D157, pend).
 - 10.24 ok — Divergence timing (A19 §3): no matched pair; dev and training records; limitation stated.
@@ -213,6 +213,6 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 - 10.26 ok — Figures 1–5 embedded beside their claims with relative links.
 - 10.27 gap — Never a delta alone: sweep every delta for both absolute values (final pass).
 - 10.28 pend — Final cost table reconciled with the ledger (after H-s202 jobs).
-- 10.29 gap — Deliverables list in the report: both versioned panel manifests, machine-readable results, reproduction commands (add eval_extend, a19 analyses, recompute, stress shards), incomplete-cell inventory.
+- 10.29 done (19:48Z) — Deliverables list in the report: both versioned panel manifests, machine-readable results, reproduction commands (add eval_extend, a19 analyses, recompute, stress shards), incomplete-cell inventory.
 - 10.30 ok/pend — Verification: independent recomputation (27/27), J/ΔJ figure checks (done), remaining figures, hashes (add fallback and H-s202 r128), clean-checkout render.
 - 10.31 gap — Narrative rewrite: each section opens with its question and a plain answer, then evidence, then caveats; transitions between sections; one term per concept; "What we learned" first (A17), "Four practical answers" next (A19), with cross-references instead of repeated numbers.

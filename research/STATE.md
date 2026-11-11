@@ -27,26 +27,26 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 1:24–1:47 PM [18:24–18:47Z] | Sealed-test continuation U-s202 (79.2 → 80.8%), U-s101 (77.7 → 80.6%) | done |
 | 2:03 PM [19:03Z] | Endpoint shards pre-submitted `--after` training (11119210–11119217) | done |
 | 2:30 PM [19:30Z] | Sealed-test continuation done (all four R/U): R − U unchanged within 1 point | done |
+| 2:34 PM [19:34Z] | H-s202 round 124 saved (LATEST) | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
-| 3:10–4:10 PM [20:10–21:10Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
-| 4:10–5:10 PM [21:10–22:10Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| 5:00–6:00 PM [22:00–23:00Z] | H-s202 round-128 sealed test (6 shards in parallel) | forecast; before the deadline |
-| 5:45–6:45 PM [22:45–23:45Z] | H-s202 stress r128 (3 shards, D156) | forecast |
+| ≈ 3:40 PM [20:40Z] (20:37–20:56Z) | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
+| ≈ 4:40 PM [21:40Z] (21:37–21:56Z) | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
+| ≈ 5:30 PM [22:30Z] (22:27–22:46Z) | H-s202 round-128 sealed test (shards in parallel) | forecast; before the deadline |
+| ≈ 6:20 PM [23:20Z] | H-s202 stress r128 (3 shards, D156) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (19:14Z; limits: general 7 until the final report (A22), preempt 6, 30 CPUs)
+## Work and GPUs (19:52Z; limits: general 7 until the final report (A22), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 123) |
-| running | general 2–4 | 11118849, 11118850, 11118851 | fallback shards k3, k4, k5 (k0–k2 done) |
-| running | general 5 | 11118661 | `qis-lentest-R-s101` sealed-test continuation (last of four R/U) |
-| queued (Slurm priority) | general 6–7 | 11119262, 11119264 | `qis-lentest-H-s101`, `qis-len-H-s101` (D157) |
-| queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216 | endpoint shards k0–k4 (start together at RUN_COMPLETE) |
-| queued (dependency; held on preempt for A22) | preempt | 11119217 | endpoint shard k5 → general when a general job ends |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round 125) |
+| running | general 2 | 11118851 | fallback shard k5 (k0–k4 done) → merge → "H-s202 round 116" |
+| running | general 3–4 | 11119262, 11119264 | `qis-lentest-H-s101`, `qis-len-H-s101` (D157) |
+| queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216 | endpoint shards k0–k4 |
+| queued (dependency; preempt for A22) | preempt | 11119217 | endpoint shard k5 → general when a general job ends |
 | running | CPU | 11112647 | CPU standby |
-| blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when the endpoint shards start |
-Peak general: 7 (A22). Unused preempt: 5 of 6 (no other ready work).
+| blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when endpoint shards start |
+Unused: general 3 of 7 until RUN_COMPLETE (no other ready work); peak at RUN_COMPLETE 7.
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic

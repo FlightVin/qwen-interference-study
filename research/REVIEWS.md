@@ -1124,3 +1124,28 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** After the fallback ends (≈ 19:45Z) and before 21:00Z: pre-submit endpoint shards k0, k1 (general)
    and k2–k5 (preempt) `--after qis-main-H-s202-sym`, so they start at RUN_COMPLETE without delay (general then 3/3).
 7. **Reconciliation.** All live jobs are ledger rows or our standby. Watcher alive (b0s1gjotk).
+
+## Review 108 — 2026-11-11 19:50Z (2:50 PM EST Wed)
+1. **Changes.**
+   - Owner A21 (8 general GPUs until the final report) then A22 (general ≤ 7). Guard set to 7; endpoint k5 parked on
+     preempt so the peak at RUN_COMPLETE is 7 (D157).
+   - H-s202 11112377: round 124 at 19:34Z (LATEST = 124); rounds 121→124 ×1.04 of H-s101.
+   - Sealed-test length diagnostic done (four R/U): R − U at 12,288 → 16,384: s101 +4.2 → +3.6 (−0.6 [−1.6, +0.4]);
+     s202 −4.4 → −3.9 (+0.5 [−0.3, +1.3]); 16–24% of capped answers recover. REPORT Q2, Q4, 5/9.1 filled.
+   - New H-s101 length cells running (D157): 11119262 (sealed test), 11119264 (stress).
+   - Fallback: shards k0–k4 done; k5 running (56 min); merge when it ends.
+   - Endpoint shards k0–k4 (general) and k5 (preempt) queued `--after` training (D156).
+   - Owner asked for the report scope: CHECKLIST section 10 traces 31 requirements to report sections; gaps fixed
+     (coverage table, per-tier stress table, cumulative signal/cost, Harder 99 → 95, deliverables, A19 commands).
+     Narrative rewrite of REPORT.md in progress (delegated; numbers to be checked by script).
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect. "Budget artefact" is now ruled
+   out on both the sealed test and the stress panels.
+3. **Distinguishing task.** More training seeds (out of scope). Within scope: H-s202 endpoint adds the seed-202 R − H and
+   U − H contrasts.
+4. **Schedule.** Round 128 ≈ 20:40Z (×1.0–1.3: 20:37–20:56Z); RUN_COMPLETE ≈ 21:40Z (21:37–21:56Z); endpoint (5–6 shards
+   in parallel) ≈ 22:30Z (22:27–22:46Z); stress r128 (3 shards) ≈ 23:20Z; final cost run, verification and delivery
+   by 00:30Z. On time.
+5. **GPUs.** General 4 running (training, fallback k5, H-s101 ×2) + 5 endpoint shards queued; ≤ 7 at every point (A22).
+   Preempt: endpoint k5 queued.
+6. **Most important.** Check the narrative rewrite (numbers, figures, placeholders) as soon as it lands.
+7. **Reconciliation.** All live jobs are ledger rows or our standby. Watcher alive (bpvqeaz0q).
