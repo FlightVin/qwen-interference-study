@@ -54,7 +54,32 @@
     "contribution_reachable": 0.22216796875
    }
   },
-  "H-s202": "missing",
+  "H-s202": {
+   "pass1": 0.723876953125,
+   "pass8": 0.9075769061421524,
+   "solved_any": "122/128",
+   "solved_any_n": 122,
+   "zero": "6/128",
+   "expected_distinct_k1": 92.65625,
+   "expected_distinct_k8": 116.1698439861955,
+   "truncated_share": 0.154296875,
+   "truncated_attempts": "632/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "10/14",
+    "became_reachable_mean_pass1": 0.1875,
+    "unreachable_mean_pass1": 0.13392857142857142,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "2/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.7963267543859649,
+    "reachable_mean_change": 0.20038377192982457,
+    "overall_change_vs_baseline": 0.193115234375,
+    "contribution_unreachable": 0.0146484375,
+    "contribution_reachable": 0.178466796875
+   }
+  },
   "R-s101": {
    "pass1": 0.818603515625,
    "pass8": 0.9612719112166415,
@@ -216,7 +241,12 @@
     "summary_c_mismatch_problems": 0,
     "finish_field": true
    },
-   "H-s202": "missing",
+   "H-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
    "R-s101": {
     "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
     "record_lines": 4096,

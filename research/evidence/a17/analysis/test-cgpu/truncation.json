@@ -40,7 +40,25 @@
     "pass1": 0.70361328125
    }
   },
-  "H-s202": "missing",
+  "H-s202": {
+   "truncated": "632/4096",
+   "t": 0.154296875,
+   "finished": "3464/4096",
+   "correct": "2965/4096",
+   "a_finished": 0.85594688221709,
+   "pass1": 0.723876953125,
+   "pass1_check_1mt_times_a": 0.723876953125,
+   "truncated_and_correct": 0,
+   "mean_tokens": {
+    "finished_correct": 3644.982799325464,
+    "finished_wrong": 6112.755511022044,
+    "truncated": 12288.0
+   },
+   "within_8192": {
+    "correct": "2746/4096",
+    "pass1": 0.67041015625
+   }
+  },
   "R-s101": {
    "truncated": "437/4096",
    "t": 0.106689453125,
@@ -3132,7 +3150,12 @@
     "summary_c_mismatch_problems": 0,
     "finish_field": true
    },
-   "H-s202": "missing",
+   "H-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
    "R-s101": {
     "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
     "record_lines": 4096,
