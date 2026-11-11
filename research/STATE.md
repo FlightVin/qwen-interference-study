@@ -1,57 +1,62 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-10 20:10Z (Review 90; A11 resume; cap 12,288).
+Updated 2026-11-11 15:58Z (10:58 AM EST Wed; after Review 104). Timeline and GPU tables per A18 (`project.md` §32).
 
 ## Phase
-Main study running since 2026-11-07 19:07Z. Gates G1, G2, G3 passed; PROTOCOL frozen at `b8f36ca` (D57, D58).
-**Scope (A9, D71): six primary runs — H, R, U × seeds 101, 202**; clip (0.2, 0.2); lr 2e-6; 128 rounds.
-**Schedule (A11, D81): 8k-to-12k** — rounds 1–32 at 8,192, rounds 33–128 at **12,288** (16,384 fit in memory but not the
-deadline). All six runs restarted at round 0 as attempt a2 (D82); old s101 attempts superseded (13.9 GPU-h + 3.6 GPU-h of
-cancelled evaluations). Questions screened at 8k; evaluations after round 32 and test at 12,288 with an 8,192 view.
-Seed 303 and clipping sensitivity deferred. Deadline (A15, supersedes A12–A14): audited Markdown report by Tue 10 Nov 7:30 p.m. EST = Wed 11 Nov 00:30Z (hard); A15 analyses exploratory (D122); H-s202 cannot finish — partial run at lowest priority for an appendix (A16, D128); 01:00Z target (A9) will be missed.
-No endpoint result exists yet (none viewed at the A9 amendment).
+A17 completion (`project.md` §31). Deadline: verified `reports/REPORT.md` by **Thu 12 Nov 00:30Z = Wed 11 Nov 7:30 PM
+EST** (NON-NEGOTIABLE). Scope (A9): H, R, U × seeds 101, 202; no new seeds, arms or domains. The original sealed test
+(128 problems × 32 attempts) is primary; common-GPU reruns, stress panels and audits are exploratory.
+Design frozen at `b8f36ca`: Qwen3-1.7B `70d244cc`, full-parameter GRPO, lr 2e-6, clip (0.2, 0.2), 128 rounds, cap 8,192
+for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is training (resumed from round 60, D143).
+
+## Timeline (EST; UTC in brackets; from observed throughput)
+| When | Event | Status |
+|---|---|---|
+| 10:40 AM [15:40Z] | H-s202 round 109; LATEST checkpoint round 108 | done |
+| ≈ 11:35 AM–12:45 PM [16:35–17:45Z] | H-s202 round 112: checkpoint save + dev evaluation | expected |
+| 1:00 PM [18:00Z] | D150 decision (fallback if projected RUN_COMPLETE > 5:15 PM). All forecasts meet it → submit fallback copy (CPU job, or `-g` variant if the CPU pool is blocked) + 6 shards on round 112 | planned |
+| ≈ 3:00–4:15 PM [20:00–21:15Z] | Fallback test done (earlier if preempt GPUs start; 4:15 PM with 2 general GPUs only) | forecast |
+| 1:00–5:00 PM [18:00–22:00Z] | Verification audit (CHECKLIST 8.8) and REPORT fill (8.7) on CPU work | planned |
+| 5:05–5:45 PM [22:05–22:45Z] | H-s202 round 128 (×1.18–1.30 of H-s101 pace) | forecast |
+| 6:05–6:45 PM [23:05–23:45Z] | H-s202 RUN_COMPLETE → submit 6 endpoint shards | forecast |
+| 7:05–7:45 PM [00:05–00:45Z] | H-s202 round-128 sealed test done | forecast; likely after deadline |
+| 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
+
+## GPUs in use (15:58Z; limits 3 general + 6 preempt GPUs, 30 CPUs)
+| Pool | In use | Jobs |
+|---|---|---|
+| general | 1 / 3 | 11112377 `qis-main-H-s202-sym` (training) |
+| preempt GPU | 0 / 6 | — |
+| CPU (`preempt_cpu_qos`) | 0 running | standby 11112647 PENDING (preempted; queue 77 deep) |
+Planned at 18:00Z: general 3/3 (H-s202 + fallback k0, k1); preempt 4/6 (fallback k2–k5) if they start.
 
 ## Question
-Does direct practice on polynomial factorization (E_related) help the learner recognize and use factoring in
-harder problems (H_train → held-out MATH targets), compared with matched modular-arithmetic practice
-(E_unrelated)? Primary contrast: seed-mean R − U endpoint pass@1 on target_test (sealed until endpoints).
-Qwen3-1.7B @ `70d244cc`, non-thinking.
+Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
+practice (U) or more hard practice (H)? Primary contrast: seed-wise R − U pass@1 on the sealed test.
 
-## Established
-- Trainer and environment: custom single-GPU GRPO (D10, D11); tests 33/33 + 5/5 + 3/3 (jobs 11075445, 11078552, 11078115); precision audit passed (A1; `research/evidence/g2/precision_audit.md`).
-- Data (G1, cap 8,192): H_train 46 (31 core / 15 moderate; native 25 + Omni-MATH 21; D47); 63 matched R/U pairs (A5 coverage met; D48); target_dev 53, target_test 128 (sealed), probes 32/28/32 (D34). Native funnel: 184 at 4,096 → 117 excluded by 4,096 score, 55 re-screened with 32 fresh attempts at 8,192, 12 annotation-ineligible (D67).
-- Stage-3 baseline (D52): H mean pass 0.202, mixed groups 0.77; R 0.589 / U 0.569.
-- Baseline error audit (§3.7, D69; 64 attempts, one per problem; observational): first error = missed factoring opportunity 30, error after correct factoring 20, incorrect execution 6, valid alternative 6, extraction 2 (none split across boxes).
-- Calibration (G3): lr 2e-6 / clip (0.2, 0.2) selected by the frozen rule (mean gain 0.159 vs 0.106; D57). Panels 59/56 = all in-band items; deviation from the §3 "64 per split" reading recorded (D67). Eval noise sd ≈ 0.020 per within-run gain (D50, D51).
-- Main runs healthy so far (D61, D70): rounds 13–26, mismatch p99 ≈ 0.11, memory ≤ 41.6 GiB; responses 1,743 → ~2,550 tokens.
-
-## Owner amendments in force
-A1 precision + report figures (§15); A2 aux pool rules (§16); A3 ≤ 30 CPUs (§17); A4 H_train authority (§18);
-A5 technique coverage (§19); A7 ceilings **3 general + 6 preempt GPUs** (§21); A9 deadline + six-run scope (§23); A10 cap raise (§24) with A11 boundary at round 32 + pause (§25); A8 priorities (§22): cap fixed,
-truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode diagnostic (§20) **closed** by A8
-(evidence D62, D63; D63 narrowed in D65). D21: `registry/` and `ops/` untracked.
-
-- Round-32 dev (D99): canonical a2 values R 0.542, U 0.601, H 0.540; earlier 0.507/0.547/0.552 were the superseded a1 trajectory (A11 replay is not bitwise reproducible).
+## Established (sealed test pass@1; 95% paired problem bootstrap)
+- Original: base 0.526; s101 H 0.770, R 0.819, U 0.777; s202 R 0.748, U 0.792, H pending.
+  R − U: s101 +0.042 [+0.021, +0.063]; s202 −0.044 [−0.072, −0.017]; mean −0.001. The sign reverses between seeds.
+- Common GPU (L40S, D151): s101 R − U 0.823 − 0.778 = +0.044 [+0.024, +0.065]; s202 −0.031 [−0.060, −0.004]. Hardware
+  does not explain the reversal. Reruns moved pass@1 ≤ 1.3 points; same GPU type is not always bit-identical.
+- Truncation (D142): s202 R − U −0.044 = truncation term −0.043 + accuracy-on-finished −0.001; s101 +0.042 = +0.014 + +0.028.
+- Stress panels (D152; 221 problems × 8): s101 R − U +0.042 [+0.015, +0.068]; s202 −0.027 [−0.051, −0.002], all from
+  truncation (−0.063; accuracy +0.036). Arm order follows the seed, as on the sealed test.
+- Response audit (D153): 29 of 70 failure reads judged fixable by more factoring practice. Two-box grader limitation
+  affects ≤ 3/4,096 sealed-test attempts per cell (≤ 0.07 points).
+- GRPO signal: practice pools saturate after round 32 (all-correct groups R 62–90%, U 74–92%).
 
 ## Uncertain
-- Preempt starts are rare (D37); wall time depends mostly on 3 general GPUs.
-- Response growth at lr 2e-6 over 128 rounds. Truncation so far: hard 0.2–2.3% per run; shared hard schedule R 1.0% vs U 2.3% (21 rounds).
-- Two seeds give no real estimate of training variability; conclusions rest on per-seed agreement plus problem-resampling intervals conditional on the trained policies (A9.4).
-- Storage: 195/500 GB used; ≤ 7 concurrent main runs (D70).
+- Seed-level length drift against an arm effect (A9.4). Two seeds cannot separate them; no task within scope can.
+- H-s202 r128 endpoint and stress cell: likely after the deadline → reported as incomplete cells.
+- Why U-s101 reran non-identically on the same GPU type (unknown; scores unaffected).
 
-## A17 (owner, 11 Nov ~01:25Z): complete the study by Thu 12 Nov 00:30Z (Wed 7:30 PM EST)
-- Primary result unchanged (original sealed test): R − U s101 +0.042 [+0.021, +0.063]; s202 −0.044 [−0.072, −0.017]; mean −0.001.
-- **Leading explanation of the reversal (D142, exploratory): truncation.** s202 R − U −0.044 = truncation −0.043 + accuracy-on-finished −0.001;
-  s101 +0.042 = +0.014 + +0.028. R−U persists within 8,192 tokens. Reversal sits in B1 (−0.057 of −0.086); per-problem R−U uncorrelated across seeds.
-- GRPO signal: aux pools saturate after round 32 (all-correct groups R 62–90%, U 74–92%); shared-hard signal similar across arms.
-- Original test hardware confounded (R on L40, U on L40S, both seeds) → common-GPU reruns on L40S with original seeds (D141).
-- Stress panels frozen (D143): SuperHard-128, Harder-98 (pool exhausted); audit sample fixed (D144); blind second read running.
-- H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
+## Decisions in force
+D146 (3 general GPUs carry A17), D149 (H-s202 test as 6 shards), D150 (fallback rule, 18:00Z), D151 (+ correction).
 
 ## Next actions
-1. Watch H-s202 (job 11112377; round 109 at 15:40Z; LATEST round 108; ×1.18–1.30 of H-s101 → round 128 ≈ 22:05Z–22:45Z, RUN_COMPLETE ≈ 23:05Z–23:45Z; every case past the D150 trigger). D150 fallback at 18:00Z (LATEST then round 112). CPU pool blocked at 15:50Z: if still blocked, use `qis-h202-fallback-copy-g` (general GPU) instead of the CPU copy job. At RUN_COMPLETE submit the 6 endpoint shards.
-2. Common-GPU (D151) complete for R and U: s101 R − U on L40S 0.823 − 0.778 = +0.044 [+0.024, +0.065]; s202 −0.031 [−0.060, −0.004]. Reruns moved pass@1 ≤ 1.3 points. Same GPU type is not always bit-identical (U-s101 48% identical sequences, U-s202 100%).
-3. Stress evals (D152, 8 of 9 cells): s101 R − U +0.042 [+0.015, +0.068], R − H +0.054 [+0.025, +0.082]; s202 R − U −0.027 [−0.051, −0.002] = truncation −0.063 + accuracy +0.036. R-s101 r64 → r128 +0.053, almost all truncation term. H-s202-r128 after RUN_COMPLETE.
-4. Response audit done (D153): 29/70 failure reads fixable by more factoring practice; two-box grader limitation ≤ 0.07 pts on the sealed test.
-5. REPORT rewrite (What we learned; figures embedded; absolute values with deltas; dev n=8 fix); verification audit; deliver.
+1. 18:00Z: apply D150; submit `qis-h202-fallback-copy` (or `-g`) and `qis-test-H-s202-fb-k0..k5` (CHECKLIST 8.1b).
+2. REPORT (8.7): incomplete-cell list; §8 run table; What we learned items 2 and 6; H-s202 cells as they land.
+3. Verification (8.8): recompute headline tables from records; cost vs ledger; figures vs tables; clean-checkout render.
+4. At RUN_COMPLETE: submit endpoint shards `qis-test-H-s202-sym-k0..k5`; final cost run; deliver by 00:30Z.

@@ -955,6 +955,9 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   Seed 101: R-s101 L40S 0.823 against U-s101 0.777 (original, L40S; the U-s101 rerun is still running, and by the U-s202 result it
   is expected to be identical). The seed reversal survives on a common GPU type; hardware moved R by at most 1.3 points.
 - Outputs: `research/evidence/a17/analysis/test-cgpu/` (a17_test at 434b439, run in worktree d3fa9d5 on CPU standby 11112647).
+- **Correction (11:55Z, Review 100).** "L40S reproduces bit for bit" does not hold in general. The U-s101 rerun on L40S
+  (11112397) matched the original (L40S) on 1,964/4,096 token sequences only; pass@1 0.778 vs 0.777. The cause is unknown
+  (different node). The conclusion stands: s101 R − U on L40S = 0.823 − 0.778 = +0.044 [+0.024, +0.065].
 
 ## D152 — 2026-11-11 09:25Z — Stress panels repeat the seed pattern; seed 202's deficit there is all truncation (EXPLORATORY)
 - Cells: base, R/U × s101/s202 at round 128 (n = 8, 221 problems; SuperHard 126, Harder 95). All 1,768 attempts per cell, 0 unknown.

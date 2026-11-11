@@ -803,3 +803,11 @@ Thu 12 Nov 00:30Z**. Verbatim:
 > Prioritize H-s202, the four common-GPU R/U evaluations, the CPU analyses, and a balanced stress-panel comparison. If throughput falls short, reduce repeated attempts and optional intermediate rounds before sacrificing balanced coverage or verification. Avoid launching new training seeds, new arms, or another domain. Make routine tradeoffs autonomously and record their consequences.
 >
 > Independently recompute headline tables from attempt records, reconcile costs against the ledger, verify checkpoint and manifest hashes, and check every figure against its source table. Deliver the **Markdown report with embedded figures, both versioned panel manifests, machine-readable results, reproduction commands, and a clear inventory of incomplete cells** by the deadline. The report should leave the reader able to make a training decision, understand why that decision is uncertain, and identify the next experiment that could change it.
+
+## 32. Owner instruction A18 (received 2026-11-11 ~15:55Z = Wed 10:55 AM EST): state and checklist current
+
+> Please keep your state and checklist current. Include the timeline and GPUs in use in your state.
+
+Applied: `research/STATE.md` carries a "Timeline" table (EST and UTC, from observed throughput) and a "GPUs in use" table,
+updated at every hourly review and at every submission or job end. This overrides the harness rule that STATE holds no job
+states, for these two sections only. Recorded as CHECKLIST 0.25.
