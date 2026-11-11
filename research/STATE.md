@@ -19,17 +19,17 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 11:22 AM [16:22Z] | Canary tranche 1: 56 of 256 capped, 9 recovered, 13 finished wrong, 34 still capped; re-grade exact | done |
 | 11:32 AM [16:32Z] | U-s202 tranche 1: 41 capped, 9 recovered; s202 R − U on t1 −2.0 points at both caps | done |
 | 11:34 AM [16:34Z] | H-s202 round 112 saved (LATEST); round 113 at 16:48Z | done |
+| 12:33 PM [17:33Z] | H-s202 round 116 saved (LATEST); round 117 at 17:46Z | done |
 | 12:02 PM [17:02Z] | Tranche 1 done for all four: recovered 6–11 of 41–56 capped; R − U at 12,288 → 16,384: s101 +3.9 → +5.9, s202 −2.0 → −2.0 | done |
-| ≈ 11:35 AM–12:45 PM [16:35–17:45Z] | H-s202 round 112: checkpoint save + dev evaluation | expected |
 | 1:00 PM [18:00Z] | D150 fallback: copy LATEST (112 or 116) on CPU + 6 shards on preempt; move shards to general as length jobs end | planned |
 | ≈ 1:15 PM [18:15Z] | Stress full panels done (all four) | forecast |
 | ≈ 2:30 PM [19:30Z] | Sealed-test continuation done (four checkpoints, D155) | forecast |
 | 4:00 PM [21:00Z] | A20 ends: general back to 3 | fixed |
 | ≈ 3:00–4:15 PM [20:00–21:15Z] | Fallback test done | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
-| 4:30–5:30 PM [21:30–22:30Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
-| 5:30–6:30 PM [22:30–23:30Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| 6:30–7:30 PM [23:30–00:30Z] | H-s202 round-128 sealed test; then stress r128 | forecast; likely after deadline |
+| 3:15–4:50 PM [20:15–21:50Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
+| 4:15–5:50 PM [21:15–22:50Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
+| 5:15–6:50 PM [22:15–23:50Z] | H-s202 round-128 sealed test; then stress r128 | forecast; likely after deadline |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
 ## Work and GPUs (17:37Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)

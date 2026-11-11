@@ -1079,3 +1079,26 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Equal coverage: when R-s101 t1 ends, stop it and move U-s101 to general.
 7. **Reconciliation.** 11112377, 11118245, 11118247, 11118248 are ledger rows; 11112647 our standby; 11118157 cancelled
    by me. Watcher alive (task blzowz4dh).
+
+## Review 106 — 2026-11-11 17:50Z (12:50 PM EST Wed)
+1. **Changes.**
+   - A20 (owner, ~17:15Z): 8 general GPUs until 21:00Z, then 3 (`project.md` §34, D155; guard time-limited). This review's
+     "3 general" limit is superseded until 21:00Z.
+   - H-s202 11112377: round 116 at 17:33Z (LATEST = 116), round 117 at 17:46Z. Rounds 113→117 ran ×0.78 of H-s101.
+   - Length diagnostic: tranche 1 done for all four (R − U 12,288 → 16,384: s101 +3.9 → +5.9; s202 −2.0 → −2.0); blind
+     read of 12 continuations (6 loops, 3 wrong, 1 sound, 1 repaired but capped, 1 productive). U-s202 stress full panel
+     done: 1,768 attempts, capped 268, recovered 41, finished wrong 81, still capped 146; pass@1-equivalent correct
+     1,164 → 1,205. U-s101, R-s202, R-s101 full panels running. Sealed-test continuation (D155) running on 4 general GPUs.
+   - REPORT: Q1, Q3, 9.1 (tranche 1 + inspection), 9.2, incomplete-cell table; recomputation 27/27 verified; J/ΔJ figures
+     verified; one broken path fixed.
+2. **Competing explanation still plausible.** Seed-level path dependence (the runs split right after the cap change at
+   round 33, in opposite directions) against an arm effect. "R-s202 only needed more room" is unlikely: equal recovery in
+   both arms on tranche 1, and most capped answers loop or end wrong.
+3. **Distinguishing task.** Sealed-test continuation (D155): if R-s202 − U-s202 stays ≈ −4.4 at 16,384, the deficit is not
+   a budget artefact. Two seeds cannot separate path dependence from arm.
+4. **Schedule.** D150 projection (cumulative ×1.164 since round 66): round 128 ≈ 21:26Z, RUN_COMPLETE ≈ 22:26Z → past
+   22:15Z → fallback at 18:00Z on round 116 (preempt; idle). Range of projections: RUN_COMPLETE 21:15Z (×0.78) to 22:50Z
+   (×1.30); endpoint ≈ 1 h later (22:15Z–23:50Z) on 3 general + preempt. Report: on time.
+5. **GPUs.** General 8/8 (A20): H-s202, 3 stress full panels, 4 sealed-test continuations. Preempt 0/6 until the fallback.
+6. **Most important.** Fallback at 18:00Z; then Q2/Q4 from the full-panel and sealed-test continuations.
+7. **Reconciliation.** All 8 general jobs and standby 11112647 are ours (ledger / standby). Watcher alive (bfx1obf8f).
