@@ -1,0 +1,826 @@
+{
+ "n_problems": 128,
+ "policies": {
+  "base": {
+   "m8": {
+    "expected_lost_hypergeometric": 5.719368418628791,
+    "expected_gained_hypergeometric": 5.719368418628791,
+    "expected_lost_binomial_plugin": 5.363855367397583,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 5,
+      "gained_A_zero_B_some": 4
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 5,
+      "gained_A_zero_B_some": 5
+     }
+    ],
+    "empirical_mean_lost": 5.0,
+    "empirical_mean_gained": 4.5,
+    "per_problem_rate_hypergeometric": 0.04468256577053743
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 3.3729372771585515,
+    "expected_gained_hypergeometric": 3.3729372771585515,
+    "expected_lost_binomial_plugin": 3.016204483119467,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 3
+     }
+    ],
+    "empirical_mean_lost": 2.0,
+    "empirical_mean_gained": 3.0,
+    "per_problem_rate_hypergeometric": 0.026351072477801184
+   }
+  },
+  "H-s101": {
+   "m8": {
+    "expected_lost_hypergeometric": 3.1303288388890746,
+    "expected_gained_hypergeometric": 3.1303288388890746,
+    "expected_lost_binomial_plugin": 2.8138191725227575,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 6
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 3
+     }
+    ],
+    "empirical_mean_lost": 1.5,
+    "empirical_mean_gained": 4.5,
+    "per_problem_rate_hypergeometric": 0.024455694053820896
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 1.9256269714605063,
+    "expected_gained_hypergeometric": 1.9256269714605063,
+    "expected_lost_binomial_plugin": 1.753703832571354,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 4,
+      "gained_A_zero_B_some": 2
+     }
+    ],
+    "empirical_mean_lost": 4.0,
+    "empirical_mean_gained": 2.0,
+    "per_problem_rate_hypergeometric": 0.015043960714535206
+   }
+  },
+  "H-s202": "missing",
+  "R-s101": {
+   "m8": {
+    "expected_lost_hypergeometric": 1.6922423552389365,
+    "expected_gained_hypergeometric": 1.6922423552389365,
+    "expected_lost_binomial_plugin": 1.810517505429187,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 0
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 0
+     }
+    ],
+    "empirical_mean_lost": 1.5,
+    "empirical_mean_gained": 0.0,
+    "per_problem_rate_hypergeometric": 0.013220643400304192
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 0.2649530090309551,
+    "expected_gained_hypergeometric": 0.2649530090309551,
+    "expected_lost_binomial_plugin": 0.5686717711397532,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 0
+     }
+    ],
+    "empirical_mean_lost": 1.0,
+    "empirical_mean_gained": 0.0,
+    "per_problem_rate_hypergeometric": 0.0020699453830543366
+   }
+  },
+  "R-s202": {
+   "m8": {
+    "expected_lost_hypergeometric": 2.655629609991487,
+    "expected_gained_hypergeometric": 2.655629609991487,
+    "expected_lost_binomial_plugin": 2.4481355357318706,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 2
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 3,
+      "gained_A_zero_B_some": 4
+     }
+    ],
+    "empirical_mean_lost": 2.5,
+    "empirical_mean_gained": 3.0,
+    "per_problem_rate_hypergeometric": 0.02074710632805849
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 2.3163832628111525,
+    "expected_gained_hypergeometric": 2.3163832628111525,
+    "expected_lost_binomial_plugin": 1.5554642684355153,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 3
+     }
+    ],
+    "empirical_mean_lost": 1.0,
+    "empirical_mean_gained": 3.0,
+    "per_problem_rate_hypergeometric": 0.01809674424071213
+   }
+  },
+  "U-s101": {
+   "m8": {
+    "expected_lost_hypergeometric": 2.6624807230603804,
+    "expected_gained_hypergeometric": 2.6624807230603804,
+    "expected_lost_binomial_plugin": 2.513601955840286,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 1
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 2,
+      "gained_A_zero_B_some": 4
+     }
+    ],
+    "empirical_mean_lost": 2.0,
+    "empirical_mean_gained": 2.5,
+    "per_problem_rate_hypergeometric": 0.020800630648909222
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 1.4262627050601335,
+    "expected_gained_hypergeometric": 1.4262627050601335,
+    "expected_lost_binomial_plugin": 1.3098781400480697,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 3,
+      "gained_A_zero_B_some": 0
+     }
+    ],
+    "empirical_mean_lost": 3.0,
+    "empirical_mean_gained": 0.0,
+    "per_problem_rate_hypergeometric": 0.011142677383282293
+   }
+  },
+  "U-s202": {
+   "m8": {
+    "expected_lost_hypergeometric": 1.7338924251687224,
+    "expected_gained_hypergeometric": 1.7338924251687224,
+    "expected_lost_binomial_plugin": 1.7384513656783307,
+    "empirical": [
+     {
+      "A": "samples 0-7",
+      "B": "samples 8-15",
+      "lost_A_some_B_zero": 0,
+      "gained_A_zero_B_some": 2
+     },
+     {
+      "A": "samples 16-23",
+      "B": "samples 24-31",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 1
+     }
+    ],
+    "empirical_mean_lost": 0.5,
+    "empirical_mean_gained": 1.5,
+    "per_problem_rate_hypergeometric": 0.013546034571630644
+   },
+   "m16": {
+    "expected_lost_hypergeometric": 0.8576453708629557,
+    "expected_gained_hypergeometric": 0.8576453708629557,
+    "expected_lost_binomial_plugin": 0.7968739144172885,
+    "empirical": [
+     {
+      "A": "samples 0-15",
+      "B": "samples 16-31",
+      "lost_A_some_B_zero": 1,
+      "gained_A_zero_B_some": 1
+     }
+    ],
+    "empirical_mean_lost": 1.0,
+    "empirical_mean_gained": 1.0,
+    "per_problem_rate_hypergeometric": 0.006700354459866841
+   }
+  }
+ },
+ "dev_panel": {
+  "problems": 53,
+  "n": 8,
+  "source": "reports/tables/report_data.json: all 28 panel=dev eval rows have n=8, problems=53"
+ },
+ "pooled_by_c_bin": {
+  "m8": [
+   {
+    "c_range": [
+     0,
+     0
+    ],
+    "problem_splits": 60,
+    "mean_p": 0.0,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 0.0
+   },
+   {
+    "c_range": [
+     1,
+     2
+    ],
+    "problem_splits": 36,
+    "mean_p": 0.03993055555555555,
+    "empirical_lost_rate": 0.2777777777777778,
+    "empirical_gained_rate": 0.2777777777777778,
+    "hypergeometric_rate": 0.267921146953405,
+    "p_loss_at_mean_p": 0.20080158576156448
+   },
+   {
+    "c_range": [
+     3,
+     4
+    ],
+    "problem_splits": 52,
+    "mean_p": 0.109375,
+    "empirical_lost_rate": 0.19230769230769232,
+    "empirical_gained_rate": 0.25,
+    "hypergeometric_rate": 0.27002224694104543,
+    "p_loss_at_mean_p": 0.23915816986019428
+   },
+   {
+    "c_range": [
+     5,
+     8
+    ],
+    "problem_splits": 68,
+    "mean_p": 0.19669117647058823,
+    "empirical_lost_rate": 0.07352941176470588,
+    "empirical_gained_rate": 0.10294117647058823,
+    "hypergeometric_rate": 0.13146899157826325,
+    "p_loss_at_mean_p": 0.14333536231420865
+   },
+   {
+    "c_range": [
+     9,
+     16
+    ],
+    "problem_splits": 146,
+    "mean_p": 0.3814212328767123,
+    "empirical_lost_rate": 0.00684931506849315,
+    "empirical_gained_rate": 0.0136986301369863,
+    "hypergeometric_rate": 0.017358654421669405,
+    "p_loss_at_mean_p": 0.0209772689493492
+   },
+   {
+    "c_range": [
+     17,
+     24
+    ],
+    "problem_splits": 196,
+    "mean_p": 0.6438137755102041,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0001393450908785408,
+    "p_loss_at_mean_p": 0.0002590027800158493
+   },
+   {
+    "c_range": [
+     25,
+     31
+    ],
+    "problem_splits": 502,
+    "mean_p": 0.9081175298804781,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 5.079971712747692e-09
+   },
+   {
+    "c_range": [
+     32,
+     32
+    ],
+    "problem_splits": 476,
+    "mean_p": 1.0,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 0.0
+   }
+  ],
+  "m16": [
+   {
+    "c_range": [
+     0,
+     0
+    ],
+    "problem_splits": 30,
+    "mean_p": 0.0,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 0.0
+   },
+   {
+    "c_range": [
+     1,
+     2
+    ],
+    "problem_splits": 18,
+    "mean_p": 0.03993055555555555,
+    "empirical_lost_rate": 0.5,
+    "empirical_gained_rate": 0.3888888888888889,
+    "hypergeometric_rate": 0.4283154121863799,
+    "p_loss_at_mean_p": 0.24955876603925967
+   },
+   {
+    "c_range": [
+     3,
+     4
+    ],
+    "problem_splits": 26,
+    "mean_p": 0.109375,
+    "empirical_lost_rate": 0.11538461538461539,
+    "empirical_gained_rate": 0.07692307692307693,
+    "hypergeometric_rate": 0.08175750834260288,
+    "p_loss_at_mean_p": 0.13215727680704129
+   },
+   {
+    "c_range": [
+     5,
+     8
+    ],
+    "problem_splits": 34,
+    "mean_p": 0.19669117647058823,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.009462220186554415,
+    "p_loss_at_mean_p": 0.029164960089403936
+   },
+   {
+    "c_range": [
+     9,
+     16
+    ],
+    "problem_splits": 73,
+    "mean_p": 0.3814212328767123,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 9.206128464232932e-05,
+    "p_loss_at_mean_p": 0.0004593254596835925
+   },
+   {
+    "c_range": [
+     17,
+     24
+    ],
+    "problem_splits": 98,
+    "mean_p": 0.6438137755102041,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 6.711720714474668e-08
+   },
+   {
+    "c_range": [
+     25,
+     31
+    ],
+    "problem_splits": 251,
+    "mean_p": 0.9081175298804781,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 2.5806112864505366e-17
+   },
+   {
+    "c_range": [
+     32,
+     32
+    ],
+    "problem_splits": 238,
+    "mean_p": 1.0,
+    "empirical_lost_rate": 0.0,
+    "empirical_gained_rate": 0.0,
+    "hypergeometric_rate": 0.0,
+    "p_loss_at_mean_p": 0.0
+   }
+  ]
+ },
+ "curve": {
+  "p": [
+   0.0,
+   0.01,
+   0.02,
+   0.03,
+   0.04,
+   0.05,
+   0.06,
+   0.07,
+   0.08,
+   0.09,
+   0.1,
+   0.11,
+   0.12,
+   0.13,
+   0.14,
+   0.15,
+   0.16,
+   0.17,
+   0.18,
+   0.19,
+   0.2,
+   0.21,
+   0.22,
+   0.23,
+   0.24,
+   0.25,
+   0.26,
+   0.27,
+   0.28,
+   0.29,
+   0.3,
+   0.31,
+   0.32,
+   0.33,
+   0.34,
+   0.35000000000000003,
+   0.36,
+   0.37,
+   0.38,
+   0.39,
+   0.4,
+   0.41000000000000003,
+   0.42,
+   0.43,
+   0.44,
+   0.45,
+   0.46,
+   0.47000000000000003,
+   0.48,
+   0.49,
+   0.5,
+   0.51,
+   0.52,
+   0.53,
+   0.54,
+   0.55,
+   0.56,
+   0.5700000000000001,
+   0.58,
+   0.59,
+   0.6,
+   0.61,
+   0.62,
+   0.63,
+   0.64,
+   0.65,
+   0.66,
+   0.67,
+   0.68,
+   0.6900000000000001,
+   0.7000000000000001,
+   0.71,
+   0.72,
+   0.73,
+   0.74,
+   0.75,
+   0.76,
+   0.77,
+   0.78,
+   0.79,
+   0.8,
+   0.81,
+   0.8200000000000001,
+   0.8300000000000001,
+   0.84,
+   0.85,
+   0.86,
+   0.87,
+   0.88,
+   0.89,
+   0.9,
+   0.91,
+   0.92,
+   0.93,
+   0.9400000000000001,
+   0.9500000000000001,
+   0.96,
+   0.97,
+   0.98,
+   0.99,
+   1.0
+  ],
+  "m8": [
+   0.0,
+   0.0712869233330445,
+   0.12696530198928985,
+   0.1694897059750105,
+   0.200986654317361,
+   0.2232937626372969,
+   0.23799464770698076,
+   0.24645000795703897,
+   0.24982526139297304,
+   0.24911508788671272,
+   0.2451651911148159,
+   0.23869156631841876,
+   0.2302975333734305,
+   0.22048877020619456,
+   0.20968655920462362,
+   0.19823943880299855,
+   0.18643343371554078,
+   0.1745010202243654,
+   0.16262896736527066,
+   0.15096518068225903,
+   0.13962466232893447,
+   0.12869468957969513,
+   0.11823930318078918,
+   0.10830318733228797,
+   0.09891501436464817,
+   0.09009031928144395,
+   0.08183396221227623,
+   0.07414223039123,
+   0.0670046254858591,
+   0.060405376893412376,
+   0.05432471694303988,
+   0.04873994974720893,
+   0.04362634168843387,
+   0.03895785816810163,
+   0.03470776824533906,
+   0.030849136121241457,
+   0.02735521604592296,
+   0.02419976511395028,
+   0.021357286541421366,
+   0.01880321436116172,
+   0.016514049009254395,
+   0.01446745198636133,
+   0.012642306642810458,
+   0.0110187511406532,
+   0.009578188773820554,
+   0.008303280065515796,
+   0.007177920397778744,
+   0.006187206350634918,
+   0.005317393427399031,
+   0.0045558474095381074,
+   0.0038909912109375,
+   0.0033122487802176603,
+   0.002809987324450605,
+   0.002375458892451213,
+   0.002000742155631578,
+   0.0016786850546434743,
+   0.001402848836651358,
+   0.0011674538875028056,
+   0.0009673276621447637,
+   0.0007978549326029539,
+   0.0006549305032704004,
+   0.0005349144860168575,
+   0.00043459018088480437,
+   0.0003511245702729578,
+   0.0002820314041345004,
+   0.00022513682963475087,
+   0.00017854749989089225,
+   0.00014062108197208524,
+   0.00010993907351940372,
+   8.528182951288241e-05,
+   6.560569532789988e-05,
+   5.0022138831363245e-05,
+   3.777877249010056e-05,
+   2.8242155983669244e-05,
+   2.088227037017101e-05,
+   1.5258556231856346e-05,
+   1.1007410251852087e-05,
+   7.83103720199584e-06,
+   5.487557239985031e-06,
+   3.7822716304130924e-06,
+   2.5599934463999954e-06,
+   1.6983534196858606e-06,
+   1.101994843204686e-06,
+   6.975752574880789e-07,
+   4.2949654513255996e-07,
+   2.562889968159167e-07,
+   1.475788838204667e-07,
+   8.157306544583392e-08,
+   4.2998167751157396e-08,
+   2.1435887640502682e-08,
+   9.999999899999982e-09,
+   4.304672081469787e-09,
+   1.6777215971852435e-09,
+   5.764800996676675e-10,
+   1.679615999717876e-10,
+   3.90624999984737e-11,
+   6.553599999957097e-12,
+   6.560999999995742e-13,
+   2.5599999999999526e-14,
+   1.000000000000007e-16,
+   0.0
+  ],
+  "m16": [
+   0.0,
+   0.1264774351370221,
+   0.19991458025760328,
+   0.2369461026704286,
+   0.24958372066505424,
+   0.24641518419326452,
+   0.2335068372252358,
+   0.21508027646710207,
+   0.1940174170367296,
+   0.1722356724787903,
+   0.150965180682259,
+   0.13095244576537654,
+   0.11260893407939222,
+   0.096118677864945,
+   0.08151550206356549,
+   0.06873786242882851,
+   0.05766728182225394,
+   0.04815485241099076,
+   0.04003912237214906,
+   0.0331578197451513,
+   0.02735521604592298,
+   0.022486446343895038,
+   0.018419740876833325,
+   0.015037255429026406,
+   0.012234990331133865,
+   0.009922143331897913,
+   0.008020136306902414,
+   0.006461479659522462,
+   0.005188583699040797,
+   0.004152587529395227,
+   0.0033122487802176572,
+   0.002632918688609465,
+   0.0020856142509859264,
+   0.0016461906847344834,
+   0.0012946120076918267,
+   0.0010143142420111946,
+   0.000791653914969105,
+   0.0006154336872582483,
+   0.0004764967512797856,
+   0.0003673818698662413,
+   0.00028203140413450036,
+   0.00021554529425771686,
+   0.00016397463248964134,
+   0.00012414915370633116,
+   9.353363340352702e-05,
+   7.010880761248096e-05,
+   5.227300338227078e-05,
+   3.876118795501031e-05,
+   2.857860896299372e-05,
+   2.0946608723193937e-05,
+   1.5258556231856346e-05,
+   1.1044154766390438e-05,
+   7.9406553999842e-06,
+   5.669741578551477e-06,
+   4.019051409116626e-06,
+   2.827476424356271e-06,
+   1.9735219754364054e-06,
+   1.3661383909539152e-06,
+   9.37536617860431e-07,
+   6.375899026251291e-07,
+   4.2949654513255964e-07,
+   2.8643994919485245e-07,
+   1.8903292906221447e-07,
+   1.233751039207516e-07,
+   7.958660476543529e-08,
+   5.0709425177578844e-08,
+   3.189059769062671e-08,
+   1.9779851623383004e-08,
+   1.20892580499961e-08,
+   7.274231164557391e-09,
+   4.304672081469783e-09,
+   2.5024647305411484e-09,
+   1.4273434974294422e-09,
+   7.976644301324575e-10,
+   4.3608742880411673e-10,
+   2.3283064359965952e-10,
+   1.2116574789476986e-10,
+   6.132610415304901e-11,
+   3.0113614962483766e-11,
+   1.4305686902215162e-11,
+   6.553599999957027e-12,
+   2.8844141356678787e-12,
+   1.2143953109644612e-12,
+   4.866119187564286e-13,
+   1.8446744073706205e-13,
+   6.568408355712474e-14,
+   2.177953337809327e-14,
+   6.654166091831758e-15,
+   1.8488425889503596e-15,
+   4.594972986357205e-16,
+   9.999999999999963e-17,
+   1.853020188851831e-17,
+   2.8147497671065374e-18,
+   3.3232930569600627e-19,
+   2.8211099074559564e-20,
+   1.5258789062499674e-21,
+   4.294967296000061e-23,
+   4.304672100000061e-25,
+   6.553600000000093e-28,
+   1.0000000000000142e-32,
+   0.0
+  ],
+  "max": {
+   "m8": {
+    "p": 0.08299595679532878,
+    "P_loss": 0.25
+   },
+   "m16": {
+    "p": 0.0423967193014263,
+    "P_loss": 0.25
+   }
+  },
+  "formula": "P_loss(p, m) = (1 \u2212 (1 \u2212 p)^m)(1 \u2212 p)^m; P_gain(p, m) is the same by symmetry"
+ },
+ "notes": [
+  "Hypergeometric: expectation over random disjoint splits of the observed 32 attempts (conditional on c); lost and gained are equal by symmetry.",
+  "Empirical: fixed index splits. The two m = 8 splits use disjoint attempts; the m = 16 split reuses the same 32 attempts, so the m = 8 and m = 16 counts are not independent.",
+  "Pooled bins combine all policies; the same problem appears once per policy, so pooled rows are not independent.",
+  "Dev panel: 53 problems \u00d7 8 attempts per evaluation (reports/tables/report_data.json: all 28 panel=dev eval rows have n=8, problems=53). The per-problem rate depends on p, and the dev panel has a different p distribution, so test-panel counts must not be rescaled to the dev panel; use P_loss(p, 8)."
+ ],
+ "inputs": {
+  "n_problems": 128,
+  "base_incomplete_problems": [],
+  "original": {
+   "base": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-base",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s202": "missing",
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  },
+  "cgpu": {
+   "R-s101": "missing",
+   "R-s202": "missing",
+   "U-s101": "missing",
+   "U-s202": "missing"
+  }
+ }
+}

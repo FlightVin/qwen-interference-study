@@ -1,0 +1,178 @@
+{
+ "primary_original": {
+  "rows": [
+   {
+    "seed": 101,
+    "H": 0.76953125,
+    "H_pass8": 0.9370628452316438,
+    "R": 0.818603515625,
+    "R_pass8": 0.9612719112166415,
+    "U": 0.77685546875,
+    "U_pass8": 0.9446191919678085,
+    "R-U": {
+     "est": 0.041748046875,
+     "lo": 0.021240234375,
+     "hi": 0.063232421875,
+     "A": 0.818603515625,
+     "B": 0.77685546875,
+     "direction": "R \u2212 U"
+    },
+    "R-H": {
+     "est": 0.049072265625,
+     "lo": 0.01953125,
+     "hi": 0.07984008789062491,
+     "A": 0.818603515625,
+     "B": 0.76953125,
+     "direction": "R \u2212 H"
+    },
+    "U-H": {
+     "est": 0.00732421875,
+     "lo": -0.01953125,
+     "hi": 0.034912109375,
+     "A": 0.77685546875,
+     "B": 0.76953125,
+     "direction": "U \u2212 H"
+    }
+   },
+   {
+    "seed": 202,
+    "H": "missing",
+    "H_pass8": "missing",
+    "R": 0.747802734375,
+    "R_pass8": 0.9220936494312294,
+    "U": 0.792236328125,
+    "U_pass8": 0.9485036109685026,
+    "R-U": {
+     "est": -0.04443359375,
+     "lo": -0.07177734375,
+     "hi": -0.017333984375,
+     "A": 0.747802734375,
+     "B": 0.792236328125,
+     "direction": "R \u2212 U"
+    },
+    "R-H": "missing",
+    "U-H": "missing"
+   }
+  ],
+  "mean": {
+   "H": "missing",
+   "R": 0.783203125,
+   "U": 0.7845458984375,
+   "R-U": {
+    "est": -0.0013427734375,
+    "lo": -0.018191528320312497,
+    "hi": 0.0150146484375,
+    "A": 0.783203125,
+    "B": 0.7845458984375,
+    "direction": "R \u2212 U"
+   },
+   "R-H": "missing",
+   "U-H": "missing"
+  }
+ },
+ "reproducibility_check_common_gpu": {
+  "rows": [
+   {
+    "seed": 101,
+    "H": 0.76953125,
+    "H_pass8": 0.9370628452316438,
+    "R": "missing",
+    "R_pass8": "missing",
+    "U": "missing",
+    "U_pass8": "missing",
+    "R-U": "missing",
+    "R-H": "missing",
+    "U-H": "missing"
+   },
+   {
+    "seed": 202,
+    "H": "missing",
+    "H_pass8": "missing",
+    "R": "missing",
+    "R_pass8": "missing",
+    "U": "missing",
+    "U_pass8": "missing",
+    "R-U": "missing",
+    "R-H": "missing",
+    "U-H": "missing"
+   }
+  ],
+  "mean": {
+   "H": "missing",
+   "R": "missing",
+   "U": "missing",
+   "R-U": "missing",
+   "R-H": "missing",
+   "U-H": "missing"
+  }
+ },
+ "common_gpu_sources": {
+  "H-s101": "original evaluation (ran on L40S)",
+  "H-s202": "endpoint /data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym (common-GPU)",
+  "R-s101": "qis-cgpu-R-s101",
+  "R-s202": "qis-cgpu-R-s202",
+  "U-s101": "qis-cgpu-U-s101",
+  "U-s202": "qis-cgpu-U-s202",
+  "base": "original evaluation (ran on L40S)"
+ },
+ "base": {
+  "pass1": 0.525634765625,
+  "pass8": 0.8352163617516615
+ },
+ "reproducibility": {
+  "R-s101": "missing",
+  "R-s202": "missing",
+  "U-s101": "missing",
+  "U-s202": "missing"
+ },
+ "interval_note": "95% paired bootstrap over the 128 problems (10,000 draws, seed 2027; streams a9/<contrast>/s<seed> for the original table as in report_tables, a9/a17-cgpu/... and a9/a17-repro/... otherwise); conditional on these trained policies",
+ "inputs": {
+  "n_problems": 128,
+  "base_incomplete_problems": [],
+  "original": {
+   "base": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-base",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s202": "missing",
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  },
+  "cgpu": {
+   "R-s101": "missing",
+   "R-s202": "missing",
+   "U-s101": "missing",
+   "U-s202": "missing"
+  }
+ }
+}
