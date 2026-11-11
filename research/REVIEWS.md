@@ -935,3 +935,4 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    section, What we learned.
 7. **Reconciliation.** Live job IDs 11112377, 11112397, 11113928, 11115377 and standby 11112647 are ledger rows. Watcher alive
    (pid 22415).
+- 09:58Z correction to Review 98 item 1: 11113928 was not lost. Its evaluation wrote summary.json at 09:44:33Z, the moment of preemption; the requeued job skipped the completed phases in 26 s on general.
