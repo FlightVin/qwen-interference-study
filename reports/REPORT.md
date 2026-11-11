@@ -335,5 +335,21 @@ clipping sensitivity deferred (A9); Harder has 95 and SuperHard 126 items, not 1
 
 ## Reproduction
 
-⟨PENDING: commit, commands (`qis.analysis.a17_test`, `qis.analysis.a17_train`, `qis.data.stress_panels`, stress
-evaluation recipes), manifests and hashes.⟩
+Code: branch of this repository at commit ⟨final commit⟩. Every job was pinned to a commit; the ledger
+(`slurm-agentic-engineering/state/LEDGER.jsonl`, outside the repository) maps each job to its commit and recipe hash.
+Run on a compute node, never on a login node, with `P=/data/user_data/$USER/qis`, the environment `$P/env/venv-v1`
+(analysis) or `$P/env/venv-report` (figures), and `PYTHONPATH=src`. Model: `Qwen/Qwen3-1.7B` at `70d244cc`.
+
+| Step | Command |
+|---|---|
+| Sealed-test endpoint (one checkpoint, L40S) | `python -m qis.evaluate_ckpt --model $MODEL --ckpt $P/ckpt/<run>/round_0128 --panel $P/data/main-v1/target_test_sealed.json --panel-key test --n 32 --out <dir> --seed-label test-final --max-tokens 12288` |
+| Same, as six shards (H-s202) | `python -m qis.eval_merge --split 6 <panel> test <prefix>`, one `evaluate_ckpt` per shard panel, then `python -m qis.eval_merge <panel> test <out> <shard dirs>` |
+| Stress panels (construction) | `python -m qis.data.stress_panels data/external/a17/candidates_v1.jsonl research/evidence/a17/panels/annotations <out> $P/data $PWD/data` |
+| Stress evaluation (one checkpoint) | `python -m qis.evaluate_ckpt --model $MODEL --ckpt <ckpt or base> --panel $P/data/stress/stress_v1.json --panel-key stress --n 8 --out $P/stress-eval/<label> --seed-label stress-v1 --max-tokens 12288` |
+| Test analyses (section 1, 3) | `python -m qis.analysis.a17_test $P/test-eval <out> --cgpu-root $P/test-eval-cgpu` |
+| Training analyses (sections 2–4) | `python -m qis.analysis.a17_train $P/runs <out> --diag $P/diag-local/r0/diag_r0.jsonl $P/diag-local/r64/diag_r64.jsonl --diag-ref research/evidence/a15/diag_r0_ref.jsonl research/evidence/a15/diag_r64_ref.jsonl --gpu-hours reports/tables/cost.json` |
+| Stress analysis (section 5) | `python -m qis.analysis.a17_stress $P/data/stress/stress_v1.json $P/stress-eval <out>`; figure: `python -m qis.analysis.a17_stress plot <out> <fig dir>` |
+| Response audit packets (section 5) | `python research/evidence/a17/audit/build.py research/evidence/a17/panels/audit_sample_v1.json` |
+
+Frozen inputs and their sha256: sealed test `2ffe70dd…`, stress panel `757393be…`. ⟨PENDING: manifest table with full
+hashes for every checkpoint used.⟩
