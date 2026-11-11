@@ -1188,3 +1188,18 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Keep the endpoint shards moving; finish report text that does not depend on H-s202.
 7. **Reconciliation.** 11119210, 11119212, 11119213, 11120590, 11120591, 11120595, 11120596, 11120598 are ledger rows;
    11112647 our standby; cancelled 11119215–17 and 11119925–27 by me (D159). Watcher alive (bou1qlegx).
+
+## Review 111 — 2026-11-11 22:50Z (5:50 PM EST Wed)
+1. **Changes.**
+   - Endpoint shards: k0, k1, k2, k4 done (4 of 6 summaries); k3 (11120590) and k5 (11120595) running ≈ 55–58 min.
+   - Stress shards k0, k1 running ≈ 52–55 min; k2 (11121110) started 22:41Z after the first endpoint slot freed.
+   - D159 extension: endpoint k2 moved off the L40S-only queue (21:57Z). All 12 embedded figures checked; scatter legend
+     and transitions headroom fixed; every flagged delta now has both absolute values; clean-clone links and paths resolve.
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect (unchanged).
+3. **Distinguishing task.** The H-s202 endpoint (seed-202 R − H, U − H), due within ≈ 15 min.
+4. **Schedule.** Endpoint merge ≈ 23:00Z → a17_test stage + REPORT cells ≈ 23:15Z. Stress merge ≈ 23:30Z → a17_stress
+   stage ≈ 23:40Z. Final cost run after the last job (≈ 23:35Z), manifest + recompute + render ≈ 00:00Z; deliver by 00:30Z.
+5. **GPUs.** General 5 running (A23 limit 8). Preempt 0.
+6. **Most important.** Merge check and report fill for the endpoint the moment it lands.
+7. **Reconciliation.** Live IDs 11120590, 11120595, 11120596, 11120598, 11121110 are ledger rows; 11112647 our standby.
+   Watcher alive (bgan1sbox).
