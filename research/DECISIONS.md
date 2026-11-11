@@ -902,3 +902,13 @@ yet R-s202 truncated more than U-s202 on the sealed test (13.1% vs 8.1%). Practi
 to the final policies on the test problems. Next distinguishing check: are the truncated test answers degenerate loops or long
 non-repeating reasoning (a17_test section 7, requested 02:58Z)? Loops would point to a policy-specific failure mode (instability
 of the endpoint checkpoint) rather than a skill difference.
+
+## D148 — 2026-11-11 ~03:10Z — Truncated test answers are long unconverged searches, not loops (EXPLORATORY)
+`a17_test` section 7 at 434b439 (`research/evidence/a17/analysis/test/loops.md`): an attempt "loops" if ≥ 50% of the 32-token windows
+in its last 2,048 tokens already occurred earlier in the attempt. Truncated attempts that loop: R-s101 0/437, U-s101 1/501, R-s202
+0/538, U-s202 0/333, H-s101 0/445; median repeated share 0.007–0.047. So the R − U truncation term is entirely non-looping: s202
+R 538/4096 vs U 333/4096 truncated-not-looping, R − U +5.0 points [+3.1, +7.1] of attempts. Two decoded R-s202 truncated answers
+(sample 0): `intermediate_algebra/test/00220` (a telescoping product that factors via n⁴ + ¼) spends 12,288 tokens trying numeric
+patterns with 35 "wait"s and never factors; `intermediate_algebra/test/00482` cycles through Vieta substitutions without converging.
+Reading: the truncation difference is a difference in search behaviour on hard test problems (long unconverged exploration), which
+is plausibly where missed strategy recognition shows up; exact-window matching can miss paraphrased cycling.

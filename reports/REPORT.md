@@ -34,7 +34,9 @@ uses outputs that were already visible.
    of later appearances of previously solvable hard prompts were all-wrong, and most such prompts returned to mixed at
    their next appearance. Link 3 (learning then stalls): not observed. The competing explanation that fits the same
    evidence best is **length drift**: an arm-and-seed-specific tendency to write longer answers, which hits the cap,
-   zeroes the reward and appears as "forgetting" in the records and as a seed-dependent R − U on the test.
+   zeroes the reward and appears as "forgetting" in the records and as a seed-dependent R − U on the test. The long
+   answers are unconverged searches, not loops, and training-time answer length on the shared hard prompts does not
+   predict which arm truncates more on the test (R wrote shorter training answers than U in both seeds).
 5. **Transfer to harder problems.** ⟨PENDING: stress panels. SuperHard-126 and Harder-95 are frozen; evaluations
    queued.⟩
 6. **The one larger experiment to run next.** ⟨Draft:⟩ Rerun R and U with more seeds (at least 6 per arm) **and** a
@@ -145,7 +147,7 @@ R − U = −(t_R − t_U)·ā + (1 − t̄)·(a_R − a_U) exactly (bars are R/
 Per problem, R − U success falls as R − U truncation rises (Pearson −0.51 in seed 101, −0.59 in seed 202). Counting
 only answers that finish within 8,192 tokens, R − U is +5.1 [+3.1, +7.3] (R 76.5% vs U 71.4%) in seed 101 and −7.0
 [−10.0, −4.2] (R 68.6% vs U 75.7%) in seed 202. The reversal is therefore not created by the 12,288 cap; it follows
-which policy writes longer answers. In training, R-s202 also generated more tokens than U-s202 late in training (16.4 M
+which policy writes longer answers. The truncated answers are not degenerate loops: 0 of R-s202's 538 truncated answers repeat ≥ 50% of their final 32-token windows (median repeated share 4.7%). They are long searches that do not converge; for example, on `intermediate_algebra/test/00220`, a product that telescopes once n⁴ + ¼ is factored, R-s202 tried numeric patterns for 12,288 tokens and never factored. In training, R-s202 also generated more tokens than U-s202 late in training (16.4 M
 vs 15.1 M in rounds 97–128); in seed 101 the two were close (19.0 M vs 19.1 M).
 
 ### 3.4 How much learning signal each arm received

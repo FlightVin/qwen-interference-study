@@ -1,0 +1,402 @@
+{
+ "n_problems": 128,
+ "rule": "rep_frac = share of window start positions in the last 2048 tokens (positions with a full 32-token window) whose 32-token window already started at an earlier position of the same attempt; loop = rep_frac \u2265 0.5; attempts shorter than 32 tokens get 0",
+ "policies": {
+  "base": {
+   "truncated": {
+    "attempts": "2/4096",
+    "looping": "1/2",
+    "loop_share": 0.5,
+    "median_rep_frac": 0.5
+   },
+   "finished_wrong": {
+    "attempts": "1941/4096",
+    "looping": "2/1941",
+    "loop_share": 0.0010303967027305513,
+    "median_rep_frac": 0.003374578177727784
+   },
+   "finished_correct": {
+    "attempts": "2153/4096",
+    "looping": "0/2153",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0
+   },
+   "truncated_looping": "1/4096",
+   "truncated_not_looping": "1/4096",
+   "truncated_looping_n": 1,
+   "truncated_not_looping_n": 1,
+   "attempts_n": 4096
+  },
+  "H-s101": {
+   "truncated": {
+    "attempts": "445/4096",
+    "looping": "0/445",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.03619236489836391
+   },
+   "finished_wrong": {
+    "attempts": "499/4096",
+    "looping": "0/499",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.015865146256817054
+   },
+   "finished_correct": {
+    "attempts": "3152/4096",
+    "looping": "0/3152",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.002974714923153198
+   },
+   "truncated_looping": "0/4096",
+   "truncated_not_looping": "445/4096",
+   "truncated_looping_n": 0,
+   "truncated_not_looping_n": 445,
+   "attempts_n": 4096
+  },
+  "H-s202": "missing",
+  "R-s101": {
+   "truncated": {
+    "attempts": "437/4096",
+    "looping": "0/437",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0074367873078829945
+   },
+   "finished_wrong": {
+    "attempts": "306/4096",
+    "looping": "0/306",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0034705007436787306
+   },
+   "finished_correct": {
+    "attempts": "3353/4096",
+    "looping": "0/3353",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0
+   },
+   "truncated_looping": "0/4096",
+   "truncated_not_looping": "437/4096",
+   "truncated_looping_n": 0,
+   "truncated_not_looping_n": 437,
+   "attempts_n": 4096
+  },
+  "R-s202": {
+   "truncated": {
+    "attempts": "538/4096",
+    "looping": "0/538",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.04685176003966286
+   },
+   "finished_wrong": {
+    "attempts": "495/4096",
+    "looping": "0/495",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.01983143282102132
+   },
+   "finished_correct": {
+    "attempts": "3063/4096",
+    "looping": "0/3063",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0024509803921568627
+   },
+   "truncated_looping": "0/4096",
+   "truncated_not_looping": "538/4096",
+   "truncated_looping_n": 0,
+   "truncated_not_looping_n": 538,
+   "attempts_n": 4096
+  },
+  "U-s101": {
+   "truncated": {
+    "attempts": "501/4096",
+    "looping": "1/501",
+    "loop_share": 0.001996007984031936,
+    "median_rep_frac": 0.014873574615765989
+   },
+   "finished_wrong": {
+    "attempts": "413/4096",
+    "looping": "0/413",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.009419930589985127
+   },
+   "finished_correct": {
+    "attempts": "3182/4096",
+    "looping": "0/3182",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0009915716410510659
+   },
+   "truncated_looping": "1/4096",
+   "truncated_not_looping": "500/4096",
+   "truncated_looping_n": 1,
+   "truncated_not_looping_n": 500,
+   "attempts_n": 4096
+  },
+  "U-s202": {
+   "truncated": {
+    "attempts": "333/4096",
+    "looping": "0/333",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.009419930589985127
+   },
+   "finished_wrong": {
+    "attempts": "518/4096",
+    "looping": "0/518",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.004462072384729797
+   },
+   "finished_correct": {
+    "attempts": "3245/4096",
+    "looping": "0/3245",
+    "loop_share": 0.0,
+    "median_rep_frac": 0.0
+   },
+   "truncated_looping": "0/4096",
+   "truncated_not_looping": "333/4096",
+   "truncated_looping_n": 0,
+   "truncated_not_looping_n": 333,
+   "attempts_n": 4096
+  }
+ },
+ "paired_R_vs_U": {
+  "s101": {
+   "truncated_looping": {
+    "est": -0.000244140625,
+    "lo": -0.000732421875,
+    "hi": 0.0,
+    "A": 0.0,
+    "B": 0.000244140625,
+    "A_n": "0/4096",
+    "B_n": "1/4096",
+    "direction": "R \u2212 U (share of 4096 attempts)"
+   },
+   "truncated_not_looping": {
+    "est": -0.015380859375,
+    "lo": -0.030517578125,
+    "hi": -0.000244140625,
+    "A": 0.106689453125,
+    "B": 0.1220703125,
+    "A_n": "437/4096",
+    "B_n": "500/4096",
+    "direction": "R \u2212 U (share of 4096 attempts)"
+   },
+   "a_bar": 0.9007444064039325,
+   "truncation_term_split": {
+    "loop_part": 0.00021990830234471008,
+    "non_loop_part": 0.013854223047716736,
+    "total": 0.014074131350061445,
+    "rule": "\u2212\u0394t\u00b7\u0101 (section 6) split as \u2212\u0394t_loop\u00b7\u0101 \u2212 \u0394t_non-loop\u00b7\u0101; \u0394 = R \u2212 U"
+   }
+  },
+  "s202": {
+   "truncated_looping": {
+    "est": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "A": 0.0,
+    "B": 0.0,
+    "A_n": "0/4096",
+    "B_n": "0/4096",
+    "direction": "R \u2212 U (share of 4096 attempts)"
+   },
+   "truncated_not_looping": {
+    "est": 0.050048828125,
+    "lo": 0.031005859375,
+    "hi": 0.07080078125,
+    "A": 0.13134765625,
+    "B": 0.081298828125,
+    "A_n": "538/4096",
+    "B_n": "333/4096",
+    "direction": "R \u2212 U (share of 4096 attempts)"
+   },
+   "a_bar": 0.8616103858506923,
+   "truncation_term_split": {
+    "loop_part": -0.0,
+    "non_loop_part": -0.04312259011215623,
+    "total": -0.04312259011215623,
+    "rule": "\u2212\u0394t\u00b7\u0101 (section 6) split as \u2212\u0394t_loop\u00b7\u0101 \u2212 \u0394t_non-loop\u00b7\u0101; \u0394 = R \u2212 U"
+   }
+  }
+ },
+ "bands": {
+  "base": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "1/480"
+   },
+   "B1": {
+    "truncated_looping": "0/1088",
+    "truncated_not_looping": "0/1088"
+   },
+   "B2": {
+    "truncated_looping": "1/832",
+    "truncated_not_looping": "0/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "0/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  },
+  "H-s101": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "239/480"
+   },
+   "B1": {
+    "truncated_looping": "0/1088",
+    "truncated_not_looping": "145/1088"
+   },
+   "B2": {
+    "truncated_looping": "0/832",
+    "truncated_not_looping": "45/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "16/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  },
+  "H-s202": "missing",
+  "R-s101": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "248/480"
+   },
+   "B1": {
+    "truncated_looping": "0/1088",
+    "truncated_not_looping": "146/1088"
+   },
+   "B2": {
+    "truncated_looping": "0/832",
+    "truncated_not_looping": "38/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "5/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  },
+  "R-s202": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "274/480"
+   },
+   "B1": {
+    "truncated_looping": "0/1088",
+    "truncated_not_looping": "206/1088"
+   },
+   "B2": {
+    "truncated_looping": "0/832",
+    "truncated_not_looping": "46/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "12/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  },
+  "U-s101": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "261/480"
+   },
+   "B1": {
+    "truncated_looping": "1/1088",
+    "truncated_not_looping": "172/1088"
+   },
+   "B2": {
+    "truncated_looping": "0/832",
+    "truncated_not_looping": "57/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "10/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  },
+  "U-s202": {
+   "B0": {
+    "truncated_looping": "0/480",
+    "truncated_not_looping": "196/480"
+   },
+   "B1": {
+    "truncated_looping": "0/1088",
+    "truncated_not_looping": "117/1088"
+   },
+   "B2": {
+    "truncated_looping": "0/832",
+    "truncated_not_looping": "16/832"
+   },
+   "B3": {
+    "truncated_looping": "0/1024",
+    "truncated_not_looping": "4/1024"
+   },
+   "B4": {
+    "truncated_looping": "0/672",
+    "truncated_not_looping": "0/672"
+   }
+  }
+ },
+ "interval_note": "95% paired problem bootstrap (10,000 draws, seed 2027, streams a9/a17-loops/...) on per-problem count/32 differences",
+ "inputs": {
+  "n_problems": 128,
+  "base_incomplete_problems": [],
+  "original": {
+   "base": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-base",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s202": "missing",
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  },
+  "cgpu": {
+   "R-s101": "missing",
+   "R-s202": "missing",
+   "U-s101": "missing",
+   "U-s202": "missing"
+  }
+ }
+}
