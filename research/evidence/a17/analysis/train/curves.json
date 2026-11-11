@@ -468,7 +468,7 @@
    "run": "qis-main-H-s202-sym",
    "arm": "H",
    "seed": 202,
-   "complete": false,
+   "complete": true,
    "evals": {
     "dev": [
      {
@@ -480,6 +480,24 @@
      {
       "round": 32,
       "pass1": 0.5660377358490566,
+      "problems": 53,
+      "n": 8
+     },
+     {
+      "round": 64,
+      "pass1": 0.6367924528301887,
+      "problems": 53,
+      "n": 8
+     },
+     {
+      "round": 96,
+      "pass1": 0.660377358490566,
+      "problems": 53,
+      "n": 8
+     },
+     {
+      "round": 128,
+      "pass1": 0.6698113207547169,
       "problems": 53,
       "n": 8
      }
@@ -496,6 +514,24 @@
       "pass1": 0.56640625,
       "problems": 32,
       "n": 8
+     },
+     {
+      "round": 64,
+      "pass1": 0.61328125,
+      "problems": 32,
+      "n": 8
+     },
+     {
+      "round": 96,
+      "pass1": 0.66796875,
+      "problems": 32,
+      "n": 8
+     },
+     {
+      "round": 128,
+      "pass1": 0.6796875,
+      "problems": 32,
+      "n": 8
      }
     ],
     "probe_J_R": [
@@ -508,6 +544,24 @@
      {
       "round": 32,
       "pass1": 0.8258928571428571,
+      "problems": 28,
+      "n": 8
+     },
+     {
+      "round": 64,
+      "pass1": 0.8616071428571429,
+      "problems": 28,
+      "n": 8
+     },
+     {
+      "round": 96,
+      "pass1": 0.9196428571428571,
+      "problems": 28,
+      "n": 8
+     },
+     {
+      "round": 128,
+      "pass1": 0.9107142857142857,
       "problems": 28,
       "n": 8
      }
@@ -524,12 +578,33 @@
       "pass1": 0.87890625,
       "problems": 32,
       "n": 8
+     },
+     {
+      "round": 64,
+      "pass1": 0.91015625,
+      "problems": 32,
+      "n": 8
+     },
+     {
+      "round": 96,
+      "pass1": 0.88671875,
+      "problems": 32,
+      "n": 8
+     },
+     {
+      "round": 128,
+      "pass1": 0.90234375,
+      "problems": 32,
+      "n": 8
      }
     ]
    },
    "cum_hard_responses_at_round": {
     "0": 0,
-    "32": 4096
+    "32": 4096,
+    "64": 8192,
+    "96": 12288,
+    "128": 16384
    },
    "practised_shared_hard_bins": [
     {
@@ -598,11 +673,83 @@
     {
      "bin": "57-64",
      "start": 57,
-     "rounds": 4,
-     "complete": false,
-     "correct": 202,
-     "responses": 256,
-     "success": 0.7890625
+     "rounds": 8,
+     "complete": true,
+     "correct": 392,
+     "responses": 512,
+     "success": 0.765625
+    },
+    {
+     "bin": "65-72",
+     "start": 65,
+     "rounds": 8,
+     "complete": true,
+     "correct": 433,
+     "responses": 512,
+     "success": 0.845703125
+    },
+    {
+     "bin": "73-80",
+     "start": 73,
+     "rounds": 8,
+     "complete": true,
+     "correct": 419,
+     "responses": 512,
+     "success": 0.818359375
+    },
+    {
+     "bin": "81-88",
+     "start": 81,
+     "rounds": 8,
+     "complete": true,
+     "correct": 418,
+     "responses": 512,
+     "success": 0.81640625
+    },
+    {
+     "bin": "89-96",
+     "start": 89,
+     "rounds": 8,
+     "complete": true,
+     "correct": 418,
+     "responses": 512,
+     "success": 0.81640625
+    },
+    {
+     "bin": "97-104",
+     "start": 97,
+     "rounds": 8,
+     "complete": true,
+     "correct": 438,
+     "responses": 512,
+     "success": 0.85546875
+    },
+    {
+     "bin": "105-112",
+     "start": 105,
+     "rounds": 8,
+     "complete": true,
+     "correct": 423,
+     "responses": 512,
+     "success": 0.826171875
+    },
+    {
+     "bin": "113-120",
+     "start": 113,
+     "rounds": 8,
+     "complete": true,
+     "correct": 453,
+     "responses": 512,
+     "success": 0.884765625
+    },
+    {
+     "bin": "121-128",
+     "start": 121,
+     "rounds": 8,
+     "complete": true,
+     "correct": 436,
+     "responses": 512,
+     "success": 0.8515625
     }
    ],
    "cap_check": {

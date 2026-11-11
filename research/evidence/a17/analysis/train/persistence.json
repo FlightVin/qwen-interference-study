@@ -770,12 +770,12 @@
   },
   "H-s202-r60": {
    "run": "qis-main-H-s202-sym",
-   "complete": false,
+   "complete": true,
    "notes": [
     "rows to round 60 from before the resume plus rows after it"
    ],
-   "rounds_with_records": 60,
-   "max_round_with_records": 60,
+   "rounds_with_records": 128,
+   "max_round_with_records": 128,
    "problems": 46,
    "by_phase": {
     "r1-32": {
@@ -803,28 +803,28 @@
      "with_later_observation": 8
     },
     "r33-128": {
-     "hard_common_groups": 224,
-     "all_wrong_groups": 3,
+     "hard_common_groups": 768,
+     "all_wrong_groups": 21,
      "all_wrong_by_capped": {
-      "zero": 2,
-      "some": 1,
-      "all": 0
+      "zero": 14,
+      "some": 3,
+      "all": 4
      },
-     "later_appearances_of_previously_solvable": 224,
-     "previously_solvable_became_all_wrong": 3,
-     "frac_of_later_appearances": 0.013392857142857142,
+     "later_appearances_of_previously_solvable": 768,
+     "previously_solvable_became_all_wrong": 21,
+     "frac_of_later_appearances": 0.02734375,
      "ps_all_wrong_by_capped": {
-      "zero": 2,
-      "some": 1,
-      "all": 0
+      "zero": 14,
+      "some": 3,
+      "all": 4
      },
      "next_outcome": {
-      "all_wrong": 0,
-      "mixed": 3,
+      "all_wrong": 15,
+      "mixed": 5,
       "all_correct": 0,
-      "no_later_observation": 0
+      "no_later_observation": 1
      },
-     "with_later_observation": 3
+     "with_later_observation": 20
     }
    },
    "by_window": {
@@ -853,76 +853,76 @@
      "with_later_observation": 8
     },
     "r33-64": {
-     "hard_common_groups": 224,
-     "all_wrong_groups": 3,
+     "hard_common_groups": 256,
+     "all_wrong_groups": 4,
      "all_wrong_by_capped": {
-      "zero": 2,
+      "zero": 3,
       "some": 1,
       "all": 0
      },
-     "later_appearances_of_previously_solvable": 224,
-     "previously_solvable_became_all_wrong": 3,
-     "frac_of_later_appearances": 0.013392857142857142,
+     "later_appearances_of_previously_solvable": 256,
+     "previously_solvable_became_all_wrong": 4,
+     "frac_of_later_appearances": 0.015625,
      "ps_all_wrong_by_capped": {
-      "zero": 2,
+      "zero": 3,
       "some": 1,
       "all": 0
      },
      "next_outcome": {
-      "all_wrong": 0,
+      "all_wrong": 1,
       "mixed": 3,
       "all_correct": 0,
       "no_later_observation": 0
      },
-     "with_later_observation": 3
+     "with_later_observation": 4
     },
     "r65-96": {
-     "hard_common_groups": 0,
-     "all_wrong_groups": 0,
+     "hard_common_groups": 256,
+     "all_wrong_groups": 9,
      "all_wrong_by_capped": {
-      "zero": 0,
-      "some": 0,
-      "all": 0
+      "zero": 5,
+      "some": 2,
+      "all": 2
      },
-     "later_appearances_of_previously_solvable": 0,
-     "previously_solvable_became_all_wrong": 0,
-     "frac_of_later_appearances": null,
+     "later_appearances_of_previously_solvable": 256,
+     "previously_solvable_became_all_wrong": 9,
+     "frac_of_later_appearances": 0.03515625,
      "ps_all_wrong_by_capped": {
-      "zero": 0,
-      "some": 0,
-      "all": 0
+      "zero": 5,
+      "some": 2,
+      "all": 2
      },
      "next_outcome": {
-      "all_wrong": 0,
-      "mixed": 0,
+      "all_wrong": 8,
+      "mixed": 1,
       "all_correct": 0,
       "no_later_observation": 0
      },
-     "with_later_observation": 0
+     "with_later_observation": 9
     },
     "r97-128": {
-     "hard_common_groups": 0,
-     "all_wrong_groups": 0,
+     "hard_common_groups": 256,
+     "all_wrong_groups": 8,
      "all_wrong_by_capped": {
-      "zero": 0,
+      "zero": 6,
       "some": 0,
-      "all": 0
+      "all": 2
      },
-     "later_appearances_of_previously_solvable": 0,
-     "previously_solvable_became_all_wrong": 0,
-     "frac_of_later_appearances": null,
+     "later_appearances_of_previously_solvable": 256,
+     "previously_solvable_became_all_wrong": 8,
+     "frac_of_later_appearances": 0.03125,
      "ps_all_wrong_by_capped": {
-      "zero": 0,
+      "zero": 6,
       "some": 0,
-      "all": 0
+      "all": 2
      },
      "next_outcome": {
-      "all_wrong": 0,
-      "mixed": 0,
+      "all_wrong": 6,
+      "mixed": 1,
       "all_correct": 0,
-      "no_later_observation": 0
+      "no_later_observation": 1
      },
-     "with_later_observation": 0
+     "with_later_observation": 7
     }
    },
    "events": [
@@ -1057,6 +1057,222 @@
      "next_round": 59,
      "next_outcome": "mixed",
      "next_correct": 5
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 64,
+     "phase": "r33-128",
+     "window": "r33-64",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 74,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 70,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 4,
+     "n": 8,
+     "cap_class": "some",
+     "next_round": 75,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 74,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 79,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 75,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 7,
+     "n": 8,
+     "cap_class": "some",
+     "next_round": 85,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 79,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 84,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 84,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 90,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 85,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 8,
+     "n": 8,
+     "cap_class": "all",
+     "next_round": 91,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 90,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 95,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 91,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 8,
+     "n": 8,
+     "cap_class": "all",
+     "next_round": 93,
+     "next_outcome": "mixed",
+     "next_correct": 2
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 95,
+     "phase": "r33-128",
+     "window": "r65-96",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 100,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 100,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 105,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 105,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 112,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 112,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 117,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 112,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 8,
+     "n": 8,
+     "cap_class": "all",
+     "next_round": 118,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 117,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 126,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/02204",
+     "round": 118,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 8,
+     "n": 8,
+     "cap_class": "all",
+     "next_round": 126,
+     "next_outcome": "mixed",
+     "next_correct": 1
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 126,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": 128,
+     "next_outcome": "all_wrong",
+     "next_correct": 0
+    },
+    {
+     "prompt_id": "omni/00984",
+     "round": 128,
+     "phase": "r33-128",
+     "window": "r97-128",
+     "capped": 0,
+     "n": 8,
+     "cap_class": "zero",
+     "next_round": null,
+     "next_outcome": "no_later_observation",
+     "next_correct": null
     }
    ]
   },
@@ -3677,9 +3893,9 @@
   {
    "a": "H-s202-r60",
    "b": "R-s202",
-   "common_rounds": 60,
-   "rounds_identical_prompt_sets": 60,
-   "max_common_round": 60,
+   "common_rounds": 128,
+   "rounds_identical_prompt_sets": 128,
+   "max_common_round": 128,
    "by_phase": {
     "r1-32": {
      "cells": 256,
@@ -3692,14 +3908,14 @@
      "ps_all_wrong_both": 4
     },
     "r33-128": {
-     "cells": 224,
-     "a_only_all_wrong": 3,
-     "b_only_all_wrong": 8,
-     "both_all_wrong": 0,
-     "neither": 213,
-     "ps_all_wrong_a": 3,
-     "ps_all_wrong_b": 6,
-     "ps_all_wrong_both": 0
+     "cells": 768,
+     "a_only_all_wrong": 13,
+     "b_only_all_wrong": 13,
+     "both_all_wrong": 8,
+     "neither": 734,
+     "ps_all_wrong_a": 21,
+     "ps_all_wrong_b": 19,
+     "ps_all_wrong_both": 8
     }
    },
    "note": "a/b_only_all_wrong: all 8 answers wrong in that arm only; ps_*: cells where that arm's group is a previously-solvable item turned all-wrong (solvability judged within each arm's own run)"
@@ -3707,9 +3923,9 @@
   {
    "a": "H-s202-r60",
    "b": "U-s202",
-   "common_rounds": 60,
-   "rounds_identical_prompt_sets": 60,
-   "max_common_round": 60,
+   "common_rounds": 128,
+   "rounds_identical_prompt_sets": 128,
+   "max_common_round": 128,
    "by_phase": {
     "r1-32": {
      "cells": 256,
@@ -3722,14 +3938,14 @@
      "ps_all_wrong_both": 4
     },
     "r33-128": {
-     "cells": 224,
-     "a_only_all_wrong": 1,
-     "b_only_all_wrong": 7,
-     "both_all_wrong": 2,
-     "neither": 214,
-     "ps_all_wrong_a": 3,
-     "ps_all_wrong_b": 9,
-     "ps_all_wrong_both": 2
+     "cells": 768,
+     "a_only_all_wrong": 7,
+     "b_only_all_wrong": 12,
+     "both_all_wrong": 14,
+     "neither": 735,
+     "ps_all_wrong_a": 21,
+     "ps_all_wrong_b": 26,
+     "ps_all_wrong_both": 14
     }
    },
    "note": "a/b_only_all_wrong: all 8 answers wrong in that arm only; ps_*: cells where that arm's group is a previously-solvable item turned all-wrong (solvability judged within each arm's own run)"

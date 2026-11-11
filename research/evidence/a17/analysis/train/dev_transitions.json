@@ -13,7 +13,7 @@
   ],
   "fields": "metrics eval row per_problem[].n (run.py:138, 224-225) and row n (run.py:143); samples per prompt_id in records/eval_dev_rNNNN.jsonl.gz (run.py:135-141); n comes from config eval_panels.dev",
   "records_agree": {
-   "true": 30,
+   "true": 33,
    "false": 0,
    "not_checked": 0
   },
@@ -357,6 +357,48 @@
       8
      ],
      "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6367924528301887,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.660377358490566,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6698113207547169,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
     }
    ],
    "transitions": [
@@ -387,15 +429,83 @@
       "intermediate_algebra/train/01041",
       "intermediate_algebra/train/01190"
      ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 1,
+     "gained": 2,
+     "zero_at_from": 9,
+     "zero_at_to": 8,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00508"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00347"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 2,
+     "gained": 2,
+     "zero_at_from": 8,
+     "zero_at_to": 8,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00232"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00709"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 2,
+     "gained": 2,
+     "zero_at_from": 8,
+     "zero_at_to": 8,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00709"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00232",
+      "intermediate_algebra/train/01153"
+     ]
     }
    ],
    "totals": {
-    "lost": 0,
-    "gained": 10,
+    "lost": 5,
+    "gained": 16,
     "zero_first": 19,
-    "zero_last": 9,
+    "zero_last": 8,
     "first_round": 0,
-    "last_round": 32
+    "last_round": 128
    }
   },
   "R-s101": {
@@ -1135,6 +1245,152 @@
   }
  },
  "repeated_evaluations": [
+  {
+   "run": "qis-main-H-s202-sym",
+   "panel": "dev",
+   "round": 64,
+   "row_index": [
+    360,
+    388
+   ],
+   "utc": [
+    1794337800.6379666,
+    1794367125.8963127
+   ],
+   "pass1": [
+    0.6580188679245284,
+    0.6367924528301887
+   ],
+   "resume_events_between": [
+    60
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 53,
+   "lost": 1,
+   "gained": 0,
+   "zero_at_from": 7,
+   "zero_at_to": 8,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00709"
+   ],
+   "gained_ids": []
+  },
+  {
+   "run": "qis-main-H-s202-sym",
+   "panel": "probe_J_H",
+   "round": 64,
+   "row_index": [
+    361,
+    389
+   ],
+   "utc": [
+    1794337800.6393826,
+    1794367125.8975086
+   ],
+   "pass1": [
+    0.65234375,
+    0.61328125
+   ],
+   "resume_events_between": [
+    60
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 32,
+   "lost": 1,
+   "gained": 0,
+   "zero_at_from": 4,
+   "zero_at_to": 5,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00709"
+   ],
+   "gained_ids": []
+  },
+  {
+   "run": "qis-main-H-s202-sym",
+   "panel": "probe_J_R",
+   "round": 64,
+   "row_index": [
+    362,
+    390
+   ],
+   "utc": [
+    1794337957.224961,
+    1794367280.0409129
+   ],
+   "pass1": [
+    0.8526785714285714,
+    0.8616071428571429
+   ],
+   "resume_events_between": [
+    60
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 28,
+   "lost": 1,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 1,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/01056"
+   ],
+   "gained_ids": []
+  },
+  {
+   "run": "qis-main-H-s202-sym",
+   "panel": "probe_J_U",
+   "round": 64,
+   "row_index": [
+    363,
+    391
+   ],
+   "utc": [
+    1794338140.879456,
+    1794367459.7341652
+   ],
+   "pass1": [
+    0.921875,
+    0.91015625
+   ],
+   "resume_events_between": [
+    60
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
   {
    "run": "qis-main-R-s101-sym",
    "panel": "dev",

@@ -1,6 +1,6 @@
 H-s101 rounds 128 records 128 complete True mismatch 0 notes []
 H-s202-orig rounds 64 records 64 complete False mismatch 0 notes ['rows before the A17 resume event (row 367); stopped after round 64']
-H-s202-r60 rounds 60 records 60 complete False mismatch 0 notes ['rows to round 60 from before the resume plus rows after it']
+H-s202-r60 rounds 128 records 128 complete True mismatch 0 notes ['rows to round 60 from before the resume plus rows after it']
 R-s101 rounds 128 records 128 complete True mismatch 0 notes []
 R-s202 rounds 128 records 128 complete True mismatch 0 notes []
 U-s101 rounds 128 records 128 complete True mismatch 0 notes []

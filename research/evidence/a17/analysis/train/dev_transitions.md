@@ -11,6 +11,9 @@ Verified attempts per problem: n = 8 attempts per dev problem in every scheduled
 | H-s202-orig | 0 → 32 | 53 | [8] / [8] | 0 | 10 | 19 → 9 |
 | H-s202-orig | 32 → 64 | 53 | [8] / [8] | 1 | 3 | 9 → 7 |
 | H-s202-r60 | 0 → 32 | 53 | [8] / [8] | 0 | 10 | 19 → 9 |
+| H-s202-r60 | 32 → 64 | 53 | [8] / [8] | 1 | 2 | 9 → 8 |
+| H-s202-r60 | 64 → 96 | 53 | [8] / [8] | 2 | 2 | 8 → 8 |
+| H-s202-r60 | 96 → 128 | 53 | [8] / [8] | 2 | 2 | 8 → 8 |
 | R-s101 | 0 → 32 | 53 | [8] / [8] | 0 | 8 | 17 → 9 |
 | R-s101 | 32 → 64 | 53 | [8] / [8] | 1 | 4 | 9 → 6 |
 | R-s101 | 64 → 96 | 53 | [8] / [8] | 1 | 2 | 6 → 5 |
@@ -32,6 +35,10 @@ Verified attempts per problem: n = 8 attempts per dev problem in every scheduled
 
 | Source | Panel | Rows compared | n per problem | Lost | Gained | pass@1 (first − second) | Checkpoint |
 |---|---|---|---|---|---|---|---|
+| qis-main-H-s202-sym r64 | dev | rows 360 / 388 | [8] | 1 | 0 | 0.6580 − 0.6368 = +0.0212 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
+| qis-main-H-s202-sym r64 | probe_J_H | rows 361 / 389 | [8] | 1 | 0 | 0.6523 − 0.6133 = +0.0391 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
+| qis-main-H-s202-sym r64 | probe_J_R | rows 362 / 390 | [8] | 1 | 0 | 0.8527 − 0.8616 = -0.0089 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
+| qis-main-H-s202-sym r64 | probe_J_U | rows 363 / 391 | [8] | 0 | 0 | 0.9219 − 0.9102 = +0.0117 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
 | qis-main-R-s101-sym r128 | dev | rows 720 / 750 | [8] | 2 | 2 | 0.7099 − 0.7288 = -0.0189 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
 | qis-main-R-s101-sym r128 | probe_J_H | rows 721 / 751 | [8] | 1 | 2 | 0.7383 − 0.7656 = -0.0273 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
 | qis-main-R-s101-sym r128 | probe_J_R | rows 722 / 752 | [8] | 0 | 0 | 0.8839 − 0.9107 = -0.0268 | retrained from an earlier checkpoint between the two evaluations: not a no-update reference |
