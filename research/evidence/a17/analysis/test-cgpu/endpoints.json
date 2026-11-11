@@ -1,0 +1,255 @@
+{
+ "primary_original": {
+  "rows": [
+   {
+    "seed": 101,
+    "H": 0.76953125,
+    "H_pass8": 0.9370628452316438,
+    "R": 0.818603515625,
+    "R_pass8": 0.9612719112166415,
+    "U": 0.77685546875,
+    "U_pass8": 0.9446191919678085,
+    "R-U": {
+     "est": 0.041748046875,
+     "lo": 0.021240234375,
+     "hi": 0.063232421875,
+     "A": 0.818603515625,
+     "B": 0.77685546875,
+     "direction": "R \u2212 U"
+    },
+    "R-H": {
+     "est": 0.049072265625,
+     "lo": 0.01953125,
+     "hi": 0.07984008789062491,
+     "A": 0.818603515625,
+     "B": 0.76953125,
+     "direction": "R \u2212 H"
+    },
+    "U-H": {
+     "est": 0.00732421875,
+     "lo": -0.01953125,
+     "hi": 0.034912109375,
+     "A": 0.77685546875,
+     "B": 0.76953125,
+     "direction": "U \u2212 H"
+    }
+   },
+   {
+    "seed": 202,
+    "H": "missing",
+    "H_pass8": "missing",
+    "R": 0.747802734375,
+    "R_pass8": 0.9220936494312294,
+    "U": 0.792236328125,
+    "U_pass8": 0.9485036109685026,
+    "R-U": {
+     "est": -0.04443359375,
+     "lo": -0.07177734375,
+     "hi": -0.017333984375,
+     "A": 0.747802734375,
+     "B": 0.792236328125,
+     "direction": "R \u2212 U"
+    },
+    "R-H": "missing",
+    "U-H": "missing"
+   }
+  ],
+  "mean": {
+   "H": "missing",
+   "R": 0.783203125,
+   "U": 0.7845458984375,
+   "R-U": {
+    "est": -0.0013427734375,
+    "lo": -0.018191528320312497,
+    "hi": 0.0150146484375,
+    "A": 0.783203125,
+    "B": 0.7845458984375,
+    "direction": "R \u2212 U"
+   },
+   "R-H": "missing",
+   "U-H": "missing"
+  }
+ },
+ "reproducibility_check_common_gpu": {
+  "rows": [
+   {
+    "seed": 101,
+    "H": 0.76953125,
+    "H_pass8": 0.9370628452316438,
+    "R": 0.822509765625,
+    "R_pass8": 0.9621204308799901,
+    "U": "missing",
+    "U_pass8": "missing",
+    "R-U": "missing",
+    "R-H": {
+     "est": 0.052978515625,
+     "lo": 0.025140380859375006,
+     "hi": 0.08154296875,
+     "A": 0.822509765625,
+     "B": 0.76953125,
+     "direction": "R \u2212 H"
+    },
+    "U-H": "missing"
+   },
+   {
+    "seed": 202,
+    "H": "missing",
+    "H_pass8": "missing",
+    "R": 0.76123046875,
+    "R_pass8": 0.9342859186489261,
+    "U": 0.792236328125,
+    "U_pass8": 0.9485036109685026,
+    "R-U": {
+     "est": -0.031005859375,
+     "lo": -0.0595703125,
+     "hi": -0.00390625,
+     "A": 0.76123046875,
+     "B": 0.792236328125,
+     "direction": "R \u2212 U"
+    },
+    "R-H": "missing",
+    "U-H": "missing"
+   }
+  ],
+  "mean": {
+   "H": "missing",
+   "R": 0.7918701171875,
+   "U": "missing",
+   "R-U": "missing",
+   "R-H": "missing",
+   "U-H": "missing"
+  }
+ },
+ "common_gpu_sources": {
+  "H-s101": "original evaluation (ran on L40S)",
+  "H-s202": "endpoint /data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym (common-GPU)",
+  "R-s101": "qis-cgpu-R-s101",
+  "R-s202": "qis-cgpu-R-s202",
+  "U-s101": "qis-cgpu-U-s101",
+  "U-s202": "qis-cgpu-U-s202",
+  "base": "original evaluation (ran on L40S)"
+ },
+ "base": {
+  "pass1": 0.525634765625,
+  "pass8": 0.8352163617516615
+ },
+ "reproducibility": {
+  "R-s101": {
+   "attempts_identical_reward": "3556/4096",
+   "attempts_identical_request_seed": "4096/4096",
+   "attempts_identical_token_ids": "48/4096",
+   "problems_identical_c": "62/128",
+   "max_abs_delta_c": 8,
+   "original_pass1": 0.818603515625,
+   "cgpu_pass1": 0.822509765625,
+   "delta_pass1_cgpu_minus_original": {
+    "est": 0.00390625,
+    "lo": -0.007568359375,
+    "hi": 0.01611328125,
+    "A": 0.822509765625,
+    "B": 0.818603515625,
+    "direction": "cgpu \u2212 original"
+   }
+  },
+  "R-s202": {
+   "attempts_identical_reward": "3455/4096",
+   "attempts_identical_request_seed": "4096/4096",
+   "attempts_identical_token_ids": "133/4096",
+   "problems_identical_c": "46/128",
+   "max_abs_delta_c": 8,
+   "original_pass1": 0.747802734375,
+   "cgpu_pass1": 0.76123046875,
+   "delta_pass1_cgpu_minus_original": {
+    "est": 0.013427734375,
+    "lo": 0.001953125,
+    "hi": 0.025146484375,
+    "A": 0.76123046875,
+    "B": 0.747802734375,
+    "direction": "cgpu \u2212 original"
+   }
+  },
+  "U-s101": "missing",
+  "U-s202": {
+   "attempts_identical_reward": "4096/4096",
+   "attempts_identical_request_seed": "4096/4096",
+   "attempts_identical_token_ids": "4096/4096",
+   "problems_identical_c": "128/128",
+   "max_abs_delta_c": 0,
+   "original_pass1": 0.792236328125,
+   "cgpu_pass1": 0.792236328125,
+   "delta_pass1_cgpu_minus_original": {
+    "est": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "A": 0.792236328125,
+    "B": 0.792236328125,
+    "direction": "cgpu \u2212 original"
+   }
+  }
+ },
+ "interval_note": "95% paired bootstrap over the 128 problems (10,000 draws, seed 2027; streams a9/<contrast>/s<seed> for the original table as in report_tables, a9/a17-cgpu/... and a9/a17-repro/... otherwise); conditional on these trained policies",
+ "inputs": {
+  "n_problems": 128,
+  "base_incomplete_problems": [],
+  "original": {
+   "base": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-base",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s202": "missing",
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  },
+  "cgpu": {
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s101",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s202",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": "missing",
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s202",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  }
+ }
+}

@@ -1,0 +1,267 @@
+{
+ "n_problems": 128,
+ "policies": {
+  "base": {
+   "pass1": 0.525634765625,
+   "pass8": 0.8352163617516615,
+   "solved_any": "116/128",
+   "solved_any_n": 116,
+   "zero": "12/128",
+   "expected_distinct_k1": 67.28125,
+   "expected_distinct_k8": 106.90769430421267,
+   "truncated_share": 0.00048828125,
+   "truncated_attempts": "2/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "2/14",
+    "became_reachable_mean_pass1": 0.0625,
+    "unreachable_mean_pass1": 0.008928571428571428,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "3/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.5833333333333334,
+    "reachable_mean_change": -0.012609649122807017,
+    "overall_change_vs_baseline": -0.01025390625,
+    "contribution_unreachable": 0.0009765625,
+    "contribution_reachable": -0.01123046875,
+    "note": "null reference: base samples 0-15 (16 attempts) against samples 16-31; not 1:1 comparable with 32-attempt policies"
+   }
+  },
+  "H-s101": {
+   "pass1": 0.76953125,
+   "pass8": 0.9370628452316438,
+   "solved_any": "125/128",
+   "solved_any_n": 125,
+   "zero": "3/128",
+   "expected_distinct_k1": 98.5,
+   "expected_distinct_k8": 119.94404418965041,
+   "truncated_share": 0.108642578125,
+   "truncated_attempts": "445/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "11/14",
+    "became_reachable_mean_pass1": 0.19318181818181818,
+    "unreachable_mean_pass1": 0.15178571428571427,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "0/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.8453947368421053,
+    "reachable_mean_change": 0.24945175438596492,
+    "overall_change_vs_baseline": 0.23876953125,
+    "contribution_unreachable": 0.0166015625,
+    "contribution_reachable": 0.22216796875
+   }
+  },
+  "H-s202": "missing",
+  "R-s101": {
+   "pass1": 0.818603515625,
+   "pass8": 0.9612719112166415,
+   "solved_any": "125/128",
+   "solved_any_n": 125,
+   "zero": "3/128",
+   "expected_distinct_k1": 104.78125,
+   "expected_distinct_k8": 123.0428046357301,
+   "truncated_share": 0.106689453125,
+   "truncated_attempts": "437/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "11/14",
+    "became_reachable_mean_pass1": 0.4005681818181818,
+    "unreachable_mean_pass1": 0.31473214285714285,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "0/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.8804824561403509,
+    "reachable_mean_change": 0.2845394736842105,
+    "overall_change_vs_baseline": 0.287841796875,
+    "contribution_unreachable": 0.034423828125,
+    "contribution_reachable": 0.25341796875
+   }
+  },
+  "R-s202": {
+   "pass1": 0.747802734375,
+   "pass8": 0.9220936494312294,
+   "solved_any": "123/128",
+   "solved_any_n": 123,
+   "zero": "5/128",
+   "expected_distinct_k1": 95.71875,
+   "expected_distinct_k8": 118.02798712719736,
+   "truncated_share": 0.13134765625,
+   "truncated_attempts": "538/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "9/14",
+    "became_reachable_mean_pass1": 0.1909722222222222,
+    "unreachable_mean_pass1": 0.12276785714285714,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "0/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.8245614035087719,
+    "reachable_mean_change": 0.22861842105263158,
+    "overall_change_vs_baseline": 0.217041015625,
+    "contribution_unreachable": 0.013427734375,
+    "contribution_reachable": 0.20361328125
+   }
+  },
+  "U-s101": {
+   "pass1": 0.77685546875,
+   "pass8": 0.9446191919678085,
+   "solved_any": "125/128",
+   "solved_any_n": 125,
+   "zero": "3/128",
+   "expected_distinct_k1": 99.4375,
+   "expected_distinct_k8": 120.91125657187949,
+   "truncated_share": 0.122314453125,
+   "truncated_attempts": "501/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "11/14",
+    "became_reachable_mean_pass1": 0.3409090909090909,
+    "unreachable_mean_pass1": 0.26785714285714285,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "0/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.8393640350877193,
+    "reachable_mean_change": 0.24342105263157895,
+    "overall_change_vs_baseline": 0.24609375,
+    "contribution_unreachable": 0.029296875,
+    "contribution_reachable": 0.216796875
+   }
+  },
+  "U-s202": {
+   "pass1": 0.792236328125,
+   "pass8": 0.9485036109685026,
+   "solved_any": "124/128",
+   "solved_any_n": 124,
+   "zero": "4/128",
+   "expected_distinct_k1": 101.40625,
+   "expected_distinct_k8": 121.40846220396833,
+   "truncated_share": 0.081298828125,
+   "truncated_attempts": "333/4096",
+   "decomposition": {
+    "baseline": "base samples 16-31 (16 attempts)",
+    "unreachable_at_baseline": "14/128",
+    "became_reachable": "11/14",
+    "became_reachable_mean_pass1": 0.29261363636363635,
+    "unreachable_mean_pass1": 0.22991071428571427,
+    "reachable_at_baseline": "114/128",
+    "reachable_now_zero": "1/114",
+    "reachable_mean_baseline_pass1": 0.5959429824561403,
+    "reachable_mean_pass1": 0.8612938596491229,
+    "reachable_mean_change": 0.26535087719298245,
+    "overall_change_vs_baseline": 0.261474609375,
+    "contribution_unreachable": 0.025146484375,
+    "contribution_reachable": 0.236328125
+   }
+  }
+ },
+ "paired_R_vs_U": {
+  "s101": {
+   "R": 0.818603515625,
+   "U": 0.77685546875,
+   "R-U": 0.041748046875,
+   "coverage": {
+    "R_only": "0/128",
+    "U_only": "0/128",
+    "contribution": 0.0,
+    "contribution_R_only": 0.0,
+    "contribution_U_only": 0.0
+   },
+   "reliability": {
+    "both_reach": "125/128",
+    "contribution": 0.041748046875,
+    "mean_R_minus_U_within": 0.04275
+   },
+   "neither": "3/128",
+   "rule": "coverage = exactly one of R/U has 0/32; reliability = both > 0/32; contribution = sum of (R \u2212 U) / 128"
+  },
+  "s202": {
+   "R": 0.747802734375,
+   "U": 0.792236328125,
+   "R-U": -0.04443359375,
+   "coverage": {
+    "R_only": "1/128",
+    "U_only": "2/128",
+    "contribution": -0.002197265625,
+    "contribution_R_only": 0.000732421875,
+    "contribution_U_only": -0.0029296875
+   },
+   "reliability": {
+    "both_reach": "122/128",
+    "contribution": -0.042236328125,
+    "mean_R_minus_U_within": -0.04431352459016393
+   },
+   "neither": "3/128",
+   "rule": "coverage = exactly one of R/U has 0/32; reliability = both > 0/32; contribution = sum of (R \u2212 U) / 128"
+  }
+ },
+ "inputs": {
+  "n_problems": 128,
+  "base_incomplete_problems": [],
+  "original": {
+   "base": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-base",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "H-s202": "missing",
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  },
+  "cgpu": {
+   "R-s101": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s101",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "R-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s202",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   },
+   "U-s101": "missing",
+   "U-s202": {
+    "dir": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s202",
+    "record_lines": 4096,
+    "summary_c_mismatch_problems": 0,
+    "finish_field": true
+   }
+  }
+ }
+}

@@ -944,3 +944,14 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   shows that value only as "H-s202 at round N (incomplete run)", outside the seed-mean and primary tables, because a shorter run
   is not comparable with 128-round R and U endpoints. (4) The owner is told now; a deadline extension of ≈ 3 h would let the
   endpoint test land.
+
+## D151 — 2026-11-11 09:15Z — Common-GPU check: L40S reproduces bit for bit; hardware does not explain either R − U sign
+- **Reproducibility.** The U-s202 rerun on L40S (11112398) reproduces the original U-s202 evaluation (also L40S) exactly:
+  4,096/4,096 token sequences, rewards and request seeds identical. Same GPU type + same seeds = identical attempts.
+- **Hardware effect on R.** R reruns on L40S share the request seeds with the original L40 runs but only 48/4,096 (s101) and
+  133/4,096 (s202) token sequences are identical. pass@1 L40S − L40: R-s101 0.823 − 0.819 = +0.004 [−0.008, +0.016];
+  R-s202 0.761 − 0.748 = +0.013 [+0.002, +0.025].
+- **Contrast on matched hardware.** Seed 202: R − U = 0.761 − 0.792 = −0.031 [−0.060, −0.004] (original −0.044 [−0.072, −0.017]).
+  Seed 101: R-s101 L40S 0.823 against U-s101 0.777 (original, L40S; the U-s101 rerun is still running, and by the U-s202 result it
+  is expected to be identical). The seed reversal survives on a common GPU type; hardware moved R by at most 1.3 points.
+- Outputs: `research/evidence/a17/analysis/test-cgpu/` (a17_test at 434b439, run in worktree d3fa9d5 on CPU standby 11112647).
