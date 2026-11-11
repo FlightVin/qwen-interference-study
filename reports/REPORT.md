@@ -11,9 +11,9 @@ seed-reversal analyses (section 4), the length diagnostic (section 5), the local
 stress panels (section 7). These analyses were added after the design was frozen, and they use outputs that were
 already visible.
 
-This is the final report under owner amendment A17 (deadline Wed 11 Nov 2026, 7:30 PM EST). It is a DRAFT: cells
-marked ⟨PENDING⟩ await jobs that are still running, mainly the last training run, H-s202. The first report (10 Nov) is
-kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
+This is the final report under owner amendments A17 and A19, delivered Wed 11 Nov 2026 before 7:30 PM EST. All six
+training runs finished; every primary cell is filled. Cells that could not be measured are listed in section 9. The
+first report (10 Nov) is kept unchanged in `archive/REPORT-v1-2026-11-10.md`.
 
 ## What we learned
 
@@ -716,7 +716,7 @@ round 128 runs only after that training run ends (section 9).
 | R-s101 r64 | 64.3% | 53.5% | 78.6% | 26.1% | 87.0% | 183/221 |
 | H-s202 r64 | 62.4% | 52.1% | 76.1% | 15.1% | 73.5% | 183/221 |
 
-**Which checkpoint was measured on which panel.** ✓ = measured; ⟨pending⟩ = queued; — = not run (not required);
+**Which checkpoint was measured on which panel.** ✓ = measured; — = not run (not required);
 ✗ = not possible (weights not retained).
 
 | Checkpoint | Sealed test (original) | Sealed test (one GPU type, L40S) | Stress panels (8 attempts) | Length diagnostic, stress | Length diagnostic, sealed test | Response audit |
@@ -899,7 +899,7 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 | H-s202 a2-r60 | 11082192 (rounds 1–60) → 11112377 (resumed at round 60, D143) | 61–128 | complete (RUN_COMPLETE 21:45:07Z); the endpoint trajectory |
 
 
-**Incomplete cells** (status at the final commit; ⟨update at delivery⟩):
+**Incomplete cells** (status at delivery):
 
 | Cell | Status | Reason | Where it would appear |
 |---|---|---|---|
@@ -908,10 +908,12 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 | U-s101 round-64 local-update source | not possible | checkpoint not retained | section 6 |
 | Seed 303, clipping sensitivity | not run | deferred by A9 | — |
 | Stress panels of 128 items | not possible | candidate pool exhausted: Harder 95, SuperHard 126 (D145) | section 7 |
+| H-s202 endpoint and stress cell on one GPU type | not possible by the deadline | L40S queue; shards ran on L40S, L40 and RTX A6000 (D159) | sections 2, 7 |
+| Length diagnostic for H-s202 and the base model | not run | H-s202 finished 2.75 h before the deadline (endpoint first, A19); base: 0.05% of answers capped | section 5 |
 
 ## Reproduction
 
-Code: branch of this repository at commit ⟨final commit⟩. Every job was pinned to a commit; the ledger
+Code: branch `main` of this repository at the commit that last changed this file (`git log -1 -- reports/REPORT.md`). Every job was pinned to a commit; the ledger
 (`slurm-agentic-engineering/state/LEDGER.jsonl`, outside the repository) maps each job to its commit and recipe hash.
 Run on a compute node, never on a login node, with `P=/data/user_data/$USER/qis`, the environment `$P/env/venv-v1`
 (analysis) or `$P/env/venv-report` (figures), and `PYTHONPATH=src`. Model: `Qwen/Qwen3-1.7B` at `70d244cc`.
