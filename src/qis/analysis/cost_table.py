@@ -29,6 +29,8 @@ def category(name, gpus):
         return "common-GPU rerun (A17)"
     if n.startswith("stress-"):
         return "stress evaluation (A17)"
+    if n.startswith("len-") or n.startswith("lentest-"):
+        return "length diagnostic (A19)"
     if n.startswith("cue-"):
         return "strategy-cue panel (A15.4)"
     return "other GPU jobs (screening, calibration, smoke, A10/A11 studies)" if gpus else "CPU jobs"
