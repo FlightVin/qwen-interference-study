@@ -22,7 +22,11 @@ Outputs in OUT_DIR (JSON + Markdown; every delta is written as "A − B = d" wit
    mean n_tokens by outcome; R − U per seed and band split exactly into −Δt·ā + (1 − t̄)·Δa with problem-bootstrap
    intervals (streams a9/a17-trunc/...); per-problem Δt vs Δsuccess correlations; success within 8,192 tokens.
 `--figures FIG_DIR` (or `plot(OUT_DIR, FIG_DIR)` from the matplotlib venv) draws endpoints.png, reversal_scatter.png,
-coverage.png, sampling_null.png and truncation.png from the JSON outputs.
+coverage.png, sampling_null.png, truncation.png and loops.png from the JSON outputs.
+7. loops: per attempt rep_frac = share of the last 2,048 token positions (those with a full 32-token window) whose
+   32-token window already started at an earlier position of the same attempt; loop = rep_frac ≥ 0.5. Per policy by
+   outcome (truncated, finished-wrong, finished-correct); paired R vs U truncated-and-looping vs truncated-not-looping;
+   per band truncated-and-looping counts. Computed per record line while streaming (original evaluations only).
 Usage: python -m qis.analysis.a17_test EVAL_ROOT OUT_DIR [--cgpu-root CGPU_ROOT] [--h202 NAME] [--figures FIG_DIR]
 """
 import argparse
@@ -43,12 +47,25 @@ ARMS, SEEDS = ("H", "R", "U"), (101, 202)
 CONTRASTS = (("R-U", "R", "U"), ("R-H", "R", "H"), ("U-H", "U", "H"))
 SPLITS = {8: (((0, 8), (8, 16)), ((16, 24), (24, 32))), 16: (((0, 16), (16, 32)),)}
 C_BINS = ((0, 0), (1, 2), (3, 4), (5, 8), (9, 16), (17, 24), (25, 31), (32, 32))
+WIN, TAIL, LOOP = 32, 2048, 0.5
 DEV_PANEL = {"problems": 53, "n": 8, "source": "reports/tables/report_data.json: all 28 panel=dev eval rows have n=8, problems=53"}
 
 
 # ---------------------------------------------------------------- loading
-def load(d):
-    """Raw records of one evaluation directory, or None when records.jsonl.gz is absent."""
+def rep_frac(ids):
+    """Share of window start positions in the last TAIL tokens whose WIN-token window started earlier in the attempt."""
+    a = np.asarray(ids, dtype=np.int64)
+    L = len(a)
+    if L < WIN:
+        return 0.0
+    W = np.ascontiguousarray(np.lib.stride_tricks.sliding_window_view(a, WIN)).view(np.dtype((np.void, WIN * 8))).ravel()
+    _, first, inv = np.unique(W, return_index=True, return_inverse=True)   # first = earliest start of each distinct window
+    rep = first[inv.ravel()] < np.arange(len(W))
+    return float(rep[max(0, L - TAIL):].mean())
+
+
+def load(d, loops=False):
+    """Raw records of one evaluation directory, or None when records.jsonl.gz is absent. loops: also rep_frac per attempt."""
     p = os.path.join(d, "records.jsonl.gz")
     if not os.path.exists(p):
         return None
@@ -58,7 +75,8 @@ def load(d):
         ids = r.get("ids")
         rec.setdefault(r["prompt_id"], {})[r["sample"]] = (
             r["reward"] == 1, r.get("finish"), r.get("seed"),
-            hashlib.sha1(json.dumps(ids).encode()).hexdigest() if ids is not None else None, r.get("n_tokens"))
+            hashlib.sha1(json.dumps(ids).encode()).hexdigest() if ids is not None else None, r.get("n_tokens"),
+            rep_frac(ids) if loops and ids is not None else None)
     full = {k: v for k, v in rec.items() if all(i in v for i in range(N))}
     s = os.path.join(d, "summary.json")
     sc = {x["id"]: x["c"] for x in json.load(open(s))["per_problem"]} if os.path.exists(s) else None
@@ -75,11 +93,12 @@ def cell(raw, probs):
     get = lambda j: [[R[p][i][j] for i in range(N)] for p in probs]          # noqa: E731
     y, fin = np.array(get(0), dtype=bool), get(1)
     trunc = np.array([[f == "length" for f in r] for r in fin]) if all(f is not None for r in fin for f in r) else None
-    nt = get(4)
+    nt, rf = get(4), get(5)
+    rep = np.array(rf, dtype=np.float64) if all(v is not None for r in rf for v in r) else None
     ntok = np.array(nt, dtype=np.int64) if all(v is not None for r in nt for v in r) else None
     c = y.sum(1)
     mism = None if raw["summary_c"] is None else sum(raw["summary_c"].get(p) != int(c[i]) for i, p in enumerate(probs))
-    return {"y": y, "c": c, "trunc": trunc, "ntok": ntok, "seed": get(2), "hash": get(3), "dir": raw["dir"], "lines": raw["lines"],
+    return {"y": y, "c": c, "trunc": trunc, "ntok": ntok, "rep": rep, "seed": get(2), "hash": get(3), "dir": raw["dir"], "lines": raw["lines"],
             "summary_c_mismatch": mism}
 
 
@@ -590,6 +609,84 @@ def truncation(pol, probs, kb):
     return res, md
 
 
+# ---------------------------------------------------------------- 7. loops
+def med(v):
+    return float(np.median(v)) if len(v) else None
+
+
+def loops(pol, probs, kb):
+    n = len(probs)
+    band = np.array([band_of(int(k)) for k in kb])
+    res = {"n_problems": n, "rule": f"rep_frac = share of window start positions in the last {TAIL} tokens (positions with a full "
+           f"{WIN}-token window) whose {WIN}-token window already started at an earlier position of the same attempt; "
+           f"loop = rep_frac ≥ {LOOP}; attempts shorter than {WIN} tokens get 0",
+           "policies": {}, "paired_R_vs_U": {}, "bands": {}}
+    usable = lambda x: ok(x) and x["trunc"] is not None and x["rep"] is not None    # noqa: E731
+    for k, x in pol.items():
+        if not usable(x):
+            res["policies"][k] = res["bands"][k] = x if not ok(x) else "unavailable (records lack finish or ids)"; continue
+        t, y, rf = x["trunc"], x["y"], x["rep"]
+        lp, tot = rf >= LOOP, y.size
+        grp = {"truncated": t, "finished_wrong": ~t & ~y, "finished_correct": ~t & y}
+        res["policies"][k] = {
+            **{g: {"attempts": frac(m.sum(), tot), "looping": frac((m & lp).sum(), m.sum()),
+                   "loop_share": float((m & lp).sum() / m.sum()) if m.sum() else None, "median_rep_frac": med(rf[m])}
+               for g, m in grp.items()},
+            "truncated_looping": frac((t & lp).sum(), tot), "truncated_not_looping": frac((t & ~lp).sum(), tot),
+            "truncated_looping_n": int((t & lp).sum()), "truncated_not_looping_n": int((t & ~lp).sum()), "attempts_n": tot}
+        res["bands"][k] = {bn: {"truncated_looping": frac((t & lp)[band == bn].sum(), (band == bn).sum() * N),
+                                "truncated_not_looping": frac((t & ~lp)[band == bn].sum(), (band == bn).sum() * N)}
+                           for bn, _, _ in BANDS if (band == bn).any()}
+    for s in SEEDS:
+        r, u = pol[f"R-s{s}"], pol[f"U-s{s}"]
+        if not (usable(r) and usable(u)):
+            res["paired_R_vs_U"][f"s{s}"] = "missing"; continue
+        row = {}
+        for name, f in (("truncated_looping", lambda z: z["trunc"] & (z["rep"] >= LOOP)),
+                        ("truncated_not_looping", lambda z: z["trunc"] & (z["rep"] < LOOP))):
+            mr, mu = f(r), f(u)
+            row[name] = dict(boot_a9([(mr.sum(1) - mu.sum(1)) / N], f"a17-loops/{name}/s{s}"),
+                             A=float(mr.mean()), B=float(mu.mean()), A_n=frac(mr.sum(), mr.size), B_n=frac(mu.sum(), mu.size),
+                             direction="R − U (share of 4096 attempts)")
+        tot = r["y"].size
+        aR = r["y"].sum() / (tot - r["trunc"].sum()); aU = u["y"].sum() / (tot - u["trunc"].sum())
+        ab = (aR + aU) / 2
+        row["a_bar"] = float(ab)
+        row["truncation_term_split"] = {"loop_part": -row["truncated_looping"]["est"] * ab,
+                                        "non_loop_part": -row["truncated_not_looping"]["est"] * ab,
+                                        "total": -(row["truncated_looping"]["est"] + row["truncated_not_looping"]["est"]) * ab,
+                                        "rule": "−Δt·ā (section 6) split as −Δt_loop·ā − Δt_non-loop·ā; Δ = R − U"}
+        res["paired_R_vs_U"][f"s{s}"] = row
+    res["interval_note"] = "95% paired problem bootstrap (10,000 draws, seed 2027, streams a9/a17-loops/...) on per-problem count/32 differences"
+    md = ["# Truncated test attempts: degenerate repetition or long reasoning?", "", f"Rule: {res['rule']}.", "",
+          "| Policy | Truncated | Truncated: looping (share) | Truncated: median rep_frac | Finished-wrong: looping (share), median rep_frac | "
+          "Finished-correct: looping (share), median rep_frac |", "|---|---|---|---|---|---|"]
+    for k, v in res["policies"].items():
+        if not ok(v):
+            md.append(f"| {k} | {v} | | | | |"); continue
+        g = lambda q: f"{v[q]['looping']} ({f3(v[q]['loop_share'])})"      # noqa: E731
+        md.append(f"| {k} | {v['truncated']['attempts']} | {g('truncated')} | {f3(v['truncated']['median_rep_frac'])} | "
+                  f"{g('finished_wrong')}, {f3(v['finished_wrong']['median_rep_frac'])} | "
+                  f"{g('finished_correct')}, {f3(v['finished_correct']['median_rep_frac'])} |")
+    md += ["", "## Paired R vs U per seed (shares of 4096 attempts)", "",
+           "| Seed | Truncated & looping: R − U | Truncated & not looping: R − U | Truncation term −Δt·ā = loop part + non-loop part |",
+           "|---|---|---|---|"]
+    for s, v in res["paired_R_vs_U"].items():
+        if not ok(v):
+            md.append(f"| {s} | {v} | | |"); continue
+        h = lambda z: f"{z['A_n']} − {z['B_n']}: " + dl(z["A"], z["B"], z["est"], z, f=".4f")   # noqa: E731
+        ts = v["truncation_term_split"]
+        md.append(f"| {s} | {h(v['truncated_looping'])} | {h(v['truncated_not_looping'])} | "
+                  f"{ts['total']:+.4f} = {ts['loop_part']:+.4f} + {ts['non_loop_part']:+.4f} (ā = {v['a_bar']:.4f}) |")
+    md += ["", "## Truncated and looping attempts per band (of band size × 32)", "",
+           "| Policy | " + " | ".join(b for b, _, _ in BANDS) + " |", "|---|" + "---|" * len(BANDS)]
+    for k, v in res["bands"].items():
+        md.append(f"| {k} | {v} |" if not ok(v) else
+                  f"| {k} | " + " | ".join(v[b]["truncated_looping"] if b in v else "–" for b, _, _ in BANDS) + " |")
+    md += ["", res["interval_note"] + "."]
+    return res, md
+
+
 # ---------------------------------------------------------------- 5. figures
 def plot(out_dir, fig_dir):
     """Draw the four A17 figures from the JSON outputs in out_dir (matplotlib venv)."""
@@ -732,6 +829,27 @@ def plot(out_dir, fig_dir):
         ax.set_ylabel("R − U pass@1 = −Δt·ā + (1 − t̄)·Δa (95% problem bootstrap)"); ax.legend(fontsize=6)
         fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "truncation.png"), dpi=150); plt.close(fig)
         drawn.append("truncation")
+    Lp = J("loops")
+    if Lp and any(ok(v) for v in Lp["policies"].values()):
+        order = ["base"] + [f"{a}-s{s}" for s in SEEDS for a in ARMS]
+        fig, ax = plt.subplots(figsize=(8.4, 4.2))
+        xs, labels = [], []
+        for i, k in enumerate(order):
+            x = i + (i > 0) * 0.5 + (i > 3) * 0.5                          # gaps: base | seed 101 | seed 202
+            xs.append(x); labels.append(k)
+            v = Lp["policies"].get(k)
+            if not ok(v):
+                ax.text(x, 1, "missing", ha="center", fontsize=7, rotation=90, va="bottom"); continue
+            col = ARM_COLOR.get(k.split("-")[0], "grey") if k != "base" else "grey"
+            lo, hi = v["truncated_looping_n"], v["truncated_not_looping_n"]
+            ax.bar(x, lo, 0.8, color=col, edgecolor="white", label="looping (rep_frac ≥ 0.5)" if k == "base" else None)
+            ax.bar(x, hi, 0.8, bottom=lo, color=col, alpha=0.35, edgecolor="white", label="not looping" if k == "base" else None)
+            ax.text(x, lo + hi, f"{lo} + {hi}\n= {lo + hi}/{v['attempts_n']}", ha="center", va="bottom", fontsize=6)
+        ax.set_xticks(xs); ax.set_xticklabels(labels, fontsize=7, rotation=30)
+        ax.set_ylabel("truncated attempts (of 4096): looping + not looping"); ax.legend(fontsize=7)
+        ax.set_title("Truncated sealed-test attempts (cap 12,288): solid = looping, light = not looping; base grey", fontsize=8)
+        fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "loops.png"), dpi=150); plt.close(fig)
+        drawn.append("loops")
     json.dump({"drawn": drawn, "inputs": out_dir}, open(os.path.join(fig_dir, "a17_figures.json"), "w"), indent=1)
     print("drawn:", drawn)
 
@@ -743,7 +861,7 @@ def main():
     ap.add_argument("--cgpu-root"); ap.add_argument("--h202", default="qis-test-H-s202-sym"); ap.add_argument("--figures")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
-    braw = load(os.path.join(a.eval_root, "qis-test-base"))
+    braw = load(os.path.join(a.eval_root, "qis-test-base"), loops=True)
     if braw is None:
         raise SystemExit(f"base records not found under {a.eval_root}/qis-test-base")
     probs = sorted(braw["rec"])
@@ -756,7 +874,7 @@ def main():
                 d = os.path.join(roots[0] if roots else a.eval_root, a.h202)
             else:
                 d = os.path.join(a.eval_root, f"qis-test-{k}-sym")
-            pol[k], src[k] = cell(load(d), probs), d
+            pol[k], src[k] = cell(load(d, loops=True), probs), d
     cg = {f"{arm}-s{s}": cell(load(os.path.join(a.cgpu_root, f"qis-cgpu-{arm}-s{s}")), probs) if a.cgpu_root else "missing (no --cgpu-root)"
           for arm in "RU" for s in SEEDS}
     inputs = {"n_problems": len(probs), "base_incomplete_problems": braw["incomplete"],
@@ -764,7 +882,7 @@ def main():
     kb = pol["base"]["y"][:, :16].sum(1)
     for name, (res, md) in (("reversal", reversal(pol, probs, kb)), ("coverage", coverage(pol, probs)),
                             ("sampling_null", sampling_null(pol, probs)), ("endpoints", endpoints(pol, cg, src)),
-                            ("truncation", truncation(pol, probs, kb))):
+                            ("truncation", truncation(pol, probs, kb)), ("loops", loops(pol, probs, kb))):
         dump(a.out, name, dict(res, inputs=inputs), md)
     if a.figures:
         plot(a.out, a.figures)
