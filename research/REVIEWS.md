@@ -1203,3 +1203,20 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Merge check and report fill for the endpoint the moment it lands.
 7. **Reconciliation.** Live IDs 11120590, 11120595, 11120596, 11120598, 11121110 are ledger rows; 11112647 our standby.
    Watcher alive (bgan1sbox).
+
+## Review 112 — 2026-11-11 23:50Z (6:50 PM EST Wed; after delivery)
+1. **Changes.**
+   - H-s202 endpoint merged 22:58Z: 72.4% pass@1 (shards L40S × 3, A6000 × 3; D159). Seed-202 R − H 74.8 − 72.4 =
+     +2.4 [−0.4, +5.4], U − H 79.2 − 72.4 = +6.8 [+3.5, +10.2]; means R − H +3.6 [+1.6, +5.8], U − H +3.8 [+1.6, +6.0].
+   - H-s202 stress cell merged 23:41Z: 60.1% (seed-202 stress R − H +3.1, U − H +5.7).
+   - Final reruns (a17_train, a17_test, a17_stress, a19_divergence), final cost run (315.6 GPU-h, 2,555.5 CPU-h, 260
+     jobs), independent recomputation of the H-s202 cells, manifest regenerated, fresh-clone check passed.
+   - **Report delivered 23:46Z** (`reports/REPORT.md`, ca0d8cf; 0 placeholders).
+   - CPU standby 11112647 cancelled 23:50Z (no work remains; A19: no speculative standbys).
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect for R − U; the practice-vs-H
+   advantage agrees in direction across seeds but rests on two seeds and partly mixed hardware for H-s202.
+3. **Distinguishing task.** More training seeds per arm (recommended in Q4; out of scope here).
+4. **Schedule.** Delivered 44 min before the 00:30Z deadline.
+5. **GPUs.** None in use.
+6. **Most important.** Nothing pending; await owner direction.
+7. **Reconciliation.** No live project jobs after the standby cancel. Watcher re-armed.

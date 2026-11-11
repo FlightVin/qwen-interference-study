@@ -43,7 +43,7 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 ## Work and GPUs (23:46Z)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | CPU | 11112647 | CPU standby (to be cancelled after delivery) |
+| done | CPU | 11112647 | CPU standby cancelled 23:50Z (no work remains) |
 | done | — | all ledger jobs | 260 jobs; 315.6 GPU-h, 2,555.5 CPU-h (final cost run 23:45Z) |
 Delivered: `reports/REPORT.md` at ca0d8cf (verified from a fresh clone of origin).
 
