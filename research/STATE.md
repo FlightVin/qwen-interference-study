@@ -16,8 +16,8 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 |---|---|---|
 | 10:40 AM [15:40Z] | H-s202 round 109; LATEST checkpoint round 108 | done |
 | 11:03 AM [16:03Z] | A19 received; D154 design fixed; length canary 11118157 started 16:12Z | done |
-| ≈ 12:30 PM [17:30Z] | Canary tranche 1 checked → submit the other three length jobs | planned |
 | ≈ 11:35 AM–12:45 PM [16:35–17:45Z] | H-s202 round 112: checkpoint save + dev evaluation | expected |
+| ≈ 12:30 PM [17:30Z] | Canary tranche 1 checked → submit the other three length jobs | planned |
 | 1:00 PM [18:00Z] | D150 fallback: copy round 112 (CPU job, or `-g` if the CPU pool is blocked) + 6 shards | planned |
 | ≈ 2:00 PM [19:00Z] | Length diagnostic, all four checkpoints, tranche 1 + full panel | forecast |
 | ≈ 3:00–4:15 PM [20:00–21:15Z] | Fallback test done | forecast |
