@@ -49,20 +49,21 @@ kinds of evidence, side by side. The **descriptive split** writes R − U = trun
 
 | Seed | Panel | R − U at 12,288 | Truncation term | Accuracy term | R − U at 16,384 (same trajectories) |
 |---|---|---|---|---|---|
-| 101 | sealed test | 81.9 − 77.7 = +4.2 | +1.4 | +2.8 | ⟨PENDING: sealed-test continuation⟩ |
+| 101 | sealed test | 81.9 − 77.7 = +4.2 | +1.4 | +2.8 | 84.2 − 80.6 = +3.6 (change −0.6 [−1.6, +0.4]) |
 | 101 | stress (221) | 69.5 − 65.3 = +4.2 | +2.1 | +2.0 | 72.3 − 68.2 = +4.1 (change −0.1 [−1.1, +1.0]) |
-| 202 | sealed test | 74.8 − 79.2 = −4.4 | −4.3 | −0.1 | ⟨PENDING: sealed-test continuation⟩ |
+| 202 | sealed test | 74.8 − 79.2 = −4.4 | −4.3 | −0.1 | 76.9 − 80.8 = −3.9 (change +0.5 [−0.3, +1.3]) |
 | 202 | stress (221) | 63.2 − 65.8 = −2.7 | −6.3 | +3.6 | 66.0 − 68.2 = −2.1 (change +0.5 [−0.5, +1.5]) |
 
 **Seed 202 (R behind).** By the descriptive split, R lost nothing on the answers it finished (sealed test 86.1% vs
 86.2%; stress 82.1% vs 77.6%) and lost everything through the cap (13.1% vs 8.1% of sealed-test answers cut off). The
-length experiment shows those capped answers were not near-misses: with 4,096 more tokens R recovers 12.3% of its
-capped stress answers and U 15.3%, and R − U barely moves. In a blind read of preselected continuations, most capped
+length experiment shows those capped answers were not near-misses: with 4,096 more tokens R recovers 16.2% of its
+capped sealed-test answers and U 19.8% (stress: 12.3% and 15.3%), and R − U moves from −4.4 to −3.9 points (stress:
+−2.7 to −2.1). In a blind read of preselected continuations, most capped
 answers kept looping or ended wrong. So R-s202 did not lose arithmetic skill; it more often entered long searches that
 do not converge, and a bigger budget does not convert them.
 
 **Seed 101 (R ahead).** R led on both terms (truncation +1.4, accuracy +2.8 on the sealed test). More room changes
-nothing (−0.1).
+little: +4.2 → +3.6 on the sealed test, +4.2 → +4.1 on the stress panels.
 
 **Reading.** The truncation term is real, but it is a symptom, not a budget accident: a capped answer is mostly a failed
 attempt that has not stopped yet. "Less likely to finish within budget" therefore means "more often stuck", and a
@@ -97,7 +98,8 @@ cannot date the R/U split.
 **More training seeds, with the auxiliary practice kept informative.** Not length control first.
 
 The observation that decided it: R − U takes the sign of the training seed on every panel (sealed test, common-GPU
-rerun, Harder, SuperHard), and 4,096 more tokens leave it unchanged (stress: +4.2 → +4.1 and −2.7 → −2.1 points). The
+rerun, Harder, SuperHard), and 4,096 more tokens leave it nearly unchanged (sealed test: +4.2 → +3.6 and −4.4 → −3.9
+points; stress: +4.2 → +4.1 and −2.7 → −2.1). The
 difference lives in the trained policies and varies from run to run; it is not an artefact of the budget. Two seeds
 cannot say whether R or U is better on average, and per-problem R − U is unrelated across seeds (Spearman −0.09). Both
 runs of each pair split in the first window after the cap change (rounds 33–64), in opposite directions, which is what
@@ -556,6 +558,26 @@ Few capped answers recover: 6–11 of 41–56 per checkpoint (13–22%). Most (5
 and the rest finish with a wrong answer. Extra room does not close the seed-202 gap: R and U each recover 9 answers, and
 R − U stays at −2.0 points. In seed 101, R recovers more (11 vs 6, mostly on SuperHard), so R − U widens by 2.0 points;
 the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`.
+
+**Sealed test** (the primary panel: 128 problems × 32 attempts = 4,096 per checkpoint, original records; D155):
+
+| Checkpoint | pass@1 at 12,288 | pass@1 at 16,384 | Capped at 12,288 | Recovered | Finished wrong | Still capped | Extra tokens per recovered answer |
+|---|---|---|---|---|---|---|---|
+| R-s101 | 81.9% | 84.2% | 437 | 94 (21.5%) | 50 | 293 (67.0%) | 15,689 |
+| U-s101 | 77.7% | 80.6% | 501 | 118 (23.6%) | 67 | 316 (63.1%) | 13,845 |
+| R-s202 | 74.8% | 76.9% | 538 | 87 (16.2%) | 104 | 347 (64.5%) | 20,476 |
+| U-s202 | 79.2% | 80.8% | 333 | 66 (19.8%) | 65 | 202 (60.7%) | 16,674 |
+
+| Seed | R − U at 12,288 | R − U at 16,384 | Change |
+|---|---|---|---|
+| 101 | 81.9 − 77.7 = +4.2 [+2.1, +6.2] | 84.2 − 80.6 = +3.6 [+1.5, +5.7] | −0.6 [−1.6, +0.4] |
+| 202 | 74.8 − 79.2 = −4.4 [−7.3, −1.8] | 76.9 − 80.8 = −3.9 [−6.7, −1.3] | +0.5 [−0.3, +1.3] |
+
+On the primary panel the answer is the same as on the stress panels: 4,096 more tokens add 1.6–2.9 points to every
+checkpoint, recover 16–24% of capped answers, and move R − U by less than one point in either seed. Both seeds keep
+their sign and their interval away from zero. R-s202 had the most capped answers (538) and recovered the smallest share
+(16.2%). The 12,288 values equal the original sealed-test scores; intervals come from this analysis's own bootstrap
+draws and can differ from section 1 in the last digit. Source: `research/evidence/a19/length/test/length.md`.
 
 **Full stress panel** (all 221 problems × 8 attempts = 1,768 per checkpoint; tranche 1 included):
 
