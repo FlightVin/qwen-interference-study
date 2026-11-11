@@ -205,7 +205,7 @@ read by a person"). Status: ok = in the report and verified; gap = missing or st
 - 10.20 done (19:48Z) — Stress construction: rubric, sources, composition, dedup, base difficulty, agent annotations. Fix: explain 99 → 95 Harder (D145) and point to the versioned manifests.
 - 10.21 done (19:48Z) — Stress evaluation: checkpoint-by-panel coverage table (A17 §6) missing; per tier and seed coverage (solved ≥ 1 of 8) and correct/total missing. Fix: add both tables.
 - 10.22 ok — Response audit: preselected, blind, categories, denominators (35 responses, 70 reads), examples, grader limitation.
-- 10.23 ok/pend — Length diagnostic (A19 §2): method, tranche 1 then full panel, sealed test, all required counts, R − U at both caps, inspection sample, scope caveat. Add H-s101 cell (D157, pend).
+- 10.23 done (20:28Z; H-s101 in 5.2 and 5.3: R − H +4.9 → +4.9 sealed, +5.4 → +5.0 stress) — Length diagnostic (A19 §2): method, tranche 1 then full panel, sealed test, all required counts, R − U at both caps, inspection sample, scope caveat. Add H-s101 cell (D157, pend).
 - 10.24 ok — Divergence timing (A19 §3): no matched pair; dev and training records; limitation stated.
 - 10.25 ok — Strategy cue (carried from the first report).
 

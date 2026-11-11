@@ -589,7 +589,7 @@ cap rule). One was still making progress when cut off. The reader judged 8 of th
 answer re-derives the same steps; the test in section 4.3 counted repeated text, which these answers rarely contain.
 Source: `research/evidence/a19/length/t1/inspect_read.md`.
 
-**Scope.** This measures inference allowance for these four checkpoints only. It does not show what training with a
+**Scope.** This measures inference allowance for these five checkpoints only (R, U × two seeds and H-s101). It does not show what training with a
 longer cap would have produced.
 
 The length results show that the budget does not explain R − U. Section 6 tests the cause that the study was designed
