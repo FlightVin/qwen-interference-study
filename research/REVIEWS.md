@@ -1049,3 +1049,33 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Fallback copy path that does not depend on the CPU pool (done). Next: incomplete-cell list.
 7. **Reconciliation.** 11112377 (ledger) running; 11112647 (our standby) pending; other jobs are ae-dco-*. Watcher alive
    (task bo4i0sb9k).
+
+## Review 105 — 2026-11-11 16:50Z (11:50 AM EST Wed; first review under A19)
+1. **Changes.**
+   - A19 recorded (`project.md` §33, D154, CHECKLIST 0.26 + section 9, STATE). H-s202 gate kept: the round-128 dev eval
+     precedes the save; `RUN_COMPLETE` follows within seconds.
+   - H-s202 11112377: round 112 at 16:34Z (LATEST = 112; no eval at 112), round 113 at 16:48Z.
+   - Length diagnostic (exact continuation 12,288 → 16,384): tranche 1 (64 problems × 4 attempts) done for R-s202 and
+     U-s202; R-s101 generating (11118247, general); U-s101 queued on preempt (11118248). Canary 11118157 cancelled at the
+     start of its full-panel phase (equal coverage first); U-s202 11118245 in its full-panel phase.
+     | t1, 256 attempts | Correct at 12,288 | Capped | Recovered | Finished wrong | Still capped | Correct at 16,384 |
+     |---|---|---|---|---|---|---|
+     | R-s202 | 173 | 56 | 9 | 13 | 34 | 182 |
+     | U-s202 | 178 | 41 | 9 | 11 | 21 | 187 |
+     Seed 202 R − U on t1: (173 − 178)/256 = −2.0 points at 12,288 and (182 − 187)/256 = −2.0 at 16,384 (unchanged).
+   - Verification: 18 cells + 9 contrasts recomputed with stdlib code, all match (`research/audits/a19/`); J and ΔJ
+     figures match their tables. Audit counts resolved (35 responses, 70 reads, 4 n.a.). REPORT: Q1, section 9.2
+     (divergence: sign appears in rounds 33–64 in both seeds), incomplete-cell table.
+   - CPU standby 11112647 running again (babel-n5-20).
+2. **Competing explanation still plausible.** Seed-level path dependence against an arm effect. New: in seed 202 the
+   extra 4,096 tokens recover the same number of answers in R and U, so "R's answers only needed more room" does not
+   explain the seed-202 deficit on t1.
+3. **Distinguishing task.** Full-panel continuation for all four checkpoints (power), then R − U at both caps with the
+   paired bootstrap. Seeds cannot be added (A9).
+4. **Schedule.** Rounds 109→113 ran ×1.07 of H-s101 (×1.17 since round 96). Round 128 ≈ 21:30Z–22:30Z; RUN_COMPLETE ≈
+   22:30Z–23:30Z (every case past the D150 trigger, 22:15Z); endpoint ≈ 23:30Z–00:30Z. Fallback at 18:00Z on LATEST
+   (round 112, or 116 if saved by then ≈ 17:56Z). Length full panels ≈ 17:30–18:30Z. Report: on time.
+5. **GPUs.** General 3/3 (H-s202, len U-s202, len R-s101). Preempt 1/6 queued (len U-s101). Within limits.
+6. **Most important.** Equal coverage: when R-s101 t1 ends, stop it and move U-s101 to general.
+7. **Reconciliation.** 11112377, 11118245, 11118247, 11118248 are ledger rows; 11112647 our standby; 11118157 cancelled
+   by me. Watcher alive (task blzowz4dh).
