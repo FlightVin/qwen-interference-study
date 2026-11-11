@@ -37,11 +37,13 @@ WORD = re.compile(r"[a-z]+|\d+(?:\.\d+)?|[^\sa-z\d]")
 
 
 def norm(t):
-    return re.sub(r"\s+|\\[,;:! ]|\\left|\\right|\$", "", t.lower())
+    return re.sub(r"\s+|\\[,;:! ]|\\left|\\right|\$|[{}]|\\dfrac|\\tfrac", "", t.lower().replace("\\dfrac", "\\frac"))
 
 
 def grams(t):
-    w = ["#" if x[0].isdigit() else x for x in WORD.findall(t.lower())]
+    # braces, dollar signs and LaTeX spacing are dropped so that x^{4} and x^4 give the same tokens
+    t = re.sub(r"[{}$]|\\[,;:! ]|\\left|\\right", " ", t.lower())
+    w = ["#" if x[0].isdigit() else x for x in WORD.findall(t)]
     return {tuple(w[i:i + 3]) for i in range(len(w) - 2)}
 
 
@@ -117,6 +119,9 @@ def main():
             rep["excluded"][why] += 1
             continue
         if re.search(r"\\circ|\\text|\\mbox|\\%|\$", c["gold"]):
+            rep["excluded"]["gold carries units or text (rubric 1.1)"] += 1
+            continue
+        if re.search(r"(?<![\\a-zA-Z])[a-zA-Z]{4,}", c["gold"]):     # prose words (not LaTeX commands)
             rep["excluded"]["gold carries units or text (rubric 1.1)"] += 1
             continue
         g = gold_eligible(ver, c["gold"])
