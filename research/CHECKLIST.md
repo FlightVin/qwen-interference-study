@@ -155,7 +155,7 @@ Priorities (§8 of A17): H-s202 > common-GPU R/U > CPU analyses > balanced stres
 
 ## 9. A19 (`project.md` §33; D154). Deadline Thu 12 Nov 00:30Z (Wed 7:30 PM EST)
 Keep-first order if time tightens: H-s202 sealed test > balanced four-checkpoint length diagnostic > independent verification.
-- 9.1 done (16:10Z, D154) — H-s202 critical path: round-128 dev eval runs before the save; `RUN_COMPLETE` follows the verified save within seconds → gate kept. Endpoint shards k0–k5, stress `qis-stress-H-s202-r128`, merge (in shard recipes) ready. Submit shards `--after qis-main-H-s202-sym` once slots allow.
+- 9.1 done (16:10Z, D154) — H-s202 critical path: round-128 dev eval runs before the save; `RUN_COMPLETE` follows the verified save within seconds → gate kept. Endpoint shards k0–k5, stress `qis-stress-H-s202-r128`, merge (in shard recipes) ready. Submit shards `--after qis-main-H-s202-sym` once slots allow. 17:00Z: provenance check (state.json round 128, opt_step 512, attempt a2) added to the six endpoint shard recipes and `qis-stress-H-s202-r128` (tested on round_0112: 112 / 448 / a2); stress recipe header corrected to Harder-95 + SuperHard-126.
 - 9.2 pending (18:00Z) — D150 fallback (8.1b): label "H-s202 round N (incomplete run)", outside the primary table.
 - 9.3 active — Length diagnostic (exact continuation 12,288 → 16,384; `qis.eval_extend`; L40S):
   - 9.3a done — design + sample fixed before output (D154); boundary tests in `tests/test_eval_extend.py` (run in each job precheck).
