@@ -25,6 +25,10 @@ def category(name, gpus):
         return "sealed test evaluation"
     if n.startswith("diag-local") or n.startswith("diag-ref"):
         return "local-update diagnostic"
+    if n.startswith("cgpu-"):
+        return "common-GPU rerun (A17)"
+    if n.startswith("stress-"):
+        return "stress evaluation (A17)"
     if n.startswith("cue-"):
         return "strategy-cue panel (A15.4)"
     return "other GPU jobs (screening, calibration, smoke, A10/A11 studies)" if gpus else "CPU jobs"
