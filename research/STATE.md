@@ -32,7 +32,7 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 3:00–3:25 PM [20:00–20:25Z] | Narrative rewrite of REPORT.md (checked by script); H-s101 length cells done | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
-| 3:42 PM [20:42Z] | H-s202 round 128 done; dev eval running; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | done |
+| 3:42 PM [20:42Z] | H-s202 round 128 done; round-128 dev eval (≈ 1 h), then verified save, then RUN_COMPLETE | done |
 | ≈ 4:45–5:00 PM [21:45–22:00Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
 | ≈ 5:40–5:55 PM [22:40–22:55Z] | H-s202 round-128 sealed test (shards in parallel) | forecast; before the deadline |
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
