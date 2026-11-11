@@ -907,3 +907,15 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Write the stress-panel analysis (per tier × checkpoint: pass@1, pass@8, truncation, solved-at-8, coverage
    against base, paired R − U intervals) so results drop into the report as cells finish.
 7. **Reconciliation.** All live job IDs are ledger rows; standby 11112647. Watcher alive (pid 82847).
+
+## Review 97 — 2026-11-11 08:50Z (3:50 AM EST Wed)
+1. **Changes.** Stress R-s202-r128 done (pass@1 0.632, truncated 23.0%). Stress analysis draft (D-none; `a17_stress`, 3 cells):
+   s101 R − U on stress 0.695 − 0.653 = +0.042 [+0.015, +0.068]. CPU standby 11112647 started. H-s202 at round 86 (08:42Z).
+2. **Competing explanation still plausible.** Seed-202 deficit: truncation only (D142) or truncation plus accuracy.
+3. **Distinguishing task.** U-s202 L40S rerun (3:04 h of ≈ 3.1–4.5 h) → a17_test --cgpu-root; stress U-s202-r128 (1:48 h).
+4. **Schedule.** H-s202 responses grew to 6,000–6,800 tokens (H-s101: 3,500–4,500 at the same rounds); rounds 84–86 took 1,255 s
+   each. RUN_COMPLETE ≈ 23:10Z (×1.21) to 01:15Z (×1.4). Verdict: the report is on time; the H-s202 endpoint test very likely is
+   not. Fallback test of the latest checkpoint decided (D150); owner informed.
+5. **GPUs.** General 2/3 (no runnable job waits). Preempt 5/6 running. Within limits.
+6. **Most important.** D150 fallback; prepare the report so H-s202 cells fill by script.
+7. **Reconciliation.** All live job IDs are ledger rows. Watcher alive (pid 13846).

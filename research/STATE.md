@@ -50,7 +50,7 @@ truncation by arm/role reported, 5% crossing → inspect only. A6 thinking-mode 
 - H-s202 resumed from round 60 (a2-r60); original r60–64 records backed up (D143).
 
 ## Next actions
-1. Watch H-s202 (job 11112377; round 83 at 07:39Z, ×1.10 of H-s101; RUN_COMPLETE ETA ≈ 21:30Z (20:45–22:15Z), Review 96); at RUN_COMPLETE submit the 6 test shards.
+1. Watch H-s202 (job 11112377; round 86 at 08:42Z; responses 6,000–6,800 tokens (H-s101 3,500–4,500) → RUN_COMPLETE ≈ 23:10Z–01:15Z, after the deadline; D150 fallback test of the latest checkpoint at ≈ 18:00Z); at RUN_COMPLETE submit the 6 test shards.
 2. Common-GPU: R reruns done (L40S 0.823/0.761 vs L40 0.819/0.748): hardware does not explain either sign. U-s202 rerun running (general); U-s101 optional; then a17_test --cgpu-root.
 3. Stress evals: base 0.373, R-s101-r128 0.695, U-s101-r128 0.653 done; R-s202-r128 running (general); H-s101, U-s202 r128, two r64 cells and the U-s101 rerun running on preempt since ≈ 07:10Z. H-s202-r128 after RUN_COMPLETE.
 4. Response audit (D144) after stress evals; second-read agreement.

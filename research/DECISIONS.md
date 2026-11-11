@@ -930,3 +930,17 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   (`ops/qis-submit`). General slots must be free of stress work by ≈ 19:30Z.
 - **Cut-off.** The report is delivered by 00:30Z regardless. H-s202 test cells are filled if the merge exists by ≈ 23:45Z;
   otherwise they are listed as incomplete with the H-s202 round-128 dev and probe values.
+
+## D150 — 2026-11-11 09:00Z — H-s202 endpoint test likely misses the deadline; fallback test of the latest checkpoint
+- **Evidence.** H-s202 rounds 84–86 took 3,765 s (H-s101: 1,953 s). Cause: longer responses, not node contention. H-s202 mean
+  response length in rounds 83–86 was 5,992–6,847 tokens against 3,466–4,531 for H-s101 (`len_mean` in metrics.jsonl); node load
+  4.9 on 8 CPUs. Rounds 66→86: 17,575 s against 14,505 s (×1.21); rounds 83–86 alone ×1.4–1.9.
+- **Projection.** H-s101 needed 39,994 s for rounds 86→128. At ×1.21: round 128 ≈ 22:10Z, RUN_COMPLETE ≈ 23:10Z. At ×1.4:
+  RUN_COMPLETE ≈ 01:15Z. The six-shard test needs ≈ 1.7 h more. Only a return to ×1.0 (RUN_COMPLETE ≈ 21:00Z) meets 00:30Z.
+- **Decision.** (1) Training continues to round 128 (A17); the endpoint test runs as six shards at RUN_COMPLETE (D149) even if
+  after the deadline, and results go into a dated addendum. (2) Fallback: at ≈ 18:00Z, if projected RUN_COMPLETE is later than
+  22:15Z, copy the latest saved checkpoint (`ckpt_every` 4; expected round ≈ 108–112) to `ckpt/qis-main-H-s202-sym-fallback/`,
+  verify its model.pt hash against state.json, and run the six-shard sealed test on it (general GPUs, D141 recipe). (3) The report
+  shows that value only as "H-s202 at round N (incomplete run)", outside the seed-mean and primary tables, because a shorter run
+  is not comparable with 128-round R and U endpoints. (4) The owner is told now; a deadline extension of ≈ 3 h would let the
+  endpoint test land.

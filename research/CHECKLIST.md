@@ -126,6 +126,7 @@ evaluation + prespecified analysis complete; G6 independent recomputation, audit
 ## 8. A17 completion (`project.md` §31; D141+). Deadline Thu 12 Nov 00:30Z (Wed 7:30 PM EST)
 Priorities (§8 of A17): H-s202 > common-GPU R/U > CPU analyses > balanced stress-panel comparison > report/audit.
 - 8.1 active — H-s202 resume: checkpoint r60 verified (hashes OK, 01:45Z); job 11112377 general; `retain_rounds` [64]; trajectory a2-r60 is the endpoint; a2-orig kept (`metrics.pre_resume_a17.jsonl`). ETA round 128 from observed s/round (review updates it).
+  - 8.1b pending (D150) — at ≈ 18:00Z, if projected RUN_COMPLETE > 22:15Z: copy latest checkpoint to `ckpt/qis-main-H-s202-sym-fallback/`, verify hash, six-shard sealed test (needs fallback shard recipes with that CKPT and OUT); report as "H-s202 at round N (incomplete run)" outside primary tables.
   - 8.1a pending — sealed test as 6 shards `qis-test-H-s202-sym-k0..k5` (D149; merge validated on U-s202, byte-identical). Submit at RUN_COMPLETE (ETA ≈ 21:30Z, range 20:45–22:15Z; Review 94); test ≈ 1.7 h on 3 general GPUs; keep general free of stress work from ≈ 19:30Z; cut-off for the report ≈ 23:45Z.
 - 8.2 active (D141 frozen before any score) — common-GPU reruns, L40S, seed label `test-final`. H-s101 + base originals already L40S.
   - R-s101 11112395 done 05:43Z (L40S): pass@1 0.823 (original L40 0.819), pass@8 0.962, truncated 10.9% (orig 10.7%), 0 unknown, 3.93 h.
