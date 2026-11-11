@@ -955,3 +955,16 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   Seed 101: R-s101 L40S 0.823 against U-s101 0.777 (original, L40S; the U-s101 rerun is still running, and by the U-s202 result it
   is expected to be identical). The seed reversal survives on a common GPU type; hardware moved R by at most 1.3 points.
 - Outputs: `research/evidence/a17/analysis/test-cgpu/` (a17_test at 434b439, run in worktree d3fa9d5 on CPU standby 11112647).
+
+## D152 — 2026-11-11 09:25Z — Stress panels repeat the seed pattern; seed 202's deficit there is all truncation (EXPLORATORY)
+- Cells: base, R/U × s101/s202 at round 128 (n = 8, 221 problems; SuperHard 126, Harder 95). All 1,768 attempts per cell, 0 unknown.
+- **Seed 101:** R − U = 0.695 − 0.653 = +0.042 [+0.015, +0.068]; truncation term +0.021 [+0.004, +0.039], accuracy term +0.020
+  [−0.001, +0.041]; pass@8 equal (0.833).
+- **Seed 202:** R − U = 0.632 − 0.658 = −0.027 [−0.051, −0.002]; truncation term −0.063 [−0.082, −0.043] (R truncates 23.0% of
+  attempts, U 15.2%); accuracy term **+0.036 [+0.012, +0.061]** (accuracy on finished attempts R 0.821, U 0.776). pass@8
+  0.814 − 0.851 = −0.036 [−0.063, −0.014].
+- **Reading.** On harder, held-out problems the sign of R − U again follows the seed, and in seed 202 R is *more* accurate on the
+  answers it finishes; it loses only because more of its attempts hit the 12,288 cap. This supports D142: the seed difference is a
+  length/termination difference, not a difference in factoring skill. U-s202 is the shortest-answering trained policy (mean 5,239
+  tokens against 5,929–6,058).
+- Outputs: `research/evidence/a17/analysis/stress/` (a17_stress d3fa9d5); figure `reports/figures/a17/stress_panels.png`.
