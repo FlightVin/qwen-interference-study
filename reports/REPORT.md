@@ -37,8 +37,11 @@ uses outputs that were already visible.
    zeroes the reward and appears as "forgetting" in the records and as a seed-dependent R − U on the test. The long
    answers are unconverged searches, not loops, and training-time answer length on the shared hard prompts does not
    predict which arm truncates more on the test (R wrote shorter training answers than U in both seeds).
-5. **Transfer to harder problems.** ⟨PENDING: stress panels. SuperHard-126 and Harder-95 are frozen; evaluations
-   queued.⟩
+5. **Transfer to harder problems.** Training transfers; the arm choice again does not. On 221 new, harder factoring
+   problems (section 5), the base model scored 37.3% pass@1 and the trained checkpoints 62.4–69.5%. SuperHard pass@1
+   roughly doubled (25.8% → 52.1–58.4%). R − U again took the sign of the seed: 69.5 − 65.3 = +4.2 [+1.5, +6.8] in seed
+   101 and 63.2 − 65.8 = −2.7 [−5.1, −0.2] in seed 202. In seed 202, R was more accurate on the answers it finished
+   (82.1% vs 77.6%) but hit the cap more often (23.0% vs 15.2%). ⟨PENDING: H-s202 r128; response audit.⟩
 6. **The one larger experiment to run next.** ⟨Draft:⟩ Rerun R and U with more seeds (at least 6 per arm) **and** a
    length control (the same cap for every round, with length-matched reward or a larger cap for evaluation), and report
    R − U both overall and on finished answers. The dominant uncertainty is run-to-run variation that acts through answer
@@ -257,9 +260,51 @@ Harder items met the rubric and the checks. A blind second read (different agent
 on eligibility for 207 of 219 items, on the tier for 171 of 219 (78%), and confirmed every gold answer (219/219).
 Absence from the study's sets does not show absence from pretraining data.
 
-⟨PENDING: results table — absolute pass@1, correct/total, truncation, distinct problems solved at 8 attempts, per tier
-and policy (base, R-s101 r64, H-s202 r64, six endpoints); coverage table checkpoint × panel; figure; response audit
-(D144, 16 items × policies, arm-blind) and its answer to "would more direct factoring practice fix these failures?"⟩
+**Results.** 8 attempts per problem, cap 12,288, L40S, seed label stress-v1; every cell has 1,768/1,768 attempts and 0
+ungradable answers, and every trained checkpoint's model.pt hash matched its record. H-s202 round 128 runs only after
+that training run ends (section 8).
+
+| Checkpoint | All 221 pass@1 | SuperHard-126 | Harder-95 | Truncated (all) | Accuracy on finished (all) | Solved ≥ 1 of 8 (all) |
+|---|---|---|---|---|---|---|
+| Base | 37.3% | 25.8% | 52.5% | 0.1% | 37.3% | 152/221 |
+| H-s101 r128 | 64.1% | 52.6% | 79.5% | 17.7% | 77.9% | 183/221 |
+| R-s101 r128 | 69.5% | 58.4% | 84.2% | 20.5% | 87.4% | 184/221 |
+| U-s101 r128 | 65.3% | 54.2% | 80.1% | 23.0% | 84.8% | 184/221 |
+| H-s202 r128 | ⟨PENDING⟩ | | | | | |
+| R-s202 r128 | 63.2% | 53.3% | 76.3% | 23.0% | 82.1% | 180/221 |
+| U-s202 r128 | 65.8% | 55.6% | 79.5% | 15.2% | 77.6% | 188/221 |
+| R-s101 r64 | 64.3% | 53.5% | 78.6% | 26.1% | 87.0% | 183/221 |
+| H-s202 r64 | 62.4% | 52.1% | 76.1% | 15.1% | 73.5% | 183/221 |
+
+Contrasts on all 221 problems, in points, with the same exact split into a truncation term and an accuracy term as in
+section 3.3 (95% paired bootstrap over problems, 10,000 draws):
+
+| Contrast | pass@1 A − B | Truncation term | Accuracy term | pass@8 A, B |
+|---|---|---|---|---|
+| R − U, seed 101 | 69.5 − 65.3 = +4.2 [+1.5, +6.8] | t: 20.5% vs 23.0% → +2.1 [+0.4, +3.9] | a: 87.4% vs 84.8% → +2.0 [−0.1, +4.1] | 83.3%, 83.3% |
+| R − U, seed 202 | 63.2 − 65.8 = −2.7 [−5.1, −0.2] | t: 23.0% vs 15.2% → −6.3 [−8.2, −4.3] | a: 82.1% vs 77.6% → +3.6 [+1.2, +6.1] | 81.4%, 85.1% |
+| R − H, seed 101 | 69.5 − 64.1 = +5.4 [+2.5, +8.2] | t: 20.5% vs 17.7% → −2.3 [−4.6, +0.0] | a: 87.4% vs 77.9% → +7.7 [+5.2, +10.1] | 83.3%, 82.8% |
+| U − H, seed 101 | 65.3 − 64.1 = +1.2 [−1.4, +3.8] | t: 23.0% vs 17.7% → −4.3 [−6.3, −2.2] | a: 84.8% vs 77.9% → +5.5 [+2.9, +8.0] | 83.3%, 82.8% |
+| R-s101 r128 − r64 | 69.5 − 64.3 = +5.3 [+3.0, +7.6] | t: 20.5% vs 26.1% → +4.9 [+3.0, +6.9] | a: 87.4% vs 87.0% → +0.3 [−1.4, +2.0] | 83.3%, 82.8% |
+
+![Stress panels](figures/a17/stress_panels.png)
+
+What the stress panels show:
+1. **Training transfers to harder problems.** Every trained checkpoint gains 25–32 points over the base model on all 221
+   problems, and SuperHard pass@1 roughly doubles (25.8% → 52.1–58.4%). Each checkpoint solves 33–38 problems that the base
+   model never solved in 8 attempts. It loses 2–5 that the base model solved, fewer than the ≈ 12 that a second 8-attempt
+   draw from the base model would lose by chance.
+2. **The arm order follows the seed again.** R − U is positive in seed 101 and negative in seed 202, as on the sealed test.
+   pass@8 (solved at least once) differs by at most 3.7 points between arms, so the arms differ in reliability, not reach.
+3. **Length again moves the result.** In seed 202, R loses because more of its attempts hit the cap (23.0% vs 15.2%),
+   although it is more accurate on the answers it finishes. In R-s101, the gain from round 64 to round 128 is almost
+   all fewer capped answers (26.1% → 20.5%); accuracy on finished answers stays at 87%.
+4. **Caution on the accuracy term.** Accuracy on finished answers is not a pure skill measure. A policy that finishes
+   more of its hardest attempts adds harder problems to its finished pool. That is why the two least-truncated policies
+   (U-s202 and H) also show the lowest accuracy on finished answers.
+
+⟨PENDING: response audit (D144, preselected items × policies, arm-blind) and its answer to "would more direct factoring
+practice fix these failures?"⟩
 
 ## 6. Strategy cue (from the first report; separate from the interference evidence)
 
