@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-11 19:13Z (2:13 PM EST Wed; A19 ~16:03Z; A20/A21: 8 general GPUs until the final report). Timeline and GPU tables per A18 (`project.md` §32).
+Updated 2026-11-11 19:13Z (2:13 PM EST Wed; A19 ~16:03Z; A20–A22: 7 general GPUs until the final report). Timeline and GPU tables per A18 (`project.md` §32).
 
 ## Phase
 A17 completion plus A19 (`project.md` §31, §33; D154). Deadline: verified `reports/REPORT.md` by **Thu 12 Nov 00:30Z =
@@ -35,17 +35,18 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 5:45–6:45 PM [22:45–23:45Z] | H-s202 stress r128 (3 shards, D156) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (19:13Z; limits: general 8 until the final report (A21), preempt 6, 30 CPUs)
+## Work and GPUs (19:14Z; limits: general 7 until the final report (A22), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
 | running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 123) |
 | running | general 2–4 | 11118849, 11118850, 11118851 | fallback shards k3, k4, k5 (k0–k2 done) |
 | running | general 5 | 11118661 | `qis-lentest-R-s101` sealed-test continuation (last of four R/U) |
 | queued (Slurm priority) | general 6–7 | 11119262, 11119264 | `qis-lentest-H-s101`, `qis-len-H-s101` (D157) |
-| queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216, 11119217 | endpoint shards k0–k5 (start together at RUN_COMPLETE) |
+| queued (dependency: training ends) | general | 11119210, 11119212, 11119213, 11119215, 11119216 | endpoint shards k0–k4 (start together at RUN_COMPLETE) |
+| queued (dependency; held on preempt for A22) | preempt | 11119217 | endpoint shard k5 → general when a general job ends |
 | running | CPU | 11112647 | CPU standby |
 | blocked (by D156 order) | — | — | stress shards `qis-stress-H-s202-r128-k0..k2`: submit when the endpoint shards start |
-Unused: general 1 of 8 (no other ready work); preempt 6 of 6 (all work fits on general).
+Peak general: 7 (A22). Unused preempt: 5 of 6 (no other ready work).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic

@@ -1053,3 +1053,6 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   + 6 shards = 8 GPUs. With six shards in parallel the endpoint takes ≈ 45–50 min after RUN_COMPLETE.
 - **Stress H-s202 r128** (D156): 3 shards submitted when the endpoint shards start; general GPUs free up as the H-s101
   jobs end.
+- **A22 (~19:11Z): general ≤ 7.** Endpoint k5 (11119217) back to preempt; peak general = 7 (before RUN_COMPLETE: training +
+  3 fallback shards + R-s101 continuation + 2 H-s101 jobs; at RUN_COMPLETE: 2 H-s101 jobs + endpoint k0–k4). k5 moves to
+  general only when a general job has ended. Stress shards (D156) are submitted only into free slots under 7.

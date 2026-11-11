@@ -884,3 +884,11 @@ Recorded as CHECKLIST 0.27 and D155.
 
 Applied: extends A20. General ceiling 8 until the final report (deadline Thu 12 Nov 00:30Z = Wed 7:30 PM EST); then 3
 (A7). `ops/qis-submit` updated. Preempt 6 and 30 CPUs unchanged. Recorded as CHECKLIST 0.28 and D157.
+
+## 36. Amendment A22 (owner, received 2026-11-11 ~19:11Z = Wed 2:11 PM EST): general GPUs limited to 7
+
+> Ok, I'm limiting your general GPUs to 7 out of 8.
+
+Applied: general ceiling 7 (supersedes the 8 of A20/A21) until the final report; then 3 (A7). `ops/qis-submit` set to 7.
+Endpoint shard k5 (11119217) moved to preempt so that the peak at RUN_COMPLETE (two H-s101 length jobs + 5 general
+endpoint shards) is 7; it returns to general only after a general job ends. Recorded as CHECKLIST 0.29 and in D157.
