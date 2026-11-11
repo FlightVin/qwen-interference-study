@@ -473,8 +473,8 @@ scheduled dev evaluation used **8** attempts per problem (all 28 dev rows and th
 
 Take an unchanged checkpoint and a problem it solves with probability p per attempt. Two disjoint groups of 8 attempts
 make the problem look lost (some → none) with probability P = (1 − (1 − p)^8)(1 − p)^8. P peaks at 0.25 when
-p ≈ 0.08. On the 128 test problems, the expected count of chance losses per comparison is 1.7–5.7, depending on the
-policy (observed with fixed splits: 0–5). On the dev panel (53 problems × 8 attempts), each run lost 0–5 problems
+p ≈ 0.08. On the 128 test problems, the expected count of chance losses per comparison of two 8-attempt groups is 1.7–5.7,
+depending on the policy (observed with fixed splits: 0–5 losses; gains, equal in expectation, reached 6). On the dev panel (53 problems × 8 attempts), each run lost 0–5 problems
 between consecutive evaluations. That is the same range that sampling alone produces. Splits reuse the same attempts,
 so these rates are a reference, not independent experiments.
 

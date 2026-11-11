@@ -762,7 +762,7 @@ def plot(out_dir, fig_dir):
         ax.plot(o["s101"]["R-U"], o["s202"]["R-U"], "*", color="black", ms=11, zorder=4,
                 label=f"mean: s101 {o['s101']['R']:.3f}−{o['s101']['U']:.3f}, s202 {o['s202']['R']:.3f}−{o['s202']['U']:.3f}")
         ax.set_xlabel("seed 101: R − U pass@1 per problem (c/32; ±1 SE)"); ax.set_ylabel("seed 202: R − U pass@1 per problem (c/32; ±1 SE)")
-        ax.legend(fontsize=6, loc="lower right"); ax.set_aspect("equal")
+        ax.legend(fontsize=6, loc="upper left", bbox_to_anchor=(1.01, 1.0)); ax.set_aspect("equal")   # outside: no point hidden
         fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "reversal_scatter.png"), dpi=150); plt.close(fig)
         drawn.append("reversal_scatter")
     C = J("coverage")

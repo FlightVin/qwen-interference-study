@@ -1067,6 +1067,7 @@ def plot(fig_dir, cur, pers, br):
         names = list(pr)
         fig, axes = plt.subplots(1, len(names), figsize=(2.6 * len(names), 3.8), sharey=True, squeeze=False)
         ws = [f"r{a}-{b}" for a, b in WINDOWS]
+        ytop = 0.0
         for a, name in zip(axes[0], names):
             bw = pr[name]["by_window"]
             bottom = np.zeros(len(ws))
@@ -1078,9 +1079,11 @@ def plot(fig_dir, cur, pers, br):
                 if bw[w]["hard_common_groups"]:
                     a.text(i, bottom[i], f"{bw[w]['previously_solvable_became_all_wrong']}/{bw[w]['later_appearances_of_previously_solvable']}",
                            ha="center", va="bottom", fontsize=6)
+            ytop = max(ytop, float(bottom.max()))
             a.axvline(0.5, color="grey", lw=0.8, ls=":")
             a.set_xticks(range(len(ws))); a.set_xticklabels(ws, fontsize=6, rotation=30)
             a.set_title(name, fontsize=8)
+        axes[0][0].set_ylim(0, ytop * 1.18 + 1)        # headroom for the count labels
         axes[0][0].set_ylabel("previously solvable → all-wrong groups\n(stacked by outcome at next appearance)", fontsize=8)
         axes[0][0].legend(fontsize=6, title="next appearance", title_fontsize=6)
         fig.suptitle("Shared hard prompts: label = events / later appearances of previously solvable prompts; "
