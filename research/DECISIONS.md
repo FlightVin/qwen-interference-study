@@ -893,3 +893,12 @@ common-GPU table is complete without it; it adds a second reproducibility measur
 jobs on two GPUs (per-item seeds do not depend on batch composition: `eval/<key>/<id>/<label>/n<n>`); drop optional cells in reverse
 order (6, 5); stress attempts stay at n = 8 unless the measured throughput says the balanced set cannot finish by 19:00Z, then n = 4
 for every cell.
+
+## D147 — 2026-11-11 03:00Z — Training-time length does not predict the test truncation gap (EXPLORATORY)
+Mean generated tokens per response on the shared hard prompts (`signal.json`, records; rounds 97–128): R-s101 5,837 vs U-s101 6,282;
+R-s202 5,285 vs U-s202 5,414; H-s101 4,857. R wrote shorter shared-hard answers than U in both seeds and every window after round 32,
+yet R-s202 truncated more than U-s202 on the sealed test (13.1% vs 8.1%). Practice-pool answers: R longer than U in both seeds
+(factoring answers are longer). So the seed-202 test truncation gap is not a general length trend visible in training; it is specific
+to the final policies on the test problems. Next distinguishing check: are the truncated test answers degenerate loops or long
+non-repeating reasoning (a17_test section 7, requested 02:58Z)? Loops would point to a policy-specific failure mode (instability
+of the endpoint checkpoint) rather than a skill difference.
