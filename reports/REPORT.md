@@ -502,6 +502,7 @@ the original records (D155).
 | U-s101 | 77.7% | 80.6% | 501 | 118 (23.6%) | 67 | 316 (63.1%) | 13,845 |
 | R-s202 | 74.8% | 76.9% | 538 | 87 (16.2%) | 104 | 347 (64.5%) | 20,476 |
 | U-s202 | 79.2% | 80.8% | 333 | 66 (19.8%) | 65 | 202 (60.7%) | 16,674 |
+| H-s101 | 77.0% | 79.2% | 445 | 93 (20.9%) | 141 | 211 (47.4%) | 14,002 |
 
 | Seed | R − U at 12,288 | R − U at 16,384 | Change |
 |---|---|---|---|
@@ -510,7 +511,12 @@ the original records (D155).
 
 Both seeds keep their sign and their interval away from zero. R-s202 had the most capped answers (538) and recovered
 the smallest share (16.2%). The 12,288 values equal the original sealed-test scores. Intervals come from this
-analysis's own bootstrap draws and can differ from section 2 in the last digit. Source:
+analysis's own bootstrap draws and can differ from section 2 in the last digit.
+
+The H-s101 control (D157) answers the same question for R's lead over additional hard practice in seed 101. Seed-101
+R − H is 81.9 − 77.0 = +4.9 [+2.0, +8.0] at 12,288 and 84.2 − 79.2 = +4.9 [+2.0, +8.0] at 16,384 (change 0.0 [−0.8,
++0.9]); U − H goes from 77.7 − 77.0 = +0.7 [−2.1, +3.6] to 80.6 − 79.2 = +1.3 [−1.2, +3.9] (change +0.6 [−0.2, +1.5]).
+H's capped answers more often finish wrong (141 of 445) than R's or U's. Source:
 `research/evidence/a19/length/test/length.md`.
 
 ### 5.3 Full stress panel
@@ -690,7 +696,7 @@ round 128 runs only after that training run ends (section 9).
 | Checkpoint | Sealed test (original) | Sealed test (one GPU type, L40S) | Stress panels (8 attempts) | Length diagnostic, stress | Length diagnostic, sealed test | Response audit |
 |---|---|---|---|---|---|---|
 | Base | ✓ | ✓ (original ran on L40S) | ✓ | — (0.1% capped) | — (0.05% capped) | ✓ |
-| H-s101 r128 | ✓ | ✓ (original ran on L40S) | ✓ | ⟨pending⟩ | ⟨pending⟩ | ✓ |
+| H-s101 r128 | ✓ | ✓ (original ran on L40S) | ✓ | ✓ | ✓ | ✓ |
 | R-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | U-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | H-s202 r128 | ⟨pending⟩ | ⟨pending⟩ (runs on L40S) | ⟨pending⟩ | — | — | — (sample fixed before it existed) |
