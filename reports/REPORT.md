@@ -537,7 +537,7 @@ the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md
 | 202 | Harder (95) | 76.3 − 79.5 = −3.2 [−6.6, +0.3] | 79.3 − 80.9 = −1.6 [−4.6, +1.4] | +1.6 [+0.1, +3.2] |
 | 202 | SuperHard (126) | 53.3 − 55.6 = −2.3 [−5.6, +1.1] | 56.0 − 58.5 = −2.6 [−6.2, +1.0] | −0.3 [−1.7, +1.1] |
 
-The full panel confirms tranche 1 and removes its one hint. Every checkpoint gains 2.4–3.5 points of pass@1 from 4,096
+The full panel confirms tranche 1 and removes its one hint. Every checkpoint gains 2.4–2.9 points of pass@1 from 4,096
 more tokens, and the gain is nearly the same in R and U. R − U moves by at most 0.5 points overall in either seed
 (1.6 points on seed-202 Harder, where R had more capped answers to recover). The seed-101 widening seen in tranche 1
 (+2.0) was sampling noise: on the full panel the change is −0.1. Only 12–15% of capped answers recover; 55–72% are
