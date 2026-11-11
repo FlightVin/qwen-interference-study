@@ -857,3 +857,20 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** No action needed now; at R-rerun completion move U-s202 rerun and pending stress cells to general.
 7. **Reconciliation.** Live jobs 11112377, 11112395–8, 11112937/38/40, 11113928 and standby 11112647 are ledger rows. Watcher
    b4frpa46w alive.
+
+## Review 94 — 2026-11-11 05:50Z (12:50 AM EST Wed)
+1. **Changes.** Common-GPU R-s101 rerun done (L40S pass@1 0.823 vs original L40 0.819; truncated 10.9% vs 10.7%). U-s202 rerun
+   moved to general (11112398, running since 05:47Z). U-s101 rerun 11112397 preempted at 05:44Z after 2.95 h (no partial output).
+   Stress U-s202-r128 submitted (11115052, preempt). H-s202 at round 75 (05:44Z).
+2. **Competing explanation still plausible.** For seed 101, hardware is excluded: R − U with R on L40S is +0.045 (0.823 − 0.777)
+   against +0.042 originally. For seed 202, hardware against truncation is still open.
+3. **Distinguishing task.** R-s202 rerun (ETA ≈ 06:20Z) and U-s202 rerun (ETA ≈ 09:00–10:20Z), both L40S.
+4. **Schedule.** H-s202 rounds 72–75 averaged 834 s; rounds 66→75 took 6,920 s against 6,281 s for H-s101 (×1.10). Projection:
+   round 128 ≈ 20:30Z, RUN_COMPLETE ≈ 21:30Z (range 20:45–22:15Z). Six shards on 3 general GPUs ≈ 1.7 h → test ≈ 23:15Z (range
+   22:30–00:00Z). Verdict: report on time; the H-s202 test cell has ≈ 1.25 h slack in the central case. The H-s202-r128 stress cell
+   can run only after RUN_COMPLETE and will likely be incomplete. Report text for the H-s202 cells must be filled by script.
+5. **GPUs.** General 3/3 running. Preempt 2 running + 4 pending = 6/6 slots. Within limits.
+6. **Most important.** When R-s202 rerun ends, move stress R-s202-r128 (11112940) to general; then H-s101-r128, U-s202-r128,
+   r64 cells. Stress endpoint cells take ≈ 2 h each (R/U-s101 at 1.8 h and still running).
+7. **Reconciliation.** Live jobs 11112377, 11112396–8, 11112937/38/40, 11113928, 11115052 and standby 11112647 are ledger rows.
+   Watcher bqye6eecl alive.
