@@ -104,11 +104,12 @@ The next table gives the cost per run on its canonical trajectory. Every run use
 | U-s101 | 8,192 | 1.44 | 60.0 | 22.6 |
 | R-s202 | 8,192 | 1.48 * | 54.1 | 22.8 |
 | U-s202 | 8,192 | 1.44 | 52.8 | 25.6 |
-| H-s202 (a2-r60) | 16,384 | 1.67 | 74.7 | ⟨final cost run⟩ |
+| H-s202 (a2-r60) | 16,384 | 1.67 | 74.7 | 31.1 † |
 
 Prompt tokens count each prompt once per answer. * R-s202's counter includes 3 rounds replayed after a resume (D127);
 its generated tokens are from the attempt records. The GPU-h figures mix GPU types because training nodes differed, so
-tokens are the hardware-free cost. After round 32, 62–92% of R and U practice groups were all-correct and gave no
+tokens are the hardware-free cost. † H-s202 GPU-h include job 11082192 to round 64, of which the a2-r60 trajectory uses rounds
+1–60 (section 9). After round 32, 62–92% of R and U practice groups were all-correct and gave no
 learning signal.
 
 ### Q2. Did the policy lose accuracy, or did it stop finishing within budget?
@@ -449,7 +450,7 @@ the canonical trajectory (`tables/cost.md`).
 | U-s101 | 390 / 625 / 788 / 930 | 9.2 / 23.0 / 40.9 / 60.0 | 22.6 |
 | R-s202 | 394 / 690 / 926 / 1,100 | 10.0 / 23.2 / 37.7 / 54.1 | 22.8 |
 | U-s202 | 378 / 627 / 799 / 947 | 9.3 / 22.3 / 37.7 / 52.8 | 25.6 |
-| H-s202 (a2-r60) | 444 / 796 / 1,054 / 1,287 | 12.7 / 29.6 / 51.2 / 74.7 | ⟨final cost run⟩ |
+| H-s202 (a2-r60) | 444 / 796 / 1,054 / 1,287 | 12.7 / 29.6 / 51.2 / 74.7 | 31.1 † |
 
 Both H runs kept producing mixed groups longest (1,289 and 1,287 over the run against 930–1,100 for R and U). Its extra prompts are hard
 problems, which stay at mixed success; R's and U's practice prompts stopped doing so after round 32. The practice pools
@@ -848,22 +849,22 @@ cued (cue gain −4.7 [−9.9, 0.0]); U-s202 scored 64.6% and 69.3% (+4.7 [−0.
 
 ## 9. What ran, what it cost, and what is incomplete
 
-The study has used 283.0 GPU-h over 225 ledger jobs so far. One training run, H-s202, is still running, so the cost
-table is provisional, and several cells wait for it.
+The whole study used 315.6 GPU-h and 2,555.5 CPU-h over 260 ledger jobs. Every job had ended when this table was made
+(23:45Z, 11 Nov).
 
-GPU-hours = elapsed time × GPUs allocated, summed over every allocation of every ledger job (225 jobs, 239
+GPU-hours = elapsed time × GPUs allocated, summed over every allocation of every ledger job (260 jobs, 274
 allocations; `sacct -D` keeps requeued allocations). Failed, cancelled and preempted allocations are charged. CPU
 standby jobs are not ledger jobs and are not charged. "Canonical" means the job chains that produced the reported
-trajectories. Source: `tables/cost.md`, from `reports/tables/sacct.txt`. PROVISIONAL (13:51Z, 11 Nov): H-s202 job
-11112377 counts its elapsed time so far; the final run replaces this table.
+trajectories. Source: `tables/cost.md`, from `reports/tables/sacct.txt`.
 
 | Category | Jobs | Allocations | GPU-h | of which canonical | CPU-h | Final states |
 |---|---|---|---|---|---|---|
-| CPU jobs | 126 | 131 | 0.0 | 0.0 | 31.0 | CANCELLED 12, COMPLETED 103, FAILED 11, PREEMPTED 5 |
+| CPU jobs | 127 | 132 | 0.0 | 0.0 | 31.0 | CANCELLED 12, COMPLETED 104, FAILED 11, PREEMPTED 5 |
 | common-GPU rerun (A17) | 4 | 8 | 18.9 | 0.0 | 151.1 | COMPLETED 4, PREEMPTED 4 |
+| length diagnostic (A19) | 12 | 12 | 11.2 | 0.0 | 89.9 | CANCELLED 2, COMPLETED 10 |
 | local-update diagnostic | 8 | 8 | 14.9 | 0.0 | 118.9 | CANCELLED 4, COMPLETED 3, FAILED 1 |
 | main H-s101 | 2 | 2 | 33.6 | 29.5 | 268.9 | CANCELLED 1, COMPLETED 1 |
-| main H-s202 | 4 | 4 | 23.2 | 23.2 | 185.9 | CANCELLED 3, RUNNING 1 |
+| main H-s202 | 4 | 4 | 31.1 | 31.1 | 249.0 | CANCELLED 3, COMPLETED 1 |
 | main H-s303 | 2 | 2 | 0.0 | 0.0 | 0.0 | CANCELLED 2 |
 | main R-s101 | 3 | 3 | 32.9 | 27.9 | 263.6 | CANCELLED 1, COMPLETED 1, FAILED 1 |
 | main R-s202 | 3 | 3 | 22.8 | 22.8 | 182.3 | CANCELLED 2, COMPLETED 1 |
@@ -872,15 +873,16 @@ trajectories. Source: `tables/cost.md`, from `reports/tables/sacct.txt`. PROVISI
 | main U-s202 | 5 | 5 | 25.6 | 25.6 | 205.0 | CANCELLED 2, COMPLETED 1, FAILED 2 |
 | main U-s303 | 1 | 1 | 0.0 | 0.0 | 0.0 | CANCELLED 1 |
 | other GPU jobs (screening, calibration, smoke, A10/A11 studies) | 42 | 42 | 42.0 | 0.0 | 335.6 | CANCELLED 6, COMPLETED 29, FAILED 7 |
-| sealed test evaluation | 8 | 8 | 21.5 | 0.0 | 171.8 | CANCELLED 2, COMPLETED 6 |
+| sealed test evaluation | 24 | 24 | 31.7 | 0.0 | 253.4 | CANCELLED 6, COMPLETED 18 |
 | strategy-cue panel (A15.4) | 2 | 2 | 2.2 | 0.0 | 17.7 | CANCELLED 1, COMPLETED 1 |
-| stress evaluation (A17) | 12 | 17 | 18.1 | 0.0 | 144.8 | CANCELLED 4, COMPLETED 8, PREEMPTED 5 |
-| **Total** | 225 | 239 | 283.0 | | 2295.2 | |
+| stress evaluation (A17) | 18 | 23 | 21.3 | 0.0 | 170.5 | CANCELLED 7, COMPLETED 11, PREEMPTED 5 |
+| **Total** | 260 | 274 | 315.6 | | 2555.5 | |
 
-Work under A17 so far used 18.9 GPU-h for common-GPU reruns, 18.1 GPU-h for stress evaluations and 12.2 GPU-h for the
-H-s202 resume. Preempted allocations (4 rerun, 5 stress) are charged in full, including any work repeated after
-requeue. The H-s202 canonical figure includes job 11082192 to round 64; the a2-r60 trajectory reuses only its rounds
-1–60.
+Work under A17 and A19 used 18.9 GPU-h for common-GPU reruns, 21.3 GPU-h for stress evaluations, 11.2 GPU-h for the
+length diagnostic and 20.1 GPU-h for the H-s202 resume (31.1 − 11.0 for job 11082192). "Sealed test evaluation"
+includes the six H-s202 round-116 fallback shards. Preempted allocations (4 rerun, 5 stress) are charged in full,
+including any work repeated after requeue. The H-s202 canonical figure includes job 11082192 to round 64; the a2-r60
+trajectory reuses only its rounds 1–60, so 31.1 GPU-h slightly overstates the a2-r60 trajectory.
 
 **Which jobs produced each reported run.** All reported runs are attempt a2 (the A11 restart from round 0, D82); the
 first attempt a1 (jobs 11078086, 11078164, 11078180, 11078181, 11078184, 11078185) was superseded and is only charged
@@ -896,7 +898,6 @@ above. A run that spans several jobs resumed from its last verified checkpoint.
 | H-s202 a2-orig | 11082192 | 1–64 | stopped (A16); records kept, not an endpoint |
 | H-s202 a2-r60 | 11082192 (rounds 1–60) → 11112377 (resumed at round 60, D143) | 61–128 | complete (RUN_COMPLETE 21:45:07Z); the endpoint trajectory |
 
-⟨PENDING: final cost run.⟩
 
 **Incomplete cells** (status at the final commit; ⟨update at delivery⟩):
 

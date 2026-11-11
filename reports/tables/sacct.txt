@@ -211,7 +211,7 @@
 11109597|ae-qis-report-final|COMPLETED|general|114|billing=16,cpu=4,gres/gpu:l40=1,gres/gpu=1,mem=16G,node=1|2026-11-10T14:17:48|2026-11-10T14:19:42
 11109623|ae-qis-cost|COMPLETED|general|13|billing=12,cpu=2,gres/gpu:l40s=1,gres/gpu=1,mem=8G,node=1|2026-11-10T14:20:48|2026-11-10T14:21:01
 11112338|ae-qis-main-H-s202-sym|CANCELLED by 6010497|general|124|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T20:37:48|2026-11-10T20:39:52
-11112377|ae-qis-main-H-s202-sym|RUNNING|general|43862|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T20:40:49|Unknown
+11112377|ae-qis-main-H-s202-sym|COMPLETED|general|72270|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T20:40:49|2026-11-11T16:45:19
 11112395|ae-qis-cgpu-R-s101|COMPLETED|general|14452|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T20:42:48|2026-11-11T00:43:40
 11112396|ae-qis-cgpu-R-s202|COMPLETED|general|15210|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T20:42:48|2026-11-11T00:56:18
 11112397|ae-qis-cgpu-U-s101|PREEMPTED|preempt|10621|billing=40,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-10T21:47:50|2026-11-11T00:44:51
@@ -237,3 +237,38 @@
 11113928|ae-qis-stress-H-s101-r128|COMPLETED|general|26|billing=40,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T04:53:50|2026-11-11T04:54:16
 11115377|ae-qis-stress-R-s101-r64|COMPLETED|general|22|billing=40,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T05:52:12|2026-11-11T05:52:34
 11112397|ae-qis-cgpu-U-s101|COMPLETED|general|9|billing=40,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T06:52:14|2026-11-11T06:52:23
+11118157|ae-qis-len-R-s202|CANCELLED by 6010497|general|673|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T11:12:30|2026-11-11T11:23:43
+11118245|ae-qis-len-U-s202|COMPLETED|general|2377|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T11:24:30|2026-11-11T12:04:07
+11118247|ae-qis-len-R-s101|CANCELLED by 6010497|general|1361|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T11:30:29|2026-11-11T11:53:10
+11118248|ae-qis-len-U-s101|COMPLETED|general|3921|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T11:53:29|2026-11-11T12:58:50
+11118444|ae-qis-len-R-s202|COMPLETED|general|3207|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:06:29|2026-11-11T12:59:56
+11118448|ae-qis-len-R-s101|COMPLETED|general|2902|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:30:28|2026-11-11T13:18:50
+11118658|ae-qis-lentest-R-s202|COMPLETED|general|4774|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:32:28|2026-11-11T13:52:02
+11118660|ae-qis-lentest-U-s202|COMPLETED|general|3042|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:33:28|2026-11-11T13:24:10
+11118661|ae-qis-lentest-R-s101|COMPLETED|general|7060|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:33:28|2026-11-11T14:31:08
+11118662|ae-qis-lentest-U-s101|COMPLETED|general|4393|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T12:33:28|2026-11-11T13:46:41
+11118844|ae-qis-h202-fallback-copy|COMPLETED|preempt|51|billing=4,cpu=2,mem=8G,node=1|2026-11-11T13:01:11|2026-11-11T13:02:02
+11118845|ae-qis-test-H-s202-fb-k0|COMPLETED|general|2813|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:04:26|2026-11-11T13:51:19
+11118846|ae-qis-test-H-s202-fb-k1|COMPLETED|general|3394|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:04:26|2026-11-11T14:01:00
+11118847|ae-qis-test-H-s202-fb-k2|COMPLETED|general|2372|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:21:33|2026-11-11T14:01:05
+11118849|ae-qis-test-H-s202-fb-k3|COMPLETED|general|3310|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:26:33|2026-11-11T14:21:43
+11118850|ae-qis-test-H-s202-fb-k4|COMPLETED|general|2277|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:50:15|2026-11-11T14:28:12
+11118851|ae-qis-test-H-s202-fb-k5|COMPLETED|general|3527|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T13:54:15|2026-11-11T14:53:02
+11119210|ae-qis-test-H-s202-sym-k0|COMPLETED|general|2843|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:50:07|2026-11-11T17:37:30
+11119212|ae-qis-test-H-s202-sym-k1|COMPLETED|general|3310|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:55:07|2026-11-11T17:50:17
+11119213|ae-qis-test-H-s202-sym-k2|CANCELLED by 6010497|general|0||None|2026-11-11T16:56:18
+11119215|ae-qis-test-H-s202-sym-k3|CANCELLED by 6010497|general|0||None|2026-11-11T16:50:24
+11119216|ae-qis-test-H-s202-sym-k4|CANCELLED by 6010497|general|0||None|2026-11-11T16:50:26
+11119217|ae-qis-test-H-s202-sym-k5|CANCELLED by 6010497|general|0||None|2026-11-11T16:50:29
+11119262|ae-qis-lentest-H-s101|COMPLETED|general|4158|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T14:13:15|2026-11-11T15:22:33
+11119264|ae-qis-len-H-s101|COMPLETED|general|2603|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T14:13:15|2026-11-11T14:56:38
+11119925|ae-qis-stress-H-s202-r128-k0|CANCELLED by 6010497|general|0||None|2026-11-11T16:50:31
+11119926|ae-qis-stress-H-s202-r128-k1|CANCELLED by 6010497|general|0||None|2026-11-11T16:50:33
+11119927|ae-qis-stress-H-s202-r128-k2|CANCELLED by 6010497|preempt|0||None|2026-11-11T16:50:36
+11120590|ae-qis-test-H-s202-sym-k3|COMPLETED|general|3868|billing=32,cpu=8,gres/gpu:a6000=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:52:07|2026-11-11T17:56:35
+11120591|ae-qis-test-H-s202-sym-k4|COMPLETED|general|2656|billing=32,cpu=8,gres/gpu:a6000=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:54:07|2026-11-11T17:38:23
+11120595|ae-qis-test-H-s202-sym-k5|COMPLETED|general|3798|billing=32,cpu=8,gres/gpu:a6000=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:55:07|2026-11-11T17:58:25
+11120596|ae-qis-stress-H-s202-r128-k0|COMPLETED|general|3811|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:55:07|2026-11-11T17:58:38
+11120598|ae-qis-stress-H-s202-r128-k1|COMPLETED|general|4064|billing=32,cpu=8,gres/gpu:a6000=1,gres/gpu=1,mem=64G,node=1|2026-11-11T16:58:07|2026-11-11T18:05:51
+11120634|ae-qis-test-H-s202-sym-k2|COMPLETED|general|2567|billing=32,cpu=8,gres/gpu:l40s=1,gres/gpu=1,mem=64G,node=1|2026-11-11T17:00:06|2026-11-11T17:42:53
+11121110|ae-qis-stress-H-s202-r128-k2|COMPLETED|general|3650|billing=32,cpu=8,gres/gpu:l40=1,gres/gpu=1,mem=64G,node=1|2026-11-11T17:41:00|2026-11-11T18:41:50

@@ -1,13 +1,13 @@
 {
  "categories": {
   "CPU jobs": {
-   "jobs": 126,
-   "allocations": 131,
+   "jobs": 127,
+   "allocations": 132,
    "gpu_h": 0.0,
-   "cpu_h": 30.993888888888886,
+   "cpu_h": 31.02222222222222,
    "gpu_h_canonical": 0.0,
    "states": {
-    "COMPLETED": 103,
+    "COMPLETED": 104,
     "FAILED": 11,
     "CANCELLED": 12,
     "PREEMPTED": 5
@@ -85,12 +85,12 @@
   "main H-s202": {
    "jobs": 4,
    "allocations": 4,
-   "gpu_h": 23.231944444444444,
-   "cpu_h": 185.85555555555555,
-   "gpu_h_canonical": 23.197499999999998,
+   "gpu_h": 31.123055555555553,
+   "cpu_h": 248.98444444444442,
+   "gpu_h_canonical": 31.08861111111111,
    "states": {
     "CANCELLED": 3,
-    "RUNNING": 1
+    "COMPLETED": 1
    }
   },
   "main R-s303": {
@@ -124,14 +124,14 @@
    }
   },
   "sealed test evaluation": {
-   "jobs": 8,
-   "allocations": 8,
-   "gpu_h": 21.47083333333333,
-   "cpu_h": 171.76666666666665,
+   "jobs": 24,
+   "allocations": 24,
+   "gpu_h": 31.674999999999997,
+   "cpu_h": 253.39999999999998,
    "gpu_h_canonical": 0.0,
    "states": {
-    "CANCELLED": 2,
-    "COMPLETED": 6
+    "CANCELLED": 6,
+    "COMPLETED": 18
    }
   },
   "local-update diagnostic": {
@@ -169,22 +169,33 @@
    }
   },
   "stress evaluation (A17)": {
-   "jobs": 12,
-   "allocations": 17,
-   "gpu_h": 18.106111111111108,
-   "cpu_h": 144.84888888888887,
+   "jobs": 18,
+   "allocations": 23,
+   "gpu_h": 21.307499999999997,
+   "cpu_h": 170.45999999999998,
    "gpu_h_canonical": 0.0,
    "states": {
-    "CANCELLED": 4,
-    "COMPLETED": 8,
+    "CANCELLED": 7,
+    "COMPLETED": 11,
     "PREEMPTED": 5
+   }
+  },
+  "length diagnostic (A19)": {
+   "jobs": 12,
+   "allocations": 12,
+   "gpu_h": 11.241944444444444,
+   "cpu_h": 89.93555555555555,
+   "gpu_h_canonical": 0.0,
+   "states": {
+    "CANCELLED": 2,
+    "COMPLETED": 10
    }
   }
  },
  "total": {
-  "jobs": 225,
-  "allocations": 239,
-  "gpu_h": 283.0394444444444,
-  "cpu_h": 2295.157222222222
+  "jobs": 260,
+  "allocations": 274,
+  "gpu_h": 315.5780555555555,
+  "cpu_h": 2555.494444444444
  }
 }
