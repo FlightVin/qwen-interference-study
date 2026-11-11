@@ -1014,3 +1014,19 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** Section 8 compute table (done, provisional). Next: incomplete-cell list and manifest table.
 7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ledger/standby rows; other running jobs are ae-dco-*.
    Watcher alive (task bo4i0sb9k).
+
+## Review 103 — 2026-11-11 14:50Z (9:50 AM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 105 at 14:38Z; LATEST = round 104. len_mean 5,418–6,660 at rounds 102–105.
+   - CPU standby 11112647 was preempted again (≈ 14:17Z) and requeued on babel-o5-16 (11.4 h left).
+   - REPORT reproduction: manifest table with full sha256 for every checkpoint and both frozen panels (rehashed: both
+     match). Each checkpoint used by several evaluations has one hash. Source `research/evidence/a17/manifest/`.
+2. **Competing explanation still plausible.** Unchanged: seed-level length drift against an arm effect (A9.4).
+3. **Distinguishing task.** None within scope (no new seeds).
+4. **Schedule.** Rounds 102→105 ran ×1.14 of H-s101 (×1.19 since round 96). Round 128 ≈ 21:50Z (×1.14) to 22:50Z (×1.30);
+   RUN_COMPLETE ≈ 22:50Z–23:50Z; six-shard endpoint ≈ 23:50Z–00:50Z. Every case is past the D150 trigger (22:15Z). At
+   18:00Z LATEST is likely round 112 (round 116 ≈ 18:05Z). Report: on time.
+5. **GPUs.** General 1/3, preempt 0/6. Within limits.
+6. **Most important.** Manifest (done). Next: incomplete-cell list; 18:00Z fallback decision.
+7. **Reconciliation.** Live IDs 11112377 and standby 11112647 are ours; other running jobs are ae-dco-*. Watcher alive
+   (task bo4i0sb9k).

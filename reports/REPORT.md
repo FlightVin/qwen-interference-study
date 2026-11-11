@@ -430,5 +430,19 @@ Run on a compute node, never on a login node, with `P=/data/user_data/$USER/qis`
 | Stress analysis (section 5) | `python -m qis.analysis.a17_stress $P/data/stress/stress_v1.json $P/stress-eval <out>`; figure: `python -m qis.analysis.a17_stress plot <out> <fig dir>` |
 | Response audit packets (section 5) | `python research/evidence/a17/audit/build.py research/evidence/a17/panels/audit_sample_v1.json` |
 
-Frozen inputs and their sha256: sealed test `2ffe70dd…`, stress panel `757393be…`. ⟨PENDING: manifest table with full
-hashes for every checkpoint used.⟩
+Frozen inputs and their sha256: sealed test `2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca`,
+stress panel `757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d` (rehashed 14:51Z, 11 Nov).
+Checkpoint hashes below come from each evaluation's `summary.json` (`ckpt_model_sha256`, recorded by
+`evaluate_ckpt`). Every checkpoint used by more than one evaluation has the same hash in each. Source:
+`research/evidence/a17/manifest/manifest.json`. ⟨PENDING: H-s202 round-128 or fallback row.⟩
+
+| Checkpoint (`$P/ckpt/…`) | model.pt sha256 | Used in |
+|---|---|---|
+| `qis-main-H-s101-sym/round_0128` | `052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811` | sealed test, stress |
+| `qis-main-H-s202-sym/round_0064` | `37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee` | stress |
+| `qis-main-R-s101-sym/round_0064` | `6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a` | stress |
+| `qis-main-R-s101-sym/round_0128` | `aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a` | sealed test, common GPU, stress |
+| `qis-main-R-s202-sym/round_0128` | `22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71` | sealed test, common GPU, stress |
+| `qis-main-U-s101-sym/round_0128` | `92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70` | sealed test, common GPU, stress |
+| `qis-main-U-s202-sym/round_0128` | `7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354` | sealed test, common GPU, stress |
+| base `Qwen/Qwen3-1.7B` | HF revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e` | sealed test, stress |

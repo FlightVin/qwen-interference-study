@@ -1,0 +1,170 @@
+{
+ "evals": [
+  {
+   "eval": "test-eval/qis-test-H-s101-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "sha": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.76953125
+  },
+  {
+   "eval": "test-eval/qis-test-R-s101-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "sha": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.818603515625
+  },
+  {
+   "eval": "test-eval/qis-test-R-s202-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "sha": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.747802734375
+  },
+  {
+   "eval": "test-eval/qis-test-U-s101-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "sha": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.77685546875
+  },
+  {
+   "eval": "test-eval/qis-test-U-s202-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "sha": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.792236328125
+  },
+  {
+   "eval": "test-eval/qis-test-base",
+   "ckpt": "base",
+   "sha": "base",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.525634765625
+  },
+  {
+   "eval": "test-eval-cgpu/qis-cgpu-R-s101",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "sha": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.822509765625
+  },
+  {
+   "eval": "test-eval-cgpu/qis-cgpu-R-s202",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "sha": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.76123046875
+  },
+  {
+   "eval": "test-eval-cgpu/qis-cgpu-U-s101",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "sha": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.778076171875
+  },
+  {
+   "eval": "test-eval-cgpu/qis-cgpu-U-s202",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "sha": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.792236328125
+  },
+  {
+   "eval": "stress-eval/H-s101-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "sha": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6414027149321267
+  },
+  {
+   "eval": "stress-eval/H-s202-r64",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064",
+   "sha": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.623868778280543
+  },
+  {
+   "eval": "stress-eval/R-s101-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "sha": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6951357466063348
+  },
+  {
+   "eval": "stress-eval/R-s101-r64",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064",
+   "sha": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6425339366515838
+  },
+  {
+   "eval": "stress-eval/R-s202-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "sha": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6317873303167421
+  },
+  {
+   "eval": "stress-eval/U-s101-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "sha": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6532805429864253
+  },
+  {
+   "eval": "stress-eval/U-s202-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "sha": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6583710407239819
+  },
+  {
+   "eval": "stress-eval/base",
+   "ckpt": "base",
+   "sha": "base",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.372737556561086
+  }
+ ],
+ "panels": {
+  "test (data/main-v1/target_test_sealed.json)": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+  "stress (data/stress/stress_v1.json)": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d"
+ }
+}
