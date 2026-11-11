@@ -37,10 +37,10 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 5:58 PM [22:58Z] | H-s202 round-128 sealed test merged: 72.4% pass@1; seed-202 R − H +2.4, U − H +6.8 | done |
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
 | 6:41 PM [23:41Z] | H-s202 stress cell merged (60.1%) | done |
-| 6:48 PM [23:48Z] | Final report delivered (ca0d8cf): cost run, recomputation, manifest, clean-clone check | done |
+| 6:46 PM [23:46Z] | Final report delivered (ca0d8cf): cost run, recomputation, manifest, clean-clone check | done |
 | 7:30 PM [00:30Z] | Deadline | met |
 
-## Work and GPUs (23:48Z)
+## Work and GPUs (23:46Z)
 | State | Pool | Job | Work |
 |---|---|---|---|
 | running | CPU | 11112647 | CPU standby (to be cancelled after delivery) |
