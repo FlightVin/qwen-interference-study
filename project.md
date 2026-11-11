@@ -877,3 +877,10 @@ Applied: general ceiling 8 until Wed 11 Nov 4:00 PM EST = 2026-11-11T21:00Z, the
 the 30-CPU cap unchanged. `ops/qis-submit` sets 8 general slots before 21:00Z and 3 after. Jobs on general must end by
 21:00Z or leave the count at ≤ 3 (the H-s202 endpoint shards need 3 general GPUs at RUN_COMPLETE ≈ 22:30–23:30Z).
 Recorded as CHECKLIST 0.27 and D155.
+
+## 35. Amendment A21 (owner, received 2026-11-11 ~19:08Z = Wed 2:08 PM EST): 8 general GPUs until the final report
+
+> You may use all 8 GPUs until your final report, don't worry.
+
+Applied: extends A20. General ceiling 8 until the final report (deadline Thu 12 Nov 00:30Z = Wed 7:30 PM EST); then 3
+(A7). `ops/qis-submit` updated. Preempt 6 and 30 CPUs unchanged. Recorded as CHECKLIST 0.28 and D157.
