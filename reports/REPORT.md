@@ -93,7 +93,7 @@ The next table gives the cost per run on its canonical trajectory. Every run use
 | U-s101 | 8,192 | 1.44 | 60.0 | 22.6 |
 | R-s202 | 8,192 | 1.48 * | 54.1 | 22.8 |
 | U-s202 | 8,192 | 1.44 | 52.8 | 25.6 |
-| H-s202 | ⟨running⟩ | 1.45 at round 111 | 62.3 at round 111 | ⟨final cost run⟩ |
+| H-s202 (a2-r60) | 16,384 | 1.67 | 74.7 | ⟨final cost run⟩ |
 
 Prompt tokens count each prompt once per answer. * R-s202's counter includes 3 rounds replayed after a resume (D127);
 its generated tokens are from the attempt records. The GPU-h figures mix GPU types because training nodes differed, so
@@ -270,7 +270,8 @@ The figure shows how each run learned over its 128 rounds.
 Rows 1–2 show held-out dev (53 problems × 8 attempts) and the three probes, against training round and against
 cumulative hard-prompt training responses. Row 3 shows success on the practised shared hard prompts during training;
 it is not a held-out evaluation. The dotted line marks the cap change from 8,192 to 12,288 tokens after round 32. H
-trains on 16 hard prompts per round and R/U on 8, so H reaches a given hard exposure in half the rounds. ⟨PENDING: H-s202 a2-r60 to round 128.⟩
+trains on 16 hard prompts per round and R/U on 8, so H reaches a given hard exposure in half the rounds. H-s202 (trajectory a2-r60) reached round 128 at 20:42Z; its dev
+pass@1 at rounds 64 / 96 / 128 was 63.7% / 66.0% / 67.0%.
 
 **Probes.** Three probes track single skills during training, all at 8 attempts:
 - `J_H`: 32 hard dev problems (held out).
@@ -414,6 +415,7 @@ count shows reward variation; it does not give the size or direction of the upda
 | R-s202 | 1–32 / 97–128 | 27 / 214 / 15 → 11 / 130 / 115 | factoring 0 / 180 / 76 → 0 / 44 / 212 |
 | U-s202 | 1–32 / 97–128 | 28 / 212 / 16 → 8 / 119 / 129 | modular 0 / 166 / 90 → 0 / 29 / 227 |
 | H-s101 | 1–32 / 97–128 | 32 / 216 / 8 → 5 / 111 / 140 | extra hard 31 / 212 / 13 → 8 / 102 / 146 |
+| H-s202 (a2-r60) | 1–32 / 97–128 | 14 / 226 / 16 → 8 / 112 / 136 | extra hard 23 / 218 / 15 → 7 / 121 / 128 |
 
 Each cell counts 256 groups (32 rounds × 8 prompts). The next table gives running totals per run. It counts all 16
 prompts per round. Mixed groups and generated tokens are taken at the end of rounds 32 / 64 / 96 / 128; GPU-h is for
@@ -426,8 +428,9 @@ the canonical trajectory (`tables/cost.md`).
 | U-s101 | 390 / 625 / 788 / 930 | 9.2 / 23.0 / 40.9 / 60.0 | 22.6 |
 | R-s202 | 394 / 690 / 926 / 1,100 | 10.0 / 23.2 / 37.7 / 54.1 | 22.8 |
 | U-s202 | 378 / 627 / 799 / 947 | 9.3 / 22.3 / 37.7 / 52.8 | 25.6 |
+| H-s202 (a2-r60) | 444 / 796 / 1,054 / 1,287 | 12.7 / 29.6 / 51.2 / 74.7 | ⟨final cost run⟩ |
 
-H kept producing mixed groups longest (1,289 over the run against 930–1,100 for R and U). Its extra prompts are hard
+Both H runs kept producing mixed groups longest (1,289 and 1,287 over the run against 930–1,100 for R and U). Its extra prompts are hard
 problems, which stay at mixed success; R's and U's practice prompts stopped doing so after round 32. The practice pools
 became easy. After round 32, the share of all-correct practice groups was 62–90% for R and 74–92% for U, so most
 practice prompts gave no reward contrast. The shared hard prompts gave similar signal in R and U. Full windows, tokens,
@@ -448,6 +451,7 @@ had ≥ 1 correct answer at an earlier appearance in the same run.
 | R-s202 | 33–128 | 19 / 765 (2.5%) | 13 / 3 / 3 | 7 / 10 / 0 / 2 |
 | U-s202 | 33–128 | 26 / 768 (3.4%) | 18 / 6 / 2 | 13 / 11 / 1 / 1 |
 | H-s101 | 33–128 | 13 / 768 (1.7%) | 11 / 2 / 0 | 8 / 4 / 0 / 1 |
+| H-s202 (a2-r60) | 33–128 | 21 / 768 (2.7%) | 14 / 3 / 4 | 15 / 5 / 0 / 1 |
 
 Rounds 1–32 (cap 8,192) are in `persistence.md`. In matched cells for rounds 33–128, a prompt was all-wrong in R only
 vs U only 17 vs 24 times in seed 101 and 11 vs 16 times in seed 202. Losses were rare, not much more frequent in U than
