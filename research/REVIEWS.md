@@ -1170,3 +1170,21 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 6. **Most important.** At RUN_COMPLETE confirm the shards start and pass the provenance check; move stress shards to general
    as endpoint shards end; prepare the final analysis reruns now so they start the moment the endpoint merges.
 7. **Reconciliation.** 11112377, 11119210–17, 11119925–27 are ledger rows; 11112647 our standby. Watcher alive (bv3l8fwis).
+
+## Review 110 — 2026-11-11 21:52Z (4:52 PM EST Wed)
+1. **Changes.**
+   - H-s202 11112377 done: RUN_COMPLETE 21:45:07Z; round_0128 state.json round 128, opt_step 512, a2; model.pt
+     `2513456224d4…`. Final a17_train / a19_divergence rerun (H-s202 dev at round 128 = 67.0%); figures redrawn; REPORT
+     training rows filled.
+   - A23 (owner, ~21:00Z): 8 general GPUs until the report ends (D158).
+   - L40S queue (95 waiting) would put endpoint k3–k5 at 23:40Z–00:26Z: D159 moved k3–k5 and the stress shards to any 48 GB
+     GPU. Running: k0 (L40S), k3; queued: k1, k2 (L40S), k4, k5, stress k0, k1; stress k2 waits for a guard slot.
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect (unchanged).
+3. **Distinguishing task.** The H-s202 endpoint (R − H, U − H in seed 202); more seeds out of scope.
+4. **Schedule.** Shards take ≈ 45 min each: endpoint ≈ 22:45–23:15Z if the queued shards start within 30 min; stress ≈
+   23:30–23:59Z. Final test/stress analyses ≈ 10 min each; cost run; verification and delivery by 00:30Z. At risk: the
+   stress cell (would become an incomplete cell). The endpoint has priority.
+5. **GPUs.** General 2 running + 6 queued (≤ 8, A23). Preempt 0.
+6. **Most important.** Keep the endpoint shards moving; finish report text that does not depend on H-s202.
+7. **Reconciliation.** 11119210, 11119212, 11119213, 11120590, 11120591, 11120595, 11120596, 11120598 are ledger rows;
+   11112647 our standby; cancelled 11119215–17 and 11119925–27 by me (D159). Watcher alive (bou1qlegx).
