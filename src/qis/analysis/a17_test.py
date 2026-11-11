@@ -18,8 +18,11 @@ Outputs in OUT_DIR (JSON + Markdown; every delta is written as "A − B = d" wit
 4. endpoints: original table (primary) and common-GPU table (reproducibility check): pass@1, pass@8, paired R − U, R − H,
    U − H with 95% paired problem bootstrap (10,000 draws, seed 2027; original-table streams are the A9 streams of
    report_tables, so they reproduce its intervals); per checkpoint original-vs-cgpu agreement.
+6. truncation: per policy truncation share t (finish == "length"), accuracy among finished attempts a, pass@1 = (1 − t)·a,
+   mean n_tokens by outcome; R − U per seed and band split exactly into −Δt·ā + (1 − t̄)·Δa with problem-bootstrap
+   intervals (streams a9/a17-trunc/...); per-problem Δt vs Δsuccess correlations; success within 8,192 tokens.
 `--figures FIG_DIR` (or `plot(OUT_DIR, FIG_DIR)` from the matplotlib venv) draws endpoints.png, reversal_scatter.png,
-coverage.png and sampling_null.png from the JSON outputs.
+coverage.png, sampling_null.png and truncation.png from the JSON outputs.
 Usage: python -m qis.analysis.a17_test EVAL_ROOT OUT_DIR [--cgpu-root CGPU_ROOT] [--h202 NAME] [--figures FIG_DIR]
 """
 import argparse
@@ -31,7 +34,9 @@ from math import comb
 
 import numpy as np
 
+from qis import seeds
 from qis.analysis.per_problem import BANDS, N, band_of, pass8
+from qis.analysis.report_tables import DRAWS
 from qis.analysis.report_tables import boot as boot_a9       # seeds.rng(2027, "a9/<name>"), 10,000 problem draws
 
 ARMS, SEEDS = ("H", "R", "U"), (101, 202)
@@ -53,7 +58,7 @@ def load(d):
         ids = r.get("ids")
         rec.setdefault(r["prompt_id"], {})[r["sample"]] = (
             r["reward"] == 1, r.get("finish"), r.get("seed"),
-            hashlib.sha1(json.dumps(ids).encode()).hexdigest() if ids is not None else None)
+            hashlib.sha1(json.dumps(ids).encode()).hexdigest() if ids is not None else None, r.get("n_tokens"))
     full = {k: v for k, v in rec.items() if all(i in v for i in range(N))}
     s = os.path.join(d, "summary.json")
     sc = {x["id"]: x["c"] for x in json.load(open(s))["per_problem"]} if os.path.exists(s) else None
@@ -70,9 +75,11 @@ def cell(raw, probs):
     get = lambda j: [[R[p][i][j] for i in range(N)] for p in probs]          # noqa: E731
     y, fin = np.array(get(0), dtype=bool), get(1)
     trunc = np.array([[f == "length" for f in r] for r in fin]) if all(f is not None for r in fin for f in r) else None
+    nt = get(4)
+    ntok = np.array(nt, dtype=np.int64) if all(v is not None for r in nt for v in r) else None
     c = y.sum(1)
     mism = None if raw["summary_c"] is None else sum(raw["summary_c"].get(p) != int(c[i]) for i, p in enumerate(probs))
-    return {"y": y, "c": c, "trunc": trunc, "seed": get(2), "hash": get(3), "dir": raw["dir"], "lines": raw["lines"],
+    return {"y": y, "c": c, "trunc": trunc, "ntok": ntok, "seed": get(2), "hash": get(3), "dir": raw["dir"], "lines": raw["lines"],
             "summary_c_mismatch": mism}
 
 
@@ -452,6 +459,137 @@ def endpoints(pol, cg, src):
     return res, md
 
 
+# ---------------------------------------------------------------- 6. truncation
+def tdec(TR, CR, TU, CU, tot):
+    """Totals (scalars or bootstrap vectors) → t_R, t_U, a_R, a_U, truncation term −Δt·ā, accuracy term (1 − t̄)·Δa."""
+    tR, tU = TR / tot, TU / tot
+    with np.errstate(divide="ignore", invalid="ignore"):
+        aR, aU = CR / (tot - TR), CU / (tot - TU)
+    return tR, tU, aR, aU, -(tR - tU) * (aR + aU) / 2, (1 - (tR + tU) / 2) * (aR - aU)
+
+
+def tblock(r, u, ix, name):
+    """Exact R − U split over problems ix; both terms bootstrapped on one shared problem draw (stream a9/<name>)."""
+    TR, CR, TU, CU = r["trunc"][ix].sum(1), r["y"][ix].sum(1), u["trunc"][ix].sum(1), u["y"][ix].sum(1)
+    tot = N * len(ix)
+    tR, tU, aR, aU, tt, at = tdec(TR.sum(), CR.sum(), TU.sum(), CU.sum(), tot)
+    pR, pU = CR.sum() / tot, CU.sum() / tot
+    idx = seeds.rng(seeds.BOOTSTRAP_SEED, f"a9/{name}").integers(0, len(ix), (DRAWS, len(ix)))
+    b = tdec(TR[idx].sum(1), CR[idx].sum(1), TU[idx].sum(1), CU[idx].sum(1), tot)
+    ci = lambda v, e: {"est": float(e), "lo": float(np.nanquantile(v, .025)), "hi": float(np.nanquantile(v, .975))}  # noqa: E731
+    return {"n_problems": len(ix), "R": {"t": float(tR), "a": float(aR), "pass1": float(pR)},
+            "U": {"t": float(tU), "a": float(aU), "pass1": float(pU)}, "R-U": float(pR - pU),
+            "t_bar": float((tR + tU) / 2), "a_bar": float((aR + aU) / 2), "delta_t": float(tR - tU), "delta_a": float(aR - aU),
+            "truncation_term": ci(b[4], tt), "accuracy_term": ci(b[5], at),
+            "sum_of_terms": float(tt + at), "identity_residual": float(tt + at - (pR - pU)), "stream": f"a9/{name}"}
+
+
+def corr(a, b):
+    return float(np.corrcoef(a, b)[0, 1]) if len(a) > 2 and np.std(a) > 0 and np.std(b) > 0 else None
+
+
+def truncation(pol, probs, kb):
+    n = len(probs)
+    band = np.array([band_of(int(k)) for k in kb])
+    res = {"n_problems": n, "identity": "pass1 = (1 − t)·a per policy; R − U = (1−t_R)a_R − (1−t_U)a_U = −Δt·ā + (1 − t̄)·Δa exactly, "
+           "Δ = R − U, bars = mean of R and U; t = truncated/attempts, a = correct/finished",
+           "policies": {}, "decomposition": {}, "bands": {}, "per_problem": {}, "within_8192": {}}
+    usable = lambda x: ok(x) and x["trunc"] is not None                 # noqa: E731
+    for k, x in pol.items():
+        if not usable(x):
+            res["policies"][k] = x if not ok(x) else "unavailable (records lack finish)"; continue
+        y, t, nt = x["y"], x["trunc"], x["ntok"]
+        tot, T, C = y.size, int(t.sum()), int(y.sum())
+        F = tot - T
+        row = {"truncated": frac(T, tot), "t": T / tot, "finished": frac(F, tot), "correct": frac(C, tot),
+               "a_finished": C / F if F else None, "pass1": C / tot, "pass1_check_1mt_times_a": (1 - T / tot) * (C / F) if F else None,
+               "truncated_and_correct": int((t & y).sum())}
+        if nt is not None:
+            row["mean_tokens"] = {"finished_correct": mean_or_none(nt[~t & y]), "finished_wrong": mean_or_none(nt[~t & ~y]),
+                                  "truncated": mean_or_none(nt[t])}
+            c8 = ((nt <= 8192) & y).sum(1)
+            row["within_8192"] = {"correct": frac(c8.sum(), tot), "pass1": float(c8.sum() / tot)}
+        else:
+            row["mean_tokens"] = row["within_8192"] = "unavailable (records lack n_tokens)"
+        res["policies"][k] = row
+    allix = np.arange(n)
+    for s in SEEDS:
+        r, u = pol[f"R-s{s}"], pol[f"U-s{s}"]
+        if not (usable(r) and usable(u)):
+            for sec in ("decomposition", "per_problem", "within_8192"):
+                res[sec][f"s{s}"] = "missing"
+            res["bands"][f"s{s}"] = "missing"; continue
+        res["decomposition"][f"s{s}"] = tblock(r, u, allix, f"a17-trunc/R-U/s{s}")
+        res["bands"][f"s{s}"] = {bn: tblock(r, u, np.where(band == bn)[0], f"a17-trunc/{bn}/R-U/s{s}") if (band == bn).any() else None
+                                 for bn, _, _ in BANDS}
+        dt = (r["trunc"].sum(1) - u["trunc"].sum(1)) / N
+        ds = (r["c"] - u["c"]) / N
+        res["per_problem"][f"s{s}"] = {
+            "pearson_dt_dsuccess": corr(dt, ds), "spearman_dt_dsuccess": spearman(dt, ds),
+            "success_same_sign_as_minus_dt": frac((ds * -dt > 0).sum(), n), "success_opposite_sign_to_minus_dt": frac((ds * -dt < 0).sum(), n),
+            "either_zero": frac(((ds == 0) | (dt == 0)).sum(), n),
+            "items": [{"id": probs[i], "band": band[i], "dt": float(dt[i]), "dsuccess": float(ds[i]),
+                       "t_R": f"{int(r['trunc'][i].sum())}/32", "t_U": f"{int(u['trunc'][i].sum())}/32",
+                       "c_R": f"{int(r['c'][i])}/32", "c_U": f"{int(u['c'][i])}/32"} for i in range(n)]}
+        if r["ntok"] is not None and u["ntok"] is not None:
+            cR, cU = ((r["ntok"] <= 8192) & r["y"]).sum(1), ((u["ntok"] <= 8192) & u["y"]).sum(1)
+            res["within_8192"][f"s{s}"] = {
+                "R-U_within_8192": dict(boot_a9([(cR - cU) / N], f"a17-trunc/8192/R-U/s{s}"), A=float(cR.mean() / N),
+                                        B=float(cU.mean() / N), direction="R − U"),
+                "R-U_cap_12288": dict(boot_a9([ds], f"a17-trunc/12288/R-U/s{s}"), A=float(r["c"].mean() / N),
+                                      B=float(u["c"].mean() / N), direction="R − U")}
+        else:
+            res["within_8192"][f"s{s}"] = "unavailable (records lack n_tokens)"
+    md = ["# Truncation and the R − U difference (sealed test, cap 12,288 tokens)", "",
+          "Truncated = finish == \"length\" (always reward 0). t = truncated / attempts; a = correct / finished; pass@1 = (1 − t)·a.",
+          "Identity (exact): R − U = (1 − t_R)·a_R − (1 − t_U)·a_U = −(t_R − t_U)·ā + (1 − t̄)·(a_R − a_U), with ā, t̄ the R/U means.", "",
+          "| Policy | Truncated (t) | Correct / finished (a) | pass@1 | (1 − t)·a | Truncated and correct | Mean tokens: correct / wrong / truncated | pass@1 within 8,192 |",
+          "|---|---|---|---|---|---|---|---|"]
+    for k, v in res["policies"].items():
+        if not ok(v):
+            md.append(f"| {k} | {v} | | | | | | |"); continue
+        mt, w8 = v["mean_tokens"], v["within_8192"]
+        mts = " / ".join(f3(mt[x], ".0f") for x in ("finished_correct", "finished_wrong", "truncated")) if ok(mt) else mt
+        md.append(f"| {k} | {v['truncated']} ({v['t']:.4f}) | {v['correct'].split('/')[0]}/{v['finished'].split('/')[0]} ({f3(v['a_finished'], '.4f')}) | "
+                  f"{v['pass1']:.4f} | {f3(v['pass1_check_1mt_times_a'], '.4f')} | {v['truncated_and_correct']} | {mts} | "
+                  f"{f3(w8['pass1']) if ok(w8) else w8} |")
+
+    def term_cells(x):
+        tt, at = x["truncation_term"], x["accuracy_term"]
+        return (f"−({x['R']['t']:.4f} − {x['U']['t']:.4f})·{x['a_bar']:.4f} = {tt['est']:+.4f} [{tt['lo']:+.4f}, {tt['hi']:+.4f}]",
+                f"(1 − {x['t_bar']:.4f})·({x['R']['a']:.4f} − {x['U']['a']:.4f}) = {at['est']:+.4f} [{at['lo']:+.4f}, {at['hi']:+.4f}]")
+    md += ["", "## R − U split per seed (95% problem bootstrap, 10,000 draws, seed 2027, streams a9/a17-trunc/...)", "",
+           "| Seed | R − U pass@1 (R minus U) | Truncation term −Δt·ā | Accuracy term (1 − t̄)·Δa | Sum of terms (residual) |", "|---|---|---|---|---|"]
+    for s, x in res["decomposition"].items():
+        if not ok(x):
+            md.append(f"| {s} | {x} | | | |"); continue
+        a1, a2 = term_cells(x)
+        md.append(f"| {s} | {dl(x['R']['pass1'], x['U']['pass1'])} | {a1} | {a2} | {x['sum_of_terms']:+.4f} ({x['identity_residual']:.1e}) |")
+    md += ["", "## Per band (bands from base samples 0-15)", "", "| Seed | Band | Problems | R − U pass@1 | Truncation term | Accuracy term |", "|---|---|---|---|---|---|"]
+    for s, B in res["bands"].items():
+        if not ok(B):
+            md.append(f"| {s} | {B} | | | | |"); continue
+        for bn, x in B.items():
+            if x is None:
+                md.append(f"| {s} | {bn} | 0/{n} | – | – | – |"); continue
+            a1, a2 = term_cells(x)
+            md.append(f"| {s} | {bn} | {x['n_problems']}/{n} | {dl(x['R']['pass1'], x['U']['pass1'])} | {a1} | {a2} |")
+    md += ["", "## Per problem: Δt = t_R − t_U vs Δsuccess = c_R/32 − c_U/32", "",
+           "| Seed | Pearson | Spearman | Δsuccess same sign as −Δt | Opposite sign | Either zero |", "|---|---|---|---|---|---|"]
+    for s, x in res["per_problem"].items():
+        md.append(f"| {s} | {x} | | | | |" if not ok(x) else
+                  f"| {s} | {f3(x['pearson_dt_dsuccess'])} | {f3(x['spearman_dt_dsuccess'])} | {x['success_same_sign_as_minus_dt']} | "
+                  f"{x['success_opposite_sign_to_minus_dt']} | {x['either_zero']} |")
+    md += ["", "## Does the reversal exist within 8,192 tokens? (success = reward 1 and n_tokens ≤ 8,192; same traces)", "",
+           "| Seed | R − U at cap 12,288 | R − U within 8,192 |", "|---|---|---|"]
+    for s, x in res["within_8192"].items():
+        if not ok(x):
+            md.append(f"| {s} | {x} | |"); continue
+        g = lambda z: dl(z["A"], z["B"], z["est"], z)                    # noqa: E731
+        md.append(f"| {s} | {g(x['R-U_cap_12288'])} | {g(x['R-U_within_8192'])} |")
+    return res, md
+
+
 # ---------------------------------------------------------------- 5. figures
 def plot(out_dir, fig_dir):
     """Draw the four A17 figures from the JSON outputs in out_dir (matplotlib venv)."""
@@ -560,6 +698,40 @@ def plot(out_dir, fig_dir):
         ax.legend(fontsize=6); ax.grid(alpha=0.3)
         fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "sampling_null.png"), dpi=150); plt.close(fig)
         drawn.append("sampling_null")
+    Tr = J("truncation")
+    if Tr and any(ok(v) for v in Tr["per_problem"].values()):
+        fig, axes = plt.subplots(1, 3, figsize=(14, 4.4), gridspec_kw={"width_ratios": [1, 1, 0.8]})
+        for ax, s in zip(axes[:2], SEEDS):
+            x = Tr["per_problem"].get(f"s{s}")
+            if not ok(x):
+                ax.text(0.5, 0.5, f"seed {s}: missing", transform=ax.transAxes, ha="center"); continue
+            for bn, _, _ in BANDS:
+                q = [i for i in x["items"] if i["band"] == bn]
+                if q:
+                    ax.scatter([i["dt"] for i in q], [i["dsuccess"] for i in q], s=20, color=BC[bn], edgecolors="white",
+                               linewidths=0.5, label=bn)
+            ax.axhline(0, color="grey", lw=0.8); ax.axvline(0, color="grey", lw=0.8)
+            ax.set_title(f"seed {s}: Pearson {f3(x['pearson_dt_dsuccess'])}, Spearman {f3(x['spearman_dt_dsuccess'])}; "
+                         f"same sign as −Δt {x['success_same_sign_as_minus_dt']}", fontsize=7)
+            ax.set_xlabel("Δt = truncated share R − U (per problem, of 32)"); ax.set_ylabel("Δsuccess = c/32 R − U")
+            ax.legend(fontsize=6); ax.grid(alpha=0.3)
+        ax, k, ticks = axes[2], 0, []
+        for s in SEEDS:
+            x = Tr["decomposition"].get(f"s{s}")
+            if ok(x):
+                for j, (term, col) in enumerate((("truncation_term", "#8c8c8c"), ("accuracy_term", "#4c4c4c"))):
+                    v = x[term]
+                    ax.bar(k + j * 0.4, v["est"], 0.38, color=col, label=term.replace("_", " ") if k == 0 else None)
+                    ax.errorbar(k + j * 0.4, v["est"], yerr=[[v["est"] - v["lo"]], [v["hi"] - v["est"]]], fmt="none", color="black", capsize=3)
+                ax.plot(k + 0.2, x["R-U"], "*", color="black", ms=9, label="observed R − U" if k == 0 else None)
+                ticks.append(f"seed {s}\nR {x['R']['pass1']:.3f} − U {x['U']['pass1']:.3f}")
+            else:
+                ticks.append(f"seed {s}\nmissing")
+            k += 1
+        ax.axhline(0, color="grey", lw=0.8); ax.set_xticks([i + 0.2 for i in range(k)]); ax.set_xticklabels(ticks, fontsize=7)
+        ax.set_ylabel("R − U pass@1 = −Δt·ā + (1 − t̄)·Δa (95% problem bootstrap)"); ax.legend(fontsize=6)
+        fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "truncation.png"), dpi=150); plt.close(fig)
+        drawn.append("truncation")
     json.dump({"drawn": drawn, "inputs": out_dir}, open(os.path.join(fig_dir, "a17_figures.json"), "w"), indent=1)
     print("drawn:", drawn)
 
@@ -591,7 +763,8 @@ def main():
               "original": {k: status(v) for k, v in pol.items()}, "cgpu": {k: status(v) for k, v in cg.items()}}
     kb = pol["base"]["y"][:, :16].sum(1)
     for name, (res, md) in (("reversal", reversal(pol, probs, kb)), ("coverage", coverage(pol, probs)),
-                            ("sampling_null", sampling_null(pol, probs)), ("endpoints", endpoints(pol, cg, src))):
+                            ("sampling_null", sampling_null(pol, probs)), ("endpoints", endpoints(pol, cg, src)),
+                            ("truncation", truncation(pol, probs, kb))):
         dump(a.out, name, dict(res, inputs=inputs), md)
     if a.figures:
         plot(a.out, a.figures)
