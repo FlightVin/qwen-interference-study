@@ -1077,3 +1077,5 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   The common-GPU check (section 2) measured the effect of a GPU type change at ≤ 1.3 points of pass@1 per checkpoint; the
   same caution applies to H-s202's R − H and U − H. A17 asked for both H endpoints on the common recipe "as feasible"; it
   is not feasible by the deadline.
+- **21:57Z extension.** Endpoint k2 (11119213, L40S) was still pending while k0, k1, k3–k5 ran; it was cancelled and
+  resubmitted on any 48 GB GPU, so the endpoint does not wait on the L40S queue. k0 and k1 run on L40S.
