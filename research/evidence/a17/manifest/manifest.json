@@ -10,6 +10,24 @@
    "pass1": 0.76953125
   },
   {
+   "eval": "test-eval/qis-test-H-s202-sym-fallback",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym-fallback/ckpt",
+   "sha": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.7431640625
+  },
+  {
+   "eval": "test-eval/qis-test-H-s202-sym",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+   "sha": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "panel": "test",
+   "n": 32,
+   "problems": 128,
+   "pass1": 0.723876953125
+  },
+  {
    "eval": "test-eval/qis-test-R-s101-sym",
    "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
    "sha": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
@@ -98,6 +116,15 @@
    "n": 8,
    "problems": 221,
    "pass1": 0.6414027149321267
+  },
+  {
+   "eval": "stress-eval/H-s202-r128",
+   "ckpt": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+   "sha": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "panel": "stress",
+   "n": 8,
+   "problems": 221,
+   "pass1": 0.6012443438914027
   },
   {
    "eval": "stress-eval/H-s202-r64",

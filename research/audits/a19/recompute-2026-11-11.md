@@ -40,3 +40,23 @@ attempts; truncated = share of attempts with finish "length"; accuracy on finish
 
 Not covered here: bootstrap intervals (project code; spot-check pending), H-s202 cells (not yet evaluated), length
 diagnostic (running). Counted 18 cells and 9 contrasts; all verified.
+
+## Final pass (23:46Z, after H-s202 ended)
+
+| Cell | Problems × attempts | pass@1 | Truncated | Acc. finished | REPORT value | Verdict |
+|---|---|---|---|---|---|---|
+| test H-s202 r128 | 128 × 32 | 0.7239 | 15.4% | 85.6% | 72.4%, trunc 15.4% | verified |
+| test H-s202 r116 fallback | 128 × 32 | 0.7432 | 14.8% | 87.2% | 74.3%, trunc 14.8% | verified |
+| stress H-s202 r128 | 221 × 8 | 0.6012 | 25.5% | 80.7% | 60.1%, trunc 25.5%, acc 80.7% | verified |
+
+| Contrast | Recomputed | REPORT | Verdict |
+|---|---|---|---|
+| test R − H s202 | 0.7478 − 0.7239 = +0.0239 | +2.4 | verified |
+| test U − H s202 | 0.7922 − 0.7239 = +0.0683 | +6.8 | verified |
+| stress R − H s202 | 0.6318 − 0.6012 = +0.0306 | +3.1 | verified |
+| stress U − H s202 | 0.6584 − 0.6012 = +0.0572 | +5.7 | verified |
+
+Manifest regenerated (`research/evidence/a17/manifest/manifest.json`): every checkpoint used by several evaluations has
+one hash; H-s202 r128 `2513456224d4…` in sealed test and stress; fallback `7b9ff3a40080…`. All 18 earlier cells and 9
+contrasts reproduce unchanged.
+
