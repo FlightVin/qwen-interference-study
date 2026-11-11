@@ -968,3 +968,16 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   length/termination difference, not a difference in factoring skill. U-s202 is the shortest-answering trained policy (mean 5,239
   tokens against 5,929–6,058).
 - Outputs: `research/evidence/a17/analysis/stress/` (a17_stress d3fa9d5); figure `reports/figures/a17/stress_panels.png`.
+
+## D153 — 2026-11-11 11:05Z — Response audit run (D144) on six policies; two blind reads per response
+- **Sample.** The D144 sample unchanged: 16 items (8 SuperHard, 8 Harder), attempt 0, for base, H-s101, R-s101, U-s101, R-s202
+  and U-s202 at round 128 → 96 responses. H-s202 r128 is not evaluated yet; it is an incomplete cell of the audit.
+- **Blinding.** `research/evidence/a17/audit/build.py` (run on the CPU standby) decodes each response, gives it a random
+  4-letter code, and shuffles the six responses within each item. The code → policy key stayed on compute
+  (`~/ae-qis/audit/key.json`) until all annotations were written. Packets carry the problem, gold, the panel annotation's
+  reference route, key factoring step and obstacle, and the verifier result. Responses over 8,000 characters show the first
+  5,000 and last 2,500 characters.
+- **Reads.** Four annotating agents (Claude Sonnet). The 16 items form 4 groups of 4; reader a reads groups a and a+1 (mod
+  4), so every response is read twice by different agents. Agreement is reported per category.
+- **Use.** Report-only (section 5). It answers "would more direct factoring practice plausibly fix these failures?" It
+  changes no panel, score or decision.
