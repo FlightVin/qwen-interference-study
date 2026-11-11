@@ -1,0 +1,1561 @@
+{
+ "definition": {
+  "lost": ">= 1 correct at the earlier evaluation and 0 at the later one",
+  "gained": "0 correct at the earlier evaluation and >= 1 at the later one",
+  "source": "per_problem counts of canonical dev eval rows; cross-checked with eval records"
+ },
+ "n_verification": {
+  "n_per_problem_values": [
+   8
+  ],
+  "records_samples_per_problem_values": [
+   8
+  ],
+  "fields": "metrics eval row per_problem[].n (run.py:138, 224-225) and row n (run.py:143); samples per prompt_id in records/eval_dev_rNNNN.jsonl.gz (run.py:135-141); n comes from config eval_panels.dev",
+  "records_agree": {
+   "true": 30,
+   "false": 0,
+   "not_checked": 0
+  },
+  "report_md_claim": "REPORT.md section 4 says 'of 16'",
+  "summary": "n = 8 attempts per dev problem in every scheduled evaluation; the per-sample records show [8]; the REPORT.md 'of 16' is wrong"
+ },
+ "runs": {
+  "H-s101": {
+   "run": "qis-main-H-s101-sym",
+   "notes": [],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.41745283018867924,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.5400943396226415,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6367924528301887,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6391509433962265,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6627358490566038,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 1,
+     "gained": 5,
+     "zero_at_from": 18,
+     "zero_at_to": 14,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00295"
+     ],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00542"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 2,
+     "gained": 9,
+     "zero_at_from": 14,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00542"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00165",
+      "intermediate_algebra/train/00232",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00530",
+      "intermediate_algebra/train/01041",
+      "intermediate_algebra/train/01153"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 5,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 10,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00165",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00530",
+      "intermediate_algebra/train/01153"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00542"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 2,
+     "gained": 4,
+     "zero_at_from": 10,
+     "zero_at_to": 8,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00508"
+     ],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00709",
+      "intermediate_algebra/train/01148"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 10,
+    "gained": 20,
+    "zero_first": 18,
+    "zero_last": 8,
+    "first_round": 0,
+    "last_round": 128
+   }
+  },
+  "H-s202-orig": {
+   "run": "qis-main-H-s202-sym",
+   "notes": [
+    "rows before the A17 resume event (row 367); stopped after round 64"
+   ],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.4033018867924528,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.5660377358490566,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6580188679245284,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 0,
+     "gained": 10,
+     "zero_at_from": 19,
+     "zero_at_to": 9,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/00006",
+      "algebra/train/01341",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/01041",
+      "intermediate_algebra/train/01190"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 1,
+     "gained": 3,
+     "zero_at_from": 9,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00508"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00709"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 1,
+    "gained": 13,
+    "zero_first": 19,
+    "zero_last": 7,
+    "first_round": 0,
+    "last_round": 64
+   }
+  },
+  "H-s202-r60": {
+   "run": "qis-main-H-s202-sym",
+   "notes": [
+    "rows to round 60 from before the resume plus rows after it"
+   ],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.4033018867924528,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.5660377358490566,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 0,
+     "gained": 10,
+     "zero_at_from": 19,
+     "zero_at_to": 9,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/00006",
+      "algebra/train/01341",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/01041",
+      "intermediate_algebra/train/01190"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 0,
+    "gained": 10,
+    "zero_first": 19,
+    "zero_last": 9,
+    "first_round": 0,
+    "last_round": 32
+   }
+  },
+  "R-s101": {
+   "run": "qis-main-R-s101-sym",
+   "notes": [],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.41745283018867924,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.5424528301886793,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.7358490566037735,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.7476415094339622,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.7287735849056604,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 0,
+     "gained": 8,
+     "zero_at_from": 17,
+     "zero_at_to": 9,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00232",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/01041"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 1,
+     "gained": 4,
+     "zero_at_from": 9,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00508"
+     ],
+     "gained_ids": [
+      "algebra/train/01341",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/00688"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 1,
+     "gained": 2,
+     "zero_at_from": 6,
+     "zero_at_to": 5,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00120"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00530",
+      "intermediate_algebra/train/01148"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 2,
+     "gained": 1,
+     "zero_at_from": 5,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00530",
+      "intermediate_algebra/train/00688"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/01153"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 4,
+    "gained": 15,
+    "zero_first": 17,
+    "zero_last": 6,
+    "first_round": 0,
+    "last_round": 128
+   }
+  },
+  "R-s202": {
+   "run": "qis-main-R-s202-sym",
+   "notes": [],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.4033018867924528,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.5990566037735849,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6132075471698113,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6415094339622641,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6556603773584906,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 0,
+     "gained": 12,
+     "zero_at_from": 19,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/01341",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/00709",
+      "intermediate_algebra/train/01041",
+      "intermediate_algebra/train/01190"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 2,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00508"
+     ],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/01153"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 3,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 8,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/01153"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00688"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 1,
+     "gained": 2,
+     "zero_at_from": 8,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00688"
+     ],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/01148"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 6,
+    "gained": 18,
+    "zero_first": 19,
+    "zero_last": 7,
+    "first_round": 0,
+    "last_round": 128
+   }
+  },
+  "U-s101": {
+   "run": "qis-main-U-s101-sym",
+   "notes": [],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.4221698113207547,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6014150943396226,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.7099056603773585,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6839622641509434,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6910377358490566,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 2,
+     "gained": 8,
+     "zero_at_from": 18,
+     "zero_at_to": 12,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00232",
+      "intermediate_algebra/train/00542"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00999",
+      "intermediate_algebra/train/01041"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 0,
+     "gained": 6,
+     "zero_at_from": 12,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00232",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/00709",
+      "intermediate_algebra/train/01148"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 2,
+     "gained": 1,
+     "zero_at_from": 6,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00482"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00165"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 1,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00165"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00688"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 5,
+    "gained": 17,
+    "zero_first": 18,
+    "zero_last": 6,
+    "first_round": 0,
+    "last_round": 128
+   }
+  },
+  "U-s202": {
+   "run": "qis-main-U-s202-sym",
+   "notes": [],
+   "evaluations": [
+    {
+     "round": 0,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.4221698113207547,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 32,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6108490566037735,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 8192,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 64,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6792452830188679,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 96,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.6792452830188679,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    },
+    {
+     "round": 128,
+     "row_n": 8,
+     "problems": 53,
+     "pass1": 0.7028301886792453,
+     "n_per_problem": [
+      8
+     ],
+     "max_tokens": 12288,
+     "records_samples_per_problem": [
+      8
+     ],
+     "records_agree_with_row_per_problem": true
+    }
+   ],
+   "transitions": [
+    {
+     "from": 0,
+     "to": 32,
+     "problems": 53,
+     "lost": 0,
+     "gained": 11,
+     "zero_at_from": 18,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [],
+     "gained_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/train/00120",
+      "intermediate_algebra/train/00295",
+      "intermediate_algebra/train/00347",
+      "intermediate_algebra/train/00409",
+      "intermediate_algebra/train/00482",
+      "intermediate_algebra/train/00494",
+      "intermediate_algebra/train/00999",
+      "intermediate_algebra/train/01041",
+      "intermediate_algebra/train/01153"
+     ]
+    },
+    {
+     "from": 32,
+     "to": 64,
+     "problems": 53,
+     "lost": 2,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 7,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/01153"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00709",
+      "intermediate_algebra/train/01148"
+     ]
+    },
+    {
+     "from": 64,
+     "to": 96,
+     "problems": 53,
+     "lost": 1,
+     "gained": 2,
+     "zero_at_from": 7,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "intermediate_algebra/train/00709"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00165",
+      "intermediate_algebra/train/01153"
+     ]
+    },
+    {
+     "from": 96,
+     "to": 128,
+     "problems": 53,
+     "lost": 4,
+     "gained": 4,
+     "zero_at_from": 6,
+     "zero_at_to": 6,
+     "n_per_problem_from": [
+      8
+     ],
+     "n_per_problem_to": [
+      8
+     ],
+     "lost_ids": [
+      "algebra/train/00006",
+      "intermediate_algebra/train/00165",
+      "intermediate_algebra/train/01148",
+      "intermediate_algebra/train/01153"
+     ],
+     "gained_ids": [
+      "intermediate_algebra/train/00508",
+      "intermediate_algebra/train/00542",
+      "intermediate_algebra/train/00688",
+      "intermediate_algebra/train/00709"
+     ]
+    }
+   ],
+   "totals": {
+    "lost": 7,
+    "gained": 19,
+    "zero_first": 18,
+    "zero_last": 6,
+    "first_round": 0,
+    "last_round": 128
+   }
+  }
+ },
+ "repeated_evaluations": [
+  {
+   "run": "qis-main-R-s101-sym",
+   "panel": "dev",
+   "round": 128,
+   "row_index": [
+    720,
+    750
+   ],
+   "utc": [
+    1794194089.9226682,
+    1794205697.2625935
+   ],
+   "pass1": [
+    0.7099056603773585,
+    0.7287735849056604
+   ],
+   "resume_events_between": [
+    124
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 53,
+   "lost": 2,
+   "gained": 2,
+   "zero_at_from": 6,
+   "zero_at_to": 6,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00508",
+    "intermediate_algebra/train/00688"
+   ],
+   "gained_ids": [
+    "intermediate_algebra/train/00709",
+    "intermediate_algebra/train/01148"
+   ]
+  },
+  {
+   "run": "qis-main-R-s101-sym",
+   "panel": "probe_J_H",
+   "round": 128,
+   "row_index": [
+    721,
+    751
+   ],
+   "utc": [
+    1794194089.923578,
+    1794205697.263776
+   ],
+   "pass1": [
+    0.73828125,
+    0.765625
+   ],
+   "resume_events_between": [
+    124
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 32,
+   "lost": 1,
+   "gained": 2,
+   "zero_at_from": 4,
+   "zero_at_to": 3,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00508"
+   ],
+   "gained_ids": [
+    "intermediate_algebra/train/00709",
+    "intermediate_algebra/train/01148"
+   ]
+  },
+  {
+   "run": "qis-main-R-s101-sym",
+   "panel": "probe_J_R",
+   "round": 128,
+   "row_index": [
+    722,
+    752
+   ],
+   "utc": [
+    1794194549.56239,
+    1794206052.0472298
+   ],
+   "pass1": [
+    0.8839285714285714,
+    0.9107142857142857
+   ],
+   "resume_events_between": [
+    124
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 28,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "run": "qis-main-R-s101-sym",
+   "panel": "probe_J_U",
+   "round": 128,
+   "row_index": [
+    723,
+    753
+   ],
+   "utc": [
+    1794194782.6685827,
+    1794206272.1654735
+   ],
+   "pass1": [
+    0.93359375,
+    0.9609375
+   ],
+   "resume_events_between": [
+    124
+   ],
+   "checkpoint": "retrained from an earlier checkpoint between the two evaluations: not a no-update reference",
+   "same_request_seeds": true,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    8
+   ],
+   "n_per_problem_to": [
+    8
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  }
+ ],
+ "diag_reference_pairs": [
+  {
+   "label": "r0",
+   "panel": "probe_J_H",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.400390625,
+   "pass1_second": 0.431640625,
+   "problems": 32,
+   "lost": 3,
+   "gained": 2,
+   "zero_at_from": 8,
+   "zero_at_to": 9,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [
+    "algebra/train/01341",
+    "intermediate_algebra/train/00542",
+    "intermediate_algebra/train/00999"
+   ],
+   "gained_ids": [
+    "intermediate_algebra/train/00295",
+    "intermediate_algebra/train/01041"
+   ]
+  },
+  {
+   "label": "r0",
+   "panel": "probe_J_R",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.828125,
+   "pass1_second": 0.8080357142857143,
+   "problems": 28,
+   "lost": 1,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 1,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00012"
+   ],
+   "gained_ids": []
+  },
+  {
+   "label": "r0",
+   "panel": "probe_J_U",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.806640625,
+   "pass1_second": 0.79296875,
+   "problems": 32,
+   "lost": 1,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 1,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [
+    "number_theory/train/00372"
+   ],
+   "gained_ids": []
+  },
+  {
+   "label": "r0",
+   "panel": "probe_J_H",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.431640625,
+   "pass1_second": 0.431640625,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 9,
+   "zero_at_to": 9,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r0",
+   "panel": "probe_J_R",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.8080357142857143,
+   "pass1_second": 0.8080357142857143,
+   "problems": 28,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 1,
+   "zero_at_to": 1,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r0",
+   "panel": "probe_J_U",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.79296875,
+   "pass1_second": 0.79296875,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 1,
+   "zero_at_to": 1,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_H",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.60546875,
+   "pass1_second": 0.630859375,
+   "problems": 32,
+   "lost": 1,
+   "gained": 1,
+   "zero_at_from": 5,
+   "zero_at_to": 5,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [
+    "intermediate_algebra/train/00709"
+   ],
+   "gained_ids": [
+    "intermediate_algebra/train/00542"
+   ]
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_R",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.9017857142857143,
+   "pass1_second": 0.8928571428571429,
+   "problems": 28,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_U",
+   "first": "none",
+   "second": "none_rerun",
+   "pass1_first": 0.939453125,
+   "pass1_second": 0.951171875,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_H",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.630859375,
+   "pass1_second": 0.630859375,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 5,
+   "zero_at_to": 5,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_R",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.8928571428571429,
+   "pass1_second": 0.8928571428571429,
+   "problems": 28,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  },
+  {
+   "label": "r64",
+   "panel": "probe_J_U",
+   "first": "none_rerun",
+   "second": "none_cycled",
+   "pass1_first": 0.951171875,
+   "pass1_second": 0.951171875,
+   "problems": 32,
+   "lost": 0,
+   "gained": 0,
+   "zero_at_from": 0,
+   "zero_at_to": 0,
+   "n_per_problem_from": [
+    16
+   ],
+   "n_per_problem_to": [
+    16
+   ],
+   "lost_ids": [],
+   "gained_ids": []
+  }
+ ],
+ "reference_note": "Evaluation request seeds depend only on panel, problem, round and n (run.py:123); the diagnostic uses one constant round label for every row (diag_local.py:51). Two evaluations of the same weights therefore use the same seeds: their differences measure non-bitwise-reproducible generation (and GPU type where it differs), not independent resampling.",
+ "missing_inputs": []
+}

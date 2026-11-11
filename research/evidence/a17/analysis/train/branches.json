@@ -1,0 +1,1958 @@
+{
+ "checkpoints": {
+  "r0": {
+   "source": {
+    "source": "base",
+    "round": null,
+    "fresh_optimizer": true
+   },
+   "no_update": {
+    "none_original": {
+     "file": "/data/user_data/vineethb/qis/diag-local/r0/diag_r0.jsonl",
+     "J_H": 0.400390625,
+     "J_R": 0.828125,
+     "J_U": 0.806640625,
+     "truncated": {
+      "J_H": 0.001953125,
+      "J_R": 0.0,
+      "J_U": 0.0078125
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    },
+    "none_rerun": {
+     "file": "research/evidence/a15/diag_r0_ref.jsonl",
+     "J_H": 0.431640625,
+     "J_R": 0.8080357142857143,
+     "J_U": 0.79296875,
+     "truncated": {
+      "J_H": 0.001953125,
+      "J_R": 0.0,
+      "J_U": 0.00390625
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    },
+    "none_cycled": {
+     "file": "research/evidence/a15/diag_r0_ref.jsonl",
+     "J_H": 0.431640625,
+     "J_R": 0.8080357142857143,
+     "J_U": 0.79296875,
+     "truncated": {
+      "J_H": 0.001953125,
+      "J_R": 0.0,
+      "J_U": 0.00390625
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    }
+   },
+   "draws": [
+    {
+     "branch": "hard",
+     "seed": 4101,
+     "mixed_groups": 2,
+     "batch_reward": 0.15625,
+     "grad_norm_preclip": 0.5632169246673584,
+     "capped": 0,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/00984",
+      "omni/02008",
+      "omni/02842"
+     ],
+     "post": {
+      "J_H": 0.41015625,
+      "J_R": 0.7879464285714286,
+      "J_U": 0.775390625
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.009765625,
+      "J_R": -0.0401785714285714,
+      "J_U": -0.03125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.021484375,
+      "J_R": -0.0200892857142857,
+      "J_U": -0.017578125
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4102,
+     "mixed_groups": 3,
+     "batch_reward": 0.15625,
+     "grad_norm_preclip": 0.49400612711906433,
+     "capped": 0,
+     "prompt_ids": [
+      "intermediate_algebra/train/00477",
+      "intermediate_algebra/train/01095",
+      "intermediate_algebra/train/01249",
+      "omni/02460"
+     ],
+     "post": {
+      "J_H": 0.419921875,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.798828125
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.01953125,
+      "J_R": -0.0200892857142857,
+      "J_U": -0.0078125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01171875,
+      "J_R": 0.0,
+      "J_U": 0.005859375
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4103,
+     "mixed_groups": 2,
+     "batch_reward": 0.0625,
+     "grad_norm_preclip": 0.36422303318977356,
+     "capped": 0,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/01386",
+      "omni/02008",
+      "omni/02204"
+     ],
+     "post": {
+      "J_H": 0.40625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.8203125
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.005859375,
+      "J_R": -0.0200892857142857,
+      "J_U": 0.013671875
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.025390625,
+      "J_R": 0.0,
+      "J_U": 0.02734375
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4104,
+     "mixed_groups": 4,
+     "batch_reward": 0.3125,
+     "grad_norm_preclip": 0.6789345145225525,
+     "capped": 0,
+     "prompt_ids": [
+      "algebra/train/01269",
+      "intermediate_algebra/train/01234",
+      "omni/00984",
+      "omni/02008"
+     ],
+     "post": {
+      "J_H": 0.421875,
+      "J_R": 0.8058035714285714,
+      "J_U": 0.78125
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.021484375,
+      "J_R": -0.022321428571428603,
+      "J_U": -0.025390625
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.009765625,
+      "J_R": -0.0022321428571429047,
+      "J_U": -0.01171875
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4101,
+     "mixed_groups": 3,
+     "batch_reward": 0.75,
+     "grad_norm_preclip": 1.1502048969268799,
+     "capped": 0,
+     "prompt_ids": [
+      "algebra/train/01661",
+      "syn-R4-096",
+      "syn-R5-044",
+      "intermediate_algebra/train/01013"
+     ],
+     "post": {
+      "J_H": 0.416015625,
+      "J_R": 0.8035714285714286,
+      "J_U": 0.80078125
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.015625,
+      "J_R": -0.024553571428571397,
+      "J_U": -0.005859375
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.015625,
+      "J_R": -0.004464285714285698,
+      "J_U": 0.0078125
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4102,
+     "mixed_groups": 4,
+     "batch_reward": 0.46875,
+     "grad_norm_preclip": 1.0406596660614014,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-R1-017",
+      "syn-R4-098",
+      "syn-R4-072",
+      "intermediate_algebra/train/00145"
+     ],
+     "post": {
+      "J_H": 0.439453125,
+      "J_R": 0.796875,
+      "J_U": 0.763671875
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.0390625,
+      "J_R": -0.03125,
+      "J_U": -0.04296875
+     },
+     "change_post_minus_rerun": {
+      "J_H": 0.0078125,
+      "J_R": -0.011160714285714302,
+      "J_U": -0.029296875
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4103,
+     "mixed_groups": 4,
+     "batch_reward": 0.5,
+     "grad_norm_preclip": 0.6785891652107239,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-R5-026",
+      "syn-R5-046",
+      "syn-R3-034",
+      "syn-R2-071"
+     ],
+     "post": {
+      "J_H": 0.43359375,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.80078125
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.033203125,
+      "J_R": -0.0200892857142857,
+      "J_U": -0.005859375
+     },
+     "change_post_minus_rerun": {
+      "J_H": 0.001953125,
+      "J_R": 0.0,
+      "J_U": 0.0078125
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4104,
+     "mixed_groups": 3,
+     "batch_reward": 0.5625,
+     "grad_norm_preclip": 0.8244099617004395,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-R5-063",
+      "syn-R4-074",
+      "syn-R5-042",
+      "syn-R5-078"
+     ],
+     "post": {
+      "J_H": 0.419921875,
+      "J_R": 0.8058035714285714,
+      "J_U": 0.7734375
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.01953125,
+      "J_R": -0.022321428571428603,
+      "J_U": -0.033203125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01171875,
+      "J_R": -0.0022321428571429047,
+      "J_U": -0.01953125
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4101,
+     "mixed_groups": 4,
+     "batch_reward": 0.59375,
+     "grad_norm_preclip": 0.9249904751777649,
+     "capped": 0,
+     "prompt_ids": [
+      "number_theory/train/00107",
+      "syn-U3-081",
+      "syn-U2-036",
+      "number_theory/train/00149"
+     ],
+     "post": {
+      "J_H": 0.40625,
+      "J_R": 0.7991071428571429,
+      "J_U": 0.80859375
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.005859375,
+      "J_R": -0.029017857142857095,
+      "J_U": 0.001953125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.025390625,
+      "J_R": -0.008928571428571397,
+      "J_U": 0.015625
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4102,
+     "mixed_groups": 4,
+     "batch_reward": 0.5625,
+     "grad_norm_preclip": 0.8267787098884583,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U2-098",
+      "syn-U3-094",
+      "syn-U3-048",
+      "number_theory/train/00014"
+     ],
+     "post": {
+      "J_H": 0.42578125,
+      "J_R": 0.8058035714285714,
+      "J_U": 0.822265625
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.025390625,
+      "J_R": -0.022321428571428603,
+      "J_U": 0.015625
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.005859375,
+      "J_R": -0.0022321428571429047,
+      "J_U": 0.029296875
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4103,
+     "mixed_groups": 3,
+     "batch_reward": 0.625,
+     "grad_norm_preclip": 0.6143794059753418,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U3-078",
+      "syn-U3-097",
+      "syn-U3-088",
+      "syn-U3-017"
+     ],
+     "post": {
+      "J_H": 0.404296875,
+      "J_R": 0.796875,
+      "J_U": 0.794921875
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.00390625,
+      "J_R": -0.03125,
+      "J_U": -0.01171875
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.02734375,
+      "J_R": -0.011160714285714302,
+      "J_U": 0.001953125
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4104,
+     "mixed_groups": 4,
+     "batch_reward": 0.5625,
+     "grad_norm_preclip": 1.0831061601638794,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U2-008",
+      "syn-U1-063",
+      "syn-U3-063",
+      "syn-U1-052"
+     ],
+     "post": {
+      "J_H": 0.384765625,
+      "J_R": 0.8035714285714286,
+      "J_U": 0.802734375
+     },
+     "pre_original": {
+      "J_H": 0.400390625,
+      "J_R": 0.828125,
+      "J_U": 0.806640625
+     },
+     "pre_rerun": {
+      "J_H": 0.431640625,
+      "J_R": 0.8080357142857143,
+      "J_U": 0.79296875
+     },
+     "change_post_minus_original": {
+      "J_H": -0.015625,
+      "J_R": -0.024553571428571397,
+      "J_U": -0.00390625
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.046875,
+      "J_R": -0.004464285714285698,
+      "J_U": 0.009765625
+     }
+    }
+   ],
+   "comparisons": {
+    "unrelated_vs_related": {
+     "seeds": [
+      4101,
+      4102,
+      4103,
+      4104
+     ],
+     "per_seed": [
+      {
+       "seed": 4101,
+       "J_H": {
+        "unrelated": 0.40625,
+        "related": 0.416015625,
+        "unrelated_minus_related": -0.009765625
+       },
+       "J_R": {
+        "unrelated": 0.7991071428571429,
+        "related": 0.8035714285714286,
+        "unrelated_minus_related": -0.004464285714285698
+       },
+       "J_U": {
+        "unrelated": 0.80859375,
+        "related": 0.80078125,
+        "unrelated_minus_related": 0.0078125
+       }
+      },
+      {
+       "seed": 4102,
+       "J_H": {
+        "unrelated": 0.42578125,
+        "related": 0.439453125,
+        "unrelated_minus_related": -0.013671875
+       },
+       "J_R": {
+        "unrelated": 0.8058035714285714,
+        "related": 0.796875,
+        "unrelated_minus_related": 0.008928571428571397
+       },
+       "J_U": {
+        "unrelated": 0.822265625,
+        "related": 0.763671875,
+        "unrelated_minus_related": 0.05859375
+       }
+      },
+      {
+       "seed": 4103,
+       "J_H": {
+        "unrelated": 0.404296875,
+        "related": 0.43359375,
+        "unrelated_minus_related": -0.029296875
+       },
+       "J_R": {
+        "unrelated": 0.796875,
+        "related": 0.8080357142857143,
+        "unrelated_minus_related": -0.011160714285714302
+       },
+       "J_U": {
+        "unrelated": 0.794921875,
+        "related": 0.80078125,
+        "unrelated_minus_related": -0.005859375
+       }
+      },
+      {
+       "seed": 4104,
+       "J_H": {
+        "unrelated": 0.384765625,
+        "related": 0.419921875,
+        "unrelated_minus_related": -0.03515625
+       },
+       "J_R": {
+        "unrelated": 0.8035714285714286,
+        "related": 0.8058035714285714,
+        "unrelated_minus_related": -0.0022321428571427937
+       },
+       "J_U": {
+        "unrelated": 0.802734375,
+        "related": 0.7734375,
+        "unrelated_minus_related": 0.029296875
+       }
+      }
+     ],
+     "over_seeds": {
+      "J_H": {
+       "mean_unrelated": 0.4052734375,
+       "mean_related": 0.42724609375,
+       "mean_unrelated_minus_mean_related": -0.02197265625
+      },
+      "J_R": {
+       "mean_unrelated": 0.8013392857142858,
+       "mean_related": 0.8035714285714286,
+       "mean_unrelated_minus_mean_related": -0.0022321428571427937
+      },
+      "J_U": {
+       "mean_unrelated": 0.80712890625,
+       "mean_related": 0.78466796875,
+       "mean_unrelated_minus_mean_related": 0.0224609375
+      }
+     },
+     "note": "post values only; both share the same no-update reference, so it cancels"
+    },
+    "unrelated_vs_hard": {
+     "seeds": [
+      4101,
+      4102,
+      4103,
+      4104
+     ],
+     "per_seed": [
+      {
+       "seed": 4101,
+       "J_H": {
+        "unrelated": 0.40625,
+        "hard": 0.41015625,
+        "unrelated_minus_hard": -0.00390625
+       },
+       "J_R": {
+        "unrelated": 0.7991071428571429,
+        "hard": 0.7879464285714286,
+        "unrelated_minus_hard": 0.011160714285714302
+       },
+       "J_U": {
+        "unrelated": 0.80859375,
+        "hard": 0.775390625,
+        "unrelated_minus_hard": 0.033203125
+       }
+      },
+      {
+       "seed": 4102,
+       "J_H": {
+        "unrelated": 0.42578125,
+        "hard": 0.419921875,
+        "unrelated_minus_hard": 0.005859375
+       },
+       "J_R": {
+        "unrelated": 0.8058035714285714,
+        "hard": 0.8080357142857143,
+        "unrelated_minus_hard": -0.0022321428571429047
+       },
+       "J_U": {
+        "unrelated": 0.822265625,
+        "hard": 0.798828125,
+        "unrelated_minus_hard": 0.0234375
+       }
+      },
+      {
+       "seed": 4103,
+       "J_H": {
+        "unrelated": 0.404296875,
+        "hard": 0.40625,
+        "unrelated_minus_hard": -0.001953125
+       },
+       "J_R": {
+        "unrelated": 0.796875,
+        "hard": 0.8080357142857143,
+        "unrelated_minus_hard": -0.011160714285714302
+       },
+       "J_U": {
+        "unrelated": 0.794921875,
+        "hard": 0.8203125,
+        "unrelated_minus_hard": -0.025390625
+       }
+      },
+      {
+       "seed": 4104,
+       "J_H": {
+        "unrelated": 0.384765625,
+        "hard": 0.421875,
+        "unrelated_minus_hard": -0.037109375
+       },
+       "J_R": {
+        "unrelated": 0.8035714285714286,
+        "hard": 0.8058035714285714,
+        "unrelated_minus_hard": -0.0022321428571427937
+       },
+       "J_U": {
+        "unrelated": 0.802734375,
+        "hard": 0.78125,
+        "unrelated_minus_hard": 0.021484375
+       }
+      }
+     ],
+     "over_seeds": {
+      "J_H": {
+       "mean_unrelated": 0.4052734375,
+       "mean_hard": 0.41455078125,
+       "mean_unrelated_minus_mean_hard": -0.00927734375
+      },
+      "J_R": {
+       "mean_unrelated": 0.8013392857142858,
+       "mean_hard": 0.8024553571428572,
+       "mean_unrelated_minus_mean_hard": -0.0011160714285713969
+      },
+      "J_U": {
+       "mean_unrelated": 0.80712890625,
+       "mean_hard": 0.7939453125,
+       "mean_unrelated_minus_mean_hard": 0.01318359375
+      }
+     },
+     "note": "post values only; both share the same no-update reference, so it cancels"
+    }
+   },
+   "spread_post_within_branch": {
+    "hard": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.41015625,
+       0.419921875,
+       0.40625,
+       0.421875
+      ],
+      "min": 0.40625,
+      "max": 0.421875,
+      "range": 0.015625,
+      "sd": 0.007543379053552388
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.7879464285714286,
+       0.8080357142857143,
+       0.8080357142857143,
+       0.8058035714285714
+      ],
+      "min": 0.7879464285714286,
+      "max": 0.8080357142857143,
+      "range": 0.0200892857142857,
+      "sd": 0.009729685141831847
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.775390625,
+       0.798828125,
+       0.8203125,
+       0.78125
+      ],
+      "min": 0.775390625,
+      "max": 0.8203125,
+      "range": 0.044921875,
+      "sd": 0.020203282095290237
+     }
+    },
+    "related": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.416015625,
+       0.439453125,
+       0.43359375,
+       0.419921875
+      ],
+      "min": 0.416015625,
+      "max": 0.439453125,
+      "range": 0.0234375,
+      "sd": 0.01109161786289116
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.8035714285714286,
+       0.796875,
+       0.8080357142857143,
+       0.8058035714285714
+      ],
+      "min": 0.796875,
+      "max": 0.8080357142857143,
+      "range": 0.011160714285714302,
+      "sd": 0.004821979686315372
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.80078125,
+       0.763671875,
+       0.80078125,
+       0.7734375
+      ],
+      "min": 0.763671875,
+      "max": 0.80078125,
+      "range": 0.037109375,
+      "sd": 0.019028356439681617
+     }
+    },
+    "unrelated": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.40625,
+       0.42578125,
+       0.404296875,
+       0.384765625
+      ],
+      "min": 0.384765625,
+      "max": 0.42578125,
+      "range": 0.041015625,
+      "sd": 0.016763532798937154
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.7991071428571429,
+       0.8058035714285714,
+       0.796875,
+       0.8035714285714286
+      ],
+      "min": 0.796875,
+      "max": 0.8058035714285714,
+      "range": 0.008928571428571397,
+      "sd": 0.004075316648103899
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.80859375,
+       0.822265625,
+       0.794921875,
+       0.802734375
+      ],
+      "min": 0.794921875,
+      "max": 0.822265625,
+      "range": 0.02734375,
+      "sd": 0.011541079362783747
+     }
+    }
+   },
+   "spread_no_update_rows": {
+    "J_H": {
+     "n": 3,
+     "values": [
+      0.400390625,
+      0.431640625,
+      0.431640625
+     ],
+     "min": 0.400390625,
+     "max": 0.431640625,
+     "range": 0.03125,
+     "sd": 0.018042195912175804
+    },
+    "J_R": {
+     "n": 3,
+     "values": [
+      0.828125,
+      0.8080357142857143,
+      0.8080357142857143
+     ],
+     "min": 0.8080357142857143,
+     "max": 0.828125,
+     "range": 0.0200892857142857,
+     "sd": 0.011598554514970152
+    },
+    "J_U": {
+     "n": 3,
+     "values": [
+      0.806640625,
+      0.79296875,
+      0.79296875
+     ],
+     "min": 0.79296875,
+     "max": 0.806640625,
+     "range": 0.013671875,
+     "sd": 0.007893460711576915
+    }
+   },
+   "mixed_groups_per_draw": {
+    "hard": {
+     "4101": 2,
+     "4102": 3,
+     "4103": 2,
+     "4104": 4
+    },
+    "related": {
+     "4101": 3,
+     "4102": 4,
+     "4103": 4,
+     "4104": 3
+    },
+    "unrelated": {
+     "4101": 4,
+     "4102": 4,
+     "4103": 3,
+     "4104": 4
+    }
+   },
+   "zero_mixed_draws": [],
+   "zero_mixed_draws_identical_per_problem_counts": null
+  },
+  "r64": {
+   "source": {
+    "source": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064",
+    "round": 64,
+    "fresh_optimizer": null
+   },
+   "no_update": {
+    "none_original": {
+     "file": "/data/user_data/vineethb/qis/diag-local/r64/diag_r64.jsonl",
+     "J_H": 0.60546875,
+     "J_R": 0.9017857142857143,
+     "J_U": 0.939453125,
+     "truncated": {
+      "J_H": 0.37109375,
+      "J_R": 0.05580357142857143,
+      "J_U": 0.0234375
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    },
+    "none_rerun": {
+     "file": "research/evidence/a15/diag_r64_ref.jsonl",
+     "J_H": 0.630859375,
+     "J_R": 0.8928571428571429,
+     "J_U": 0.951171875,
+     "truncated": {
+      "J_H": 0.3359375,
+      "J_R": 0.07142857142857142,
+      "J_U": 0.025390625
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    },
+    "none_cycled": {
+     "file": "research/evidence/a15/diag_r64_ref.jsonl",
+     "J_H": 0.630859375,
+     "J_R": 0.8928571428571429,
+     "J_U": 0.951171875,
+     "truncated": {
+      "J_H": 0.3359375,
+      "J_R": 0.07142857142857142,
+      "J_U": 0.025390625
+     },
+     "problems": {
+      "J_H": 32,
+      "J_R": 28,
+      "J_U": 32
+     },
+     "n_per_problem": {
+      "J_H": [
+       16
+      ],
+      "J_R": [
+       16
+      ],
+      "J_U": [
+       16
+      ]
+     }
+    }
+   },
+   "draws": [
+    {
+     "branch": "hard",
+     "seed": 4101,
+     "mixed_groups": 2,
+     "batch_reward": 0.6875,
+     "grad_norm_preclip": 0.27190282940864563,
+     "capped": 7,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/00984",
+      "omni/02008",
+      "omni/02842"
+     ],
+     "post": {
+      "J_H": 0.599609375,
+      "J_R": 0.8861607142857143,
+      "J_U": 0.93359375
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": -0.005859375,
+      "J_R": -0.015625,
+      "J_U": -0.005859375
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.03125,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.017578125
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4102,
+     "mixed_groups": 3,
+     "batch_reward": 0.625,
+     "grad_norm_preclip": 0.349653422832489,
+     "capped": 8,
+     "prompt_ids": [
+      "intermediate_algebra/train/00477",
+      "intermediate_algebra/train/01095",
+      "intermediate_algebra/train/01249",
+      "omni/02460"
+     ],
+     "post": {
+      "J_H": 0.607421875,
+      "J_R": 0.8861607142857143,
+      "J_U": 0.931640625
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.001953125,
+      "J_R": -0.015625,
+      "J_U": -0.0078125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.0234375,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.01953125
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4103,
+     "mixed_groups": 2,
+     "batch_reward": 0.6875,
+     "grad_norm_preclip": 0.3034735321998596,
+     "capped": 9,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/01386",
+      "omni/02008",
+      "omni/02204"
+     ],
+     "post": {
+      "J_H": 0.6171875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.9296875
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.01171875,
+      "J_R": 0.0,
+      "J_U": -0.009765625
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.013671875,
+      "J_R": 0.008928571428571397,
+      "J_U": -0.021484375
+     }
+    },
+    {
+     "branch": "hard",
+     "seed": 4104,
+     "mixed_groups": 1,
+     "batch_reward": 0.4375,
+     "grad_norm_preclip": 0.24170973896980286,
+     "capped": 15,
+     "prompt_ids": [
+      "algebra/train/01269",
+      "intermediate_algebra/train/01234",
+      "omni/00984",
+      "omni/02008"
+     ],
+     "post": {
+      "J_H": 0.6015625,
+      "J_R": 0.8861607142857143,
+      "J_U": 0.927734375
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": -0.00390625,
+      "J_R": -0.015625,
+      "J_U": -0.01171875
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.029296875,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.0234375
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4101,
+     "mixed_groups": 0,
+     "batch_reward": 1.0,
+     "grad_norm_preclip": 0.0,
+     "capped": 0,
+     "prompt_ids": [
+      "algebra/train/01661",
+      "syn-R4-096",
+      "syn-R5-044",
+      "intermediate_algebra/train/01013"
+     ],
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.005859375,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.0078125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01953125,
+      "J_R": 0.0022321428571427937,
+      "J_U": -0.01953125
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4102,
+     "mixed_groups": 0,
+     "batch_reward": 1.0,
+     "grad_norm_preclip": 0.0,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-R1-017",
+      "syn-R4-098",
+      "syn-R4-072",
+      "intermediate_algebra/train/00145"
+     ],
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.005859375,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.0078125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01953125,
+      "J_R": 0.0022321428571427937,
+      "J_U": -0.01953125
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4103,
+     "mixed_groups": 2,
+     "batch_reward": 0.625,
+     "grad_norm_preclip": 0.5011168122291565,
+     "capped": 10,
+     "prompt_ids": [
+      "syn-R5-026",
+      "syn-R5-046",
+      "syn-R3-034",
+      "syn-R2-071"
+     ],
+     "post": {
+      "J_H": 0.62109375,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.9296875
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.015625,
+      "J_R": 0.0,
+      "J_U": -0.009765625
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.009765625,
+      "J_R": 0.008928571428571397,
+      "J_U": -0.021484375
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4104,
+     "mixed_groups": 1,
+     "batch_reward": 0.96875,
+     "grad_norm_preclip": 0.19832338392734528,
+     "capped": 1,
+     "prompt_ids": [
+      "syn-R5-063",
+      "syn-R4-074",
+      "syn-R5-042",
+      "syn-R5-078"
+     ],
+     "post": {
+      "J_H": 0.619140625,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.916015625
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.013671875,
+      "J_R": -0.008928571428571397,
+      "J_U": -0.0234375
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01171875,
+      "J_R": 0.0,
+      "J_U": -0.03515625
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4101,
+     "mixed_groups": 1,
+     "batch_reward": 0.96875,
+     "grad_norm_preclip": 0.4725768268108368,
+     "capped": 0,
+     "prompt_ids": [
+      "number_theory/train/00107",
+      "syn-U3-081",
+      "syn-U2-036",
+      "number_theory/train/00149"
+     ],
+     "post": {
+      "J_H": 0.599609375,
+      "J_R": 0.8973214285714286,
+      "J_U": 0.939453125
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": -0.005859375,
+      "J_R": -0.004464285714285698,
+      "J_U": 0.0
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.03125,
+      "J_R": 0.004464285714285698,
+      "J_U": -0.01171875
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4102,
+     "mixed_groups": 2,
+     "batch_reward": 0.90625,
+     "grad_norm_preclip": 0.7593207359313965,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U2-098",
+      "syn-U3-094",
+      "syn-U3-048",
+      "number_theory/train/00014"
+     ],
+     "post": {
+      "J_H": 0.6328125,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.9296875
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.02734375,
+      "J_R": -0.008928571428571397,
+      "J_U": -0.009765625
+     },
+     "change_post_minus_rerun": {
+      "J_H": 0.001953125,
+      "J_R": 0.0,
+      "J_U": -0.021484375
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4103,
+     "mixed_groups": 0,
+     "batch_reward": 1.0,
+     "grad_norm_preclip": 0.0,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U3-078",
+      "syn-U3-097",
+      "syn-U3-088",
+      "syn-U3-017"
+     ],
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": 0.005859375,
+      "J_R": -0.006696428571428603,
+      "J_U": -0.0078125
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.01953125,
+      "J_R": 0.0022321428571427937,
+      "J_U": -0.01953125
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4104,
+     "mixed_groups": 2,
+     "batch_reward": 0.90625,
+     "grad_norm_preclip": 0.589073896408081,
+     "capped": 0,
+     "prompt_ids": [
+      "syn-U2-008",
+      "syn-U1-063",
+      "syn-U3-063",
+      "syn-U1-052"
+     ],
+     "post": {
+      "J_H": 0.591796875,
+      "J_R": 0.8839285714285714,
+      "J_U": 0.939453125
+     },
+     "pre_original": {
+      "J_H": 0.60546875,
+      "J_R": 0.9017857142857143,
+      "J_U": 0.939453125
+     },
+     "pre_rerun": {
+      "J_H": 0.630859375,
+      "J_R": 0.8928571428571429,
+      "J_U": 0.951171875
+     },
+     "change_post_minus_original": {
+      "J_H": -0.013671875,
+      "J_R": -0.017857142857142905,
+      "J_U": 0.0
+     },
+     "change_post_minus_rerun": {
+      "J_H": -0.0390625,
+      "J_R": -0.008928571428571508,
+      "J_U": -0.01171875
+     }
+    }
+   ],
+   "comparisons": {
+    "unrelated_vs_related": {
+     "seeds": [
+      4101,
+      4102,
+      4103,
+      4104
+     ],
+     "per_seed": [
+      {
+       "seed": 4101,
+       "J_H": {
+        "unrelated": 0.599609375,
+        "related": 0.611328125,
+        "unrelated_minus_related": -0.01171875
+       },
+       "J_R": {
+        "unrelated": 0.8973214285714286,
+        "related": 0.8950892857142857,
+        "unrelated_minus_related": 0.0022321428571429047
+       },
+       "J_U": {
+        "unrelated": 0.939453125,
+        "related": 0.931640625,
+        "unrelated_minus_related": 0.0078125
+       }
+      },
+      {
+       "seed": 4102,
+       "J_H": {
+        "unrelated": 0.6328125,
+        "related": 0.611328125,
+        "unrelated_minus_related": 0.021484375
+       },
+       "J_R": {
+        "unrelated": 0.8928571428571429,
+        "related": 0.8950892857142857,
+        "unrelated_minus_related": -0.0022321428571427937
+       },
+       "J_U": {
+        "unrelated": 0.9296875,
+        "related": 0.931640625,
+        "unrelated_minus_related": -0.001953125
+       }
+      },
+      {
+       "seed": 4103,
+       "J_H": {
+        "unrelated": 0.611328125,
+        "related": 0.62109375,
+        "unrelated_minus_related": -0.009765625
+       },
+       "J_R": {
+        "unrelated": 0.8950892857142857,
+        "related": 0.9017857142857143,
+        "unrelated_minus_related": -0.006696428571428603
+       },
+       "J_U": {
+        "unrelated": 0.931640625,
+        "related": 0.9296875,
+        "unrelated_minus_related": 0.001953125
+       }
+      },
+      {
+       "seed": 4104,
+       "J_H": {
+        "unrelated": 0.591796875,
+        "related": 0.619140625,
+        "unrelated_minus_related": -0.02734375
+       },
+       "J_R": {
+        "unrelated": 0.8839285714285714,
+        "related": 0.8928571428571429,
+        "unrelated_minus_related": -0.008928571428571508
+       },
+       "J_U": {
+        "unrelated": 0.939453125,
+        "related": 0.916015625,
+        "unrelated_minus_related": 0.0234375
+       }
+      }
+     ],
+     "over_seeds": {
+      "J_H": {
+       "mean_unrelated": 0.60888671875,
+       "mean_related": 0.61572265625,
+       "mean_unrelated_minus_mean_related": -0.0068359375
+      },
+      "J_R": {
+       "mean_unrelated": 0.8922991071428572,
+       "mean_related": 0.8962053571428571,
+       "mean_unrelated_minus_mean_related": -0.003906249999999889
+      },
+      "J_U": {
+       "mean_unrelated": 0.93505859375,
+       "mean_related": 0.92724609375,
+       "mean_unrelated_minus_mean_related": 0.0078125
+      }
+     },
+     "note": "post values only; both share the same no-update reference, so it cancels"
+    },
+    "unrelated_vs_hard": {
+     "seeds": [
+      4101,
+      4102,
+      4103,
+      4104
+     ],
+     "per_seed": [
+      {
+       "seed": 4101,
+       "J_H": {
+        "unrelated": 0.599609375,
+        "hard": 0.599609375,
+        "unrelated_minus_hard": 0.0
+       },
+       "J_R": {
+        "unrelated": 0.8973214285714286,
+        "hard": 0.8861607142857143,
+        "unrelated_minus_hard": 0.011160714285714302
+       },
+       "J_U": {
+        "unrelated": 0.939453125,
+        "hard": 0.93359375,
+        "unrelated_minus_hard": 0.005859375
+       }
+      },
+      {
+       "seed": 4102,
+       "J_H": {
+        "unrelated": 0.6328125,
+        "hard": 0.607421875,
+        "unrelated_minus_hard": 0.025390625
+       },
+       "J_R": {
+        "unrelated": 0.8928571428571429,
+        "hard": 0.8861607142857143,
+        "unrelated_minus_hard": 0.006696428571428603
+       },
+       "J_U": {
+        "unrelated": 0.9296875,
+        "hard": 0.931640625,
+        "unrelated_minus_hard": -0.001953125
+       }
+      },
+      {
+       "seed": 4103,
+       "J_H": {
+        "unrelated": 0.611328125,
+        "hard": 0.6171875,
+        "unrelated_minus_hard": -0.005859375
+       },
+       "J_R": {
+        "unrelated": 0.8950892857142857,
+        "hard": 0.9017857142857143,
+        "unrelated_minus_hard": -0.006696428571428603
+       },
+       "J_U": {
+        "unrelated": 0.931640625,
+        "hard": 0.9296875,
+        "unrelated_minus_hard": 0.001953125
+       }
+      },
+      {
+       "seed": 4104,
+       "J_H": {
+        "unrelated": 0.591796875,
+        "hard": 0.6015625,
+        "unrelated_minus_hard": -0.009765625
+       },
+       "J_R": {
+        "unrelated": 0.8839285714285714,
+        "hard": 0.8861607142857143,
+        "unrelated_minus_hard": -0.0022321428571429047
+       },
+       "J_U": {
+        "unrelated": 0.939453125,
+        "hard": 0.927734375,
+        "unrelated_minus_hard": 0.01171875
+       }
+      }
+     ],
+     "over_seeds": {
+      "J_H": {
+       "mean_unrelated": 0.60888671875,
+       "mean_hard": 0.6064453125,
+       "mean_unrelated_minus_mean_hard": 0.00244140625
+      },
+      "J_R": {
+       "mean_unrelated": 0.8922991071428572,
+       "mean_hard": 0.8900669642857143,
+       "mean_unrelated_minus_mean_hard": 0.0022321428571429047
+      },
+      "J_U": {
+       "mean_unrelated": 0.93505859375,
+       "mean_hard": 0.9306640625,
+       "mean_unrelated_minus_mean_hard": 0.00439453125
+      }
+     },
+     "note": "post values only; both share the same no-update reference, so it cancels"
+    }
+   },
+   "spread_post_within_branch": {
+    "hard": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.599609375,
+       0.607421875,
+       0.6171875,
+       0.6015625
+      ],
+      "min": 0.599609375,
+      "max": 0.6171875,
+      "range": 0.017578125,
+      "sd": 0.007893460711576915
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.8861607142857143,
+       0.8861607142857143,
+       0.9017857142857143,
+       0.8861607142857143
+      ],
+      "min": 0.8861607142857143,
+      "max": 0.9017857142857143,
+      "range": 0.015625,
+      "sd": 0.0078125
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.93359375,
+       0.931640625,
+       0.9296875,
+       0.927734375
+      ],
+      "min": 0.927734375,
+      "max": 0.93359375,
+      "range": 0.005859375,
+      "sd": 0.0025214735326871203
+     }
+    },
+    "related": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.611328125,
+       0.611328125,
+       0.62109375,
+       0.619140625
+      ],
+      "min": 0.611328125,
+      "max": 0.62109375,
+      "range": 0.009765625,
+      "sd": 0.005136632108743327
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.8950892857142857,
+       0.8950892857142857,
+       0.9017857142857143,
+       0.8928571428571429
+      ],
+      "min": 0.8928571428571429,
+      "max": 0.9017857142857143,
+      "range": 0.008928571428571397,
+      "sd": 0.0038661848383233837
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.931640625,
+       0.931640625,
+       0.9296875,
+       0.916015625
+      ],
+      "min": 0.916015625,
+      "max": 0.931640625,
+      "range": 0.015625,
+      "sd": 0.007543379053552388
+     }
+    },
+    "unrelated": {
+     "J_H": {
+      "n": 4,
+      "values": [
+       0.599609375,
+       0.6328125,
+       0.611328125,
+       0.591796875
+      ],
+      "min": 0.591796875,
+      "max": 0.6328125,
+      "range": 0.041015625,
+      "sd": 0.017856234572789682
+     },
+     "J_R": {
+      "n": 4,
+      "values": [
+       0.8973214285714286,
+       0.8928571428571429,
+       0.8950892857142857,
+       0.8839285714285714
+      ],
+      "min": 0.8839285714285714,
+      "max": 0.8973214285714286,
+      "range": 0.013392857142857206,
+      "sd": 0.005870436695706683
+     },
+     "J_U": {
+      "n": 4,
+      "values": [
+       0.939453125,
+       0.9296875,
+       0.931640625,
+       0.939453125
+      ],
+      "min": 0.9296875,
+      "max": 0.939453125,
+      "range": 0.009765625,
+      "sd": 0.005136632108743327
+     }
+    }
+   },
+   "spread_no_update_rows": {
+    "J_H": {
+     "n": 3,
+     "values": [
+      0.60546875,
+      0.630859375,
+      0.630859375
+     ],
+     "min": 0.60546875,
+     "max": 0.630859375,
+     "range": 0.025390625,
+     "sd": 0.014659284178642842
+    },
+    "J_R": {
+     "n": 3,
+     "values": [
+      0.9017857142857143,
+      0.8928571428571429,
+      0.8928571428571429
+     ],
+     "min": 0.8928571428571429,
+     "max": 0.9017857142857143,
+     "range": 0.008928571428571397,
+     "sd": 0.0051549131177644975
+    },
+    "J_U": {
+     "n": 3,
+     "values": [
+      0.939453125,
+      0.951171875,
+      0.951171875
+     ],
+     "min": 0.939453125,
+     "max": 0.951171875,
+     "range": 0.01171875,
+     "sd": 0.0067658234670659265
+    }
+   },
+   "mixed_groups_per_draw": {
+    "hard": {
+     "4101": 2,
+     "4102": 3,
+     "4103": 2,
+     "4104": 1
+    },
+    "related": {
+     "4101": 0,
+     "4102": 0,
+     "4103": 2,
+     "4104": 1
+    },
+    "unrelated": {
+     "4101": 1,
+     "4102": 2,
+     "4103": 0,
+     "4104": 2
+    }
+   },
+   "zero_mixed_draws": [
+    {
+     "branch": "related",
+     "seed": 4101,
+     "grad_norm_preclip": 0.0,
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     }
+    },
+    {
+     "branch": "related",
+     "seed": 4102,
+     "grad_norm_preclip": 0.0,
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     }
+    },
+    {
+     "branch": "unrelated",
+     "seed": 4103,
+     "grad_norm_preclip": 0.0,
+     "post": {
+      "J_H": 0.611328125,
+      "J_R": 0.8950892857142857,
+      "J_U": 0.931640625
+     }
+    }
+   ],
+   "zero_mixed_draws_identical_per_problem_counts": true
+  }
+ },
+ "inputs": {
+  "diag": [
+   "/data/user_data/vineethb/qis/diag-local/r0/diag_r0.jsonl",
+   "/data/user_data/vineethb/qis/diag-local/r64/diag_r64.jsonl"
+  ],
+  "diag_ref": [
+   "research/evidence/a15/diag_r0_ref.jsonl",
+   "research/evidence/a15/diag_r64_ref.jsonl"
+  ],
+  "missing": []
+ },
+ "zero_variation": {
+  "statement": "A minibatch whose 4 groups all have equal rewards still takes an AdamW step. Every advantage is 0 (grpo.py:22-23), so every gradient is exactly 0 (recorded grad_norm_preclip 0.0), but diag_local.one_update calls learner.step() unconditionally (diag_local.py:90-93) and torch AdamW (learner.py:50, betas 0.9/0.999, weight_decay 0) moves the weights by lr * m_hat / (sqrt(v_hat) + eps) from its stored moments. From a saved optimizer state (r64) this is a non-zero 'momentum-only' step. From a fresh optimizer (r0, zero moments) the same step would leave the weights unchanged. The training loop does the same (run.py:310-319: learner.step() for every minibatch).",
+  "source_check": {
+   "one_update_calls_learner_step": true,
+   "guard_on_reward_variation_before_step": false,
+   "learner_uses_torch_AdamW": true,
+   "weight_decay_0": true
+  },
+  "recorded_zero_mixed_draws": 3,
+  "recorded_draws": 24
+ },
+ "u101_r64": "The U-s101 round-64 checkpoint (model and optimizer state) was not retained, so no local-update diagnostic from U-s101 exists (REPORT.md section 3).",
+ "definitions": {
+  "pre": "no-update evaluation of the source (diag 'none' row = original; ref 'none_rerun' = fresh process; 'none_cycled' = after the save-restore-reload cycle)",
+  "post": "evaluation after one GRPO/AdamW step on 4 prompts x 8 answers",
+  "J": "pass@1 at 16 samples per problem (diag_local.py:50) on probe_J_H / probe_J_R / probe_J_U",
+  "mixed_groups": "groups of the minibatch with 0 < correct < 8 (diag_local.py:94)"
+ }
+}
