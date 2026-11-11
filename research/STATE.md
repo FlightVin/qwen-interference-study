@@ -34,26 +34,26 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | 3:42 PM [20:42Z] | H-s202 round 128 done; round-128 dev eval (≈ 1 h), then verified save, then RUN_COMPLETE | done |
 | 4:45 PM [21:45Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| ≈ 5:40–5:55 PM [22:40–22:55Z] | H-s202 round-128 sealed test (6 shards running since 21:50–22:00Z) | forecast; before the deadline |
+| 5:58 PM [22:58Z] | H-s202 round-128 sealed test merged: 72.4% pass@1; seed-202 R − H +2.4, U − H +6.8 | done |
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (22:00Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
+## Work and GPUs (23:08Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1–6 | 11119210, 11119212 (L40S); 11120634, 11120590, 11120591, 11120595 (48 GB, D159) | endpoint shards k0–k5 (all running by 22:00Z) |
-| running | general 7–8 | 11120596, 11120598 | stress shards k0, k1 (48 GB) |
-| blocked (guard: 8 of 8 in use) | — | — | stress shard k2: submit when the first endpoint shard ends (≈ 22:35Z) |
-| running | CPU | 11112647 | CPU standby (final analysis stages) |
-| done | — | 11112377 | H-s202 training, RUN_COMPLETE 21:45:07Z |
-Unused: none.
+| running | general 1 | 11121110 | stress shard k2 (last job; merge on completion) |
+| running | CPU | 11112647 | CPU standby (final analyses, cost run) |
+| done | — | 11119210, 11119212, 11120634, 11120590, 11120591, 11120595 | H-s202 endpoint merged 22:58Z: 72.4% pass@1 (L40S × 3, A6000 × 3) |
+| done | — | 11120596, 11120598 | stress shards k0, k1 |
+Unused: general 7 of 8 — nothing left to run except the last stress shard.
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
 practice (U) or more hard practice (H)? Primary contrast: seed-wise R − U pass@1 on the sealed test.
 
 ## Established (sealed test pass@1; 95% paired problem bootstrap)
-- Original: base 0.526; s101 H 0.770, R 0.819, U 0.777; s202 R 0.748, U 0.792, H pending.
+- Original: base 0.526; s101 H 0.770, R 0.819, U 0.777; s202 H 0.724, R 0.748, U 0.792. R − H, U − H positive in
+  both seeds (means +0.036 [+0.016, +0.058], +0.038 [+0.016, +0.060]); R − U flips sign.
   R − U: s101 +0.042 [+0.021, +0.063]; s202 −0.044 [−0.072, −0.017]; mean −0.001. The sign reverses between seeds.
 - Common GPU (L40S, D151): s101 R − U 0.823 − 0.778 = +0.044 [+0.024, +0.065]; s202 −0.031 [−0.060, −0.004]. Hardware
   does not explain the reversal. Reruns moved pass@1 ≤ 1.3 points; same GPU type is not always bit-identical.
