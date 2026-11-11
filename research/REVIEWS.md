@@ -894,3 +894,16 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
    U-s101 rerun). Keep general free of new stress work from ≈ 20:30Z.
 7. **Reconciliation.** Live jobs 11112377, 11112397/98, 11112940, 11113928, 11115052, 11115377/78 and standby 11112647 are ledger
    rows. Watcher re-armed after the U-s101 stress event.
+
+## Review 96 — 2026-11-11 07:50Z (2:50 AM EST Wed)
+1. **Changes.** Preempt started all five pending jobs at ≈ 07:02–07:23Z: stress U-s202-r128 11115052, H-s101-r128 11113928,
+   R-s101-r64 11115377, H-s202-r64 11115378, and the U-s101 rerun 11112397 (restart from zero). H-s202 at round 83 (07:39Z).
+2. **Competing explanation still plausible.** Seed-202 deficit: truncation only (D142) or truncation plus an accuracy loss.
+3. **Distinguishing task.** U-s202 L40S rerun (2:04 h of ≈ 3.1–4.5 h) → a17_test --cgpu-root; stress R/U-s202 pair.
+4. **Schedule.** H-s202 rounds 80–83 averaged 871 s; rounds 66→83 took 13,810 s against 12,552 s for H-s101 (×1.10). Round 128 ≈
+   20:30Z, RUN_COMPLETE ≈ 21:30Z (range 20:45–22:15Z), six-shard test ≈ 23:15Z. Stress backlog now runs in parallel on preempt
+   (≈ 2.5 h each → ≈ 09:30–10:00Z unless preempted). Verdict: on time; H-s202 test slack ≈ 1.25 h.
+5. **GPUs.** General 3/3. Preempt 5 running + 0 pending = 5/6. Within limits.
+6. **Most important.** Write the stress-panel analysis (per tier × checkpoint: pass@1, pass@8, truncation, solved-at-8, coverage
+   against base, paired R − U intervals) so results drop into the report as cells finish.
+7. **Reconciliation.** All live job IDs are ledger rows; standby 11112647. Watcher alive (pid 82847).
