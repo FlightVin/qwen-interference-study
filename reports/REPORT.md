@@ -332,7 +332,9 @@ describe the sample; they cannot rank the arms.
 One grader limitation was confirmed. On `math:precalculus/train/00152` (gold `2,4`), a response that puts 2 and 4 in
 separate boxes is extracted as `4` and scored wrong. That affects at most 7 of 1,768 attempts in any stress cell (≤ 0.4
 points of pass@1) and at most 3 attempts between R and U in either seed (≤ 0.2 points). Scores are left as graded
-(frozen verifier). The two "0, 1" answers on `math:algebra/test/00352` list the integers instead of their count (gold 2):
+(frozen verifier). The same pattern barely touches the sealed test: a scan of the 8 sealed items with several gold
+values found 9 finished attempts scored wrong whose separate boxes match the gold, at most 3 of 4,096 in any cell
+(≤ 0.07 points; H-s101 3, R-s101 2, base 3, R-s101 common-GPU 1; `research/evidence/a17/audit/twobox.py`). The two "0, 1" answers on `math:algebra/test/00352` list the integers instead of their count (gold 2):
 they are wrong answers, not grader errors. Data: `research/evidence/a17/audit/`.
 
 ## 6. Strategy cue (from the first report; separate from the interference evidence)
