@@ -517,8 +517,14 @@ continuation seeds are shared by all four checkpoints; L40S GPUs. Tranche 1 is a
 Few capped answers recover: 6–11 of 41–56 per checkpoint (13–22%). Most (51–70%) are still capped at 16,384 tokens,
 and the rest finish with a wrong answer. Extra room does not close the seed-202 gap: R and U each recover 9 answers, and
 R − U stays at −2.0 points. In seed 101, R recovers more (11 vs 6, mostly on SuperHard), so R − U widens by 2.0 points;
-the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`. ⟨PENDING: full panel (221 × 8) and
-the inspection of 12 preselected continuations.⟩
+the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`. ⟨PENDING: full panel (221 × 8).⟩
+
+What did the extra tokens do? An arm-blind reader classified 12 continuations, chosen by a hash rule before generation
+(3 capped attempts per checkpoint): 6 kept looping (re-deriving the same steps or equation systems), 3 reached a wrong
+answer, 1 finished sound reasoning correctly, and 1 found and fixed an error, wrote the correct boxed answer, and then
+hit 16,384 tokens before its final write-up (scored 0 by the frozen cap rule). One was still making progress when cut
+off. The reader judged 9 of the 12 off track before the 12,288-token cut. Loops were split evenly (R 3, U 3). Source:
+`research/evidence/a19/length/t1/inspect_read.md`.
 
 This measures inference allowance for these four checkpoints only. It does not show what training with a longer cap
 would have produced.
