@@ -16,7 +16,8 @@ Steps
 3. Families: union of candidates whose masked 3-gram Jaccard >= 0.5 or whose normalized family_hint is identical.
 4. Order within tier by sha256("stress-v1:" + tier + ":" + id). SuperHard is filled first (scarcer tier); a family
    used in SuperHard is closed to Harder. Accept in order with <= 2 items per family and no source above 64 items
-   while another source still has unused eligible items; stop at 128.
+   while another source still has unused eligible items; two items with Jaccard >= 0.8 are one problem (one
+   enters); stop at 128.
 Outputs (OUT_DIR): superhard_v1.json, harder_v1.json ({"pools": {"superhard"|"harder": [...]}}), stress_v1.json (both
 tiers in pool "stress", the evaluation file), selection_report.json (counts, exclusions by reason, composition, family
 and gold-form checks, SHA-256 of every output).
@@ -32,7 +33,7 @@ from collections import Counter, defaultdict
 
 from qis.verify import Verifier, gold_eligible
 
-TARGET, JACC, SRC_CAP, FAM_CAP = 128, 0.5, 64, 2
+TARGET, JACC, SRC_CAP, FAM_CAP, DUP = 128, 0.5, 64, 2, 0.8
 WORD = re.compile(r"[a-z]+|\d+(?:\.\d+)?|[^\sa-z\d]")
 
 
@@ -182,6 +183,9 @@ def main():
                 break
             if fam[e["family_id"]] >= FAM_CAP:
                 continue
+            if any(a["family_id"] == e["family_id"] and jacc(a["grams"], e["grams"]) >= DUP for a in acc):
+                rep["excluded"]["same problem as an accepted item (Jaccard >= 0.8)"] += 1
+                continue
             others_left = any(v > 0 for s, v in remaining.items() if s != e["source_collection"])
             if src[e["source_collection"]] >= SRC_CAP and others_left:
                 continue
@@ -194,7 +198,8 @@ def main():
             for e in pool:
                 if len(acc) >= TARGET:
                     break
-                if e["id"] not in taken and fam[e["family_id"]] < FAM_CAP:
+                if e["id"] not in taken and fam[e["family_id"]] < FAM_CAP and not any(
+                        a["family_id"] == e["family_id"] and jacc(a["grams"], e["grams"]) >= DUP for a in acc):
                     acc.append(e)
                     fam[e["family_id"]] += 1
                     rep.setdefault("source_cap_relaxed", Counter())[tier] += 1
