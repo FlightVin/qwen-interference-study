@@ -218,6 +218,12 @@ graded by a frozen verifier.
 
 The base model scored 52.6% pass@1 and 83.5% pass@8.
 
+**H-s202 at round 116 (incomplete run; not an endpoint).** H-s202 was still training at the D150 decision time, so its
+latest saved checkpoint, round 116, was tested on the same sealed recipe (128 problems × 32 attempts, L40S, six shards
+merged; model.pt `7b9ff3a4…`). It scored 74.3% pass@1 and 92.8% pass@8, with 14.8% of answers capped. This value
+stays outside the table above: a run stopped 12 rounds early is not comparable with the 128-round R and U endpoints.
+⟨PENDING: H-s202 round-128 endpoint replaces the H cells above.⟩
+
 **Reproducibility check: one GPU type.** The original evaluations did not share hardware. In both seeds, R ran on an
 L40 GPU and U on an L40S (`sacct` node lists, D141). The common recipe uses L40S for every cell, unchanged code and the
 original per-item sampling seeds. It was frozen in D141 before any rerun score. Because the seeds are the same, a U
@@ -517,6 +523,7 @@ checkpoint, with tranche 1 (section 5.4) included.
 | U-s101 | 65.3% | 68.2% | 406 | 51 (12.6%) | 64 | 291 (71.7%) | 28,075 |
 | R-s202 | 63.2% | 66.0% | 407 | 50 (12.3%) | 96 | 261 (64.1%) | 27,437 |
 | U-s202 | 65.8% | 68.2% | 268 | 41 (15.3%) | 81 | 146 (54.5%) | 19,914 |
+| H-s101 | 64.1% | 67.3% | 313 | 55 (17.6%) | 126 | 132 (42.2%) | 15,933 |
 
 | Seed | Tier | R − U at 12,288 | R − U at 16,384 | Change |
 |---|---|---|---|---|
@@ -532,7 +539,13 @@ R − U moves by at most 0.5 points overall in either seed (1.6 points on seed-2
 answers to recover). Only 12–15% of capped answers recover; 55–72% are still capped at 16,384 tokens. R-s202 hits the
 cap far more than U-s202 (407 vs 268 attempts), but its capped answers are no more recoverable (12.3% vs 15.3%). The
 full panel also removes the one hint from tranche 1: the seed-101 widening seen there (+2.0) was sampling noise, and on
-the full panel the change is −0.1. Source: `research/evidence/a19/length/full/length.md`.
+the full panel the change is −0.1.
+
+The H-s101 control (added under D157) behaves the same way. It gains 3.2 points (64.1% → 67.3%); its capped answers
+more often finish with a wrong answer (126 of 313) than stay capped (132). Seed-101 R − H moves from 69.5 − 64.1 =
++5.4 [+2.5, +8.3] to 72.3 − 67.3 = +5.0 [+2.3, +7.8] (change −0.3 [−1.5, +0.8]); U − H from 65.3 − 64.1 = +1.2
+[−1.5, +3.9] to 68.2 − 67.3 = +1.0 [−1.8, +3.7] (change −0.2 [−1.4, +0.9]). R's lead over H in seed 101 is not a budget
+effect either. Source: `research/evidence/a19/length/full/length.md`.
 
 ### 5.4 Tranche 1
 
