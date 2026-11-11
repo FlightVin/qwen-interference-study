@@ -1102,3 +1102,25 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 5. **GPUs.** General 8/8 (A20): H-s202, 3 stress full panels, 4 sealed-test continuations. Preempt 0/6 until the fallback.
 6. **Most important.** Fallback at 18:00Z; then Q2/Q4 from the full-panel and sealed-test continuations.
 7. **Reconciliation.** All 8 general jobs and standby 11112647 are ours (ledger / standby). Watcher alive (bfx1obf8f).
+
+## Review 107 — 2026-11-11 18:50Z (1:50 PM EST Wed)
+1. **Changes.**
+   - H-s202 11112377: round 120 at 18:31Z (LATEST = 120), round 121 at 18:46Z; rounds 117→121 ×0.75 of H-s101.
+   - D150 fallback applied 18:00Z (projection 22:26Z > 22:15Z): copy of round 116 verified (11118844); shards k0–k4
+     running on general, k5 queued on preempt.
+   - Length diagnostic, full stress panel (all four): R − U at 12,288 → 16,384: s101 +4.2 → +4.1 (−0.1 [−1.1, +1.0]),
+     s202 −2.7 → −2.1 (+0.5 [−0.5, +1.5]); 12–15% of capped answers recover. Tranche-1 s101 widening was noise.
+   - Sealed-test continuation (D155): U-s202 79.2% → 80.8% (333 capped, 66 recovered); U-s101 77.7% → 80.6% (501 capped,
+     118 recovered). R-s101, R-s202 running.
+   - REPORT: Q2 and Q4 drafted; What we learned 6 aligned; figures verified: stress_panels, truncation, learning_curves.
+2. **Competing explanation still plausible.** Run-to-run path dependence against an arm effect. Ruled out for the stress
+   panels: "R's deficit is a budget artefact" (R − U unchanged at 16,384).
+3. **Distinguishing task.** Sealed-test R continuations (≈ 19:15Z): if R-s202 − U-s202 stays ≈ −4 points at 16,384,
+   the same holds on the primary panel. Arm vs path dependence needs more seeds (out of scope).
+4. **Schedule.** Round 128 ≈ 20:10Z (×0.75) to 21:10Z (×1.3); RUN_COMPLETE ≈ 21:10Z–22:10Z; six-shard endpoint ≈
+   22:10Z–23:10Z on 3 general (+ preempt); stress r128 after it, ≈ 23:00Z–00:15Z, may miss. Fallback done ≈ 19:45Z.
+   Report: on time.
+5. **GPUs.** General 8/8 until 21:00Z (A20): H-s202, fallback k0–k4, lentest R-s101, R-s202. Preempt 1/6 queued (k5).
+6. **Most important.** After the fallback ends (≈ 19:45Z) and before 21:00Z: pre-submit endpoint shards k0, k1 (general)
+   and k2–k5 (preempt) `--after qis-main-H-s202-sym`, so they start at RUN_COMPLETE without delay (general then 3/3).
+7. **Reconciliation.** All live jobs are ledger rows or our standby. Watcher alive (b0s1gjotk).
