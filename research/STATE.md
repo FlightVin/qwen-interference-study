@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the study stands now. Scientific authority; the harness `state/STATE.md` only points here.
-Updated 2026-11-11 16:13Z (12:13 PM EST Wed; A19 received ~16:03Z). Timeline and GPU tables per A18 (`project.md` §32).
+Updated 2026-11-11 17:37Z (12:37 PM EST Wed; A19 ~16:03Z; A20 ~17:15Z: 8 general GPUs until 21:00Z). Timeline and GPU tables per A18 (`project.md` §32).
 
 ## Phase
 A17 completion plus A19 (`project.md` §31, §33; D154). Deadline: verified `reports/REPORT.md` by **Thu 12 Nov 00:30Z =
@@ -22,7 +22,9 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 12:02 PM [17:02Z] | Tranche 1 done for all four: recovered 6–11 of 41–56 capped; R − U at 12,288 → 16,384: s101 +3.9 → +5.9, s202 −2.0 → −2.0 | done |
 | ≈ 11:35 AM–12:45 PM [16:35–17:45Z] | H-s202 round 112: checkpoint save + dev evaluation | expected |
 | 1:00 PM [18:00Z] | D150 fallback: copy LATEST (112 or 116) on CPU + 6 shards on preempt; move shards to general as length jobs end | planned |
-| ≈ 2:00 PM [19:00Z] | Length diagnostic, all four checkpoints, tranche 1 + full panel | forecast |
+| ≈ 1:15 PM [18:15Z] | Stress full panels done (all four) | forecast |
+| ≈ 2:30 PM [19:30Z] | Sealed-test continuation done (four checkpoints, D155) | forecast |
+| 4:00 PM [21:00Z] | A20 ends: general back to 3 | fixed |
 | ≈ 3:00–4:15 PM [20:00–21:15Z] | Fallback test done | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | 4:30–5:30 PM [21:30–22:30Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
@@ -30,17 +32,18 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 6:30–7:30 PM [23:30–00:30Z] | H-s202 round-128 sealed test; then stress r128 | forecast; likely after deadline |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (17:10Z; limits 3 general + 6 preempt GPUs, 30 CPUs)
+## Work and GPUs (17:37Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 115) |
-| running | general 2 | 11118248 | `qis-len-U-s101` full panel (t1 done) |
-| queued (waiting for an L40S) | general 3 | 11118444 | `qis-len-R-s202` full panel (moved from preempt 17:05Z) |
-| queued (Slurm priority) | preempt 1 | 11118448 | `qis-len-R-s101` full panel → move to general when U-s101 ends |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 116) |
+| running | general 2 | 11118248 | `qis-len-U-s101` stress full panel |
+| running | general 3 | 11118444 | `qis-len-R-s202` stress full panel |
+| running | general 4 | 11118448 | `qis-len-R-s101` stress full panel (moved from preempt 17:30Z) |
+| queued (Slurm priority) | general 5–8 | 11118658, 11118660, 11118661, 11118662 | `qis-lentest-{R,U}-s{202,101}`: sealed-test continuation (D155) |
 | running | CPU | 11112647 | CPU standby (babel-n5-20) |
-| done | — | 11118245 | `qis-len-U-s202` full panel (17:04Z) |
-| blocked (by time) | — | — | fallback until 18:00Z (D150): copy (CPU) + 6 shards, all set to preempt (general is busy with the length full panels, which rank higher under A19); endpoint shards and stress r128 until RUN_COMPLETE |
-Unused: preempt 5 of 6 — no other ready GPU work until 18:00Z.
+| done | — | 11118245 | `qis-len-U-s202` stress full panel (17:04Z) |
+| blocked (by time) | — | — | fallback at 18:00Z (D150): copy (CPU) + 6 shards on preempt (general full); endpoint shards and stress r128 at RUN_COMPLETE |
+Unused: preempt 6 of 6 until 18:00Z (no ready GPU work before the fallback).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
