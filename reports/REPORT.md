@@ -514,7 +514,7 @@ continuation seeds are shared by all four checkpoints; L40S GPUs. Tranche 1 is a
 | 101 | 71.5 − 67.6 = +3.9 [−2.0, +10.2] | 75.8 − 69.9 = +5.9 [−0.4, +12.5] | +2.0 [−1.2, +5.1] |
 | 202 | 67.6 − 69.5 = −2.0 [−9.0, +4.3] | 71.1 − 73.0 = −2.0 [−8.6, +4.3] | 0.0 [−3.1, +3.1] |
 
-Few capped answers recover: 6–11 of 41–56 per checkpoint (11–20%). Most (51–70%) are still capped at 16,384 tokens,
+Few capped answers recover: 6–11 of 41–56 per checkpoint (13–22%). Most (51–70%) are still capped at 16,384 tokens,
 and the rest finish with a wrong answer. Extra room does not close the seed-202 gap: R and U each recover 9 answers, and
 R − U stays at −2.0 points. In seed 101, R recovers more (11 vs 6, mostly on SuperHard), so R − U widens by 2.0 points;
 the interval includes zero. Per tier: `research/evidence/a19/length/t1/length.md`. ⟨PENDING: full panel (221 × 8) and
