@@ -32,18 +32,19 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 5:15–6:50 PM [22:15–23:50Z] | H-s202 round-128 sealed test; then stress r128 | forecast; may land before the deadline |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (17:37Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
+## Work and GPUs (18:03Z; limits: general 8 until 21:00Z then 3 (A20), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 116) |
-| running | general 2 | 11118248 | `qis-len-U-s101` stress full panel |
-| running | general 3 | 11118444 | `qis-len-R-s202` stress full panel |
-| running | general 4 | 11118448 | `qis-len-R-s101` stress full panel (moved from preempt 17:30Z) |
-| queued (Slurm priority) | general 5–8 | 11118658, 11118660, 11118661, 11118662 | `qis-lentest-{R,U}-s{202,101}`: sealed-test continuation (D155) |
+| running | general 1 | 11112377 | `qis-main-H-s202-sym` training (round ≈ 118) |
+| running | general 2 | 11118448 | `qis-len-R-s101` stress full panel (last of four) |
+| running | general 3–6 | 11118658, 11118660, 11118661, 11118662 | `qis-lentest-*` sealed-test continuation (D155) |
+| running | CPU | 11118844 | `qis-h202-fallback-copy` (round 116 → `ckpt/qis-main-H-s202-sym-fallback`) |
+| queued (dependency on the copy) | general 7–8 | 11118845, 11118846 | fallback shards k0, k1 |
+| queued (dependency on the copy) | preempt 1–4 | 11118847, 11118849, 11118850, 11118851 | fallback shards k2–k5 (move to general as slots free) |
 | running | CPU | 11112647 | CPU standby (babel-n5-20) |
-| done | — | 11118245 | `qis-len-U-s202` stress full panel (17:04Z) |
-| blocked (by time) | — | — | fallback at 18:00Z (D150): copy (CPU) + 6 shards on preempt (general full); endpoint shards and stress r128 at RUN_COMPLETE |
-Unused: preempt 6 of 6 until 18:00Z (no ready GPU work before the fallback).
+| done | — | 11118245, 11118248, 11118444 | stress full panels U-s202, U-s101, R-s202 |
+| blocked (by time) | — | — | endpoint shards and stress r128 at RUN_COMPLETE |
+Unused: preempt 2 of 6 (no other ready GPU work).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
