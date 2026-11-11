@@ -25,8 +25,8 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 1:20 PM [18:20Z] | Stress full panels done (all four); R − U unchanged at 16,384 | done |
 | 1:31 PM [18:31Z] | H-s202 round 120 saved (LATEST); round 121 at 18:46Z | done |
 | 1:24–1:47 PM [18:24–18:47Z] | Sealed-test continuation U-s202 (79.2 → 80.8%), U-s101 (77.7 → 80.6%) | done |
-| ≈ 2:15 PM [19:15Z] | Sealed-test continuation R-s101, R-s202 done | forecast |
 | 2:03 PM [19:03Z] | Endpoint shards pre-submitted `--after` training (11119210–11119217) | done |
+| 2:30 PM [19:30Z] | Sealed-test continuation done (all four R/U): R − U unchanged within 1 point | done |
 | ≈ 2:30 PM [19:30Z] | Fallback shards done; merge → "H-s202 round 116" | forecast |
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | 3:10–4:10 PM [20:10–21:10Z] | H-s202 round 128; then dev eval ≈ 1 h; save; RUN_COMPLETE seconds later | forecast |
@@ -66,8 +66,8 @@ practice (U) or more hard practice (H)? Primary contrast: seed-wise R − U pass
 
 ## Uncertain
 - Seed-level length drift against an arm effect (A9.4). Two seeds cannot separate them; no task within scope can.
-- Would capped answers succeed with more room? Full stress panel (D154): few do (12–15% of capped); R − U at 12,288 →
-  16,384: s101 +4.2 → +4.1 (−0.1 [−1.1, +1.0]); s202 −2.7 → −2.1 (+0.5 [−0.5, +1.5]). Sealed-test continuation running (D155).
+- Would capped answers succeed with more room? Few do: 16–24% of capped sealed-test answers, 12–15% on stress. R − U
+  at 12,288 → 16,384: sealed test s101 +4.2 → +3.6, s202 −4.4 → −3.9; stress +4.2 → +4.1, −2.7 → −2.1 (D154, D155).
 - When R and U diverged within a seed: no matched intermediate checkpoint pair survives; dev evals and logs only.
 - H-s202 r128 endpoint and stress cell: likely after the deadline → reported as incomplete cells.
 - Why U-s101 reran non-identically on the same GPU type (unknown; scores unaffected).
