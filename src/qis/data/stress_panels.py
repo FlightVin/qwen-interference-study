@@ -11,6 +11,7 @@ Inputs
 Steps
 1. Eligible = annotation eligible, tier harder/superhard, cue_free yes, confidence not low, gold_check agrees, and the
    gold passes `verify.gold_eligible` (parses and verifies against itself).
+   Golds with units or text (\\circ, \\text, \\mbox, \\%, $) are excluded (rubric 1.1).
 2. Exclusion against study items: exact text, normalized text, or word-3-gram Jaccard >= 0.5 with numbers masked.
 3. Families: union of candidates whose masked 3-gram Jaccard >= 0.5 or whose normalized family_hint is identical.
 4. Order within tier by sha256("stress-v1:" + tier + ":" + id). SuperHard is filled first (scarcer tier); a family
@@ -114,6 +115,9 @@ def main():
             why = "annotation: gold not confirmed"
         if why:
             rep["excluded"][why] += 1
+            continue
+        if re.search(r"\\circ|\\text|\\mbox|\\%|\$", c["gold"]):
+            rep["excluded"]["gold carries units or text (rubric 1.1)"] += 1
             continue
         g = gold_eligible(ver, c["gold"])
         if not g["eligible"]:
