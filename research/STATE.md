@@ -34,21 +34,19 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 1:00–6:00 PM [18:00–23:00Z] | Analyses (9.3d, 9.4), REPORT four questions (9.6), verification (8.8, 9.7) | planned |
 | 3:42 PM [20:42Z] | H-s202 round 128 done; round-128 dev eval (≈ 1 h), then verified save, then RUN_COMPLETE | done |
 | 4:45 PM [21:45Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
-| ≈ 5:40–5:55 PM [22:40–22:55Z] | H-s202 round-128 sealed test (shards in parallel) | forecast; before the deadline |
+| ≈ 5:40–5:55 PM [22:40–22:55Z] | H-s202 round-128 sealed test (6 shards running since 21:50–22:00Z) | forecast; before the deadline |
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
 | 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
 
-## Work and GPUs (21:58Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
+## Work and GPUs (22:00Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| done | — | 11112377 | `qis-main-H-s202-sym`: RUN_COMPLETE 21:45:07Z (round 128, opt_step 512, a2) |
-| running | general 1 | 11119210 | endpoint shard k0 (L40S) |
-| queued (Slurm priority; est. ≈ 21:52Z+) | general | 11119212, 11119213 | endpoint shards k1, k2 (L40S) |
-| queued (Slurm priority) | general | 11120590, 11120591, 11120595 | endpoint shards k3–k5 (any 48 GB GPU, D159) |
-| queued (Slurm priority) | general | 11120596, 11120598 | stress shards k0, k1 (any 48 GB GPU, D159) |
-| blocked (guard: 8 general slots in use or queued) | — | — | stress shard k2: submit when a slot frees |
+| running | general 1–6 | 11119210, 11119212 (L40S); 11120634, 11120590, 11120591, 11120595 (48 GB, D159) | endpoint shards k0–k5 (all running by 22:00Z) |
+| running | general 7–8 | 11120596, 11120598 | stress shards k0, k1 (48 GB) |
+| blocked (guard: 8 of 8 in use) | — | — | stress shard k2: submit when the first endpoint shard ends (≈ 22:35Z) |
 | running | CPU | 11112647 | CPU standby (final analysis stages) |
-Unused: none by choice; the cluster's L40S queue (95 jobs) is the bottleneck (D159).
+| done | — | 11112377 | H-s202 training, RUN_COMPLETE 21:45:07Z |
+Unused: none.
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
