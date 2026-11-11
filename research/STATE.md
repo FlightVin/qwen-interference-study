@@ -36,16 +36,16 @@ for rounds 1–32 and 12,288 after (D57, D81). Five runs complete; H-s202 is tra
 | 4:45 PM [21:45Z] | H-s202 RUN_COMPLETE → endpoint shards (pre-submitted `--after` when slots allow) | forecast |
 | 5:58 PM [22:58Z] | H-s202 round-128 sealed test merged: 72.4% pass@1; seed-202 R − H +2.4, U − H +6.8 | done |
 | ≈ 6:30 PM [23:30Z] | H-s202 stress r128 (3 shards, D156; queued 11119925–27) | forecast |
-| 7:30 PM [00:30Z] | Deadline: final cost run, final commit, deliver | fixed |
+| 6:41 PM [23:41Z] | H-s202 stress cell merged (60.1%) | done |
+| 6:48 PM [23:48Z] | Final report delivered (ca0d8cf): cost run, recomputation, manifest, clean-clone check | done |
+| 7:30 PM [00:30Z] | Deadline | met |
 
-## Work and GPUs (23:08Z; limits: general 8 until the report ends (A23), preempt 6, 30 CPUs)
+## Work and GPUs (23:48Z)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| running | general 1 | 11121110 | stress shard k2 (last job; merge on completion) |
-| running | CPU | 11112647 | CPU standby (final analyses, cost run) |
-| done | — | 11119210, 11119212, 11120634, 11120590, 11120591, 11120595 | H-s202 endpoint merged 22:58Z: 72.4% pass@1 (L40S × 3, A6000 × 3) |
-| done | — | 11120596, 11120598 | stress shards k0, k1 |
-Unused: general 7 of 8 — nothing left to run except the last stress shard.
+| running | CPU | 11112647 | CPU standby (to be cancelled after delivery) |
+| done | — | all ledger jobs | 260 jobs; 315.6 GPU-h, 2,555.5 CPU-h (final cost run 23:45Z) |
+Delivered: `reports/REPORT.md` at ca0d8cf (verified from a fresh clone of origin).
 
 ## Question
 Does practice on polynomial factorization (R) help a model solve harder problems more than matched modular-arithmetic
