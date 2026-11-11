@@ -289,7 +289,19 @@ shows reward variation; it does not give the size or direction of the update.
 | U-s202 | 1–32 / 97–128 | 28 / 212 / 16 → 8 / 119 / 129 | modular 0 / 166 / 90 → 0 / 29 / 227 |
 | H-s101 | 1–32 / 97–128 | 32 / 216 / 8 → 5 / 111 / 140 | extra hard 31 / 212 / 13 → 8 / 102 / 146 |
 
-Each cell counts 256 groups (32 rounds × 8 prompts). The practice pools became easy: after round 32, the share of
+Each cell counts 256 groups (32 rounds × 8 prompts). Running totals per run (all 16 prompts per round; mixed groups
+and generated tokens at the end of rounds 32 / 64 / 96 / 128; GPU-h of the canonical trajectory, `tables/cost.md`):
+
+| Run | Mixed groups, cumulative | Generated tokens, cumulative (M) | GPU-h |
+|---|---|---|---|
+| H-s101 | 428 / 800 / 1,076 / 1,289 | 12.8 / 31.6 / 48.6 / 68.6 | 29.5 |
+| R-s101 | 400 / 658 / 817 / 961 | 10.6 / 25.9 / 46.1 / 65.1 | 27.9 |
+| U-s101 | 390 / 625 / 788 / 930 | 9.2 / 23.0 / 40.9 / 60.0 | 22.6 |
+| R-s202 | 394 / 690 / 926 / 1,100 | 10.0 / 23.2 / 37.7 / 54.1 | 22.8 |
+| U-s202 | 378 / 627 / 799 / 947 | 9.3 / 22.3 / 37.7 / 52.8 | 25.6 |
+
+H kept producing mixed groups longest (1,289 over the run against 930–1,100 for R and U) because its extra prompts are
+hard problems, which stay at mixed success; R's and U's practice prompts stopped doing so after round 32. The practice pools became easy: after round 32, the share of
 all-correct practice groups was 62–90% for R and 74–92% for U, so most practice prompts gave no reward contrast.
 The shared hard prompts gave similar signal in R and U. Full windows, tokens, gradient norms (logged per optimizer step)
 and clip fractions (per round): `research/evidence/a17/analysis/train/signal.md`.
@@ -379,7 +391,11 @@ second read found one cross-source duplicate).
 | Harder-95 | 95 | MATH 69, Omni-MATH 15, OlympiadBench 11 | — |
 
 Fewer than 128 items qualified in each panel: the whole 2,039-item pool was annotated, and only 126 SuperHard and 99
-Harder items met the rubric and the checks. A blind second read (different agents, problem and solution only) agreed
+Harder items met the rubric and the checks at the first freeze (D143). Before any evaluation, the blind second read
+found a cross-source duplicate and a prose-form gold answer, and a fixed text normaliser caught close variants of study
+items; the re-freeze (D145) left Harder at 95. The versioned manifests are `data/stress/harder_v1.json` (sha256
+`0fb34905…`), `data/stress/superhard_v1.json` (`0cf1cf93…`) and the combined `data/stress/stress_v1.json` (`757393be…`),
+with provenance, family ID, gold, technique and (SuperHard) obstacle for every item. A blind second read (different agents, problem and solution only) agreed
 on eligibility for 207 of 219 items, on the tier for 171 of 219 (78%), and confirmed every gold answer (219/219).
 Absence from the study's sets does not show absence from pretraining data.
 
@@ -398,6 +414,45 @@ that training run ends (section 8).
 | U-s202 r128 | 65.8% | 55.6% | 79.5% | 15.2% | 77.6% | 188/221 |
 | R-s101 r64 | 64.3% | 53.5% | 78.6% | 26.1% | 87.0% | 183/221 |
 | H-s202 r64 | 62.4% | 52.1% | 76.1% | 15.1% | 73.5% | 183/221 |
+
+**Which checkpoint was measured on which panel.** ✓ = measured; ⟨pending⟩ = queued; — = not run (not required);
+✗ = not possible (weights not retained).
+
+| Checkpoint | Sealed test (original) | Sealed test (one GPU type, L40S) | Stress panels (8 attempts) | Length diagnostic, stress | Length diagnostic, sealed test | Response audit |
+|---|---|---|---|---|---|---|
+| Base | ✓ | ✓ (original ran on L40S) | ✓ | — (0.1% capped) | — (0.05% capped) | ✓ |
+| H-s101 r128 | ✓ | ✓ (original ran on L40S) | ✓ | ⟨pending⟩ | ⟨pending⟩ | ✓ |
+| R-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| U-s101 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| H-s202 r128 | ⟨pending⟩ | ⟨pending⟩ (runs on L40S) | ⟨pending⟩ | — | — | — (sample fixed before it existed) |
+| R-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| U-s202 r128 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| R-s101 r64 | — | — | ✓ | — | — | — |
+| H-s202 r64 (a2-r60) | — | — | ✓ | — | — | — |
+| H-s202 r116 (fallback) | ⟨pending⟩ | — | — | — | — | — |
+| U-s101, R-s202, U-s202 r64 | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+
+**Each tier separately** (8 attempts per problem; "solved ≥ 1 of 8" counts distinct problems, so it separates first
+successes on new problems from repeated successes on the same problem):
+
+| Checkpoint | Tier | pass@1 | Correct / attempts | Solved ≥ 1 of 8 | 0/8 | Truncated | Accuracy on finished |
+|---|---|---|---|---|---|---|---|
+| Base | Harder-95 | 52.5% | 399 / 760 | 78/95 | 17 | 0.1% | 52.6% |
+| H-s101 r128 | Harder-95 | 79.5% | 604 / 760 | 88/95 | 7 | 9.1% | 87.4% |
+| R-s101 r128 | Harder-95 | 84.2% | 640 / 760 | 90/95 | 5 | 9.9% | 93.4% |
+| U-s101 r128 | Harder-95 | 80.1% | 609 / 760 | 90/95 | 5 | 11.4% | 90.5% |
+| R-s202 r128 | Harder-95 | 76.3% | 580 / 760 | 89/95 | 6 | 13.4% | 88.1% |
+| U-s202 r128 | Harder-95 | 79.5% | 604 / 760 | 91/95 | 4 | 9.2% | 87.5% |
+| R-s101 r64 | Harder-95 | 78.6% | 597 / 760 | 89/95 | 6 | 14.6% | 92.0% |
+| H-s202 r64 | Harder-95 | 76.1% | 578 / 760 | 89/95 | 6 | 8.7% | 83.3% |
+| Base | SuperHard-126 | 25.8% | 260 / 1,008 | 74/126 | 52 | 0.0% | 25.8% |
+| H-s101 r128 | SuperHard-126 | 52.6% | 530 / 1,008 | 95/126 | 31 | 24.2% | 69.4% |
+| R-s101 r128 | SuperHard-126 | 58.4% | 589 / 1,008 | 94/126 | 32 | 28.5% | 81.7% |
+| U-s101 r128 | SuperHard-126 | 54.2% | 546 / 1,008 | 94/126 | 32 | 31.6% | 79.2% |
+| R-s202 r128 | SuperHard-126 | 53.3% | 537 / 1,008 | 91/126 | 35 | 30.3% | 76.4% |
+| U-s202 r128 | SuperHard-126 | 55.6% | 560 / 1,008 | 97/126 | 29 | 19.6% | 69.1% |
+| R-s101 r64 | SuperHard-126 | 53.5% | 539 / 1,008 | 94/126 | 32 | 34.8% | 82.0% |
+| H-s202 r64 | SuperHard-126 | 52.1% | 525 / 1,008 | 94/126 | 32 | 19.9% | 65.1% |
 
 Contrasts on all 221 problems, in points, with the same exact split into a truncation term and an accuracy term as in
 section 3.3 (95% paired bootstrap over problems, 10,000 draws):
