@@ -14,7 +14,7 @@ uses outputs that were already visible.
    wide margin: the base model scored 52.6% pass@1, and the five finished trained policies scored 74.8%–81.9%, a gain
    of +22 to +29 points. The choice of practice changed that by much less and in no consistent direction: R − U was
    +4.2 points in seed 101 (R 81.9% vs U 77.7%) and −4.4 points in seed 202 (R 74.8% vs U 79.2%); their mean is −0.1
-   points. ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
+   points. Rerunning R and U on one GPU type keeps both signs (+4.4 and −3.1 points; section 1). ⟨PENDING: H-s202 endpoint; R − H and U − H for seed 202.⟩
 2. **Which use of the eight practice slots?** The two seeds do not support a choice between factoring and modular
    practice. In seed 101, factoring practice (R) beat additional hard practice (H) by 4.9 points (R 81.9% vs H 77.0%),
    and modular practice (U) matched H (U 77.7% vs H 77.0%). ⟨PENDING: seed 202 H.⟩ Cost does not decide it either: per
