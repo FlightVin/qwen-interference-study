@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the A26 audit and report rewrite stand. Scientific authority; the harness `state/STATE.md` points here.
-Updated 2026-11-12 1:30 AM EST [06:30Z]. Owner task: A26 (`project.md` §40). Previous STATE: git 045c528.
+Updated 2026-11-12 3:00 AM EST [08:00Z]. Owner task: A26 (`project.md` §40). Previous STATE: git 045c528.
 
 ## Task
 Audit the finished QIS study (Qwen3-1.7B, full-parameter GRPO; arms H, R, U × training seeds 101, 202; all six runs
@@ -9,12 +9,8 @@ complete) and rewrite `reports/REPORT.md` so a new reader can trace every claim 
 Order (A26): definitions → audit pass A (trace) and pass B (independent) → discrepancy log → rewrite → figures and render.
 No new training. Evaluations that explain curious results (e.g. J_U rising in R and H) are allowed.
 
-## GPUs and jobs (A26 ceilings: 8 general, 6 preempt, 30 CPUs; Thu 12 Nov ~1:30 AM EST)
-| State | Pool | Job | Work |
-|---|---|---|---|
-| running | general ×≤5 | 11122955, 11122982, 11122986, 11122988, 11122990 | `qis-a26-replay-*`: restore-and-step replays |
-| running | CPU ×3 | 11122432, 11122600, 11122601 | `qis-dbg-cpu` standbys for audit reads |
-| done | general | 11122477–81, 11122684, 11122732–39 | checkpoint integrity (11 dirs pass); control panel (7 policies) |
+## GPUs and jobs (Thu 12 Nov ~3:00 AM EST)
+No project jobs running; GPUs in use: 0. A26 used 19 ledger jobs (5.20 GPU-h, 41.65 CPU-h) and 3 CPU standbys.
 
 ## Results under audit (from report v2; claims until pass A and pass B verify them)
 Sealed test pass@1 (128 problems × 32 attempts): base 52.6%; s101 H 77.0, R 81.9, U 77.7; s202 H 72.4, R 74.8, U 79.2.
@@ -56,7 +52,6 @@ DEFINITIONS v1 (26cd48b) → v1.1 (2d43d2e); pass A and pass B (db8c2ed); compar
 D162); control panel: probe rise is general improvement, +21 to +28 points on untrained subjects (D163); figures F1–F12 and
 tables t01–t09, value check 0 mismatches (8bd3f33).
 
-## Next actions
-1. Render inspection (agent) → apply figure fixes → rebuild → re-render until all pass.
-2. Handoff: defects that changed numbers, interpretation, and what could not be verified.
-Report v3 committed 5b211c7; checkpoints all pass (6282ba0).
+## Status
+A26 delivered: report v3 `reports/REPORT.md` (5b211c7, figures 1e75db1); DEFINITIONS v1.1; pass A, pass B, comparison,
+discrepancy log (38 rows), D162/D163; v2 archived. Waiting for the owner.

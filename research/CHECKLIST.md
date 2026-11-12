@@ -73,7 +73,10 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
   scripted self-check; orchestrator review against A26 §4–§5 next.
 - 6.1 Task → data and measurements → questions → procedure → results → interpretation → appendices.
 
-## 7. Figures and render (A26 §6)                                                      [7.1 done 8bd3f33; 7.2 active]
+## 7. Figures and render (A26 §6)                                                      [done 1e75db1]
+- 7.3 Render 1 (5b211c7): all pass at 1024 px; 420 px text 7.5–8 px → redesign (6 in, 13 pt, stacked, f07 split,
+  page-order numbering). Render 2 (clean clone 1e75db1): 14/14 pass at 1024 and 420 px (text 10.4–12.2 px at 420),
+  47/47 value spot checks, cross-references correct (`reports/figures/v3/render-inspection.md`).
 - 7.2 Agent render: clean clone → GitHub markdown API → headless Chrome at 1024 px and 420 px per figure →
   `reports/figures/v3/render-inspection.md`; fixes then rebuild and re-render.
 - 7.0 Agent figures: `reports/build/build_v3.py` → `reports/tables/v3/`, `reports/figures/v3/` (F1–F12), captions,
@@ -81,5 +84,6 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 7.1 Regenerate from verified tables; consistent H/R/U colours, seed line styles.
 - 7.2 Render from a clean checkout; inspect every figure at display width and at a narrow viewport.
 
-## 8. Delivery                                                                         [pending]
+## 8. Delivery                                                                         [done]
+- Handoff sent 2026-11-12. Standbys cancelled; compute worktree of a-code removed.
 - 8.1 Report, figures, tables, definitions, inventories, both audit records, discrepancy log; short handoff.
