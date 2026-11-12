@@ -646,8 +646,6 @@ def contrast_rows(ax, rows, xkey, cikey, ytick_labels=True, color=INK, offset=0.
         y += 0.6
     if ytick_labels:
         ax.set_yticks(ys, labels)
-    else:
-        ax.set_yticks(ys, [""] * len(ys))
     ax.axvline(0, color=MUTED, lw=1, zorder=1)
     return ys
 
@@ -679,6 +677,10 @@ def _curve_axes(plt, t03, fdir, name, xkey, xlabel, title, panel="dev", ylabel=N
                         mec=COLOR[a], mew=1.6, ls="none", zorder=3)
         if xkey == "round":
             ax.axvline(32, color=MUTED, lw=1, ls=":", zorder=1)
+            ax.text(31, 0.97, "cap\n8,192", transform=ax.get_xaxis_transform(), ha="right", va="top",
+                    fontsize=10, color=MUTED)
+            ax.text(34, 0.97, "cap 12,288", transform=ax.get_xaxis_transform(), ha="left", va="top",
+                    fontsize=10, color=MUTED)
             ax.set_xticks(ROUNDS)
             ax.set_xlim(-6, 134)
         else:
@@ -686,6 +688,8 @@ def _curve_axes(plt, t03, fdir, name, xkey, xlabel, title, panel="dev", ylabel=N
             ax.set_xlim(-0.8, 17)
         ax.set_title(f"Seed {s}", loc="left")
         ax.set_xlabel(xlabel)
+        ax.annotate("round 0: same\nbase policy", (0, 41), xytext=(14, -2), textcoords="offset points",
+                    ha="left", va="center", fontsize=10, color=MUTED)
         ax.yaxis.grid(True, color=GRID, lw=0.6)
         ax.set_axisbelow(True)
     axes[0].set_ylabel(ylabel or "pass@1 on 53 dev problems,\n8 attempts each (%)")
@@ -700,14 +704,13 @@ def _curve_axes(plt, t03, fdir, name, xkey, xlabel, title, panel="dev", ylabel=N
 
 
 def f03_dev_rounds(plt, t03, fdir):
-    _curve_axes(plt, t03, fdir, "f03_dev_rounds", "round", "Training round",
-                "Dev pass@1 over training (round 0 = same base policy; dotted line: cap change after round 32)")
+    _curve_axes(plt, t03, fdir, "f03_dev_rounds", "round", "Training round", "Dev pass@1 over training rounds")
 
 
 def f04_dev_hard(plt, t03, fdir):
     _curve_axes(plt, t03, fdir, "f04_dev_hard_attempts", "cum_hard_attempts",
-                "Cumulative hard training attempts (thousands)",
-                "Dev pass@1 against hard training attempts (H: 128 per round; R, U: 64)")
+                "Hard training attempts (thousands)",
+                "Dev pass@1 against cumulative hard training attempts")
 
 
 def _traj(plt, t03, fdir, name, ypanel, ylabel, title):
@@ -729,12 +732,12 @@ def _traj(plt, t03, fdir, name, ypanel, ylabel, title):
                 ax.plot([xs[i]], [ys[i]], marker=MARKER[s], ms=6, color=COLOR[a], mfc=COLOR[a] if filled else "white",
                         mec=COLOR[a], mew=1.4, ls="none", zorder=3)
             starts.append((xs[0], ys[0]))
-            ax.annotate("r128", (xs[-1], ys[-1]), xytext=(5, -3), textcoords="offset points", fontsize=10,
-                        color=INK, ha="left", va="top")
-        sx = min(p[0] for p in starts)
+            ax.plot([xs[-1]], [ys[-1]], marker="o", ms=15, mfc="none", mec=INK, mew=1.2, ls="none", zorder=4)
+        sx = sum(p[0] for p in starts) / len(starts)
         sy = min(p[1] for p in starts)
-        ax.annotate("r0", (sx, sy), xytext=(-4, -4), textcoords="offset points", fontsize=10, color=INK,
-                    ha="right", va="top")
+        ax.annotate("r0", (sx, sy), xytext=(0, -8), textcoords="offset points", fontsize=10, color=INK,
+                    ha="center", va="top")
+        ax.margins(0.1)
         ax.set_title(f"Seed {s}", loc="left")
         ax.set_xlabel("J_H: pass@1 on 32 hard dev problems,\n8 attempts each (%)")
         ax.xaxis.grid(True, color=GRID, lw=0.6)
@@ -743,7 +746,9 @@ def _traj(plt, t03, fdir, name, ypanel, ylabel, title):
     axes[0].set_ylabel(ylabel)
     handles = arm_legend_handles() + [
         Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, ls="none", label="open: cap 8,192 (r0, r32)"),
-        Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: cap 12,288 (r64–r128)")]
+        Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: cap 12,288 (r64–r128)"),
+        Line2D([], [], color=INK, marker="o", ms=13, mfc="none", mew=1.2, ls="none",
+               label="ring: round 128 (path end)")]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
     fig.suptitle(title, x=0.01, ha="left", y=1.0)
     fig.tight_layout()
@@ -788,7 +793,7 @@ def f07_diag(plt, t04, fdir):
             ax.yaxis.grid(True, color=GRID, lw=0.6)
             ax.set_axisbelow(True)
             if ci == 0:
-                ax.set_ylabel(f"{plab} vs `none`\n(points)")
+                ax.set_ylabel(f"{plab} vs none\n(points)")
             if ri == 0:
                 ax.set_title(ctitle, loc="left")
             if ri == 2:
@@ -799,14 +804,13 @@ def f07_diag(plt, t04, fdir):
         hi = max(axes[ri, 0].get_ylim()[1], axes[ri, 1].get_ylim()[1])
         for ci in range(2):
             axes[ri, ci].set_ylim(lo, hi)
-    handles = [Line2D([], [], color=INK, lw=1.2, label="`none`: no update, same job as the draws"),
-               Line2D([], [], color=MUTED, lw=1.4, ls="--", label="`none_rerun` = `none_cycled`: no update, L40S job"),
+    handles = [Line2D([], [], color=INK, lw=1.2, label="none: no update, same job"),
+               Line2D([], [], color=MUTED, lw=1.4, ls="--", label="none_rerun = none_cycled"),
                Line2D([], [], color=MUTED, marker="o", ls="none", label="one update draw"),
                Line2D([], [], color=MUTED, marker="X", mfc="white", ls="none", ms=8,
-                      label="momentum-only draw (zero gradient)")]
+                      label="momentum-only (zero gradient)")]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle("One optimizer step: change in J against two no-update references (cap 8,192)", x=0.01, ha="left",
-                 y=1.0)
+    fig.suptitle("One optimizer step: change in J against two no-update references", x=0.01, ha="left", y=1.0)
     fig.tight_layout()
     save(fig, fdir, "f07_delta_j")
 
@@ -821,8 +825,9 @@ def _length_dumbbell(ax, rows, ytick=True):
         ax.plot([x1], [i], marker=MARKER[s], ms=7, color=COLOR[a], mfc="white", mec=COLOR[a], mew=1.6, ls="none",
                 zorder=3)
         ax.plot([x2], [i], marker=MARKER[s], ms=7, color=COLOR[a], ls="none", zorder=3)
-    ax.set_yticks(range(len(order)), [o + " r128" for o in order] if ytick else [""] * len(order))
-    ax.invert_yaxis()
+    if ytick:
+        ax.set_yticks(range(len(order)), [o + " r128" for o in order])
+        ax.invert_yaxis()
     hgrid(ax)
 
 
@@ -862,8 +867,9 @@ def f08b_length_capped(plt, t05, fdir):
                 left += w
             ax.annotate(f"n = {r['capped_at_12288']}", (101, i), xytext=(2, 0), textcoords="offset points",
                         va="center", ha="left", fontsize=10, color=INK, annotation_clip=False)
-        ax.set_yticks(range(len(order)), [o + " r128" for o in order] if panel == "test" else [""] * len(order))
-        ax.invert_yaxis()
+        if panel == "test":
+            ax.set_yticks(range(len(order)), [o + " r128" for o in order])
+            ax.invert_yaxis()
         ax.set_xlim(0, 100)
         ax.set_xticks([0, 25, 50, 75, 100])
         ax.set_title(title, loc="left")
@@ -889,8 +895,9 @@ def f09_length_contrasts(plt, t06, fdir):
                    LSTYLE[s], filled=False)
             dot_ci(ax, i + 0.14, 100 * r["diff_16384"], [100 * v for v in r["ci95_16384"]], INK, MARKER[s],
                    LSTYLE[s], filled=True)
-        ax.set_yticks(range(len(order)), [f"{a[0]} − {b[0]}, seed {a[-3:]}" for a, b in order])
-        ax.invert_yaxis()
+        if panel == "test":
+            ax.set_yticks(range(len(order)), [f"{a[0]} − {b[0]}, seed {a[-3:]}" for a, b in order])
+            ax.invert_yaxis()
         ax.axvline(0, color=MUTED, lw=1, zorder=1)
         ax.set_title(title, loc="left")
         ax.set_xlabel("Difference in pass@1 (points)")
@@ -918,12 +925,14 @@ def f10_stress(plt, t07, fdir):
                 col, mk, ls, filled = COLOR[a], MARKER[s], LSTYLE[s], cell.endswith("r128")
             y = i + (0.5 if cell.endswith("r64") else 0)
             dot_ci(ax, y, 100 * r["pass1"], [100 * v for v in r["pass1_ci95"]], col, mk, ls, filled)
-        ax.set_yticks([i + (0.5 if c.endswith("r64") else 0) for i, c in enumerate(order)],
-                      [stress_label(c) for c in order])
-        ax.invert_yaxis()
+        if tier == "harder":
+            ax.set_yticks([i + (0.5 if c.endswith("r64") else 0) for i, c in enumerate(order)],
+                          [stress_label(c) for c in order])
+            ax.invert_yaxis()
         ax.set_title(title, loc="left")
-        ax.set_xlabel("pass@1, 8 attempts per problem (%)")
+        ax.set_xticks([20, 40, 60, 80])
         hgrid(ax)
+    fig.supxlabel("pass@1, 8 attempts per problem (%)", fontsize=10, y=0.06)
     handles = [Line2D([], [], color=MUTED, marker="o", ls="none", label="round 128 (endpoint)"),
                Line2D([], [], color=MUTED, marker="o", mfc="white", ls="none", label="round 64 (intermediate)")]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
@@ -955,7 +964,9 @@ def f12_control(plt, t09, fdir):
             r = next(r for r in t09 if r["run"] == run)
             a, s = arm_seed(run)
             dot_ci(ax, i, 100 * r[key], [100 * v for v in r[key + "_ci95"]], COLOR[a], MARKER[s], LSTYLE[s])
-        ax.set_yticks(range(len(order)), [o + " r128" for o in order] if k == 0 else [""] * len(order))
+        if k == 0:
+            ax.set_yticks(range(len(order)), [o + " r128" for o in order])
+        ax.set_xticks([0, 10, 20, 30])
         ax.axvline(0, color=MUTED, lw=1, zorder=1)
         ax.set_title(title, loc="left")
         hgrid(ax)
