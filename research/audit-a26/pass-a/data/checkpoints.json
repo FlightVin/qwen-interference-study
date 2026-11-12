@@ -1,0 +1,3539 @@
+{
+ "generated_by": "research/audit-a26/tools/ckpt_replay.py inventory",
+ "rows": [
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "audit_source": "ckpt_k0.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-09T09:34:15Z",
+     "sha256": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-09T09:47:19Z",
+     "sha256": "ca7f80216b640a4255d9822b2ad4e2ae411eace1e613d32ac986177af0b18a20"
+    },
+    "state.json": {
+     "bytes": 82310,
+     "mtime_utc": "2026-11-09T09:47:19Z",
+     "sha256": "1e9dd584ab6614efa4fdc60c609c60b2a27a160819845a84acb1b3f9567e9df4"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 512,
+     "gen_tokens": 68642010,
+     "prompt_tokens": 1670832,
+     "hard_responses": 16384
+    },
+    "attempt_id": "a2",
+    "config_sha": "cc7462b4c521ea32fd614813a45427b9ba21894bf797a3037c4249943ad550b9",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "optim.pt": "ca7f80216b640a4255d9822b2ad4e2ae411eace1e613d32ac986177af0b18a20"
+    },
+    "saved_utc": "2026-11-09T09:47:19Z",
+    "wandb_id": "qis-main-H-s101-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0005735631693526146
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     512.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+    "run": "H-s101",
+    "round": 128,
+    "saved_utc": "2026-11-09T09:47:19Z",
+    "segments": [
+     {
+      "job": "11081726",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-08T04:20:11Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "cc7462b4c521ea32fd614813a45427b9ba21894bf797a3037c4249943ad550b9",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081726",
+      "first_event": "2026-11-09T08:40:18Z",
+      "last_event": "2026-11-09T09:47:51Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T09:47:51Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-09T09:47:51Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "cc7462b4c521ea32fd614813a45427b9ba21894bf797a3037c4249943ad550b9"
+     }
+    ],
+    "config_sha_state": "cc7462b4c521ea32fd614813a45427b9ba21894bf797a3037c4249943ad550b9",
+    "config_sha_matches_segment_jobs": [
+     "11081726"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 512,
+    "counters_opt_step_state": 512,
+    "adam_step_values": [
+     512.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-09T08:40:18Z",
+      "entropy_sample_mean": 0.22209162823855877
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-control-H-s101/0c7ac68-c6cb6134abf5/ckpt_identity.txt",
+     "recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "on_disk_at_job": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-H-s101/0416921-70c8af91fa0a/ckpt_identity.txt",
+     "recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "on_disk_at_job": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    },
+    {
+     "record": "~/ae-qis/results/qis-lentest-H-s101/0416921-00cdeaac0de8/ckpt_identity.txt",
+     "recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "on_disk_at_job": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-H-s101-r128/bcdc620-28fd7cc5fa2f/ckpt_identity.txt",
+     "recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "on_disk_at_job": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s101-sym/95ff406-0567ef175adc/ckpt_identity.txt",
+     "recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+     "on_disk_at_job": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[0]",
+    "research/evidence/a17/manifest/manifest.json evals[12]"
+   ],
+   "endpoint_validator": [
+    "research/evidence/endpoints/endpoint_qis-main-H-s101-sym.json"
+   ],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-fp-l40/hs101r128.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40",
+     "job": "11123185",
+     "code_sha": "fbd042e6d21fb1fcf851df93e73d6ac63ad41b73",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 90.8
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 24.0
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.22209162823855877,
+       "ref_entropy": 0.22209162823855877,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    },
+    {
+     "result": "qis-a26-replay-r128-h/hs101r128.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122986",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 375.4,
+      "round": 128,
+      "adam_steps": [
+       512.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 14.3
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.22238701954483986,
+       "ref_entropy": 0.22209162823855877,
+       "abs_diff": 0.0002953913062810898,
+       "rel_diff": 0.0013300425082380704
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "ref": null
+       }
+      ]
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": 1.1175870895385742e-08,
+       "grad_norm_preclip": 0.27907270193099976,
+       "grad_clipped": false,
+       "valid_tokens": 227838,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        513.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      513.0
+     ],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym-fallback/ckpt",
+   "audit_source": "ckpt_k1.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-11T18:01:48Z",
+     "sha256": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    "state.json": {
+     "bytes": 82309,
+     "mtime_utc": "2026-11-11T18:01:11Z",
+     "sha256": "edf5b419f45e06b6d7756ad6da4ce1fb3ca71ee8b474d2389e08550ff29f4ca2"
+    }
+   },
+   "state": {
+    "round": 116,
+    "counters": {
+     "opt_step": 464,
+     "gen_tokens": 65896446,
+     "prompt_tokens": 1514016,
+     "hard_responses": 14848
+    },
+    "attempt_id": "a2",
+    "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "optim.pt": "d8682cb7cea6c9b8bdbcd495a92be6496a73b846dffc62ae79a8103dddd9a5e8"
+    },
+    "saved_utc": "2026-11-11T17:35:17Z",
+    "wandb_id": "qis-main-H-s202-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": "file missing"
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0005074170195600131
+   },
+   "optim": null,
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym-fallback/ckpt",
+    "run": "H-s202",
+    "round": 116,
+    "saved_utc": "2026-11-11T17:35:17Z",
+    "segments": [
+     {
+      "job": "11082192",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-10T08:16:16Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "7c44fa5",
+      "config_sha": "267a341d12fa0b1f902be6b4326de8c36189e808703da5e94f361d14dadd2b05",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11112377",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-11T01:51:49Z",
+      "resume_round": 60,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0060",
+      "code_sha": "09f5080",
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11112377",
+      "first_event": "2026-11-11T17:33:07Z",
+      "last_event": "2026-11-11T17:46:43Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-11T17:33:10Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-11T17:46:43Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3"
+     }
+    ],
+    "config_sha_state": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "config_sha_matches_segment_jobs": [
+     "11112377"
+    ],
+    "canonical_step_rows_before_round": 464,
+    "canonical_opt_step_labels_max": 464,
+    "counters_opt_step_state": 464,
+    "adam_step_values": null,
+    "round_rows_at_round": [
+     {
+      "round": 116,
+      "utc": "2026-11-11T17:33:07Z",
+      "entropy_sample_mean": null
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-h202-fallback-copy/7a8190f-47c9b1b7ac1f/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k0/7a8190f-2671a0785129/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k1/7a8190f-9ffdcccb0aa2/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k2/7a8190f-32c07590ecb2/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k3/7a8190f-b1a4e23e7173/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k4/7a8190f-72ed8b54ed35/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-fb-k5/7a8190f-6a3b7de35fca/ckpt_identity.txt",
+     "recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+     "on_disk_at_job": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[1]"
+   ],
+   "endpoint_validator": [],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-wonly/hs202fb.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40",
+     "job": "11122990",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 110.3
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym-fallback/ckpt/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 9.4
+      },
+      {
+       "path": "/data/user_data/vineethb/qis/hf/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": true,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.bfloat16",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 0.5
+      },
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0004.tmp/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 39.0
+      },
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0012.tmp/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 37.3
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "opt_step_ref": 465,
+        "grad_norm_replay": 0.0,
+        "grad_norm_logged": 0.0,
+        "grad_norm_rel_diff": 0.0,
+        "loss_replay": 0.0,
+        "loss_logged": 0.0,
+        "loss_abs_diff": 0.0,
+        "valid_tokens_replay": 119241,
+        "valid_tokens_logged": 119241,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794419067.7072573
+       }
+      ]
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": 0.0,
+       "grad_norm_preclip": 0.0,
+       "grad_clipped": false,
+       "valid_tokens": 119241,
+       "responses": 32,
+       "finite": true
+      }
+     ],
+     "adam_steps_after": [],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064",
+   "audit_source": "ckpt_k2.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-11T03:25:18Z",
+     "sha256": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-11T03:26:37Z",
+     "sha256": "7baa9ea2ad8d24dd894d17032a658280ace9d9e5905eb9d594e0569cd933a5f1"
+    },
+    "state.json": {
+     "bytes": 82314,
+     "mtime_utc": "2026-11-11T03:26:38Z",
+     "sha256": "d07620b04d34cc567a54d2c01052521c9f3f61292d39cb10213a866db3eaa663"
+    }
+   },
+   "state": {
+    "round": 64,
+    "counters": {
+     "opt_step": 256,
+     "gen_tokens": 29575122,
+     "prompt_tokens": 835552,
+     "hard_responses": 8192
+    },
+    "attempt_id": "a2",
+    "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+     "optim.pt": "7baa9ea2ad8d24dd894d17032a658280ace9d9e5905eb9d594e0569cd933a5f1"
+    },
+    "saved_utc": "2026-11-11T03:26:38Z",
+    "wandb_id": "qis-main-H-s202-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0004317839557106656
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     256.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064",
+    "run": "H-s202",
+    "round": 64,
+    "saved_utc": "2026-11-11T03:26:38Z",
+    "segments": [
+     {
+      "job": "11082192",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-10T08:16:16Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "7c44fa5",
+      "config_sha": "267a341d12fa0b1f902be6b4326de8c36189e808703da5e94f361d14dadd2b05",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11112377",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-11T01:51:49Z",
+      "resume_round": 60,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0060",
+      "code_sha": "09f5080",
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11082192",
+      "first_event": "2026-11-10T18:32:54Z",
+      "last_event": "2026-11-10T19:15:45Z",
+      "saved_utc_inside": false,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-10T19:15:45Z",
+        "ok": null,
+        "error": null
+       }
+      ],
+      "config_sha": "267a341d12fa0b1f902be6b4326de8c36189e808703da5e94f361d14dadd2b05"
+     },
+     {
+      "job": "11112377",
+      "first_event": "2026-11-11T02:40:01Z",
+      "last_event": "2026-11-11T03:36:20Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-11T03:24:22Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-11T03:36:20Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3"
+     }
+    ],
+    "config_sha_state": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "config_sha_matches_segment_jobs": [
+     "11112377"
+    ],
+    "canonical_step_rows_before_round": 256,
+    "canonical_opt_step_labels_max": 256,
+    "counters_opt_step_state": 256,
+    "adam_step_values": [
+     256.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 64,
+      "utc": "2026-11-10T18:32:54Z",
+      "entropy_sample_mean": 0.19231146480888128
+     },
+     {
+      "round": 64,
+      "utc": "2026-11-11T02:40:01Z",
+      "entropy_sample_mean": 0.17636318318545818
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-stress-H-s202-r64/d06c7a5-7b9b663ee4ed/ckpt_identity.txt",
+     "recorded": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+     "on_disk_at_job": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[14]"
+   ],
+   "endpoint_validator": [],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-fp-l40/hs202r64_l40.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40",
+     "job": "11123185",
+     "code_sha": "fbd042e6d21fb1fcf851df93e73d6ac63ad41b73",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 58.2
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 14.6
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "a2-orig",
+       "entropy_ckpt": 0.1869693398475647,
+       "ref_entropy": 0.19231146480888128,
+       "abs_diff": 0.0053421249613165855,
+       "rel_diff": 0.027778504867744507
+      },
+      {
+       "label": "a2-r60",
+       "entropy_ckpt": 0.17602136731147766,
+       "ref_entropy": 0.17636318318545818,
+       "abs_diff": 0.00034181587398052216,
+       "rel_diff": 0.0019381362243903193
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    },
+    {
+     "result": "qis-a26-replay-hs202r64/hs202r64.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122955",
+     "code_sha": "49196bc48170b0b4d7115f0e0046c55a722cbf61",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 235.5,
+      "round": 64,
+      "adam_steps": [
+       256.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 1.1
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": {
+      "loader": "qis.diag_local.snapshot/restore",
+      "model_checksums_equal_state": true,
+      "optim_checksums_equal_state": true,
+      "adam_steps": [
+       256.0
+      ]
+     },
+     "control_displaced": {
+      "grad_norm": 0.2636386752128601,
+      "grad_norm_logged_step1": 0.2672129273414612,
+      "rel_diff": 0.013376044954717607,
+      "fingerprints": [
+       {
+        "label": "a2-r60",
+        "entropy": 0.17704432643949986,
+        "ref": 0.17636318318545818,
+        "rel_diff": 0.003862162395455304
+       },
+       {
+        "label": "a2-orig",
+        "entropy": 0.18792486656457186,
+        "ref": 0.19231146480888128,
+        "rel_diff": 0.022809863409177487
+       }
+      ]
+     },
+     "fingerprints": [
+      {
+       "label": "a2-r60",
+       "entropy_ckpt": 0.17636318318545818,
+       "ref_entropy": 0.17636318318545818,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      },
+      {
+       "label": "a2-orig",
+       "entropy_ckpt": 0.18728488311171532,
+       "ref_entropy": 0.19231146480888128,
+       "abs_diff": 0.005026581697165966,
+       "rel_diff": 0.026137712081603516
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "opt_step_ref": 257,
+        "grad_norm_replay": 0.2672647535800934,
+        "grad_norm_logged": 0.2672129273414612,
+        "grad_norm_rel_diff": 0.00019395109042002066,
+        "loss_replay": 1.862645149230957e-09,
+        "loss_logged": 1.862645149230957e-09,
+        "loss_abs_diff": 0.0,
+        "valid_tokens_replay": 182234,
+        "valid_tokens_logged": 182234,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794368077.940281
+       },
+       {
+        "minibatch": 1,
+        "opt_step_ref": 258,
+        "grad_norm_replay": 0.4552682936191559,
+        "grad_norm_logged": 0.4395374059677124,
+        "grad_norm_rel_diff": 0.035789644835368215,
+        "loss_replay": -3.80445271730423e-05,
+        "loss_logged": 1.866556704044342e-05,
+        "loss_abs_diff": 5.671009421348572e-05,
+        "valid_tokens_replay": 141872,
+        "valid_tokens_logged": 141872,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794368113.2335403
+       },
+       {
+        "minibatch": 2,
+        "opt_step_ref": 259,
+        "grad_norm_replay": 0.4620002508163452,
+        "grad_norm_logged": 0.4669998288154602,
+        "grad_norm_rel_diff": 0.010705738397798481,
+        "loss_replay": -6.453134119510651e-06,
+        "loss_logged": 4.0930695831775665e-05,
+        "loss_abs_diff": 4.7383829951286316e-05,
+        "valid_tokens_replay": 113460,
+        "valid_tokens_logged": 113460,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794368142.2278197
+       },
+       {
+        "minibatch": 3,
+        "opt_step_ref": 260,
+        "grad_norm_replay": 0.15157456696033478,
+        "grad_norm_logged": 0.14085298776626587,
+        "grad_norm_rel_diff": 0.07611893339359263,
+        "loss_replay": -1.1662021279335022e-05,
+        "loss_logged": -7.934868335723877e-06,
+        "loss_abs_diff": 3.727152943611145e-06,
+        "valid_tokens_replay": 135011,
+        "valid_tokens_logged": 135011,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794368178.141665
+       }
+      ],
+      "round_row": {
+       "round": 65,
+       "clipfrac_pos": [
+        0.0003353453939780593,
+        0.00031261012190952897
+       ],
+       "clipfrac_neg": [
+        0.00018494993855711073,
+        0.0002530893834773451
+       ],
+       "ratio_q": {
+        "q0.001": [
+         0.8820382356643677,
+         0.8755627870559692
+        ],
+        "q0.01": [
+         0.96070796251297,
+         0.9598059058189392
+        ],
+        "q0.1": [
+         0.9999542832374573,
+         0.9999809265136719
+        ],
+        "q0.5": [
+         1.0,
+         1.0
+        ],
+        "q0.9": [
+         1.0000686645507812,
+         1.0001296997070312
+        ],
+        "q0.99": [
+         1.0391454696655273,
+         1.0394368171691895
+        ],
+        "q0.999": [
+         1.1293004751205444,
+         1.1275255680084229
+        ]
+       }
+      }
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": 1.862645149230957e-09,
+       "grad_norm_preclip": 0.2672647535800934,
+       "grad_clipped": false,
+       "valid_tokens": 182234,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        257.0
+       ]
+      },
+      {
+       "minibatch": 1,
+       "loss": -3.80445271730423e-05,
+       "grad_norm_preclip": 0.4552682936191559,
+       "grad_clipped": false,
+       "valid_tokens": 141872,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        258.0
+       ]
+      },
+      {
+       "minibatch": 2,
+       "loss": -6.453134119510651e-06,
+       "grad_norm_preclip": 0.4620002508163452,
+       "grad_clipped": false,
+       "valid_tokens": 113460,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        259.0
+       ]
+      },
+      {
+       "minibatch": 3,
+       "loss": -1.1662021279335022e-05,
+       "grad_norm_preclip": 0.15157456696033478,
+       "grad_clipped": false,
+       "valid_tokens": 135011,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        260.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      260.0
+     ],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+   "audit_source": "ckpt_k3.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-11T21:42:40Z",
+     "sha256": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-11T21:44:47Z",
+     "sha256": "f09a54ef8431e3ad4b9e69dc6a10546fbab2bf0ab55c52dbd5e95f125d016d59"
+    },
+    "state.json": {
+     "bytes": 82308,
+     "mtime_utc": "2026-11-11T21:44:47Z",
+     "sha256": "effe0791cb079c3e9d0344882622fe3472d99abf28e228baa6d2319f8e1a49e3"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 512,
+     "gen_tokens": 74729697,
+     "prompt_tokens": 1671064,
+     "hard_responses": 16384
+    },
+    "attempt_id": "a2",
+    "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "optim.pt": "f09a54ef8431e3ad4b9e69dc6a10546fbab2bf0ab55c52dbd5e95f125d016d59"
+    },
+    "saved_utc": "2026-11-11T21:44:47Z",
+    "wandb_id": "qis-main-H-s202-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.000520978748561138
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     512.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+    "run": "H-s202",
+    "round": 128,
+    "saved_utc": "2026-11-11T21:44:47Z",
+    "segments": [
+     {
+      "job": "11082192",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-10T08:16:16Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "7c44fa5",
+      "config_sha": "267a341d12fa0b1f902be6b4326de8c36189e808703da5e94f361d14dadd2b05",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11112377",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-11T01:51:49Z",
+      "resume_round": 60,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0060",
+      "code_sha": "09f5080",
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11112377",
+      "first_event": "2026-11-11T20:42:05Z",
+      "last_event": "2026-11-11T21:45:07Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-11T21:45:07Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-11T21:45:07Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3"
+     }
+    ],
+    "config_sha_state": "94f67446e3049ac80319eec1bbaeff4a0fc923eaeb9753434c9530f024da5bb3",
+    "config_sha_matches_segment_jobs": [
+     "11112377"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 512,
+    "counters_opt_step_state": 512,
+    "adam_step_values": [
+     512.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-11T20:42:05Z",
+      "entropy_sample_mean": 0.2616247180849314
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-control-H-s202/0c7ac68-19c6c3fa50fc/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-H-s202-r128-k0/b77f066-2a088959eb65/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-H-s202-r128-k1/b77f066-ac81630ff7a3/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-H-s202-r128-k2/bcf3e47-b94034b8abce/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k0/f9b294b-45267b694503/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k1/f9b294b-daf3d758371b/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k2/815a9a6-c53073ca1713/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k3/b77f066-648adb13ef7b/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k4/b77f066-6c3df47e2a88/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-H-s202-sym-k5/b77f066-e9bd07a7d275/ckpt_identity.txt",
+     "recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+     "on_disk_at_job": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[2]",
+    "research/evidence/a17/manifest/manifest.json evals[13]"
+   ],
+   "endpoint_validator": [],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-r128-h/hs202r128.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122986",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 473.7,
+      "round": 128,
+      "adam_steps": [
+       512.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 22.7
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.2616247180849314,
+       "ref_entropy": 0.2616247180849314,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "ref": null
+       }
+      ]
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": 7.450580596923828e-09,
+       "grad_norm_preclip": 0.17631708085536957,
+       "grad_clipped": false,
+       "valid_tokens": 164667,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        513.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      513.0
+     ],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064",
+   "audit_source": "ckpt_k0.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-08T12:13:44Z",
+     "sha256": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-08T12:15:35Z",
+     "sha256": "c1bf4d289b0f1271fba4d271868912c28d7f562932fffb600fd77fa7195d727f"
+    },
+    "state.json": {
+     "bytes": 82313,
+     "mtime_utc": "2026-11-08T12:15:36Z",
+     "sha256": "a4cc1a679e787ee4dbc9c99d2d2483738f530afab52fedd2be3a4c790680d86a"
+    }
+   },
+   "state": {
+    "round": 64,
+    "counters": {
+     "opt_step": 256,
+     "gen_tokens": 25888280,
+     "prompt_tokens": 721344,
+     "hard_responses": 4096
+    },
+    "attempt_id": "a2",
+    "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a",
+     "optim.pt": "c1bf4d289b0f1271fba4d271868912c28d7f562932fffb600fd77fa7195d727f"
+    },
+    "saved_utc": "2026-11-08T12:15:36Z",
+    "wandb_id": "qis-main-R-s101-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.000408565392126878
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     256.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064",
+    "run": "R-s101",
+    "round": 64,
+    "saved_utc": "2026-11-08T12:15:36Z",
+    "segments": [
+     {
+      "job": "11081724",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-08T03:06:15Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11092945",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T04:51:44Z",
+      "resume_round": 124,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0124",
+      "code_sha": "0afd6e8",
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081724",
+      "first_event": "2026-11-08T11:15:14Z",
+      "last_event": "2026-11-08T12:24:35Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-08T12:13:06Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-08T12:24:35Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c"
+     }
+    ],
+    "config_sha_state": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+    "config_sha_matches_segment_jobs": [
+     "11081724",
+     "11092945"
+    ],
+    "canonical_step_rows_before_round": 256,
+    "canonical_opt_step_labels_max": 256,
+    "counters_opt_step_state": 256,
+    "adam_step_values": [
+     256.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 64,
+      "utc": "2026-11-08T11:15:14Z",
+      "entropy_sample_mean": 0.2137958575040102
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-stress-R-s101-r64/d06c7a5-31e197e55894/ckpt_identity.txt",
+     "recorded": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a",
+     "on_disk_at_job": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[16]"
+   ],
+   "endpoint_validator": [],
+   "diag_r64_rows": 13,
+   "diag_r64_optim_sha_match": true,
+   "replays": [
+    {
+     "result": "qis-a26-replay-rs101r64/rs101r64.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122982",
+     "code_sha": "317ba65e523fb8268595e1eb0f642f63869fac03",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 367.7,
+      "round": 64,
+      "adam_steps": [
+       256.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 17.6
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": {
+      "loader": "qis.diag_local.snapshot/restore",
+      "model_checksums_equal_state": true,
+      "optim_checksums_equal_state": true,
+      "adam_steps": [
+       256.0
+      ]
+     },
+     "control_displaced": {
+      "grad_norm": 0.2592225670814514,
+      "grad_norm_logged_step1": 0.24150973558425903,
+      "rel_diff": 0.07334210132084985,
+      "fingerprints": [
+       {
+        "label": "r64",
+        "entropy": 0.21361595019698143,
+        "ref": 0.2137958575040102,
+        "rel_diff": 0.0008414910799915564
+       }
+      ]
+     },
+     "fingerprints": [
+      {
+       "label": "r64",
+       "entropy_ckpt": 0.2137958575040102,
+       "ref_entropy": 0.2137958575040102,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "opt_step_ref": 257,
+        "grad_norm_replay": 0.24152787029743195,
+        "grad_norm_logged": 0.24150973558425903,
+        "grad_norm_rel_diff": 7.508895295272962e-05,
+        "loss_replay": -3.725290298461914e-09,
+        "loss_logged": -3.725290298461914e-09,
+        "loss_abs_diff": 0.0,
+        "valid_tokens_replay": 102629,
+        "valid_tokens_logged": 102629,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794140555.7203472
+       },
+       {
+        "minibatch": 1,
+        "opt_step_ref": 258,
+        "grad_norm_replay": 0.15850235521793365,
+        "grad_norm_logged": 0.15646030008792877,
+        "grad_norm_rel_diff": 0.013051586433474005,
+        "loss_replay": 2.5900080800056458e-06,
+        "loss_logged": -5.587935447692871e-06,
+        "loss_abs_diff": 8.177943527698517e-06,
+        "valid_tokens_replay": 176189,
+        "valid_tokens_logged": 176189,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794140601.057521
+       },
+       {
+        "minibatch": 2,
+        "opt_step_ref": 259,
+        "grad_norm_replay": 0.15753743052482605,
+        "grad_norm_logged": 0.1664227396249771,
+        "grad_norm_rel_diff": 0.053389994180924626,
+        "loss_replay": -1.7136335372924805e-06,
+        "loss_logged": -1.3373792171478271e-05,
+        "loss_abs_diff": 1.1660158634185791e-05,
+        "valid_tokens_replay": 186811,
+        "valid_tokens_logged": 186811,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794140648.001641
+       },
+       {
+        "minibatch": 3,
+        "opt_step_ref": 260,
+        "grad_norm_replay": 0.0,
+        "grad_norm_logged": 0.0,
+        "grad_norm_rel_diff": 0.0,
+        "loss_replay": 0.0,
+        "loss_logged": 0.0,
+        "loss_abs_diff": 0.0,
+        "valid_tokens_replay": 107138,
+        "valid_tokens_logged": 107138,
+        "grad_clipped_replay": false,
+        "grad_clipped_logged": false,
+        "job_utc_logged": 1794140673.6425645
+       }
+      ],
+      "round_row": {
+       "round": 65,
+       "clipfrac_pos": [
+        0.00010251573257846758,
+        0.0001230188790941611
+       ],
+       "clipfrac_neg": [
+        9.446557669434696e-05,
+        0.00011335869203321636
+       ],
+       "ratio_q": {
+        "q0.001": [
+         0.9046380519866943,
+         0.9038389921188354
+        ],
+        "q0.01": [
+         0.961352527141571,
+         0.9614985585212708
+        ],
+        "q0.1": [
+         0.9986658096313477,
+         0.99870765209198
+        ],
+        "q0.5": [
+         1.0,
+         1.0
+        ],
+        "q0.9": [
+         1.0012718439102173,
+         1.0013054609298706
+        ],
+        "q0.99": [
+         1.0398889780044556,
+         1.039876937866211
+        ],
+        "q0.999": [
+         1.1094365119934082,
+         1.1089699268341064
+        ]
+       }
+      }
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": -3.725290298461914e-09,
+       "grad_norm_preclip": 0.24152787029743195,
+       "grad_clipped": false,
+       "valid_tokens": 102629,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        257.0
+       ]
+      },
+      {
+       "minibatch": 1,
+       "loss": 2.5900080800056458e-06,
+       "grad_norm_preclip": 0.15850235521793365,
+       "grad_clipped": false,
+       "valid_tokens": 176189,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        258.0
+       ]
+      },
+      {
+       "minibatch": 2,
+       "loss": -1.7136335372924805e-06,
+       "grad_norm_preclip": 0.15753743052482605,
+       "grad_clipped": false,
+       "valid_tokens": 186811,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        259.0
+       ]
+      },
+      {
+       "minibatch": 3,
+       "loss": 0.0,
+       "grad_norm_preclip": 0.0,
+       "grad_clipped": false,
+       "valid_tokens": 107138,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        260.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      260.0
+     ],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "audit_source": "ckpt_k1.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-09T06:42:34Z",
+     "sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    "state.json": {
+     "bytes": 82296,
+     "mtime_utc": "2026-11-09T07:01:14Z",
+     "sha256": "517922b5ddf9d0e35ad11ba507a5bc89322ec11d772ffbf9e671f3c4df2dc091"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 512,
+     "gen_tokens": 65139694,
+     "prompt_tokens": 1445448,
+     "hard_responses": 8192
+    },
+    "attempt_id": "a2",
+    "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "optim.pt": "39754bab5316cbc19564f4a2b3f58e56409e9c5847c2a92dac46fd7049d93cf4"
+    },
+    "saved_utc": "2026-11-09T07:01:14Z",
+    "wandb_id": "qis-main-R-s101-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": "file missing"
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.00048328231110123107
+   },
+   "optim": null,
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+    "run": "R-s101",
+    "round": 128,
+    "saved_utc": "2026-11-09T07:01:14Z",
+    "segments": [
+     {
+      "job": "11081724",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-08T03:06:15Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11092945",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T04:51:44Z",
+      "resume_round": 124,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0124",
+      "code_sha": "0afd6e8",
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+      "retain_rounds": [
+       64
+      ],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081724",
+      "first_event": "2026-11-09T02:27:34Z",
+      "last_event": "2026-11-09T04:17:11Z",
+      "saved_utc_inside": false,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T04:17:11Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint_failed",
+        "utc": "2026-11-09T04:17:11Z",
+        "ok": false,
+        "error": "OSError: [Errno 512] Unknown error 512"
+       }
+      ],
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c"
+     },
+     {
+      "job": "11092945",
+      "first_event": "2026-11-09T05:44:25Z",
+      "last_event": "2026-11-09T07:01:41Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T07:01:41Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-09T07:01:41Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c"
+     }
+    ],
+    "config_sha_state": "a41b428142fdd606b4860f35493f78f6345985d78f0306efc4abc141d250df0c",
+    "config_sha_matches_segment_jobs": [
+     "11081724",
+     "11092945"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 512,
+    "counters_opt_step_state": 512,
+    "adam_step_values": null,
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-09T02:27:34Z",
+      "entropy_sample_mean": 0.406713105738163
+     },
+     {
+      "round": 128,
+      "utc": "2026-11-09T05:44:25Z",
+      "entropy_sample_mean": 0.40344787761569023
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-cgpu-R-s101/bcba941-faf0499969aa/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-control-R-s101/0c7ac68-728bca8842e5/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-R-s101/a674984-dcc8fb9c3b8d/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-R-s101/c894f2b-dcc8fb9c3b8d/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-lentest-R-s101/ef68bf8-97265b59411e/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-R-s101-r128/577aa9f-c6cb0f034a8e/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-R-s101-sym/a96dc7d-6cea3e8e9523/ckpt_identity.txt",
+     "recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+     "on_disk_at_job": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[3]",
+    "research/evidence/a17/manifest/manifest.json evals[8]",
+    "research/evidence/a17/manifest/manifest.json evals[15]"
+   ],
+   "endpoint_validator": [
+    "research/evidence/endpoints/endpoint_qis-main-R-s101-sym.json"
+   ],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-fp-l40s/rs101r128.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40S",
+     "job": "11123184",
+     "code_sha": "fbd042e6d21fb1fcf851df93e73d6ac63ad41b73",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 33.9
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 34.8
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128-retry",
+       "entropy_ckpt": 0.40344787761569023,
+       "ref_entropy": 0.40344787761569023,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      },
+      {
+       "label": "r128-superseded-11081724",
+       "entropy_ckpt": 0.40559953451156616,
+       "ref_entropy": 0.406713105738163,
+       "abs_diff": 0.0011135712265968323,
+       "rel_diff": 0.0027379772396951873
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    },
+    {
+     "result": "qis-a26-replay-wonly/rs101r128.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40",
+     "job": "11122990",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 105.9
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 14.1
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128-retry",
+       "entropy_ckpt": 0.4026661887764931,
+       "ref_entropy": 0.40344787761569023,
+       "abs_diff": 0.0007816888391971588,
+       "rel_diff": 0.0019375212575582492
+      },
+      {
+       "label": "r128-superseded-11081724",
+       "entropy_ckpt": 0.40508323907852173,
+       "ref_entropy": 0.406713105738163,
+       "abs_diff": 0.0016298666596412659,
+       "rel_diff": 0.004007411211111929
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0004.tmp",
+   "audit_source": "ckpt_k2.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-09T03:16:19Z",
+     "sha256": "4c3e30d0f18910a9346645bbc03b4aae28fac0f215144b4c51f4701ca0d912e4"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-09T03:45:48Z",
+     "sha256": "e38913dd2057c6fdb39b7802eac2a30920ba67f215eca692b847dfcfea219aa0"
+    }
+   },
+   "state": null,
+   "hash_vs_state": {},
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": "no recorded checksums",
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.00013464961006848776
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     16.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "checksum_mismatch": "no recorded checksums"
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0004.tmp",
+    "run": "R-s202",
+    "round": 4,
+    "saved_utc": null,
+    "segments": [
+     {
+      "job": "11081729",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-09T02:44:34Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "d79911f96541a405ee6102051fa52b0d7af9ad6d3acb02d4019636e0314c2143",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11094190",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T06:24:39Z",
+      "resume_round": 16,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0016",
+      "code_sha": "dd71b20",
+      "config_sha": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081729",
+      "first_event": "2026-11-09T03:03:21Z",
+      "last_event": "2026-11-09T03:39:04Z",
+      "saved_utc_inside": false,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T03:03:26Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint_failed",
+        "utc": "2026-11-09T03:39:04Z",
+        "ok": false,
+        "error": "OSError: [Errno 512] Unknown error 512"
+       }
+      ],
+      "config_sha": "d79911f96541a405ee6102051fa52b0d7af9ad6d3acb02d4019636e0314c2143"
+     }
+    ],
+    "config_sha_state": null,
+    "config_sha_matches_segment_jobs": [],
+    "canonical_step_rows_before_round": 16,
+    "canonical_opt_step_labels_max": 16,
+    "counters_opt_step_state": null,
+    "adam_step_values": [
+     16.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 4,
+      "utc": "2026-11-09T03:03:21Z",
+      "entropy_sample_mean": null
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [],
+   "contemporaneous_conflicts": [],
+   "manifest": [],
+   "endpoint_validator": [],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": []
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0012.tmp",
+   "audit_source": "ckpt_k3.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-09T05:05:50Z",
+     "sha256": "a95959b83055fc341e6e346a3ad81bcee3992a0b5a10f04d05f9ba05d6162548"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-09T05:56:02Z",
+     "sha256": "bc0d1c3095a02d2d926dd35acdebfe464ef90d2958f9889a0f196a2d23298049"
+    }
+   },
+   "state": null,
+   "hash_vs_state": {},
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": "no recorded checksums",
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0002155252833948571
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     48.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "checksum_mismatch": "no recorded checksums"
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0012.tmp",
+    "run": "R-s202",
+    "round": 12,
+    "saved_utc": null,
+    "segments": [
+     {
+      "job": "11081729",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-09T02:44:34Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "d79911f96541a405ee6102051fa52b0d7af9ad6d3acb02d4019636e0314c2143",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11094190",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T06:24:39Z",
+      "resume_round": 16,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0016",
+      "code_sha": "dd71b20",
+      "config_sha": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081729",
+      "first_event": "2026-11-09T04:01:19Z",
+      "last_event": "2026-11-09T05:29:01Z",
+      "saved_utc_inside": false,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T04:58:38Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint_failed",
+        "utc": "2026-11-09T05:29:01Z",
+        "ok": false,
+        "error": "OSError: [Errno 512] Unknown error 512"
+       }
+      ],
+      "config_sha": "d79911f96541a405ee6102051fa52b0d7af9ad6d3acb02d4019636e0314c2143"
+     }
+    ],
+    "config_sha_state": null,
+    "config_sha_matches_segment_jobs": [],
+    "canonical_step_rows_before_round": 48,
+    "canonical_opt_step_labels_max": 48,
+    "counters_opt_step_state": null,
+    "adam_step_values": [
+     48.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 12,
+      "utc": "2026-11-09T04:01:19Z",
+      "entropy_sample_mean": null
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [],
+   "contemporaneous_conflicts": [],
+   "manifest": [],
+   "endpoint_validator": [],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": []
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "audit_source": "ckpt_k0.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-10T01:28:57Z",
+     "sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-10T01:30:14Z",
+     "sha256": "c5bf95c52e7914e8ca7fe44d077b4f80642e6ffca4ce394195d8ddffb1ae6022"
+    },
+    "state.json": {
+     "bytes": 82315,
+     "mtime_utc": "2026-11-10T01:30:15Z",
+     "sha256": "74294b50ac6f67ea514748b017871151d17125e5a45d71e0a48a5ada747a50c0"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 524,
+     "gen_tokens": 55181776,
+     "prompt_tokens": 1480320,
+     "hard_responses": 8384
+    },
+    "attempt_id": "a2",
+    "config_sha": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "optim.pt": "c5bf95c52e7914e8ca7fe44d077b4f80642e6ffca4ce394195d8ddffb1ae6022"
+    },
+    "saved_utc": "2026-11-10T01:30:15Z",
+    "wandb_id": "qis-main-R-s202-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0005130037288350266
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     512.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+    "run": "R-s202",
+    "round": 128,
+    "saved_utc": "2026-11-10T01:30:15Z",
+    "segments": [
+     {
+      "job": "11081729",
+      "gpu": "NVIDIA L40",
+      "start_utc": "2026-11-09T02:44:34Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "d79911f96541a405ee6102051fa52b0d7af9ad6d3acb02d4019636e0314c2143",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     },
+     {
+      "job": "11094190",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T06:24:39Z",
+      "resume_round": 16,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0016",
+      "code_sha": "dd71b20",
+      "config_sha": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     }
+    ],
+    "writers": [
+     {
+      "job": "11094190",
+      "first_event": "2026-11-10T00:32:48Z",
+      "last_event": "2026-11-10T01:30:42Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-10T01:30:42Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-10T01:30:42Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb"
+     }
+    ],
+    "config_sha_state": "30fdaaa9cffc8cf719b22a6761c16c4365aa8e127aaca5c1c754a4b79e7c6acb",
+    "config_sha_matches_segment_jobs": [
+     "11094190"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 524,
+    "counters_opt_step_state": 524,
+    "adam_step_values": [
+     512.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-10T00:32:48Z",
+      "entropy_sample_mean": 0.26003354229032993
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-cgpu-R-s202/bcba941-7fac26a9f0f7/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-control-R-s202/0c7ac68-637a085c7e27/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-R-s202/5e70344-130e59a2982e/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-R-s202/a674984-c5f44a0b1566/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-lentest-R-s202/ef68bf8-3a17b2ad9fcd/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-R-s202-r128/577aa9f-4e26b7831586/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-R-s202-sym/73597a9-da4b75cfbffe/ckpt_identity.txt",
+     "recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+     "on_disk_at_job": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[4]",
+    "research/evidence/a17/manifest/manifest.json evals[9]",
+    "research/evidence/a17/manifest/manifest.json evals[17]"
+   ],
+   "endpoint_validator": [
+    "research/evidence/endpoints/endpoint_qis-main-R-s202-sym.json"
+   ],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-r128-ru/rs202r128.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122988",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 158.7,
+      "round": 128,
+      "adam_steps": [
+       512.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 1.5
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.26003354229032993,
+       "ref_entropy": 0.26003354229032993,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "ref": null
+       }
+      ]
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": -5.587935447692871e-09,
+       "grad_norm_preclip": 0.26234474778175354,
+       "grad_clipped": false,
+       "valid_tokens": 124436,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        513.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      513.0
+     ],
+     "vllm": null
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "audit_source": "ckpt_k1.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-09T02:35:58Z",
+     "sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    "state.json": {
+     "bytes": 82302,
+     "mtime_utc": "2026-11-09T02:39:34Z",
+     "sha256": "0dcc8b396727b30ed6b17deb46dcfa31f4cb7a9ad41ef321322efeace2498833"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 512,
+     "gen_tokens": 59993025,
+     "prompt_tokens": 1442352,
+     "hard_responses": 8192
+    },
+    "attempt_id": "a2",
+    "config_sha": "d9ac4fa6a46857df8b53b1ea3a24de6efb3f314f002597193db5a4ce9692740f",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "optim.pt": "5bf32e044434b1bb4dc20c737de45877332bce72ecad82ff81e3e22e2e05ae01"
+    },
+    "saved_utc": "2026-11-09T02:39:34Z",
+    "wandb_id": "qis-main-U-s101-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": "file missing"
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.0004940521609964498
+   },
+   "optim": null,
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+    "run": "U-s101",
+    "round": 128,
+    "saved_utc": "2026-11-09T02:39:34Z",
+    "segments": [
+     {
+      "job": "11081725",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-08T04:04:47Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "9d6349a",
+      "config_sha": "d9ac4fa6a46857df8b53b1ea3a24de6efb3f314f002597193db5a4ce9692740f",
+      "retain_rounds": [],
+      "ckpt_every": 4
+     }
+    ],
+    "writers": [
+     {
+      "job": "11081725",
+      "first_event": "2026-11-09T01:38:14Z",
+      "last_event": "2026-11-09T02:40:02Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-09T02:40:02Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-09T02:40:02Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "d9ac4fa6a46857df8b53b1ea3a24de6efb3f314f002597193db5a4ce9692740f"
+     }
+    ],
+    "config_sha_state": "d9ac4fa6a46857df8b53b1ea3a24de6efb3f314f002597193db5a4ce9692740f",
+    "config_sha_matches_segment_jobs": [
+     "11081725"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 512,
+    "counters_opt_step_state": 512,
+    "adam_step_values": null,
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-09T01:38:14Z",
+      "entropy_sample_mean": 0.22742654383182526
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-cgpu-U-s101/bcba941-ce45e5d029af/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    {
+     "record": "~/ae-qis/results/qis-control-U-s101/0c7ac68-faa28a5105fe/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    {
+     "record": "~/ae-qis/results/qis-lentest-U-s101/ef68bf8-40dca2c96c53/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-U-s101/c894f2b-7d1af7cd3bc5/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-U-s101-r128/577aa9f-71b198b3ceef/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-U-s101-sym/a96dc7d-05d031941e81/ckpt_identity.txt",
+     "recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+     "on_disk_at_job": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[5]",
+    "research/evidence/a17/manifest/manifest.json evals[10]",
+    "research/evidence/a17/manifest/manifest.json evals[18]"
+   ],
+   "endpoint_validator": [
+    "research/evidence/endpoints/endpoint_qis-main-U-s101-sym.json"
+   ],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-fp-l40s/us101r128.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40S",
+     "job": "11123184",
+     "code_sha": "fbd042e6d21fb1fcf851df93e73d6ac63ad41b73",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 93.3
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 25.1
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.22742654383182526,
+       "ref_entropy": 0.22742654383182526,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    },
+    {
+     "result": "qis-a26-replay-wonly/us101r128.json",
+     "mode": "weights",
+     "gpu": "NVIDIA L40",
+     "job": "11122990",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "torch.load(weights_only) + load_state_dict(strict)",
+      "ok": true,
+      "fresh_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+      "sha_match_state": true,
+      "n_checksum_mismatch_vs_state": 0,
+      "seconds": 109.9
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 25.8
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.227133022621274,
+       "ref_entropy": 0.22742654383182526,
+       "abs_diff": 0.0002935212105512619,
+       "rel_diff": 0.0012906198441300306
+      }
+     ],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": null
+    },
+    {
+     "result": "qis-a26-replay-wonly/vllm_us101r128.json",
+     "mode": "vllm",
+     "gpu": "NVIDIA L40",
+     "job": "11122990",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": null,
+     "load": null,
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 16.5
+      }
+     ],
+     "tied_params_after_load": null,
+     "live_model_checksums_equal_state": null,
+     "live_finite": null,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [],
+     "replay_compare": null,
+     "replay_steps": [],
+     "adam_steps_after": null,
+     "vllm": {
+      "vllm_params": 226,
+      "vllm_params_bitwise_equal": 226,
+      "not_equal": {},
+      "ckpt_tensors": 311,
+      "ckpt_tensors_not_read_back": [
+       "lm_head.weight"
+      ],
+      "evaluate_ckpt_4_tensor_check_names": [
+       "model.embed_tokens.weight",
+       "model.norm.weight",
+       "model.layers.0.input_layernorm.weight",
+       "model.layers.27.mlp.down_proj.weight"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "audit_source": "ckpt_k2.jsonl",
+   "files": {
+    "model.pt": {
+     "bytes": 8127059673,
+     "mtime_utc": "2026-11-10T09:08:20Z",
+     "sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    "optim.pt": {
+     "bytes": 13764872247,
+     "mtime_utc": "2026-11-10T09:09:40Z",
+     "sha256": "f4fab07f4e5790d8207f251f214bb4446bffdbb127b49da95a517f618089a256"
+    },
+    "state.json": {
+     "bytes": 82310,
+     "mtime_utc": "2026-11-10T09:09:41Z",
+     "sha256": "347af6e351d4592f1165a4d6918b2fee14cd27475836203df264b14f1e0885f5"
+    }
+   },
+   "state": {
+    "round": 128,
+    "counters": {
+     "opt_step": 512,
+     "gen_tokens": 52772341,
+     "prompt_tokens": 1442976,
+     "hard_responses": 8192
+    },
+    "attempt_id": "a2",
+    "config_sha": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e",
+    "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "file_sha256": {
+     "model.pt": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "optim.pt": "f4fab07f4e5790d8207f251f214bb4446bffdbb127b49da95a517f618089a256"
+    },
+    "saved_utc": "2026-11-10T09:09:41Z",
+    "wandb_id": "qis-main-U-s202-sym-a2"
+   },
+   "hash_vs_state": {
+    "model.pt": true,
+    "optim.pt": true
+   },
+   "model": {
+    "n_tensors": 311,
+    "n_params": 2031739904,
+    "dtypes": [
+     "torch.float32"
+    ],
+    "nonfinite_tensors": [],
+    "n_nonfinite_tensors": 0,
+    "checksum_mismatch": [],
+    "n_checksum_mismatch": 0,
+    "names_missing_vs_base": [],
+    "names_extra_vs_base": [],
+    "shape_mismatch_vs_base": [],
+    "rel_l2_to_base": 0.00048800789880753674
+   },
+   "optim": {
+    "top_keys": [
+     "optim",
+     "rng"
+    ],
+    "rng_keys": [
+     "cuda",
+     "numpy",
+     "python",
+     "torch"
+    ],
+    "param_groups": [
+     {
+      "lr": 2e-06,
+      "betas": [
+       0.9,
+       0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": true,
+      "capturable": false,
+      "differentiable": false,
+      "fused": false,
+      "decoupled_weight_decay": true,
+      "n_params": 310
+     }
+    ],
+    "n_param_states": 310,
+    "step_values": [
+     512.0
+    ],
+    "n_nonfinite_moment_tensors": 0,
+    "n_checksum_mismatch": 0,
+    "checksum_mismatch": []
+   },
+   "lineage": {
+    "dir": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+    "run": "U-s202",
+    "round": 128,
+    "saved_utc": "2026-11-10T09:09:41Z",
+    "segments": [
+     {
+      "job": "11094037",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T07:06:05Z",
+      "resume_round": 0,
+      "resume_from": null,
+      "code_sha": "dd71b20",
+      "config_sha": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     },
+     {
+      "job": "11097811",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T18:10:08Z",
+      "resume_round": 64,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0064",
+      "code_sha": "6724cce",
+      "config_sha": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     },
+     {
+      "job": "11100159",
+      "gpu": "NVIDIA L40S",
+      "start_utc": "2026-11-09T21:55:52Z",
+      "resume_round": 64,
+      "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0064",
+      "code_sha": "d90dd8c",
+      "config_sha": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e",
+      "retain_rounds": [],
+      "ckpt_every": 16
+     }
+    ],
+    "writers": [
+     {
+      "job": "11100159",
+      "first_event": "2026-11-10T08:24:37Z",
+      "last_event": "2026-11-10T09:10:09Z",
+      "saved_utc_inside": true,
+      "events": [
+       {
+        "what": "checkpoint_started",
+        "utc": "2026-11-10T09:10:09Z",
+        "ok": null,
+        "error": null
+       },
+       {
+        "what": "checkpoint",
+        "utc": "2026-11-10T09:10:09Z",
+        "ok": true,
+        "error": null
+       }
+      ],
+      "config_sha": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e"
+     }
+    ],
+    "config_sha_state": "be9574584593d28bcaa2675012e5d39e490e247bc408c72b0dae0021554f0e3e",
+    "config_sha_matches_segment_jobs": [
+     "11094037",
+     "11097811",
+     "11100159"
+    ],
+    "canonical_step_rows_before_round": 512,
+    "canonical_opt_step_labels_max": 512,
+    "counters_opt_step_state": 512,
+    "adam_step_values": [
+     512.0
+    ],
+    "round_rows_at_round": [
+     {
+      "round": 128,
+      "utc": "2026-11-10T08:24:37Z",
+      "entropy_sample_mean": 0.2893276959657669
+     }
+    ]
+   },
+   "contemporaneous_model_sha": [
+    {
+     "record": "~/ae-qis/results/qis-cgpu-U-s202/bcba941-c0e373bd28da/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    {
+     "record": "~/ae-qis/results/qis-control-U-s202/0c7ac68-7be16011205f/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    {
+     "record": "~/ae-qis/results/qis-lentest-U-s202/ef68bf8-20d74a0ffdde/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    {
+     "record": "~/ae-qis/results/qis-len-U-s202/c894f2b-2ddafd4cf892/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    {
+     "record": "~/ae-qis/results/qis-stress-U-s202-r128/e4deb79-a2e72abb18b8/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    },
+    {
+     "record": "~/ae-qis/results/qis-test-U-s202-sym/73597a9-f2243ff0e9b5/ckpt_identity.txt",
+     "recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+     "on_disk_at_job": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+    }
+   ],
+   "contemporaneous_conflicts": [],
+   "manifest": [
+    "research/evidence/a17/manifest/manifest.json evals[6]",
+    "research/evidence/a17/manifest/manifest.json evals[11]",
+    "research/evidence/a17/manifest/manifest.json evals[19]"
+   ],
+   "endpoint_validator": [
+    "research/evidence/endpoints/endpoint_qis-main-U-s202-sym.json"
+   ],
+   "diag_r64_rows": 0,
+   "diag_r64_optim_sha_match": null,
+   "replays": [
+    {
+     "result": "qis-a26-replay-r128-ru/us202r128.json",
+     "mode": "restore",
+     "gpu": "NVIDIA L40S",
+     "job": "11122988",
+     "code_sha": "48901a3a11a57da241d2b108255271ee3942df0a",
+     "config_sha_match": true,
+     "bundle_sha_match": true,
+     "load": {
+      "loader": "qis.train.ckpt.load",
+      "ok": true,
+      "seconds": 159.1,
+      "round": 128,
+      "adam_steps": [
+       512.0
+      ],
+      "param_groups": [
+       {
+        "lr": 2e-06,
+        "betas": [
+         0.9,
+         0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": true,
+        "capturable": false,
+        "differentiable": false,
+        "fused": false,
+        "decoupled_weight_decay": true
+       }
+      ]
+     },
+     "tied": [
+      {
+       "path": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128/model.pt",
+       "keys_present": [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+       ],
+       "config_tie_word_embeddings": null,
+       "shape": [
+        151936,
+        2048
+       ],
+       "dtype": "torch.float32",
+       "bitwise_equal": true,
+       "max_abs_diff": 0.0,
+       "n_diff": 0,
+       "seconds": 29.8
+      }
+     ],
+     "tied_params_after_load": true,
+     "live_model_checksums_equal_state": true,
+     "live_finite": true,
+     "diag_restore": null,
+     "control_displaced": null,
+     "fingerprints": [
+      {
+       "label": "r128",
+       "entropy_ckpt": 0.2893276959657669,
+       "ref_entropy": 0.2893276959657669,
+       "abs_diff": 0.0,
+       "rel_diff": 0.0
+      }
+     ],
+     "replay_compare": {
+      "steps": [
+       {
+        "minibatch": 0,
+        "ref": null
+       }
+      ]
+     },
+     "replay_steps": [
+      {
+       "minibatch": 0,
+       "loss": 1.6763806343078613e-08,
+       "grad_norm_preclip": 0.5685008764266968,
+       "grad_clipped": false,
+       "valid_tokens": 86043,
+       "responses": 32,
+       "finite": true,
+       "adam_step_after": [
+        513.0
+       ]
+      }
+     ],
+     "adam_steps_after": [
+      513.0
+     ],
+     "vllm": null
+    }
+   ]
+  }
+ ],
+ "unavailable": [
+  {
+   "what": "round_0032 and round_0096 policies of all six runs",
+   "used_by": "in-run dev/J_H/J_R/J_U evaluations at rounds 32 and 96 (curves, round-32 provenance A13)",
+   "why": "rolling deletion (ckpt.py keeps newest + retain_rounds); never retained"
+  },
+  {
+   "what": "round_0064 of H-s101, U-s101, R-s202, U-s202",
+   "used_by": "in-run round-64 evaluations",
+   "why": "rolling deletion; U-s202 round_0064 was also the resume source of jobs 11097811 and 11100159"
+  },
+  {
+   "what": "H-s202 a2-orig round-64 policy (job 11082192)",
+   "used_by": "A16 appendix values (round-64 dev 0.658)",
+   "why": "save started 2026-11-10 19:15:45Z, job cancelled 19:16Z (D140); round_0064.tmp had no state.json (resume_audit_a17.txt) and was removed by the a2-r60 round-64 save (Saver._write rmtree of .tmp)"
+  },
+  {
+   "what": "H-s202 round_0060 (sha256 6ed5e01b... in resume_audit_a17.txt)",
+   "used_by": "resume source of a2-r60 (job 11112377)",
+   "why": "rolling deletion"
+  },
+  {
+   "what": "R-s101 round_0124",
+   "used_by": "resume source of the R-s101 retry (job 11092945, rounds 125-128)",
+   "why": "rolling deletion"
+  },
+  {
+   "what": "R-s202 round_0016",
+   "used_by": "resume source of R-s202 segment 2 (job 11094190)",
+   "why": "rolling deletion"
+  },
+  {
+   "what": "H-s202 original round_0116 directory",
+   "used_by": "source of the fallback copy",
+   "why": "rolling deletion; the copy's sha256 equals the recorded value"
+  },
+  {
+   "what": "R-s101 and U-s101 round_0128/optim.pt",
+   "used_by": "any continuation of training from those endpoints",
+   "why": "deleted by qis-prune-optim (D117)"
+  }
+ ],
+ "tolerances": {
+  "chosen": "from the U-s202 calibration computed 2026-11-11 ~21:40 EST, before the replays were submitted; not written to a file before the results",
+  "valid_tokens": "exact",
+  "step1_grad_norm_rel": 0.001,
+  "step1_basis": "U-s202 round 65 logged three times from one round_0064 save with 128/128 identical responses (L40S): restore vs restore 5.3e-6, in-memory vs restore 1.94e-4",
+  "steps2to4_grad_norm_rel": 0.1,
+  "steps2to4_basis": "same U-s202 rows: 0.06%-6.6% spread (chaotic after the first AdamW step); weak check only",
+  "entropy_fingerprint_rel": 0.001,
+  "entropy_note": "same GPU type gave bit-identical values (difference 0.0); L40<->L40S differs 1.3e-3 to 1.9e-3, so only GPU-matched fingerprints are used for identity decisions"
+ }
+}

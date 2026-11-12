@@ -98,8 +98,104 @@ def lineage_main(argv):
 
 
 
+TOLERANCES = {
+    "chosen": "from the U-s202 calibration computed 2026-11-11 ~21:40 EST, before the replays were submitted; not written to a file before the results",
+    "valid_tokens": "exact",
+    "step1_grad_norm_rel": 1e-3,
+    "step1_basis": "U-s202 round 65 logged three times from one round_0064 save with 128/128 identical responses (L40S): "
+                   "restore vs restore 5.3e-6, in-memory vs restore 1.94e-4",
+    "steps2to4_grad_norm_rel": 0.10,
+    "steps2to4_basis": "same U-s202 rows: 0.06%-6.6% spread (chaotic after the first AdamW step); weak check only",
+    "entropy_fingerprint_rel": 1e-3,
+    "entropy_note": "same GPU type gave bit-identical values (difference 0.0); L40<->L40S differs 1.3e-3 to 1.9e-3, so "
+                    "only GPU-matched fingerprints are used for identity decisions",
+}
+
+UNAVAILABLE = [
+    {"what": "round_0032 and round_0096 policies of all six runs", "used_by": "in-run dev/J_H/J_R/J_U evaluations at rounds 32 and 96 (curves, round-32 provenance A13)",
+     "why": "rolling deletion (ckpt.py keeps newest + retain_rounds); never retained"},
+    {"what": "round_0064 of H-s101, U-s101, R-s202, U-s202", "used_by": "in-run round-64 evaluations",
+     "why": "rolling deletion; U-s202 round_0064 was also the resume source of jobs 11097811 and 11100159"},
+    {"what": "H-s202 a2-orig round-64 policy (job 11082192)", "used_by": "A16 appendix values (round-64 dev 0.658)",
+     "why": "save started 2026-11-10 19:15:45Z, job cancelled 19:16Z (D140); round_0064.tmp had no state.json "
+            "(resume_audit_a17.txt) and was removed by the a2-r60 round-64 save (Saver._write rmtree of .tmp)"},
+    {"what": "H-s202 round_0060 (sha256 6ed5e01b... in resume_audit_a17.txt)", "used_by": "resume source of a2-r60 (job 11112377)", "why": "rolling deletion"},
+    {"what": "R-s101 round_0124", "used_by": "resume source of the R-s101 retry (job 11092945, rounds 125-128)", "why": "rolling deletion"},
+    {"what": "R-s202 round_0016", "used_by": "resume source of R-s202 segment 2 (job 11094190)", "why": "rolling deletion"},
+    {"what": "H-s202 original round_0116 directory", "used_by": "source of the fallback copy", "why": "rolling deletion; the copy's sha256 equals the recorded value"},
+    {"what": "R-s101 and U-s101 round_0128/optim.pt", "used_by": "any continuation of training from those endpoints", "why": "deleted by qis-prune-optim (D117)"},
+]
+
+
+def inventory_main(argv):
+    """Stdlib only. inventory LINEAGE_JSON IDENTITY_TXT RESULTS_DIR REPO OUT_JSON AUDIT_JSONL...
+    Joins ckpt_audit.py rows, lineage, contemporaneous hash records and replay results into one row per directory.
+    IDENTITY_TXT: lines "<expid>/<sha-expsha>|<ckpt_identity.txt content>" collected from ~/ae-qis/results on Babel."""
+    import glob, json, os, re
+    lin_p, ident_p, res_dir, repo, out = argv[:5]
+    audits = argv[5:]
+    lin = {x["dir"]: x for x in json.load(open(lin_p))}
+    ident = []
+    for line in open(ident_p):
+        if "|" not in line:
+            continue
+        job, txt = line.split("|", 1)
+        m = re.findall(r"recorded=([0-9a-f]{64}).*?(?:on-disk|copy)=([0-9a-f]{64})", txt)
+        if m:
+            ident.append({"record": f"~/ae-qis/results/{job}/ckpt_identity.txt", "recorded": m[0][0], "on_disk_at_job": m[0][1]})
+    manifest = json.load(open(os.path.join(repo, "research/evidence/a17/manifest/manifest.json")))
+    man = [{"record": f"research/evidence/a17/manifest/manifest.json evals[{i}]", "sha": e.get("sha"), "ckpt": e.get("ckpt"),
+            "eval": e.get("eval")} for i, e in enumerate(manifest["evals"])]
+    endpoints = {}
+    for p in glob.glob(os.path.join(repo, "research/evidence/endpoints/endpoint_*.json")):
+        endpoints[p] = open(p).read()
+    diag = [json.loads(l) for l in open(os.path.join(repo, "research/evidence/a15/diag_r64.jsonl"))]
+    replays = {}
+    for p in sorted(glob.glob(os.path.join(res_dir, "qis-a26-replay-*", "*.json"))):
+        r = json.load(open(p))
+        replays.setdefault(r["args"]["ckpt"].rstrip("/"), []).append((os.path.relpath(p, res_dir), r))
+    rows = []
+    for p in audits:
+        for line in open(p):
+            a = json.loads(line)
+            if "dir" not in a:
+                continue
+            d = a["dir"]; L = lin.get(d, {})
+            msha = a["files"].get("model.pt", {}).get("sha256"); osha = a["files"].get("optim.pt", {}).get("sha256")
+            row = {"dir": d, "audit_source": os.path.basename(p), "files": a["files"], "state": a.get("state"),
+                   "hash_vs_state": a.get("hash_vs_state"), "model": a.get("model"), "optim": a.get("optim"),
+                   "lineage": L,
+                   "contemporaneous_model_sha": [x for x in ident if msha in (x["recorded"], x["on_disk_at_job"])],
+                   "contemporaneous_conflicts": [x for x in ident if x["recorded"] != x["on_disk_at_job"]],
+                   "manifest": [x["record"] for x in man if x["sha"] == msha],
+                   "endpoint_validator": [os.path.relpath(k, repo) for k, v in endpoints.items() if msha and msha in v],
+                   "diag_r64_rows": sum(1 for x in diag if x.get("file_sha256", {}).get("model.pt") == msha),
+                   "diag_r64_optim_sha_match": None if not any(x.get("file_sha256", {}).get("model.pt") == msha for x in diag) else all(x.get("file_sha256", {}).get("optim.pt") == osha
+                                                   for x in diag if x.get("file_sha256", {}).get("model.pt") == msha) if osha else None,
+                   "replays": []}
+            for rp, r in replays.get(d, []):
+                row["replays"].append({"result": rp, "mode": r["args"]["mode"], "gpu": r.get("gpu"), "job": r.get("job"),
+                                       "code_sha": r.get("code_sha"),
+                                       **{k: r.get(k) for k in ("config_sha_match", "bundle_sha_match", "load", "tied",
+                                                                "tied_params_after_load", "live_model_checksums_equal_state",
+                                                                "live_finite", "diag_restore", "control_displaced")},
+                                       "fingerprints": [{k: v for k, v in f.items() if k != "per_attempt"} for f in r.get("fingerprints", [])],
+                                       "replay_compare": (r.get("replay") or {}).get("compare"),
+                                       "replay_steps": [{k: v for k, v in s.items()} for s in ((r.get("replay") or {}).get("raw") or {}).get("steps", [])],
+                                       "adam_steps_after": (r.get("replay") or {}).get("adam_steps_after"),
+                                       "vllm": r.get("vllm")})
+            rows.append(row)
+    rows.sort(key=lambda x: x["dir"])
+    json.dump({"generated_by": "research/audit-a26/tools/ckpt_replay.py inventory", "rows": rows,
+               "unavailable": UNAVAILABLE, "tolerances": TOLERANCES}, open(out, "w"), indent=1)
+    print(len(rows), "rows")
+
+
 if __name__ == "__main__" and sys.argv[1:2] == ["lineage"]:
     lineage_main(sys.argv[2:])
+    sys.exit(0)
+if __name__ == "__main__" and sys.argv[1:2] == ["inventory"]:
+    inventory_main(sys.argv[2:])
     sys.exit(0)
 
 import argparse
