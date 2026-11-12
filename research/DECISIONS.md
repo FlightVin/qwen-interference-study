@@ -1123,3 +1123,18 @@ changes a training update, a grade, an endpoint score or a primary contrast. The
 7. Response audit (I9). "Fixable by factoring practice" is a reader annotation about a hypothetical intervention, not an effect.
 **Action.** DEFINITIONS v1 → v1.1 (`research/audit-a26/definitions-v1.1-changes.md`); report v3 is written from the audited
 tables; report v2 stays archived unchanged.
+
+## D163 — 2026-11-12 ~05:30Z (Thu 12:30 AM EST) — Outcome of D161: the probe rise is general improvement
+**Evidence.** `research/audit-a26/transfer/` (pre-registered 7e08d75 before the panel was built). Control panel `control_v1`
+(64 MATH test problems, geometry / counting and probability / precalculus / prealgebra, L4–5, sha256 `fc2ceb70…`): base
+pass@1 0.508; round-128 endpoints H 0.734 / 0.756, R 0.791 / 0.721, U 0.762 / 0.734 (s101 / s202); gain over base +21.3
+to +28.3 points in every run, all intervals exclude 0; arm differences ≤ 6 points and change sign between seeds. Probe
+taxonomy: base answers are always boxed; format failures ≤ 1 attempt per cell; the J_U gain (+9.8 to +14.8) comes from
+fewer wrong final answers; 23–76% of it is present at round 32 (both evaluations at cap 8,192); per-problem J_U changes
+correlate 0.81–0.94 across arms.
+**Interpretation.** The rise of J_U and J_R in arms that never practise those skills is part of a general improvement that
+GRPO training on these mixtures produced on unrelated MATH subjects as well. It is not explained by answer format, the
+evaluation cap, or noise. The pre-registered E1/E2 rule mislabelled U as borderline because it counted repeated wrong
+boxes as "format"; lenient grading finds the gold in 0 of the 99 such base attempts, so all three arms meet E2. The
+mechanism of the general gain is not identified. One recorded process deviation: the control jobs were submitted with
+untracked files hidden from the dirty-tree check (IMPLEMENTATION-LOG 2026-11-12); the jobs are pinned to clean commits.
