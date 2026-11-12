@@ -1087,3 +1087,15 @@ the CPU standby 11122432 was pending. A26 authorizes all 8 general GPUs for veri
 **Action.** `qis-a26-ckpt-list` (CPU, listing only) and `qis-a26-ckpt-k0..3` (general, 1 GPU each, 96 GB RAM; directories
 split by index mod 4) run the independent tool `research/audit-a26/tools/ckpt_audit.py` at 9b2fd05. The GPU itself is idle
 in these jobs; the slot buys a prompt start and enough memory. Read-only on project data.
+
+## D161 — 2026-11-12 ~03:15Z (Wed 10:15 PM EST) — A26: explain the cross-arm rise of J_U and J_R
+**Evidence.** J_U and J_R rise 8–15 points in every arm, including arms that never practise the skill. The shared hard
+problems are factoring-central and none is annotated modular = yes. A26 authorizes evaluations that explain such results.
+**Action.** (1) Classify existing in-run probe attempts at rounds 0–128 by failure type (truncated, no box, multiple boxes,
+wrong box) and re-score leniently. (2) Evaluate base and the six round-128 endpoints on a new control panel `control_v1`:
+64 unused MATH test problems (geometry, counting and probability, precalculus, prealgebra; levels 4–5; 16 per subject,
+hash-ordered, chosen without model output), 8 attempts, cap 12,288, seed label `control-v1`. The hypotheses and the
+comparison are pre-registered in `research/audit-a26/transfer/PREREG.md` before any result. Exploratory; not a new
+training study.
+**Interpretation rule.** If all arms gain similarly on subjects none of them trained on, the J_U rise is read as general
+improvement from GRPO training, not skill transfer from the shared hard problems.
