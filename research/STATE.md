@@ -57,6 +57,6 @@ D162); control panel: probe rise is general improvement, +21 to +28 points on un
 tables t01–t09, value check 0 mismatches (8bd3f33).
 
 ## Next actions
-1. Replay results → `pass-a/checkpoints.md`, `replay.md`; fill report Appendix B.
-2. Review the v3 draft against A26 §4 (7 acceptance tests) and §5; fix.
-3. Render from a clean clone; inspect every figure at 830 px and a narrow viewport; deliver the handoff.
+1. Render inspection (agent) → apply figure fixes → rebuild → re-render until all pass.
+2. Handoff: defects that changed numbers, interpretation, and what could not be verified.
+Report v3 committed 5b211c7; checkpoints all pass (6282ba0).
