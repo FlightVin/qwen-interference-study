@@ -917,3 +917,88 @@ CHECKLIST 0.31.
 Applied: `research/STATE.md` and `research/CHECKLIST.md` reset to empty skeletons. Their previous contents remain in git
 at commit 045c528. Results, decisions and amendments stay in `reports/REPORT.md`, `research/DECISIONS.md` and this file.
 No project jobs are running. Waiting for the owner's next instruction.
+
+## 40. Owner instruction A26 (received 2026-11-12 ~01:40Z = Wed 11 Nov 8:40 PM EST): audit the study, then rewrite the report
+
+Recorded verbatim. Supersedes A25's "await my next prompt". The general-GPU ceiling for this task is 8 (A26: "all 8
+general GPUs"); preempt stays at 6. No new training study; evaluations to explain curious results are authorized.
+
+> # Audit the MiniGrid successor study on GRPO math mixtures, then rewrite its report
+>
+> Take ownership of the audit and rewrite of `reports/REPORT.md`. The deliverable is a research report that a reader can understand without our chat history and whose claims can be traced to the data, checkpoints, and code that produced them. Preserve the current report as a historical version. Work autonomously within this project’s existing compute and storage limits (all 8 general GPUs). This task authorizes verification, focused re-evaluation where needed, and figure regeneration. A new training study is outside scope but you may run evaluations to explain anything that is curious such as evaluations improving over tasks that we did not train for.
+>
+> Proceed in order: establish the definitions, complete two independent audit passes, resolve discrepancies, then write and visually inspect the report. Record consequential corrections in `research/DECISIONS.md`. If a correction changes a scientific conclusion, say exactly how.
+>
+> ## 1. Establish one authoritative set of definitions
+>
+> The current report makes the reader work through “What we learned” and “Four practical answers” before reaching the study design. It also uses *hard*, *probe*, *success*, *learning signal*, and *checkpoint* for quantities that a reader could reasonably confuse. Fix this at the source.
+>
+> Create a short, versioned definitions table from the frozen protocol, amendments, manifests, and executed code. For each term, distinguish the intended definition from what the jobs actually did. Document any difference. Use this table for the report, figures, state files, and future chat answers. Preserve historical records and mark superseded definitions explicitly.
+>
+> In particular, distinguish only after verifying underlying code-logic and datasets,
+>
+> - **H**, the hard-only training arm; **H\_train**, the pool of 46 distinct hard training problems; the **eight shared hard prompt slots** in a round; and **J\_H**, a score on a fixed hard development probe. Explain that problems recur across rounds and that prompt slots, distinct problems, generated answers, and optimizer steps are different units. What **dev** is, etc.
+> - **R and U**, the training arms; the **63 matched pairs** used for auxiliary training; and **J\_R and J\_U**, scores from separate factoring and modular-arithmetic probes. A change in J\_U for R is possible because every policy can be evaluated on every probe.
+> - A **training seed**, **minibatch seed**, **evaluation sampling seed**, **checkpoint round**, and **run attempt**. State exactly what is shared across arms within a seed and what can still differ.
+> - **Pass@1**, **pass@8**, **observed coverage at n attempts**, **accuracy among finished responses**, and **truncation**. Give the implemented estimator and denominator. In particular, check how pass@8 is estimated from 32 answers and how it relates to observed coverage when only eight answers exist.
+> - A **mixed group**, a **nonzero reward advantage**, and an **optimizer update**. An all-correct or all-wrong group supplies no within-group reward contrast under this recipe. Other groups in the batch and stored AdamW moments can still move the weights.
+>
+> ## 2. Audit pass A — trace the executed experiment from inputs to outputs
+>
+> Inventory every project-owned code path used to construct data, train or resume a run, evaluate a checkpoint, merge shards, compute statistics, and generate a published figure. Identify the commit, recipe, environment, and inputs actually used by each job. Reviewing current `main` alone is insufficient when jobs used earlier revisions.
+>
+> **Data.** Build a manifest of every training, calibration, development, probe, sealed-test, cue, stress, and audit set. For each, verify source and split, distinct item and family counts, natural versus authored items, inclusion rules, skill labels, baseline difficulty screening, pairing, and exclusions. Record intended overlaps explicitly: for example, verify whether the 32 J\_H items are a subset of the 53 development problems. Check unintended overlap using IDs, normalized content, and the existing family or near-duplicate rules. Trace the manifest hashes into the actual jobs. Inspect the prompt presented to the model, gold answer, grading path, and representative accepted and rejected items. Verify training schedules directly from logs, including shared hard prompts by seed and round, H’s extra prompts, and the R/U pairing rule.
+>
+> **Training and evaluation code.** Verify the pinned model and non-thinking template, sampling, reward extraction, truncation, group advantages, clipping, loss reduction, optimizer, precision, masking, seed handling, and checkpoint cadence. Check the cap transition at round 33, resumed trajectories, repeated rounds, stale counters, and exclusion of superseded attempts. Trace exact problem and attempt IDs through every evaluation shard and merge. For the extension to 16,384 tokens, verify the checkpoint identity, preservation of the original token prefix, eligibility of capped attempts, terminal conditions, and regrading rule. Record which aspects of stochastic continuation can actually be reproduced.
+>
+> **Every stored checkpoint.** Inventory all project-owned retained checkpoints, including intermediate, fallback, superseded, and resumable saves. For every artifact, hash the file bytes afresh, compare with contemporaneous records, load it with the appropriate loader, and check tensor names, shapes, dtypes, finiteness, model identity, arm, seed, round, and parent trajectory. For resumable checkpoints, verify optimizer state, step state, RNG state, and sampler position against the run records. Perform a disposable restore-and-step check for each distinct resume path. For weights-only saves, record exactly what can be validated. Treat missing or pruned files as unavailable. Never infer their integrity from a copied hash.
+>
+> Pay particular attention to the original and resumed H-s202 trajectories, which both passed through round 64, the round-116 fallback, and the final round-128 endpoint. Identify which round-64 weights produced the reported stress result. Map every published evaluation to its exact checkpoint, panel, hardware, and attempt set.
+>
+> Run the relevant tests and focused regression checks against identified failure modes. Record what each check establishes and its outcome.
+>
+> ## 3. Audit pass B — independently reproduce and challenge the evidence
+>
+> Use a separate reviewer or clean work context. Give it the frozen definitions, raw records, manifests, checkpoints, and protocol. Have it produce its own results **before** showing it pass A’s numerical outputs. Use an independent analysis implementation that does not import the production aggregation, bootstrap, or plotting functions. Running the same script twice is one check.
+>
+> Independently reconstruct the six endpoints, base scores, common-GPU reruns, learning curves, probe scores, branch changes, coverage and reliability results, stress tiers, length-extension results, and costs. Check pairing, missing attempts, weighting, interval units, and signs. Verify that problem bootstraps preserve the pairing and that the uncertainty described in prose matches what was resampled. Two training seeds cannot establish the distribution of effects across future runs.
+>
+> Both passes should trace at least one ordinary record and one difficult case from raw input to reported result. Include a capped response, a multiple-box answer, a resumed run, an all-correct group, a momentum-only step, and a sharded endpoint. Compare the two passes only after each has written its findings. Resolve disagreements from primary records, fix defects at their source, and rerun all affected downstream outputs. Publish a compact discrepancy log with the original claim, evidence, correction, and scientific consequence.
+>
+> ## 4. Resolve these specific problems in the current report
+>
+> Use these as acceptance tests. Look for related errors throughout the document.
+>
+> - The report says all six runs finished, then describes “five finished trained policies” and gives a range starting at 74.8%, although H-s202 scored 72.4%. The stress narrative similarly gives ranges that omit H-s202’s 60.1% overall and 49.4% on SuperHard. Compute ranges from explicitly named checkpoint sets. The response audit genuinely covered only five trained policies; preserve that distinction.
+> - The report says the endpoint sign “appeared between rounds 32 and 64” in both seeds. Its own dev scores already put U above R in seed 202 at round 32. Identify the earliest *observed* ordering separately for each seed and panel. The cap changed in that window, and no matched intermediate R/U stress checkpoints survive.
+> - “More room does not rescue those answers” conflicts with the measured rescues. On the seed-202 sealed test, the extension recovered 16.2% of capped R answers and 19.8% of capped U answers. Explain both observations: additional tokens improved absolute success for both checkpoints, while the ordering remained the same. Accuracy conditional on finishing compares selected responses and cannot establish that arithmetic skill was preserved.
+> - The reported R−H and U−H point estimates are positive in both seeds, but two of the four per-seed intervals include zero. Describe the observed allocation tradeoff, the token costs, and the uncertainty. Avoid turning two runs per arm into a general curriculum recommendation or treating an interval containing zero as evidence of equivalence.
+> - A few unrelated-update branches and later all-wrong groups do not identify the full ray-interference mechanism. Separate local update effects, observed loss and recovery on training prompts, and sustained stalls. Remove unsupported claims about detecting a three-point effect. Explain which links were measured on the same trajectory and which were never connected.
+> - Verify the audit denominators: 96 responses, 35 graded failures, two reader judgments per response, and 33 genuine failures after adjudication. Some long responses were shown as excerpts. “Both readers judged this potentially fixable” is an annotation about a hypothetical intervention. It is not an observed training effect.
+> - Calculate contrasts from unrounded data. Avoid writing equations that visibly fail at displayed precision, such as `78.3 − 78.5 = −0.1`. Put the two absolute scores and the independently rounded contrast in separate columns, with one rounding note.
+>
+> ## 5. Rewrite the report in this order
+>
+> Start with the task. **Remove the opening synopsis, “What we learned,” and “Four practical answers.”** Each result needs one main home.
+>
+> 1. **Task definition.** Explain in plain language what the model receives, what it generates, what earns reward, and why the allocation of the other eight prompt slots matters. Use one verified example of a direct factoring exercise and one example of a target problem where the learner must recognize when factoring helps. Identify the source and role of each example.
+> 2. **Data and measurements.** Introduce every set before using its shorthand. Provide one compact table with its purpose, source, size in distinct problems, overlap with other sets, whether it affects training, and when and how often it is evaluated. Explain how “hard,” “related,” “unrelated,” “Harder,” and “SuperHard” were assigned. Name the exact problems represented by each J measure through a linked manifest.
+> 3. **Research questions.** List the primary question about R versus U at equal hard exposure, the comparison with spending all slots on hard problems, and the exploratory questions about interference, coverage, answer length, and transfer. Say when each was specified and what comparison can answer it.
+> 4. **Experimental procedure.** Walk through one GRPO round, then the full run and its evaluations. Define the model, arms, seeds, sampling, update budget, cap change, checkpoint selection, verifier, and statistical unit. Explain why the common-GPU rerun and the round-116 fallback exist.
+> 5. **Results.** Lead with one six-endpoint table plus the base. Then present learning dynamics and probes, coverage and local interference, the length extension, and stress-panel transfer. Give the cue study and response audit proportionate space. For each analysis, tell the reader why it was needed, what was compared, what happened, and which explanation remains possible. Show absolute values beside differences. Let tables carry the numerical detail.
+> 6. **Interpretation, limitations, and next decision.** State what held across both seeds, what changed sign, and what the experiment cannot settle. Identify the single next comparison that would reduce the most important uncertainty. Distinguish replicating the current recipe across more seeds from changing the practice pool or training cap; combining those changes answers a different question.
+> 7. **Technical appendices.** Put complete tables, checkpoint lineage, job and cost ledgers, hardware details, hashes, commands, audit findings, and unavailable cells here. Keep them linked and reproducible.
+>
+> Write for a machine-learning researcher encountering the project for the first time. Prefer “the model answered correctly in 640 of 760 attempts” to shorthand such as “the cell carried the gain.” Use *problem*, *attempt*, *group*, *round*, and *checkpoint* consistently. Delete repeated interpretations, operational narration, and claims stronger than their evidence.
+>
+> ## 6. Rebuild the figures and inspect the rendered report
+>
+> Open **every actual figure** at its final Markdown display width. A passing render or working file link does not establish readability. Replace clipped titles, truncated labels, overlapping legends, tiny panels, and dense annotations. Split figures when two questions compete for space. Give titles, axes, units, and legends enough room. Use consistent colors for H/R/U and a second visual cue for seeds. Put exact values in adjacent tables when labels crowd the plot.
+>
+> Preserve the figures that carry the scientific argument: endpoint scores and paired contrasts, learning over rounds and hard exposure, POPE-style J trajectories, measured one-step ΔJ, and the length and stress comparisons. Define both J axes in ordinary language. Show the direction of training through observed checkpoints. Plot individual branch draws for ΔJ and identify the reference. Every caption should tell a reader which policies, problems, attempts, and uncertainty measure are shown. Check plotted values against independently verified tables.
+>
+> Render the report from a clean checkout. Inspect each figure in place at normal reading size and check it at a narrower viewport. Revise and render again until every label is legible without zooming and no text is cut off.
+>
+> ## 7. Deliver
+>
+> Deliver the revised `reports/REPORT.md`, regenerated figures and source tables, canonical definitions, checkpoint and data inventories, both independent audit records, and the resolved discrepancy log. Give me a short handoff naming **which defects changed numbers, which changed interpretation, and what could not be verified**. Use the audited definitions in that handoff and in subsequent chat. A reader should be able to ask “What exactly is J\_H, what data trained R, and what did the extra 4,096 tokens change?” and get the same precise answer from the report, code, and you.
