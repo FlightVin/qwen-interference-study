@@ -310,7 +310,9 @@ describe variation across training runs.*
   (R-s202, interval [+0.2, +2.6], which excludes zero). The GPU type matters at that scale but does not explain R − U.
 - R − H and U − H point estimates are positive in both seeds (+4.9 and +2.4; +0.7 and +6.8). Two of the four intervals
   include zero (R − H in seed 202, U − H in seed 101). An interval that includes zero is not evidence that two arms are
-  equal. The seed-202 H cell mixed two GPU types (65 problems on L40S, 63 on RTX A6000). Against the r116 fallback,
+  equal. The seed-202 H cell mixed two GPU types (65 problems on L40S, 63 on RTX A6000). An L40S-only rerun of this
+  endpoint (8 shards, same checkpoint and seeds; D166) was started on 12 Nov; its result is pending at the time of
+  writing, and v4 reports no partial value from it. Against the r116 fallback,
   seed-202 R − H is +0.5 points [−2.2, +3.2] and U − H is +4.9 [+2.1, +7.9]
   ([`pass-b/eval.md`](../research/audit-a26/pass-b/eval.md) §4).
 
