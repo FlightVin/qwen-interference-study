@@ -91,9 +91,9 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - Handoff sent 2026-11-12. Standbys cancelled; compute worktree of a-code removed.
 - 8.1 Report, figures, tables, definitions, inventories, both audit records, discrepancy log; short handoff.
 
-## 9. A27 report v4                                                                   [done]
+## 9. A27 report v4                                                        [delivered; 9.2 active]
 - 9.1 Inherited state verified: v3 audit, figures and checkpoint inventory complete; v3 report and figures archived.
-- 9.2 Live usage checked (0 jobs); no GPU job justified within the deadline (STATE).
+- 9.2 Live usage checked (0 jobs). D166: H-s202 r128 sealed test on L40S, 8 shards → active (7/8 done at 11:56 AM EST).
 - 9.3 New analysis: per-pool groups without reward contrast by quarter (`tables/v4/t10_signal`; totals = v3 table, 6/6).
 - 9.4 Report v4 edits (Appendix J lists them); ray interference cited from Schaul et al. 2019 and POPE §3.2 / Fig. 5.
 - 9.5 Figures 1 and 9 inspected at 830 px and 372 px (`reports/figures/v4/render-inspection.md`); others unchanged from v3.

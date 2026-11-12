@@ -10,8 +10,10 @@ worked GRPO group, groups without reward contrast per pool and quarter (F9, `rep
 interference from primary sources mapped to measurements, discussion of what slots 8–15 bought, raw examples (App. I).
 New finding: from round 65, 78–92% of R and U practice groups were all correct (200–236 of 256 per quarter) against
 44–57% of H's extra hard groups → the R/U contrast was tested mainly in rounds 1–64 (D164).
-GPUs: 0 project jobs at start (squeue --me, 10:47 AM EST) and 0 submitted; no re-evaluation could resolve the main
+GPUs: 0 project jobs at start (squeue --me, 10:47 AM EST); 8 L40S shards submitted for D166; no re-evaluation could resolve the main
 uncertainty (run-to-run spread) inside the deadline. Checkpoint inventory (pass A 2.6) was already complete (6282ba0).
+Open at delivery (11:56 AM EST): D166 L40S-only rerun of the H-s202 r128 sealed test, 7 of 8 shards COMPLETED,
+k5 (11127292) RUNNING; when it merges, run `reports/build/cgpu_h_s202.py --root .` and replace the "pending" note in §5.1.
 
 ## Task
 Audit the finished QIS study (Qwen3-1.7B, full-parameter GRPO; arms H, R, U × training seeds 101, 202; all six runs
