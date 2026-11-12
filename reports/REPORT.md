@@ -295,10 +295,15 @@ it is not a held-out evaluation. The dotted line marks the cap change from 8,192
 trains on 16 hard prompts per round and R/U on 8, so H reaches a given hard exposure in half the rounds. H-s202 (trajectory a2-r60) reached round 128 at 20:42Z; its dev
 pass@1 at rounds 64 / 96 / 128 was 63.7% / 66.0% / 67.0%.
 
-**Probes.** Three probes track single skills during training, all at 8 attempts:
-- `J_H`: 32 hard dev problems (held out).
-- `J_R`: 28 factoring practice-style problems (held out from training pools).
-- `J_U`: 32 modular-arithmetic practice-style problems (held out).
+**Probes.** Three probes track single skills during training, all at 8 attempts. All are real MATH problems from the
+`study_dev` split, which no training pool draws from, chosen by a two-read annotation rubric and never by model success
+(D34; `src/qis/data/select_targets.py`):
+- `J_H`: the first 32 problems of the hard dev panel (factoring central, not a direct exercise).
+- `J_R`: 28 problems where factoring is central and the problem is a direct factoring exercise (the skill R practises).
+- `J_U`: 32 number-theory problems that use modular arithmetic and involve no factoring (the skill U practises).
+They test the practised skills on natural problems, not on the authored practice items (U's pool is 54 authored items
+plus 9 MATH items). The base model already solves about 81% of `J_R` and `J_U`, and every arm gains 8–15 points on
+both, so their rise mostly reflects improvements shared by all arms rather than skill-specific transfer.
 
 The two figures below plot the hard probe against each practice probe.
 
