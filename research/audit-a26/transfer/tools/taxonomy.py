@@ -128,13 +128,15 @@ def main():
                 cell["has_think"] = sum(x["has_think"] for x in rows)
                 cell["mean_tokens"] = {c: (sum(x["n_tokens"] for x in rows if x["cls"] == c) /
                                            max(1, sum(x["cls"] == c for x in rows))) for c in CLASSES}
-                per = defaultdict(lambda: {"c": 0, "n": 0, "trunc": 0, "c_lenient": 0})
+                per = defaultdict(lambda: {"c": 0, "n": 0, "trunc": 0, "c_lenient": 0, "c_within_8192": 0, "fmt_fail": 0})
                 for x in rows:
                     p = per[x["id"]]
                     p["n"] += 1
                     p["c"] += x["cls"] == "correct"
                     p["trunc"] += x["cls"] == "truncated"
                     p["c_lenient"] += x["cls"] == "correct" or (x["fin"] and x["any_box"])
+                    p["c_within_8192"] += x["cls"] == "correct" and x["n_tokens"] <= 8192
+                    p["fmt_fail"] += x["cls"] in ("no_box", "box_unbalanced", "multi_box_wrong")
                 cell["per_problem"] = {i: per[i] for i in ids_of[pn] if i in per}
                 res["cells"][f"{run}|{rnd}|{pn}"] = cell
                 print(run, rnd, pn, cell["attempts"], cell["classes"], flush=True)
