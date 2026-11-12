@@ -1079,3 +1079,11 @@ is plausibly where missed strategy recognition shows up; exact-window matching c
   is not feasible by the deadline.
 - **21:57Z extension.** Endpoint k2 (11119213, L40S) was still pending while k0, k1, k3–k5 ran; it was cancelled and
   resubmitted on any 48 GB GPU, so the endpoint does not wait on the L40S queue. k0 and k1 run on L40S.
+
+## D160 — 2026-11-12 ~02:05Z (Wed 9:05 PM EST) — A26 audit: checkpoint integrity checks on general GPUs
+**Evidence.** A26 (`project.md` §40) asks for a fresh hash, load and tensor check of every retained checkpoint. Each
+checkpoint is up to ~20.6 GB (model.pt ≈ 6.9 GB fp32 + optim.pt ≈ 13.8 GB). The CPU QOS had 111 pending jobs at 01:55Z and
+the CPU standby 11122432 was pending. A26 authorizes all 8 general GPUs for verification.
+**Action.** `qis-a26-ckpt-list` (CPU, listing only) and `qis-a26-ckpt-k0..3` (general, 1 GPU each, 96 GB RAM; directories
+split by index mod 4) run the independent tool `research/audit-a26/tools/ckpt_audit.py` at 9b2fd05. The GPU itself is idle
+in these jobs; the slot buys a prompt start and enough memory. Read-only on project data.
