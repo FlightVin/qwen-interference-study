@@ -909,3 +909,11 @@ preempt until an endpoint shard ends, so the peak at RUN_COMPLETE is 8 (6 endpoi
 Applied: the session cron job that sent the hourly review prompt (1c83fcbe) was cancelled and the background `ae-watch`
 watcher was stopped. Supersedes the hourly-review requirement of A17. No project jobs are running. Recorded as
 CHECKLIST 0.31.
+
+## 39. Owner instruction A25 (received 2026-11-12, Wed evening EST): clear state and checklist
+
+> Clear your state and checklist, and await my next prompt.
+
+Applied: `research/STATE.md` and `research/CHECKLIST.md` reset to empty skeletons. Their previous contents remain in git
+at commit 045c528. Results, decisions and amendments stay in `reports/REPORT.md`, `research/DECISIONS.md` and this file.
+No project jobs are running. Waiting for the owner's next instruction.
