@@ -677,19 +677,18 @@ def _curve_axes(plt, t03, fdir, name, xkey, xlabel, title, panel="dev", ylabel=N
                         mec=COLOR[a], mew=1.6, ls="none", zorder=3)
         if xkey == "round":
             ax.axvline(32, color=MUTED, lw=1, ls=":", zorder=1)
-            ax.text(31, 0.97, "cap\n8,192", transform=ax.get_xaxis_transform(), ha="right", va="top",
+            ax.text(30, 0.98, "cap 8,192", transform=ax.get_xaxis_transform(), ha="right", va="top",
                     fontsize=10, color=MUTED)
-            ax.text(34, 0.97, "cap 12,288", transform=ax.get_xaxis_transform(), ha="left", va="top",
+            ax.text(34, 0.98, "cap 12,288", transform=ax.get_xaxis_transform(), ha="left", va="top",
                     fontsize=10, color=MUTED)
-            ax.set_xticks(ROUNDS)
+            ax.set_xticks(ROUNDS, ["0\nbase"] + [str(r) for r in ROUNDS[1:]])
             ax.set_xlim(-6, 134)
         else:
-            ax.set_xticks([0, 4, 8, 12, 16])
+            ax.set_xticks([0, 4, 8, 12, 16], ["0\nbase", "4", "8", "12", "16"])
             ax.set_xlim(-0.8, 17)
+        ax.set_ylim(38, 80)
         ax.set_title(f"Seed {s}", loc="left")
         ax.set_xlabel(xlabel)
-        ax.annotate("round 0: same\nbase policy", (0, 41), xytext=(14, -2), textcoords="offset points",
-                    ha="left", va="center", fontsize=10, color=MUTED)
         ax.yaxis.grid(True, color=GRID, lw=0.6)
         ax.set_axisbelow(True)
     axes[0].set_ylabel(ylabel or "pass@1 on 53 dev problems,\n8 attempts each (%)")
@@ -834,8 +833,8 @@ def _length_dumbbell(ax, rows, ytick=True):
 def f08_length_pass1(plt, t05, fdir):
     from matplotlib.lines import Line2D
     fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.2), sharey=True)
-    for ax, (panel, title, xl) in zip(axes, (("test", "Sealed test", "pass@1, 128 problems × 32 attempts (%)"),
-                                             ("stress", "Stress panels", "pass@1, 221 problems × 8 attempts (%)"))):
+    for ax, (panel, title, xl) in zip(axes, (("test", "Sealed test", "pass@1 (%)"),
+                                             ("stress", "Stress panels", "pass@1 (%)"))):
         _length_dumbbell(ax, [r for r in t05 if r["panel"] == panel], ytick=(panel == "test"))
         ax.set_title(title, loc="left")
         ax.set_xlabel(xl)
