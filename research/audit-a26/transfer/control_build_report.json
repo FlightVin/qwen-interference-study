@@ -1,0 +1,721 @@
+{
+ "rule": "research/audit-a26/transfer/PREREG.md \u00a72",
+ "roots": [
+  "/data/user_data/vineethb/qis/data/authored-v1/",
+  "/data/user_data/vineethb/qis/data/authored-v2/",
+  "/data/user_data/vineethb/qis/data/calib-panels-k8/",
+  "/data/user_data/vineethb/qis/data/calib-panels-v1/",
+  "/data/user_data/vineethb/qis/data/candidates-authored-v1/",
+  "/data/user_data/vineethb/qis/data/candidates-authored-v2/",
+  "/data/user_data/vineethb/qis/data/candidates-v1-calib/",
+  "/data/user_data/vineethb/qis/data/candidates-v1-study/",
+  "/data/user_data/vineethb/qis/data/hsel-combined-v1/",
+  "/data/user_data/vineethb/qis/data/hsel-native-v1/",
+  "/data/user_data/vineethb/qis/data/main-v1/",
+  "/data/user_data/vineethb/qis/data/match-k8/",
+  "/data/user_data/vineethb/qis/data/omni-v1/",
+  "/data/user_data/vineethb/qis/data/rescreen-k8-aux/",
+  "/data/user_data/vineethb/qis/data/rescreen-k8-h/",
+  "/data/user_data/vineethb/qis/data/shortlist-authored-v1/",
+  "/data/user_data/vineethb/qis/data/shortlist-authored-v2/",
+  "/data/user_data/vineethb/qis/data/shortlist-k8/",
+  "/data/user_data/vineethb/qis/data/shortlist-v1/",
+  "/data/user_data/vineethb/qis/data/stress/",
+  "/data/user_data/vineethb/qis/data/stress.superseded-d143/",
+  "/data/user_data/vineethb/qis/data/targets-v1/",
+  "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data"
+ ],
+ "skip": [
+  "/splits-v1/",
+  "/raw-21a5633/",
+  "/audit-a26/",
+  "/data/control/"
+ ],
+ "used_files": 156,
+ "used_texts": 16776,
+ "used_ids": 2794,
+ "candidates": {
+  "counting_and_probability": 234,
+  "geometry": 257,
+  "prealgebra": 384,
+  "precalculus": 249
+ },
+ "excluded": {
+  "id in a study file": 95,
+  "close variant (3-gram Jaccard >= 0.5)": 18
+ },
+ "excluded_items": [
+  {
+   "id": "counting_and_probability/test/00017",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00030",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00032",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00197",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00205",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00270",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00298",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00300",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00321",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00347",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00368",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00389",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00415",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00430",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00439",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00440",
+   "subject": "counting_and_probability",
+   "why": "id in a study file"
+  },
+  {
+   "id": "counting_and_probability/test/00443",
+   "subject": "counting_and_probability",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.861,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/omni_math_test.jsonl",
+    "item": null
+   }
+  },
+  {
+   "id": "geometry/test/00195",
+   "subject": "geometry",
+   "why": "id in a study file"
+  },
+  {
+   "id": "geometry/test/00349",
+   "subject": "geometry",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.722,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/omni_math_test.jsonl",
+    "item": null
+   }
+  },
+  {
+   "id": "prealgebra/test/00030",
+   "subject": "prealgebra",
+   "why": "id in a study file"
+  },
+  {
+   "id": "prealgebra/test/00083",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.516,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:number_theory/train/00865"
+   }
+  },
+  {
+   "id": "prealgebra/test/00160",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 1.0,
+    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/calib_val.jsonl",
+    "item": "number_theory/train/00394"
+   }
+  },
+  {
+   "id": "prealgebra/test/00185",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.567,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:number_theory/train/00865"
+   }
+  },
+  {
+   "id": "prealgebra/test/00345",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.5,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:number_theory/train/00865"
+   }
+  },
+  {
+   "id": "prealgebra/test/00424",
+   "subject": "prealgebra",
+   "why": "id in a study file"
+  },
+  {
+   "id": "prealgebra/test/00560",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.529,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:number_theory/train/00050"
+   }
+  },
+  {
+   "id": "prealgebra/test/00609",
+   "subject": "prealgebra",
+   "why": "id in a study file"
+  },
+  {
+   "id": "prealgebra/test/00794",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.667,
+    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/calib_val.jsonl",
+    "item": "number_theory/train/00336"
+   }
+  },
+  {
+   "id": "prealgebra/test/00870",
+   "subject": "prealgebra",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.5,
+    "file": "/data/user_data/vineethb/qis/data/candidates-v1-study/calib_val.jsonl",
+    "item": "number_theory/train/00394"
+   }
+  },
+  {
+   "id": "precalculus/test/00004",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00016",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00019",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00031",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00032",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00036",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00044",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00045",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00048",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00057",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00060",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00064",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00071",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00077",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.714,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:precalculus/train/00679"
+   }
+  },
+  {
+   "id": "precalculus/test/00081",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00090",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00096",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00097",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00099",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00111",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00116",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00123",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00127",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00133",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00150",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.775,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/omni_math_test.jsonl",
+    "item": null
+   }
+  },
+  {
+   "id": "precalculus/test/00151",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00158",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00165",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00169",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00180",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00186",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.667,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "olympiadbench:2713"
+   }
+  },
+  {
+   "id": "precalculus/test/00188",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00189",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00204",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00208",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00215",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00217",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00225",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00231",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00233",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00237",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00279",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00289",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00302",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00305",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00315",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00316",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00318",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00319",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00322",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 1.0,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:precalculus/train/00265"
+   }
+  },
+  {
+   "id": "precalculus/test/00337",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.757,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/omni_math_test.jsonl",
+    "item": null
+   }
+  },
+  {
+   "id": "precalculus/test/00339",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00346",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00351",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00356",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00360",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00365",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00370",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00382",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00389",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00391",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00396",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.559,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:precalculus/test/00356"
+   }
+  },
+  {
+   "id": "precalculus/test/00399",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00403",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00415",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00418",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.583,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:precalculus/test/00356"
+   }
+  },
+  {
+   "id": "precalculus/test/00434",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.564,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/external/a17/candidates_v1.jsonl",
+    "item": "math:precalculus/test/00356"
+   }
+  },
+  {
+   "id": "precalculus/test/00436",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00441",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00451",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00459",
+   "subject": "precalculus",
+   "why": "close variant (3-gram Jaccard >= 0.5)",
+   "hit": {
+    "jaccard": 0.545,
+    "file": "/home/vineethb/ae-qis/code/qis-a26-ckpt-k3-9b2fd05/data/stress/superseded-d143/stress_v1.json",
+    "item": "math:precalculus/train/00504"
+   }
+  },
+  {
+   "id": "precalculus/test/00469",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00485",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00487",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00488",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00490",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00492",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00514",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00522",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00535",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00537",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00538",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00541",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  },
+  {
+   "id": "precalculus/test/00544",
+   "subject": "precalculus",
+   "why": "id in a study file"
+  }
+ ],
+ "eligible": {
+  "counting_and_probability": 217,
+  "geometry": 255,
+  "prealgebra": 374,
+  "precalculus": 165
+ },
+ "panel": {
+  "geometry": 16,
+  "counting_and_probability": 16,
+  "precalculus": 16,
+  "prealgebra": 16
+ },
+ "panel_levels": {
+  "Level 5": 36,
+  "Level 4": 28
+ },
+ "sha256": "fc2ceb70ef920ab3c5a33baa78b7221f9a561db734a04942eba20ba48126e112"
+}
