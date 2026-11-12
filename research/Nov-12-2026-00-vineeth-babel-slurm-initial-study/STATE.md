@@ -10,8 +10,8 @@ Updated 2026-11-12 10:56 AM EST [15:56Z]. Owner task: A27 (`project.md` §41), o
 ## Reports (moved 12 Nov): `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/` — experiments report, understanding guide, further things
 
 ## A27 (Thu 12 Nov, deadline 12:00 PM EST)
-Report v4 delivered: `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/Nov-12-2026-experiments-report.md` (v3 archived as `reports/archive/REPORT-v3-2026-11-12.md`, figures in
-`reports/archive/figures-v3-2026-11-12/`). No v3 number changed. Added: title naming the subject, design diagram (F1),
+Report v4 delivered: `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/experiments-report.md` (v3 archived as `reports/archive/REPORT-v3.md`, figures in
+`reports/archive/figures-v3/`). No v3 number changed. Added: title naming the subject, design diagram (F1),
 worked GRPO group, groups without reward contrast per pool and quarter (F9, `reports/tables/v4/t10_signal`), ray
 interference from primary sources mapped to measurements, discussion of what slots 8–15 bought, raw examples (App. I).
 New finding: from round 65, 78–92% of R and U practice groups were all correct (200–236 of 256 per quarter) against
@@ -23,14 +23,14 @@ analysed by owner instruction (outputs remain in `test-eval/qis-cgpu-H-s202`). N
 
 ## Task
 Audit the finished QIS study (Qwen3-1.7B, full-parameter GRPO; arms H, R, U × training seeds 101, 202; all six runs
-complete) and rewrite `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/Nov-12-2026-experiments-report.md` so a new reader can trace every claim to data, checkpoints and code.
+complete) and rewrite `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/experiments-report.md` so a new reader can trace every claim to data, checkpoints and code.
 Order (A26): definitions → audit pass A (trace) and pass B (independent) → discrepancy log → rewrite → figures and render.
 No new training. Evaluations that explain curious results (e.g. J_U rising in R and H) are allowed.
 
 ## Results under audit (from report v2; claims until pass A and pass B verify them)
 Sealed test pass@1 (128 problems × 32 attempts): base 52.6%; s101 H 77.0, R 81.9, U 77.7; s202 H 72.4, R 74.8, U 79.2.
 R − U changes sign between seeds (+4.2, −4.4). R − H and U − H are positive in both seeds; two of four per-seed
-intervals include zero. Report v2 archived: `reports/archive/REPORT-v2-2026-11-11.md`.
+intervals include zero. Report v2 archived: `reports/archive/REPORT-v2.md`.
 
 ## Audit findings so far (pass A; verified unless marked)
 - a-data: all schedule checks pass in six runs (shared slots, extra slots, pairs, minibatch plans, advantages, zero-gradient
@@ -68,5 +68,5 @@ D162); control panel: probe rise is general improvement, +21 to +28 points on un
 tables t01–t09, value check 0 mismatches (8bd3f33).
 
 ## Status
-A26 delivered: report v3 `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/Nov-12-2026-experiments-report.md` (5b211c7, figures 1e75db1); DEFINITIONS v1.1; pass A, pass B, comparison,
+A26 delivered: report v3 `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/experiments-report.md` (5b211c7, figures 1e75db1); DEFINITIONS v1.1; pass A, pass B, comparison,
 discrepancy log (38 rows), D162/D163; v2 archived. Waiting for the owner.

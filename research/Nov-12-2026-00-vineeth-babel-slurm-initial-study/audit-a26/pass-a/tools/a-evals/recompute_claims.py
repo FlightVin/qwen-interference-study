@@ -3,7 +3,7 @@
 Inputs (laptop; no project imports):
   SCAN    scan.json / scan_pp.json written by scan_evals.py on compute (per-attempt outcome strings per problem)
   TRACES  traces.json written by traces.py on compute (canonical in-run eval rows)
-  repo    research/evidence/** (production analysis outputs, the comparison), reports/archive/REPORT-v2-2026-11-11.md
+  repo    research/evidence/** (production analysis outputs, the comparison), reports/archive/REPORT-v2.md
 Outputs: research/audit-a26/pass-a/data/numbers.json (unrounded) and a markdown claims table on stdout.
 Bootstrap: paired problem bootstrap, 10,000 draws, numpy default_rng(20261111) -- an RNG independent of production;
 intervals are compared with a tolerance of 0.3 points because the draws differ.
@@ -22,7 +22,7 @@ scan = json.load(open(f"{SD}/scan.json"))
 PP = json.load(open(f"{SD}/scan_pp.json"))
 TR = json.load(open(f"{SD}/traces.json"))
 EV = f"{REPO}/research/evidence"
-REPORT = f"{REPO}/reports/archive/REPORT-v2-2026-11-11.md"
+REPORT = f"{REPO}/reports/archive/REPORT-v2.md"
 RNG = np.random.default_rng(20261111)
 DRAWS = 10_000
 TEST_IDS = scan["panels"]["test"]["ids"]

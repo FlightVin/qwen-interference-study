@@ -5,7 +5,7 @@ resolve every disagreement from primary records (A26 §3). Written 2026-11-11, ~
 Terms follow `research/DEFINITIONS.md` v1. Labels: **verified** (primary records checked), **claimed**, **unknown**.
 
 **Inputs.** Pass A: `pass-a/data/numbers.json`, `pass-a/data/a-data-schedule_audit.json` and the pass-A markdown files.
-Pass B: `pass-b/data/*.json`. Report v2: `reports/archive/REPORT-v2-2026-11-11.md`.
+Pass B: `pass-b/data/*.json`. Report v2: `reports/archive/REPORT-v2.md`.
 **Tools** (`tools/reconcile/`): `compare.py` (laptop, stdlib; output `compare.json`), `costs_reconcile.py` (laptop,
 stdlib; output `costs_reconcile.json`), `sens_heldout.py` and `sens_multibox.py` (compute, standby 11122601; outputs
 `sens_*.json`, see `discrepancies.md` §3). Agreement rule: counts and point estimates must be equal within 1e-9 (both

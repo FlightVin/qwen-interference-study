@@ -801,7 +801,7 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 
 ## Review 90 — 2026-11-10 20:05Z (3:05 PM EST Tue)
 1. **Changes.** Report final and audited (0c5fe04); delivered 19:58Z; commits pushed to origin/main (dc2081d) at the owner's request.
-2. **Valid?** Yes. Independent audit applied (research/audits/2026-11-10-recompute.md).
+2. **Valid?** Yes. Independent audit applied (research/audits/a13-recompute.md).
 3. **Surprises.** None.
 4. **Risks.** None. No live project jobs.
 5. **Next jobs / limits.** None planned. 0 GPUs in use.

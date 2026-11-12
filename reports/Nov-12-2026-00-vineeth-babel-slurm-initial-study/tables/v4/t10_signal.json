@@ -1,5 +1,5 @@
 {
- "source": "research/audit-a26/pass-b/data/train_groups.json",
+ "source": "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_groups.json",
  "quarters": {
   "H-s101": {
    "shared": [

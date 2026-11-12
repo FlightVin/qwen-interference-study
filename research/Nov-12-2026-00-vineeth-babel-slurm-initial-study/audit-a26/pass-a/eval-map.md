@@ -1,6 +1,6 @@
 # A26 pass A — evaluation map (agent a-evals)
 
-Purpose: map every number cluster in report v2 (`reports/archive/REPORT-v2-2026-11-11.md`) to the evaluation that produced it, and record the integrity checks of each evaluation's raw records. Machine-readable form: `data/eval_map.json`. Times are EST. Terms follow `research/DEFINITIONS.md` v1.
+Purpose: map every number cluster in report v2 (`reports/archive/REPORT-v2.md`) to the evaluation that produced it, and record the integrity checks of each evaluation's raw records. Machine-readable form: `data/eval_map.json`. Times are EST. Terms follow `research/DEFINITIONS.md` v1.
 
 **Evidence base.** All record checks were made on 2026-11-11 (EST) on standby job 11122432 with `tools/a-evals/scan_evals.py` (stdlib + numpy, no project imports; reads `$P` only, writes `$P/audit-a26/a-evals/`). Job facts come from `slurm-agentic-engineering/state/LEDGER.jsonl`, `sacct -D` (allocation node lists) and `sinfo -N -o "%N %G"` (node → GPU type), and from each job's own `~/ae-qis/results/<expid>/<sha-expsha>/gpu.txt` and `ckpt_identity.txt`. **a-evals did not hash or load any checkpoint.** Hashes below are recorded values: `summary.json` `ckpt_model_sha256` (written by `evaluate_ckpt` from `state.json`), plus each job's start-time `ckpt_identity.txt` line "recorded=… on-disk=…" (equal in every job). They agree with `research/evidence/a17/manifest/manifest.json`.
 

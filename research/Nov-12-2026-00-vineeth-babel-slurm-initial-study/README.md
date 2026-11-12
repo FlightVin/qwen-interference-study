@@ -17,6 +17,7 @@ paths. Job IDs are Babel Slurm IDs.
 | `REVIEWS.md`, `READING.md`, `VERL-AUDIT.md` | hourly reviews, literature notes, and an audit of the verl library |
 | `audit-a26/`, `audit-a27/`, `audits/` | the two independent audit passes, the discrepancy log, and the v4 review |
 | `evidence/` | distilled evidence files cited by decisions and audits |
+| `recipes/`, `jobs-ledger.jsonl` | the exact Babel job recipes (copied from the harness) and the ledger of all 287 submissions |
 
 These records cite pre-move paths: `reports/…` is now `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/…`, `data/…` is now
 `data/Nov-12-2026-00-vineeth-babel-slurm-initial-study/…`, and `research/…` is this folder.

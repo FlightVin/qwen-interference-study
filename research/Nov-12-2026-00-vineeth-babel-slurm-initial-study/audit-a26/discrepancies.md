@@ -2,7 +2,7 @@
 
 Purpose: one row per defect found by audit passes A and B and by the reconcile step, with the original claim, the
 evidence, the correction, its scientific consequence and where it is fixed (A26 §3). Written 2026-11-11, ~10 PM EST, by
-agent `reconcile`. Line numbers refer to `reports/archive/REPORT-v2-2026-11-11.md` ("L…"); "DEF" means
+agent `reconcile`. Line numbers refer to `reports/archive/REPORT-v2.md` ("L…"); "DEF" means
 `research/DEFINITIONS.md` v1. Points = percentage points. "Fixed where" names the place the fix belongs; nothing was
 edited here. Pass comparison: `comparison.md`. Sensitivity checks: §3 below.
 
