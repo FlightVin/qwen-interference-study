@@ -1029,3 +1029,12 @@ re-evaluations that resolve a material uncertainty. No new training.
 ## 42. Owner instruction A28 (received 2026-11-12 ~17:15Z = Thu 12:15 PM EST): finalize
 
 > Don't worry too much about the GPU mix; please mark the report as finalized and stop your jobs.
+
+## 43. Owner instruction A29 (received 2026-11-12, Thu afternoon EST): rename, move, synopsis, further things
+
+Recorded faithfully. Add a synopsis to the condensed report: (1) whether interference occurred, (2) what the probes
+showed for factoring and modular arithmetic across all arms, (3) whether tasks other than factoring and modular
+arithmetic improved, (4) what we think is happening. Rename REPORT.md → Nov-12-2026-experiments-report.md (points to
+the understanding document) and report-condensed.md → Nov-12-2026-understanding-experiments.md (points to further
+things). Write Nov-12-2026-further-things.md: a very short synopsis, one row of plots of the main results, brief open
+questions. Move reports/ to reports/Nov-12-2026-initial-experiments/.

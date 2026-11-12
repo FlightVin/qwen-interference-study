@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compact figures for reports/report-condensed.md. Reads only audited tables (reports/tables/v3, v4).
+"""Compact figures for reports/report-condensed.md. Reads only audited tables (reports/Nov-12-2026-initial-experiments/tables/v3, v4).
 
 Usage: python build_condensed.py --root <repo>   (needs matplotlib)
 """
@@ -34,8 +34,8 @@ def load(root, rel):
 
 
 def fig_endpoints(plt, root, d):
-    rows = {r["cell"]: r for r in load(root, "reports/tables/v3/t01_endpoints.json")["rows"]}
-    con = load(root, "reports/tables/v3/t02_contrasts_test.json")["rows"]
+    rows = {r["cell"]: r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t01_endpoints.json")["rows"]}
+    con = load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t02_contrasts_test.json")["rows"]
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.6, 2.9), gridspec_kw={"width_ratios": [1, 1.1], "wspace": 0.85})
     base = 100 * rows["base"]["pass1"]
     a.axhline(base, color=MUTED, lw=1, ls=":")
@@ -76,7 +76,7 @@ def fig_endpoints(plt, root, d):
 
 
 def fig_dev(plt, root, d):
-    rows = [r for r in load(root, "reports/tables/v3/t03_curves.json")["rows"] if r["panel"] == "dev"]
+    rows = [r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t03_curves.json")["rows"] if r["panel"] == "dev"]
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.5), sharey=True, gridspec_kw={"wspace": 0.12})
     for ax, s in zip(axes, (101, 202)):
         for arm in "HRU":
@@ -97,7 +97,7 @@ def fig_dev(plt, root, d):
 
 
 def fig_saturation(plt, root, d):
-    series = load(root, "reports/tables/v4/t10_signal.json")["per_round"]
+    series = load(root, "reports/Nov-12-2026-initial-experiments/tables/v4/t10_signal.json")["per_round"]
     import numpy as np
     bins = [(a, a + 7) for a in range(1, 129, 8)]
     mids = [a + 3.5 for a, _ in bins]
@@ -120,7 +120,7 @@ def fig_saturation(plt, root, d):
 
 
 def fig_length(plt, root, d):
-    rows = [r for r in load(root, "reports/tables/v3/t05_length.json")["rows"] if r["panel"] == "test"]
+    rows = [r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t05_length.json")["rows"] if r["panel"] == "test"]
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
     for i, r in enumerate(rows):
         arm, seed = r["run"][0], int(r["run"][-3:])
@@ -138,17 +138,72 @@ def fig_length(plt, root, d):
     plt.close(fig)
 
 
+def fig_row(plt, root, d):
+    """One row, three panels: final scores, gains by measure and arm, practice saturation."""
+    import numpy as np
+    T = "reports/Nov-12-2026-initial-experiments/tables/"
+    ends = {r["cell"]: r for r in load(root, T + "v3/t01_endpoints.json")["rows"]}
+    ctl = {r["run"]: r for r in load(root, T + "v3/t09_control.json")["rows"]}
+    series = load(root, T + "v4/t10_signal.json")["per_round"]
+    fig, (a, b, c) = plt.subplots(1, 3, figsize=(10.5, 2.7), gridspec_kw={"wspace": 0.38})
+    base = 100 * ends["base"]["pass1"]
+    a.axhline(base, color=MUTED, lw=1, ls=":")
+    a.text(-0.45, base + 1.5, f"base {base:.1f}%", fontsize=9, color=MUTED)
+    for j, arm in enumerate("HRU"):
+        for s_, dx in ((101, -0.12), (202, 0.12)):
+            v = 100 * ends[f"{arm}-s{s_}"]["pass1"]
+            a.plot(j + dx, v, MARK[s_], color=COLOR[arm], ms=6.5, mfc=COLOR[arm] if s_ == 101 else "white", mew=1.6)
+    a.set_xticks(range(3), ["H", "R", "U"])
+    a.set_xlim(-0.6, 2.6)
+    a.set_ylim(45, 88)
+    a.set_ylabel("pass@1 (%)")
+    a.set_title("(a) Sealed-test score, round 128", loc="left", fontsize=10.5)
+    a.grid(axis="y", color=GRID, lw=0.7)
+    keys = [("J_R_gain", "factoring\n(J_R)"), ("J_U_gain", "remainder\n(J_U)"), ("control_gain", "other\n(control)")]
+    for k, (key, _) in enumerate(keys):
+        for j, arm in enumerate("HRU"):
+            for s_, dx in ((101, -0.05), (202, 0.05)):
+                v = 100 * ctl[f"{arm}-s{s_}"][key]
+                b.plot(k + (j - 1) * 0.22 + dx, v, MARK[s_], color=COLOR[arm], ms=5.5,
+                       mfc=COLOR[arm] if s_ == 101 else "white", mew=1.4)
+    b.set_xticks(range(3), [lab for _, lab in keys], fontsize=9.5)
+    b.set_ylim(0, 32)
+    b.set_ylabel("gain (points)")
+    b.set_title("(b) Gain from training, every arm", loc="left", fontsize=10.5)
+    b.grid(axis="y", color=GRID, lw=0.7)
+    bins = [(x, x + 7) for x in range(1, 129, 8)]
+    mids = [x + 3.5 for x, _ in bins]
+    for run, sr in series.items():
+        arm, seed = run[0], int(run[-3:])
+        y = [100 * np.mean([x["slots8_15"]["all_correct"] / 8 for x in sr if lo <= x["round"] <= hi]) for lo, hi in bins]
+        c.plot(mids, y, color=COLOR[arm], ls=LS[seed], lw=1.4)
+    c.set_ylim(0, 100)
+    c.set_xticks([0, 64, 128])
+    c.set_xlabel("training round")
+    c.set_ylabel("% all 8 correct")
+    c.set_title("(c) Slots 8–15 with no signal", loc="left", fontsize=10.5)
+    c.grid(axis="y", color=GRID, lw=0.7)
+    from matplotlib.lines import Line2D
+    h = [Line2D([], [], color=COLOR[x], marker="o", ls="-", label=x) for x in "HRU"]
+    h += [Line2D([], [], color=INK, marker="o", ls="-", label="seed 101"),
+          Line2D([], [], color=INK, marker="s", mfc="white", ls="--", label="seed 202")]
+    fig.legend(handles=h, loc="lower center", ncol=5, frameon=False, bbox_to_anchor=(0.5, -0.2), fontsize=9.5)
+    save(fig, d, "c5_row")
+    plt.close(fig)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
     root = ap.parse_args().root
-    d = os.path.join(root, "reports/figures/condensed")
+    d = os.path.join(root, "reports/Nov-12-2026-initial-experiments/figures/condensed")
     os.makedirs(d, exist_ok=True)
     plt = mpl()
     fig_endpoints(plt, root, d)
     fig_dev(plt, root, d)
     fig_saturation(plt, root, d)
     fig_length(plt, root, d)
+    fig_row(plt, root, d)
     print("ok", d)
 
 

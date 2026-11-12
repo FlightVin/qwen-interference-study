@@ -1,7 +1,31 @@
-# Auxiliary math practice during GRPO training of Qwen3-1.7B — short version
+# Understanding the experiments: auxiliary math practice during GRPO training of Qwen3-1.7B
 
-A 5–10 minute summary of the full report ([`REPORT.md`](REPORT.md), version 4). Every number below comes from the
-audited tables of the full report. Differences are in percentage points ("points").
+A 5–10 minute guide to the Nov 12, 2026 experiments. Full detail: [Nov-12-2026-experiments-report.md](Nov-12-2026-experiments-report.md).
+Open questions and a one-row summary plot: [Nov-12-2026-further-things.md](Nov-12-2026-further-things.md).
+Every number below comes from the audited tables of the full report. Differences are in percentage points ("points").
+
+## Synopsis
+
+1. **Did interference occur? We found no evidence of it.** Practice never pulled hard-problem scores below the
+   hard-only arm: R and U scored at or above H in all four comparisons. A direct one-update test could not detect any
+   effect, because repeat measurements of the same model differed by more (2.5–3.1 points). Hard problems on which all
+   8 answers were wrong were rare after round 32 (at most 7%), and the model lost previously solved problems only at
+   the rate chance predicts. A small effect cannot be ruled out, and a long stall was never measured.
+2. **What did the probes show? Every arm improved on both skills by similar amounts.** The factoring probe (J_R) rose
+   from about 81% to 89–92% in all six runs, by 8.5–10.7 points. R, which practised factoring, gained +9.4 in both
+   seeds, no more than H or U. The remainder probe (J_U) rose from about 81% to 90–96%, by 9.8–14.8 points. U, which
+   practised remainders, gained +12.5 in both seeds, again no more than the others. Practising a skill did not raise its
+   own probe beyond what training gave anyway. Both probes started near 81%, so there was limited room to improve.
+3. **Did other subjects improve? Yes, the most of all.** Training used only algebra problems where factoring is needed,
+   plus factoring drills (R) or remainder drills (U). No other subject was trained. Yet a control set of geometry,
+   counting and probability, precalculus and prealgebra problems rose from 50.8% to 72–79% in every arm (+21 to +28
+   points). This was the largest gain of any set.
+4. **What do we think is happening? (interpretation)** GRPO training on hard algebra mainly makes the model a more
+   reliable general math solver. Most of the gain comes from answering problems it could already solve sometimes more
+   consistently, in every subject. It also solves some new ones: 6–9 more of the 128 sealed-test problems. The easy practice problems were answered correctly almost every time after
+   about round 64, so they stopped teaching anything; which skill they practised mattered little. The remaining R vs U
+   difference (about 4 points, with opposite signs in the two seeds) looks like run-to-run variation, linked to how
+   often a run's answers grow too long and are cut off. Two seeds per arm cannot confirm this.
 
 ## 1. The question
 
