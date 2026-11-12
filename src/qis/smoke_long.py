@@ -34,7 +34,7 @@ def main():
     res = {"cap": a.cap, "gpu": torch.cuda.get_device_name(0)}
     tok = AutoTokenizer.from_pretrained(a.model)
     hard = json.load(open(a.bundle))["pools"]["hard"][:16]
-    roll = Rollout(a.model, 8192, a.gpu_mem_util, max_model_tokens=a.cap)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.cap)
     try:
         res["engine_max_model_len"] = roll.llm.llm_engine.model_config.max_model_len
     except AttributeError:

@@ -23,6 +23,7 @@ import time
 import numpy as np
 
 from qis import prompts, seeds
+from qis.limits import MAX_TOKENS
 
 PANEL_SEED = 2611          # A6 panel stream master (fixed before any result)
 REQ_SEED = 2612            # A6 request-seed stream master (shared by both modes)
@@ -130,7 +131,7 @@ def run(a):
     json.dump(tpl, open(os.path.join(a.out, "template_check.json"), "w"), indent=1)
     assert tpl["ok"], "template check failed"
     end_id = tpl["think_end_id"]
-    roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens)
     ver = Verifier(8)
     warm(ver)
     dec = lambda ids: tok.decode(ids, skip_special_tokens=True)
@@ -226,7 +227,7 @@ if __name__ == "__main__":
     ap.add_argument("--model", default="")
     ap.add_argument("--out", required=True)
     ap.add_argument("--modes", default="off,on")
-    ap.add_argument("--max-tokens", type=int, default=8192)
+    ap.add_argument("--max-tokens", type=int, default=MAX_TOKENS)
     ap.add_argument("--gpu-mem-util", type=float, default=0.85)
     ap.add_argument("--panel-only", action="store_true")
     run(ap.parse_args())

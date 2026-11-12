@@ -114,7 +114,7 @@ def main():
         if pid not in p_ids:
             p_ids[pid] = tok(prompts.render(tok, items[pid]["problem"]), add_special_tokens=False)["input_ids"]
             assert len(p_ids[pid]) <= prompts.PROMPT_CAP
-    roll = Rollout(a.model, a.to_cap, a.gpu_mem_util)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.to_cap)
     ck_hash = "base"
     if a.ckpt != "base":
         mpath = os.path.join(a.ckpt, "model.pt")

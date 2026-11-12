@@ -104,6 +104,11 @@ block is one restartable step. Off Babel, read them as exact command lines. For 
 3. Some older scripts open `data/…` directly (for example `src/qis/data/bundle_main.py`). Run them with `data/<ID>` as
    `data/`. Results are unaffected, because jobs ran from pinned commits.
 4. `ops/` (the Babel submission guard) and `registry/` are git-ignored; `registry/` is empty.
+5. **The code changed after the study.** This study trained with a response cap of 8,192 tokens in rounds 1–32 and
+   12,288 after. Current code has one cap for every round: `MAX_TOKENS = 12288` in `src/qis/limits.py`, which is the
+   default of `Rollout`, `qis.train.run` (config `max_tokens`), `qis.evaluate_ckpt` and `qis.make_main_exps`. A
+   config that still contains `cap_schedule` is rejected. To reproduce this study exactly, check out the commit that
+   each job ran (`jobs-ledger.jsonl`, field `sha`).
 
 ## 9. Starting a new study
 

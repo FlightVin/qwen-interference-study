@@ -5,7 +5,7 @@ re-evaluation. Evaluation seeds come from the EVAL_SEED stream keyed by panel, p
 (`--seed-label`, e.g. "test-final"), independent of training and selection streams.
 Writes per-attempt records (gz JSONL) and a summary with per-problem counts and the checkpoint hash.
 Usage: python -m qis.evaluate_ckpt --model BASE --ckpt DIR|base --panel FILE.json --panel-key test
-       --n 32 --out DIR --seed-label test-final [--max-tokens 8192]
+       --n 32 --out DIR --seed-label test-final [--max-tokens 12288 (default)]
 """
 import argparse
 import gzip
@@ -18,6 +18,7 @@ import numpy as np
 import torch
 
 from qis import prompts, seeds
+from qis.limits import MAX_TOKENS
 from qis.train import grpo
 from qis.train.run import EVAL_SEED
 from qis.verify import UNKNOWN, Verifier
@@ -32,7 +33,7 @@ def main():
     ap.add_argument("--n", type=int, default=32)
     ap.add_argument("--out", required=True)
     ap.add_argument("--seed-label", required=True)
-    ap.add_argument("--max-tokens", type=int, default=8192)
+    ap.add_argument("--max-tokens", type=int, default=MAX_TOKENS)
     ap.add_argument("--gpu-mem-util", type=float, default=0.85)
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
@@ -41,7 +42,7 @@ def main():
     tok = AutoTokenizer.from_pretrained(a.model)
     from qis.train.rollout import Rollout
     # vLLM gets most of the GPU; checkpoint weights are read on the CPU and pushed into vLLM (no learner on GPU).
-    roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens)
     ck_hash, weight_check = "base", None
     if a.ckpt != "base":
         mpath = os.path.join(a.ckpt, "model.pt")

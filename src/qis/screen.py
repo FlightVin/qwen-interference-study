@@ -47,7 +47,7 @@ def main():
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(a.model)
     from qis.train.rollout import Rollout
-    roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util, max_num_seqs=512)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens, max_num_seqs=512)
     ver = Verifier(8)
     over_cap = []
     for c in range(0, len(todo), a.chunk):

@@ -123,7 +123,7 @@ def main():
     for g in learner.opt.param_groups:
         g["lr"] = a.lr
     snap = snapshot(learner.model, learner.opt)
-    roll = Rollout(a.model, 8192, 0.30)
+    roll = Rollout(a.model, 0.30)
     ver = Verifier(8)
     res_path = os.path.join(a.out, f"diag_{a.label}.jsonl")
     done = completed(res_path)

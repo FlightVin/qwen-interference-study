@@ -10,16 +10,16 @@ import os
 import torch
 
 from qis import prompts
+from qis.limits import MAX_TOKENS
 
 
 class Rollout:
-    def __init__(self, model_path: str, max_tokens: int, gpu_mem_util: float, max_num_seqs: int = 256,
-                 max_model_tokens: int = None):
-        """max_tokens: default response cap; max_model_tokens: largest cap this engine must serve (A10)."""
+    def __init__(self, model_path: str, gpu_mem_util: float, max_tokens: int = MAX_TOKENS, max_num_seqs: int = 256):
+        """max_tokens: response cap; the engine context is PROMPT_CAP + max_tokens."""
         assert os.environ.get("VLLM_ENABLE_V1_MULTIPROCESSING") == "0", "need in-process vLLM"
         from vllm import LLM
         self.max_tokens = max_tokens
-        self.max_model_len = prompts.PROMPT_CAP + max(max_tokens, max_model_tokens or 0)
+        self.max_model_len = prompts.PROMPT_CAP + max_tokens
         self.llm = LLM(model=model_path, dtype="bfloat16", gpu_memory_utilization=gpu_mem_util,
                        enable_sleep_mode=True, max_model_len=self.max_model_len,
                        seed=0, enable_prefix_caching=False, max_num_seqs=max_num_seqs)

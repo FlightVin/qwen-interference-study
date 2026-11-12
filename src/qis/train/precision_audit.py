@@ -53,7 +53,7 @@ def main():
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(a.model)
     probs = [json.loads(line) for line in open(a.problems)]
-    roll = Rollout(a.model, a.max_tokens, a.gpu_mem_util)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens)
 
     def vllm_model():
         return roll.llm.collective_rpc(lambda w: w.model_runner.model)[0]

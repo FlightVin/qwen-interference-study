@@ -1064,3 +1064,8 @@ Babel-specific settings (model ID and revision, paths) to `envs/Nov-12-2026-00-v
 
 Recorded faithfully. Inside folders named by the study ID, file names must not repeat the date or the ID. Go through
 everything so that a later agent has enough context and instructions to understand and continue the Nov 12 work.
+
+## 47. Owner instruction A33 (received 2026-11-12, Thu afternoon EST): one response cap
+
+Recorded faithfully. Remove the two-stage response cap (8,192 tokens in rounds 1–32, then 12,288). Use 12,288 for every
+round, passed as a default argument, and keep the code clean.
