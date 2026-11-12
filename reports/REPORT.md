@@ -1,6 +1,6 @@
 # Auxiliary math practice during GRPO training of Qwen3-1.7B: related practice, unrelated practice, or more hard problems
 
-Version 4, 12 Nov 2026, 12:00 PM EST (owner instruction A27); revises version 3 ([archived](archive/REPORT-v3-2026-11-12.md)),
+Version 4 (final), 12 Nov 2026, 12:00 PM EST (owner instruction A27); revises version 3 ([archived](archive/REPORT-v3-2026-11-12.md)),
 which was audited under A26. Changes from version 3: Appendix J.
 
 This report defines the task, the data and the training procedure, then states what each measurement shows and what it
@@ -311,8 +311,7 @@ describe variation across training runs.*
 - R − H and U − H point estimates are positive in both seeds (+4.9 and +2.4; +0.7 and +6.8). Two of the four intervals
   include zero (R − H in seed 202, U − H in seed 101). An interval that includes zero is not evidence that two arms are
   equal. The seed-202 H cell mixed two GPU types (65 problems on L40S, 63 on RTX A6000). An L40S-only rerun of this
-  endpoint (8 shards, same checkpoint and seeds; D166) was started on 12 Nov; its result is pending at the time of
-  writing, and v4 reports no partial value from it. Against the r116 fallback,
+  endpoint (D166) ran but was not analysed; at the owner's instruction the report is final without it. Against the r116 fallback,
   seed-202 R − H is +0.5 points [−2.2, +3.2] and U − H is +4.9 [+2.1, +7.9]
   ([`pass-b/eval.md`](../research/audit-a26/pass-b/eval.md) §4).
 

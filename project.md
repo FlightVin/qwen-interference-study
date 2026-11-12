@@ -1025,3 +1025,7 @@ re-evaluations that resolve a material uncertainty. No new training.
    J trajectories; one-step ΔJ with draws; length or harder-task evidence. Inspect every final figure in place.
 6. Deliver REPORT.md, figures and sources, tables, inventories, both audit records; handoff naming changed numbers,
    changed interpretations, and what remains unknowable.
+
+## 42. Owner instruction A28 (received 2026-11-12 ~17:15Z = Thu 12:15 PM EST): finalize
+
+> Don't worry too much about the GPU mix; please mark the report as finalized and stop your jobs.

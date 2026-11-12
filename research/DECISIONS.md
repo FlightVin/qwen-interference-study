@@ -1160,3 +1160,7 @@ endpoint whose shards mixed L40S and RTX A6000, a confound the report names. Rec
 checkpoint (hash and provenance checked), panel, n 32, cap 12,288 and seed label `test-final`; L40S enforced; output
 to the new `test-eval/qis-cgpu-H-s202`; the canonical endpoint is not touched. 8 general GPUs (A27 ceiling). If the
 merge is not complete by about 11:50 AM EST, the report says "pending" and reports no partial numbers.
+
+## D167 — 2026-11-12 ~12:15 PM EST: report v4 final; D166 rerun left unanalysed
+Owner: "Don't worry too much about the GPU mix; please mark the report as finalized and stop your jobs." The D166 shards
+had all completed; the local harvest was stopped. The report keeps the mixed-GPU caveat for seed-202 R − H and U − H.
