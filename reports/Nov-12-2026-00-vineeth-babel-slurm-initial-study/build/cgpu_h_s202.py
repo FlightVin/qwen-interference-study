@@ -2,7 +2,7 @@
 """A27 / D166: H-s202 r128 sealed test rerun on L40S only, against the original mixed-GPU endpoint.
 
 Reads the merged rerun summary (harvested to slurm-agentic-engineering/results/qis-cgpu-H-s202-k*/summary.json) and the
-audited per-problem counts (reports/Nov-12-2026-initial-experiments/tables/v3/perproblem_counts.json). Writes reports/tables/v4/t11_cgpu_h_s202.{json,md}.
+audited per-problem counts (reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/perproblem_counts.json). Writes reports/tables/v4/t11_cgpu_h_s202.{json,md}.
 Interval: 95% paired problem bootstrap, 10,000 draws, the same resampled problems for both policies.
 Usage: python3 cgpu_h_s202.py --root <repo>
 """
@@ -28,7 +28,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
     root = ap.parse_args().root
-    cnt = json.load(open(os.path.join(root, "reports/Nov-12-2026-initial-experiments/tables/v3/perproblem_counts.json")))["test"]
+    cnt = json.load(open(os.path.join(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/perproblem_counts.json")))["test"]
     order, n = cnt["order"], cnt["n"]
     cells = {k: v["c"] for k, v in cnt["cells"].items()}
     found = [p for p in glob.glob(os.path.join(root, "slurm-agentic-engineering/results/qis-cgpu-H-s202-k*/summary.json"))]
@@ -59,7 +59,7 @@ def main():
             rows.append({"A": A, "B_version": hname, "A_pass1": sum(cells[A]) / (n * len(order)),
                          "B_pass1": sum(h) / (n * len(order)), "diff": e, "lo": lo, "hi": hi})
     out["contrasts"] = rows
-    tdir = os.path.join(root, "reports/Nov-12-2026-initial-experiments/tables/v4")
+    tdir = os.path.join(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v4")
     json.dump(out, open(os.path.join(tdir, "t11_cgpu_h_s202.json"), "w"), indent=1)
     f = lambda x: f"{100 * x:.1f}"
     g = lambda x: (f"{100 * x:+.1f}").replace("-", "−")

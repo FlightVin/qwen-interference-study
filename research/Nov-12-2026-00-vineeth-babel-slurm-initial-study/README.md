@@ -18,5 +18,5 @@ paths. Job IDs are Babel Slurm IDs.
 | `audit-a26/`, `audit-a27/`, `audits/` | the two independent audit passes, the discrepancy log, and the v4 review |
 | `evidence/` | distilled evidence files cited by decisions and audits |
 
-These records cite pre-move paths: `reports/…` is now `reports/Nov-12-2026-initial-experiments/…`, `data/…` is now
-`data/Nov-12-2026-qwen3-grpo-math-practice/…`, and `research/…` is this folder.
+These records cite pre-move paths: `reports/…` is now `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/…`, `data/…` is now
+`data/Nov-12-2026-00-vineeth-babel-slurm-initial-study/…`, and `research/…` is this folder.

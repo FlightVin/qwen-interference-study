@@ -1,7 +1,7 @@
 > **Archived 2026-11-12.** These are the instructions the Nov 12, 2026 study followed, with every owner amendment in
-> order. **Results for now:** [`reports/Nov-12-2026-initial-experiments/`](../reports/Nov-12-2026-initial-experiments/).
-> **Data:** [`data/Nov-12-2026-qwen3-grpo-math-practice/`](../data/Nov-12-2026-qwen3-grpo-math-practice/).
-> **Handover:** [`research/Nov-12-2026-vineeth-qwen3-grpo-babel/HANDOVER.md`](../research/Nov-12-2026-vineeth-qwen3-grpo-babel/HANDOVER.md).
+> order. **Results for now:** [`reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/`](../reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/).
+> **Data:** [`data/Nov-12-2026-00-vineeth-babel-slurm-initial-study/`](../data/Nov-12-2026-00-vineeth-babel-slurm-initial-study/).
+> **Handover:** [`research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/HANDOVER.md`](../research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/HANDOVER.md).
 > Paths inside this document are pre-move (`reports/`, `data/`, `research/` now hold dated subfolders).
 
 # Project: Does targeted easier practice improve RL on hard problems?
@@ -1052,3 +1052,9 @@ agent-project-instructions-archive/ pointing to the results and data. Add .env f
 registry/. Move data/ and research/ into dated folders with READMEs (research marked for Babel Slurm execution) and a
 HANDOVER.md. Keep the root README short and generic ("studying interference in post-training"), pointing to reports/
 and the instructions archive, with a P.S. about Babel and slurm-agentic-engineering/.
+
+## 45. Owner instruction A31 (received 2026-11-12, Thu afternoon EST): one study ID; requirements and envs
+
+Recorded faithfully. Every dated directory name becomes `Nov-12-2026-00-vineeth-babel-slurm-initial-study`, explained
+in the root README. Replace the root `.env` with a root `requirements.txt` (Python installation) and move study- and
+Babel-specific settings (model ID and revision, paths) to `envs/Nov-12-2026-00-vineeth-babel-slurm-initial-study.env`.

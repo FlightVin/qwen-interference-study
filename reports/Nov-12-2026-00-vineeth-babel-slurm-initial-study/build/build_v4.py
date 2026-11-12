@@ -94,7 +94,7 @@ def group_series(groups, run):
 
 
 def build_signal(root, tdir):
-    groups = json.load(open(os.path.join(root, "research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_groups.json")))["groups"]
+    groups = json.load(open(os.path.join(root, "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_groups.json")))["groups"]
     series = {run: group_series(groups, run) for run in RUNS}
     quarters = [(1, 32), (33, 64), (65, 96), (97, 128)]
     table = {}
@@ -109,7 +109,7 @@ def build_signal(root, tdir):
                                           "all_correct": sum(r["all_correct"] for r in rows),
                                           "mixed": sum(r["mixed"] for r in rows)})
     os.makedirs(tdir, exist_ok=True)
-    json.dump({"source": "research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_groups.json", "quarters": table, "per_round": series},
+    json.dump({"source": "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_groups.json", "quarters": table, "per_round": series},
               open(os.path.join(tdir, "t10_signal.json"), "w"), indent=1)
     pool_name = {"H": "extra H_train", "R": "related practice", "U": "unrelated practice"}
     lines = ["# t10 — groups without a within-group reward contrast, per pool and 32-round quarter", "",
@@ -161,8 +161,8 @@ def main():
     ap.add_argument("--root", required=True)
     a = ap.parse_args()
     plt = setup_mpl()
-    fdir = os.path.join(a.root, "reports/Nov-12-2026-initial-experiments/figures/v4")
-    tdir = os.path.join(a.root, "reports/Nov-12-2026-initial-experiments/tables/v4")
+    fdir = os.path.join(a.root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/figures/v4")
+    tdir = os.path.join(a.root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v4")
     fig_design(plt, fdir)
     series = build_signal(a.root, tdir)
     fig_signal(plt, fdir, series)

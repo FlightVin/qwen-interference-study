@@ -229,7 +229,7 @@ def t01_endpoints(A, cnt, tdir):
                 "endpoints, with the round-116 fallback and the four L40S reruns as supplementary rows (not "
                 "endpoints). Interval for pass@1: problem bootstrap of the mean of c/32. Gain over base: paired "
                 "problem bootstrap (audit pass B).",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_test.json", "reports/tables/v3/perproblem_counts.json"],
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_test.json", "reports/tables/v3/perproblem_counts.json"],
                 rows,
                 [(None, ["Policy", "Correct / attempts", "pass@1 (%)", "95% interval", "Gain over base (points)",
                          "95% interval", "Truncated (%)", "pass@8 (%)"], body,
@@ -265,7 +265,7 @@ def t02_contrasts(A, tdir):
                 "Difference in sealed-test pass@1 between two round-128 endpoints of the same training seed. "
                 "Interval: paired problem bootstrap over the 128 problems (same resampled problems for both "
                 "policies). It covers problem and attempt sampling only, not training-run variation.",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_test.json"], rows + [dict(m, kind="two_seed") for m in means],
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_test.json"], rows + [dict(m, kind="two_seed") for m in means],
                 [(None, ["Contrast A − B", "Seed", "A pass@1 (%)", "B pass@1 (%)", "A − B (points)", "95% interval"],
                   body, "The L40S rows re-evaluate the R and U endpoints on one GPU type (reproducibility check)."),
                  ("Two-seed summary (descriptive only)", ["Contrast", "Mean of the two seeds (points)",
@@ -312,8 +312,8 @@ def t03_curves(A, tdir):
                 "problem). Round 0 is the same base policy in every run; its spread is cross-job sampling noise. "
                 "The evaluation cap is 8,192 at rounds 0 and 32 and 12,288 from round 64. H-s202 rounds 64–128 are "
                 "trajectory a2-r60 (resumed from round 60). Intervals in the JSON: problem bootstrap.",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_curves.json",
-                 "research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_rewards.json"], rows, blocks)
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_curves.json",
+                 "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_rewards.json"], rows, blocks)
     return rows
 
 
@@ -372,7 +372,7 @@ def t04_diag(A, tdir):
                 "`none` (same job as the branches) and `none_rerun` (separate job on L40S; `none_cycled` gives "
                 "identical values). Momentum-only = pre-clip gradient norm exactly 0 (all four groups non-mixed); "
                 "AdamW still stepped with its stored moments. GPUs from DEFINITIONS v1.1 §4 item 1.",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_diag.json", "research/DEFINITIONS.md v1.1 §4 item 1"], rows,
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_diag.json", "research/DEFINITIONS.md v1.1 §4 item 1"], rows,
                 blocks)
     return rows
 
@@ -412,7 +412,7 @@ def t05_length(A, cnt, tdir):
                 "Every attempt that hit the 12,288-token cap was continued for up to 4,096 more tokens and regraded; "
                 "other attempts keep their score. Change interval: paired problem bootstrap of the per-problem "
                 "change. Shares in brackets are of the capped attempts. H-s202 was not extended.",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_length.json", "reports/tables/v3/perproblem_counts.json"],
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_length.json", "reports/tables/v3/perproblem_counts.json"],
                 rows, blocks)
     return rows
 
@@ -437,7 +437,7 @@ def t06_length_contrasts(A, tdir):
     write_table(tdir, "t06_length_contrasts", "Length extension: paired contrasts at both caps",
                 "Paired contrasts of pass@1 before (12,288) and after (16,384) the extension, and the change of the "
                 "contrast. R − H and U − H exist for seed 101 only (H-s202 was not extended). Interval: paired problem "
-                "bootstrap (audit pass B).", ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_length.json"], rows, blocks)
+                "bootstrap (audit pass B).", ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_length.json"], rows, blocks)
     return rows
 
 
@@ -478,7 +478,7 @@ def t07_stress(A, cnt, tdir):
                 "SuperHard (126). Tiers come from one annotation of solution structure, not from model success. "
                 "Interval: problem bootstrap within the tier. The two round-64 cells are the only intermediate "
                 "checkpoints evaluated; H-s202 r64 is trajectory a2-r60.",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_stress.json", "reports/tables/v3/perproblem_counts.json"], rows,
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_stress.json", "reports/tables/v3/perproblem_counts.json"], rows,
                 [(None, ["Policy", "All (%)", "95% interval", "Harder (%)", "95% interval", "SuperHard (%)",
                          "95% interval", "Truncated, all (%)"], body, None)])
     return rows
@@ -499,7 +499,7 @@ def t08_stress_contrasts(A, tdir):
              pts(r["diff"]), ci_pts(r["ci95"])] for r in rows]
     write_table(tdir, "t08_stress_contrasts", "Stress panels: paired contrasts per seed and tier",
                 "Difference in stress pass@1 between round-128 endpoints of the same seed. Interval: paired problem "
-                "bootstrap within the tier (audit pass B).", ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/eval_stress.json"],
+                "bootstrap within the tier (audit pass B).", ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/eval_stress.json"],
                 rows, [(None, ["Contrast A − B", "Seed", "Tier", "A (%)", "B (%)", "A − B (points)", "95% interval"],
                         body, "Under the any-box grading rule (sensitivity check, discrepancies.md §3.2) the seed-202 "
                               "R − U and R − H intervals on all problems change their relation to 0.")])
@@ -540,8 +540,8 @@ def t09_control(A, tdir):
                 "the six round-128 endpoints (pre-registered in transfer/PREREG.md). Control gain = endpoint − base. "
                 "J_U and J_R gains = in-run pass@1 at round 128 (cap 12,288) − round 0 (cap 8,192) of the same run. "
                 "Intervals: paired problem bootstrap, 10,000 draws, numpy default_rng(2026) (transfer agent).",
-                ["research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/transfer/control.json", "research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/transfer/control.md",
-                 "research/Nov-12-2026-vineeth-qwen3-grpo-babel/audit-a26/pass-b/data/train_curves.json (probe gains cross-checked)"], rows,
+                ["research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/transfer/control.json", "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/transfer/control.md",
+                 "research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/audit-a26/pass-b/data/train_curves.json (probe gains cross-checked)"], rows,
                 [(None, ["Run", "Control base (%)", "Control endpoint (%)", "Control gain (points)", "95% interval",
                          "J_U gain (points)", "95% interval", "J_R gain (points)", "95% interval", "Control GPU"],
                   body, "Base control pass@1 is 50.8%, base J_U and J_R about 81%, so the control panel has more "

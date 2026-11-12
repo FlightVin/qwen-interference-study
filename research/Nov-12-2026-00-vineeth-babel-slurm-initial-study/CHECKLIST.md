@@ -1,6 +1,6 @@
 > **FROZEN on 2026-11-12 (owner instruction A30). Not updated after this date. Historical record only.**
-> Paths below are pre-move: `reports/` → `reports/Nov-12-2026-initial-experiments/`, `data/` →
-> `data/Nov-12-2026-qwen3-grpo-math-practice/`, `research/` → `research/Nov-12-2026-vineeth-qwen3-grpo-babel/`.
+> Paths below are pre-move: `reports/` → `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/`, `data/` →
+> `data/Nov-12-2026-00-vineeth-babel-slurm-initial-study/`, `research/` → `research/Nov-12-2026-00-vineeth-babel-slurm-initial-study/`.
 
 # CHECKLIST — A26 audit and report rewrite
 
@@ -76,7 +76,7 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 6.1 Reviewed by the orchestrator against A26 §4 (7 acceptance tests, each resolved in §5.1, §5.2, §5.5, §5.4.4–5,
   §5.7, rounding note) and §5 order; self-check: 866/866 numbers traced, 0 equations, 13/13 figures, 0 v2 error phrases.
   Filled TODOs: R-s202 tokens from records (54.1 M); A26 job cost (19 jobs, 5.20 GPU-h, 41.65 CPU-h).
-- 6.0 Outline `research/audit-a26/report-v3-outline.md` (b8a0a99); agent writer drafting `reports/Nov-12-2026-initial-experiments/Nov-12-2026-experiments-report.md` v3 with a
+- 6.0 Outline `research/audit-a26/report-v3-outline.md` (b8a0a99); agent writer drafting `reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/Nov-12-2026-experiments-report.md` v3 with a
   scripted self-check; orchestrator review against A26 §4–§5 next.
 - 6.1 Task → data and measurements → questions → procedure → results → interpretation → appendices.
 

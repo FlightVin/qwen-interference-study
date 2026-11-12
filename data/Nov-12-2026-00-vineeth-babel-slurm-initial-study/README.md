@@ -1,7 +1,7 @@
 # Data for the Nov 12, 2026 study: auxiliary math practice during GRPO training of Qwen3-1.7B
 
 Frozen. These are the problem sets, labels and manifests the study used. What each set is for is explained in
-[`Nov-12-2026-understanding-experiments.md`](../../reports/Nov-12-2026-initial-experiments/Nov-12-2026-understanding-experiments.md) §2.
+[`Nov-12-2026-understanding-experiments.md`](../../reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/Nov-12-2026-understanding-experiments.md) §2.
 
 | Path | Contents |
 |---|---|

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compact figures for reports/report-condensed.md. Reads only audited tables (reports/Nov-12-2026-initial-experiments/tables/v3, v4).
+"""Compact figures for reports/report-condensed.md. Reads only audited tables (reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3, v4).
 
 Usage: python build_condensed.py --root <repo>   (needs matplotlib)
 """
@@ -34,8 +34,8 @@ def load(root, rel):
 
 
 def fig_endpoints(plt, root, d):
-    rows = {r["cell"]: r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t01_endpoints.json")["rows"]}
-    con = load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t02_contrasts_test.json")["rows"]
+    rows = {r["cell"]: r for r in load(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/t01_endpoints.json")["rows"]}
+    con = load(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/t02_contrasts_test.json")["rows"]
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.6, 2.9), gridspec_kw={"width_ratios": [1, 1.1], "wspace": 0.85})
     base = 100 * rows["base"]["pass1"]
     a.axhline(base, color=MUTED, lw=1, ls=":")
@@ -76,7 +76,7 @@ def fig_endpoints(plt, root, d):
 
 
 def fig_dev(plt, root, d):
-    rows = [r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t03_curves.json")["rows"] if r["panel"] == "dev"]
+    rows = [r for r in load(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/t03_curves.json")["rows"] if r["panel"] == "dev"]
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.5), sharey=True, gridspec_kw={"wspace": 0.12})
     for ax, s in zip(axes, (101, 202)):
         for arm in "HRU":
@@ -97,7 +97,7 @@ def fig_dev(plt, root, d):
 
 
 def fig_saturation(plt, root, d):
-    series = load(root, "reports/Nov-12-2026-initial-experiments/tables/v4/t10_signal.json")["per_round"]
+    series = load(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v4/t10_signal.json")["per_round"]
     import numpy as np
     bins = [(a, a + 7) for a in range(1, 129, 8)]
     mids = [a + 3.5 for a, _ in bins]
@@ -120,7 +120,7 @@ def fig_saturation(plt, root, d):
 
 
 def fig_length(plt, root, d):
-    rows = [r for r in load(root, "reports/Nov-12-2026-initial-experiments/tables/v3/t05_length.json")["rows"] if r["panel"] == "test"]
+    rows = [r for r in load(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/v3/t05_length.json")["rows"] if r["panel"] == "test"]
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
     for i, r in enumerate(rows):
         arm, seed = r["run"][0], int(r["run"][-3:])
@@ -141,7 +141,7 @@ def fig_length(plt, root, d):
 def fig_row(plt, root, d):
     """One row, three panels: final scores, gains by measure and arm, practice saturation."""
     import numpy as np
-    T = "reports/Nov-12-2026-initial-experiments/tables/"
+    T = "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/tables/"
     ends = {r["cell"]: r for r in load(root, T + "v3/t01_endpoints.json")["rows"]}
     ctl = {r["run"]: r for r in load(root, T + "v3/t09_control.json")["rows"]}
     series = load(root, T + "v4/t10_signal.json")["per_round"]
@@ -196,7 +196,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
     root = ap.parse_args().root
-    d = os.path.join(root, "reports/Nov-12-2026-initial-experiments/figures/condensed")
+    d = os.path.join(root, "reports/Nov-12-2026-00-vineeth-babel-slurm-initial-study/figures/condensed")
     os.makedirs(d, exist_ok=True)
     plt = mpl()
     fig_endpoints(plt, root, d)

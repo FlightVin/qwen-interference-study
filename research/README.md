@@ -5,4 +5,4 @@ that ran the study: protocol, definitions, decisions, audits and raw evidence. F
 
 | Folder | Study | Status |
 |---|---|---|
-| [`Nov-12-2026-vineeth-qwen3-grpo-babel/`](Nov-12-2026-vineeth-qwen3-grpo-babel/) | GRPO with auxiliary math practice, Qwen3-1.7B | finished; records frozen; read its [`HANDOVER.md`](Nov-12-2026-vineeth-qwen3-grpo-babel/HANDOVER.md) |
+| [`Nov-12-2026-00-vineeth-babel-slurm-initial-study/`](Nov-12-2026-00-vineeth-babel-slurm-initial-study/) | GRPO with auxiliary math practice, Qwen3-1.7B | finished; records frozen; read its [`HANDOVER.md`](Nov-12-2026-00-vineeth-babel-slurm-initial-study/HANDOVER.md) |
