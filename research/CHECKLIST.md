@@ -22,7 +22,10 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 1.4 GRPO units: group, mixed group, nonzero advantage, optimizer update, momentum-only step.
 - 1.5 Each term: intended vs executed (code path + data), differences, superseded definitions marked.
 
-## 2. Pass A — trace inputs to outputs                                                 [active]
+## 2. Pass A — trace inputs to outputs                                                 [active: 2.6 only]
+- Done 11:30 PM EST (db8c2ed): a-data (schedules pass in 6 runs; 2 held-out close variants), a-code (54/54 tests;
+  265 jobs traced; no defect changes a count), a-evals (236 claims: 223 verified, 11 differ, 24 failing equations).
+- 2.6 a-ckpt: inventory from `qis-a26-ckpt-k0..3` (all 4 done) + round-65 replay from r64 checkpoints → active.
 - Agents (10:10 PM EST): a-data (2.2, 2.3) → `pass-a/data-inventory.md`, `schedules.md`; a-code (2.1, 2.4, 2.5 code, 2.8 tests)
   → `pass-a/jobs.md`, `code.md`; a-evals (2.5 shards, 2.7, 2.8 traces, report-v2 numbers) → `eval-map.md`, `traces.md`,
   `numbers.md`; a-ckpt (2.6) starts after `qis-a26-ckpt-k0..3` finish.
@@ -39,7 +42,7 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 2.8 Tests and regression checks; traced cases (ordinary, capped, multi-box, resumed, all-correct group, momentum-only
   step, sharded endpoint).
 
-## 3. Pass B — independent reproduction                                                [active]
+## 3. Pass B — independent reproduction                                                [done db8c2ed]
 - Agents (10:15 PM EST): b-eval (endpoints, contrasts, coverage, stress, length, cue, audit counts) and b-train (curves,
   probes, ordering, group statistics, ΔJ branches, loss/recovery, costs). Forbidden: reports/, evidence, audits, pass-a,
   STATE/CHECKLIST/DECISIONS/REVIEWS, project.md, src/qis/analysis, aggregate files. Own code in `pass-b/tools/`.
@@ -47,7 +50,9 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 3.2 Reconstruct endpoints, base, common-GPU reruns, curves, probes, branches, coverage, stress tiers, length, costs.
 - 3.3 Check pairing, missing attempts, weighting, interval units, signs, bootstrap pairing; same traced cases.
 
-## 4. Discrepancies                                                                    [pending]
+## 4. Discrepancies                                                                    [active]
+- 4.0 Agent reconcile: `comparison.md` (A vs B), sensitivity (test #30 variant, multi-box, unknowns),
+  `discrepancies.md`, `definitions-v1.1-changes.md`.
 - 4.1 Compare A vs B after both are written; resolve from primary records; fix at source; rerun downstream.
 - 4.2 `research/audit-a26/discrepancies.md`; DECISIONS entries for consequential corrections.
 - 4.3 The seven acceptance tests (STATE "Known report defects") resolved with evidence.
