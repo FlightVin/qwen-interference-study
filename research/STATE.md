@@ -9,11 +9,14 @@ complete) and rewrite `reports/REPORT.md` so a new reader can trace every claim 
 Order (A26): definitions → audit pass A (trace) and pass B (independent) → discrepancy log → rewrite → figures and render.
 No new training. Evaluations that explain curious results (e.g. J_U rising in R and H) are allowed.
 
-## GPUs and jobs (A26 ceilings: 8 general, 6 preempt, 30 CPUs)
+## GPUs and jobs (A26 ceilings: 8 general, 6 preempt, 30 CPUs; 9:25 PM EST)
 | State | Pool | Job | Work |
 |---|---|---|---|
-| pending | CPU | 11122432 | `qis-dbg-cpu` standby (4 CPUs, 12 h) for audit reads on compute |
-GPU in use: 0.
+| running | CPU | 11122432 | `qis-dbg-cpu` standby (4 CPUs, 12 h) for read-only audit work on compute |
+| running | general ×4 | 11122477, -79, -80, -81 | `qis-a26-ckpt-k0..3`: hash + load all 11 retained checkpoint dirs (D160) |
+| done | CPU | 11122475 | `qis-a26-ckpt-list`: 11 checkpoint dirs, 2 orphan R-s202 `.tmp` saves (rounds 4, 12) |
+GPUs in use: 4 general. Retained: round 128 of all six runs (R-s101, U-s101 weights only), R-s101 r64, H-s202 r64,
+H-s202 fallback r116 (weights only). All other rounds were pruned and are unavailable.
 
 ## Results under audit (from report v2; claims until pass A and pass B verify them)
 Sealed test pass@1 (128 problems × 32 attempts): base 52.6%; s101 H 77.0, R 81.9, U 77.7; s202 H 72.4, R 74.8, U 79.2.
