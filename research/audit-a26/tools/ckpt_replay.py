@@ -21,14 +21,93 @@ Checks (each optional, chosen by flags):
   vllm       evaluate_ckpt.py load path: FP32 model.pt -> BF16 -> vLLM load_weights; read back EVERY vLLM
              parameter (fused qkv / gate_up rebuilt from the checkpoint) and compare bitwise.
 Usage: see the recipes slurm-agentic-engineering/exp/qis-a26-replay-*.sh. --dry skips everything that needs a GPU.
+Lineage (stdlib only, laptop): python ckpt_replay.py lineage METRICS_DIR AUDIT_JSONL... OUT_JSON, where METRICS_DIR holds
+copies of $P/runs/qis-main-<run>-sym/metrics.jsonl named <run>.jsonl and AUDIT_JSONL are the ckpt_audit.py outputs.
 """
+import sys
+
+
+def lineage_main(argv):
+    """Stdlib only. lineage METRICS_DIR AUDIT_JSONL... OUT_JSON: per retained checkpoint, the segment (job) that wrote it,
+    config sha recomputed from that segment's config row, canonical step rows before the round, fingerprint rows."""
+    import glob, hashlib, json, time
+    mdir, audits, out = argv[0], argv[1:-1], argv[-1]
+    T = lambda u: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(u))
+    P = lambda s: time.mktime(time.strptime(s, "%Y-%m-%dT%H:%M:%SZ")) - time.timezone
+    ck = []
+    for p in audits:
+        for line in open(p):
+            r = json.loads(line)
+            if "dir" in r:
+                ck.append(r)
+    res = []
+    for r in ck:
+        d = r["dir"]; name = d.split("/ckpt/")[1]
+        run = name.split("/")[0].replace("qis-main-", "").replace("-sym", "").replace("-fallback", "")
+        rows = [json.loads(l) for l in open(f"{mdir}/{run}.jsonl")]
+        st = r.get("state") or {}
+        rnd = st.get("round")
+        if rnd is None:                                   # partial .tmp: round from the directory name
+            rnd = int(name.split("round_")[1][:4])
+        segs, cur = [], None
+        for x in rows:
+            if x["kind"] == "event" and x["what"] == "start":
+                cur = {"job": x["job"], "gpu": x["gpu"], "start_utc": T(x["utc"]), "resume_round": x["resume_round"],
+                       "resume_from": x["resume_from"], "code_sha": (x.get("code_sha") or "")[:7], "events": [], "config_sha": None}
+                segs.append(cur)
+            elif cur is not None and x["kind"] == "config":
+                cur["config_sha"] = hashlib.sha256(json.dumps(x["config"], sort_keys=True).encode()).hexdigest()
+                cur["retain_rounds"] = x["config"].get("retain_rounds"); cur["ckpt_every"] = x["config"].get("ckpt_every")
+            elif cur is not None and x["kind"] == "round" and x["round"] == rnd:
+                cur["events"].append({"what": "round_row", "utc": T(x["utc"])})
+            elif cur is not None and x["kind"] == "event" and x.get("round") == rnd and x["what"] in (
+                    "checkpoint_started", "checkpoint", "checkpoint_failed"):
+                cur["events"].append({"what": x["what"], "utc": T(x["utc"]), "ok": x.get("ok"), "error": x.get("error")})
+        writers = [s for s in segs if any(e["what"] != "round_row" for e in s["events"])]
+        saved = st.get("saved_utc")
+        win = []
+        for s in writers:
+            ts = [e["utc"] for e in s["events"]]
+            lo = min(ts); hi = max(ts)
+            inside = bool(saved) and P(lo) <= P(saved) <= P(hi) + 1
+            win.append({"job": s["job"], "first_event": lo, "last_event": hi, "saved_utc_inside": inside,
+                        "events": [e for e in s["events"] if e["what"] != "round_row"], "config_sha": s["config_sha"]})
+        # canonical step rows before this round: last occurrence per (round, minibatch)
+        canon = {}
+        for x in rows:
+            if x["kind"] == "step" and x["round"] < rnd:
+                canon[(x["round"], x["minibatch"])] = x["opt_step"]
+        fp = [{"round": x["round"], "utc": T(x["utc"]), "entropy_sample_mean": x.get("entropy_sample_mean")}
+              for x in rows if x["kind"] == "round" and x["round"] == rnd]
+        cfg_match = [s["job"] for s in segs if s["config_sha"] and s["config_sha"] == st.get("config_sha")]
+        res.append({"dir": d, "run": run, "round": rnd, "saved_utc": saved, "segments": [
+            {k: v for k, v in s.items() if k != "events"} for s in segs], "writers": win,
+            "config_sha_state": st.get("config_sha"), "config_sha_matches_segment_jobs": cfg_match,
+            "canonical_step_rows_before_round": len(canon),
+            "canonical_opt_step_labels_max": max(canon.values()) if canon else 0,
+            "counters_opt_step_state": (st.get("counters") or {}).get("opt_step"),
+            "adam_step_values": (r.get("optim") or {}).get("step_values"),
+            "round_rows_at_round": fp})
+    json.dump(res, open(out, "w"), indent=1)
+    for x in res:
+        print(x["dir"].split("/ckpt/")[1], "| saved", x["saved_utc"], "| writers",
+              [(w["job"], w["first_event"], w["last_event"], w["saved_utc_inside"], [e["what"] for e in w["events"]]) for w in x["writers"]],
+              "| cfg jobs", x["config_sha_matches_segment_jobs"], "| canon", x["canonical_step_rows_before_round"],
+              "maxlabel", x["canonical_opt_step_labels_max"], "ctr", x["counters_opt_step_state"], "adam", x["adam_step_values"],
+              "| fp", [(f["utc"], f["entropy_sample_mean"]) for f in x["round_rows_at_round"]])
+
+
+
+if __name__ == "__main__" and sys.argv[1:2] == ["lineage"]:
+    lineage_main(sys.argv[2:])
+    sys.exit(0)
+
 import argparse
 import gzip
 import hashlib
 import io
 import json
 import os
-import sys
 import time
 
 import numpy as np
