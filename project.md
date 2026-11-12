@@ -1002,3 +1002,26 @@ general GPUs"); preempt stays at 6. No new training study; evaluations to explai
 > ## 7. Deliver
 >
 > Deliver the revised `reports/REPORT.md`, regenerated figures and source tables, canonical definitions, checkpoint and data inventories, both independent audit records, and the resolved discrepancy log. Give me a short handoff naming **which defects changed numbers, which changed interpretation, and what could not be verified**. Use the audited definitions in that handoff and in subsequent chat. A reader should be able to ask “What exactly is J\_H, what data trained R, and what did the extra 4,096 tokens change?” and get the same precise answer from the report, code, and you.
+
+## 41. Owner instruction A27 (received 2026-11-12 ~15:44Z = Thu 10:44 AM EST): take over, verify, deliver a research-quality report by noon EST
+
+Recorded faithfully (the full text is in the session transcript of 12 Nov; summary of every binding point below).
+Deadline: Thu 12 Nov 2026 12:00 PM EST [17:00Z]. Up to 8 general GPUs concurrently (replaces the 3-GPU limit); check
+live usage first; act only on jobs and files of verified project ownership. GPUs only for checkpoint checks or targeted
+re-evaluations that resolve a material uncertainty. No new training.
+1. Establish what was inherited; preserve the inherited report and figures; separate intended / ran / supported.
+   Title names the subject: auxiliary math practice during GRPO training of Qwen3-1.7B.
+2. Two independent audit passes (A: trace source to result, data and checkpoint inventories; B: independent
+   reproduction from raw records). Existing independent audit work may satisfy a check once its inputs, independence,
+   coverage and applicability are verified. Show raw examples: a graded success, a genuine failure, a verifier edge
+   case, a response continued beyond 12,288 tokens.
+3. Argument organised around: with half the slots hard, what do the other eight slots buy (related, unrelated, more
+   hard)? Six connections: allocation and transfer; training signal over time (all-wrong / all-correct groups per
+   pool); the seed reversal; length and success; ray interference (Schaul et al.; POPE Fig. 5; primary sources);
+   limits of transfer.
+4. One concise paper: task and setting; datasets, arms, probes, metrics; research questions; methods; results;
+   discussion; limitations; the single next experiment. No synopsis, "What we learned", "Four practical answers".
+5. Figures: study-design diagram; endpoints and paired contrasts; learning trajectories with the cap change; POPE-style
+   J trajectories; one-step ΔJ with draws; length or harder-task evidence. Inspect every final figure in place.
+6. Deliver REPORT.md, figures and sources, tables, inventories, both audit records; handoff naming changed numbers,
+   changed interpretations, and what remains unknowable.

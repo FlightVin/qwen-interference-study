@@ -1,0 +1,10519 @@
+{
+ "source": "research/audit-a26/pass-b/data/train_groups.json",
+ "quarters": {
+  "H-s101": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 32,
+     "all_correct": 8,
+     "mixed": 216
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 3,
+     "all_correct": 60,
+     "mixed": 193
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 5,
+     "all_correct": 114,
+     "mixed": 137
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 5,
+     "all_correct": 140,
+     "mixed": 111
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 31,
+     "all_correct": 13,
+     "mixed": 212
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 12,
+     "all_correct": 65,
+     "mixed": 179
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 4,
+     "all_correct": 113,
+     "mixed": 139
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 8,
+     "all_correct": 146,
+     "mixed": 102
+    }
+   ]
+  },
+  "R-s101": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 27,
+     "all_correct": 9,
+     "mixed": 220
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 9,
+     "all_correct": 69,
+     "mixed": 178
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 13,
+     "all_correct": 114,
+     "mixed": 129
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 9,
+     "all_correct": 128,
+     "mixed": 119
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 76,
+     "mixed": 180
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 176,
+     "mixed": 80
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 226,
+     "mixed": 30
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 231,
+     "mixed": 25
+    }
+   ]
+  },
+  "U-s101": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 22,
+     "all_correct": 12,
+     "mixed": 222
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 8,
+     "all_correct": 69,
+     "mixed": 179
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 17,
+     "all_correct": 99,
+     "mixed": 140
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 13,
+     "all_correct": 121,
+     "mixed": 122
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 88,
+     "mixed": 168
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 200,
+     "mixed": 56
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 233,
+     "mixed": 23
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 236,
+     "mixed": 20
+    }
+   ]
+  },
+  "H-s202": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 14,
+     "all_correct": 16,
+     "mixed": 226
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 4,
+     "all_correct": 80,
+     "mixed": 172
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 9,
+     "all_correct": 116,
+     "mixed": 131
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 8,
+     "all_correct": 136,
+     "mixed": 112
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 23,
+     "all_correct": 15,
+     "mixed": 218
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 6,
+     "all_correct": 70,
+     "mixed": 180
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 8,
+     "all_correct": 121,
+     "mixed": 127
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 7,
+     "all_correct": 128,
+     "mixed": 121
+    }
+   ]
+  },
+  "R-s202": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 27,
+     "all_correct": 15,
+     "mixed": 214
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 9,
+     "all_correct": 48,
+     "mixed": 199
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 1,
+     "all_correct": 75,
+     "mixed": 180
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 11,
+     "all_correct": 115,
+     "mixed": 130
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 76,
+     "mixed": 180
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 159,
+     "mixed": 97
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 200,
+     "mixed": 56
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 212,
+     "mixed": 44
+    }
+   ]
+  },
+  "U-s202": {
+   "shared": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 28,
+     "all_correct": 16,
+     "mixed": 212
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 11,
+     "all_correct": 62,
+     "mixed": 183
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 7,
+     "all_correct": 104,
+     "mixed": 145
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 8,
+     "all_correct": 129,
+     "mixed": 119
+    }
+   ],
+   "slots8_15": [
+    {
+     "rounds": [
+      1,
+      32
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 90,
+     "mixed": 166
+    },
+    {
+     "rounds": [
+      33,
+      64
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 190,
+     "mixed": 66
+    },
+    {
+     "rounds": [
+      65,
+      96
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 229,
+     "mixed": 27
+    },
+    {
+     "rounds": [
+      97,
+      128
+     ],
+     "groups": 256,
+     "all_wrong": 0,
+     "all_correct": 227,
+     "mixed": 29
+    }
+   ]
+  }
+ },
+ "per_round": {
+  "H-s101": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 2,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 6,
+     "mixed": 1
+    }
+   }
+  ],
+  "R-s101": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 4,
+     "all_correct": 0,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 3,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 6,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   }
+  ],
+  "U-s101": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 3,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 3,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 5,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 6,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   }
+  ],
+  "H-s202": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 4,
+     "all_correct": 0,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 6,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 3,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 7,
+     "mixed": 0
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   }
+  ],
+  "R-s202": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 1,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   }
+  ],
+  "U-s202": [
+   {
+    "round": 1,
+    "shared": {
+     "all_wrong": 4,
+     "all_correct": 0,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 2,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 3,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 4,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 0,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 5,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 6,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 7,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 8,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 9,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 10,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    }
+   },
+   {
+    "round": 11,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 12,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    }
+   },
+   {
+    "round": 13,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 14,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 15,
+    "shared": {
+     "all_wrong": 3,
+     "all_correct": 1,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 16,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 17,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 18,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 19,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 20,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 21,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    }
+   },
+   {
+    "round": 22,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    }
+   },
+   {
+    "round": 23,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 24,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 25,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 26,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 27,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 28,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 29,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 30,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 31,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 32,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 33,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 34,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 35,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 36,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 0,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 37,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 38,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 39,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 40,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 41,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 42,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 43,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 44,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 45,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 46,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 47,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    }
+   },
+   {
+    "round": 48,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 49,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 50,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 51,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 52,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 53,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 54,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 55,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 56,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 57,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 0,
+     "mixed": 8
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 58,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 59,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 60,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 61,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 62,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 63,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 64,
+    "shared": {
+     "all_wrong": 2,
+     "all_correct": 0,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 65,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 66,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 67,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 68,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 69,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 70,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 71,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 72,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 73,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 74,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 75,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 76,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 77,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 78,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 79,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 80,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 81,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 82,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 83,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 84,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 85,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 1,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 86,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 87,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 88,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 89,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 90,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 91,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 2,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 92,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 93,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 1,
+     "mixed": 7
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 94,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 95,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 96,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 97,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 98,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 99,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 100,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 101,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 102,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 103,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 104,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    }
+   },
+   {
+    "round": 105,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 106,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 107,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 108,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 109,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 110,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 111,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 112,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 113,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 114,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 115,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 116,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 117,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 4,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 118,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 119,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 3,
+     "mixed": 5
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 120,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 121,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 122,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 123,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 5,
+     "mixed": 3
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   },
+   {
+    "round": 124,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 2,
+     "mixed": 6
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 125,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 6,
+     "mixed": 2
+    }
+   },
+   {
+    "round": 126,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 5,
+     "mixed": 2
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 127,
+    "shared": {
+     "all_wrong": 0,
+     "all_correct": 4,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 8,
+     "mixed": 0
+    }
+   },
+   {
+    "round": 128,
+    "shared": {
+     "all_wrong": 1,
+     "all_correct": 3,
+     "mixed": 4
+    },
+    "slots8_15": {
+     "all_wrong": 0,
+     "all_correct": 7,
+     "mixed": 1
+    }
+   }
+  ]
+ }
+}

@@ -1,16 +1,23 @@
 # STATE
 
-Purpose: where the A26 audit and report rewrite stand. Scientific authority; the harness `state/STATE.md` points here.
-Updated 2026-11-12 3:00 AM EST [08:00Z]. Owner task: A26 (`project.md` §40). Previous STATE: git 045c528.
+Purpose: where the audit and report stand. Scientific authority; the harness `state/STATE.md` points here.
+Updated 2026-11-12 11:40 AM EST [16:40Z]. Owner task: A27 (`project.md` §41), on top of A26 (§40). Previous STATE: git c8a81ac.
+
+## A27 (Thu 12 Nov, deadline 12:00 PM EST)
+Report v4 delivered: `reports/REPORT.md` (v3 archived as `reports/archive/REPORT-v3-2026-11-12.md`, figures in
+`reports/archive/figures-v3-2026-11-12/`). No v3 number changed. Added: title naming the subject, design diagram (F1),
+worked GRPO group, groups without reward contrast per pool and quarter (F9, `reports/tables/v4/t10_signal`), ray
+interference from primary sources mapped to measurements, discussion of what slots 8–15 bought, raw examples (App. I).
+New finding: from round 65, 78–92% of R and U practice groups were all correct (200–236 of 256 per quarter) against
+44–57% of H's extra hard groups → the R/U contrast was tested mainly in rounds 1–64 (D164).
+GPUs: 0 project jobs at start (squeue --me, 10:50 AM EST) and 0 submitted; no re-evaluation could resolve the main
+uncertainty (run-to-run spread) inside the deadline. Checkpoint inventory (pass A 2.6) was already complete (6282ba0).
 
 ## Task
 Audit the finished QIS study (Qwen3-1.7B, full-parameter GRPO; arms H, R, U × training seeds 101, 202; all six runs
 complete) and rewrite `reports/REPORT.md` so a new reader can trace every claim to data, checkpoints and code.
 Order (A26): definitions → audit pass A (trace) and pass B (independent) → discrepancy log → rewrite → figures and render.
 No new training. Evaluations that explain curious results (e.g. J_U rising in R and H) are allowed.
-
-## GPUs and jobs (Thu 12 Nov ~3:00 AM EST)
-No project jobs running; GPUs in use: 0. A26 used 19 ledger jobs (5.20 GPU-h, 41.65 CPU-h) and 3 CPU standbys.
 
 ## Results under audit (from report v2; claims until pass A and pass B verify them)
 Sealed test pass@1 (128 problems × 32 attempts): base 52.6%; s101 H 77.0, R 81.9, U 77.7; s202 H 72.4, R 74.8, U 79.2.

@@ -4,6 +4,8 @@ Purpose: the live plan for owner task A26 (`project.md` §40). Status: **done** 
 Previous checklist (study execution, all closed): git 045c528. Deliverables live in `research/audit-a26/` unless named.
 
 ## 0. Owner instructions (NON-NEGOTIABLE)
+- 0.9 A27 (`project.md` §41): deliver report v4 by Thu 12 Nov 12:00 PM EST; ≤ 8 general GPUs concurrently (guard
+  `ops/qis-submit` = 8, annotated); no new training; title names auxiliary math practice during GRPO of Qwen3-1.7B.
 - 0.1 A26: ≤ 8 general GPUs, ≤ 6 preempt GPUs, ≤ 30 CPUs; one GPU per job; guard `ops/qis-submit` (set to 8).
 - 0.2 No new training study. Focused re-evaluation and evaluations that explain curious results are allowed.
 - 0.3 Control only ledger-owned jobs by exact ID via `ae slurm`. Leave other projects' jobs and `ae-dco-*` alone.
@@ -22,10 +24,11 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 1.4 GRPO units: group, mixed group, nonzero advantage, optimizer update, momentum-only step.
 - 1.5 Each term: intended vs executed (code path + data), differences, superseded definitions marked.
 
-## 2. Pass A — trace inputs to outputs                                                 [active: 2.6 only]
+## 2. Pass A — trace inputs to outputs                                                 [done]
 - Done 11:30 PM EST (db8c2ed): a-data (schedules pass in 6 runs; 2 held-out close variants), a-code (54/54 tests;
   265 jobs traced; no defect changes a count), a-evals (236 claims: 223 verified, 11 differ, 24 failing equations).
-- 2.6 a-ckpt: inventory from `qis-a26-ckpt-k0..3` (all 4 done) + round-65 replay from r64 checkpoints → active.
+- 2.6 a-ckpt: inventory from `qis-a26-ckpt-k0..3` (all 4 done) + round-65 replay → done 6282ba0 (`pass-a/checkpoints.md`,
+  `replay.md`); the "active" mark was stale (found in A27).
 - Agents (10:10 PM EST): a-data (2.2, 2.3) → `pass-a/data-inventory.md`, `schedules.md`; a-code (2.1, 2.4, 2.5 code, 2.8 tests)
   → `pass-a/jobs.md`, `code.md`; a-evals (2.5 shards, 2.7, 2.8 traces, report-v2 numbers) → `eval-map.md`, `traces.md`,
   `numbers.md`; a-ckpt (2.6) starts after `qis-a26-ckpt-k0..3` finish.
@@ -87,3 +90,11 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 ## 8. Delivery                                                                         [done]
 - Handoff sent 2026-11-12. Standbys cancelled; compute worktree of a-code removed.
 - 8.1 Report, figures, tables, definitions, inventories, both audit records, discrepancy log; short handoff.
+
+## 9. A27 report v4                                                                   [done]
+- 9.1 Inherited state verified: v3 audit, figures and checkpoint inventory complete; v3 report and figures archived.
+- 9.2 Live usage checked (0 jobs); no GPU job justified within the deadline (STATE).
+- 9.3 New analysis: per-pool groups without reward contrast by quarter (`tables/v4/t10_signal`; totals = v3 table, 6/6).
+- 9.4 Report v4 edits (Appendix J lists them); ray interference cited from Schaul et al. 2019 and POPE §3.2 / Fig. 5.
+- 9.5 Figures 1 and 9 inspected at 830 px and 372 px (`reports/figures/v4/render-inspection.md`); others unchanged from v3.
+- 9.6 Not done in A27 (deadline): full clean-clone re-render of every figure; a fresh independent pass B of v4 text.

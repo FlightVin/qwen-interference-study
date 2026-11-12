@@ -1138,3 +1138,15 @@ evaluation cap, or noise. The pre-registered E1/E2 rule mislabelled U as borderl
 boxes as "format"; lenient grading finds the gold in 0 of the 99 such base attempts, so all three arms meet E2. The
 mechanism of the general gain is not identified. One recorded process deviation: the control jobs were submitted with
 untracked files hidden from the dirty-tree check (IMPLEMENTATION-LOG 2026-11-12); the jobs are pinned to clean commits.
+
+## D164 — 2026-11-12 11:40 AM EST (A27): practice saturation limits what R − U tests
+Evidence: `reports/tables/v4/t10_signal.md` (from audit pass B group counts). From round 65, 200–236 of 256 practice
+groups per quarter were all correct in every R and U run (78–92%), against 113–146 of 256 (44–57%) of H's extra hard groups.
+Decision: report v4 states that the R/U contrast was tested mainly in rounds 1–64. Consequence for conclusions: no number
+changes; the interpretation of R − U narrows. A null or seed-dependent R − U may reflect saturated practice, not the
+absence of skill transfer. This strengthens the case that changing the practice pool is a different question from more seeds.
+
+## D165 — 2026-11-12 11:40 AM EST (A27): no GPU jobs for report v4
+Reason: 75 minutes remained at handoff. Every published endpoint was already reproduced from raw records by two passes.
+The main open uncertainty (run-to-run spread of R − U) needs new training, which A27 excludes.
+

@@ -1,13 +1,14 @@
-# Does factoring practice help GRPO learn hard math problems? Qwen3-1.7B, arms H, R and U
+# Auxiliary math practice during GRPO training of Qwen3-1.7B: related practice, unrelated practice, or more hard problems
 
-Version 3, 12 Nov 2026; audited under owner instruction A26; supersedes version 2 ([archived](archive/REPORT-v2-2026-11-11.md)).
+Version 4, 12 Nov 2026, 12:00 PM EST (owner instruction A27); revises version 3 ([archived](archive/REPORT-v3-2026-11-12.md)),
+which was audited under A26. Changes from version 3: Appendix J.
 
 This report defines the task, the data and the training procedure, then states what each measurement shows and what it
 cannot show. Terms follow [`research/DEFINITIONS.md`](../research/DEFINITIONS.md) v1.1. Every number comes from the
 audited tables in [`tables/v3/`](tables/v3/) or from the audit file named beside it. Differences are in percentage
 points ("points"). Times are EST.
 
-## 1. Task
+## 1. Task and experimental setting
 
 **What the model receives.** The policy is Qwen3-1.7B (Hugging Face revision `70d244cc`) in non-thinking mode. Each
 request holds one math problem in the chat template. The user turn reads:
@@ -24,7 +25,9 @@ round. The sealed-test, stress, control and cue evaluations use 12,288 for every
 (Math-Verify) and the response finished before the cap. Every other attempt earns 0. An attempt that reaches the cap is
 *truncated* and earns 0, even if a box matches.
 
-**One training round.** GRPO fills 16 *prompt slots* with problems and samples 8 attempts per slot. The 8 attempts of one
+**One training round.** GRPO fills 16 *prompt slots* with problems and samples 8 attempts per slot. A slot is a
+position in the round, not a problem: the slots draw from larger pools (46 H_train problems, 63 R problems, 63 U
+problems), so each problem recurs across rounds. The 8 attempts of one
 slot form a *group*. Each attempt's advantage is its reward relative to the mean and spread of its group.
 
 | Slots | H (hard only) | R (related practice) | U (unrelated practice) |
@@ -38,6 +41,21 @@ groups from slots 8–15. Half of every update therefore trains on the arm's all
 is better spent on direct practice of a skill the hard problems use (R), on practice of a skill they do not use (U), or
 on more hard problems (H).
 
+![Study design](figures/v4/f00_design.png)
+
+*Figure 1. Study design. All six runs (3 arms × training seeds 101 and 202) start from the same base weights and run
+128 rounds of 16 slots × 8 attempts. Slots 0–7 are identical across arms within a seed, so R − U compares two
+allocations of slots 8–15 at equal exposure to hard problems (8,192 hard attempts each). H spends slots 8–15 on more
+hard problems, so R − H and U − H compare practice against twice the hard exposure. Every checkpoint is scored on the
+same evaluation panels with the same evaluation seeds.*
+
+**One group of eight, with numbers.** Suppose a hard problem's 8 attempts earn rewards 1, 0, 0, 1, 0, 0, 0, 0. The
+group mean is 0.25 and the population standard deviation is 0.433. The two correct attempts get advantage +1.73 and the
+six wrong ones −0.58. The update raises the probability of the tokens in the correct attempts and lowers it for the
+wrong ones. If all 8 attempts are wrong (or all 8 correct), every advantage is 0: the group carries no within-group
+reward contrast and contributes no gradient. (This example is illustrative; recorded advantages match the formula to
+within 1.2 × 10⁻⁷ in all six runs, [`pass-b/data/train_groups.json`](../research/audit-a26/pass-b/data/train_groups.json).)
+
 **Two examples.** Texts were read from the pinned MATH source (local copy `../data/external/a17/math_*.parquet`; the
 number in each ID is the row index). They agree with the annotation quotes in [`../data/annotations/`](../data/annotations/).
 
@@ -50,7 +68,7 @@ number in each ID is the row index). They agree with the annotation quotes in [`
 | Role | R slots 8–15. Its matched U partner is `number_theory/train/00437` ("Find the remainder when $8735 + 8736 + 8737 + 8738$ is divided by 11.", gold `10`). | Shared slots in all arms; extra slots in H. |
 | Base-model screening (cap 8,192) | 24 of 32 attempts correct ([`related_k8_s2k8_counts.jsonl`](../data/screening/related_k8_s2k8_counts.jsonl)) | 5 of 32 attempts correct ([`hsel_k8.json`](../data/screening/hsel_k8.json)) |
 
-## 2. Data and measurements
+## 2. Datasets, arms, probes and metrics
 
 ### 2.1 Sets
 
@@ -150,7 +168,7 @@ one-step diagnostic (§5.4.4): a separate evaluation with 16 attempts per proble
 All questions after P1 and S1 are exploratory. E2–E8 were added after training outputs were visible; each panel and
 rule was fixed before its own evaluation outputs existed.
 
-## 4. Experimental procedure
+## 4. Methods
 
 ### 4.1 One GRPO round
 
@@ -259,9 +277,9 @@ Intervals: problem bootstrap (pass@1), paired problem bootstrap (gain). Sources:
 
 ![Sealed-test pass@1 of the base policy and the six round-128 endpoints](figures/v3/f01_endpoints.png)
 
-*Figure 1. Sealed-test pass@1 of the base policy and the six round-128 endpoints; 128 problems × 32 attempts, cap
+*Figure 2. Sealed-test pass@1 of the base policy and the six round-128 endpoints; 128 problems × 32 attempts, cap
 12,288. Bars: 95% problem-bootstrap intervals (10,000 resamples of the problems). They include problem-to-problem
-variation, so compare policies with the paired contrasts in Figure 2, not by overlap.*
+variation, so compare policies with the paired contrasts in Figure 3, not by overlap.*
 
 | Contrast A − B | Seed | A pass@1 (%) | B pass@1 (%) | A − B (points) | 95% interval |
 |---|---|---|---|---|---|
@@ -278,7 +296,7 @@ Intervals: paired problem bootstrap over the 128 problems. Source: [`t02_contras
 
 ![Paired contrasts within each training seed on the sealed test](figures/v3/f02_contrasts_test.png)
 
-*Figure 2. Sealed-test R − U, R − H and U − H between endpoints of the same training seed (128 problems × 32 attempts).
+*Figure 3. Sealed-test R − U, R − H and U − H between endpoints of the same training seed (128 problems × 32 attempts).
 Bars: 95% paired problem-bootstrap intervals (10,000 draws, the same resampled problems for both policies). They do not
 describe variation across training runs.*
 
@@ -324,15 +342,15 @@ mixes training with the larger cap.
 
 ![Dev pass@1 over training rounds](figures/v3/f03_dev_rounds.png)
 
-*Figure 3. Dev pass@1 of the six runs at rounds 0–128 (53 problems × 8 attempts), one panel per seed. Round 0 is the
+*Figure 4. Dev pass@1 of the six runs at rounds 0–128 (53 problems × 8 attempts), one panel per seed. Round 0 is the
 same base policy in every run; its spread (40.3% to 42.2%) is sampling noise. Open markers: cap 8,192 (rounds 0, 32);
 filled: 12,288. No intervals drawn; per-point 95% problem-bootstrap intervals are ±9.2 to ±10.6 points (`t03_curves`).
 H-s202 rounds 64–128 are trajectory a2-r60.*
 
 ![Dev pass@1 against cumulative hard training attempts](figures/v3/f04_dev_hard_attempts.png)
 
-*Figure 4. The same dev evaluations against cumulative hard training attempts: H reaches 16,384 at round 128, R and U
-reach 8,192 and also generate 8,192 practice attempts. Markers as in Figure 3; no intervals drawn (sizes in `t03_curves`).*
+*Figure 5. The same dev evaluations against cumulative hard training attempts: H reaches 16,384 at round 128, R and U
+reach 8,192 and also generate 8,192 practice attempts. Markers as in Figure 4; no intervals drawn (sizes in `t03_curves`).*
 
 Dev pass@1 rose from 40.3–42.2% at round 0 to 65.6–72.9% at round 128 across the six runs. The R and U values:
 
@@ -371,14 +389,14 @@ Points; 8 attempts per problem. Every interval at the "first" round includes zer
 
 ![Training paths in J_H and J_R](figures/v3/f05_traj_JH_JR.png)
 
-*Figure 5. Path of each run through rounds 0 → 128 (arrows; large black-edged marker and arm letter at round 128),
+*Figure 6. Path of each run through rounds 0 → 128 (arrows; large black-edged marker and arm letter at round 128),
 one panel per seed. x: J_H (32 problems × 8 attempts); y: J_R (28 × 8). Every policy is scored on every probe. Open
 markers: cap 8,192; filled: 12,288. No intervals drawn; 95% problem-bootstrap intervals are ±11.3 to ±14.6 points
 (J_H) and ±6.0 to ±11.6 points (J_R).*
 
 ![Training paths in J_H and J_U](figures/v3/f06_traj_JH_JU.png)
 
-*Figure 6. As Figure 5, with y: J_U (32 modular-arithmetic problems × 8 attempts); J_U intervals are ±2.5 to ±10.9
+*Figure 7. As Figure 6, with y: J_U (32 modular-arithmetic problems × 8 attempts); J_U intervals are ±2.5 to ±10.9
 points. J_U rises in H and R, which never practise modular arithmetic (§5.3).*
 
 Over the six runs, J_H rose from 41.0–43.4% at round 0 to 67.6–76.6% at round 128, J_R from 80.8–81.7% to 89.3–92.4%,
@@ -405,7 +423,7 @@ their absolute values are in [`t03_curves.md`](tables/v3/t03_curves.md). Source:
 
 ![Control-panel gains beside the probe gains](figures/v3/f12_control.png)
 
-*Figure 7. Six round-128 endpoints. Top: gain over the base policy on the control panel (64 problems × 8 attempts, cap
+*Figure 8. Six round-128 endpoints. Top: gain over the base policy on the control panel (64 problems × 8 attempts, cap
 12,288). Middle and bottom: the same run's J_U and J_R gain from round 0 to round 128 (in-run, 8 attempts). Bars: 95%
 paired problem-bootstrap intervals (10,000 draws). The base scores 50.8% on control and about 81% on J_U and J_R, so the
 control panel has more room to gain.*
@@ -487,10 +505,64 @@ groups add no direct gradient, but they still shaped every update: they count in
 momentum-only step contained 2 of them. Every optimizer step moved the weights, through the mixed hard groups of its
 minibatch or through the stored AdamW moments. The size of each weight change is not logged.
 
-#### 5.4.4 Local one-step diagnostic
+**When the practice pools stopped informing the update.** The question is whether slots 8–15 kept supplying reward
+contrast long enough to test the intended skill relationship. The next table and Figure 9 count, per 32-round quarter,
+the groups that carried no contrast.
 
-**Why and what.** The study was designed around "ray interference": an update on one kind of problem might lower success
-on another. The diagnostic tests that first link directly. From two source checkpoints (the base policy with a fresh
+| Run | Slots 8–15 pool | All correct in slots 8–15, r1–32 / r33–64 / r65–96 / r97–128 (of 256 each) | All wrong in slots 0–7 (shared H_train), same quarters |
+|---|---|---|---|
+| H-s101 | extra H_train | 13 / 65 / 113 / 146 | 32 / 3 / 5 / 5 |
+| R-s101 | related | 76 / 176 / 226 / 231 | 27 / 9 / 13 / 9 |
+| U-s101 | unrelated | 88 / 200 / 233 / 236 | 22 / 8 / 17 / 13 |
+| H-s202 | extra H_train | 15 / 70 / 121 / 128 | 14 / 4 / 9 / 8 |
+| R-s202 | related | 76 / 159 / 200 / 212 | 27 / 9 / 1 / 11 |
+| U-s202 | unrelated | 90 / 190 / 229 / 227 | 28 / 11 / 7 / 8 |
+
+Source: [`t10_signal.md`](tables/v4/t10_signal.md) (all-wrong and all-correct per pool), built from the audit pass B
+group counts. Totals equal the table above.
+
+![Groups without reward contrast over training](figures/v4/f15_signal.png)
+
+*Figure 9. Top: share of slot 8–15 groups in which all 8 attempts were correct, per 8-round bin (64 groups per bin).
+Bottom: share of shared hard groups (slots 0–7) in which all 8 attempts were wrong. Colour: arm; line style and marker:
+seed. Dotted line: the cap change after round 32.*
+
+Three observations follow. First, R and U practice lost contrast at similar rates: from round 65 on, 78–92% of practice
+groups were all correct in every R and U run (200–236 of 256 per quarter), against 44–57% of H's extra hard groups.
+After about round 64, the practice half of each R or U update therefore came mostly from the 8–22% of practice groups
+that were still mixed, plus AdamW momentum. Second, all-wrong shared hard groups were common only in rounds 1–32
+(14–32 of 256) and rare afterwards (1–17 of 256). Third, R-s202 kept more mixed practice groups than the other R and U
+runs (377 of 1,024 against 267–315) and had the fewest all-correct shared hard groups (253 of 1,024 against 301–348).
+This is consistent with its lower endpoint, but the count does not say whether slower learning caused or followed it.
+**Consequence:** the R/U contrast was tested mainly in the first half of training; in the second half both practice
+pools were close to saturated, and the arms differed mostly in which saturated pool filled the divisor.
+
+#### 5.4.4 Ray interference and the local one-step diagnostic
+
+**The mechanism.** Schaul et al. (2019) describe *ray interference*: learning stalls when (a) the gradient for one task
+works against the gradient for another, and (b) the data an agent learns from depend on its current performance, as in
+on-policy RL. In their two-task bandit, the points where one task is solved and the other is not are saddle points, and
+learning can sit near them for a long time. In plain terms: an update that helps task A can lower success on task B; on
+policy, lower success on B means fewer rewarded attempts on B, which means less signal to recover B. POPE (Qu et al.,
+2026, §3.2 and Figure 5) shows this in a two-problem LLM experiment: plotting J(easy) against J(hard) over training,
+mixing in an *unrelated* easy problem gave fast progress on the easy problem while J(hard) stagnated; a *related* easy
+problem slightly accelerated learning on the hard one. Figures 6 and 7 above are our POPE-style plots.
+
+**What we measured against each link.**
+
+| Link in the mechanism | Our observation | Same checkpoint or trajectory? |
+|---|---|---|
+| One update of type X lowers J on type Y | one-step ΔJ (this section): not resolved from reference noise | two source checkpoints: base, R-s101 r64 |
+| Lower success removes future reward signal | all-wrong shared hard groups (§5.4.3): frequent only in rounds 1–32 | training records of all six runs; never linked to a ΔJ |
+| Loss of a previously solved problem | loss and recovery (§5.4.5): at the rate binomial sampling predicts | training records; different problems from the probes |
+| Sustained stall on hard problems | not defined or measured | — |
+
+A local optimizer branch, an all-wrong group and a learning stall are three different observations. Only the R-s101 r64
+diagnostic and the R-s101 training records lie on one trajectory. Other explanations fit the observed patterns without
+interference: sampling variation (§4.3), truncation (§5.4.2), saturation of easy practice (§5.4.3) and, for R − H and
+U − H, twice the hard exposure in H. A two-seed endpoint reversal cannot establish a saddle point.
+
+**Why and what.** The diagnostic tests the first link directly. From two source checkpoints (the base policy with a fresh
 optimizer, and R-s101 round 64 with its saved optimizer) it takes one GRPO step on 4 prompts × 8 attempts of one type
 (hard, related or unrelated), four draws per type (draw seeds 4101–4104). It then evaluates J_H, J_R and J_U with 16
 attempts per problem **at cap 8,192**, below the 12,288 that R-s101 r64 trained with: 2,771 of 7,680 round-64 J_H
@@ -512,14 +584,14 @@ Sources: [`t04_diag.md`](tables/v3/t04_diag.md) (every draw, J_R and J_U); [`pas
 
 ![One optimizer step from the base policy: change in J against two no-update references](figures/v3/f07a_delta_j_r0.png)
 
-*Figure 8. Each point is one update draw: one GRPO step (4 prompts × 8 attempts; hard, related or unrelated) from the
+*Figure 10. Each point is one update draw: one GRPO step (4 prompts × 8 attempts; hard, related or unrelated) from the
 base policy (round 0), then J_H (32 problems), J_R (28) and J_U (32) at 16 attempts per problem, cap 8,192, identical
 evaluation seeds; one panel per probe. y: draw minus `none` (solid line). Dashed line: `none_rerun`; the gap between the
 two references (+3.1 J_H points) is the reference noise. No intervals drawn.*
 
 ![One optimizer step from R-s101 round 64: change in J against two no-update references](figures/v3/f07b_delta_j_r64.png)
 
-*Figure 9. As Figure 8, from R-s101 round 64; the gap between the two references is +2.5 J_H points. Crossed open
+*Figure 11. As Figure 10, from R-s101 round 64; the gap between the two references is +2.5 J_H points. Crossed open
 markers: the three draws with exactly zero gradient (related-4101, related-4102, unrelated-4103); AdamW still stepped,
 and their evaluations are identical. No intervals drawn.*
 
@@ -573,13 +645,13 @@ bootstrap of the per-problem change. Source: [`t05_length.md`](tables/v3/t05_len
 
 ![pass@1 before and after 4,096 more tokens](figures/v3/f08_length_pass1.png)
 
-*Figure 10. Five round-128 endpoints (H-s202 not extended). Top: sealed test (128 problems × 32 attempts); bottom: stress
+*Figure 12. Five round-128 endpoints (H-s202 not extended). Top: sealed test (128 problems × 32 attempts); bottom: stress
 (221 × 8). Open marker: pass@1 at cap 12,288; filled: after every capped attempt was continued by up to 4,096 tokens.
 95% paired problem-bootstrap intervals of each gain are in `t05_length`.*
 
 ![What happened to capped attempts given 4,096 more tokens](figures/v3/f08b_length_capped.png)
 
-*Figure 11. For the same five endpoints, the attempts capped at 12,288 (n in each row label) split into recovered
+*Figure 13. For the same five endpoints, the attempts capped at 12,288 (n in each row label) split into recovered
 (finished and correct), finished wrong and still capped at 16,384; shares are of the capped attempts.*
 
 | Contrast | Panel | At 12,288 (points) | 95% interval | At 16,384 (points) | 95% interval | Change (points) | 95% interval |
@@ -594,7 +666,7 @@ interval containing zero: [`t06_length_contrasts.md`](tables/v3/t06_length_contr
 
 ![Paired contrasts before and after the extension](figures/v3/f09_length_contrasts.png)
 
-*Figure 12. R − U per seed, and R − H and U − H for seed 101, on the sealed test (128 × 32) and stress (221 × 8). Open
+*Figure 14. R − U per seed, and R − H and U − H for seed 101, on the sealed test (128 × 32) and stress (221 × 8). Open
 marker: contrast at cap 12,288; filled: at 16,384. Bars: 95% paired problem-bootstrap intervals. Intervals of the change
 itself are in `t06_length_contrasts`.*
 
@@ -616,7 +688,7 @@ not explain the seed-dependent R − U. In seed 202, R recovered a smaller share
 19.8%). The extension measures inference allowance for these five checkpoints. It does not show what training with a
 longer cap would have produced.
 
-### 5.6 Stress panels
+### 5.6 Stress panels: transfer to harder factoring problems
 
 **Why and what.** E5 asks whether the training gain and the arm order reach harder factoring problems that no run
 trained on. Base, the six round-128 endpoints and the only two intermediate checkpoints evaluated (R-s101 r64 and H-s202
@@ -638,7 +710,7 @@ Intervals: problem bootstrap within the tier. Source: [`t07_stress.md`](tables/v
 
 ![Stress-panel pass@1 per tier](figures/v3/f10_stress_tiers.png)
 
-*Figure 13. Stress pass@1 per tier (Harder 95 problems, SuperHard 126; 8 attempts per problem, cap 12,288) for the base,
+*Figure 15. Stress pass@1 per tier (Harder 95 problems, SuperHard 126; 8 attempts per problem, cap 12,288) for the base,
 the six round-128 endpoints (filled markers) and R-s101 r64 and H-s202 r64, trajectory a2-r60 (open markers). Bars: 95%
 problem-bootstrap intervals within the tier. All cells ran on L40S except H-s202 r128 (L40 and RTX A6000).*
 
@@ -657,7 +729,7 @@ Intervals: paired problem bootstrap within the tier. Per-tier R − H and U − 
 
 ![Stress-panel paired contrasts within each training seed](figures/v3/f11_stress_contrasts.png)
 
-*Figure 14. Stress R − U, R − H and U − H between endpoints of the same seed, on all 221 problems, Harder (95) and
+*Figure 16. Stress R − U, R − H and U − H between endpoints of the same seed, on all 221 problems, Harder (95) and
 SuperHard (126); 8 attempts per problem. Bars: 95% paired problem-bootstrap intervals within the tier.*
 
 **What happened.**
@@ -706,7 +778,29 @@ every reward-0 response "WRONG", including the 13 capped ones. Responses over 8,
 5,000 and last 2,500 characters. "Fixable" is an annotation about a hypothetical intervention, not an observed training
 effect. With 4–8 failures per policy, the counts cannot rank the arms. Details: Appendix A.4.
 
-## 6. Interpretation, limitations and next decision
+## 6. Discussion, limitations and the next experiment
+
+**What the eight discretionary slots bought.** Training at all bought most of the gain: every round-128 endpoint rose
+19.8 to 29.3 points above the base's 52.6% on the sealed test. The choice of what to put in slots 8–15 moved the
+endpoint by much less, and its sign depended on the training seed. With slots 0–7 fixed, related practice beat
+unrelated practice by 4.2 points in seed 101 (81.9% vs 77.7%) and lost by 4.4 points in seed 202 (74.8% vs 79.2%).
+Practice of either kind scored above more hard problems in point estimate in both seeds (R − H +4.9 and +2.4; U − H
++0.7 and +6.8), at lower token cost (52.8–65.1 M training response tokens for R and U against 68.6–74.7 M for H), but
+two of those four intervals include zero. The practice pools were close to saturated after round 64 (§5.4.3), so most
+of the R/U comparison happened in the first half of training.
+
+**Why the seeds differ, and how much the diagnostics explain.** The seed-202 R deficit is almost entirely a truncation
+term (−4.3 of −4.4 points, §5.4.2); it comes from many problems the base already solved sometimes, not from new
+problems (§5.4.1); it survives the common-GPU rerun (−3.1 points) and the length extension (−3.9 points). These facts
+describe where the deficit sits. They do not identify its cause: the one-step diagnostic cannot resolve interference,
+and two runs per arm cannot separate an arm effect from run-to-run variation, which here includes training-GPU changes.
+
+**Limits of transfer (interpretation).** The response audit splits the 70 reads of the 35 reward-0 responses into
+missed the factoring (26), factored incorrectly (9), factored then failed later (17), hit the cap (11), grader
+limitation (6 reads; both reads of 2 responses) and another method (1). Read as stages, recognising when to factor is the most frequent obstacle, and
+finishing within the cap is the next. These are two readers' judgements of the same 35 responses, not 70 independent
+model failures. Direct factoring practice targets execution, which was the least frequent obstacle; this may explain
+why R gained no consistent edge on Harder and SuperHard, but the audit cannot test that.
 
 **What held across both seeds.**
 - Training raised every policy far above the base: +19.8 to +29.3 points on the sealed test (six round-128 endpoints),
@@ -731,7 +825,7 @@ effect. With 4–8 failures per policy, the counts cannot rank the arms. Details
 - When seed 202 separated. Its round-32 gaps are no larger than the round-0 noise between identical policies.
 
 **The next comparison.** The most important uncertainty is the run-to-run spread of R − U under the current recipe. The
-next comparison should train more seeds of H, R and U with the current recipe, all on one GPU type for training and
+next experiment should train more seeds of H, R and U with the current recipe, all on one GPU type for training and
 evaluation, and estimate the spread of per-run R − U, R − H and U − H. This keeps the question fixed and removes the
 hardware confound.
 
@@ -739,7 +833,28 @@ Changing the practice pool (for example, keeping it at mixed success: 647–757 
 all-correct) or the training cap asks a different question: whether another recipe changes the answer. A study that
 combines new seeds with a new pool or cap cannot separate run-to-run spread from the effect of the recipe change.
 
+## References
+
+- Schaul, T., Borsa, D., Modayil, J., and Pascanu, R. (2019). *Ray Interference: a Source of Plateaus in Deep
+  Reinforcement Learning.* arXiv:1904.11455. Cited: the two ingredients of plateaus (§1) and the saddle points of the
+  two-task bandit (§2.2).
+- Qu, Y., Setlur, A., Smith, V., Salakhutdinov, R., and Kumar, A. (2026). *POPE: Learning to Reason on Hard Problems
+  via Privileged On-Policy Exploration.* arXiv:2601.18779. Cited: §3.2 and Figure 5, the two-problem experiment with
+  related and unrelated easy problems.
+
 ---
+
+## Appendix I. Raw examples, traced from record to report
+
+Full traces with file paths and seeds: [`pass-a/traces.md`](../research/audit-a26/pass-a/traces.md).
+
+| Case | Problem and attempt | What happened |
+|---|---|---|
+| Graded success | sealed test `intermediate_algebra/test/00874` (find q(x) from a hole at x = −2, an asymptote at x = 1 and q(3) = −30; gold `-3(x+2)(x-1)`), R-s101 attempt 3 | 2,345 tokens, finished; last box `-3(x + 2)(x - 1)`; reward 1. This policy solved the problem in 16 of 32 attempts. |
+| Genuine failure | same problem, R-s101 attempt 0 | finished; boxed `(x + 2)(x - 1)(x - 6)`: the factors are right but the constraint q(3) = −30 is not met; reward 0. |
+| Verifier edge case | stress `math:precalculus/train/00152` (gold `2,4`), R-s202 r128 attempt 0 | 8 boxes, the last four `2`, `4`, `2`, `4`; the grader reads only the last box (`4`); reward 0. Both audit readers called it a grader limitation. U-s101 boxed `2 \text{ and } 4` and scored 1. |
+| Continued beyond 12,288 | sealed test `algebra/test/00348` (gold `3`), R-s202 attempt 10 | capped at 12,288 tokens mid-derivation (reward 0); continued from its own prefix for 1,068 new tokens to 13,356; boxed `3`; reward 1 at 16,384. |
+| Continued, still capped | sealed test `algebra/test/00054` (gold `69`), R-s202 attempt 8 | reached 16,384 tokens without finishing; its text contains `\boxed{60}`, which is wrong and, being capped, scores 0 by rule. |
 
 ## Appendix A. Complete tables
 
@@ -1035,3 +1150,25 @@ discrepancy log is [`discrepancies.md`](../research/audit-a26/discrepancies.md);
 SuperHard 49.4–58.4%). Stress length gains are 2.3–3.1 points. The r64 no-update J_H is 60.5%. Per-run canonical GPU-h
 use the pass-B definition. Contrasts are printed in their own columns, computed from unrounded data. The Harder manifest
 hash printed in version 2 (`0fb34905…`) does not match the file; the file hash is `0fb3490b…`.
+
+## Appendix J. Changes from report version 3 (A27)
+
+No published number from version 3 changed. The version-3 audit records (pass A, pass B, the comparison, and the
+38-row discrepancy log) were re-checked for coverage and applicability. The checkpoint inventory and replay
+([`pass-a/checkpoints.md`](../research/audit-a26/pass-a/checkpoints.md), [`replay.md`](../research/audit-a26/pass-a/replay.md))
+were complete, although the version-3 checklist still marked them active.
+
+| Change | Kind | Where |
+|---|---|---|
+| Title names the subject: auxiliary math practice during GRPO training of Qwen3-1.7B | wording | title |
+| Study-design diagram added | new figure | Figure 1 |
+| Worked GRPO group of 8 with advantages | new explanation | §1 |
+| Slots defined as positions filled from larger pools | wording | §1 |
+| Groups without reward contrast per pool and quarter; practice pools 78–92% all correct from round 65 | new analysis of audited records | §5.4.3, Figure 9, `tables/v4/t10_signal` |
+| Consequence: the R/U contrast was tested mainly in rounds 1–64 | new interpretation | §5.4.3, §6 |
+| Ray interference explained from the primary sources (Schaul et al. 2019; POPE §3.2, Figure 5); each link mapped to a measurement | new interpretation; no number changed | §5.4.4, References |
+| "What the eight slots bought", "Why the seeds differ" and "Limits of transfer" paragraphs | consolidated discussion | §6 |
+| Response-audit reads by stage; 6 grader-limitation reads and 1 "other method" read stated | completed count | §6 |
+| Raw examples: success, genuine failure, verifier edge case, continued beyond 12,288 | new appendix | Appendix I |
+| Figures renumbered in page order (v3 Figures 1–7 → 2–8, 8–14 → 10–16) | numbering | throughout |
+
