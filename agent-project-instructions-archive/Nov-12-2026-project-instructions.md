@@ -1,3 +1,9 @@
+> **Archived 2026-11-12.** These are the instructions the Nov 12, 2026 study followed, with every owner amendment in
+> order. **Results for now:** [`reports/Nov-12-2026-initial-experiments/`](../reports/Nov-12-2026-initial-experiments/).
+> **Data:** [`data/Nov-12-2026-qwen3-grpo-math-practice/`](../data/Nov-12-2026-qwen3-grpo-math-practice/).
+> **Handover:** [`research/Nov-12-2026-vineeth-qwen3-grpo-babel/HANDOVER.md`](../research/Nov-12-2026-vineeth-qwen3-grpo-babel/HANDOVER.md).
+> Paths inside this document are pre-move (`reports/`, `data/`, `research/` now hold dated subfolders).
+
 # Project: Does targeted easier practice improve RL on hard problems?
 
 ## 1. Mandate and scope
@@ -1038,3 +1044,11 @@ arithmetic improved, (4) what we think is happening. Rename REPORT.md → Nov-12
 the understanding document) and report-condensed.md → Nov-12-2026-understanding-experiments.md (points to further
 things). Write Nov-12-2026-further-things.md: a very short synopsis, one row of plots of the main results, brief open
 questions. Move reports/ to reports/Nov-12-2026-initial-experiments/.
+
+## 44. Owner instruction A30 (received 2026-11-12, Thu afternoon EST): repository clean-up for handover
+
+Recorded faithfully. Stop tracking STATE and CHECKLIST (mark frozen). Archive project.md as a dated file in
+agent-project-instructions-archive/ pointing to the results and data. Add .env for Python setup. Delete context/, wipe
+registry/. Move data/ and research/ into dated folders with READMEs (research marked for Babel Slurm execution) and a
+HANDOVER.md. Keep the root README short and generic ("studying interference in post-training"), pointing to reports/
+and the instructions archive, with a P.S. about Babel and slurm-agentic-engineering/.

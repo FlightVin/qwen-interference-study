@@ -1,3 +1,7 @@
+> **FROZEN on 2026-11-12 (owner instruction A30). Not updated after this date. Historical record only.**
+> Paths below are pre-move: `reports/` → `reports/Nov-12-2026-initial-experiments/`, `data/` →
+> `data/Nov-12-2026-qwen3-grpo-math-practice/`, `research/` → `research/Nov-12-2026-vineeth-qwen3-grpo-babel/`.
+
 # CHECKLIST — A26 audit and report rewrite
 
 Purpose: the live plan for owner task A26 (`project.md` §40). Status: **done** / **active** / **blocked** / **pending**.
