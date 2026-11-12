@@ -59,16 +59,18 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 4.2 `research/audit-a26/discrepancies.md`; DECISIONS entries for consequential corrections.
 - 4.3 The seven acceptance tests (STATE "Known report defects") resolved with evidence.
 
-## 5. Curious results — explanatory evaluations                                         [active]
+## 5. Curious results — explanatory evaluations                                         [done 49196bc, D163]
 - 5.0 Agent x-transfer: failure taxonomy of J_U/J_R/J_H attempts (r0 vs r128); control panel `control_v1` (64 MATH test
   items, geometry / counting / precalculus / prealgebra, L4–5, hash-ordered, unused) × base + 6 endpoints × 8 attempts;
   pre-registered in `research/audit-a26/transfer/PREREG.md` before results (D161).
 - 5.1 Why J_U (and J_R) rise in every arm; design the smallest evaluation that discriminates explanations.
 
-## 6. Report rewrite (A26 §5 order)                                                    [pending]
+## 6. Report rewrite (A26 §5 order)                                                    [active]
+- 6.0 Outline `research/audit-a26/report-v3-outline.md` (b8a0a99); agent writer drafting `reports/REPORT.md` v3 with a
+  scripted self-check; orchestrator review against A26 §4–§5 next.
 - 6.1 Task → data and measurements → questions → procedure → results → interpretation → appendices.
 
-## 7. Figures and render (A26 §6)                                                      [active]
+## 7. Figures and render (A26 §6)                                                      [7.1 done 8bd3f33; 7.2 pending]
 - 7.0 Agent figures: `reports/build/build_v3.py` → `reports/tables/v3/`, `reports/figures/v3/` (F1–F12), captions,
   previews at 830 px and 400 px, value check against pass A/B.
 - 7.1 Regenerate from verified tables; consistent H/R/U colours, seed line styles.
