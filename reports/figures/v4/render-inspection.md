@@ -1,6 +1,6 @@
 # Render inspection of report v4 additions (A27)
 
-Purpose: record the visual check of the two new figures. Date: Thu 12 Nov 2026, ~11:35 AM EST. Inspector: orchestrator.
+Purpose: record the visual check of the two new figures. Date: Thu 12 Nov 2026, ~10:52 AM EST. Inspector: orchestrator.
 
 Method: each PNG was placed at GitHub's Markdown content width (830 px at a 1024 px viewport; 372 px at a 420 px
 viewport) in a local HTML page and captured with headless Chrome. The report was not sent to an external renderer.
@@ -13,3 +13,8 @@ Figures 2–8 and 10–16 are the v3 files unchanged; their render record is `..
 
 Value check: the per-quarter counts in `../../tables/v4/t10_signal.md` sum to the per-run totals of the v3 group table
 (§5.4.3) in all 12 run × pool rows; the in-text shares (78–92%, 44–57%, 8–22%) were recomputed from those counts.
+
+In-place render (10:54 AM EST): the whole `REPORT.md` was converted to HTML locally (Python-Markdown, tables extension;
+830 px content column) and captured with headless Chrome at 1024 px and 420 px. All 16 figures appear in page order.
+Figure 1 in place showed the comparison brackets touching the note line; the brackets were lowered and the figure
+rebuilt and re-checked. All 115 relative links in the report resolve to existing files.

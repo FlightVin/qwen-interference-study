@@ -60,14 +60,14 @@ def fig_design(plt, fdir):
         box(x, 46, 18, 4.6, f"Arm {arm}", fc=COLOR[arm], ec=COLOR[arm], bold=True, tc="white", fs=13)
         box(x, 37.0, 18, 7.4, "slots 0–7\n8 shared\nH_train", fc="#E9EEF6", ec=COLOR["H"], fs=13)
         box(x, 28.0, 18, 7.4, "slots 8–15\n" + desc[arm], fc="white", ec=COLOR[arm], fs=13)
-    ax.text(30, 24.3, "Same seed: slots 0–7 identical in all arms.\nR and U: matched pairs in slots 8–15.",
+    ax.text(30, 24.9, "Same seed: slots 0–7 identical in all arms.\nR and U: matched pairs in slots 8–15.",
             ha="center", va="center", fontsize=12.5, color=MUTED)
     # comparison brackets
-    ax.plot([30.4, 30.4, 50, 50], [21.0, 22.4, 22.4, 21.0], color=INK, lw=1.2)
-    ax.text(43, 19.6, "R − U: same hard\nexposure (8,192 hard\nattempts each)", ha="center", va="top", fontsize=12.5)
-    ax.plot([10, 10, 30, 30], [21.0, 22.0, 22.0, 21.0], color=INK, lw=1.2)
-    ax.text(13, 19.6, "R − H, U − H:\nH has 2× the hard\nattempts (16,384)", ha="center", va="top", fontsize=12.5)
-    arrow(30, 11.4, 30, 9.0)
+    ax.plot([30.4, 30.4, 50, 50], [20.0, 21.3, 21.3, 20.0], color=INK, lw=1.2)
+    ax.text(43, 18.8, "R − U: same hard\nexposure (8,192 hard\nattempts each)", ha="center", va="top", fontsize=12.5)
+    ax.plot([10, 10, 30, 30], [20.0, 21.3, 21.3, 20.0], color=INK, lw=1.2)
+    ax.text(13, 18.8, "R − H, U − H:\nH has 2× the hard\nattempts (16,384)", ha="center", va="top", fontsize=12.5)
+    arrow(30, 10.6, 30, 8.9)
     box(1, 0.2, 58, 8.2, "Same evaluations for every checkpoint:\nsealed test 128 × 32 · dev, J_H, J_R, J_U\n"
         "stress · control · cue", fc="#F2F2F2", fs=12.5)
     save(fig, fdir, "f00_design")

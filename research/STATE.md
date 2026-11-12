@@ -1,7 +1,7 @@
 # STATE
 
 Purpose: where the audit and report stand. Scientific authority; the harness `state/STATE.md` points here.
-Updated 2026-11-12 11:40 AM EST [16:40Z]. Owner task: A27 (`project.md` §41), on top of A26 (§40). Previous STATE: git c8a81ac.
+Updated 2026-11-12 10:56 AM EST [15:56Z]. Owner task: A27 (`project.md` §41), on top of A26 (§40). Previous STATE: git c8a81ac.
 
 ## A27 (Thu 12 Nov, deadline 12:00 PM EST)
 Report v4 delivered: `reports/REPORT.md` (v3 archived as `reports/archive/REPORT-v3-2026-11-12.md`, figures in
@@ -10,7 +10,7 @@ worked GRPO group, groups without reward contrast per pool and quarter (F9, `rep
 interference from primary sources mapped to measurements, discussion of what slots 8–15 bought, raw examples (App. I).
 New finding: from round 65, 78–92% of R and U practice groups were all correct (200–236 of 256 per quarter) against
 44–57% of H's extra hard groups → the R/U contrast was tested mainly in rounds 1–64 (D164).
-GPUs: 0 project jobs at start (squeue --me, 10:50 AM EST) and 0 submitted; no re-evaluation could resolve the main
+GPUs: 0 project jobs at start (squeue --me, 10:47 AM EST) and 0 submitted; no re-evaluation could resolve the main
 uncertainty (run-to-run spread) inside the deadline. Checkpoint inventory (pass A 2.6) was already complete (6282ba0).
 
 ## Task

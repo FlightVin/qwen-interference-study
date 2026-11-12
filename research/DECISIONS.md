@@ -1139,14 +1139,24 @@ boxes as "format"; lenient grading finds the gold in 0 of the 99 such base attem
 mechanism of the general gain is not identified. One recorded process deviation: the control jobs were submitted with
 untracked files hidden from the dirty-tree check (IMPLEMENTATION-LOG 2026-11-12); the jobs are pinned to clean commits.
 
-## D164 — 2026-11-12 11:40 AM EST (A27): practice saturation limits what R − U tests
+## D164 — 2026-11-12 10:50 AM EST (A27): practice saturation limits what R − U tests
 Evidence: `reports/tables/v4/t10_signal.md` (from audit pass B group counts). From round 65, 200–236 of 256 practice
 groups per quarter were all correct in every R and U run (78–92%), against 113–146 of 256 (44–57%) of H's extra hard groups.
 Decision: report v4 states that the R/U contrast was tested mainly in rounds 1–64. Consequence for conclusions: no number
 changes; the interpretation of R − U narrows. A null or seed-dependent R − U may reflect saturated practice, not the
 absence of skill transfer. This strengthens the case that changing the practice pool is a different question from more seeds.
 
-## D165 — 2026-11-12 11:40 AM EST (A27): no GPU jobs for report v4
-Reason: 75 minutes remained at handoff. Every published endpoint was already reproduced from raw records by two passes.
-The main open uncertainty (run-to-run spread of R − U) needs new training, which A27 excludes.
+## D165 — 2026-11-12 10:56 AM EST (A27): no GPU jobs for report v4
+Reason: every published endpoint was already reproduced from raw records by two passes, and the main open uncertainty
+(run-to-run spread of R − U) needs new training, which A27 excludes. The one targeted check considered: rerun the
+H-s202 r128 sealed test on L40S only, because its shards mixed L40S (k0–k2) and RTX A6000 (k3–k5). Past shards took
+42:47–1:04:28 each in a 6-way split (jobs 11120590/91/95/634); at 10:56 AM EST an 8-way rerun plus queue wait would
+end too close to the 12:00 PM deadline to analyse. Left as the first follow-up check; v4 keeps the mixed-GPU caveat.
 
+
+## D166 — 2026-11-12 10:58 AM EST (A27): rerun the H-s202 r128 sealed test on L40S only (supersedes D165's "not done")
+Reason: D165 assumed too little time; at 10:56 AM EST about 64 minutes remained. The seed-202 R − H and U − H use an H
+endpoint whose shards mixed L40S and RTX A6000, a confound the report names. Recipes `exp/qis-cgpu-H-s202-k0..7`: same
+checkpoint (hash and provenance checked), panel, n 32, cap 12,288 and seed label `test-final`; L40S enforced; output
+to the new `test-eval/qis-cgpu-H-s202`; the canonical endpoint is not touched. 8 general GPUs (A27 ceiling). If the
+merge is not complete by about 11:50 AM EST, the report says "pending" and reports no partial numbers.
