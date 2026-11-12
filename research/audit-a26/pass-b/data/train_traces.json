@@ -1,0 +1,405 @@
+{
+ "a_resume_R_s101_round125": {
+  "records_main_dir": {
+   "classes": {
+    "all_correct": 11,
+    "mixed": 5
+   },
+   "success_by_role": {
+    "aux": 0.984375,
+    "hard_common": 0.8125
+   },
+   "trunc": 12
+  },
+  "records_superseded_11081724": {
+   "classes": {
+    "all_correct": 11,
+    "mixed": 5
+   },
+   "success_by_role": {
+    "aux": 1.0,
+    "hard_common": 0.84375
+   },
+   "trunc": 7
+  },
+  "round_rows": [
+   {
+    "canonical": false,
+    "groups_all0": 0,
+    "groups_all1": 11,
+    "groups_mixed": 5,
+    "job": "11081724",
+    "line": 703,
+    "max_tokens": 12288,
+    "success": {
+     "aux": 1.0,
+     "hard_common": 0.84375
+    },
+    "truncated": 7
+   },
+   {
+    "canonical": true,
+    "groups_all0": 0,
+    "groups_all1": 11,
+    "groups_mixed": 5,
+    "job": "11092945",
+    "line": 734,
+    "max_tokens": 12288,
+    "success": {
+     "aux": 0.984375,
+     "hard_common": 0.8125
+    },
+    "truncated": 12
+   }
+  ],
+  "same_prompt_ids_and_seeds": true,
+  "step_rows_round_index_124": [
+   {
+    "canonical": false,
+    "grad_norm_preclip": 0.1764974743127823,
+    "job": "11081724",
+    "line": 699,
+    "minibatch": 0,
+    "opt_step": 497,
+    "valid_tokens": 184728
+   },
+   {
+    "canonical": false,
+    "grad_norm_preclip": 0.14442595839500427,
+    "job": "11081724",
+    "line": 700,
+    "minibatch": 1,
+    "opt_step": 498,
+    "valid_tokens": 162659
+   },
+   {
+    "canonical": false,
+    "grad_norm_preclip": 0.16658757627010345,
+    "job": "11081724",
+    "line": 701,
+    "minibatch": 2,
+    "opt_step": 499,
+    "valid_tokens": 177614
+   },
+   {
+    "canonical": false,
+    "grad_norm_preclip": 0.24565823376178741,
+    "job": "11081724",
+    "line": 702,
+    "minibatch": 3,
+    "opt_step": 500,
+    "valid_tokens": 145958
+   },
+   {
+    "canonical": true,
+    "grad_norm_preclip": 0.0,
+    "job": "11092945",
+    "line": 730,
+    "minibatch": 0,
+    "opt_step": 497,
+    "valid_tokens": 183866
+   },
+   {
+    "canonical": true,
+    "grad_norm_preclip": 0.2440958470106125,
+    "job": "11092945",
+    "line": 731,
+    "minibatch": 1,
+    "opt_step": 498,
+    "valid_tokens": 163646
+   },
+   {
+    "canonical": true,
+    "grad_norm_preclip": 0.1677003651857376,
+    "job": "11092945",
+    "line": 732,
+    "minibatch": 2,
+    "opt_step": 499,
+    "valid_tokens": 185423
+   },
+   {
+    "canonical": true,
+    "grad_norm_preclip": 0.27758634090423584,
+    "job": "11092945",
+    "line": 733,
+    "minibatch": 3,
+    "opt_step": 500,
+    "valid_tokens": 145804
+   }
+  ]
+ },
+ "b_all_correct_group": {
+  "adv": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "loss_contribution": "A=0 for all 8 attempts -> per-token objective min(q*0, clip(q)*0)=0 -> zero gradient; still counted in the 1/32 divisor",
+  "minibatch": 1,
+  "minibatch_classes": [
+   "mixed",
+   "mixed",
+   "all_correct",
+   "mixed"
+  ],
+  "minibatch_groups": [
+   4,
+   7,
+   9,
+   14
+  ],
+  "ntok": [
+   808,
+   723,
+   886,
+   759,
+   742,
+   779,
+   674,
+   726
+  ],
+  "pid": "syn-R3-005",
+  "rewards": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "role": "aux",
+  "round_1based": 2,
+  "run": "R-s101",
+  "slot": 9,
+  "step_row": {
+   "grad_clipped": false,
+   "grad_norm_preclip": 0.6174889802932739,
+   "loss": 0.00010091811418533325,
+   "lr": 2e-06,
+   "minibatch": 1,
+   "opt_step": 6,
+   "round": 1,
+   "valid_tokens": 38743
+  }
+ },
+ "c_momentum_only_step": {
+  "groups": [
+   {
+    "adv": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pid": "intermediate_algebra/train/00379",
+    "rewards": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "role": "hard_common",
+    "slot": 0
+   },
+   {
+    "adv": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pid": "algebra/train/00288",
+    "rewards": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "role": "hard_common",
+    "slot": 6
+   },
+   {
+    "adv": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pid": "syn-U2-008",
+    "rewards": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "role": "aux",
+    "slot": 9
+   },
+   {
+    "adv": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pid": "syn-U3-017",
+    "rewards": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "role": "aux",
+    "slot": 11
+   }
+  ],
+  "run": "U-s202",
+  "step": {
+   "all_32_adv_zero": true,
+   "classes": [
+    "all_wrong",
+    "all_wrong",
+    "all_correct",
+    "all_correct"
+   ],
+   "grad_clipped": false,
+   "grad_norm_preclip": 0.0,
+   "groups": [
+    0,
+    6,
+    9,
+    11
+   ],
+   "loss": 0.0,
+   "lr": 2e-06,
+   "minibatch": 0,
+   "obs_zero": true,
+   "opt_step": 57,
+   "pred_zero": true,
+   "prompt_ids": [
+    "intermediate_algebra/train/00379",
+    "algebra/train/00288",
+    "syn-U2-008",
+    "syn-U3-017"
+   ],
+   "roles": [
+    "hard_common",
+    "hard_common",
+    "aux",
+    "aux"
+   ],
+   "round_1based": 15,
+   "step_round_field": 14,
+   "valid_tokens": 69351
+  }
+ },
+ "d_mixed_group": {
+  "adv": [
+   -0.5773489475250244,
+   1.7320468425750732,
+   -0.5773489475250244,
+   1.7320468425750732,
+   -0.5773489475250244,
+   -0.5773489475250244,
+   -0.5773489475250244,
+   -0.5773489475250244
+  ],
+  "adv_formula_exact": [
+   -0.5773489358593717,
+   1.732046807578115,
+   -0.5773489358593717,
+   1.732046807578115,
+   -0.5773489358593717,
+   -0.5773489358593717,
+   -0.5773489358593717,
+   -0.5773489358593717
+  ],
+  "finish": [
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop"
+  ],
+  "formula_neg": -0.5773502691896257,
+  "formula_pos": 1.7320508075688772,
+  "minibatch": 1,
+  "ntok": [
+   1518,
+   1259,
+   1895,
+   1181,
+   1279,
+   1131,
+   1059,
+   1291
+  ],
+  "pid": "omni/02316",
+  "rewards": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "role": "hard_common",
+  "round_1based": 1,
+  "run": "R-s101",
+  "slot": 0,
+  "step_row": {
+   "grad_clipped": false,
+   "grad_norm_preclip": 0.8705617785453796,
+   "loss": 3.6871060729026794e-05,
+   "lr": 2e-06,
+   "minibatch": 1,
+   "opt_step": 2,
+   "round": 0,
+   "valid_tokens": 57072
+  }
+ }
+}

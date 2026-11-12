@@ -1,0 +1,348 @@
+{
+ "run_dir": "/data/user_data/vineethb/qis/runs/qis-main-H-s101-sym",
+ "problems": [],
+ "metrics_rows": 727,
+ "metrics_unparsable": 0,
+ "segments": [
+  {
+   "utc": 1794111611.4246507,
+   "job": "11081726",
+   "restart": "0",
+   "resume_round": 0,
+   "resume_from": null,
+   "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+   "gpu": "NVIDIA L40",
+   "host": "babel-w5-24",
+   "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51"
+  }
+ ],
+ "configs_distinct": [
+  {
+   "arm": "H",
+   "attempt_id": "a2",
+   "cap_schedule": [
+    [
+     0,
+     8192
+    ],
+    [
+     32,
+     12288
+    ]
+   ],
+   "ckpt_every": 4,
+   "eps_high": 0.2,
+   "eps_low": 0.2,
+   "eval_panels": {
+    "dev": 8,
+    "probe_J_R": 8,
+    "probe_J_U": 8
+   },
+   "eval_rounds": [
+    0,
+    32,
+    64,
+    96,
+    128
+   ],
+   "gpu_mem_util": 0.3,
+   "grad_clip": null,
+   "init_ckpt": null,
+   "lr": 2e-06,
+   "max_num_seqs": null,
+   "max_tokens": 12288,
+   "retain_rounds": [],
+   "rounds": 128,
+   "run_id": "qis-main-H-s101-sym",
+   "seed": 101
+  }
+ ],
+ "events": {
+  "start": 1,
+  "checkpoint_started": 32,
+  "checkpoint": 31,
+  "checkpoint_failed": 1,
+  "complete": 1
+ },
+ "canonical_round_rows": 128,
+ "canonical_step_rows": 512,
+ "rounds_with_duplicate_rows": [],
+ "round_rows_by_segment": {
+  "0": 128
+ },
+ "step_rows_by_segment": {
+  "0": 512
+ },
+ "opt_step_labels_distinct": 512,
+ "opt_step_label_canonical_minmax": [
+  1,
+  512
+ ],
+ "train_records": {
+  "files": 128,
+  "attempts": 16384,
+  "schedule_ok": 16384,
+  "seed_ok": 16384,
+  "ntok_eq_len": 16384,
+  "le_cap": 16384,
+  "stop": 15244,
+  "stop_eos": 15244,
+  "unknown": 0,
+  "status_reward_ok": 16384,
+  "adv_ok": 16384,
+  "group_counts_ok": 128,
+  "zero_grad_steps_observed": 18,
+  "capped": 1140,
+  "capped_ok": 1140
+ },
+ "adv_max_abs_diff": 0.0,
+ "train_file_mtime_off_row": [],
+ "minibatch_zero_grad_match": {
+  "sorted": [
+   512,
+   512
+  ],
+  "unsorted": [
+   512,
+   512
+  ]
+ },
+ "minibatch_valid_tokens_match": {
+  "sorted": [
+   512,
+   512
+  ],
+  "unsorted": [
+   512,
+   512
+  ]
+ },
+ "evals": [
+  {
+   "panel": "dev",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "dev",
+   "round": 32,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "dev",
+   "round": 64,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "dev",
+   "round": 96,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "dev",
+   "round": 128,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.1,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 32,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 64,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 96,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 128,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 32,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 64,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 96,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 128,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  }
+ ],
+ "record_side_dirs": {}
+}

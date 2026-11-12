@@ -1,0 +1,64 @@
+{
+ "101": {
+  "R_U_practice_slots_same_pair_index": 1024,
+  "hard_presentations_per_problem": {
+   "H-s101": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 48,
+    "min": 40
+   },
+   "R-s101": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 23,
+    "min": 20
+   },
+   "U-s101": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 23,
+    "min": 20
+   }
+  },
+  "of_practice_slots": 1024,
+  "roles_as_expected": {
+   "H-s101": true,
+   "R-s101": true,
+   "U-s101": true
+  },
+  "rounds_request_seeds_identical_HRU": 128,
+  "rounds_shared_slot_ids_identical_HRU": 128
+ },
+ "202": {
+  "R_U_practice_slots_same_pair_index": 1024,
+  "hard_presentations_per_problem": {
+   "H-s202": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 50,
+    "min": 41
+   },
+   "R-s202": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 23,
+    "min": 20
+   },
+   "U-s202": {
+    "distinct_hard": 46,
+    "in_H_train": 46,
+    "max": 23,
+    "min": 20
+   }
+  },
+  "of_practice_slots": 1024,
+  "roles_as_expected": {
+   "H-s202": true,
+   "R-s202": true,
+   "U-s202": true
+  },
+  "rounds_request_seeds_identical_HRU": 128,
+  "rounds_shared_slot_ids_identical_HRU": 128
+ }
+}

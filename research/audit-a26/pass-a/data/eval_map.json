@@ -1,0 +1,5560 @@
+{
+ "generated_by": "research/audit-a26/pass-a/tools/a-evals/build_eval_map.py",
+ "panels": {
+  "test": {
+   "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+   "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+   "problems": 128
+  },
+  "stress": {
+   "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+   "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+   "problems": 221
+  },
+  "cue": {
+   "files": [
+    "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+    "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+   ],
+   "sha256": [
+    "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+    "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+   ],
+   "problems": 24
+  }
+ },
+ "evaluations": [
+  {
+   "evaluation": "test/base",
+   "kind": "test",
+   "checkpoint": "base",
+   "checkpoint_note": "Qwen/Qwen3-1.7B snapshot 70d244cc (HF revision; no model.pt)",
+   "model_pt_sha256_recorded": "base",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-base/records.jsonl.gz",
+   "records_sha256": "3c4892c1f4da29bf37452e91ff1f9eb55406acd51fcf741aef56e7889bc71d3f",
+   "summary_sha256": "2fb6ffd9859dfb8c159fc8df1d6b5a078b5f78a50bcaeb00622e7741b21fba32",
+   "record_lines": 4096,
+   "unknown": 2,
+   "truncated": 2,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.525634765625,
+   "jobs": [
+    {
+     "expid": "qis-test-base",
+     "runs": [
+      {
+       "jobid": "11079315",
+       "sha": "03a90b7d",
+       "expsha": "2d4a92ab5612",
+       "submitted_utc": "2026-11-07T22:05:09Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-07T17:28:53",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11079548",
+       "sha": "60d733d9",
+       "expsha": "86318b155fd0",
+       "submitted_utc": "2026-11-07T22:29:24Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-07T21:57:24",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11089196",
+       "sha": "779c54d0",
+       "expsha": "21506d37a4f3",
+       "submitted_utc": "2026-11-08T21:06:01Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-09T13:42:11",
+         "end_est": "2026-11-09T14:12:10",
+         "node": "babel-q5-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "779c54d-21506d37a4f3",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "Q1",
+    "2",
+    "4.1 bands (attempts 0\u201315)",
+    "4.2 (attempts 16\u201331)"
+   ],
+   "note": "Earlier ledger rows 11079315 and 11079548 were cancelled before start; job 11089196 (779c54d) produced the records."
+  },
+  {
+   "evaluation": "test/H-s101",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s101-sym/records.jsonl.gz",
+   "records_sha256": "0fa85030d03549461589fea76b553b98ef1fe1fcbd745d61b4c5ba5c6cea7c25",
+   "summary_sha256": "bb7c489d390f3c1ec4f4298a564c14c4c9e5f97e1ea3ce4aa7e0ff4941e05e77",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 445,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.76953125,
+   "jobs": [
+    {
+     "expid": "qis-test-H-s101-sym",
+     "runs": [
+      {
+       "jobid": "11095486",
+       "sha": "95ff4063",
+       "expsha": "0567ef175adc",
+       "submitted_utc": "2026-11-09T10:37:12Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-09T14:14:57",
+         "end_est": "2026-11-09T18:42:12",
+         "node": "babel-q5-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "95ff406-0567ef175adc",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811 on-disk=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1\u20133",
+    "Q1",
+    "Q2",
+    "2",
+    "4",
+    "5.2 (original scores and capped attempts)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "test/R-s101",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s101-sym/records.jsonl.gz",
+   "records_sha256": "7e8a3eafb47b8deafa854f04d20093989ff61c717e6596a2f8fe7023cfc2799c",
+   "summary_sha256": "6b85209797cf568a59dbe2d15d515ffbb4c97a3ec1573d6cff857aa8534a88b4",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 437,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.818603515625,
+   "jobs": [
+    {
+     "expid": "qis-test-R-s101-sym",
+     "runs": [
+      {
+       "jobid": "11095106",
+       "sha": "a96dc7dc",
+       "expsha": "6cea3e8e9523",
+       "submitted_utc": "2026-11-09T09:05:55Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-09T04:51:05",
+         "end_est": "2026-11-09T09:14:11",
+         "node": "babel-w5-24",
+         "gpu": "L40"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "a96dc7d-6cea3e8e9523",
+       "gpu_txt": "NVIDIA L40",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1\u20133",
+    "Q1",
+    "Q2",
+    "2",
+    "4",
+    "5.2 (original scores and capped attempts)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "test/R-s202",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-R-s202-sym/records.jsonl.gz",
+   "records_sha256": "de4a2b6eb3a7b945cddbcf99b2169a2069b41e34d50b179bb4d98f2b2dec409f",
+   "summary_sha256": "8d115bf74846941e0c96a9632edb83cdc7ba55d0d5935c6ba25364be7c716f96",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 538,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.747802734375,
+   "jobs": [
+    {
+     "expid": "qis-test-R-s202-sym",
+     "runs": [
+      {
+       "jobid": "11100782",
+       "sha": "73597a93",
+       "expsha": "da4b75cfbffe",
+       "submitted_utc": "2026-11-09T23:06:05Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-09T20:31:05",
+         "end_est": "2026-11-10T01:04:11",
+         "node": "babel-w5-28",
+         "gpu": "L40"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "73597a9-da4b75cfbffe",
+       "gpu_txt": "NVIDIA L40",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1\u20133",
+    "Q1",
+    "Q2",
+    "2",
+    "4",
+    "5.2 (original scores and capped attempts)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "test/U-s101",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s101-sym/records.jsonl.gz",
+   "records_sha256": "4216a68c4d1904dde41450a2e76bafb8f70231909578ef7f46199127fc3e382a",
+   "summary_sha256": "0121588d5903b1157dce2610fcacc7f4518ba76a26daf25cc825bd1a05c8f428",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 501,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.77685546875,
+   "jobs": [
+    {
+     "expid": "qis-test-U-s101-sym",
+     "runs": [
+      {
+       "jobid": "11095118",
+       "sha": "a96dc7dc",
+       "expsha": "05d031941e81",
+       "submitted_utc": "2026-11-09T09:06:05Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-09T09:16:33",
+         "end_est": "2026-11-09T13:40:36",
+         "node": "babel-q5-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "a96dc7d-05d031941e81",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70 on-disk=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1\u20133",
+    "Q1",
+    "Q2",
+    "2",
+    "4",
+    "5.2 (original scores and capped attempts)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "test/U-s202",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-U-s202-sym/records.jsonl.gz",
+   "records_sha256": "ff32e8b27ce54a348ef6fc20c3974d00d90ee92bae321248b500f2fe9a84a16a",
+   "summary_sha256": "868b9936ea6c092f99b4251f8cf2d4927cc9f9e13ec8bf5f8c3cd9dd55617379",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 333,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.792236328125,
+   "jobs": [
+    {
+     "expid": "qis-test-U-s202-sym",
+     "runs": [
+      {
+       "jobid": "11100785",
+       "sha": "73597a93",
+       "expsha": "f2243ff0e9b5",
+       "submitted_utc": "2026-11-09T23:06:20Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T04:10:26",
+         "end_est": "2026-11-10T07:21:12",
+         "node": "babel-o9-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "73597a9-f2243ff0e9b5",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354 on-disk=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1\u20133",
+    "Q1",
+    "Q2",
+    "2",
+    "4",
+    "5.2 (original scores and capped attempts)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "test/H-s202",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym/records.jsonl.gz",
+   "records_sha256": "13c3e5fb7dac0e6b89562b074a34f495c7344c539b4241f62eccf9185035833a",
+   "summary_sha256": "dc6428491607b42c8a0bc9f0a474658ba8b4e1e81966be7030d312c4abf6f1a0",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 632,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.723876953125,
+   "jobs": [
+    {
+     "expid": "qis-test-H-s202-sym-k0",
+     "runs": [
+      {
+       "jobid": "11119210",
+       "sha": "f9b294b3",
+       "expsha": "45267b694503",
+       "submitted_utc": "2026-11-11T19:03:28Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:50:07",
+         "end_est": "2026-11-11T17:37:30",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "f9b294b-45267b694503",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-sym-k1",
+     "runs": [
+      {
+       "jobid": "11119212",
+       "sha": "f9b294b3",
+       "expsha": "daf3d758371b",
+       "submitted_utc": "2026-11-11T19:03:40Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:55:07",
+         "end_est": "2026-11-11T17:50:17",
+         "node": "babel-o5-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "f9b294b-daf3d758371b",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-sym-k2",
+     "runs": [
+      {
+       "jobid": "11119213",
+       "sha": "f9b294b3",
+       "expsha": "23f06cad49d4",
+       "submitted_utc": "2026-11-11T19:03:51Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:56:18",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120634",
+       "sha": "815a9a6f",
+       "expsha": "c53073ca1713",
+       "submitted_utc": "2026-11-11T21:56:33Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T17:00:06",
+         "end_est": "2026-11-11T17:42:53",
+         "node": "babel-u5-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "815a9a6-c53073ca1713",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-sym-k3",
+     "runs": [
+      {
+       "jobid": "11119215",
+       "sha": "f9b294b3",
+       "expsha": "5cc47ae8a55a",
+       "submitted_utc": "2026-11-11T19:04:01Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:24",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120590",
+       "sha": "b77f0662",
+       "expsha": "648adb13ef7b",
+       "submitted_utc": "2026-11-11T21:50:52Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:52:07",
+         "end_est": "2026-11-11T17:56:35",
+         "node": "babel-w9-32",
+         "gpu": "A6000"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "b77f066-648adb13ef7b",
+       "gpu_txt": "NVIDIA RTX A6000",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-sym-k4",
+     "runs": [
+      {
+       "jobid": "11119216",
+       "sha": "f9b294b3",
+       "expsha": "16ba4556bc67",
+       "submitted_utc": "2026-11-11T19:04:13Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:26",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120591",
+       "sha": "b77f0662",
+       "expsha": "6c3df47e2a88",
+       "submitted_utc": "2026-11-11T21:51:04Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:54:07",
+         "end_est": "2026-11-11T17:38:23",
+         "node": "babel-n5-16",
+         "gpu": "A6000"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "b77f066-6c3df47e2a88",
+       "gpu_txt": "NVIDIA RTX A6000",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-sym-k5",
+     "runs": [
+      {
+       "jobid": "11119217",
+       "sha": "f9b294b3",
+       "expsha": "89353278b280",
+       "submitted_utc": "2026-11-11T19:04:24Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:29",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120595",
+       "sha": "b77f0662",
+       "expsha": "e9bd07a7d275",
+       "submitted_utc": "2026-11-11T21:51:17Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:55:07",
+         "end_est": "2026-11-11T17:58:25",
+         "node": "babel-s9-32",
+         "gpu": "A6000"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "b77f066-e9bd07a7d275",
+       "gpu_txt": "NVIDIA RTX A6000",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    }
+   ],
+   "shards": {
+    "split": "eval_merge --split 6: shard k gets panel items[k::6] (22,22,21,21,21,21 problems)",
+    "merge": "eval_merge by the last shard (k5 job 11120595 wrote merge.log)",
+    "check": {
+     "root": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards",
+     "k": 6,
+     "union_records": 4096,
+     "duplicate_keys_across_shards": 0,
+     "merged_records": 4096,
+     "merged_equals_union": true,
+     "merged_minus_union": 0,
+     "union_minus_merged": 0,
+     "differing_lines": 0,
+     "shard_id_sets_disjoint": true,
+     "shard_id_sets_cover_panel": true
+    },
+    "per_shard": {
+     "k0": {
+      "records": 704,
+      "problems": 22,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.7642045454545454
+     },
+     "k1": {
+      "records": 704,
+      "problems": 22,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.6818181818181818
+     },
+     "k2": {
+      "records": 672,
+      "problems": 21,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.78125
+     },
+     "k3": {
+      "records": 672,
+      "problems": 21,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.6502976190476191
+     },
+     "k4": {
+      "records": 672,
+      "problems": 21,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.7708333333333334
+     },
+     "k5": {
+      "records": 672,
+      "problems": 21,
+      "panel_ids_equal_split": true,
+      "seed_mismatch": 0,
+      "summary_vs_records": [],
+      "pass1": 0.6949404761904762
+     }
+    }
+   },
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "Q1",
+    "2",
+    "4.2",
+    "4.3"
+   ],
+   "note": "k0 11119210 and k1 11119212 (f9b294b) ran; ledger rows 11119213/5/6/7 for k2\u2013k5 were cancelled before start and resubmitted as 11120634 (k2, 815a9a6) and 11120590/1/5 (k3\u2013k5, b77f066)."
+  },
+  {
+   "evaluation": "test/H-s202-fb",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym-fallback/ckpt",
+   "checkpoint_note": "copy of a2-r60 round 116 (ROUND.txt = 116)",
+   "model_pt_sha256_recorded": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback/records.jsonl.gz",
+   "records_sha256": "5a67efc1a490db2b76490aa13307810d333e9561a0e02d32dd70ba8d23cd091c",
+   "summary_sha256": "b9da9e6ff1de9c7fad3fd09403229c865baa9a1b88444c119766463df48210bb",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 605,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.7431640625,
+   "jobs": [
+    {
+     "expid": "qis-test-H-s202-fb-k0",
+     "runs": [
+      {
+       "jobid": "11118845",
+       "sha": "7a8190f2",
+       "expsha": "2671a0785129",
+       "submitted_utc": "2026-11-11T18:00:36Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:04:26",
+         "end_est": "2026-11-11T13:51:19",
+         "node": "babel-q9-16",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-2671a0785129",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-fb-k1",
+     "runs": [
+      {
+       "jobid": "11118846",
+       "sha": "7a8190f2",
+       "expsha": "9ffdcccb0aa2",
+       "submitted_utc": "2026-11-11T18:00:45Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:04:26",
+         "end_est": "2026-11-11T14:01:00",
+         "node": "babel-q9-16",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-9ffdcccb0aa2",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-fb-k2",
+     "runs": [
+      {
+       "jobid": "11118847",
+       "sha": "7a8190f2",
+       "expsha": "32c07590ecb2",
+       "submitted_utc": "2026-11-11T18:00:57Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:21:33",
+         "end_est": "2026-11-11T14:01:05",
+         "node": "babel-q9-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-32c07590ecb2",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-fb-k3",
+     "runs": [
+      {
+       "jobid": "11118849",
+       "sha": "7a8190f2",
+       "expsha": "b1a4e23e7173",
+       "submitted_utc": "2026-11-11T18:01:11Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:26:33",
+         "end_est": "2026-11-11T14:21:43",
+         "node": "babel-o5-32",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-b1a4e23e7173",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-fb-k4",
+     "runs": [
+      {
+       "jobid": "11118850",
+       "sha": "7a8190f2",
+       "expsha": "72ed8b54ed35",
+       "submitted_utc": "2026-11-11T18:01:22Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:50:15",
+         "end_est": "2026-11-11T14:28:12",
+         "node": "babel-t5-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-72ed8b54ed35",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    },
+    {
+     "expid": "qis-test-H-s202-fb-k5",
+     "runs": [
+      {
+       "jobid": "11118851",
+       "sha": "7a8190f2",
+       "expsha": "6a3b7de35fca",
+       "submitted_utc": "2026-11-11T18:01:33Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T13:54:15",
+         "end_est": "2026-11-11T14:53:02",
+         "node": "babel-v9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "7a8190f-6a3b7de35fca",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d on-disk=7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d"
+      }
+     ]
+    }
+   ],
+   "shards": {
+    "split": "items[k::6]",
+    "merge": "eval_merge by shard k5 (job 11118851)",
+    "check": {
+     "root": "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards",
+     "k": 6,
+     "union_records": 4096,
+     "duplicate_keys_across_shards": 0,
+     "merged_records": 4096,
+     "merged_equals_union": true,
+     "merged_minus_union": 0,
+     "union_minus_merged": 0,
+     "differing_lines": 0,
+     "shard_id_sets_disjoint": true,
+     "shard_id_sets_cover_panel": true
+    }
+   },
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "2 (round-116 fallback paragraph)"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "cgpu/R-s101",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s101/records.jsonl.gz",
+   "records_sha256": "1ff72a383f5dd129812142ac58332a78dcd966037f859bef8bd9ab89789ae066",
+   "summary_sha256": "a3e7d489b857d1f83dca6627dc2c06d88e8a1970f5d7cb0a45dbd4b8ea540d77",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 448,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.822509765625,
+   "jobs": [
+    {
+     "expid": "qis-cgpu-R-s101",
+     "runs": [
+      {
+       "jobid": "11112395",
+       "sha": "bcba9413",
+       "expsha": "faf0499969aa",
+       "submitted_utc": "2026-11-11T01:42:08Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T20:42:48",
+         "end_est": "2026-11-11T00:43:40",
+         "node": "babel-q5-16",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcba941-faf0499969aa",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "2 (common-GPU tables)"
+   ],
+   "note": "Preempted and requeued; the final COMPLETED allocation only ran the done-predicate (seconds). gpu.txt reflects the last allocation; every allocation was on an L40S node."
+  },
+  {
+   "evaluation": "cgpu/R-s202",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-R-s202/records.jsonl.gz",
+   "records_sha256": "5aa09a58be0a6610208dd21c790234bea455f6b8cf4b795807d8339ef8bfbe03",
+   "summary_sha256": "72a4978b96e9ac63ccc49f184fa4cc5c21834657c6a1ab9f825b7ea6e8334925",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 506,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.76123046875,
+   "jobs": [
+    {
+     "expid": "qis-cgpu-R-s202",
+     "runs": [
+      {
+       "jobid": "11112396",
+       "sha": "bcba9413",
+       "expsha": "7fac26a9f0f7",
+       "submitted_utc": "2026-11-11T01:42:21Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T20:42:48",
+         "end_est": "2026-11-11T00:56:18",
+         "node": "babel-t5-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcba941-7fac26a9f0f7",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "2 (common-GPU tables)"
+   ],
+   "note": "Preempted and requeued; the final COMPLETED allocation only ran the done-predicate (seconds). gpu.txt reflects the last allocation; every allocation was on an L40S node."
+  },
+  {
+   "evaluation": "cgpu/U-s101",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s101/records.jsonl.gz",
+   "records_sha256": "f898fe64646f330bab70d352e127625c37a9676f33e2f2bc2050f5fe9da2ee88",
+   "summary_sha256": "1cd2d6d1f4893ed0a70b67caf2b1eabed360a3913553f5e1626f72937b0aee7b",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 505,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.778076171875,
+   "jobs": [
+    {
+     "expid": "qis-cgpu-U-s101",
+     "runs": [
+      {
+       "jobid": "11112397",
+       "sha": "bcba9413",
+       "expsha": "ce45e5d029af",
+       "submitted_utc": "2026-11-11T01:42:31Z",
+       "allocations": [
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-10T21:47:50",
+         "end_est": "2026-11-11T00:44:51",
+         "node": "babel-o9-32",
+         "gpu": "L40S"
+        },
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:02:49",
+         "end_est": "2026-11-11T06:18:37",
+         "node": "babel-p5-16",
+         "gpu": "L40S"
+        },
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T06:52:14",
+         "end_est": "2026-11-11T06:52:23",
+         "node": "babel-m5-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcba941-ce45e5d029af",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70 on-disk=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "2 (common-GPU tables)"
+   ],
+   "note": "Preempted and requeued; the final COMPLETED allocation only ran the done-predicate (seconds). gpu.txt reflects the last allocation; every allocation was on an L40S node."
+  },
+  {
+   "evaluation": "cgpu/U-s202",
+   "kind": "test",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "n": 32,
+   "cap": 12288,
+   "seed_label": "test-final",
+   "seed_key": "eval/test/<id>/test-final/n32",
+   "records": "/data/user_data/vineethb/qis/test-eval-cgpu/qis-cgpu-U-s202/records.jsonl.gz",
+   "records_sha256": "b74bcc25b9d8bb030a69326714ec605e50220133e2928553037de25941112346",
+   "summary_sha256": "bb17489a75d30855e2dc031794c914eae7ca21e861d12246d9b38ef8d0a451aa",
+   "record_lines": 4096,
+   "unknown": 0,
+   "truncated": 333,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.792236328125,
+   "jobs": [
+    {
+     "expid": "qis-cgpu-U-s202",
+     "runs": [
+      {
+       "jobid": "11112398",
+       "sha": "bcba9413",
+       "expsha": "c0e373bd28da",
+       "submitted_utc": "2026-11-11T01:42:42Z",
+       "allocations": [
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-10T21:55:50",
+         "end_est": "2026-11-10T22:06:28",
+         "node": "babel-n9-32",
+         "gpu": "L40S"
+        },
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T00:46:48",
+         "end_est": "2026-11-11T04:01:45",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        },
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T04:03:48",
+         "end_est": "2026-11-11T04:04:25",
+         "node": "babel-q9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcba941-c0e373bd28da",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354 on-disk=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_test.py with --cgpu-root; output research/evidence/a17/analysis/test-cgpu/*.json committed at 934a1ea (code revision that ran is not recorded in the output; a17_test.py last changed at dde81a5 before 934a1ea)",
+   "report_sections": [
+    "opening 1",
+    "2 (common-GPU tables)"
+   ],
+   "note": "Preempted and requeued; the final COMPLETED allocation only ran the done-predicate (seconds). gpu.txt reflects the last allocation; every allocation was on an L40S node."
+  },
+  {
+   "evaluation": "stress/base",
+   "kind": "stress",
+   "checkpoint": "base",
+   "checkpoint_note": "Qwen/Qwen3-1.7B snapshot 70d244cc (HF revision; no model.pt)",
+   "model_pt_sha256_recorded": "base",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/base/records.jsonl.gz",
+   "records_sha256": "9e8506af9d218f1fd0aca9ab43ae9a40a412c952f4f5697a828d7cb3975661b8",
+   "summary_sha256": "2f91a14993094668c7586745cfe761ef72670ecf8f1fc5c289f36959ce366f94",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 1,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.372737556561086,
+   "jobs": [
+    {
+     "expid": "qis-stress-base",
+     "runs": [
+      {
+       "jobid": "11112846",
+       "sha": "e2180114",
+       "expsha": "0f614b71af34",
+       "submitted_utc": "2026-11-11T02:07:16Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T21:15:32",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11112932",
+       "sha": "577aa9f6",
+       "expsha": "82b5f883d8ed",
+       "submitted_utc": "2026-11-11T02:16:13Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T22:49:49",
+         "end_est": "2026-11-10T23:06:52",
+         "node": "babel-p9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "577aa9f-82b5f883d8ed",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/H-s101-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/H-s101-r128/records.jsonl.gz",
+   "records_sha256": "6f793fbba99ffd8e38967b41e98bed1989754629d4a41b527da2014585547160",
+   "summary_sha256": "aa8744b1a252a7cf13a2ef30785bc8a3065d63311b555a24bbc8f421c7094283",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 313,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6414027149321267,
+   "jobs": [
+    {
+     "expid": "qis-stress-H-s101-r128",
+     "runs": [
+      {
+       "jobid": "11113928",
+       "sha": "bcdc620e",
+       "expsha": "28fd7cc5fa2f",
+       "submitted_utc": "2026-11-11T04:07:46Z",
+       "allocations": [
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:01:49",
+         "end_est": "2026-11-11T02:05:26",
+         "node": "babel-n9-32",
+         "gpu": "L40S"
+        },
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:10:49",
+         "end_est": "2026-11-11T04:44:33",
+         "node": "babel-m5-20",
+         "gpu": "L40S"
+        },
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T04:53:50",
+         "end_est": "2026-11-11T04:54:16",
+         "node": "babel-o9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcdc620-28fd7cc5fa2f",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811 on-disk=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/R-s101-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/R-s101-r128/records.jsonl.gz",
+   "records_sha256": "5dae11eae3109cd554a4973dfbfaab9eafc8c5c13bcb26982b28787fe8f896af",
+   "summary_sha256": "7643b4c0afb1288ac04eced097b08012ac75bd13325372958b12065fa833d6df",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 362,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6951357466063348,
+   "jobs": [
+    {
+     "expid": "qis-stress-R-s101-r128",
+     "runs": [
+      {
+       "jobid": "11112848",
+       "sha": "e2180114",
+       "expsha": "6ebcf0ac4453",
+       "submitted_utc": "2026-11-11T02:07:26Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T21:15:34",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11112937",
+       "sha": "577aa9f6",
+       "expsha": "c6cb0f034a8e",
+       "submitted_utc": "2026-11-11T02:16:25Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T23:01:49",
+         "end_est": "2026-11-11T01:33:30",
+         "node": "babel-n9-32",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "577aa9f-c6cb0f034a8e",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/U-s101-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/U-s101-r128/records.jsonl.gz",
+   "records_sha256": "366fe8132775aab53224398ca0f412697443fb3539be0fca28acd7e31d0b48e5",
+   "summary_sha256": "3bbc8e74705067ac0c4337ff3d79f5fbf0e8bbfca1d1a2e192e6d957a1051e06",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 406,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6532805429864253,
+   "jobs": [
+    {
+     "expid": "qis-stress-U-s101-r128",
+     "runs": [
+      {
+       "jobid": "11112849",
+       "sha": "e2180114",
+       "expsha": "a5261484e16a",
+       "submitted_utc": "2026-11-11T02:07:36Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T21:15:36",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11112938",
+       "sha": "577aa9f6",
+       "expsha": "71b198b3ceef",
+       "submitted_utc": "2026-11-11T02:16:36Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T23:07:49",
+         "end_est": "2026-11-11T01:50:11",
+         "node": "babel-q5-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "577aa9f-71b198b3ceef",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70 on-disk=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/R-s202-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/R-s202-r128/records.jsonl.gz",
+   "records_sha256": "8a3d7dc398d02451a9c5fdd82b214161f4c8a7e6af9bc99d92bc39c2246a4181",
+   "summary_sha256": "1b8df80e34f37bb1c2f1c66c988e6465d21715cefbc669edd639dac8243c9703",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 407,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6317873303167421,
+   "jobs": [
+    {
+     "expid": "qis-stress-R-s202-r128",
+     "runs": [
+      {
+       "jobid": "11112850",
+       "sha": "e2180114",
+       "expsha": "64cbaf766a0a",
+       "submitted_utc": "2026-11-11T02:07:47Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T21:15:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11112940",
+       "sha": "577aa9f6",
+       "expsha": "4e26b7831586",
+       "submitted_utc": "2026-11-11T02:16:46Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T00:58:48",
+         "end_est": "2026-11-11T03:42:03",
+         "node": "babel-u5-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "577aa9f-4e26b7831586",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/U-s202-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/U-s202-r128/records.jsonl.gz",
+   "records_sha256": "42b32a30d1d1aa0766bdb0743c8b6c6f67703ceb637073cbb0eaa1c27d57e500",
+   "summary_sha256": "f1bf75ca992f08de1de105a1812b5a77b332d2d7f90575ced7caca512e151d87",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 268,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6583710407239819,
+   "jobs": [
+    {
+     "expid": "qis-stress-U-s202-r128",
+     "runs": [
+      {
+       "jobid": "11115052",
+       "sha": "e4deb797",
+       "expsha": "a2e72abb18b8",
+       "submitted_utc": "2026-11-11T05:51:06Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T02:02:49",
+         "end_est": "2026-11-11T04:09:47",
+         "node": "babel-u5-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "e4deb79-a2e72abb18b8",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354 on-disk=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/R-s101-r64",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064",
+   "checkpoint_note": "a2, saved 2026-11-08 12:15Z (DEFINITIONS \u00a73.B; not re-read here)",
+   "model_pt_sha256_recorded": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/R-s101-r64/records.jsonl.gz",
+   "records_sha256": "f7a673908abd0c25b58c8d365e032b4c4e57003f2893eb7517c649dbb6ce862f",
+   "summary_sha256": "fd7e5c41d105d9e465f8c8cd30afe7cc6f61f8d13c41d08aae8989db3a446f34",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 462,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6425339366515838,
+   "jobs": [
+    {
+     "expid": "qis-stress-R-s101-r64",
+     "runs": [
+      {
+       "jobid": "11115377",
+       "sha": "d06c7a5e",
+       "expsha": "31e197e55894",
+       "submitted_utc": "2026-11-11T06:34:34Z",
+       "allocations": [
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:03:50",
+         "end_est": "2026-11-11T02:05:56",
+         "node": "babel-o9-28",
+         "gpu": "L40S"
+        },
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:10:49",
+         "end_est": "2026-11-11T02:16:57",
+         "node": "babel-o9-32",
+         "gpu": "L40S"
+        },
+        {
+         "state": "PREEMPTED",
+         "start_est": "2026-11-11T02:22:49",
+         "end_est": "2026-11-11T05:13:43",
+         "node": "babel-p9-16",
+         "gpu": "L40S"
+        },
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T05:52:12",
+         "end_est": "2026-11-11T05:52:34",
+         "node": "babel-p9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "d06c7a5-31e197e55894",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a on-disk=6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/H-s202-r64",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0064",
+   "checkpoint_note": "trajectory a2-r60; state.json saved_utc 2026-11-11T03:26:38Z (read by traces.py)",
+   "model_pt_sha256_recorded": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/H-s202-r64/records.jsonl.gz",
+   "records_sha256": "819724b6112f7a635696a50c57b20d4418bf6449e956f19b00fa877e938bd4b6",
+   "summary_sha256": "35edd2fb31c63a8f8ab168e341303629f8e8047e75ec867e0d97c7a7ce4ca8b9",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 267,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.623868778280543,
+   "jobs": [
+    {
+     "expid": "qis-stress-H-s202-r64",
+     "runs": [
+      {
+       "jobid": "11115378",
+       "sha": "d06c7a5e",
+       "expsha": "7b9b663ee4ed",
+       "submitted_utc": "2026-11-11T06:34:44Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T02:05:50",
+         "end_est": "2026-11-11T04:13:36",
+         "node": "babel-q5-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "d06c7a5-7b9b663ee4ed",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee on-disk=37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee"
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "Q2",
+    "Q3",
+    "5.3/5.4 (original scores)",
+    "7.2"
+   ],
+   "note": ""
+  },
+  {
+   "evaluation": "stress/H-s202-r128",
+   "kind": "stress",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "stress-v1",
+   "seed_key": "eval/stress/<id>/stress-v1/n8",
+   "records": "/data/user_data/vineethb/qis/stress-eval/H-s202-r128/records.jsonl.gz",
+   "records_sha256": "33e7c89277fc571d55b221f46b69bb2559d7eaf9118ab4762bed5b23fb68dd6e",
+   "summary_sha256": "9f5ec6b78dcc6541e8ef504b84d8ba7fa15c16271de8cb1ade0b0e048115dd1e",
+   "record_lines": 1768,
+   "unknown": 0,
+   "truncated": 451,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6012443438914027,
+   "jobs": [
+    {
+     "expid": "qis-stress-H-s202-r128-k0",
+     "runs": [
+      {
+       "jobid": "11119925",
+       "sha": "5a99bac7",
+       "expsha": "893bdb9d4ac7",
+       "submitted_utc": "2026-11-11T20:51:04Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:31",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120596",
+       "sha": "b77f0662",
+       "expsha": "2a088959eb65",
+       "submitted_utc": "2026-11-11T21:51:31Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:55:07",
+         "end_est": "2026-11-11T17:58:38",
+         "node": "babel-w5-28",
+         "gpu": "L40"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "b77f066-2a088959eb65",
+       "gpu_txt": "NVIDIA L40",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-stress-H-s202-r128-k1",
+     "runs": [
+      {
+       "jobid": "11119926",
+       "sha": "5a99bac7",
+       "expsha": "7b9db0035642",
+       "submitted_utc": "2026-11-11T20:51:14Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:33",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11120598",
+       "sha": "b77f0662",
+       "expsha": "ac81630ff7a3",
+       "submitted_utc": "2026-11-11T21:51:43Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T16:58:07",
+         "end_est": "2026-11-11T18:05:51",
+         "node": "babel-n5-16",
+         "gpu": "A6000"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "b77f066-ac81630ff7a3",
+       "gpu_txt": "NVIDIA RTX A6000",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    },
+    {
+     "expid": "qis-stress-H-s202-r128-k2",
+     "runs": [
+      {
+       "jobid": "11119927",
+       "sha": "5a99bac7",
+       "expsha": "ab0325567896",
+       "submitted_utc": "2026-11-11T20:51:25Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-11T16:50:36",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11121110",
+       "sha": "bcf3e475",
+       "expsha": "b94034b8abce",
+       "submitted_utc": "2026-11-11T22:39:19Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T17:41:00",
+         "end_est": "2026-11-11T18:41:50",
+         "node": "babel-w5-28",
+         "gpu": "L40"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "bcf3e47-b94034b8abce",
+       "gpu_txt": "NVIDIA L40",
+       "ckpt_identity": "model.pt sha256 recorded=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8 on-disk=2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8"
+      }
+     ]
+    }
+   ],
+   "shards": {
+    "split": "items[k::3] (74,74,73 problems)",
+    "merge": "eval_merge by shard k2 (job 11121110)",
+    "check": {
+     "root": "/data/user_data/vineethb/qis/stress-eval/H-s202-r128-shards",
+     "k": 3,
+     "union_records": 1768,
+     "duplicate_keys_across_shards": 0,
+     "merged_records": 1768,
+     "merged_equals_union": true,
+     "merged_minus_union": 0,
+     "union_minus_merged": 0,
+     "differing_lines": 0,
+     "shard_id_sets_disjoint": true,
+     "shard_id_sets_cover_panel": true
+    }
+   },
+   "analysis": "src/qis/analysis/a17_stress.py; output research/evidence/a17/analysis/stress/stress.json committed at 1a9b49b (a17_stress.py last changed d3fa9d5)",
+   "report_sections": [
+    "opening 5",
+    "7.2"
+   ],
+   "note": "Ledger rows 11119925/6/7 cancelled before start; ran as 11120596 (k0), 11120598 (k1), 11121110 (k2)."
+  },
+  {
+   "evaluation": "cue/base-uncued",
+   "kind": "cue",
+   "checkpoint": "base",
+   "checkpoint_note": "Qwen/Qwen3-1.7B snapshot 70d244cc (HF revision; no model.pt)",
+   "model_pt_sha256_recorded": "base",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/base-uncued/records.jsonl.gz",
+   "records_sha256": "360c14a8f83b8187f5f6be138e0fe023fcaa08f599d9e429ef1bb4853c13b34c",
+   "summary_sha256": "6877696437058ff7c4b3d30cc4c48aecaf17cf76f8950c47f97e5eac01711701",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 0,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.421875,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/base-cued",
+   "kind": "cue",
+   "checkpoint": "base",
+   "checkpoint_note": "Qwen/Qwen3-1.7B snapshot 70d244cc (HF revision; no model.pt)",
+   "model_pt_sha256_recorded": "base",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/base-cued/records.jsonl.gz",
+   "records_sha256": "5b1cf725aa0dde49a09f597cea57ac21fbff3ab50b6a11ff8870bfa25cabb542",
+   "summary_sha256": "7cab039f2f1f0aaad47bb5891cc554158c9e6c70beea56747ab06e19e5ddab16",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 0,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.4114583333333333,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/R-s101-uncued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/R-s101-uncued/records.jsonl.gz",
+   "records_sha256": "26d787aabd6f7009875779751a25aace0e94140c0cd147d64d5cddf98c350b2a",
+   "summary_sha256": "69f5df5c10412a0bd83feaec8e466f3224ee088513515f2f4794f2a0ee86ba6e",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 36,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6822916666666666,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/R-s101-cued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/R-s101-cued/records.jsonl.gz",
+   "records_sha256": "4ead355d9a3d92f043124797af27d2359badd5af40fd84f4c35849faf0a96832",
+   "summary_sha256": "40d0829bf10821a243b2c7f20fb1b935239a2f18a3fe878852162ecc51ad4d9e",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 34,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6927083333333334,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/R-s202-uncued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/R-s202-uncued/records.jsonl.gz",
+   "records_sha256": "314cbfce2b42c16c7f009ce9b00a5241d3ab7ef29f2d8052224e6986f8554266",
+   "summary_sha256": "9bef8201c31d2de948992cf7c99311faed5200944ffbed63dbffffec2c59666c",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 36,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6197916666666666,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/R-s202-cued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/R-s202-cued/records.jsonl.gz",
+   "records_sha256": "459a31964c584fba9646be6b5de688e17e0699454c79bdb2deb9d60e8eeeb22e",
+   "summary_sha256": "cca25739eef4e9792a7b7deec493d1d268743b88651ddf98bfec26270c119425",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 42,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.5729166666666666,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/U-s101-uncued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/U-s101-uncued/records.jsonl.gz",
+   "records_sha256": "d02fe4185eada5e7d8b57902a82d0ebd21df9273d44a6a602c71927e14e11ad6",
+   "summary_sha256": "e7bafb2b3149216c4fa53cccc0d7deda3b653cb4b784a987631f88a3061efb9b",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 35,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.7239583333333334,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/U-s101-cued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/U-s101-cued/records.jsonl.gz",
+   "records_sha256": "d29b686396d06b0ca2ff64b5ee02643f294ea662ce81b438638e431a17ee8975",
+   "summary_sha256": "16298449979a23f4c56592546287ab4bb3f44343415dbe78b02ab636a400fc83",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 39,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.7135416666666666,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/U-s202-uncued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/U-s202-uncued/records.jsonl.gz",
+   "records_sha256": "c9271cf1a9560fafb1eed9c2eb578eff637d7d146c8c34d99bec83bf8f4b9fc0",
+   "summary_sha256": "4384378f32f90669d0bf024c6ec01a0fc123d1d683a5e6abae92d95114997de0",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 30,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6458333333333334,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  },
+  {
+   "evaluation": "cue/U-s202-cued",
+   "kind": "cue",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "checkpoint_note": null,
+   "model_pt_sha256_recorded": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "hash_source": "summary.json ckpt_model_sha256 (written by evaluate_ckpt from state.json file_sha256); job ckpt_identity.txt compares it with an on-disk sha256 at job start; not re-hashed by a-evals",
+   "panel": {
+    "files": [
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_uncued.json",
+     "/home/vineethb/ae-qis/code/qis-cue-eval-6d4e33a/data/cue/cue_v1_cued.json"
+    ],
+    "sha256": [
+     "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+     "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa"
+    ],
+    "problems": 24
+   },
+   "n": 8,
+   "cap": 12288,
+   "seed_label": "cue-v1",
+   "seed_key": "eval/cue/<id>/cue-v1/n8",
+   "records": "/data/user_data/vineethb/qis/cue-eval/v1/U-s202-cued/records.jsonl.gz",
+   "records_sha256": "331c80f93eeeda4876465625fc4cc31550e862f32d634d6758c3004bf67124ea",
+   "summary_sha256": "31b72b0f775ea7f8ec1298923242736519ad6ae0f7f82ce11627b31199d38601",
+   "record_lines": 192,
+   "unknown": 0,
+   "truncated": 15,
+   "attempts_per_problem_ok": true,
+   "seeds_match_formula": true,
+   "summary_matches_records": true,
+   "pass1": 0.6927083333333334,
+   "jobs": [
+    {
+     "expid": "qis-cue-eval",
+     "runs": [
+      {
+       "jobid": "11102440",
+       "sha": "594d4084",
+       "expsha": "71ccbbf05621",
+       "submitted_utc": "2026-11-10T01:55:12Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "None",
+         "end_est": "2026-11-10T02:07:38",
+         "node": "None assigned",
+         "gpu": null
+        }
+       ]
+      },
+      {
+       "jobid": "11104738",
+       "sha": "6d4e33a0",
+       "expsha": "3c0c393b8484",
+       "submitted_utc": "2026-11-10T07:07:48Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-10T05:22:50",
+         "end_est": "2026-11-10T07:35:17",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "6d4e33a-3c0c393b8484",
+       "gpu_txt": null,
+       "ckpt_identity": null
+      }
+     ]
+    }
+   ],
+   "shards": null,
+   "analysis": "src/qis/analysis/cue.py at 6d4e33a (inside job qis-cue-eval); output research/evidence/a15/cue_analysis.json committed at 65d53a6",
+   "report_sections": [
+    "8"
+   ],
+   "note": "One job (11104738, 6d4e33a, babel-p9-20 L40S) ran all ten cells; the earlier row 11102440 was cancelled before start."
+  }
+ ],
+ "length_extension": [
+  {
+   "evaluation": "length-test/H-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "all": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/test/<id>/extend-test-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-test/H-s101-r128/all",
+   "original_records": "test-eval/qis-test-<run>-sym",
+   "checks": {
+    "rows": 4096,
+    "orig_attempts": 4096,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 445,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "all": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-lentest-H-s101",
+     "runs": [
+      {
+       "jobid": "11119262",
+       "sha": "04169210",
+       "expsha": "00cdeaac0de8",
+       "submitted_utc": "2026-11-11T19:08:53Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T14:13:15",
+         "end_est": "2026-11-11T15:22:33",
+         "node": "babel-o9-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "0416921-00cdeaac0de8",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811 on-disk=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py --panel-key test --sets all=all; output research/evidence/a19/length/test/length.json committed at 86bbe77"
+  },
+  {
+   "evaluation": "length-test/R-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "all": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/test/<id>/extend-test-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-test/R-s101-r128/all",
+   "original_records": "test-eval/qis-test-<run>-sym",
+   "checks": {
+    "rows": 4096,
+    "orig_attempts": 4096,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 437,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "all": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-lentest-R-s101",
+     "runs": [
+      {
+       "jobid": "11118661",
+       "sha": "ef68bf8b",
+       "expsha": "97265b59411e",
+       "submitted_utc": "2026-11-11T17:32:08Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:33:28",
+         "end_est": "2026-11-11T14:31:08",
+         "node": "babel-v9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "ef68bf8-97265b59411e",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py --panel-key test --sets all=all; output research/evidence/a19/length/test/length.json committed at 86bbe77"
+  },
+  {
+   "evaluation": "length-test/R-s202",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "all": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/test/<id>/extend-test-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-test/R-s202-r128/all",
+   "original_records": "test-eval/qis-test-<run>-sym",
+   "checks": {
+    "rows": 4096,
+    "orig_attempts": 4096,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 538,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "all": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-lentest-R-s202",
+     "runs": [
+      {
+       "jobid": "11118658",
+       "sha": "ef68bf8b",
+       "expsha": "3a17b2ad9fcd",
+       "submitted_utc": "2026-11-11T17:31:44Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:32:28",
+         "end_est": "2026-11-11T13:52:02",
+         "node": "babel-o9-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "ef68bf8-3a17b2ad9fcd",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py --panel-key test --sets all=all; output research/evidence/a19/length/test/length.json committed at 86bbe77"
+  },
+  {
+   "evaluation": "length-test/U-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "all": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/test/<id>/extend-test-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-test/U-s101-r128/all",
+   "original_records": "test-eval/qis-test-<run>-sym",
+   "checks": {
+    "rows": 4096,
+    "orig_attempts": 4096,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 501,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "all": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-lentest-U-s101",
+     "runs": [
+      {
+       "jobid": "11118662",
+       "sha": "ef68bf8b",
+       "expsha": "40dca2c96c53",
+       "submitted_utc": "2026-11-11T17:32:18Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:33:28",
+         "end_est": "2026-11-11T13:46:41",
+         "node": "babel-n9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "ef68bf8-40dca2c96c53",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70 on-disk=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py --panel-key test --sets all=all; output research/evidence/a19/length/test/length.json committed at 86bbe77"
+  },
+  {
+   "evaluation": "length-test/U-s202",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "all": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/main-v1/target_test_sealed.json",
+    "sha256": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+    "problems": 128
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/test/<id>/extend-test-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-test/U-s202-r128/all",
+   "original_records": "test-eval/qis-test-<run>-sym",
+   "checks": {
+    "rows": 4096,
+    "orig_attempts": 4096,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 333,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "all": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-lentest-U-s202",
+     "runs": [
+      {
+       "jobid": "11118660",
+       "sha": "ef68bf8b",
+       "expsha": "20d74a0ffdde",
+       "submitted_utc": "2026-11-11T17:31:57Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:33:28",
+         "end_est": "2026-11-11T13:24:10",
+         "node": "babel-o5-32",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "ef68bf8-20d74a0ffdde",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354 on-disk=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py --panel-key test --sets all=all; output research/evidence/a19/length/test/length.json committed at 86bbe77"
+  },
+  {
+   "evaluation": "length-stress/H-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "t1": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+    "rest": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/stress/<id>/extend-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-diag/H-s101-r128/(t1|rest)",
+   "original_records": "stress-eval/H-s101-r128",
+   "checks": {
+    "rows": 1768,
+    "orig_attempts": 1768,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 313,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "t1": "NVIDIA L40S",
+    "rest": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-len-H-s101",
+     "runs": [
+      {
+       "jobid": "11119264",
+       "sha": "04169210",
+       "expsha": "70c8af91fa0a",
+       "submitted_utc": "2026-11-11T19:09:04Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T14:13:15",
+         "end_est": "2026-11-11T14:56:38",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "0416921-70c8af91fa0a",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811 on-disk=052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py; outputs research/evidence/a19/length/{t1,full}/length.json committed at d3dbd22 (t1) and 6360e1f (full)"
+  },
+  {
+   "evaluation": "length-stress/R-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "t1": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+    "rest": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/stress/<id>/extend-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-diag/R-s101-r128/(t1|rest)",
+   "original_records": "stress-eval/R-s101-r128",
+   "checks": {
+    "rows": 1768,
+    "orig_attempts": 1768,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 362,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "t1": "NVIDIA L40S",
+    "rest": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-len-R-s101",
+     "runs": [
+      {
+       "jobid": "11118247",
+       "sha": "c894f2b3",
+       "expsha": "dcc8fb9c3b8d",
+       "submitted_utc": "2026-11-11T16:23:16Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "2026-11-11T11:30:29",
+         "end_est": "2026-11-11T11:53:10",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      },
+      {
+       "jobid": "11118448",
+       "sha": "a6749840",
+       "expsha": "dcc8fb9c3b8d",
+       "submitted_utc": "2026-11-11T16:54:12Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:30:28",
+         "end_est": "2026-11-11T13:18:50",
+         "node": "babel-v9-28",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "a674984-dcc8fb9c3b8d",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      },
+      {
+       "run_dir": "c894f2b-dcc8fb9c3b8d",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a on-disk=aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py; outputs research/evidence/a19/length/{t1,full}/length.json committed at d3dbd22 (t1) and 6360e1f (full)"
+  },
+  {
+   "evaluation": "length-stress/R-s202",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "t1": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+    "rest": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/stress/<id>/extend-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-diag/R-s202-r128/(t1|rest)",
+   "original_records": "stress-eval/R-s202-r128",
+   "checks": {
+    "rows": 1768,
+    "orig_attempts": 1768,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 407,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "t1": "NVIDIA L40S",
+    "rest": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-len-R-s202",
+     "runs": [
+      {
+       "jobid": "11118157",
+       "sha": "5e703447",
+       "expsha": "130e59a2982e",
+       "submitted_utc": "2026-11-11T16:11:08Z",
+       "allocations": [
+        {
+         "state": "CANCELLED by 6010497",
+         "start_est": "2026-11-11T11:12:30",
+         "end_est": "2026-11-11T11:23:43",
+         "node": "babel-q5-24",
+         "gpu": "L40S"
+        }
+       ]
+      },
+      {
+       "jobid": "11118444",
+       "sha": "a6749840",
+       "expsha": "c5f44a0b1566",
+       "submitted_utc": "2026-11-11T16:54:02Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T12:06:29",
+         "end_est": "2026-11-11T12:59:56",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "5e70344-130e59a2982e",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      },
+      {
+       "run_dir": "a674984-c5f44a0b1566",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71 on-disk=22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py; outputs research/evidence/a19/length/{t1,full}/length.json committed at d3dbd22 (t1) and 6360e1f (full)"
+  },
+  {
+   "evaluation": "length-stress/U-s101",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s101-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "t1": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+    "rest": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/stress/<id>/extend-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-diag/U-s101-r128/(t1|rest)",
+   "original_records": "stress-eval/U-s101-r128",
+   "checks": {
+    "rows": 1768,
+    "orig_attempts": 1768,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 406,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "t1": "NVIDIA L40S",
+    "rest": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-len-U-s101",
+     "runs": [
+      {
+       "jobid": "11118248",
+       "sha": "c894f2b3",
+       "expsha": "7d1af7cd3bc5",
+       "submitted_utc": "2026-11-11T16:23:26Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T11:53:29",
+         "end_est": "2026-11-11T12:58:50",
+         "node": "babel-p9-20",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "c894f2b-7d1af7cd3bc5",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70 on-disk=92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py; outputs research/evidence/a19/length/{t1,full}/length.json committed at d3dbd22 (t1) and 6360e1f (full)"
+  },
+  {
+   "evaluation": "length-stress/U-s202",
+   "checkpoint": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0128",
+   "model_pt_sha256_recorded": {
+    "t1": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+    "rest": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+   },
+   "panel": {
+    "file": "/data/user_data/vineethb/qis/data/stress/stress_v1.json",
+    "sha256": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+    "problems": 221
+   },
+   "from_cap": 12288,
+   "to_cap": 16384,
+   "seed_key": "extend/stress/<id>/extend-v1/s<sample>",
+   "rows": "/data/user_data/vineethb/qis/length-diag/U-s202-r128/(t1|rest)",
+   "original_records": "stress-eval/U-s202-r128",
+   "checks": {
+    "rows": 1768,
+    "orig_attempts": 1768,
+    "rows_cover_all_original": true,
+    "duplicates": 0,
+    "capped_original": 268,
+    "capped_original_with_ntokens_ne_12288": 0,
+    "n_capped_not_extended": 0,
+    "n_bad": 0
+   },
+   "gpu_from_summary": {
+    "t1": "NVIDIA L40S",
+    "rest": "NVIDIA L40S"
+   },
+   "jobs": [
+    {
+     "expid": "qis-len-U-s202",
+     "runs": [
+      {
+       "jobid": "11118245",
+       "sha": "c894f2b3",
+       "expsha": "2ddafd4cf892",
+       "submitted_utc": "2026-11-11T16:23:06Z",
+       "allocations": [
+        {
+         "state": "COMPLETED",
+         "start_est": "2026-11-11T11:24:30",
+         "end_est": "2026-11-11T12:04:07",
+         "node": "babel-q5-24",
+         "gpu": "L40S"
+        }
+       ]
+      }
+     ],
+     "results": [
+      {
+       "run_dir": "c894f2b-2ddafd4cf892",
+       "gpu_txt": "NVIDIA L40S",
+       "ckpt_identity": "model.pt sha256 recorded=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354 on-disk=7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354"
+      }
+     ]
+    }
+   ],
+   "analysis": "src/qis/analysis/a19_length.py; outputs research/evidence/a19/length/{t1,full}/length.json committed at d3dbd22 (t1) and 6360e1f (full)"
+  }
+ ],
+ "diagnostic": {
+  "evaluation": "local one-step diagnostic",
+  "panels": "J_H (32), J_R (28), J_U (32) from bundle panels; n 16; cap 8,192 (diag_local.py:50,126)",
+  "seed_label": "r7064 (EVAL_ROUND_LABEL)",
+  "records": "/data/user_data/vineethb/qis/diag-local/{r0,r64}/records/<branch>/eval_probe_J_*_r7064.jsonl.gz",
+  "record_checks": {
+   "r0/r0-hard-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 301,
+      "correct": 210,
+      "truncated": 1
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 3315,
+     "status": {
+      "wrong": 95,
+      "correct": 353
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 509,
+      "length": 3
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 397,
+      "wrong": 112,
+      "truncated": 3
+     }
+    }
+   },
+   "r0/r0-hard-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 2,
+      "stop": 510
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 2,
+      "wrong": 295,
+      "correct": 215
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2608,
+     "status": {
+      "wrong": 86,
+      "correct": 362
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 409,
+      "wrong": 102,
+      "truncated": 1
+     }
+    }
+   },
+   "r0/r0-hard-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 303,
+      "truncated": 1,
+      "correct": 208
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2875,
+     "status": {
+      "wrong": 86,
+      "correct": 362
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 4446,
+     "status": {
+      "correct": 420,
+      "wrong": 92
+     }
+    }
+   },
+   "r0/r0-hard-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 295,
+      "correct": 216,
+      "truncated": 1
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2514,
+     "status": {
+      "wrong": 87,
+      "correct": 361
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 7258,
+     "status": {
+      "correct": 400,
+      "wrong": 112
+     }
+    }
+   },
+   "r0/r0-none": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 306,
+      "correct": 205,
+      "truncated": 1
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 3066,
+     "status": {
+      "wrong": 77,
+      "correct": 371
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 508,
+      "length": 4
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 413,
+      "wrong": 95,
+      "truncated": 4
+     }
+    }
+   },
+   "r0/r0-none_cycled": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 1,
+      "stop": 511
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 1,
+      "wrong": 290,
+      "correct": 221
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2621,
+     "status": {
+      "wrong": 86,
+      "correct": 362
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 510,
+      "length": 2
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 406,
+      "wrong": 104,
+      "truncated": 2
+     }
+    }
+   },
+   "r0/r0-none_rerun": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 1,
+      "stop": 511
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 1,
+      "wrong": 290,
+      "correct": 221
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2621,
+     "status": {
+      "wrong": 86,
+      "correct": 362
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 510,
+      "length": 2
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 406,
+      "wrong": 104,
+      "truncated": 2
+     }
+    }
+   },
+   "r0/r0-related-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 298,
+      "truncated": 1,
+      "correct": 213
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2632,
+     "status": {
+      "wrong": 88,
+      "correct": 360
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 7527,
+     "status": {
+      "correct": 410,
+      "wrong": 102
+     }
+    }
+   },
+   "r0/r0-related-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "wrong": 286,
+      "truncated": 1,
+      "correct": 225
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2784,
+     "status": {
+      "wrong": 91,
+      "correct": 357
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 391,
+      "wrong": 120,
+      "truncated": 1
+     }
+    }
+   },
+   "r0/r0-related-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 8162,
+     "status": {
+      "wrong": 290,
+      "correct": 222
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 3211,
+     "status": {
+      "wrong": 86,
+      "correct": 362
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 5239,
+     "status": {
+      "correct": 410,
+      "wrong": 102
+     }
+    }
+   },
+   "r0/r0-related-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 6562,
+     "status": {
+      "wrong": 297,
+      "correct": 215
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 3902,
+     "status": {
+      "wrong": 87,
+      "correct": 361
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 510,
+      "length": 2
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 396,
+      "wrong": 114,
+      "truncated": 2
+     }
+    }
+   },
+   "r0/r0-unrelated-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 7714,
+     "status": {
+      "wrong": 304,
+      "correct": 208
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2728,
+     "status": {
+      "wrong": 90,
+      "correct": 358
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 414,
+      "wrong": 97,
+      "truncated": 1
+     }
+    }
+   },
+   "r0/r0-unrelated-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 7693,
+     "status": {
+      "wrong": 294,
+      "correct": 218
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2987,
+     "status": {
+      "wrong": 87,
+      "correct": 361
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 3794,
+     "status": {
+      "correct": 421,
+      "wrong": 91
+     }
+    }
+   },
+   "r0/r0-unrelated-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 1,
+      "stop": 511
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 1,
+      "wrong": 304,
+      "correct": 207
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 2966,
+     "status": {
+      "wrong": 90,
+      "correct": 357,
+      "no_answer": 1
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 509,
+      "length": 3
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 407,
+      "wrong": 102,
+      "truncated": 3
+     }
+    }
+   },
+   "r0/r0-unrelated-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 512
+     },
+     "max_n_tokens": 7324,
+     "status": {
+      "wrong": 315,
+      "correct": 197
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 448
+     },
+     "max_n_tokens": 3636,
+     "status": {
+      "wrong": 88,
+      "correct": 360
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 511,
+      "length": 1
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 411,
+      "wrong": 100,
+      "truncated": 1
+     }
+    }
+   },
+   "r64/r64-hard-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 198,
+      "stop": 314
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 198,
+      "wrong": 7,
+      "correct": 307
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 417,
+      "length": 31
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 397,
+      "wrong": 20,
+      "truncated": 31
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 499,
+      "length": 13
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 478,
+      "wrong": 21,
+      "truncated": 13
+     }
+    }
+   },
+   "r64/r64-hard-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 188,
+      "stop": 324
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 188,
+      "correct": 311,
+      "wrong": 13
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 415,
+      "length": 33
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 397,
+      "wrong": 18,
+      "truncated": 33
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 497,
+      "length": 15
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 477,
+      "wrong": 20,
+      "truncated": 15
+     }
+    }
+   },
+   "r64/r64-hard-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 183,
+      "stop": 329
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 183,
+      "correct": 316,
+      "wrong": 13
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 421,
+      "length": 27
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 404,
+      "truncated": 27,
+      "wrong": 17
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 500,
+      "length": 12
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 476,
+      "wrong": 24,
+      "truncated": 12
+     }
+    }
+   },
+   "r64/r64-hard-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 194,
+      "stop": 318
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 194,
+      "correct": 308,
+      "wrong": 10
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 424,
+      "length": 24
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 397,
+      "wrong": 27,
+      "truncated": 24
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 498,
+      "length": 14
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 475,
+      "wrong": 23,
+      "truncated": 14
+     }
+    }
+   },
+   "r64/r64-none": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 190,
+      "stop": 322
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 190,
+      "correct": 310,
+      "wrong": 12
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 423,
+      "length": 25
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 404,
+      "truncated": 25,
+      "wrong": 19
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 500,
+      "length": 12
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 481,
+      "wrong": 19,
+      "truncated": 12
+     }
+    }
+   },
+   "r64/r64-none_cycled": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 172,
+      "stop": 340
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 172,
+      "correct": 323,
+      "wrong": 17
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 416,
+      "length": 32
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 400,
+      "truncated": 32,
+      "wrong": 16
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 499,
+      "length": 13
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 487,
+      "wrong": 12,
+      "truncated": 13
+     }
+    }
+   },
+   "r64/r64-none_rerun": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 172,
+      "stop": 340
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 172,
+      "correct": 323,
+      "wrong": 17
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 416,
+      "length": 32
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 400,
+      "truncated": 32,
+      "wrong": 16
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 499,
+      "length": 13
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 487,
+      "wrong": 12,
+      "truncated": 13
+     }
+    }
+   },
+   "r64/r64-related-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 187,
+      "stop": 325
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 187,
+      "correct": 313,
+      "wrong": 12
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 422,
+      "length": 26
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 401,
+      "wrong": 21,
+      "truncated": 26
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 497,
+      "length": 15
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 477,
+      "wrong": 20,
+      "truncated": 15
+     }
+    }
+   },
+   "r64/r64-related-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 187,
+      "stop": 325
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 187,
+      "correct": 313,
+      "wrong": 12
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 422,
+      "length": 26
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 401,
+      "wrong": 21,
+      "truncated": 26
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 497,
+      "length": 15
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 477,
+      "wrong": 20,
+      "truncated": 15
+     }
+    }
+   },
+   "r64/r64-related-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 182,
+      "stop": 330
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 182,
+      "correct": 318,
+      "wrong": 12
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 426,
+      "length": 22
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 404,
+      "truncated": 22,
+      "wrong": 22
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 497,
+      "length": 15
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 476,
+      "wrong": 21,
+      "truncated": 15
+     }
+    }
+   },
+   "r64/r64-related-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 182,
+      "stop": 330
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 182,
+      "correct": 317,
+      "wrong": 13
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 423,
+      "length": 25
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 400,
+      "wrong": 23,
+      "truncated": 25
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 496,
+      "length": 16
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 469,
+      "wrong": 27,
+      "truncated": 16
+     }
+    }
+   },
+   "r64/r64-unrelated-4101": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 185,
+      "stop": 327
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 185,
+      "correct": 307,
+      "wrong": 20
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 418,
+      "length": 30
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 402,
+      "wrong": 16,
+      "truncated": 30
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 502,
+      "length": 10
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 481,
+      "wrong": 21,
+      "truncated": 10
+     }
+    }
+   },
+   "r64/r64-unrelated-4102": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 173,
+      "stop": 339
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 173,
+      "correct": 324,
+      "wrong": 15
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 423,
+      "length": 25
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 400,
+      "wrong": 23,
+      "truncated": 25
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 500,
+      "length": 12
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 476,
+      "wrong": 24,
+      "truncated": 12
+     }
+    }
+   },
+   "r64/r64-unrelated-4103": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 187,
+      "stop": 325
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 187,
+      "correct": 313,
+      "wrong": 12
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 422,
+      "length": 26
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 401,
+      "wrong": 21,
+      "truncated": 26
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 497,
+      "length": 15
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 477,
+      "wrong": 20,
+      "truncated": 15
+     }
+    }
+   },
+   "r64/r64-unrelated-4104": {
+    "eval_probe_J_H_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "length": 191,
+      "stop": 321
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "truncated": 191,
+      "correct": 303,
+      "wrong": 18
+     }
+    },
+    "eval_probe_J_R_r7064.jsonl.gz": {
+     "lines": 448,
+     "problems": 28,
+     "n_per_problem": [
+      [
+       16,
+       28
+      ]
+     ],
+     "finish": {
+      "stop": 422,
+      "length": 26
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 396,
+      "wrong": 26,
+      "truncated": 26
+     }
+    },
+    "eval_probe_J_U_r7064.jsonl.gz": {
+     "lines": 512,
+     "problems": 32,
+     "n_per_problem": [
+      [
+       16,
+       32
+      ]
+     ],
+     "finish": {
+      "stop": 498,
+      "length": 14
+     },
+     "max_n_tokens": 8192,
+     "status": {
+      "correct": 481,
+      "truncated": 14,
+      "wrong": 17
+     }
+    }
+   }
+  },
+  "jobs": [
+   {
+    "expid": "qis-diag-local-r0",
+    "runs": [
+     {
+      "jobid": "11079411",
+      "sha": "870c8f5e",
+      "expsha": "247214d82119",
+      "submitted_utc": "2026-11-07T22:18:22Z",
+      "allocations": [
+       {
+        "state": "CANCELLED by 6010497",
+        "start_est": "None",
+        "end_est": "2026-11-09T15:15:07",
+        "node": "None assigned",
+        "gpu": null
+       }
+      ]
+     },
+     {
+      "jobid": "11099083",
+      "sha": "f3c70b5c",
+      "expsha": "247214d82119",
+      "submitted_utc": "2026-11-09T20:15:19Z",
+      "allocations": [
+       {
+        "state": "CANCELLED by 6010497",
+        "start_est": "None",
+        "end_est": "2026-11-09T20:00:29",
+        "node": "None assigned",
+        "gpu": null
+       }
+      ]
+     },
+     {
+      "jobid": "11101910",
+      "sha": "4b47386f",
+      "expsha": "247214d82119",
+      "submitted_utc": "2026-11-10T01:00:41Z",
+      "allocations": [
+       {
+        "state": "CANCELLED by 6010497",
+        "start_est": "2026-11-09T21:04:06",
+        "end_est": "2026-11-09T21:05:45",
+        "node": "babel-x9-16",
+        "gpu": "6000Ada"
+       }
+      ]
+     },
+     {
+      "jobid": "11102499",
+      "sha": "594d4084",
+      "expsha": "247214d82119",
+      "submitted_utc": "2026-11-10T02:06:16Z",
+      "allocations": [
+       {
+        "state": "COMPLETED",
+        "start_est": "2026-11-10T01:05:13",
+        "end_est": "2026-11-10T03:15:06",
+        "node": "babel-w5-24",
+        "gpu": "L40"
+       }
+      ]
+     }
+    ],
+    "results": [
+     {
+      "run_dir": "4b47386-247214d82119",
+      "gpu_txt": "NVIDIA RTX 6000 Ada Generation",
+      "ckpt_identity": null
+     },
+     {
+      "run_dir": "594d408-247214d82119",
+      "gpu_txt": "NVIDIA L40",
+      "ckpt_identity": null
+     }
+    ]
+   },
+   {
+    "expid": "qis-diag-local-r64",
+    "runs": [
+     {
+      "jobid": "11084344",
+      "sha": "e265c1c5",
+      "expsha": "d238e74635e0",
+      "submitted_utc": "2026-11-08T10:05:57Z",
+      "allocations": [
+       {
+        "state": "CANCELLED by 6010497",
+        "start_est": "None",
+        "end_est": "2026-11-09T15:15:09",
+        "node": "None assigned",
+        "gpu": null
+       }
+      ]
+     },
+     {
+      "jobid": "11099088",
+      "sha": "f3c70b5c",
+      "expsha": "fe13aac72da5",
+      "submitted_utc": "2026-11-09T20:15:32Z",
+      "allocations": [
+       {
+        "state": "FAILED",
+        "start_est": "2026-11-09T18:48:10",
+        "end_est": "2026-11-09T19:58:00",
+        "node": "babel-x5-28",
+        "gpu": "L40"
+       }
+      ]
+     },
+     {
+      "jobid": "11101908",
+      "sha": "4b47386f",
+      "expsha": "fe13aac72da5",
+      "submitted_utc": "2026-11-10T01:00:16Z",
+      "allocations": [
+       {
+        "state": "COMPLETED",
+        "start_est": "2026-11-09T20:01:11",
+        "end_est": "2026-11-10T05:22:39",
+        "node": "babel-x5-20",
+        "gpu": "6000Ada"
+       }
+      ]
+     }
+    ],
+    "results": [
+     {
+      "run_dir": "4b47386-fe13aac72da5",
+      "gpu_txt": "NVIDIA RTX 6000 Ada Generation",
+      "ckpt_identity": null
+     },
+     {
+      "run_dir": "f3c70b5-fe13aac72da5",
+      "gpu_txt": "NVIDIA L40",
+      "ckpt_identity": null
+     }
+    ]
+   },
+   {
+    "expid": "qis-diag-ref",
+    "runs": [
+     {
+      "jobid": "11105174",
+      "sha": "042cebdb",
+      "expsha": "66d1070ad343",
+      "submitted_utc": "2026-11-10T08:17:52Z",
+      "allocations": [
+       {
+        "state": "COMPLETED",
+        "start_est": "2026-11-10T07:23:58",
+        "end_est": "2026-11-10T09:33:07",
+        "node": "babel-o5-28",
+        "gpu": "L40S"
+       }
+      ]
+     }
+    ],
+    "results": [
+     {
+      "run_dir": "042cebd-66d1070ad343",
+      "gpu_txt": "NVIDIA L40S",
+      "ckpt_identity": null
+     }
+    ]
+   }
+  ],
+  "checkpoints": {
+   "r0": "base (fresh AdamW)",
+   "r64": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0064 (saved optimizer); sha 6fe89540\u2026 recorded in manifest"
+  },
+  "analysis": "diag_local.py writes diag_r*.jsonl; table by src/qis/analysis/a17_train.py (--diag); outputs research/evidence/a15/diag_r*.jsonl (08ed26e) and research/evidence/a17/analysis/train/{branches,delta_j_table}* committed at fd94374",
+  "report_sections": [
+   "opening 4",
+   "6"
+  ],
+  "note": "r0 final job 11102499 (594d408, babel-w5-24 L40); r64 final job 11101908 (4b47386, babel-x5-20 RTX 6000 Ada); no-update reruns job 11105174 (042cebd, babel-o5-28 L40S)."
+ },
+ "hash_note": "a-evals did not hash or load checkpoints. Hashes are the recorded values (summary.json) and each job's own ckpt_identity.txt comparison made at job start; the manifest research/evidence/a17/manifest/manifest.json lists the same values."
+}

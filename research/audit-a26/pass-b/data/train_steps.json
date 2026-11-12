@@ -1,0 +1,9607 @@
+{
+ "H-s101": {
+  "first_momentum_only_round_1based": 70,
+  "grad_clipped_steps": 5,
+  "grad_norm_nonzero_median": 0.41684451699256897,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   0,
+   0,
+   6,
+   12
+  ],
+  "momentum_only_composition": {
+   "hard_common:all_correct+hard_common:all_correct+hard_extra:all_correct+hard_extra:all_correct": 17,
+   "hard_common:all_correct+hard_common:all_correct+hard_extra:all_correct+hard_extra:all_wrong": 1
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 278,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "algebra/train/01269",
+     "omni/04174",
+     "omni/01690"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 70,
+    "step_round_field": 69,
+    "valid_tokens": 61088
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 332,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "omni/00852",
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/01249"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 116786
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_wrong",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 335,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01036",
+     "omni/00984",
+     "intermediate_algebra/train/00147"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 84,
+    "step_round_field": 83,
+    "valid_tokens": 73408
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 338,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00542",
+     "intermediate_algebra/train/00481",
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 85,
+    "step_round_field": 84,
+    "valid_tokens": 82902
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 355,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00136",
+     "omni/01690",
+     "algebra/train/01269",
+     "omni/02460"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 89,
+    "step_round_field": 88,
+    "valid_tokens": 114321
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 382,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00481",
+     "omni/00136",
+     "omni/00852",
+     "intermediate_algebra/train/00656"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 96,
+    "step_round_field": 95,
+    "valid_tokens": 132281
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 394,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "omni/01413",
+     "intermediate_algebra/train/00301",
+     "omni/01473"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 98267
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 395,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01690",
+     "intermediate_algebra/train/00076",
+     "omni/00852",
+     "intermediate_algebra/train/01249"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 107123
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 410,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00048",
+     "omni/01413",
+     "omni/02796"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 85425
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 418,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "omni/00852",
+     "omni/00136",
+     "intermediate_algebra/train/00048"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 148165
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 432,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "omni/04174",
+     "omni/00852",
+     "omni/01386"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 96530
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 435,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/01036",
+     "omni/02842",
+     "intermediate_algebra/train/00656"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 109,
+    "step_round_field": 108,
+    "valid_tokens": 104010
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 446,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/01788",
+     "intermediate_algebra/train/01234",
+     "omni/00542"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 163402
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 447,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "omni/00852",
+     "intermediate_algebra/train/01205",
+     "algebra/train/01269"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 138977
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 449,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "omni/02316",
+     "omni/02008",
+     "omni/02842"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 113,
+    "step_round_field": 112,
+    "valid_tokens": 136690
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     9,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 471,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01690",
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/00522",
+     "intermediate_algebra/train/00074"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 108418
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 501,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/00524",
+     "intermediate_algebra/train/00522",
+     "intermediate_algebra/train/01234"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 126,
+    "step_round_field": 125,
+    "valid_tokens": 133334
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 506,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "omni/01473",
+     "intermediate_algebra/train/00522",
+     "omni/01386"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 127,
+    "step_round_field": 126,
+    "valid_tokens": 139976
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   512
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   0,
+   0
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 18,
+  "zero_grad_predicted": 18
+ },
+ "H-s202": {
+  "first_momentum_only_round_1based": 73,
+  "grad_clipped_steps": 6,
+  "grad_norm_nonzero_median": 0.38007473945617676,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   0,
+   0,
+   7,
+   13
+  ],
+  "momentum_only_composition": {
+   "hard_common:all_correct+hard_common:all_correct+hard_extra:all_correct+hard_extra:all_correct": 16,
+   "hard_common:all_correct+hard_common:all_correct+hard_extra:all_correct+hard_extra:all_wrong": 2,
+   "hard_common:all_correct+hard_common:all_wrong+hard_extra:all_correct+hard_extra:all_correct": 1,
+   "hard_common:all_wrong+hard_common:all_wrong+hard_extra:all_correct+hard_extra:all_correct": 1
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 290,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/01234",
+     "omni/01690",
+     "omni/02804"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 73,
+    "step_round_field": 72,
+    "valid_tokens": 111918
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 316,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01174",
+     "omni/02316"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 79,
+    "step_round_field": 78,
+    "valid_tokens": 115666
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 327,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "omni/02316",
+     "intermediate_algebra/train/01249",
+     "algebra/train/01269"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 82,
+    "step_round_field": 81,
+    "valid_tokens": 195481
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 333,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "intermediate_algebra/train/00074",
+     "omni/02842",
+     "intermediate_algebra/train/00340"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 84,
+    "step_round_field": 83,
+    "valid_tokens": 145625
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 348,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01690",
+     "omni/00852",
+     "omni/02796"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 87,
+    "step_round_field": 86,
+    "valid_tokens": 110823
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 377,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01097",
+     "omni/00852",
+     "omni/01788",
+     "intermediate_algebra/train/00340"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 95,
+    "step_round_field": 94,
+    "valid_tokens": 106071
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 382,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "intermediate_algebra/train/01095",
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00074"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 96,
+    "step_round_field": 95,
+    "valid_tokens": 103949
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 388,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "intermediate_algebra/train/00076",
+     "omni/01788",
+     "intermediate_algebra/train/00522"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 97,
+    "step_round_field": 96,
+    "valid_tokens": 144213
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 392,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/00301",
+     "intermediate_algebra/train/00048"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 123283
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 408,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02804",
+     "omni/00524",
+     "omni/02008",
+     "intermediate_algebra/train/01174"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 110325
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 413,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00481",
+     "omni/02842",
+     "omni/01012",
+     "omni/02796"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 104,
+    "step_round_field": 103,
+    "valid_tokens": 128725
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     10,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 429,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "intermediate_algebra/train/00340",
+     "omni/02796",
+     "algebra/train/00288"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 87927
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 441,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "omni/04174",
+     "omni/00524",
+     "omni/00622"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 111,
+    "step_round_field": 110,
+    "valid_tokens": 172188
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 446,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02204",
+     "omni/00984",
+     "intermediate_algebra/train/01205",
+     "intermediate_algebra/train/00481"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 223956
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 459,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "intermediate_algebra/train/00301",
+     "intermediate_algebra/train/00074",
+     "omni/02008"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 115,
+    "step_round_field": 114,
+    "valid_tokens": 111612
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 465,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00074",
+     "omni/02842",
+     "intermediate_algebra/train/01174"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 117,
+    "step_round_field": 116,
+    "valid_tokens": 119241
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 472,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "omni/02460",
+     "intermediate_algebra/train/01249",
+     "omni/04174"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 127913
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_wrong",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 484,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/00288",
+     "omni/02316",
+     "omni/00984",
+     "intermediate_algebra/train/01095"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 121,
+    "step_round_field": 120,
+    "valid_tokens": 159779
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 485,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "algebra/train/01269",
+     "intermediate_algebra/train/00048",
+     "omni/00852"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 122,
+    "step_round_field": 121,
+    "valid_tokens": 160624
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_wrong",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 491,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "intermediate_algebra/train/00076",
+     "omni/00984",
+     "omni/02842"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "round_1based": 123,
+    "step_round_field": 122,
+    "valid_tokens": 205275
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   512
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   16,
+   16
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 20,
+  "zero_grad_predicted": 20
+ },
+ "R-s101": {
+  "first_momentum_only_round_1based": 38,
+  "grad_clipped_steps": 2,
+  "grad_norm_nonzero_median": 0.3141741156578064,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   0,
+   9,
+   24,
+   33
+  ],
+  "momentum_only_composition": {
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_correct": 55,
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_wrong": 11
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 150,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00074",
+     "algebra/train/00599",
+     "syn-R3-037"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 38,
+    "step_round_field": 37,
+    "valid_tokens": 57630
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 170,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01013",
+     "syn-R4-021"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 43,
+    "step_round_field": 42,
+    "valid_tokens": 100465
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 181,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "algebra/train/01269",
+     "syn-R4-063",
+     "syn-R5-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 46,
+    "step_round_field": 45,
+    "valid_tokens": 83571
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 199,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02804",
+     "intermediate_algebra/train/00592",
+     "syn-R4-047",
+     "syn-R4-098"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 50,
+    "step_round_field": 49,
+    "valid_tokens": 153793
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     10,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 209,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "intermediate_algebra/train/00467",
+     "syn-R5-038",
+     "syn-R5-031"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 53,
+    "step_round_field": 52,
+    "valid_tokens": 118246
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 232,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01097",
+     "intermediate_algebra/train/01174",
+     "syn-R5-042",
+     "syn-R4-096"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 58,
+    "step_round_field": 57,
+    "valid_tokens": 66111
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 241,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/train/00481",
+     "syn-R5-078",
+     "syn-R5-065"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 61,
+    "step_round_field": 60,
+    "valid_tokens": 89600
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 242,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/00984",
+     "syn-R3-005",
+     "syn-R4-072"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 61,
+    "step_round_field": 60,
+    "valid_tokens": 138387
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 254,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "intermediate_algebra/train/01036",
+     "syn-R3-006",
+     "algebra/train/01661"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 64,
+    "step_round_field": 63,
+    "valid_tokens": 93621
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 260,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "omni/01788",
+     "algebra/train/00599",
+     "syn-R5-080"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 65,
+    "step_round_field": 64,
+    "valid_tokens": 107138
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 266,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "omni/02460",
+     "syn-R2-054",
+     "syn-R4-021"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 67,
+    "step_round_field": 66,
+    "valid_tokens": 110051
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 270,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00431",
+     "intermediate_algebra/train/00592",
+     "intermediate_algebra/train/00145",
+     "syn-R3-096"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 68,
+    "step_round_field": 67,
+    "valid_tokens": 224036
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 274,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "intermediate_algebra/train/00995",
+     "syn-R4-074",
+     "syn-R4-010"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 69,
+    "step_round_field": 68,
+    "valid_tokens": 214836
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 277,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "algebra/train/01269",
+     "syn-R3-038",
+     "syn-R5-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 70,
+    "step_round_field": 69,
+    "valid_tokens": 79849
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 282,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00467",
+     "intermediate_algebra/train/00147",
+     "syn-R5-037",
+     "syn-R2-054"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 71,
+    "step_round_field": 70,
+    "valid_tokens": 144905
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     7,
+     10,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 299,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "omni/00136",
+     "syn-R4-070",
+     "syn-R1-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 75,
+    "step_round_field": 74,
+    "valid_tokens": 168633
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 302,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02804",
+     "omni/01788",
+     "syn-R5-042",
+     "algebra/train/00769"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 76,
+    "step_round_field": 75,
+    "valid_tokens": 118359
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     7,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 305,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00467",
+     "intermediate_algebra/train/00481",
+     "syn-R5-035",
+     "syn-R4-096"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 77,
+    "step_round_field": 76,
+    "valid_tokens": 132956
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 306,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/00147",
+     "syn-R4-074",
+     "algebra/train/00352"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 77,
+    "step_round_field": 76,
+    "valid_tokens": 144634
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 311,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "intermediate_algebra/train/00301",
+     "intermediate_algebra/train/01046",
+     "syn-R2-055"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 78,
+    "step_round_field": 77,
+    "valid_tokens": 104124
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 317,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "algebra/train/01269",
+     "syn-R5-042",
+     "syn-R2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 80,
+    "step_round_field": 79,
+    "valid_tokens": 147488
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 324,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/01413",
+     "syn-R5-065",
+     "syn-R1-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 81,
+    "step_round_field": 80,
+    "valid_tokens": 135123
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 331,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/02804",
+     "syn-R3-006",
+     "syn-R4-090"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 144633
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 332,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "omni/00852",
+     "syn-R5-037",
+     "syn-R4-070"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 133538
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 333,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/04174",
+     "intermediate_algebra/train/01046",
+     "algebra/train/00599"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 84,
+    "step_round_field": 83,
+    "valid_tokens": 87209
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 341,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "algebra/train/01269",
+     "syn-R2-062",
+     "syn-R3-085"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 86,
+    "step_round_field": 85,
+    "valid_tokens": 79067
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 350,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00379",
+     "algebra/train/00599",
+     "syn-R3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 88,
+    "step_round_field": 87,
+    "valid_tokens": 136186
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 354,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "intermediate_algebra/train/00340",
+     "syn-R4-064",
+     "syn-R5-033"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 89,
+    "step_round_field": 88,
+    "valid_tokens": 104471
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 361,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/01097",
+     "syn-R2-069",
+     "syn-R3-005"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 91,
+    "step_round_field": 90,
+    "valid_tokens": 120703
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 365,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/02008",
+     "syn-R5-080",
+     "algebra/train/00769"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 92,
+    "step_round_field": 91,
+    "valid_tokens": 119426
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 370,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "algebra/train/01269",
+     "syn-R4-091",
+     "algebra/train/01732"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 93,
+    "step_round_field": 92,
+    "valid_tokens": 104715
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 377,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01413",
+     "intermediate_algebra/train/01013",
+     "syn-R3-006"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 95,
+    "step_round_field": 94,
+    "valid_tokens": 132895
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 382,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/01205",
+     "syn-R4-072",
+     "syn-R4-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 96,
+    "step_round_field": 95,
+    "valid_tokens": 161908
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 390,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "intermediate_algebra/train/01249",
+     "syn-R3-034",
+     "syn-R4-007"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 193207
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 394,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "intermediate_algebra/train/00477",
+     "syn-R2-068",
+     "algebra/train/01732"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 107765
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 396,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "algebra/train/00288",
+     "syn-R4-096",
+     "syn-R3-020"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 77054
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 407,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/02460",
+     "syn-R5-038",
+     "syn-R2-054"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 108075
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 409,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/01788",
+     "syn-R4-030",
+     "syn-R4-070"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 98871
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 415,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01249",
+     "omni/00524",
+     "syn-R5-063",
+     "syn-R5-037"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 104,
+    "step_round_field": 103,
+    "valid_tokens": 140635
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 418,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "omni/02804",
+     "syn-R4-007",
+     "syn-R3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 143065
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 420,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "omni/01558",
+     "syn-R5-031",
+     "algebra/train/00352"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 120968
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 422,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/01234",
+     "syn-R1-013",
+     "syn-R4-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 106,
+    "step_round_field": 105,
+    "valid_tokens": 130378
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 426,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "intermediate_algebra/train/00076",
+     "syn-R4-090",
+     "syn-R5-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 107,
+    "step_round_field": 106,
+    "valid_tokens": 122133
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 430,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "omni/02460",
+     "syn-R5-075",
+     "syn-R2-054"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 86802
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 431,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/04174",
+     "syn-R4-047",
+     "syn-R3-085"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 125356
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 433,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/04174",
+     "syn-R4-074",
+     "syn-R4-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 109,
+    "step_round_field": 108,
+    "valid_tokens": 159720
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 445,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "omni/01413",
+     "syn-R2-072",
+     "syn-R5-078"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 123616
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 446,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "intermediate_algebra/train/01097",
+     "syn-R4-070",
+     "syn-R4-089"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 109391
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 448,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "intermediate_algebra/train/00592",
+     "syn-R2-069",
+     "syn-R2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 151480
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 452,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01234",
+     "omni/02316",
+     "syn-R4-049",
+     "syn-R4-021"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 113,
+    "step_round_field": 112,
+    "valid_tokens": 157306
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 454,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "intermediate_algebra/train/00481",
+     "syn-R4-074",
+     "syn-R1-013"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 114,
+    "step_round_field": 113,
+    "valid_tokens": 120284
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 463,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01097",
+     "intermediate_algebra/train/00074",
+     "syn-R4-064",
+     "syn-R4-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 116,
+    "step_round_field": 115,
+    "valid_tokens": 150467
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 465,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "omni/01413",
+     "syn-R1-017",
+     "syn-R2-055"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 117,
+    "step_round_field": 116,
+    "valid_tokens": 124890
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 467,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01012",
+     "intermediate_algebra/train/00301",
+     "syn-R2-054",
+     "syn-R3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 117,
+    "step_round_field": 116,
+    "valid_tokens": 100996
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 472,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "algebra/train/01269",
+     "syn-R3-096",
+     "syn-R4-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 111439
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 474,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/01788",
+     "syn-R5-063",
+     "syn-R4-021"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 119,
+    "step_round_field": 118,
+    "valid_tokens": 139977
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 477,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01249",
+     "omni/02316",
+     "syn-R3-006",
+     "syn-R3-035"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 120,
+    "step_round_field": 119,
+    "valid_tokens": 170258
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 479,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "intermediate_algebra/train/00301",
+     "syn-R5-017",
+     "algebra/train/01661"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 120,
+    "step_round_field": 119,
+    "valid_tokens": 93001
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 483,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "algebra/train/00288",
+     "syn-R5-080",
+     "algebra/train/00352"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 121,
+    "step_round_field": 120,
+    "valid_tokens": 135575
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 484,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01558",
+     "omni/02842",
+     "syn-R3-085",
+     "syn-R3-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 121,
+    "step_round_field": 120,
+    "valid_tokens": 111747
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 485,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01174",
+     "omni/01690",
+     "syn-R4-063",
+     "syn-R3-020"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 122,
+    "step_round_field": 121,
+    "valid_tokens": 125477
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 490,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/00852",
+     "syn-R5-065",
+     "syn-R4-098"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 123,
+    "step_round_field": 122,
+    "valid_tokens": 114648
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 493,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/train/00656",
+     "syn-R4-077",
+     "syn-R2-062"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 124,
+    "step_round_field": 123,
+    "valid_tokens": 139455
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 495,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/00074",
+     "syn-R2-072",
+     "syn-R4-041"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 124,
+    "step_round_field": 123,
+    "valid_tokens": 94593
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 497,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/01249",
+     "syn-R4-074",
+     "syn-R4-091"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 125,
+    "step_round_field": 124,
+    "valid_tokens": 183866
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 504,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02008",
+     "omni/00524",
+     "syn-R1-017",
+     "syn-R5-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 126,
+    "step_round_field": 125,
+    "valid_tokens": 149348
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   512
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   16,
+   16
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 66,
+  "zero_grad_predicted": 66
+ },
+ "R-s202": {
+  "first_momentum_only_round_1based": 59,
+  "grad_clipped_steps": 5,
+  "grad_norm_nonzero_median": 0.37543144822120667,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   0,
+   2,
+   3,
+   20
+  ],
+  "momentum_only_composition": {
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_correct": 23,
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_wrong": 2
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     9,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 246,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "intermediate_algebra/train/01234",
+     "algebra/train/00454",
+     "algebra/train/00599"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 59,
+    "step_round_field": 58,
+    "valid_tokens": 72565
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 259,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "algebra/train/01269",
+     "syn-R3-096",
+     "syn-R2-054"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 62,
+    "step_round_field": 61,
+    "valid_tokens": 73381
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 319,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "intermediate_algebra/train/01036",
+     "syn-R4-041",
+     "intermediate_algebra/train/01046"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 77,
+    "step_round_field": 76,
+    "valid_tokens": 91524
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 326,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "omni/01788",
+     "syn-R2-071",
+     "algebra/train/00769"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 79,
+    "step_round_field": 78,
+    "valid_tokens": 73077
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 347,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "omni/00136",
+     "syn-R5-033",
+     "syn-R3-035"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 84,
+    "step_round_field": 83,
+    "valid_tokens": 98949
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 397,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00467",
+     "intermediate_algebra/train/01234",
+     "syn-R4-077",
+     "syn-R2-071"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 97,
+    "step_round_field": 96,
+    "valid_tokens": 107038
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 399,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "omni/00622",
+     "syn-R4-030",
+     "syn-R3-006"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 97,
+    "step_round_field": 96,
+    "valid_tokens": 106531
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 400,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "algebra/train/01269",
+     "syn-R4-063",
+     "syn-R5-075"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 97,
+    "step_round_field": 96,
+    "valid_tokens": 112993
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 403,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/train/00074",
+     "algebra/train/01661",
+     "syn-R2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 44746
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 404,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00076",
+     "syn-R4-047",
+     "algebra/train/01732"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 107726
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 417,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00592",
+     "omni/00524",
+     "syn-R4-010",
+     "algebra/train/00599"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 160955
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 434,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/01097",
+     "algebra/train/00352",
+     "syn-R2-054"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 106,
+    "step_round_field": 105,
+    "valid_tokens": 60083
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 438,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00592",
+     "intermediate_algebra/train/00656",
+     "syn-R5-035",
+     "syn-R4-021"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 107,
+    "step_round_field": 106,
+    "valid_tokens": 160831
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 439,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01095",
+     "syn-R2-062",
+     "syn-R2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 107,
+    "step_round_field": 106,
+    "valid_tokens": 81518
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 444,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "intermediate_algebra/train/00522",
+     "syn-R3-085",
+     "syn-R5-042"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 79550
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 454,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "omni/02316",
+     "syn-R3-037",
+     "syn-R3-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 111,
+    "step_round_field": 110,
+    "valid_tokens": 83976
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 464,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "omni/01690",
+     "syn-R5-044",
+     "syn-R2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 113,
+    "step_round_field": 112,
+    "valid_tokens": 76566
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 465,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/02804",
+     "algebra/train/00769",
+     "syn-R4-070"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 114,
+    "step_round_field": 113,
+    "valid_tokens": 121891
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 475,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/01788",
+     "algebra/train/01661",
+     "syn-R4-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 116,
+    "step_round_field": 115,
+    "valid_tokens": 81845
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 477,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00656",
+     "syn-R3-085",
+     "syn-R1-013"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 117,
+    "step_round_field": 116,
+    "valid_tokens": 81177
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 481,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01234",
+     "omni/02460",
+     "syn-R2-055",
+     "syn-R2-062"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 96268
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 490,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/00522",
+     "syn-R5-037",
+     "syn-R5-035"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 120,
+    "step_round_field": 119,
+    "valid_tokens": 121697
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     9,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 493,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "omni/02316",
+     "syn-R2-071",
+     "intermediate_algebra/train/01046"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 121,
+    "step_round_field": 120,
+    "valid_tokens": 91630
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 497,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/01013",
+     "syn-R2-069"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 122,
+    "step_round_field": 121,
+    "valid_tokens": 80717
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 517,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/04174",
+     "syn-R5-078",
+     "syn-R2-072"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 127,
+    "step_round_field": 126,
+    "valid_tokens": 76992
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   524
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   12,
+   12
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 25,
+  "zero_grad_predicted": 25
+ },
+ "U-s101": {
+  "first_momentum_only_round_1based": 27,
+  "grad_clipped_steps": 8,
+  "grad_norm_nonzero_median": 0.3539845943450928,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   1,
+   7,
+   16,
+   29
+  ],
+  "momentum_only_composition": {
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_correct": 42,
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_wrong": 11
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 107,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "intermediate_algebra/train/00048",
+     "syn-U3-081",
+     "syn-U3-100"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 27,
+    "step_round_field": 26,
+    "valid_tokens": 69963
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 157,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "omni/00852",
+     "syn-U3-112",
+     "number_theory/train/00437"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 40,
+    "step_round_field": 39,
+    "valid_tokens": 89823
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 197,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/01036",
+     "syn-U1-012",
+     "syn-U3-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 50,
+    "step_round_field": 49,
+    "valid_tokens": 64328
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 204,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/00340",
+     "syn-U3-032",
+     "number_theory/train/00817"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 51,
+    "step_round_field": 50,
+    "valid_tokens": 84804
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 220,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/00481",
+     "syn-U2-036",
+     "syn-U3-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 55,
+    "step_round_field": 54,
+    "valid_tokens": 95083
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 238,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "omni/02460",
+     "syn-U2-036",
+     "syn-U3-079"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 60,
+    "step_round_field": 59,
+    "valid_tokens": 103502
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 240,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "omni/04174",
+     "number_theory/train/00437",
+     "syn-U2-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 60,
+    "step_round_field": 59,
+    "valid_tokens": 55046
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 254,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "intermediate_algebra/train/01036",
+     "syn-U1-012",
+     "number_theory/train/00107"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 64,
+    "step_round_field": 63,
+    "valid_tokens": 53761
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 258,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/00147",
+     "syn-U2-034",
+     "number_theory/train/00149"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 65,
+    "step_round_field": 64,
+    "valid_tokens": 70806
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 264,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/00852",
+     "syn-U2-008",
+     "syn-U1-098"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 66,
+    "step_round_field": 65,
+    "valid_tokens": 98231
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 274,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "intermediate_algebra/train/00995",
+     "syn-U1-063",
+     "syn-U2-027"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 69,
+    "step_round_field": 68,
+    "valid_tokens": 161466
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 277,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "algebra/train/01269",
+     "syn-U2-092",
+     "syn-U3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 70,
+    "step_round_field": 69,
+    "valid_tokens": 68973
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 292,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "intermediate_algebra/train/00656",
+     "number_theory/train/00817",
+     "syn-U3-118"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 73,
+    "step_round_field": 72,
+    "valid_tokens": 97605
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 327,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02204",
+     "intermediate_algebra/train/00147",
+     "syn-U3-078",
+     "syn-U3-099"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 82,
+    "step_round_field": 81,
+    "valid_tokens": 166957
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 332,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "omni/00852",
+     "syn-U3-071",
+     "syn-U1-040"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 112519
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 342,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00592",
+     "intermediate_algebra/train/00522",
+     "syn-U3-048",
+     "syn-U2-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 86,
+    "step_round_field": 85,
+    "valid_tokens": 187423
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 351,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/04174",
+     "syn-U3-071",
+     "syn-U1-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 88,
+    "step_round_field": 87,
+    "valid_tokens": 132392
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 354,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "intermediate_algebra/train/00340",
+     "syn-U1-032",
+     "syn-U3-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 89,
+    "step_round_field": 88,
+    "valid_tokens": 121144
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 361,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/01097",
+     "syn-U3-091",
+     "syn-U3-029"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 91,
+    "step_round_field": 90,
+    "valid_tokens": 150064
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 368,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "omni/00984",
+     "syn-U2-018",
+     "syn-U2-092"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 92,
+    "step_round_field": 91,
+    "valid_tokens": 145617
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 369,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/02842",
+     "number_theory/train/00817",
+     "syn-U1-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 93,
+    "step_round_field": 92,
+    "valid_tokens": 97197
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 370,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "algebra/train/01269",
+     "syn-U3-118",
+     "number_theory/train/00437"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 93,
+    "step_round_field": 92,
+    "valid_tokens": 129876
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 376,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00467",
+     "intermediate_algebra/train/01036",
+     "syn-U2-068",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 94,
+    "step_round_field": 93,
+    "valid_tokens": 127389
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 377,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01413",
+     "number_theory/train/00149",
+     "syn-U1-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 95,
+    "step_round_field": 94,
+    "valid_tokens": 131781
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 393,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00522",
+     "syn-U2-068",
+     "syn-U3-097"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 148295
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 396,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "algebra/train/00288",
+     "syn-U3-081",
+     "syn-U1-025"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 99,
+    "step_round_field": 98,
+    "valid_tokens": 75660
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 397,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00431",
+     "intermediate_algebra/train/00592",
+     "syn-U2-034",
+     "number_theory/train/00817"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 100,
+    "step_round_field": 99,
+    "valid_tokens": 184377
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 400,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "omni/02204",
+     "number_theory/train/00014",
+     "number_theory/train/00149"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 100,
+    "step_round_field": 99,
+    "valid_tokens": 153777
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 402,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "intermediate_algebra/train/00048",
+     "syn-U3-108",
+     "syn-U2-098"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 101,
+    "step_round_field": 100,
+    "valid_tokens": 125064
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 406,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "intermediate_algebra/train/01234",
+     "syn-U1-040",
+     "syn-U1-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 137773
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 407,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/02460",
+     "syn-U3-034",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 170185
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 409,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "omni/01788",
+     "syn-U3-079",
+     "syn-U1-040"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 82260
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 410,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/01205",
+     "syn-U3-117",
+     "syn-U1-025"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 159773
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 411,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00522",
+     "syn-U3-034",
+     "syn-U1-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 161693
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 417,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01097",
+     "intermediate_algebra/train/00147",
+     "syn-U3-094",
+     "syn-U3-118"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 114383
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 418,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "omni/02804",
+     "syn-U3-008",
+     "syn-U3-088"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 98033
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 425,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02008",
+     "algebra/train/01269",
+     "syn-U3-048",
+     "number_theory/train/00817"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 107,
+    "step_round_field": 106,
+    "valid_tokens": 101557
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 430,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "omni/02460",
+     "syn-U3-069",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 135622
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 435,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02204",
+     "intermediate_algebra/train/01036",
+     "syn-U1-098",
+     "syn-U3-070"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 109,
+    "step_round_field": 108,
+    "valid_tokens": 168608
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     10,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 436,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "intermediate_algebra/train/01205",
+     "syn-U3-078",
+     "syn-U3-080"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 109,
+    "step_round_field": 108,
+    "valid_tokens": 154853
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 445,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "omni/01413",
+     "syn-U3-117",
+     "syn-U1-052"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 112449
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 451,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01558",
+     "intermediate_algebra/train/00147",
+     "syn-U3-070",
+     "syn-U3-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 113,
+    "step_round_field": 112,
+    "valid_tokens": 113945
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 453,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00656",
+     "omni/02842",
+     "syn-U3-081",
+     "syn-U2-008"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 114,
+    "step_round_field": 113,
+    "valid_tokens": 126700
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 464,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "algebra/train/00288",
+     "syn-U3-097",
+     "syn-U2-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 116,
+    "step_round_field": 115,
+    "valid_tokens": 119327
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 472,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "algebra/train/01269",
+     "syn-U1-036",
+     "syn-U3-038"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 103890
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     14,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 474,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/01788",
+     "syn-U2-008",
+     "syn-U2-068"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 119,
+    "step_round_field": 118,
+    "valid_tokens": 182923
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 475,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "intermediate_algebra/train/00340",
+     "number_theory/train/00149",
+     "syn-U3-112"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 119,
+    "step_round_field": 118,
+    "valid_tokens": 106650
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 476,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/00522",
+     "syn-U3-069",
+     "syn-U3-106"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 119,
+    "step_round_field": 118,
+    "valid_tokens": 126122
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     13,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 490,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/00852",
+     "syn-U2-077",
+     "syn-U3-094"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 123,
+    "step_round_field": 122,
+    "valid_tokens": 141103
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 492,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01234",
+     "omni/04174",
+     "syn-U3-081",
+     "syn-U2-018"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 123,
+    "step_round_field": 122,
+    "valid_tokens": 139335
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 493,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/train/00656",
+     "syn-U3-032",
+     "syn-U2-009"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 124,
+    "step_round_field": 123,
+    "valid_tokens": 96838
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     4,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 495,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/00074",
+     "syn-U3-117",
+     "syn-U1-053"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 124,
+    "step_round_field": 123,
+    "valid_tokens": 113044
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 497,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/01249",
+     "syn-U1-063",
+     "syn-U3-118"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 125,
+    "step_round_field": 124,
+    "valid_tokens": 162416
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   512
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   0,
+   0
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 53,
+  "zero_grad_predicted": 53
+ },
+ "U-s202": {
+  "first_momentum_only_round_1based": 15,
+  "grad_clipped_steps": 2,
+  "grad_norm_nonzero_median": 0.36790844798088074,
+  "lr_values": [
+   2e-06
+  ],
+  "momentum_only_all_adv_zero": true,
+  "momentum_only_by_quarter": [
+   1,
+   8,
+   23,
+   33
+  ],
+  "momentum_only_composition": {
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_correct": 56,
+   "aux:all_correct+aux:all_correct+hard_common:all_correct+hard_common:all_wrong": 8,
+   "aux:all_correct+aux:all_correct+hard_common:all_wrong+hard_common:all_wrong": 1
+  },
+  "momentum_only_steps": [
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 57,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00379",
+     "algebra/train/00288",
+     "syn-U2-008",
+     "syn-U3-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 15,
+    "step_round_field": 14,
+    "valid_tokens": 69351
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 187,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/01097",
+     "syn-U2-034",
+     "number_theory/train/00107"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 47,
+    "step_round_field": 46,
+    "valid_tokens": 73561
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 193,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01690",
+     "intermediate_algebra/train/00147",
+     "syn-U3-026",
+     "syn-U3-078"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 49,
+    "step_round_field": 48,
+    "valid_tokens": 58737
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 196,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/02842",
+     "syn-U3-112",
+     "syn-U1-025"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 49,
+    "step_round_field": 48,
+    "valid_tokens": 82579
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 222,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00995",
+     "syn-U3-079",
+     "syn-U3-117"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 56,
+    "step_round_field": 55,
+    "valid_tokens": 151931
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 237,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "omni/00984",
+     "syn-U3-078",
+     "syn-U3-029"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 60,
+    "step_round_field": 59,
+    "valid_tokens": 73138
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 238,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00136",
+     "intermediate_algebra/train/00147",
+     "syn-U2-034",
+     "syn-U3-118"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 60,
+    "step_round_field": 59,
+    "valid_tokens": 104981
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 245,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/02796",
+     "number_theory/train/00437",
+     "syn-U3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 62,
+    "step_round_field": 61,
+    "valid_tokens": 67408
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 246,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00076",
+     "syn-U3-099",
+     "syn-U3-028"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 62,
+    "step_round_field": 61,
+    "valid_tokens": 87498
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 262,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "omni/01386",
+     "number_theory/train/00149",
+     "syn-U2-008"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 66,
+    "step_round_field": 65,
+    "valid_tokens": 55396
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 265,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "intermediate_algebra/train/00522",
+     "syn-U1-098",
+     "syn-U1-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 67,
+    "step_round_field": 66,
+    "valid_tokens": 73595
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 266,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00467",
+     "omni/00136",
+     "syn-U3-100",
+     "syn-U1-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 67,
+    "step_round_field": 66,
+    "valid_tokens": 125546
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     7,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 272,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00301",
+     "omni/02460",
+     "syn-U3-097",
+     "syn-U2-092"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 68,
+    "step_round_field": 67,
+    "valid_tokens": 83629
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     12,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 281,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "omni/02796",
+     "syn-U1-012",
+     "number_theory/train/00817"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 71,
+    "step_round_field": 70,
+    "valid_tokens": 77270
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 288,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/00852",
+     "syn-U2-092",
+     "syn-U3-071"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 72,
+    "step_round_field": 71,
+    "valid_tokens": 88442
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     9,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 309,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00522",
+     "omni/02804",
+     "syn-U3-078",
+     "syn-U3-100"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 78,
+    "step_round_field": 77,
+    "valid_tokens": 89043
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 310,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01558",
+     "omni/01413",
+     "syn-U3-081",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 78,
+    "step_round_field": 77,
+    "valid_tokens": 124943
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 314,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "omni/01788",
+     "syn-U3-017",
+     "number_theory/train/00708"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 79,
+    "step_round_field": 78,
+    "valid_tokens": 70136
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     12,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 318,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/00431",
+     "syn-U3-078",
+     "syn-U1-040"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 80,
+    "step_round_field": 79,
+    "valid_tokens": 91340
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     9,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 322,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01788",
+     "syn-U2-077",
+     "number_theory/train/00437"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 81,
+    "step_round_field": 80,
+    "valid_tokens": 75835
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 329,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00522",
+     "syn-U3-048",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 78144
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     5,
+     9,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 331,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "omni/01413",
+     "syn-U2-068",
+     "syn-U3-117"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 83,
+    "step_round_field": 82,
+    "valid_tokens": 82192
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 341,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01690",
+     "algebra/train/01269",
+     "syn-U3-112",
+     "syn-U2-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 86,
+    "step_round_field": 85,
+    "valid_tokens": 113071
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 360,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "omni/01012",
+     "syn-U3-100",
+     "syn-U3-108"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 90,
+    "step_round_field": 89,
+    "valid_tokens": 108113
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     10,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 361,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "omni/02204",
+     "syn-U1-032",
+     "syn-U3-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 91,
+    "step_round_field": 90,
+    "valid_tokens": 151252
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 365,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02460",
+     "omni/01413",
+     "syn-U3-077",
+     "syn-U3-048"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 92,
+    "step_round_field": 91,
+    "valid_tokens": 118298
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 366,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "intermediate_algebra/train/00074",
+     "syn-U3-099",
+     "number_theory/train/00107"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 92,
+    "step_round_field": 91,
+    "valid_tokens": 90114
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     6,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 376,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "intermediate_algebra/train/00522",
+     "syn-U2-012",
+     "number_theory/train/00832"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 94,
+    "step_round_field": 93,
+    "valid_tokens": 77325
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     5,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 377,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "intermediate_algebra/train/01097",
+     "syn-U3-013",
+     "syn-U1-040"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 95,
+    "step_round_field": 94,
+    "valid_tokens": 94639
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     6,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 379,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02008",
+     "omni/00852",
+     "syn-U1-053",
+     "syn-U3-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 95,
+    "step_round_field": 94,
+    "valid_tokens": 107608
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     7,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 383,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01788",
+     "number_theory/train/00149",
+     "syn-U3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 96,
+    "step_round_field": 95,
+    "valid_tokens": 84638
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 384,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "omni/02796",
+     "syn-U3-094",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 96,
+    "step_round_field": 95,
+    "valid_tokens": 66121
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 389,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "intermediate_algebra/train/00477",
+     "syn-U2-098",
+     "syn-U2-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 115201
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     6,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 390,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "omni/01386",
+     "syn-U3-008",
+     "syn-U3-071"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 99370
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 391,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/train/00074",
+     "number_theory/train/00107",
+     "syn-U2-018"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 60358
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 392,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00076",
+     "syn-U3-100",
+     "number_theory/train/00437"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 98,
+    "step_round_field": 97,
+    "valid_tokens": 97999
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 397,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "intermediate_algebra/train/00522",
+     "syn-U3-117",
+     "syn-U1-045"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 100,
+    "step_round_field": 99,
+    "valid_tokens": 82692
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     2,
+     9,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 404,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/04174",
+     "omni/00136",
+     "syn-U3-099",
+     "syn-U3-080"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 101,
+    "step_round_field": 100,
+    "valid_tokens": 112039
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     4,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 408,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01690",
+     "omni/02804",
+     "syn-U3-059",
+     "syn-U3-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 102,
+    "step_round_field": 101,
+    "valid_tokens": 106867
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     6,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 409,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02204",
+     "omni/02804",
+     "number_theory/train/00149",
+     "syn-U2-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 103,
+    "step_round_field": 102,
+    "valid_tokens": 164556
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 417,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/00524",
+     "syn-U2-008",
+     "syn-U1-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 69206
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 419,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01788",
+     "intermediate_algebra/train/00147",
+     "syn-U1-032",
+     "syn-U3-080"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 105,
+    "step_round_field": 104,
+    "valid_tokens": 83417
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     7,
+     9,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 422,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00074",
+     "intermediate_algebra/train/01097",
+     "number_theory/train/00797",
+     "syn-U3-026"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 106,
+    "step_round_field": 105,
+    "valid_tokens": 64707
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     8,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 427,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00076",
+     "intermediate_algebra/train/01095",
+     "syn-U2-009",
+     "syn-U2-018"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 107,
+    "step_round_field": 106,
+    "valid_tokens": 70395
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     8,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 432,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "intermediate_algebra/train/00522",
+     "syn-U3-013",
+     "syn-U3-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 108,
+    "step_round_field": 107,
+    "valid_tokens": 98894
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     7,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 433,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01386",
+     "algebra/train/01269",
+     "syn-U3-077",
+     "syn-U3-091"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 109,
+    "step_round_field": 108,
+    "valid_tokens": 87345
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     5,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 438,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02796",
+     "intermediate_algebra/train/00481",
+     "syn-U3-100",
+     "syn-U3-050"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 110,
+    "step_round_field": 109,
+    "valid_tokens": 90376
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_wrong",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     7,
+     11,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 445,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "omni/00984",
+     "number_theory/train/00683",
+     "syn-U2-098"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 84897
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     10,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 448,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00076",
+     "syn-U3-070",
+     "syn-U3-108"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 112,
+    "step_round_field": 111,
+    "valid_tokens": 98911
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     8,
+     11
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 454,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01174",
+     "intermediate_algebra/train/00074",
+     "syn-U3-048",
+     "syn-U3-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 114,
+    "step_round_field": 113,
+    "valid_tokens": 77735
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 460,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "omni/04174",
+     "syn-U3-100",
+     "syn-U3-017"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 115,
+    "step_round_field": 114,
+    "valid_tokens": 65662
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     9,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 463,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/01788",
+     "number_theory/train/00107",
+     "syn-U3-032"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 116,
+    "step_round_field": 115,
+    "valid_tokens": 79207
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     6,
+     8,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 465,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/00340",
+     "intermediate_algebra/train/00656",
+     "syn-U3-013",
+     "syn-U2-012"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 117,
+    "step_round_field": 116,
+    "valid_tokens": 78447
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     6,
+     7,
+     10,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 469,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01234",
+     "omni/02460",
+     "syn-U3-112",
+     "syn-U2-009"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 95478
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     2,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 471,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02316",
+     "omni/01558",
+     "syn-U3-028",
+     "syn-U3-080"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 106169
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     3,
+     4,
+     11,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 472,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00852",
+     "omni/02008",
+     "syn-U3-078",
+     "syn-U3-088"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 118,
+    "step_round_field": 117,
+    "valid_tokens": 91049
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     13,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 478,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/00522",
+     "syn-U3-071",
+     "syn-U3-108"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 120,
+    "step_round_field": 119,
+    "valid_tokens": 90156
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     7,
+     8,
+     10
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 479,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01095",
+     "omni/01788",
+     "syn-U1-098",
+     "syn-U1-032"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 120,
+    "step_round_field": 119,
+    "valid_tokens": 83369
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     3,
+     10,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 483,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/01413",
+     "intermediate_algebra/train/00379",
+     "syn-U1-036",
+     "number_theory/train/00817"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 121,
+    "step_round_field": 120,
+    "valid_tokens": 121681
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     1,
+     12,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 492,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01205",
+     "omni/04174",
+     "syn-U3-038",
+     "syn-U2-034"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 123,
+    "step_round_field": 122,
+    "valid_tokens": 92681
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     5,
+     6,
+     9,
+     15
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 502,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00524",
+     "omni/01386",
+     "number_theory/train/00014",
+     "syn-U3-063"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 126,
+    "step_round_field": 125,
+    "valid_tokens": 82229
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_wrong",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     0,
+     3,
+     11,
+     13
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 2,
+    "obs_zero": true,
+    "opt_step": 503,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/00984",
+     "intermediate_algebra/train/00147",
+     "syn-U3-112",
+     "syn-U3-032"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 126,
+    "step_round_field": 125,
+    "valid_tokens": 76264
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     1,
+     4,
+     8,
+     12
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 3,
+    "obs_zero": true,
+    "opt_step": 504,
+    "pred_zero": true,
+    "prompt_ids": [
+     "intermediate_algebra/train/01036",
+     "intermediate_algebra/train/01249",
+     "syn-U3-118",
+     "syn-U2-077"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 126,
+    "step_round_field": 125,
+    "valid_tokens": 105783
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     2,
+     5,
+     8,
+     9
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 0,
+    "obs_zero": true,
+    "opt_step": 505,
+    "pred_zero": true,
+    "prompt_ids": [
+     "algebra/train/01269",
+     "omni/04174",
+     "syn-U1-052",
+     "syn-U3-117"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 127,
+    "step_round_field": 126,
+    "valid_tokens": 73703
+   },
+   {
+    "all_32_adv_zero": true,
+    "classes": [
+     "all_correct",
+     "all_correct",
+     "all_correct",
+     "all_correct"
+    ],
+    "grad_clipped": false,
+    "grad_norm_preclip": 0.0,
+    "groups": [
+     4,
+     5,
+     11,
+     14
+    ],
+    "loss": 0.0,
+    "lr": 2e-06,
+    "minibatch": 1,
+    "obs_zero": true,
+    "opt_step": 510,
+    "pred_zero": true,
+    "prompt_ids": [
+     "omni/02842",
+     "intermediate_algebra/train/00467",
+     "syn-U1-032",
+     "syn-U2-036"
+    ],
+    "roles": [
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux"
+    ],
+    "round_1based": 128,
+    "step_round_field": 127,
+    "valid_tokens": 111727
+   }
+  ],
+  "n_steps": 512,
+  "opt_step_first_last": [
+   1,
+   512
+  ],
+  "pred_obs_mismatch": [],
+  "role_composition_2_2_all": true,
+  "superseded_step_rows_valid_tokens_match": [
+   132,
+   132
+  ],
+  "valid_tokens_match": 512,
+  "valid_tokens_mismatch": [],
+  "zero_grad_observed": 65,
+  "zero_grad_predicted": 65
+ }
+}

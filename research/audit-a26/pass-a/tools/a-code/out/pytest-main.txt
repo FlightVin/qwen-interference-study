@@ -1,0 +1,273 @@
+......................................................                   [100%]
+==================================== PASSES ====================================
+_________________________ test_report_tables_synthetic _________________________
+----------------------------- Captured stdout call -----------------------------
+| Seed | H | R | U | R − U (95% CI, conditional) | R − H (95% CI, conditional) | U − H (95% CI, conditional) |
+|---|---|---|---|---|---|---|
+| 101 | 0.410 | 0.505 | 0.444 | +0.060 [+0.042, +0.079] | +0.094 [+0.070, +0.119] | +0.034 [+0.012, +0.056] |
+| 202 | missing | 0.494 | 0.424 | +0.070 [+0.050, +0.091] | missing | missing |
+| **Mean** | missing | 0.500 | 0.434 | +0.065 [+0.052, +0.078] | missing | missing |
+
+Base model pass@1 0.345, pass@8 0.966.
+
+| Seed | H pass@8 | R pass@8 | U pass@8 |
+|---|---|---|---|
+| 101 | 0.983 | 0.997 | 0.992 |
+| 202 | missing | 0.996 | 0.990 |
+{
+ "R-U": {
+  "per_seed": [
+   0.060302734375,
+   0.0703125
+  ],
+  "same_sign": true,
+  "abs_gap": 0.010009765625,
+  "gap_over_mean": 0.15327102803738318,
+  "t_two_seed_df1": {
+   "lo": 0.0017145514913131654,
+   "hi": 0.12890068288368683,
+   "warning": "two seeds, df = 1: not strong evidence about training variability"
+  }
+ }
+}
+_______________________ test_per_problem_bands_and_pairs _______________________
+----------------------------- Captured stdout call -----------------------------
+{
+ "base": {
+  "pass1": 0.296875,
+  "pass8": 0.816670065504882,
+  "zero": 1
+ },
+ "bands": {
+  "B0": {
+   "size": 1,
+   "baseline_pass1_heldout16": 0.0,
+   "rule": "base samples 0-15 correct in [0,0] of 16"
+  },
+  "B1": {
+   "size": 5,
+   "baseline_pass1_heldout16": 0.0,
+   "rule": "base samples 0-15 correct in [1,5] of 16"
+  },
+  "B2": {
+   "size": 5,
+   "baseline_pass1_heldout16": 0.0,
+   "rule": "base samples 0-15 correct in [6,10] of 16"
+  },
+  "B3": {
+   "size": 5,
+   "baseline_pass1_heldout16": 0.0,
+   "rule": "base samples 0-15 correct in [11,15] of 16"
+  },
+  "B4": {
+   "size": 4,
+   "baseline_pass1_heldout16": 0.09375,
+   "rule": "base samples 0-15 correct in [16,16] of 16"
+  }
+ },
+ "paired": {
+  "R-U/s101": {
+   "pass1": {
+    "est": 0.09375,
+    "lo": 0.09375,
+    "hi": 0.09375
+   },
+   "pass8": {
+    "est": 0.08572476540885884,
+    "lo": 0.03423083019594421,
+    "hi": 0.14553601389958448
+   }
+  },
+  "R-H/s101": "missing",
+  "R-U/s202": "missing",
+  "R-H/s202": "missing"
+ }
+}
+{
+ "R-s101": {
+  "pass1": 0.421875,
+  "pass8": 0.9523924778718994,
+  "improved": 20,
+  "unchanged": 0,
+  "worse": 0,
+  "zero": 0
+ },
+ "U-s101": {
+  "pass1": 0.328125,
+  "pass8": 0.8666677124630408,
+  "improved": 20,
+  "unchanged": 0,
+  "worse": 0,
+  "zero": 0
+ }
+}
+__________________ test_interference_windows_and_transitions ___________________
+----------------------------- Captured stdout call -----------------------------
+qis-main-R-s101-sym {'1-16': (0.542, 0.0, 0.667, 0.333), '33-48': (0.0, 1.0, 0.0, 0.0)}
+___________________ test_interference_schedule_match_h_vs_r ____________________
+----------------------------- Captured stdout call -----------------------------
+qis-main-H-s202-sym {'1-16': (0.0, 1.0, 0.0, 0.0)}
+qis-main-R-s202-sym {'1-16': (0.0, 1.0, 0.0, 0.0)}
+____________________________ test_cue_gain_and_did _____________________________
+----------------------------- Captured stdout call -----------------------------
+{
+ "policies": {
+  "base": {
+   "uncued": {
+    "pass1": 0.25,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   },
+   "cued": {
+    "pass1": 0.25,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   }
+  },
+  "R-s101": {
+   "uncued": {
+    "pass1": 0.25,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   },
+   "cued": {
+    "pass1": 0.75,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   }
+  },
+  "U-s101": {
+   "uncued": {
+    "pass1": 0.25,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   },
+   "cued": {
+    "pass1": 0.5,
+    "completions": 192,
+    "truncated": 0.0,
+    "mean_tokens": 3.0,
+    "median_tokens": 3.0,
+    "mentions_factor": 1.0
+   }
+  }
+ },
+ "cue_gain": {
+  "base": {
+   "est": 0.0,
+   "lo": 0.0,
+   "hi": 0.0
+  },
+  "R-s101": {
+   "est": 0.5,
+   "lo": 0.5,
+   "hi": 0.5
+  },
+  "U-s101": {
+   "est": 0.25,
+   "lo": 0.25,
+   "hi": 0.25
+  }
+ },
+ "did": {
+  "s101": {
+   "est": 0.25,
+   "lo": 0.25,
+   "hi": 0.25
+  },
+  "s202": "missing"
+ },
+ "missing": [
+  "R-s202-uncued",
+  "R-s202-cued",
+  "U-s202-uncued",
+  "U-s202-cued"
+ ]
+}
+________________ test_boxed_inside_reasoning_cannot_earn_reward ________________
+----------------------------- Captured stderr call -----------------------------
+Timeout is disabled as parsing_timeout is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+Timeout is disabled as timeout_seconds is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+______________ test_incomplete_response_gets_truncation_treatment ______________
+----------------------------- Captured stderr call -----------------------------
+Timeout is disabled as parsing_timeout is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+Timeout is disabled as timeout_seconds is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+_____________________________ test_correct_integer _____________________________
+----------------------------- Captured stderr call -----------------------------
+Timeout is disabled as parsing_timeout is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+Timeout is disabled as timeout_seconds is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+_____________________ test_timeout_is_unknown_and_retried ______________________
+----------------------------- Captured stderr call -----------------------------
+Timeout is disabled as parsing_timeout is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+Timeout is disabled as timeout_seconds is None or <= 0, you must provide                         the logic for timeout interuption yourself to prevent code getting stuck.
+=========================== short test summary info ============================
+PASSED tests/test_analysis.py::test_seed_contrasts_and_t_interval
+PASSED tests/test_analysis.py::test_bootstrap_deterministic_and_paired
+PASSED tests/test_analysis.py::test_unpaired_inputs_rejected
+PASSED tests/test_analysis.py::test_calib_select_tie_prefers_1e6_and_rejects_truncation
+PASSED tests/test_analysis.py::test_all_boxed_split_and_nested
+PASSED tests/test_analysis.py::test_report_tables_synthetic
+PASSED tests/test_analysis.py::test_per_problem_bands_and_pairs
+PASSED tests/test_analysis.py::test_interference_windows_and_transitions
+PASSED tests/test_analysis.py::test_interference_schedule_match_h_vs_r
+PASSED tests/test_analysis.py::test_cue_gain_and_did
+PASSED tests/test_capsched.py::test_training_caps
+PASSED tests/test_capsched.py::test_eval_caps
+PASSED tests/test_capsched.py::test_no_schedule_falls_back
+PASSED tests/test_diag_local.py::test_prompt_draws_deterministic_and_paired
+PASSED tests/test_diag_local.py::test_snapshot_restore_model_and_optimizer
+PASSED tests/test_diag_local.py::test_restore_fresh_optimizer_clears_state
+PASSED tests/test_diag_local.py::test_branch_order_seed_major_and_resume
+PASSED tests/test_eval_extend.py::test_select_frozen_panel
+PASSED tests/test_eval_extend.py::test_plan_boundaries
+PASSED tests/test_eval_extend.py::test_combine_scores_both_caps
+PASSED tests/test_grpo.py::test_population_std_advantage
+PASSED tests/test_grpo.py::test_all_equal_groups_exactly_zero_and_group_boundaries
+PASSED tests/test_grpo.py::test_rewarded_response_signed_contribution
+PASSED tests/test_grpo.py::test_clip_cases[1.5-1.0-1.28-1]
+PASSED tests/test_grpo.py::test_clip_cases[1.5--1.0--1.5-0]
+PASSED tests/test_grpo.py::test_clip_cases[0.5--1.0--0.8-1]
+PASSED tests/test_grpo.py::test_clip_cases[0.5-1.0-0.5-0]
+PASSED tests/test_grpo.py::test_clip_cases[1.1-1.0-1.1-0]
+PASSED tests/test_grpo.py::test_clip_cases[3.0--1.0--3.0-0]
+PASSED tests/test_grpo.py::test_accumulation_equals_full_batch_reduction
+PASSED tests/test_grpo.py::test_matches_verl_seq_mean_token_mean
+PASSED tests/test_grpo.py::test_minibatch_plan_balanced_and_complete
+PASSED tests/test_grpo.py::test_pass_at_k
+PASSED tests/test_grpo.py::test_checksum_exact_across_order_and_device_independent_of_summation
+PASSED tests/test_lmhead.py::test_recompute_matches_stored
+PASSED tests/test_mode_diag.py::test_split_final_uses_first_close
+PASSED tests/test_mode_diag.py::test_boxed_inside_reasoning_cannot_earn_reward
+PASSED tests/test_mode_diag.py::test_incomplete_response_gets_truncation_treatment
+PASSED tests/test_schedule.py::test_rounds_unique_and_deterministic
+PASSED tests/test_schedule.py::test_paired_streams
+PASSED tests/test_schedule.py::test_cycles_cover_pool
+PASSED tests/test_schedule.py::test_h_extra_balanced_over_time
+PASSED tests/test_schedule.py::test_calibration_arm
+PASSED tests/test_splits.py::test_last_boxed_nested
+PASSED tests/test_splits.py::test_seed_streams_stable_and_distinct
+PASSED tests/test_splits.py::test_splits_deterministic_and_grouped
+PASSED tests/test_verify.py::test_correct_integer
+PASSED tests/test_verify.py::test_only_last_boxed_counts
+PASSED tests/test_verify.py::test_number_in_reasoning_not_extracted
+PASSED tests/test_verify.py::test_missing_box_is_no_answer
+PASSED tests/test_verify.py::test_equivalent_forms
+PASSED tests/test_verify.py::test_truncated_correct_gets_zero
+PASSED tests/test_verify.py::test_timeout_is_unknown_and_retried
+PASSED tests/test_verify.py::test_unknown_status_propagates
+54 passed in 26.55s

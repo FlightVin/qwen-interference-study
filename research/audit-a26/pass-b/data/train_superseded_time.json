@@ -1,0 +1,73 @@
+{
+ "H-s101": {
+  "canonical_round_seconds": 94549.2626144886,
+  "per_job": {},
+  "superseded_eval_seconds": 0,
+  "superseded_round_rows": 0,
+  "superseded_round_seconds": 0
+ },
+ "H-s202": {
+  "canonical_round_seconds": 93727.08880352974,
+  "per_job": {
+   "11082192": {
+    "eval_s": 2565.969347000122,
+    "round_s": 2998.8245742321014,
+    "rounds": 4
+   }
+  },
+  "superseded_eval_seconds": 2565.969347000122,
+  "superseded_round_rows": 4,
+  "superseded_round_seconds": 2998.8245742321014
+ },
+ "R-s101": {
+  "canonical_round_seconds": 75452.38011193275,
+  "per_job": {
+   "11081724": {
+    "eval_s": 3527.718276500702,
+    "round_s": 3199.906701564789,
+    "rounds": 4
+   }
+  },
+  "superseded_eval_seconds": 3527.718276500702,
+  "superseded_round_rows": 4,
+  "superseded_round_seconds": 3199.906701564789
+ },
+ "R-s202": {
+  "canonical_round_seconds": 64728.67411518097,
+  "per_job": {
+   "11081729": {
+    "eval_s": 0.0,
+    "round_s": 1880.3332409858704,
+    "rounds": 3
+   }
+  },
+  "superseded_eval_seconds": 0,
+  "superseded_round_rows": 3,
+  "superseded_round_seconds": 1880.3332409858704
+ },
+ "U-s101": {
+  "canonical_round_seconds": 69380.85183858871,
+  "per_job": {},
+  "superseded_eval_seconds": 0,
+  "superseded_round_rows": 0,
+  "superseded_round_seconds": 0
+ },
+ "U-s202": {
+  "canonical_round_seconds": 57598.971821546555,
+  "per_job": {
+   "11094037": {
+    "eval_s": 0.0,
+    "round_s": 8553.084907770157,
+    "rounds": 16
+   },
+   "11097811": {
+    "eval_s": 0.0,
+    "round_s": 10932.628223657608,
+    "rounds": 17
+   }
+  },
+  "superseded_eval_seconds": 0,
+  "superseded_round_rows": 33,
+  "superseded_round_seconds": 19485.713131427765
+ }
+}

@@ -1,0 +1,1504 @@
+{
+ "row_match": {
+  "H-s101": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": []
+  },
+  "H-s202": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": [
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      10,
+      5,
+      16,
+      4885.29
+     ],
+     "job": "11082192",
+     "line": 343,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 61
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      12,
+      4,
+      6,
+      4121.34
+     ],
+     "job": "11082192",
+     "line": 349,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 62
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      8,
+      7,
+      8,
+      4277.52
+     ],
+     "job": "11082192",
+     "line": 354,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 63
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      9,
+      6,
+      13,
+      4364.29
+     ],
+     "job": "11082192",
+     "line": 359,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 64
+    }
+   ]
+  },
+  "R-s101": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": [
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      7,
+      5241.87
+     ],
+     "job": "11081724",
+     "line": 703,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 125
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      12,
+      4931.91
+     ],
+     "job": "11081724",
+     "line": 709,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 126
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      3,
+      12,
+      3,
+      5066.64
+     ],
+     "job": "11081724",
+     "line": 714,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 127
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      4,
+      12,
+      11,
+      5289.41
+     ],
+     "job": "11081724",
+     "line": 719,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 128
+    }
+   ]
+  },
+  "R-s202": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": [
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      14,
+      2,
+      11,
+      3237.54
+     ],
+     "job": "11081729",
+     "line": 96,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 17
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      10,
+      5,
+      4,
+      2602.74
+     ],
+     "job": "11081729",
+     "line": 101,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 18
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      9,
+      7,
+      6,
+      2458.84
+     ],
+     "job": "11081729",
+     "line": 106,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 19
+    }
+   ]
+  },
+  "U-s101": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": []
+  },
+  "U-s202": {
+   "canonical_rows_matching_records": 128,
+   "noncanonical_or_superseded_rows": [
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      5,
+      10,
+      20,
+      4367.18
+     ],
+     "job": "11094037",
+     "line": 345,
+     "matches_canonical_records": true,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 65
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      3,
+      13,
+      4,
+      3221.73
+     ],
+     "job": "11094037",
+     "line": 351,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 66
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      6,
+      10,
+      3,
+      3507.04
+     ],
+     "job": "11094037",
+     "line": 356,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 67
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      6,
+      10,
+      2,
+      2838.73
+     ],
+     "job": "11094037",
+     "line": 361,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 68
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      8,
+      8,
+      15,
+      4705.74
+     ],
+     "job": "11094037",
+     "line": 366,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 69
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      10,
+      3867.93
+     ],
+     "job": "11094037",
+     "line": 371,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 70
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      4,
+      12,
+      1,
+      2774.8
+     ],
+     "job": "11094037",
+     "line": 376,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 71
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      7,
+      9,
+      6,
+      3316.28
+     ],
+     "job": "11094037",
+     "line": 381,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 72
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      6,
+      10,
+      9,
+      3528.73
+     ],
+     "job": "11094037",
+     "line": 386,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 73
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      3,
+      12,
+      7,
+      3699.29
+     ],
+     "job": "11094037",
+     "line": 391,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 74
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      8,
+      7,
+      25,
+      4537.93
+     ],
+     "job": "11094037",
+     "line": 396,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 75
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      7,
+      9,
+      12,
+      3859.02
+     ],
+     "job": "11094037",
+     "line": 401,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 76
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      6,
+      10,
+      5,
+      3136.29
+     ],
+     "job": "11094037",
+     "line": 406,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 77
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      3,
+      13,
+      1,
+      3147.37
+     ],
+     "job": "11094037",
+     "line": 411,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 78
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      8,
+      7,
+      8,
+      3716.21
+     ],
+     "job": "11094037",
+     "line": 416,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 79
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      8,
+      8,
+      6,
+      3665.04
+     ],
+     "job": "11094037",
+     "line": 421,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 80
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      5,
+      10,
+      20,
+      4367.18
+     ],
+     "job": "11097811",
+     "line": 430,
+     "matches_canonical_records": true,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 65
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      3,
+      3308.66
+     ],
+     "job": "11097811",
+     "line": 435,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 66
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      4,
+      12,
+      2,
+      3229.92
+     ],
+     "job": "11097811",
+     "line": 440,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 67
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      8,
+      8,
+      4,
+      2878.45
+     ],
+     "job": "11097811",
+     "line": 445,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 68
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      6,
+      10,
+      14,
+      4447.52
+     ],
+     "job": "11097811",
+     "line": 450,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 69
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      7,
+      9,
+      11,
+      3706.45
+     ],
+     "job": "11097811",
+     "line": 455,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 70
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      3,
+      2912.4
+     ],
+     "job": "11097811",
+     "line": 460,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 71
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      7,
+      9,
+      2,
+      3383.88
+     ],
+     "job": "11097811",
+     "line": 465,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 72
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      8,
+      8,
+      12,
+      3653.22
+     ],
+     "job": "11097811",
+     "line": 470,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 73
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      6,
+      9,
+      9,
+      3861.12
+     ],
+     "job": "11097811",
+     "line": 475,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 74
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      18,
+      4410.6
+     ],
+     "job": "11097811",
+     "line": 480,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 75
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      4,
+      12,
+      4,
+      4160.14
+     ],
+     "job": "11097811",
+     "line": 485,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 76
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      4,
+      12,
+      4,
+      3483.2
+     ],
+     "job": "11097811",
+     "line": 490,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 77
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      3,
+      13,
+      1,
+      3875.52
+     ],
+     "job": "11097811",
+     "line": 495,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 78
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      1,
+      6,
+      9,
+      9,
+      3890.56
+     ],
+     "job": "11097811",
+     "line": 500,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 79
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      11,
+      4318.72
+     ],
+     "job": "11097811",
+     "line": 505,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 80
+    },
+    {
+     "canonical": false,
+     "counts_all0_mixed_all1_trunc_lenmean": [
+      0,
+      5,
+      11,
+      9,
+      3974.72
+     ],
+     "job": "11097811",
+     "line": 511,
+     "matches_canonical_records": false,
+     "matches_superseded_records_of_job": true,
+     "round_1based": 81
+    }
+   ]
+  }
+ },
+ "rule": "canonical row = last write of each key ((round), (round, minibatch), (panel, round)) in metrics.jsonl; canonical records = files in records/ (superseded attempts moved to records/superseded-<job> or records_a2orig_r60-64)",
+ "segments": {
+  "H-s101": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 20,
+    "canonical_round_rows": 128,
+    "canonical_step_rows": 512,
+    "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      0
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40",
+    "job": "11081726",
+    "last_event": "complete",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 128,
+    "rounds_1based": [
+     1,
+     128
+    ],
+    "seg": 0,
+    "step_rows": 512,
+    "utc": 1794111611.4246507
+   }
+  ],
+  "H-s202": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 8,
+    "canonical_round_rows": 60,
+    "canonical_step_rows": 240,
+    "code_sha": "7c44fa52e1bdc0277176574afed4c8fb76c01a10",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_U",
+      0
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ]
+    ],
+    "gpu": "NVIDIA L40",
+    "job": "11082192",
+    "last_event": "checkpoint_started",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 64,
+    "rounds_1based": [
+     1,
+     64
+    ],
+    "seg": 0,
+    "step_rows": 256,
+    "utc": 1794298576.0400808
+   },
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 12,
+    "canonical_round_rows": 68,
+    "canonical_step_rows": 272,
+    "code_sha": "09f508017675703c6f84c61054bd5f58a8a36fbe",
+    "eval_rows": [
+     [
+      "dev",
+      64
+     ],
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      64
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11112377",
+    "last_event": "complete",
+    "line": 365,
+    "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-H-s202-sym/round_0060",
+    "resume_round": 60,
+    "round_rows": 68,
+    "rounds_1based": [
+     61,
+     128
+    ],
+    "seg": 1,
+    "step_rows": 272,
+    "utc": 1794361909.838403
+   }
+  ],
+  "R-s101": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 16,
+    "canonical_round_rows": 124,
+    "canonical_step_rows": 496,
+    "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      0
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11081724",
+    "last_event": "final_checkpoint_failed",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 128,
+    "rounds_1based": [
+     1,
+     128
+    ],
+    "seg": 0,
+    "step_rows": 512,
+    "utc": 1794107175.0148532
+   },
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 4,
+    "canonical_round_rows": 4,
+    "canonical_step_rows": 16,
+    "code_sha": "0afd6e89996ecb36ee0d0733dbbfa6507eb6afb8",
+    "eval_rows": [
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11092945",
+    "last_event": "complete",
+    "line": 727,
+    "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s101-sym/round_0124",
+    "resume_round": 124,
+    "round_rows": 4,
+    "rounds_1based": [
+     125,
+     128
+    ],
+    "seg": 1,
+    "step_rows": 16,
+    "utc": 1794199904.8372889
+   }
+  ],
+  "R-s202": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 4,
+    "canonical_round_rows": 16,
+    "canonical_step_rows": 64,
+    "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_U",
+      0
+     ]
+    ],
+    "gpu": "NVIDIA L40",
+    "job": "11081729",
+    "last_event": "checkpoint_started",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 19,
+    "rounds_1based": [
+     1,
+     19
+    ],
+    "seg": 0,
+    "step_rows": 79,
+    "utc": 1794192274.0715594
+   },
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 16,
+    "canonical_round_rows": 112,
+    "canonical_step_rows": 448,
+    "code_sha": "dd71b2066b83a415d4fb1e3a9a3d86a50488c60e",
+    "eval_rows": [
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11094190",
+    "last_event": "complete",
+    "line": 110,
+    "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0016",
+    "resume_round": 16,
+    "round_rows": 112,
+    "rounds_1based": [
+     17,
+     128
+    ],
+    "seg": 1,
+    "step_rows": 448,
+    "utc": 1794205479.899588
+   }
+  ],
+  "U-s101": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 20,
+    "canonical_round_rows": 128,
+    "canonical_step_rows": 512,
+    "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      0
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11081725",
+    "last_event": "complete",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 128,
+    "rounds_1based": [
+     1,
+     128
+    ],
+    "seg": 0,
+    "step_rows": 512,
+    "utc": 1794110687.5307865
+   }
+  ],
+  "U-s202": [
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 12,
+    "canonical_round_rows": 64,
+    "canonical_step_rows": 256,
+    "code_sha": "dd71b2066b83a415d4fb1e3a9a3d86a50488c60e",
+    "eval_rows": [
+     [
+      "dev",
+      0
+     ],
+     [
+      "dev",
+      32
+     ],
+     [
+      "dev",
+      64
+     ],
+     [
+      "probe_J_H",
+      0
+     ],
+     [
+      "probe_J_H",
+      32
+     ],
+     [
+      "probe_J_H",
+      64
+     ],
+     [
+      "probe_J_R",
+      0
+     ],
+     [
+      "probe_J_R",
+      32
+     ],
+     [
+      "probe_J_R",
+      64
+     ],
+     [
+      "probe_J_U",
+      0
+     ],
+     [
+      "probe_J_U",
+      32
+     ],
+     [
+      "probe_J_U",
+      64
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11094037",
+    "last_event": "checkpoint_started",
+    "line": 0,
+    "resume_from": null,
+    "resume_round": 0,
+    "round_rows": 80,
+    "rounds_1based": [
+     1,
+     80
+    ],
+    "seg": 0,
+    "step_rows": 320,
+    "utc": 1794207965.101596
+   },
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 0,
+    "canonical_round_rows": 0,
+    "canonical_step_rows": 0,
+    "code_sha": "6724cce98be3d15c555204373e723356e63e47f4",
+    "eval_rows": [],
+    "gpu": "NVIDIA L40S",
+    "job": "11097811",
+    "last_event": "checkpoint_started",
+    "line": 423,
+    "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0064",
+    "resume_round": 64,
+    "round_rows": 17,
+    "rounds_1based": [
+     65,
+     81
+    ],
+    "seg": 1,
+    "step_rows": 68,
+    "utc": 1794247808.777136
+   },
+   {
+    "attempt_id": "a2",
+    "attempt_ids": [
+     "a2"
+    ],
+    "canonical_eval_rows": 8,
+    "canonical_round_rows": 64,
+    "canonical_step_rows": 256,
+    "code_sha": "d90dd8cc14325511cfb3c67b8bbb2072a2450c79",
+    "eval_rows": [
+     [
+      "dev",
+      96
+     ],
+     [
+      "dev",
+      128
+     ],
+     [
+      "probe_J_H",
+      96
+     ],
+     [
+      "probe_J_H",
+      128
+     ],
+     [
+      "probe_J_R",
+      96
+     ],
+     [
+      "probe_J_R",
+      128
+     ],
+     [
+      "probe_J_U",
+      96
+     ],
+     [
+      "probe_J_U",
+      128
+     ]
+    ],
+    "gpu": "NVIDIA L40S",
+    "job": "11100159",
+    "last_event": "complete",
+    "line": 512,
+    "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-U-s202-sym/round_0064",
+    "resume_round": 64,
+    "round_rows": 64,
+    "rounds_1based": [
+     65,
+     128
+    ],
+    "seg": 2,
+    "step_rows": 256,
+    "utc": 1794261352.106552
+   }
+  ]
+ }
+}

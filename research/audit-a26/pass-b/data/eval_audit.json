@@ -1,0 +1,217 @@
+{
+ "responses_in_key": 96,
+ "responses_read": 96,
+ "reads_total": 192,
+ "reads_per_response": {
+  "2": 96
+ },
+ "codes_read_not_in_key": [],
+ "codes_in_key_not_read": [],
+ "item_mismatch_read_vs_key": 0,
+ "by_policy": {
+  "H-s101-r128": 16,
+  "R-s101-r128": 16,
+  "R-s202-r128": 16,
+  "base": 16,
+  "U-s202-r128": 16,
+  "U-s101-r128": 16
+ },
+ "by_tier": {
+  "superhard": 48,
+  "harder": 48
+ },
+ "reward0": 35,
+ "reward0_capped": 13,
+ "reward1": 61,
+ "reward0_by_policy": {
+  "H-s101-r128": 5,
+  "R-s101-r128": 4,
+  "R-s202-r128": 8,
+  "base": 8,
+  "U-s202-r128": 6,
+  "U-s101-r128": 4
+ },
+ "reward0_capped_by_policy": {
+  "H-s101-r128": 1,
+  "R-s202-r128": 5,
+  "U-s101-r128": 3,
+  "U-s202-r128": 3,
+  "R-s101-r128": 1
+ },
+ "read_categories_all": {
+  "missed_opportunity": 26,
+  "correct": 120,
+  "unclear": 2,
+  "hit_cap": 11,
+  "other_method": 1,
+  "factored_then_failed_later": 17,
+  "grader_issue": 6,
+  "factored_incorrectly": 9
+ },
+ "read_categories_reward0": {
+  "missed_opportunity": 26,
+  "hit_cap": 11,
+  "other_method": 1,
+  "factored_then_failed_later": 17,
+  "grader_issue": 6,
+  "factored_incorrectly": 9
+ },
+ "read_categories_reward1": {
+  "correct": 120,
+  "unclear": 2
+ },
+ "agreement_category_all": {
+  "agree": 88,
+  "of": 96
+ },
+ "agreement_category_reward0": {
+  "agree": 29,
+  "of": 35
+ },
+ "agreement_category_reward0_uncapped": {
+  "agree": 18,
+  "of": 22
+ },
+ "agreement_factoring_used_all": {
+  "agree": 84,
+  "of": 96
+ },
+ "agreement_factoring_used_reward0": {
+  "agree": 30,
+  "of": 35
+ },
+ "reward0_category_pairs": {
+  "missed_opportunity | missed_opportunity": 13,
+  "factored_then_failed_later | factored_then_failed_later": 6,
+  "hit_cap | hit_cap": 5,
+  "factored_incorrectly | factored_incorrectly": 3,
+  "factored_then_failed_later | grader_issue": 2,
+  "factored_incorrectly | factored_then_failed_later": 2,
+  "grader_issue | grader_issue": 2,
+  "factored_then_failed_later | other_method": 1,
+  "factored_incorrectly | hit_cap": 1
+ },
+ "reward0_agreed_category": {
+  "missed_opportunity": 13,
+  "hit_cap": 5,
+  "factored_then_failed_later": 6,
+  "factored_incorrectly": 3,
+  "grader_issue": 2
+ },
+ "reads_capped_flag_vs_key": {
+  "agree": 192,
+  "of": 192
+ },
+ "reward1_reads_not_correct": [
+  [
+   "BMNN",
+   "R-s101-r128",
+   "math:intermediate_algebra/train/00331",
+   "unclear"
+  ],
+  [
+   "NZRQ",
+   "base",
+   "math:intermediate_algebra/train/00331",
+   "unclear"
+  ]
+ ],
+ "reward0_reads_correct": [],
+ "reward0_with_any_grader_issue_read": [
+  [
+   "EYZW",
+   "R-s202-r128",
+   "math:algebra/test/00352",
+   [
+    "grader_issue",
+    "factored_then_failed_later"
+   ]
+  ],
+  [
+   "GNYA",
+   "H-s101-r128",
+   "math:algebra/test/00352",
+   [
+    "grader_issue",
+    "factored_then_failed_later"
+   ]
+  ],
+  [
+   "EGQA",
+   "R-s202-r128",
+   "math:precalculus/train/00152",
+   [
+    "grader_issue",
+    "grader_issue"
+   ]
+  ],
+  [
+   "FVWP",
+   "H-s101-r128",
+   "math:precalculus/train/00152",
+   [
+    "grader_issue",
+    "grader_issue"
+   ]
+  ]
+ ],
+ "reward0_excluding_grader_issue_any_read": 31,
+ "reward0_excluding_grader_issue_both_reads": 33,
+ "capped_reward0_read_categories": {
+  "missed_opportunity": 10,
+  "hit_cap": 11,
+  "factored_incorrectly": 2,
+  "factored_then_failed_later": 3
+ },
+ "sample_rule_check": {
+  "superhard": {
+   "recomputed_first8": [
+    "olympiadbench:2742",
+    "math:intermediate_algebra/train/00331",
+    "olympiadbench:2912",
+    "math:intermediate_algebra/train/00918",
+    "math:number_theory/train/00126",
+    "math:intermediate_algebra/train/00004",
+    "math:precalculus/train/00163",
+    "math:precalculus/train/00152"
+   ],
+   "file": [
+    "olympiadbench:2742",
+    "math:intermediate_algebra/train/00331",
+    "olympiadbench:2912",
+    "math:intermediate_algebra/train/00918",
+    "math:number_theory/train/00126",
+    "math:intermediate_algebra/train/00004",
+    "math:precalculus/train/00163",
+    "math:precalculus/train/00152"
+   ],
+   "same_set": true,
+   "same_order": true
+  },
+  "harder": {
+   "recomputed_first8": [
+    "omni:omni/01531",
+    "math:algebra/test/00352",
+    "math:intermediate_algebra/train/00691",
+    "omni:omni/03629",
+    "math:algebra/train/01030",
+    "math:number_theory/test/00090",
+    "omni:omni/00173",
+    "math:intermediate_algebra/train/00196"
+   ],
+   "file": [
+    "omni:omni/01531",
+    "math:algebra/test/00352",
+    "math:intermediate_algebra/train/00691",
+    "omni:omni/03629",
+    "math:algebra/train/01030",
+    "math:number_theory/test/00090",
+    "omni:omni/00173",
+    "math:intermediate_algebra/train/00196"
+   ],
+   "same_set": true,
+   "same_order": true
+  }
+ },
+ "key_items_equal_sample": true
+}

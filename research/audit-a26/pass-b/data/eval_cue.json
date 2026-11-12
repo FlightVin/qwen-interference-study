@@ -1,0 +1,434 @@
+{
+ "problems": 24,
+ "same_ids_both_forms": true,
+ "cells": {
+  "base-uncued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 81.0,
+   "truncated": 0.0,
+   "finished": 192.0,
+   "pass1": 0.421875,
+   "truncation_share": 0.0,
+   "acc_among_finished": 0.421875,
+   "solved_any": 19,
+   "coverage_at_n": 0.7916666666666666,
+   "pass8_unbiased": 0.7916666666666666
+  },
+  "base-cued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 79.0,
+   "truncated": 0.0,
+   "finished": 192.0,
+   "pass1": 0.4114583333333333,
+   "truncation_share": 0.0,
+   "acc_among_finished": 0.4114583333333333,
+   "solved_any": 19,
+   "coverage_at_n": 0.7916666666666666,
+   "pass8_unbiased": 0.7916666666666666
+  },
+  "R-s101-uncued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 131.0,
+   "truncated": 36.0,
+   "finished": 156.0,
+   "pass1": 0.6822916666666666,
+   "truncation_share": 0.1875,
+   "acc_among_finished": 0.8397435897435898,
+   "solved_any": 20,
+   "coverage_at_n": 0.8333333333333334,
+   "pass8_unbiased": 0.8333333333333334
+  },
+  "R-s101-cued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 133.0,
+   "truncated": 34.0,
+   "finished": 158.0,
+   "pass1": 0.6927083333333334,
+   "truncation_share": 0.17708333333333334,
+   "acc_among_finished": 0.8417721518987342,
+   "solved_any": 20,
+   "coverage_at_n": 0.8333333333333334,
+   "pass8_unbiased": 0.8333333333333334
+  },
+  "U-s101-uncued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 139.0,
+   "truncated": 35.0,
+   "finished": 157.0,
+   "pass1": 0.7239583333333334,
+   "truncation_share": 0.18229166666666666,
+   "acc_among_finished": 0.8853503184713376,
+   "solved_any": 21,
+   "coverage_at_n": 0.875,
+   "pass8_unbiased": 0.875
+  },
+  "U-s101-cued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 137.0,
+   "truncated": 39.0,
+   "finished": 153.0,
+   "pass1": 0.7135416666666666,
+   "truncation_share": 0.203125,
+   "acc_among_finished": 0.8954248366013072,
+   "solved_any": 21,
+   "coverage_at_n": 0.875,
+   "pass8_unbiased": 0.875
+  },
+  "R-s202-uncued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 119.0,
+   "truncated": 36.0,
+   "finished": 156.0,
+   "pass1": 0.6197916666666666,
+   "truncation_share": 0.1875,
+   "acc_among_finished": 0.7628205128205128,
+   "solved_any": 21,
+   "coverage_at_n": 0.875,
+   "pass8_unbiased": 0.875
+  },
+  "R-s202-cued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 110.0,
+   "truncated": 42.0,
+   "finished": 150.0,
+   "pass1": 0.5729166666666666,
+   "truncation_share": 0.21875,
+   "acc_among_finished": 0.7333333333333333,
+   "solved_any": 20,
+   "coverage_at_n": 0.8333333333333334,
+   "pass8_unbiased": 0.8333333333333334
+  },
+  "U-s202-uncued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 124.0,
+   "truncated": 30.0,
+   "finished": 162.0,
+   "pass1": 0.6458333333333334,
+   "truncation_share": 0.15625,
+   "acc_among_finished": 0.7654320987654321,
+   "solved_any": 19,
+   "coverage_at_n": 0.7916666666666666,
+   "pass8_unbiased": 0.7916666666666666
+  },
+  "U-s202-cued": {
+   "problems": 24,
+   "attempts_per_problem": 8,
+   "attempts": 192,
+   "correct": 133.0,
+   "truncated": 15.0,
+   "finished": 177.0,
+   "pass1": 0.6927083333333334,
+   "truncation_share": 0.078125,
+   "acc_among_finished": 0.751412429378531,
+   "solved_any": 21,
+   "coverage_at_n": 0.875,
+   "pass8_unbiased": 0.875
+  }
+ },
+ "integrity": {
+  "base-uncued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 81,
+    "wrong": 111
+   }
+  },
+  "base-cued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 79,
+    "wrong": 113
+   }
+  },
+  "base seeds_equal_across_forms": 192,
+  "R-s101-uncued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 131,
+    "truncated": 36,
+    "wrong": 25
+   }
+  },
+  "R-s101-cued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 133,
+    "truncated": 34,
+    "wrong": 25
+   }
+  },
+  "R-s101 seeds_equal_across_forms": 192,
+  "U-s101-uncued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 139,
+    "truncated": 35,
+    "wrong": 18
+   }
+  },
+  "U-s101-cued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 137,
+    "truncated": 39,
+    "wrong": 16
+   }
+  },
+  "U-s101 seeds_equal_across_forms": 192,
+  "R-s202-uncued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 119,
+    "truncated": 36,
+    "wrong": 37
+   }
+  },
+  "R-s202-cued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 110,
+    "truncated": 42,
+    "wrong": 40
+   }
+  },
+  "R-s202 seeds_equal_across_forms": 192,
+  "U-s202-uncued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 124,
+    "truncated": 30,
+    "wrong": 38
+   }
+  },
+  "U-s202-cued": {
+   "attempts": 192,
+   "expected": 192,
+   "missing": 0,
+   "extra": 0,
+   "duplicates": 0,
+   "unknown": 0,
+   "reward_none": 0,
+   "capped_with_nonzero_reward": 0,
+   "problems_with_more_than_one_seed": 0,
+   "status_counts": {
+    "correct": 133,
+    "truncated": 15,
+    "wrong": 44
+   }
+  },
+  "U-s202 seeds_equal_across_forms": 192
+ },
+ "contrasts": {
+  "base cued - uncued": {
+   "diff": -0.010416666666666666,
+   "ci95": [
+    -0.078125,
+    0.057291666666666664
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.3512
+  },
+  "R-s101 cued - uncued": {
+   "diff": 0.010416666666666666,
+   "ci95": [
+    -0.036458333333333336,
+    0.06770833333333333
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.6052
+  },
+  "U-s101 cued - uncued": {
+   "diff": -0.010416666666666666,
+   "ci95": [
+    -0.07291666666666667,
+    0.041666666666666664
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.3394
+  },
+  "R-s202 cued - uncued": {
+   "diff": -0.046875,
+   "ci95": [
+    -0.09895833333333333,
+    0.0
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.0213
+  },
+  "U-s202 cued - uncued": {
+   "diff": 0.046875,
+   "ci95": [
+    -0.005208333333333333,
+    0.109375
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.9479
+  },
+  "R-U s101 uncued": {
+   "diff": -0.041666666666666664,
+   "ci95": [
+    -0.11979166666666667,
+    0.026041666666666668
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.1133
+  },
+  "R-U s101 cued": {
+   "diff": -0.020833333333333332,
+   "ci95": [
+    -0.109375,
+    0.0625
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.303
+  },
+  "cue gain R - U s101": {
+   "diff": 0.020833333333333332,
+   "ci95": [
+    -0.0625,
+    0.11458333333333333
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.6384
+  },
+  "R-U s202 uncued": {
+   "diff": -0.026041666666666668,
+   "ci95": [
+    -0.09895833333333333,
+    0.041666666666666664
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.2182
+  },
+  "R-U s202 cued": {
+   "diff": -0.11979166666666667,
+   "ci95": [
+    -0.19270833333333334,
+    -0.057291666666666664
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.0
+  },
+  "cue gain R - U s202": {
+   "diff": -0.09375,
+   "ci95": [
+    -0.19270833333333334,
+    -0.015625
+   ],
+   "draws": 10000,
+   "seed": 20261111,
+   "N": 24,
+   "share_draws_gt0": 0.0069
+  }
+ }
+}

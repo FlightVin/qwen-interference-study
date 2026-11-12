@@ -1,0 +1,498 @@
+{
+ "exclusions": {
+  "H_train": {
+   "eligible": 46,
+   "excluded": {
+    "outside bands": 60,
+    "verifier unknown": 1
+   },
+   "excluded_n": 61,
+   "selected": 46
+  },
+  "J_R": {
+   "note": "candidate list lives on compute ($P/data/candidates-v1-study); counts there"
+  },
+  "J_U": {
+   "note": "candidate list lives on compute ($P/data/candidates-v1-study); counts there"
+  },
+  "dev": {
+   "note": "candidate list lives on compute ($P/data/candidates-v1-study); counts there"
+  },
+  "test": {
+   "note": "candidate list lives on compute ($P/data/candidates-v1-study); counts there"
+  }
+ },
+ "labels": {
+  "H_train": {
+   "final_label": {
+    "('central', 'no', 'n/a')": 25,
+    "('central', 'no', 'no')": 21
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_hard)": 25,
+    "omni: pass1=pass2": 21
+   }
+  },
+  "H_train_family_rule_check": {
+   "family == rule": 46
+  },
+  "J_H": {
+   "final_label": {
+    "('central', 'no', 'n/a')": 32
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_targets_probes)": 32
+   }
+  },
+  "J_R": {
+   "final_label": {
+    "('central', 'yes', 'n/a')": 28
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_targets_probes)": 28
+   }
+  },
+  "J_U": {
+   "final_label": {
+    "('absent', 'no', 'yes')": 32
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_targets_probes)": 32
+   }
+  },
+  "R_pool": {
+   "final_label": {
+    "('central', 'yes', 'n/a')": 9,
+    "('central', 'yes', 'no')": 54
+   },
+   "source": {
+    "authored: pass1=pass2": 52,
+    "authored: third read": 2,
+    "native: pass1=pass2 (pass2_aux_natural)": 9
+   }
+  },
+  "R_pool_primary": {
+   "F1": 17,
+   "F2": 6,
+   "F3": 11,
+   "F4": 19,
+   "F8": 10
+  },
+  "U_pool": {
+   "final_label": {
+    "('absent', 'no', 'yes')": 63
+   },
+   "source": {
+    "authored: pass1=pass2": 54,
+    "native: pass1=pass2 (pass2_aux_natural)": 9
+   }
+  },
+  "calib_train": {
+   "final_label": {
+    "none": 59
+   },
+   "source": {
+    "native: no pass1": 59
+   }
+  },
+  "calib_val": {
+   "final_label": {
+    "none": 56
+   },
+   "source": {
+    "native: no pass1": 56
+   }
+  },
+  "cue": {
+   "final_label": {
+    "('central', 'no', 'n/a')": 24
+   },
+   "source": {
+    "native: pass1 only": 21,
+    "native: pass1=pass2 (pass2_targets_probes)": 3
+   }
+  },
+  "dev": {
+   "final_label": {
+    "('central', 'no', 'n/a')": 53
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_targets_probes)": 53
+   }
+  },
+  "stress_Harder": {
+   "eligible agrees (second eligible)": 88,
+   "first read present": 95,
+   "gold agrees": 95,
+   "second read": 95,
+   "tier agrees": 66
+  },
+  "stress_SuperHard": {
+   "eligible agrees (second eligible)": 119,
+   "first read present": 126,
+   "gold agrees": 124,
+   "no second read": 2,
+   "second read": 124,
+   "tier agrees": 105
+  },
+  "test": {
+   "final_label": {
+    "('central', 'no', 'n/a')": 128
+   },
+   "source": {
+    "native: pass1=pass2 (pass2_targets_probes)": 127,
+    "native: third read (pass2_targets_probes)": 1
+   }
+  }
+ },
+ "local_hashes": {
+  "data/cue/cue_v1_cued.json": "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa",
+  "data/cue/cue_v1_uncued.json": "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+  "data/external/a17/candidates_v1.jsonl": "a0ac6ce53b95b867dc4f1d429b71372df7748e6af024f308d085659fe9133627",
+  "data/external/omni_tranche_v1.jsonl": "6c269ad4d3f861fd5454d91c886e954604ae81e990c900d7c2467d2c04ecc8e3",
+  "data/main_v1_manifest.json": "6d9e2f4e56a5013aa59ec0af91b29b3288e6421ca3bf2b697141aad438a40467",
+  "data/panels/panels.json": "2ce7e35fc7258bcf5a401ea365b0686b2928b6fe1df655e783acff8e66e62a6e",
+  "data/screening/hsel_k8.json": "3e37b60d71de736aa785eee580e2cb9d71819bcb3d843bc2da51b971a73a3ea7",
+  "data/screening/match_k8.json": "4baa8f39668135c6ff45219b7cc834c1e74082807f80c0f75de5357f13e73b25",
+  "data/stress/harder_v1.json": "0fb3490b38c5b8789c8f08168c7e8ce4549390f37e56fd87af923146432bd757",
+  "data/stress/stress_v1.json": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+  "data/stress/superhard_v1.json": "0cf1cf93deb32d9978d1ca610f523589741c843b203e7428ab01b7f6d210f318",
+  "research/evidence/a17/panels/audit_sample_v1.json": "d9bc7b6daa94c27a7f65dc97b424c2c96a4c11da7612313565a7816ba51b26b2"
+ },
+ "pairing": {
+  "abs_c_diff_hist": {
+   "0": 53,
+   "1": 6,
+   "2": 2,
+   "3": 2
+  },
+  "bundle_related_order_equals_match_r": true,
+  "bundle_unrelated_order_equals_match_u": true,
+  "dropped_in_balance": [
+   {
+    "r": "syn-R4-040",
+    "smd_resp_len": 0.2546697499981688,
+    "smd_success": 0.023937911862546662,
+    "u": "syn-U3-061"
+   }
+  ],
+  "eligible": {
+   "related": 77,
+   "unrelated": 82
+  },
+  "exact_count_matches": 53,
+  "manifest_equals_inventory_bundle": true,
+  "n_pairs": 63,
+  "provenance": [
+   "(('authored', 'authored'), 54)",
+   "(('natural', 'natural'), 9)"
+  ],
+  "same_answer_type": 37,
+  "smd": {
+   "smd_resp_len": 0.1902550637394412,
+   "smd_success": 0.02474094654173616
+  }
+ },
+ "recipe_hashes": {
+  "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51": {
+   "files": [
+    "$P/data/main-v1/bundle_main_v1.json"
+   ],
+   "recipes": [
+    "qis-main-H-s303-sym.sh",
+    "qis-main-R-s303-sym.sh",
+    "qis-main-U-s303-sym.sh",
+    "qis-sens-R-s101-asym.sh",
+    "qis-sens-R-s202-asym.sh",
+    "qis-sens-R-s303-asym.sh",
+    "qis-sens-U-s101-asym.sh",
+    "qis-sens-U-s202-asym.sh",
+    "qis-sens-U-s303-asym.sh",
+    "qis-a6-modes-k8-b.sh",
+    "qis-a6-modes-k8.sh",
+    "qis-a6-think-k16.sh",
+    "qis-diag-local-r0.sh",
+    "qis-diag-local-r64.sh",
+    "qis-diag-ref.sh",
+    "qis-main-H-s101-sym.sh",
+    "qis-main-H-s202-sym.sh",
+    "qis-main-R-s101-sym.sh",
+    "qis-main-R-s202-sym.sh",
+    "qis-main-U-s101-sym.sh",
+    "qis-main-U-s202-sym.sh"
+   ]
+  },
+  "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa": {
+   "files": [
+    "W/data/cue/cue_v1_cued.json"
+   ],
+   "recipes": [
+    "qis-cue-eval.sh"
+   ]
+  },
+  "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca": {
+   "files": [
+    "$P/data/main-v1/target_test_sealed.json"
+   ],
+   "recipes": [
+    "qis-cgpu-R-s101.sh",
+    "qis-cgpu-R-s202.sh",
+    "qis-cgpu-U-s101.sh",
+    "qis-cgpu-U-s202.sh",
+    "qis-lentest-H-s101.sh",
+    "qis-lentest-R-s101.sh",
+    "qis-lentest-R-s202.sh",
+    "qis-lentest-U-s101.sh",
+    "qis-lentest-U-s202.sh",
+    "qis-test-H-s101-sym.sh",
+    "qis-test-H-s202-fb-k0.sh",
+    "qis-test-H-s202-fb-k1.sh",
+    "qis-test-H-s202-fb-k2.sh",
+    "qis-test-H-s202-fb-k3.sh",
+    "qis-test-H-s202-fb-k4.sh",
+    "qis-test-H-s202-fb-k5.sh",
+    "qis-test-H-s202-sym-k0.sh",
+    "qis-test-H-s202-sym-k1.sh",
+    "qis-test-H-s202-sym-k2.sh",
+    "qis-test-H-s202-sym-k3.sh",
+    "qis-test-H-s202-sym-k4.sh",
+    "qis-test-H-s202-sym-k5.sh",
+    "qis-test-H-s202-sym.sh",
+    "qis-test-R-s101-sym.sh",
+    "qis-test-R-s202-sym.sh",
+    "qis-test-U-s101-sym.sh",
+    "qis-test-U-s202-sym.sh",
+    "qis-test-base.sh"
+   ]
+  },
+  "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d": {
+   "files": [
+    "$P/data/stress/stress_v1.json",
+    "W/data/stress/stress_v1.json"
+   ],
+   "recipes": [
+    "qis-len-H-s101.sh",
+    "qis-len-R-s101.sh",
+    "qis-len-R-s202.sh",
+    "qis-len-U-s101.sh",
+    "qis-len-U-s202.sh",
+    "qis-stress-H-s101-r128.sh",
+    "qis-stress-H-s202-r128-k0.sh",
+    "qis-stress-H-s202-r128-k1.sh",
+    "qis-stress-H-s202-r128-k2.sh",
+    "qis-stress-H-s202-r128.sh",
+    "qis-stress-H-s202-r64.sh",
+    "qis-stress-R-s101-r128.sh",
+    "qis-stress-R-s101-r64.sh",
+    "qis-stress-R-s202-r128.sh",
+    "qis-stress-U-s101-r128.sh",
+    "qis-stress-U-s202-r128.sh",
+    "qis-stress-base.sh"
+   ]
+  },
+  "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede": {
+   "files": [
+    "W/data/cue/cue_v1_uncued.json"
+   ],
+   "recipes": [
+    "qis-cue-eval.sh"
+   ]
+  },
+  "fc2ceb70ef920ab3c5a33baa78b7221f9a561db734a04942eba20ba48126e112": {
+   "files": [
+    "(not a data file hashed here)"
+   ],
+   "recipes": [
+    "qis-control-H-s101.sh",
+    "qis-control-H-s202.sh",
+    "qis-control-R-s101.sh",
+    "qis-control-R-s202.sh",
+    "qis-control-U-s101.sh",
+    "qis-control-U-s202.sh",
+    "qis-control-base.sh"
+   ]
+  }
+ },
+ "screening": {
+  "H_train": {
+   "band": {
+    "core": 31,
+    "moderate": 15
+   },
+   "c_hist": {
+    "2": 6,
+    "3": 2,
+    "4": 7,
+    "5": 4,
+    "6": 4,
+    "7": 4,
+    "8": 4,
+    "9": 6,
+    "10": 2,
+    "11": 3,
+    "12": 4
+   },
+   "c_max": 12,
+   "c_mean": 6.630434782608695,
+   "c_min": 2,
+   "hsel_c32_equals_count_file": 46,
+   "items_with_count": 46,
+   "n": [
+    32
+   ],
+   "of": 46,
+   "source": {
+    "hard": 24,
+    "hard_reserve": 1,
+    "omni": 21
+   },
+   "stage": [
+    "s2k8"
+   ],
+   "truncated_attempts": 2,
+   "unknown": 0
+  },
+  "J_H": {
+   "items_in_any_screening_count_file": 0
+  },
+  "J_R": {
+   "items_in_any_screening_count_file": 0
+  },
+  "J_U": {
+   "items_in_any_screening_count_file": 0
+  },
+  "R_pool": {
+   "c_hist": {
+    "12": 4,
+    "13": 3,
+    "14": 2,
+    "15": 5,
+    "16": 6,
+    "17": 5,
+    "18": 3,
+    "19": 3,
+    "20": 3,
+    "21": 7,
+    "22": 4,
+    "23": 12,
+    "24": 6
+   },
+   "c_max": 24,
+   "c_mean": 19.0,
+   "c_min": 12,
+   "items_with_count": 63,
+   "n": [
+    32
+   ],
+   "of": 63,
+   "stage": [
+    "s2k8"
+   ],
+   "truncated_attempts": 0,
+   "unknown": 0
+  },
+  "U_pool": {
+   "c_hist": {
+    "12": 5,
+    "13": 4,
+    "14": 1,
+    "15": 4,
+    "16": 5,
+    "17": 5,
+    "18": 2,
+    "19": 5,
+    "20": 4,
+    "21": 7,
+    "22": 7,
+    "23": 8,
+    "24": 6
+   },
+   "c_max": 24,
+   "c_mean": 18.904761904761905,
+   "c_min": 12,
+   "items_with_count": 63,
+   "n": [
+    32
+   ],
+   "of": 63,
+   "stage": [
+    "s2k8"
+   ],
+   "truncated_attempts": 0,
+   "unknown": 0
+  },
+  "calib_train": {
+   "c_hist": {
+    "1": 7,
+    "2": 2,
+    "3": 2,
+    "4": 7,
+    "5": 4,
+    "6": 8,
+    "7": 4,
+    "8": 5,
+    "9": 3,
+    "10": 8,
+    "11": 5,
+    "12": 4
+   },
+   "c_max": 12,
+   "c_mean": 6.627118644067797,
+   "c_min": 1,
+   "items_with_count": 59,
+   "n": [
+    16
+   ],
+   "of": 59,
+   "stage": [
+    "calib16k8"
+   ],
+   "truncated_attempts": 2,
+   "unknown": 0
+  },
+  "calib_val": {
+   "c_hist": {
+    "1": 6,
+    "2": 5,
+    "3": 1,
+    "4": 2,
+    "5": 7,
+    "6": 2,
+    "7": 6,
+    "8": 7,
+    "9": 2,
+    "10": 7,
+    "11": 5,
+    "12": 6
+   },
+   "c_max": 12,
+   "c_mean": 6.910714285714286,
+   "c_min": 1,
+   "items_with_count": 56,
+   "n": [
+    16
+   ],
+   "of": 56,
+   "stage": [
+    "calib16k8"
+   ],
+   "truncated_attempts": 4,
+   "unknown": 0
+  },
+  "cue": {
+   "items_in_any_screening_count_file": 0
+  },
+  "dev": {
+   "items_in_any_screening_count_file": 0
+  },
+  "stress_Harder": {
+   "items_in_any_screening_count_file": 0
+  },
+  "stress_SuperHard": {
+   "items_in_any_screening_count_file": 0
+  },
+  "test": {
+   "items_in_any_screening_count_file": 0
+  }
+ }
+}

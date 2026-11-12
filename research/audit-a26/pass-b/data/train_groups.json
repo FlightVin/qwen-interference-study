@@ -1,0 +1,5479 @@
+{
+ "advantage_check": {
+  "H-s101": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  },
+  "H-s202": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  },
+  "R-s101": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  },
+  "R-s202": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  },
+  "U-s101": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  },
+  "U-s202": {
+   "max_abs_diff_recorded_vs_formula": 1.1814184697200858e-07,
+   "nonzero_adv_in_nonmixed_groups": 0,
+   "zero_adv_in_mixed_groups": 0
+  }
+ },
+ "groups": {
+  "H-s101": {
+   "per_round": [
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_wrong": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 1
+    },
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_wrong": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 2
+    },
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_wrong": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 3
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 4
+    },
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 5
+    },
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 6
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 8
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 9
+    },
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 10
+    },
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|mixed": 8,
+     "round_1based": 11
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 12
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 13
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 14
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "hard_extra|mixed": 8,
+     "round_1based": 15
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 16
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 17
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 18
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 19
+    },
+    {
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|mixed": 8,
+     "round_1based": 20
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 21
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 22
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 23
+    },
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 24
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 25
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 26
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 27
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 28
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 29
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 30
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 31
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 32
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 33
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 34
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 35
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 36
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 37
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 38
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 39
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 40
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 41
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 42
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 43
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 44
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 45
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 46
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 47
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 48
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 49
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|mixed": 8,
+     "round_1based": 50
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 4,
+     "round_1based": 51
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 52
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 53
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 54
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 55
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 56
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 57
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 58
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 59
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 60
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 61
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 62
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 63
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 64
+    },
+    {
+     "hard_common|all_correct": 7,
+     "hard_common|mixed": 1,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 65
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 66
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 67
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 68
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 69
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 70
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 71
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 72
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 73
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 74
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 75
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 76
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 77
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 78
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 79
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 80
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 81
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 82
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 83
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 84
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 85
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 86
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 87
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 88
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 89
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 90
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 91
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 92
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 93
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 94
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 95
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 96
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 97
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 98
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 99
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 100
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 101
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 102
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 103
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 104
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 105
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 7,
+     "hard_extra|mixed": 1,
+     "round_1based": 106
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 107
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 108
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 109
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 110
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 111
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 112
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 113
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 114
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 115
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 117
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 118
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 119
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 120
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 121
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 122
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 123
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 124
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 125
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 126
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 7,
+     "hard_extra|mixed": 1,
+     "round_1based": 127
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 1,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "hard_common|all_correct": 322,
+    "hard_common|all_wrong": 45,
+    "hard_common|mixed": 657,
+    "hard_extra|all_correct": 337,
+    "hard_extra|all_wrong": 55,
+    "hard_extra|mixed": 632
+   },
+   "totals_all_roles": {
+    "all_correct": 659,
+    "all_wrong": 100,
+    "mixed": 1289
+   }
+  },
+  "H-s202": {
+   "per_round": [
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 1
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 2
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 3
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_wrong": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 4
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_wrong": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 5
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 6
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 8
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 9
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 10
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|mixed": 8,
+     "round_1based": 11
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 12
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 13
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 14
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 15
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 16
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 17
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 18
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 19
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 20
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|mixed": 8,
+     "round_1based": 21
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 22
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 23
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 5,
+     "round_1based": 24
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 25
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 26
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 27
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 28
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 29
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 30
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 31
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 32
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 33
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 34
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 35
+    },
+    {
+     "hard_common|mixed": 8,
+     "hard_extra|mixed": 8,
+     "round_1based": 36
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|mixed": 8,
+     "round_1based": 37
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 38
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 39
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 6,
+     "round_1based": 40
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 41
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 42
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 43
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 44
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 45
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 46
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 47
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 48
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 49
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 50
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 51
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 52
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 53
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 54
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 55
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 56
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 57
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 58
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 59
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 60
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 61
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 62
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 63
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 64
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 65
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 66
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 67
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 68
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 69
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 70
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 71
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 72
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 73
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 74
+    },
+    {
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 75
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 76
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 77
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 2,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 5,
+     "round_1based": 78
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 79
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 80
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 81
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 1,
+     "round_1based": 82
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 83
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 84
+    },
+    {
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 85
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 86
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 87
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 88
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 89
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 90
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 91
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 92
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 3,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 4,
+     "round_1based": 93
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 94
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 95
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 96
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 97
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 98
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 7,
+     "hard_extra|mixed": 1,
+     "round_1based": 99
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 100
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 1,
+     "hard_extra|all_wrong": 2,
+     "hard_extra|mixed": 5,
+     "round_1based": 101
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 102
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 103
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 104
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 105
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 106
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 107
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 108
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 109
+    },
+    {
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "hard_extra|all_correct": 1,
+     "hard_extra|mixed": 7,
+     "round_1based": 110
+    },
+    {
+     "hard_common|all_correct": 8,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 111
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 112
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 113
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 114
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 5,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 2,
+     "round_1based": 115
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "hard_common|all_correct": 7,
+     "hard_common|all_wrong": 1,
+     "hard_extra|all_correct": 5,
+     "hard_extra|mixed": 3,
+     "round_1based": 117
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 118
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 119
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 120
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 121
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 122
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 4,
+     "hard_extra|all_wrong": 1,
+     "hard_extra|mixed": 3,
+     "round_1based": 123
+    },
+    {
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "hard_extra|all_correct": 6,
+     "hard_extra|mixed": 2,
+     "round_1based": 124
+    },
+    {
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 3,
+     "hard_extra|mixed": 5,
+     "round_1based": 125
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 126
+    },
+    {
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 2,
+     "hard_extra|mixed": 6,
+     "round_1based": 127
+    },
+    {
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "hard_extra|all_correct": 4,
+     "hard_extra|mixed": 4,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "hard_common|all_correct": 348,
+    "hard_common|all_wrong": 35,
+    "hard_common|mixed": 641,
+    "hard_extra|all_correct": 334,
+    "hard_extra|all_wrong": 44,
+    "hard_extra|mixed": 646
+   },
+   "totals_all_roles": {
+    "all_correct": 682,
+    "all_wrong": 79,
+    "mixed": 1287
+   }
+  },
+  "R-s101": {
+   "per_round": [
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 1
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 2
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 3
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|mixed": 8,
+     "round_1based": 4
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 5
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 6
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 8
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 9
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 10
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 11
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 12
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 13
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 14
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 15
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 16
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 17
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 18
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 19
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 20
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 21
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 22
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 23
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 24
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 25
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 26
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 27
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 28
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 29
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 30
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|mixed": 8,
+     "round_1based": 31
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 32
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 33
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 34
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 35
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 36
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 37
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "round_1based": 38
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 39
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 40
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 41
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 42
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 43
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 44
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 45
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 46
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 47
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 48
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 49
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 50
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 51
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 52
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 53
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 54
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 55
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 56
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 57
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 58
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 59
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 60
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 61
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 62
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 63
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 64
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 65
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 66
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 67
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 68
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 69
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 70
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 71
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "round_1based": 72
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 73
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 74
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 75
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 76
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 77
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 78
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 79
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 80
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 81
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 82
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 83
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 84
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 85
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 86
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 87
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 3,
+     "round_1based": 88
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 89
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 90
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 91
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 92
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 93
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 94
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 95
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 96
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 97
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 98
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 7,
+     "hard_common|mixed": 1,
+     "round_1based": 99
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 100
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 101
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 102
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 103
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 104
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 105
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 106
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 107
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 108
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 109
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 110
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 111
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 1,
+     "round_1based": 112
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 113
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 114
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 115
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 117
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 118
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 119
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 120
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 121
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 122
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 123
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 124
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 125
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 126
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 127
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "aux|all_correct": 709,
+    "aux|mixed": 315,
+    "hard_common|all_correct": 320,
+    "hard_common|all_wrong": 58,
+    "hard_common|mixed": 646
+   },
+   "totals_all_roles": {
+    "all_correct": 1029,
+    "all_wrong": 58,
+    "mixed": 961
+   }
+  },
+  "R-s202": {
+   "per_round": [
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 1
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|mixed": 8,
+     "round_1based": 2
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 3
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 4
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 5
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 6
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 8
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 9
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 10
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 11
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|mixed": 8,
+     "round_1based": 12
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 13
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 14
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 15
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 16
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 17
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 18
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|mixed": 8,
+     "round_1based": 19
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 20
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 21
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 22
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 23
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 24
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "round_1based": 25
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 26
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 27
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|mixed": 8,
+     "round_1based": 28
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 29
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 30
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 31
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 32
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 33
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 34
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 35
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 36
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 37
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 38
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 39
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 40
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 41
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 42
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 43
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 44
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 45
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 46
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 47
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|mixed": 8,
+     "round_1based": 48
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 49
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 50
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 51
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 52
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 53
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 54
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 55
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|mixed": 8,
+     "round_1based": 56
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 57
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 58
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 59
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 60
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 61
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 62
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 63
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 64
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 65
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 66
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 67
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 68
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|mixed": 8,
+     "round_1based": 69
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 70
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 71
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 72
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 73
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 74
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 75
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 76
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 77
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 78
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 79
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 80
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 81
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 82
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 83
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 84
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 85
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 86
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 87
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 88
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 89
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 90
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 91
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 92
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 93
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 94
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 95
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 96
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 7,
+     "hard_common|mixed": 1,
+     "round_1based": 97
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 98
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 99
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 100
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 101
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 102
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 103
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 104
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 105
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 106
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 107
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 108
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 109
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 110
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 111
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 112
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 113
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 114
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 115
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 117
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 118
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 119
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 120
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 121
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 122
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 123
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 124
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 125
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 126
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 127
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "aux|all_correct": 647,
+    "aux|mixed": 377,
+    "hard_common|all_correct": 253,
+    "hard_common|all_wrong": 48,
+    "hard_common|mixed": 723
+   },
+   "totals_all_roles": {
+    "all_correct": 900,
+    "all_wrong": 48,
+    "mixed": 1100
+   }
+  },
+  "U-s101": {
+   "per_round": [
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 1
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|mixed": 8,
+     "round_1based": 2
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 3
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 4
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 5
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 6
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 8
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 9
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 10
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 11
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 12
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 13
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 14
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 15
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 16
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 17
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 18
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 19
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 20
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|mixed": 8,
+     "round_1based": 21
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|mixed": 8,
+     "round_1based": 22
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 23
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 24
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 25
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 26
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 27
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 28
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 29
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 30
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 31
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|mixed": 8,
+     "round_1based": 32
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 33
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 34
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 35
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 36
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 37
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 38
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 39
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 40
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 41
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 42
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 43
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 44
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 45
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 46
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 47
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 48
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 49
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 50
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 51
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 52
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 53
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 54
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 55
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 56
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 57
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 58
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 59
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 60
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 61
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 62
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 63
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 64
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 65
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 66
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 67
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 68
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 3,
+     "round_1based": 69
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 70
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 71
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 72
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 73
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 74
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 75
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 76
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 77
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 78
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 79
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 80
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 3,
+     "round_1based": 81
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 82
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 83
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 84
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 85
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 86
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 87
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 88
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 89
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 90
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 91
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 92
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 93
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 94
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 95
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 96
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 97
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 98
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 99
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 1,
+     "round_1based": 100
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 101
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 102
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 7,
+     "hard_common|mixed": 1,
+     "round_1based": 103
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 5,
+     "round_1based": 104
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 105
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 106
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 107
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 108
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 109
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 110
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 111
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 112
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 113
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 114
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 115
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 117
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 118
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 1,
+     "round_1based": 119
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 120
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 121
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 122
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 123
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 124
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 125
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 126
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 127
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "aux|all_correct": 757,
+    "aux|mixed": 267,
+    "hard_common|all_correct": 301,
+    "hard_common|all_wrong": 60,
+    "hard_common|mixed": 663
+   },
+   "totals_all_roles": {
+    "all_correct": 1058,
+    "all_wrong": 60,
+    "mixed": 930
+   }
+  },
+  "U-s202": {
+   "per_round": [
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 1
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|mixed": 8,
+     "round_1based": 2
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|mixed": 8,
+     "round_1based": 3
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 4
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 5
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 6
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 7
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 8
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 9
+    },
+    {
+     "aux|mixed": 8,
+     "hard_common|mixed": 8,
+     "round_1based": 10
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|mixed": 8,
+     "round_1based": 11
+    },
+    {
+     "aux|all_correct": 1,
+     "aux|mixed": 7,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 12
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 13
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|mixed": 8,
+     "round_1based": 14
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 3,
+     "hard_common|mixed": 4,
+     "round_1based": 15
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 16
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 17
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 18
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 19
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|mixed": 8,
+     "round_1based": 20
+    },
+    {
+     "aux|all_correct": 3,
+     "aux|mixed": 5,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 21
+    },
+    {
+     "aux|all_correct": 2,
+     "aux|mixed": 6,
+     "hard_common|mixed": 8,
+     "round_1based": 22
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 23
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 24
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 25
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 26
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|mixed": 8,
+     "round_1based": 27
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 28
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 29
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 30
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 31
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 32
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|mixed": 8,
+     "round_1based": 33
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 34
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 35
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 36
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 37
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 38
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 39
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 40
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 41
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|mixed": 8,
+     "round_1based": 42
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 43
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 44
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 45
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 46
+    },
+    {
+     "aux|all_correct": 4,
+     "aux|mixed": 4,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 47
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 48
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 49
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 50
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 51
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 52
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 53
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 54
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 55
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 56
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|mixed": 8,
+     "round_1based": 57
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 58
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 59
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 60
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 61
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 62
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 63
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_wrong": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 64
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 65
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 66
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 67
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 68
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 69
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 70
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 71
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 72
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 73
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 74
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 75
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 76
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 77
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 78
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 79
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 80
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 81
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 82
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 83
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 84
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 1,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 6,
+     "round_1based": 85
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 86
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 87
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 88
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 89
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 90
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 5,
+     "round_1based": 91
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 92
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 1,
+     "hard_common|mixed": 7,
+     "round_1based": 93
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 94
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 95
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 96
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 97
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 8,
+     "round_1based": 98
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 99
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 100
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 101
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 102
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 103
+    },
+    {
+     "aux|all_correct": 5,
+     "aux|mixed": 3,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 104
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 105
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 106
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 107
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 108
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 109
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 110
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 111
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 112
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 113
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 114
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 115
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 116
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 3,
+     "round_1based": 117
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 118
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|mixed": 5,
+     "round_1based": 119
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 6,
+     "hard_common|mixed": 2,
+     "round_1based": 120
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 121
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 122
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 5,
+     "hard_common|mixed": 3,
+     "round_1based": 123
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 2,
+     "hard_common|mixed": 6,
+     "round_1based": 124
+    },
+    {
+     "aux|all_correct": 6,
+     "aux|mixed": 2,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 125
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 5,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 2,
+     "round_1based": 126
+    },
+    {
+     "aux|all_correct": 8,
+     "hard_common|all_correct": 4,
+     "hard_common|mixed": 4,
+     "round_1based": 127
+    },
+    {
+     "aux|all_correct": 7,
+     "aux|mixed": 1,
+     "hard_common|all_correct": 3,
+     "hard_common|all_wrong": 1,
+     "hard_common|mixed": 4,
+     "round_1based": 128
+    }
+   ],
+   "totals": {
+    "aux|all_correct": 736,
+    "aux|mixed": 288,
+    "hard_common|all_correct": 311,
+    "hard_common|all_wrong": 54,
+    "hard_common|mixed": 659
+   },
+   "totals_all_roles": {
+    "all_correct": 1047,
+    "all_wrong": 54,
+    "mixed": 947
+   }
+  }
+ }
+}

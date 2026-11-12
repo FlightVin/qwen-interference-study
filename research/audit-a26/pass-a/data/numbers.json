@@ -1,0 +1,8418 @@
+{
+ "claims": [
+  {
+   "id": "2.base",
+   "section": "2, Q1",
+   "claim": "base sealed-test pass@1 52.6%, pass@8 83.5%",
+   "report": [
+    52.6,
+    83.5
+   ],
+   "recomputed_display": [
+    52.6,
+    83.5
+   ],
+   "recomputed_unrounded": [
+    0.525634765625,
+    0.8352163617516614
+   ],
+   "production": [
+    0.525634765625,
+    0.8352163617516615
+   ],
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.endpoints.s101",
+   "section": "2, Q1",
+   "claim": "seed 101 H / R / U pass@1",
+   "report": [
+    77.0,
+    81.9,
+    77.7
+   ],
+   "recomputed_display": [
+    77.0,
+    81.9,
+    77.7
+   ],
+   "recomputed_unrounded": [
+    0.76953125,
+    0.818603515625,
+    0.77685546875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.endpoints.s202",
+   "section": "2, Q1",
+   "claim": "seed 202 H / R / U pass@1",
+   "report": [
+    72.4,
+    74.8,
+    79.2
+   ],
+   "recomputed_display": [
+    72.4,
+    74.8,
+    79.2
+   ],
+   "recomputed_unrounded": [
+    0.723876953125,
+    0.747802734375,
+    0.792236328125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.R-U.s101",
+   "section": "2, Q1",
+   "claim": "seed 101 R-U per-seed paired problem bootstrap",
+   "report": [
+    4.2,
+    2.1,
+    6.3
+   ],
+   "recomputed_display": [
+    4.17,
+    2.03,
+    6.32
+   ],
+   "recomputed_unrounded": [
+    0.041748046875,
+    0.020263671875,
+    0.063232421875
+   ],
+   "production": {
+    "est": 0.041748046875,
+    "lo": 0.021240234375,
+    "hi": 0.063232421875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.R-H.s101",
+   "section": "2, Q1",
+   "claim": "seed 101 R-H per-seed paired problem bootstrap",
+   "report": [
+    4.9,
+    2.0,
+    8.0
+   ],
+   "recomputed_display": [
+    4.91,
+    1.95,
+    7.93
+   ],
+   "recomputed_unrounded": [
+    0.049072265625,
+    0.01953125,
+    0.079345703125
+   ],
+   "production": {
+    "est": 0.049072265625,
+    "lo": 0.01953125,
+    "hi": 0.07984008789062491
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.U-H.s101",
+   "section": "2, Q1",
+   "claim": "seed 101 U-H per-seed paired problem bootstrap",
+   "report": [
+    0.7,
+    -2.0,
+    3.5
+   ],
+   "recomputed_display": [
+    0.73,
+    -1.93,
+    3.56
+   ],
+   "recomputed_unrounded": [
+    0.00732421875,
+    -0.019287109375,
+    0.03564453125
+   ],
+   "production": {
+    "est": 0.00732421875,
+    "lo": -0.01953125,
+    "hi": 0.034912109375
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.R-U.s202",
+   "section": "2, Q1",
+   "claim": "seed 202 R-U per-seed paired problem bootstrap",
+   "report": [
+    -4.4,
+    -7.2,
+    -1.7
+   ],
+   "recomputed_display": [
+    -4.44,
+    -7.23,
+    -1.78
+   ],
+   "recomputed_unrounded": [
+    -0.04443359375,
+    -0.072271728515625,
+    -0.017822265625
+   ],
+   "production": {
+    "est": -0.04443359375,
+    "lo": -0.07177734375,
+    "hi": -0.017333984375
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.R-H.s202",
+   "section": "2, Q1",
+   "claim": "seed 202 R-H per-seed paired problem bootstrap",
+   "report": [
+    2.4,
+    -0.4,
+    5.4
+   ],
+   "recomputed_display": [
+    2.39,
+    -0.42,
+    5.32
+   ],
+   "recomputed_unrounded": [
+    0.02392578125,
+    -0.004150390625,
+    0.05322265625
+   ],
+   "production": {
+    "est": 0.02392578125,
+    "lo": -0.0044006347656249944,
+    "hi": 0.053955078125
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.U-H.s202",
+   "section": "2, Q1",
+   "claim": "seed 202 U-H per-seed paired problem bootstrap",
+   "report": [
+    6.8,
+    3.5,
+    10.2
+   ],
+   "recomputed_display": [
+    6.84,
+    3.59,
+    10.23
+   ],
+   "recomputed_unrounded": [
+    0.068359375,
+    0.035888671875,
+    0.102294921875
+   ],
+   "production": {
+    "est": 0.068359375,
+    "lo": 0.034661865234375006,
+    "hi": 0.102294921875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.R-U.mean",
+   "section": "2, Q1",
+   "claim": "two-seed mean R-U (problem bootstrap of the seed-mean per-problem difference)",
+   "report": [
+    -0.1,
+    -1.8,
+    1.5
+   ],
+   "recomputed_display": [
+    -0.13,
+    -1.87,
+    1.5
+   ],
+   "recomputed_unrounded": [
+    -0.0013427734375,
+    -0.0186767578125,
+    0.0150146484375
+   ],
+   "production": {
+    "est": -0.0013427734375,
+    "lo": -0.018191528320312497,
+    "hi": 0.0150146484375
+   },
+   "status": "verified",
+   "note": "Interval resamples problems only; it carries no training-seed variation (n = 2 seeds)."
+  },
+  {
+   "id": "2.R-H.mean",
+   "section": "2, Q1",
+   "claim": "two-seed mean R-H (problem bootstrap of the seed-mean per-problem difference)",
+   "report": [
+    3.6,
+    1.6,
+    5.8
+   ],
+   "recomputed_display": [
+    3.65,
+    1.59,
+    5.75
+   ],
+   "recomputed_unrounded": [
+    0.0364990234375,
+    0.015866088867187503,
+    0.057498168945312456
+   ],
+   "production": {
+    "est": 0.0364990234375,
+    "lo": 0.0162353515625,
+    "hi": 0.0584716796875
+   },
+   "status": "verified",
+   "note": "Interval resamples problems only; it carries no training-seed variation (n = 2 seeds)."
+  },
+  {
+   "id": "2.U-H.mean",
+   "section": "2, Q1",
+   "claim": "two-seed mean U-H (problem bootstrap of the seed-mean per-problem difference)",
+   "report": [
+    3.8,
+    1.6,
+    6.0
+   ],
+   "recomputed_display": [
+    3.78,
+    1.67,
+    6.05
+   ],
+   "recomputed_unrounded": [
+    0.037841796875,
+    0.016720581054687503,
+    0.060546875
+   ],
+   "production": {
+    "est": 0.037841796875,
+    "lo": 0.0159912109375,
+    "hi": 0.060302734375
+   },
+   "status": "verified",
+   "note": "Interval resamples problems only; it carries no training-seed variation (n = 2 seeds)."
+  },
+  {
+   "id": "2.means",
+   "section": "2, Q1",
+   "claim": "two-seed mean pass@1 H / R / U",
+   "report": [
+    74.7,
+    78.3,
+    78.5
+   ],
+   "recomputed_display": [
+    74.7,
+    78.3,
+    78.5
+   ],
+   "recomputed_unrounded": [
+    0.7467041015625,
+    0.783203125,
+    0.7845458984375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.fallback",
+   "section": "2",
+   "claim": "H-s202 r116 fallback: pass@1 74.3%, pass@8 92.8%, capped 14.8%",
+   "report": [
+    74.3,
+    92.8,
+    14.8
+   ],
+   "recomputed_display": [
+    74.3,
+    92.8,
+    14.8
+   ],
+   "recomputed_unrounded": [
+    0.7431640625,
+    0.928149223407062,
+    0.147705078125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.h202",
+   "section": "2",
+   "claim": "H-s202 r128: pass@1 72.4%, pass@8 90.8%, capped 15.4%",
+   "report": [
+    72.4,
+    90.8,
+    15.4
+   ],
+   "recomputed_display": [
+    72.4,
+    90.8,
+    15.4
+   ],
+   "recomputed_unrounded": [
+    0.723876953125,
+    0.9075769061421523,
+    0.154296875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.fb_minus_r128",
+   "section": "2",
+   "claim": "r128 is 1.9 points below r116",
+   "report": [
+    1.9
+   ],
+   "recomputed_display": [
+    1.9
+   ],
+   "recomputed_unrounded": [
+    0.019287109375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.cells",
+   "section": "2, opening",
+   "claim": "common-GPU R-s101 82.3, U-s101 77.8, R-s202 76.1, U-s202 79.2",
+   "report": [
+    82.3,
+    77.8,
+    76.1,
+    79.2
+   ],
+   "recomputed_display": [
+    82.3,
+    77.8,
+    76.1,
+    79.2
+   ],
+   "recomputed_unrounded": [
+    0.822509765625,
+    0.778076171875,
+    0.76123046875,
+    0.792236328125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-U.s101",
+   "section": "2",
+   "claim": "common-GPU seed 101 R-U",
+   "report": [
+    4.4,
+    2.4,
+    6.5
+   ],
+   "recomputed_display": [
+    4.44,
+    2.42,
+    6.47
+   ],
+   "recomputed_unrounded": [
+    0.04443359375,
+    0.024169921875,
+    0.064697265625
+   ],
+   "production": {
+    "est": 0.04443359375,
+    "lo": 0.0244140625,
+    "hi": 0.0654296875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-H.s101",
+   "section": "2",
+   "claim": "common-GPU seed 101 R-H",
+   "report": [
+    5.3,
+    2.5,
+    8.2
+   ],
+   "recomputed_display": [
+    5.3,
+    2.51,
+    8.2
+   ],
+   "recomputed_unrounded": [
+    0.052978515625,
+    0.025146484375,
+    0.08203125
+   ],
+   "production": {
+    "est": 0.052978515625,
+    "lo": 0.025140380859375006,
+    "hi": 0.08154296875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.U-H.s101",
+   "section": "2",
+   "claim": "common-GPU seed 101 U-H",
+   "report": [
+    0.9,
+    -1.8,
+    3.5
+   ],
+   "recomputed_display": [
+    0.85,
+    -1.83,
+    3.52
+   ],
+   "recomputed_unrounded": [
+    0.008544921875,
+    -0.018310546875,
+    0.03516235351562491
+   ],
+   "production": {
+    "est": 0.008544921875,
+    "lo": -0.017822265625,
+    "hi": 0.035400390625
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-U.s202",
+   "section": "2",
+   "claim": "common-GPU seed 202 R-U",
+   "report": [
+    -3.1,
+    -6.0,
+    -0.4
+   ],
+   "recomputed_display": [
+    -3.1,
+    -5.96,
+    -0.37
+   ],
+   "recomputed_unrounded": [
+    -0.031005859375,
+    -0.0595703125,
+    -0.003662109375
+   ],
+   "production": {
+    "est": -0.031005859375,
+    "lo": -0.0595703125,
+    "hi": -0.00390625
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-H.s202",
+   "section": "2",
+   "claim": "common-GPU seed 202 R-H",
+   "report": [
+    3.7,
+    0.9,
+    6.6
+   ],
+   "recomputed_display": [
+    3.74,
+    0.95,
+    6.62
+   ],
+   "recomputed_unrounded": [
+    0.037353515625,
+    0.009521484375,
+    0.066162109375
+   ],
+   "production": {
+    "est": 0.037353515625,
+    "lo": 0.00927734375,
+    "hi": 0.066162109375
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.U-H.s202",
+   "section": "2",
+   "claim": "common-GPU seed 202 U-H",
+   "report": [
+    6.8,
+    3.5,
+    10.2
+   ],
+   "recomputed_display": [
+    6.84,
+    3.54,
+    10.3
+   ],
+   "recomputed_unrounded": [
+    0.068359375,
+    0.035400390625,
+    0.10302734375
+   ],
+   "production": {
+    "est": 0.068359375,
+    "lo": 0.035400390625,
+    "hi": 0.102294921875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-U.mean",
+   "section": "2",
+   "claim": "common-GPU two-seed mean R-U",
+   "report": [
+    0.7,
+    -1.0,
+    2.3
+   ],
+   "recomputed_display": [
+    0.67,
+    -0.99,
+    2.36
+   ],
+   "recomputed_unrounded": [
+    0.0067138671875,
+    -0.0098876953125,
+    0.0235595703125
+   ],
+   "production": {
+    "est": 0.0067138671875,
+    "lo": -0.01025390625,
+    "hi": 0.0233154296875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.R-H.mean",
+   "section": "2",
+   "claim": "common-GPU two-seed mean R-H",
+   "report": [
+    4.5,
+    2.6,
+    6.4
+   ],
+   "recomputed_display": [
+    4.52,
+    2.61,
+    6.51
+   ],
+   "recomputed_unrounded": [
+    0.045166015625,
+    0.026119995117187503,
+    0.0650634765625
+   ],
+   "production": {
+    "est": 0.045166015625,
+    "lo": 0.0260009765625,
+    "hi": 0.0643310546875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.cgpu.U-H.mean",
+   "section": "2",
+   "claim": "common-GPU two-seed mean U-H",
+   "report": [
+    3.8,
+    1.7,
+    6.0
+   ],
+   "recomputed_display": [
+    3.85,
+    1.7,
+    6.05
+   ],
+   "recomputed_unrounded": [
+    0.0384521484375,
+    0.0169677734375,
+    0.060546875
+   ],
+   "production": {
+    "est": 0.0384521484375,
+    "lo": 0.0172119140625,
+    "hi": 0.0601806640625
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.R-s101",
+   "section": "2",
+   "claim": "R-s101 rerun: identical token sequences / identical c per problem",
+   "report": [
+    48,
+    62
+   ],
+   "recomputed_display": [
+    48,
+    62
+   ],
+   "recomputed_unrounded": [
+    48,
+    62
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.R-s101.delta",
+   "section": "2",
+   "claim": "R-s101 pass@1 rerun \u2212 original",
+   "report": [
+    0.4,
+    -0.8,
+    1.6
+   ],
+   "recomputed_display": [
+    0.39,
+    -0.81,
+    1.56
+   ],
+   "recomputed_unrounded": [
+    0.00390625,
+    -0.008056640625,
+    0.015625
+   ],
+   "production": {
+    "est": 0.00390625,
+    "lo": -0.007568359375,
+    "hi": 0.01611328125
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.R-s202",
+   "section": "2",
+   "claim": "R-s202 rerun: identical token sequences / identical c per problem",
+   "report": [
+    133,
+    46
+   ],
+   "recomputed_display": [
+    133,
+    46
+   ],
+   "recomputed_unrounded": [
+    133,
+    46
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.R-s202.delta",
+   "section": "2",
+   "claim": "R-s202 pass@1 rerun \u2212 original",
+   "report": [
+    1.3,
+    0.2,
+    2.5
+   ],
+   "recomputed_display": [
+    1.34,
+    0.15,
+    2.51
+   ],
+   "recomputed_unrounded": [
+    0.013427734375,
+    0.00146484375,
+    0.025146484375
+   ],
+   "production": {
+    "est": 0.013427734375,
+    "lo": 0.001953125,
+    "hi": 0.025146484375
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.U-s101",
+   "section": "2",
+   "claim": "U-s101 rerun: identical token sequences / identical c per problem",
+   "report": [
+    1964,
+    79
+   ],
+   "recomputed_display": [
+    1964,
+    79
+   ],
+   "recomputed_unrounded": [
+    1964,
+    79
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.U-s101.delta",
+   "section": "2",
+   "claim": "U-s101 pass@1 rerun \u2212 original",
+   "report": [
+    0.1,
+    -1.0,
+    1.2
+   ],
+   "recomputed_display": [
+    0.12,
+    -0.93,
+    1.2
+   ],
+   "recomputed_unrounded": [
+    0.001220703125,
+    -0.00927734375,
+    0.011962890625
+   ],
+   "production": {
+    "est": 0.001220703125,
+    "lo": -0.009521484375,
+    "hi": 0.01171875
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.U-s202",
+   "section": "2",
+   "claim": "U-s202 rerun: identical token sequences / identical c per problem",
+   "report": [
+    4096,
+    128
+   ],
+   "recomputed_display": [
+    4096,
+    128
+   ],
+   "recomputed_unrounded": [
+    4096,
+    128
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.max",
+   "section": "2",
+   "claim": "a rerun moved pass@1 by at most 1.3 points",
+   "report": [
+    1.3
+   ],
+   "recomputed_display": [
+    1.3
+   ],
+   "recomputed_unrounded": [
+    0.013427734375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "2.repro.u101share",
+   "section": "2",
+   "claim": "U-s101 matched on only 48% of attempts",
+   "report": [
+    48
+   ],
+   "recomputed_display": [
+    48
+   ],
+   "recomputed_unrounded": [
+    0.4794921875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "open.range",
+   "section": "opening 1, Q1",
+   "claim": "'five finished trained policies scored 74.8%\u201381.9%' (all six finished; H-s202 r128 = 72.4%)",
+   "report": [
+    74.8,
+    81.9
+   ],
+   "recomputed_display": [
+    72.4,
+    81.9
+   ],
+   "recomputed_unrounded": [
+    0.723876953125,
+    0.818603515625
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "Range of the six r128 endpoints is 72.4%\u201381.9%; 74.8% is the minimum without H-s202."
+  },
+  {
+   "id": "open.gain",
+   "section": "opening 1, Q1",
+   "claim": "gain +22 to +29 points over base (six endpoints: +19.8 to +29.3)",
+   "report": [
+    22,
+    29
+   ],
+   "recomputed_display": [
+    20,
+    29
+   ],
+   "recomputed_unrounded": [
+    0.1982421875,
+    0.29296875
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "Without H-s202: +22.2 to +29.3."
+  },
+  {
+   "id": "4.1.signs",
+   "section": "4.1",
+   "claim": "same 31 / opposite 44 / tie either 53 / tie both 31 / all four 0/32: 3 / all four 32/32: 26",
+   "report": [
+    31,
+    44,
+    53,
+    31,
+    3,
+    26
+   ],
+   "recomputed_display": [
+    31,
+    44,
+    53,
+    31,
+    3,
+    26
+   ],
+   "recomputed_unrounded": [
+    31,
+    44,
+    53,
+    31,
+    3,
+    26
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.spearman",
+   "section": "4.1, opening 3, Q4",
+   "claim": "Spearman of per-problem R \u2212 U across seeds \u22120.09 overall, \u22120.04 within B1",
+   "report": [
+    -0.09,
+    -0.04
+   ],
+   "recomputed_display": [
+    -0.09,
+    -0.04
+   ],
+   "recomputed_unrounded": [
+    -0.09077768195355068,
+    -0.038863290445383954
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.band.B0",
+   "section": "4.1",
+   "claim": "band B0: size, R \u2212 U s101, R \u2212 U s202, contribution to swing",
+   "report": [
+    15,
+    0.8,
+    -10.2,
+    -1.3
+   ],
+   "recomputed_display": [
+    15,
+    0.8,
+    -10.2,
+    -1.3
+   ],
+   "recomputed_unrounded": [
+    15,
+    0.008333333333333333,
+    -0.10208333333333333,
+    -0.012939453125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.band.B1",
+   "section": "4.1",
+   "claim": "band B1: size, R \u2212 U s101, R \u2212 U s202, contribution to swing",
+   "report": [
+    34,
+    9.7,
+    -11.8,
+    -5.7
+   ],
+   "recomputed_display": [
+    34,
+    9.7,
+    -11.8,
+    -5.7
+   ],
+   "recomputed_unrounded": [
+    34,
+    0.09650735294117647,
+    -0.11764705882352941,
+    -0.056884765625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.band.B2",
+   "section": "4.1",
+   "claim": "band B2: size, R \u2212 U s101, R \u2212 U s202, contribution to swing",
+   "report": [
+    26,
+    3.0,
+    -2.9,
+    -1.2
+   ],
+   "recomputed_display": [
+    26,
+    3.0,
+    -2.9,
+    -1.2
+   ],
+   "recomputed_unrounded": [
+    26,
+    0.030048076923076924,
+    -0.028846153846153848,
+    -0.011962890625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.band.B3",
+   "section": "4.1",
+   "claim": "band B3: size, R \u2212 U s101, R \u2212 U s202, contribution to swing",
+   "report": [
+    32,
+    2.4,
+    2.6,
+    0.0
+   ],
+   "recomputed_display": [
+    32,
+    2.4,
+    2.6,
+    0.0
+   ],
+   "recomputed_unrounded": [
+    32,
+    0.0244140625,
+    0.0263671875,
+    0.00048828125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.band.B4",
+   "section": "4.1",
+   "claim": "band B4: size, R \u2212 U s101, R \u2212 U s202, contribution to swing",
+   "report": [
+    21,
+    1.8,
+    -1.2,
+    -0.5
+   ],
+   "recomputed_display": [
+    21,
+    1.8,
+    -1.2,
+    -0.5
+   ],
+   "recomputed_unrounded": [
+    21,
+    0.017857142857142856,
+    -0.011904761904761904,
+    -0.0048828125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.swing",
+   "section": "4.1, opening 3",
+   "claim": "swing between seeds \u22128.6 points; B1 carries \u22125.7",
+   "report": [
+    -8.6,
+    -5.7
+   ],
+   "recomputed_display": [
+    -8.6,
+    -5.7
+   ],
+   "recomputed_unrounded": [
+    -0.086181640625,
+    -0.056884765625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.1.top",
+   "section": "4.1",
+   "claim": "within B1 top 3 item changes carry 30%, top 5 45% of B1's share",
+   "report": [
+    30,
+    45
+   ],
+   "recomputed_display": [
+    30,
+    45
+   ],
+   "recomputed_unrounded": [
+    0.296137339055794,
+    0.45064377682403434
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "Signed share; items sorted by |change| (production rule)."
+  },
+  {
+   "id": "4.1.00213",
+   "section": "4.1",
+   "claim": "algebra/test/00213: R 23/32 vs U 13/32 (s101), R 11/32 vs U 24/32 (s202)",
+   "report": [
+    23,
+    13,
+    11,
+    24
+   ],
+   "recomputed_display": [
+    23,
+    13,
+    11,
+    24
+   ],
+   "recomputed_unrounded": [
+    23.0,
+    13.0,
+    11.0,
+    24.0
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.s202reach",
+   "section": "opening 3, 4.2",
+   "claim": "seed 202: 122 problems reached by both carry \u22124.2; 3 reached by one carry \u22120.2",
+   "report": [
+    122,
+    -4.2,
+    3,
+    -0.2
+   ],
+   "recomputed_display": [
+    122,
+    -4.2,
+    3,
+    -0.2
+   ],
+   "recomputed_unrounded": [
+    122,
+    -0.042236328125,
+    3,
+    -0.002197265625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.base",
+   "section": "4.2",
+   "claim": "base: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    52.6,
+    83.5,
+    116,
+    12,
+    2
+   ],
+   "recomputed_display": [
+    52.6,
+    83.5,
+    116,
+    12,
+    2
+   ],
+   "recomputed_unrounded": [
+    0.525634765625,
+    0.8352163617516614,
+    116,
+    12,
+    2
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.H-s101",
+   "section": "4.2",
+   "claim": "H-s101: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    77.0,
+    93.7,
+    125,
+    3,
+    445
+   ],
+   "recomputed_display": [
+    77.0,
+    93.7,
+    125,
+    3,
+    445
+   ],
+   "recomputed_unrounded": [
+    0.76953125,
+    0.9370628452316438,
+    125,
+    3,
+    445
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.R-s101",
+   "section": "4.2",
+   "claim": "R-s101: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    81.9,
+    96.1,
+    125,
+    3,
+    437
+   ],
+   "recomputed_display": [
+    81.9,
+    96.1,
+    125,
+    3,
+    437
+   ],
+   "recomputed_unrounded": [
+    0.818603515625,
+    0.9612719112166415,
+    125,
+    3,
+    437
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.U-s101",
+   "section": "4.2",
+   "claim": "U-s101: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    77.7,
+    94.5,
+    125,
+    3,
+    501
+   ],
+   "recomputed_display": [
+    77.7,
+    94.5,
+    125,
+    3,
+    501
+   ],
+   "recomputed_unrounded": [
+    0.77685546875,
+    0.9446191919678084,
+    125,
+    3,
+    501
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.R-s202",
+   "section": "4.2",
+   "claim": "R-s202: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    74.8,
+    92.2,
+    123,
+    5,
+    538
+   ],
+   "recomputed_display": [
+    74.8,
+    92.2,
+    123,
+    5,
+    538
+   ],
+   "recomputed_unrounded": [
+    0.747802734375,
+    0.9220936494312294,
+    123,
+    5,
+    538
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.U-s202",
+   "section": "4.2",
+   "claim": "U-s202: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    79.2,
+    94.9,
+    124,
+    4,
+    333
+   ],
+   "recomputed_display": [
+    79.2,
+    94.9,
+    124,
+    4,
+    333
+   ],
+   "recomputed_unrounded": [
+    0.792236328125,
+    0.9485036109685026,
+    124,
+    4,
+    333
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.H-s202",
+   "section": "4.2",
+   "claim": "H-s202: pass@1, pass@8, solved \u2265 1 of 32, 0/32, truncated attempts",
+   "report": [
+    72.4,
+    90.8,
+    122,
+    6,
+    632
+   ],
+   "recomputed_display": [
+    72.4,
+    90.8,
+    122,
+    6,
+    632
+   ],
+   "recomputed_unrounded": [
+    0.723876953125,
+    0.9075769061421523,
+    122,
+    6,
+    632
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.unreach",
+   "section": "4.2",
+   "claim": "14 problems unreachable at baseline (base attempts 16\u201331)",
+   "report": [
+    14
+   ],
+   "recomputed_display": [
+    14
+   ],
+   "recomputed_unrounded": [
+    14
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.2.became",
+   "section": "4.2",
+   "claim": "training made 9\u201311 of them reachable (five policies; six incl. H-s202)",
+   "report": [
+    9,
+    11
+   ],
+   "recomputed_display": [
+    9,
+    11
+   ],
+   "recomputed_unrounded": [
+    9,
+    11
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "per policy {'H-s101': 11, 'R-s101': 11, 'U-s101': 11, 'H-s202': 10, 'R-s202': 9, 'U-s202': 11}"
+  },
+  {
+   "id": "4.2.reach_p1",
+   "section": "4.2",
+   "claim": "on the 114 reachable problems pass@1 rose from 59.6% to 82.5\u201388.0%",
+   "report": [
+    59.6,
+    82.5,
+    88.0
+   ],
+   "recomputed_display": [
+    59.6,
+    82.5,
+    88.0
+   ],
+   "recomputed_unrounded": [
+    0.5959429824561403,
+    0.8245614035087719,
+    0.8804824561403509
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "H-s202 on reachable = 0.7963; range omits H-s202."
+  },
+  {
+   "id": "4.2.gain",
+   "section": "4.2",
+   "claim": "total gain over base +21.7 to +28.8 points (vs base attempts 16\u201331)",
+   "report": [
+    21.7,
+    28.8
+   ],
+   "recomputed_display": [
+    21.7,
+    28.8
+   ],
+   "recomputed_unrounded": [
+    0.217041015625,
+    0.287841796875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "H-s202 gain = 19.31; range omits H-s202."
+  },
+  {
+   "id": "4.3.t.s101",
+   "section": "4.3, Q2",
+   "claim": "seed 101 truncation shares t_R, t_U",
+   "report": [
+    10.7,
+    12.2
+   ],
+   "recomputed_display": [
+    10.7,
+    12.2
+   ],
+   "recomputed_unrounded": [
+    0.106689453125,
+    0.122314453125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.a.s101",
+   "section": "4.3, Q2",
+   "claim": "seed 101 accuracy among finished a_R, a_U",
+   "report": [
+    91.6,
+    88.5
+   ],
+   "recomputed_display": [
+    91.6,
+    88.5
+   ],
+   "recomputed_unrounded": [
+    0.9163705930582127,
+    0.8851182197496523
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.tt.s101",
+   "section": "4.3, Q2",
+   "claim": "seed 101 truncation term",
+   "report": [
+    1.4,
+    0.0,
+    2.8
+   ],
+   "recomputed_display": [
+    1.41,
+    0.02,
+    2.77
+   ],
+   "recomputed_unrounded": [
+    0.014074131350061445,
+    0.0002173876255597145,
+    0.027744314503040095
+   ],
+   "production": {
+    "est": 0.014074131350061445,
+    "lo": 0.00021846592420693805,
+    "hi": 0.027644209469587313
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.at.s101",
+   "section": "4.3, Q2",
+   "claim": "seed 101 accuracy term",
+   "report": [
+    2.8,
+    0.9,
+    4.7
+   ],
+   "recomputed_display": [
+    2.77,
+    0.95,
+    4.66
+   ],
+   "recomputed_unrounded": [
+    0.027673915524938565,
+    0.009493156010005815,
+    0.046629588286332714
+   ],
+   "production": {
+    "est": 0.027673915524938565,
+    "lo": 0.009121947339325183,
+    "hi": 0.04647466853606631
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.t.s202",
+   "section": "4.3, Q2",
+   "claim": "seed 202 truncation shares t_R, t_U",
+   "report": [
+    13.1,
+    8.1
+   ],
+   "recomputed_display": [
+    13.1,
+    8.1
+   ],
+   "recomputed_unrounded": [
+    0.13134765625,
+    0.081298828125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.a.s202",
+   "section": "4.3, Q2",
+   "claim": "seed 202 accuracy among finished a_R, a_U",
+   "report": [
+    86.1,
+    86.2
+   ],
+   "recomputed_display": [
+    86.1,
+    86.2
+   ],
+   "recomputed_unrounded": [
+    0.8608768971332209,
+    0.8623438745681637
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.tt.s202",
+   "section": "4.3, Q2",
+   "claim": "seed 202 truncation term",
+   "report": [
+    -4.3,
+    -6.1,
+    -2.7
+   ],
+   "recomputed_display": [
+    -4.31,
+    -6.05,
+    -2.68
+   ],
+   "recomputed_unrounded": [
+    -0.04312259011215623,
+    -0.060492586184037744,
+    -0.026846314957989385
+   ],
+   "production": {
+    "est": -0.04312259011215623,
+    "lo": -0.06104436811794228,
+    "hi": -0.026798595282692298
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.at.s202",
+   "section": "4.3, Q2",
+   "claim": "seed 202 accuracy term",
+   "report": [
+    -0.1,
+    -2.4,
+    2.0
+   ],
+   "recomputed_display": [
+    -0.13,
+    -2.4,
+    2.01
+   ],
+   "recomputed_unrounded": [
+    -0.001311003637843815,
+    -0.023957215797818537,
+    0.020140772844085806
+   ],
+   "production": {
+    "est": -0.001311003637843815,
+    "lo": -0.023945867157860328,
+    "hi": 0.019880706120163776
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.w8k.cells.s101",
+   "section": "4.3",
+   "claim": "seed 101 within-8192 R, U",
+   "report": [
+    76.5,
+    71.4
+   ],
+   "recomputed_display": [
+    76.5,
+    71.4
+   ],
+   "recomputed_unrounded": [
+    0.7646484375,
+    0.713623046875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.w8k.s101",
+   "section": "4.3",
+   "claim": "seed 101 within-8192 R \u2212 U",
+   "report": [
+    5.1,
+    3.1,
+    7.3
+   ],
+   "recomputed_display": [
+    5.1,
+    2.95,
+    7.3
+   ],
+   "recomputed_unrounded": [
+    0.051025390625,
+    0.029541015625,
+    0.072998046875
+   ],
+   "production": {
+    "est": 0.051025390625,
+    "lo": 0.03076171875,
+    "hi": 0.07300415039062491,
+    "A": 0.7646484375,
+    "B": 0.713623046875,
+    "direction": "R \u2212 U"
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.w8k.cells.s202",
+   "section": "4.3",
+   "claim": "seed 202 within-8192 R, U",
+   "report": [
+    68.6,
+    75.7
+   ],
+   "recomputed_display": [
+    68.6,
+    75.7
+   ],
+   "recomputed_unrounded": [
+    0.686279296875,
+    0.756591796875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.w8k.s202",
+   "section": "4.3",
+   "claim": "seed 202 within-8192 R \u2212 U",
+   "report": [
+    -7.0,
+    -10.0,
+    -4.2
+   ],
+   "recomputed_display": [
+    -7.03,
+    -10.01,
+    -4.22
+   ],
+   "recomputed_unrounded": [
+    -0.0703125,
+    -0.10009765625,
+    -0.042236328125
+   ],
+   "production": {
+    "est": -0.0703125,
+    "lo": -0.10009765625,
+    "hi": -0.0419921875,
+    "A": 0.686279296875,
+    "B": 0.756591796875,
+    "direction": "R \u2212 U"
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.pearson",
+   "section": "4.3",
+   "claim": "per-problem Pearson(R \u2212 U truncation, R \u2212 U success) \u22120.51 (s101), \u22120.59 (s202)",
+   "report": [
+    -0.51,
+    -0.59
+   ],
+   "recomputed_display": [
+    -0.51,
+    -0.59
+   ],
+   "recomputed_unrounded": [
+    -0.5096209137873066,
+    -0.5873757977113442
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "4.3.r202trunc",
+   "section": "4.3",
+   "claim": "R-s202 has 538 truncated answers",
+   "report": [
+    538
+   ],
+   "recomputed_display": [
+    538
+   ],
+   "recomputed_unrounded": [
+    538
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.2.R-s101",
+   "section": "5.2",
+   "claim": "R-s101 sealed test 12,288 \u2192 16,384 row",
+   "report": [
+    81.9,
+    84.2,
+    437,
+    94,
+    21.5,
+    50,
+    293,
+    67.0,
+    15689
+   ],
+   "recomputed_display": [
+    81.9,
+    84.2,
+    437,
+    94,
+    21.5,
+    50,
+    293,
+    67.0,
+    15689
+   ],
+   "recomputed_unrounded": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_1": 0.818603515625,
+    "pass1_2": 0.841552734375,
+    "correct_1": 3353,
+    "correct_2": 3447,
+    "capped_1": 437,
+    "recovered": 94,
+    "finished_wrong": 50,
+    "still_capped": 293,
+    "new_tokens": 1474767,
+    "new_tokens_recovered_only": 168606,
+    "attempts_per_problem": [
+     [
+      32,
+      128
+     ]
+    ]
+   },
+   "production": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_12288": 0.818603515625,
+    "pass1_16384": 0.841552734375,
+    "correct_12288": 3353,
+    "correct_16384": 3447,
+    "capped_12288": 437,
+    "recovered": 94,
+    "finished_wrong": 50,
+    "still_capped": 293,
+    "extra_tokens": 1474767,
+    "extra_tokens_per_recovered": 15689.010638297872
+   },
+   "status": "verified",
+   "note": "'Extra tokens per recovered answer' = all new tokens spent on extended attempts / recovered attempts (recovered attempts themselves used 1794 new tokens each on average)."
+  },
+  {
+   "id": "5.2.U-s101",
+   "section": "5.2",
+   "claim": "U-s101 sealed test 12,288 \u2192 16,384 row",
+   "report": [
+    77.7,
+    80.6,
+    501,
+    118,
+    23.6,
+    67,
+    316,
+    63.1,
+    13845
+   ],
+   "recomputed_display": [
+    77.7,
+    80.6,
+    501,
+    118,
+    23.6,
+    67,
+    316,
+    63.1,
+    13845
+   ],
+   "recomputed_unrounded": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_1": 0.77685546875,
+    "pass1_2": 0.8056640625,
+    "correct_1": 3182,
+    "correct_2": 3300,
+    "capped_1": 501,
+    "recovered": 118,
+    "finished_wrong": 67,
+    "still_capped": 316,
+    "new_tokens": 1633751,
+    "new_tokens_recovered_only": 207631,
+    "attempts_per_problem": [
+     [
+      32,
+      128
+     ]
+    ]
+   },
+   "production": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_12288": 0.77685546875,
+    "pass1_16384": 0.8056640625,
+    "correct_12288": 3182,
+    "correct_16384": 3300,
+    "capped_12288": 501,
+    "recovered": 118,
+    "finished_wrong": 67,
+    "still_capped": 316,
+    "extra_tokens": 1633751,
+    "extra_tokens_per_recovered": 13845.347457627118
+   },
+   "status": "verified",
+   "note": "'Extra tokens per recovered answer' = all new tokens spent on extended attempts / recovered attempts (recovered attempts themselves used 1760 new tokens each on average)."
+  },
+  {
+   "id": "5.2.R-s202",
+   "section": "5.2",
+   "claim": "R-s202 sealed test 12,288 \u2192 16,384 row",
+   "report": [
+    74.8,
+    76.9,
+    538,
+    87,
+    16.2,
+    104,
+    347,
+    64.5,
+    20476
+   ],
+   "recomputed_display": [
+    74.8,
+    76.9,
+    538,
+    87,
+    16.2,
+    104,
+    347,
+    64.5,
+    20476
+   ],
+   "recomputed_unrounded": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_1": 0.747802734375,
+    "pass1_2": 0.76904296875,
+    "correct_1": 3063,
+    "correct_2": 3150,
+    "capped_1": 538,
+    "recovered": 87,
+    "finished_wrong": 104,
+    "still_capped": 347,
+    "new_tokens": 1781371,
+    "new_tokens_recovered_only": 153746,
+    "attempts_per_problem": [
+     [
+      32,
+      128
+     ]
+    ]
+   },
+   "production": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_12288": 0.747802734375,
+    "pass1_16384": 0.76904296875,
+    "correct_12288": 3063,
+    "correct_16384": 3150,
+    "capped_12288": 538,
+    "recovered": 87,
+    "finished_wrong": 104,
+    "still_capped": 347,
+    "extra_tokens": 1781371,
+    "extra_tokens_per_recovered": 20475.528735632182
+   },
+   "status": "verified",
+   "note": "'Extra tokens per recovered answer' = all new tokens spent on extended attempts / recovered attempts (recovered attempts themselves used 1767 new tokens each on average)."
+  },
+  {
+   "id": "5.2.U-s202",
+   "section": "5.2",
+   "claim": "U-s202 sealed test 12,288 \u2192 16,384 row",
+   "report": [
+    79.2,
+    80.8,
+    333,
+    66,
+    19.8,
+    65,
+    202,
+    60.7,
+    16674
+   ],
+   "recomputed_display": [
+    79.2,
+    80.8,
+    333,
+    66,
+    19.8,
+    65,
+    202,
+    60.7,
+    16674
+   ],
+   "recomputed_unrounded": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_1": 0.792236328125,
+    "pass1_2": 0.808349609375,
+    "correct_1": 3245,
+    "correct_2": 3311,
+    "capped_1": 333,
+    "recovered": 66,
+    "finished_wrong": 65,
+    "still_capped": 202,
+    "new_tokens": 1100503,
+    "new_tokens_recovered_only": 139976,
+    "attempts_per_problem": [
+     [
+      32,
+      128
+     ]
+    ]
+   },
+   "production": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_12288": 0.792236328125,
+    "pass1_16384": 0.808349609375,
+    "correct_12288": 3245,
+    "correct_16384": 3311,
+    "capped_12288": 333,
+    "recovered": 66,
+    "finished_wrong": 65,
+    "still_capped": 202,
+    "extra_tokens": 1100503,
+    "extra_tokens_per_recovered": 16674.28787878788
+   },
+   "status": "verified",
+   "note": "'Extra tokens per recovered answer' = all new tokens spent on extended attempts / recovered attempts (recovered attempts themselves used 2121 new tokens each on average)."
+  },
+  {
+   "id": "5.2.H-s101",
+   "section": "5.2",
+   "claim": "H-s101 sealed test 12,288 \u2192 16,384 row",
+   "report": [
+    77.0,
+    79.2,
+    445,
+    93,
+    20.9,
+    141,
+    211,
+    47.4,
+    14002
+   ],
+   "recomputed_display": [
+    77.0,
+    79.2,
+    445,
+    93,
+    20.9,
+    141,
+    211,
+    47.4,
+    14002
+   ],
+   "recomputed_unrounded": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_1": 0.76953125,
+    "pass1_2": 0.792236328125,
+    "correct_1": 3152,
+    "correct_2": 3245,
+    "capped_1": 445,
+    "recovered": 93,
+    "finished_wrong": 141,
+    "still_capped": 211,
+    "new_tokens": 1302214,
+    "new_tokens_recovered_only": 156149,
+    "attempts_per_problem": [
+     [
+      32,
+      128
+     ]
+    ]
+   },
+   "production": {
+    "attempts": 4096,
+    "problems": 128,
+    "pass1_12288": 0.76953125,
+    "pass1_16384": 0.792236328125,
+    "correct_12288": 3152,
+    "correct_16384": 3245,
+    "capped_12288": 445,
+    "recovered": 93,
+    "finished_wrong": 141,
+    "still_capped": 211,
+    "extra_tokens": 1302214,
+    "extra_tokens_per_recovered": 14002.301075268817
+   },
+   "status": "verified",
+   "note": "'Extra tokens per recovered answer' = all new tokens spent on extended attempts / recovered attempts (recovered attempts themselves used 1679 new tokens each on average)."
+  },
+  {
+   "id": "5.3.R-s101",
+   "section": "5.3",
+   "claim": "R-s101 stress 12,288 \u2192 16,384 row",
+   "report": [
+    69.5,
+    72.3,
+    362,
+    49,
+    13.5,
+    61,
+    252,
+    69.6,
+    25435
+   ],
+   "recomputed_display": [
+    69.5,
+    72.3,
+    362,
+    49,
+    13.5,
+    61,
+    252,
+    69.6,
+    25435
+   ],
+   "recomputed_unrounded": {
+    "attempts": 1768,
+    "problems": 221,
+    "pass1_1": 0.6951357466063348,
+    "pass1_2": 0.7228506787330317,
+    "correct_1": 1229,
+    "correct_2": 1278,
+    "capped_1": 362,
+    "recovered": 49,
+    "finished_wrong": 61,
+    "still_capped": 252,
+    "new_tokens": 1246323,
+    "new_tokens_recovered_only": 73459,
+    "attempts_per_problem": [
+     [
+      8,
+      221
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.3.U-s101",
+   "section": "5.3",
+   "claim": "U-s101 stress 12,288 \u2192 16,384 row",
+   "report": [
+    65.3,
+    68.2,
+    406,
+    51,
+    12.6,
+    64,
+    291,
+    71.7,
+    28075
+   ],
+   "recomputed_display": [
+    65.3,
+    68.2,
+    406,
+    51,
+    12.6,
+    64,
+    291,
+    71.7,
+    28075
+   ],
+   "recomputed_unrounded": {
+    "attempts": 1768,
+    "problems": 221,
+    "pass1_1": 0.6532805429864253,
+    "pass1_2": 0.6821266968325792,
+    "correct_1": 1155,
+    "correct_2": 1206,
+    "capped_1": 406,
+    "recovered": 51,
+    "finished_wrong": 64,
+    "still_capped": 291,
+    "new_tokens": 1431801,
+    "new_tokens_recovered_only": 105374,
+    "attempts_per_problem": [
+     [
+      8,
+      221
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.3.R-s202",
+   "section": "5.3",
+   "claim": "R-s202 stress 12,288 \u2192 16,384 row",
+   "report": [
+    63.2,
+    66.0,
+    407,
+    50,
+    12.3,
+    96,
+    261,
+    64.1,
+    27437
+   ],
+   "recomputed_display": [
+    63.2,
+    66.0,
+    407,
+    50,
+    12.3,
+    96,
+    261,
+    64.1,
+    27437
+   ],
+   "recomputed_unrounded": {
+    "attempts": 1768,
+    "problems": 221,
+    "pass1_1": 0.6317873303167421,
+    "pass1_2": 0.6600678733031674,
+    "correct_1": 1117,
+    "correct_2": 1167,
+    "capped_1": 407,
+    "recovered": 50,
+    "finished_wrong": 96,
+    "still_capped": 261,
+    "new_tokens": 1371853,
+    "new_tokens_recovered_only": 83761,
+    "attempts_per_problem": [
+     [
+      8,
+      221
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.3.U-s202",
+   "section": "5.3",
+   "claim": "U-s202 stress 12,288 \u2192 16,384 row",
+   "report": [
+    65.8,
+    68.2,
+    268,
+    41,
+    15.3,
+    81,
+    146,
+    54.5,
+    19914
+   ],
+   "recomputed_display": [
+    65.8,
+    68.2,
+    268,
+    41,
+    15.3,
+    81,
+    146,
+    54.5,
+    19914
+   ],
+   "recomputed_unrounded": {
+    "attempts": 1768,
+    "problems": 221,
+    "pass1_1": 0.6583710407239819,
+    "pass1_2": 0.6815610859728507,
+    "correct_1": 1164,
+    "correct_2": 1205,
+    "capped_1": 268,
+    "recovered": 41,
+    "finished_wrong": 81,
+    "still_capped": 146,
+    "new_tokens": 816488,
+    "new_tokens_recovered_only": 65335,
+    "attempts_per_problem": [
+     [
+      8,
+      221
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.3.H-s101",
+   "section": "5.3",
+   "claim": "H-s101 stress 12,288 \u2192 16,384 row",
+   "report": [
+    64.1,
+    67.3,
+    313,
+    55,
+    17.6,
+    126,
+    132,
+    42.2,
+    15933
+   ],
+   "recomputed_display": [
+    64.1,
+    67.3,
+    313,
+    55,
+    17.6,
+    126,
+    132,
+    42.2,
+    15933
+   ],
+   "recomputed_unrounded": {
+    "attempts": 1768,
+    "problems": 221,
+    "pass1_1": 0.6414027149321267,
+    "pass1_2": 0.6725113122171946,
+    "correct_1": 1134,
+    "correct_2": 1189,
+    "capped_1": 313,
+    "recovered": 55,
+    "finished_wrong": 126,
+    "still_capped": 132,
+    "new_tokens": 876305,
+    "new_tokens_recovered_only": 98460,
+    "attempts_per_problem": [
+     [
+      8,
+      221
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.4.R-s101",
+   "section": "5.4",
+   "claim": "R-s101 tranche 1 row",
+   "report": [
+    71.5,
+    75.8,
+    54,
+    11,
+    5,
+    38,
+    16805
+   ],
+   "recomputed_display": [
+    71.5,
+    75.8,
+    54,
+    11,
+    5,
+    38,
+    16805
+   ],
+   "recomputed_unrounded": {
+    "attempts": 256,
+    "problems": 64,
+    "pass1_1": 0.71484375,
+    "pass1_2": 0.7578125,
+    "correct_1": 183,
+    "correct_2": 194,
+    "capped_1": 54,
+    "recovered": 11,
+    "finished_wrong": 5,
+    "still_capped": 38,
+    "new_tokens": 184851,
+    "new_tokens_recovered_only": 14706,
+    "attempts_per_problem": [
+     [
+      4,
+      64
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.4.U-s101",
+   "section": "5.4",
+   "claim": "U-s101 tranche 1 row",
+   "report": [
+    67.6,
+    69.9,
+    47,
+    6,
+    10,
+    31,
+    27348
+   ],
+   "recomputed_display": [
+    67.6,
+    69.9,
+    47,
+    6,
+    10,
+    31,
+    27348
+   ],
+   "recomputed_unrounded": {
+    "attempts": 256,
+    "problems": 64,
+    "pass1_1": 0.67578125,
+    "pass1_2": 0.69921875,
+    "correct_1": 173,
+    "correct_2": 179,
+    "capped_1": 47,
+    "recovered": 6,
+    "finished_wrong": 10,
+    "still_capped": 31,
+    "new_tokens": 164085,
+    "new_tokens_recovered_only": 18343,
+    "attempts_per_problem": [
+     [
+      4,
+      64
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.4.R-s202",
+   "section": "5.4",
+   "claim": "R-s202 tranche 1 row",
+   "report": [
+    67.6,
+    71.1,
+    56,
+    9,
+    13,
+    34,
+    20331
+   ],
+   "recomputed_display": [
+    67.6,
+    71.1,
+    56,
+    9,
+    13,
+    34,
+    20331
+   ],
+   "recomputed_unrounded": {
+    "attempts": 256,
+    "problems": 64,
+    "pass1_1": 0.67578125,
+    "pass1_2": 0.7109375,
+    "correct_1": 173,
+    "correct_2": 182,
+    "capped_1": 56,
+    "recovered": 9,
+    "finished_wrong": 13,
+    "still_capped": 34,
+    "new_tokens": 182982,
+    "new_tokens_recovered_only": 12596,
+    "attempts_per_problem": [
+     [
+      4,
+      64
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.4.U-s202",
+   "section": "5.4",
+   "claim": "U-s202 tranche 1 row",
+   "report": [
+    69.5,
+    73.0,
+    41,
+    9,
+    11,
+    21,
+    12910
+   ],
+   "recomputed_display": [
+    69.5,
+    73.0,
+    41,
+    9,
+    11,
+    21,
+    12910
+   ],
+   "recomputed_unrounded": {
+    "attempts": 256,
+    "problems": 64,
+    "pass1_1": 0.6953125,
+    "pass1_2": 0.73046875,
+    "correct_1": 178,
+    "correct_2": 187,
+    "capped_1": 41,
+    "recovered": 9,
+    "finished_wrong": 11,
+    "still_capped": 21,
+    "new_tokens": 116193,
+    "new_tokens_recovered_only": 9408,
+    "attempts_per_problem": [
+     [
+      4,
+      64
+     ]
+    ]
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-U-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-U-s101 at 12,288",
+   "report": [
+    4.2,
+    2.1,
+    6.2
+   ],
+   "recomputed_display": [
+    4.17,
+    2.1,
+    6.27
+   ],
+   "recomputed_unrounded": [
+    0.041748046875,
+    0.02099609375,
+    0.062744140625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-U-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-U-s101 at 16,384",
+   "report": [
+    3.6,
+    1.5,
+    5.7
+   ],
+   "recomputed_display": [
+    3.59,
+    1.49,
+    5.69
+   ],
+   "recomputed_unrounded": [
+    0.035888671875,
+    0.014892578125,
+    0.056884765625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-U-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-U-s101 change",
+   "report": [
+    -0.6,
+    -1.6,
+    0.4
+   ],
+   "recomputed_display": [
+    -0.59,
+    -1.64,
+    0.37
+   ],
+   "recomputed_unrounded": [
+    -0.005859375,
+    -0.016357421875,
+    0.003662109375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s202-U-s202.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s202-U-s202 at 12,288",
+   "report": [
+    -4.4,
+    -7.3,
+    -1.8
+   ],
+   "recomputed_display": [
+    -4.44,
+    -7.15,
+    -1.78
+   ],
+   "recomputed_unrounded": [
+    -0.04443359375,
+    -0.071533203125,
+    -0.017822265625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s202-U-s202.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s202-U-s202 at 16,384",
+   "report": [
+    -3.9,
+    -6.7,
+    -1.3
+   ],
+   "recomputed_display": [
+    -3.93,
+    -6.67,
+    -1.34
+   ],
+   "recomputed_unrounded": [
+    -0.039306640625,
+    -0.066650390625,
+    -0.013427734375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s202-U-s202.change",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s202-U-s202 change",
+   "report": [
+    0.5,
+    -0.3,
+    1.3
+   ],
+   "recomputed_display": [
+    0.51,
+    -0.29,
+    1.29
+   ],
+   "recomputed_unrounded": [
+    0.005126953125,
+    -0.0029296875,
+    0.012939453125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-H-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-H-s101 at 12,288",
+   "report": [
+    4.9,
+    2.0,
+    8.0
+   ],
+   "recomputed_display": [
+    4.91,
+    1.98,
+    7.93
+   ],
+   "recomputed_unrounded": [
+    0.049072265625,
+    0.019769287109375006,
+    0.079345703125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-H-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-H-s101 at 16,384",
+   "report": [
+    4.9,
+    2.0,
+    8.0
+   ],
+   "recomputed_display": [
+    4.93,
+    2.12,
+    8.01
+   ],
+   "recomputed_unrounded": [
+    0.04931640625,
+    0.021234130859375006,
+    0.080078125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/R-s101-H-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/R-s101-H-s101 change",
+   "report": [
+    0.0,
+    -0.8,
+    0.9
+   ],
+   "recomputed_display": [
+    0.02,
+    -0.78,
+    0.85
+   ],
+   "recomputed_unrounded": [
+    0.000244140625,
+    -0.0078125,
+    0.008544921875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/U-s101-H-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/U-s101-H-s101 at 12,288",
+   "report": [
+    0.7,
+    -2.1,
+    3.6
+   ],
+   "recomputed_display": [
+    0.73,
+    -2.0,
+    3.54
+   ],
+   "recomputed_unrounded": [
+    0.00732421875,
+    -0.02001953125,
+    0.035400390625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/U-s101-H-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/U-s101-H-s101 at 16,384",
+   "report": [
+    1.3,
+    -1.2,
+    3.9
+   ],
+   "recomputed_display": [
+    1.34,
+    -1.1,
+    3.88
+   ],
+   "recomputed_unrounded": [
+    0.013427734375,
+    -0.010986328125,
+    0.038818359375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.test/all/all/U-s101-H-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "test/all/all/U-s101-H-s101 change",
+   "report": [
+    0.6,
+    -0.2,
+    1.5
+   ],
+   "recomputed_display": [
+    0.61,
+    -0.24,
+    1.54
+   ],
+   "recomputed_unrounded": [
+    0.006103515625,
+    -0.00244140625,
+    0.015380859375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-U-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-U-s101 at 12,288",
+   "report": [
+    4.2,
+    1.6,
+    6.8
+   ],
+   "recomputed_display": [
+    4.19,
+    1.58,
+    6.79
+   ],
+   "recomputed_unrounded": [
+    0.0418552036199095,
+    0.01583710407239819,
+    0.06787330316742081
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-U-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-U-s101 at 16,384",
+   "report": [
+    4.1,
+    1.4,
+    6.7
+   ],
+   "recomputed_display": [
+    4.07,
+    1.53,
+    6.73
+   ],
+   "recomputed_unrounded": [
+    0.04072398190045249,
+    0.015257352941176482,
+    0.0673076923076923
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-U-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-U-s101 change",
+   "report": [
+    -0.1,
+    -1.1,
+    1.0
+   ],
+   "recomputed_display": [
+    -0.11,
+    -1.13,
+    0.96
+   ],
+   "recomputed_unrounded": [
+    -0.0011312217194570137,
+    -0.011312217194570135,
+    0.009615384615384616
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s101-U-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s101-U-s101 at 12,288",
+   "report": [
+    4.1,
+    0.5,
+    7.8
+   ],
+   "recomputed_display": [
+    4.08,
+    0.53,
+    7.76
+   ],
+   "recomputed_unrounded": [
+    0.04078947368421053,
+    0.005263157894736842,
+    0.07763157894736843
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s101-U-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s101-U-s101 at 16,384",
+   "report": [
+    4.2,
+    0.7,
+    7.8
+   ],
+   "recomputed_display": [
+    4.21,
+    0.79,
+    7.76
+   ],
+   "recomputed_unrounded": [
+    0.042105263157894736,
+    0.007894736842105263,
+    0.07763157894736843
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s101-U-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s101-U-s101 change",
+   "report": [
+    0.1,
+    -1.1,
+    1.4
+   ],
+   "recomputed_display": [
+    0.13,
+    -1.05,
+    1.45
+   ],
+   "recomputed_unrounded": [
+    0.0013157894736842105,
+    -0.010526315789473684,
+    0.014473684210526316
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s101-U-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s101-U-s101 at 12,288",
+   "report": [
+    4.3,
+    0.6,
+    8.0
+   ],
+   "recomputed_display": [
+    4.27,
+    0.5,
+    7.94
+   ],
+   "recomputed_unrounded": [
+    0.04265873015873016,
+    0.00496031746031746,
+    0.07936507936507936
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s101-U-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s101-U-s101 at 16,384",
+   "report": [
+    4.0,
+    0.2,
+    7.8
+   ],
+   "recomputed_display": [
+    3.97,
+    0.1,
+    7.84
+   ],
+   "recomputed_unrounded": [
+    0.03968253968253968,
+    0.000992063492063492,
+    0.07837301587301587
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s101-U-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s101-U-s101 change",
+   "report": [
+    -0.3,
+    -1.8,
+    1.3
+   ],
+   "recomputed_display": [
+    -0.3,
+    -1.88,
+    1.29
+   ],
+   "recomputed_unrounded": [
+    -0.002976190476190476,
+    -0.018849206349206348,
+    0.012896825396825396
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s202-U-s202.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s202-U-s202 at 12,288",
+   "report": [
+    -2.7,
+    -5.1,
+    -0.2
+   ],
+   "recomputed_display": [
+    -2.66,
+    -5.03,
+    -0.23
+   ],
+   "recomputed_unrounded": [
+    -0.026583710407239818,
+    -0.050339366515837106,
+    -0.0022624434389140274
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s202-U-s202.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s202-U-s202 at 16,384",
+   "report": [
+    -2.1,
+    -4.6,
+    0.3
+   ],
+   "recomputed_display": [
+    -2.15,
+    -4.58,
+    0.28
+   ],
+   "recomputed_unrounded": [
+    -0.021493212669683258,
+    -0.04581447963800905,
+    0.002828054298642534
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s202-U-s202.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s202-U-s202 change",
+   "report": [
+    0.5,
+    -0.5,
+    1.5
+   ],
+   "recomputed_display": [
+    0.51,
+    -0.51,
+    1.53
+   ],
+   "recomputed_unrounded": [
+    0.005090497737556561,
+    -0.005090497737556561,
+    0.015271493212669683
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s202-U-s202.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s202-U-s202 at 12,288",
+   "report": [
+    -3.2,
+    -6.6,
+    0.3
+   ],
+   "recomputed_display": [
+    -3.16,
+    -6.71,
+    0.26
+   ],
+   "recomputed_unrounded": [
+    -0.031578947368421054,
+    -0.06710526315789474,
+    0.002631578947368421
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s202-U-s202.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s202-U-s202 at 16,384",
+   "report": [
+    -1.6,
+    -4.6,
+    1.4
+   ],
+   "recomputed_display": [
+    -1.58,
+    -4.74,
+    1.45
+   ],
+   "recomputed_unrounded": [
+    -0.015789473684210527,
+    -0.04736842105263158,
+    0.014473684210526316
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/harder/R-s202-U-s202.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/harder/R-s202-U-s202 change",
+   "report": [
+    1.6,
+    0.1,
+    3.2
+   ],
+   "recomputed_display": [
+    1.58,
+    0.13,
+    3.16
+   ],
+   "recomputed_unrounded": [
+    0.015789473684210527,
+    0.0013157894736842105,
+    0.031578947368421054
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s202-U-s202.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s202-U-s202 at 12,288",
+   "report": [
+    -2.3,
+    -5.6,
+    1.1
+   ],
+   "recomputed_display": [
+    -2.28,
+    -5.65,
+    1.09
+   ],
+   "recomputed_unrounded": [
+    -0.022817460317460316,
+    -0.05654761904761905,
+    0.010912698412698412
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s202-U-s202.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s202-U-s202 at 16,384",
+   "report": [
+    -2.6,
+    -6.2,
+    1.0
+   ],
+   "recomputed_display": [
+    -2.58,
+    -6.15,
+    0.99
+   ],
+   "recomputed_unrounded": [
+    -0.025793650793650792,
+    -0.061507936507936505,
+    0.00992063492063492
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/superhard/R-s202-U-s202.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/superhard/R-s202-U-s202 change",
+   "report": [
+    -0.3,
+    -1.7,
+    1.1
+   ],
+   "recomputed_display": [
+    -0.3,
+    -1.69,
+    1.09
+   ],
+   "recomputed_unrounded": [
+    -0.002976190476190476,
+    -0.016865079365079364,
+    0.010912698412698412
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-H-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-H-s101 at 12,288",
+   "report": [
+    5.4,
+    2.5,
+    8.3
+   ],
+   "recomputed_display": [
+    5.37,
+    2.6,
+    8.2
+   ],
+   "recomputed_unrounded": [
+    0.05373303167420815,
+    0.026018099547511313,
+    0.08201357466063348
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-H-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-H-s101 at 16,384",
+   "report": [
+    5.0,
+    2.3,
+    7.8
+   ],
+   "recomputed_display": [
+    5.03,
+    2.38,
+    7.75
+   ],
+   "recomputed_unrounded": [
+    0.050339366515837106,
+    0.023755656108597284,
+    0.07748868778280543
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/R-s101-H-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/R-s101-H-s101 change",
+   "report": [
+    -0.3,
+    -1.5,
+    0.8
+   ],
+   "recomputed_display": [
+    -0.34,
+    -1.53,
+    0.79
+   ],
+   "recomputed_unrounded": [
+    -0.003393665158371041,
+    -0.015271493212669683,
+    0.007918552036199095
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/U-s101-H-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/U-s101-H-s101 at 12,288",
+   "report": [
+    1.2,
+    -1.5,
+    3.9
+   ],
+   "recomputed_display": [
+    1.19,
+    -1.41,
+    3.79
+   ],
+   "recomputed_unrounded": [
+    0.011877828054298642,
+    -0.01414027149321267,
+    0.03789592760180995
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/U-s101-H-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/U-s101-H-s101 at 16,384",
+   "report": [
+    1.0,
+    -1.8,
+    3.7
+   ],
+   "recomputed_display": [
+    0.96,
+    -1.75,
+    3.73
+   ],
+   "recomputed_unrounded": [
+    0.009615384615384616,
+    -0.01753393665158371,
+    0.03733031674208145
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/all/all/U-s101-H-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/all/all/U-s101-H-s101 change",
+   "report": [
+    -0.2,
+    -1.4,
+    0.9
+   ],
+   "recomputed_display": [
+    -0.23,
+    -1.41,
+    0.9
+   ],
+   "recomputed_unrounded": [
+    -0.0022624434389140274,
+    -0.01414027149321267,
+    0.00904977375565611
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s101-U-s101.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s101-U-s101 at 12,288",
+   "report": [
+    3.9,
+    -2.0,
+    10.2
+   ],
+   "recomputed_display": [
+    3.91,
+    -1.95,
+    10.16
+   ],
+   "recomputed_unrounded": [
+    0.0390625,
+    -0.01953125,
+    0.1015625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s101-U-s101.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s101-U-s101 at 16,384",
+   "report": [
+    5.9,
+    -0.4,
+    12.5
+   ],
+   "recomputed_display": [
+    5.86,
+    -0.39,
+    12.5
+   ],
+   "recomputed_unrounded": [
+    0.05859375,
+    -0.00390625,
+    0.125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s101-U-s101.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s101-U-s101 change",
+   "report": [
+    2.0,
+    -1.2,
+    5.1
+   ],
+   "recomputed_display": [
+    1.95,
+    -1.17,
+    5.08
+   ],
+   "recomputed_unrounded": [
+    0.01953125,
+    -0.01171875,
+    0.05078125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s202-U-s202.at 12,288",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s202-U-s202 at 12,288",
+   "report": [
+    -2.0,
+    -9.0,
+    4.3
+   ],
+   "recomputed_display": [
+    -1.95,
+    -8.59,
+    4.69
+   ],
+   "recomputed_unrounded": [
+    -0.01953125,
+    -0.0859375,
+    0.046875
+   ],
+   "production": null,
+   "status": "verified (estimate); interval differs by > 0.3",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s202-U-s202.at 16,384",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s202-U-s202 at 16,384",
+   "report": [
+    -2.0,
+    -8.6,
+    4.3
+   ],
+   "recomputed_display": [
+    -1.95,
+    -8.59,
+    4.3
+   ],
+   "recomputed_unrounded": [
+    -0.01953125,
+    -0.0859375,
+    0.04296875
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.stress/t1/all/R-s202-U-s202.change",
+   "section": "5, Q2, Q4",
+   "claim": "stress/t1/all/R-s202-U-s202 change",
+   "report": [
+    0.0,
+    -3.1,
+    3.1
+   ],
+   "recomputed_display": [
+    0.0,
+    -3.12,
+    3.12
+   ],
+   "recomputed_unrounded": [
+    0.0,
+    -0.03125,
+    0.03125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.2.gainrange",
+   "section": "5.2",
+   "claim": "4,096 more tokens add 1.6\u20132.9 points to every checkpoint (sealed test)",
+   "report": [
+    1.6,
+    2.9
+   ],
+   "recomputed_display": [
+    1.6,
+    2.9
+   ],
+   "recomputed_unrounded": [
+    0.01611328125,
+    0.02880859375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.2.recrange",
+   "section": "5.2",
+   "claim": "recover 16\u201324% of capped answers (sealed test)",
+   "report": [
+    16,
+    24
+   ],
+   "recomputed_display": [
+    16,
+    24
+   ],
+   "recomputed_unrounded": [
+    0.16171003717472118,
+    0.23552894211576847
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "5.3.gainrange",
+   "section": "5.3",
+   "claim": "every checkpoint gains 2.4\u20132.9 points (stress)",
+   "report": [
+    2.4,
+    2.9
+   ],
+   "recomputed_display": [
+    2.3,
+    3.1
+   ],
+   "recomputed_unrounded": [
+    0.023190045248868807,
+    0.031108597285067874
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "unrounded gains: {'R-s101': 2.77, 'U-s101': 2.88, 'R-s202': 2.83, 'U-s202': 2.32, 'H-s101': 3.11}; U-s202 gains 2.32 and H-s101 3.11. The stated range uses differences of rounded scores."
+  },
+  {
+   "id": "5.3.H",
+   "section": "5.3",
+   "claim": "H-s101 stress gains 3.2 points (64.1 \u2192 67.3)",
+   "report": [
+    3.2
+   ],
+   "recomputed_display": [
+    3.1
+   ],
+   "recomputed_unrounded": [
+    0.031108597285067874
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "difference of rounded values is 3.2; unrounded 3.11"
+  },
+  {
+   "id": "5.3.recrange",
+   "section": "5.3",
+   "claim": "only 12\u201315% of capped answers recover; 55\u201372% still capped (R/U stress)",
+   "report": [
+    12,
+    15,
+    55,
+    72
+   ],
+   "recomputed_display": [
+    12,
+    15,
+    54,
+    72
+   ],
+   "recomputed_unrounded": [
+    0.12285012285012285,
+    0.15298507462686567,
+    0.5447761194029851,
+    0.7167487684729064
+   ],
+   "production": null,
+   "status": "differs",
+   "note": ""
+  },
+  {
+   "id": "7.2.base",
+   "section": "7.2",
+   "claim": "base: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    37.3,
+    25.8,
+    52.5,
+    0.1,
+    37.3,
+    152
+   ],
+   "recomputed_display": [
+    37.3,
+    25.8,
+    52.5,
+    0.1,
+    37.3,
+    152
+   ],
+   "recomputed_unrounded": [
+    0.372737556561086,
+    0.25793650793650796,
+    0.525,
+    0.0005656108597285068,
+    0.3729485002829655,
+    152
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.H-s101-r128",
+   "section": "7.2",
+   "claim": "H-s101-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    64.1,
+    52.6,
+    79.5,
+    17.7,
+    77.9,
+    183
+   ],
+   "recomputed_display": [
+    64.1,
+    52.6,
+    79.5,
+    17.7,
+    77.9,
+    183
+   ],
+   "recomputed_unrounded": [
+    0.6414027149321267,
+    0.5257936507936508,
+    0.7947368421052632,
+    0.17703619909502263,
+    0.7793814432989691,
+    183
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.R-s101-r128",
+   "section": "7.2",
+   "claim": "R-s101-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    69.5,
+    58.4,
+    84.2,
+    20.5,
+    87.4,
+    184
+   ],
+   "recomputed_display": [
+    69.5,
+    58.4,
+    84.2,
+    20.5,
+    87.4,
+    184
+   ],
+   "recomputed_unrounded": [
+    0.6951357466063348,
+    0.5843253968253969,
+    0.8421052631578947,
+    0.20475113122171945,
+    0.8741109530583214,
+    184
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.U-s101-r128",
+   "section": "7.2",
+   "claim": "U-s101-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    65.3,
+    54.2,
+    80.1,
+    23.0,
+    84.8,
+    184
+   ],
+   "recomputed_display": [
+    65.3,
+    54.2,
+    80.1,
+    23.0,
+    84.8,
+    184
+   ],
+   "recomputed_unrounded": [
+    0.6532805429864253,
+    0.5416666666666666,
+    0.8013157894736842,
+    0.22963800904977374,
+    0.8480176211453745,
+    184
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.H-s202-r128",
+   "section": "7.2",
+   "claim": "H-s202-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    60.1,
+    49.4,
+    74.3,
+    25.5,
+    80.7,
+    177
+   ],
+   "recomputed_display": [
+    60.1,
+    49.4,
+    74.3,
+    25.5,
+    80.7,
+    177
+   ],
+   "recomputed_unrounded": [
+    0.6012443438914027,
+    0.49404761904761907,
+    0.743421052631579,
+    0.25509049773755654,
+    0.8071374335611238,
+    177
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.R-s202-r128",
+   "section": "7.2",
+   "claim": "R-s202-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    63.2,
+    53.3,
+    76.3,
+    23.0,
+    82.1,
+    180
+   ],
+   "recomputed_display": [
+    63.2,
+    53.3,
+    76.3,
+    23.0,
+    82.1,
+    180
+   ],
+   "recomputed_unrounded": [
+    0.6317873303167421,
+    0.5327380952380952,
+    0.7631578947368421,
+    0.23020361990950225,
+    0.8207200587803086,
+    180
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.U-s202-r128",
+   "section": "7.2",
+   "claim": "U-s202-r128: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    65.8,
+    55.6,
+    79.5,
+    15.2,
+    77.6,
+    188
+   ],
+   "recomputed_display": [
+    65.8,
+    55.6,
+    79.5,
+    15.2,
+    77.6,
+    188
+   ],
+   "recomputed_unrounded": [
+    0.6583710407239819,
+    0.5555555555555556,
+    0.7947368421052632,
+    0.1515837104072398,
+    0.776,
+    188
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.R-s101-r64",
+   "section": "7.2",
+   "claim": "R-s101-r64: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    64.3,
+    53.5,
+    78.6,
+    26.1,
+    87.0,
+    183
+   ],
+   "recomputed_display": [
+    64.3,
+    53.5,
+    78.6,
+    26.1,
+    87.0,
+    183
+   ],
+   "recomputed_unrounded": [
+    0.6425339366515838,
+    0.5347222222222222,
+    0.7855263157894737,
+    0.26131221719457015,
+    0.8698315467075038,
+    183
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.H-s202-r64",
+   "section": "7.2",
+   "claim": "H-s202-r64: all pass@1, SuperHard, Harder, truncated, acc finished, solved \u2265 1 of 8",
+   "report": [
+    62.4,
+    52.1,
+    76.1,
+    15.1,
+    73.5,
+    183
+   ],
+   "recomputed_display": [
+    62.4,
+    52.1,
+    76.1,
+    15.1,
+    73.5,
+    183
+   ],
+   "recomputed_unrounded": [
+    0.623868778280543,
+    0.5208333333333334,
+    0.7605263157894737,
+    0.1510180995475113,
+    0.7348434377081945,
+    183
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.base.harder",
+   "section": "7.2, Q3",
+   "claim": "base harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    52.5,
+    399,
+    760,
+    78,
+    17,
+    0.1,
+    52.6
+   ],
+   "recomputed_display": [
+    52.5,
+    399,
+    760,
+    78,
+    17,
+    0.1,
+    52.6
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 399,
+    "truncated_n": 1,
+    "unknown_n": 0,
+    "pass1": 0.525,
+    "pass8": 0.8210526315789474,
+    "trunc": 0.0013157894736842105,
+    "acc_finished": 0.525691699604743,
+    "pass1_within_8192": 0.525,
+    "solved_any": 78,
+    "zero": 17,
+    "tokens": 1126180
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s101-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "H-s101-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    79.5,
+    604,
+    760,
+    88,
+    7,
+    9.1,
+    87.4
+   ],
+   "recomputed_display": [
+    79.5,
+    604,
+    760,
+    88,
+    7,
+    9.1,
+    87.4
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 604,
+    "truncated_n": 69,
+    "unknown_n": 0,
+    "pass1": 0.7947368421052632,
+    "pass8": 0.9263157894736842,
+    "trunc": 0.09078947368421053,
+    "acc_finished": 0.874095513748191,
+    "pass1_within_8192": 0.7539473684210526,
+    "solved_any": 88,
+    "zero": 7,
+    "tokens": 3232825
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s101-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "R-s101-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    84.2,
+    640,
+    760,
+    90,
+    5,
+    9.9,
+    93.4
+   ],
+   "recomputed_display": [
+    84.2,
+    640,
+    760,
+    90,
+    5,
+    9.9,
+    93.4
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 640,
+    "truncated_n": 75,
+    "unknown_n": 0,
+    "pass1": 0.8421052631578947,
+    "pass8": 0.9473684210526315,
+    "trunc": 0.09868421052631579,
+    "acc_finished": 0.9343065693430657,
+    "pass1_within_8192": 0.7763157894736842,
+    "solved_any": 90,
+    "zero": 5,
+    "tokens": 3194209
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.U-s101-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "U-s101-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    80.1,
+    609,
+    760,
+    90,
+    5,
+    11.4,
+    90.5
+   ],
+   "recomputed_display": [
+    80.1,
+    609,
+    760,
+    90,
+    5,
+    11.4,
+    90.5
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 609,
+    "truncated_n": 87,
+    "unknown_n": 0,
+    "pass1": 0.8013157894736842,
+    "pass8": 0.9473684210526315,
+    "trunc": 0.11447368421052631,
+    "acc_finished": 0.9049034175334324,
+    "pass1_within_8192": 0.7421052631578947,
+    "solved_any": 90,
+    "zero": 5,
+    "tokens": 3261998
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s202-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "R-s202-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    76.3,
+    580,
+    760,
+    89,
+    6,
+    13.4,
+    88.1
+   ],
+   "recomputed_display": [
+    76.3,
+    580,
+    760,
+    89,
+    6,
+    13.4,
+    88.1
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 580,
+    "truncated_n": 102,
+    "unknown_n": 0,
+    "pass1": 0.7631578947368421,
+    "pass8": 0.9368421052631579,
+    "trunc": 0.13421052631578947,
+    "acc_finished": 0.8814589665653495,
+    "pass1_within_8192": 0.7131578947368421,
+    "solved_any": 89,
+    "zero": 6,
+    "tokens": 3345032
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.U-s202-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "U-s202-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    79.5,
+    604,
+    760,
+    91,
+    4,
+    9.2,
+    87.5
+   ],
+   "recomputed_display": [
+    79.5,
+    604,
+    760,
+    91,
+    4,
+    9.2,
+    87.5
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 604,
+    "truncated_n": 70,
+    "unknown_n": 0,
+    "pass1": 0.7947368421052632,
+    "pass8": 0.9578947368421052,
+    "trunc": 0.09210526315789473,
+    "acc_finished": 0.8753623188405797,
+    "pass1_within_8192": 0.7671052631578947,
+    "solved_any": 91,
+    "zero": 4,
+    "tokens": 2821403
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s202-r128.harder",
+   "section": "7.2, Q3",
+   "claim": "H-s202-r128 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    74.3,
+    565,
+    760,
+    88,
+    7,
+    15.1,
+    87.6
+   ],
+   "recomputed_display": [
+    74.3,
+    565,
+    760,
+    88,
+    7,
+    15.1,
+    87.6
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 565,
+    "truncated_n": 115,
+    "unknown_n": 0,
+    "pass1": 0.743421052631579,
+    "pass8": 0.9263157894736842,
+    "trunc": 0.1513157894736842,
+    "acc_finished": 0.875968992248062,
+    "pass1_within_8192": 0.6815789473684211,
+    "solved_any": 88,
+    "zero": 7,
+    "tokens": 3782447
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s101-r64.harder",
+   "section": "7.2, Q3",
+   "claim": "R-s101-r64 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    78.6,
+    597,
+    760,
+    89,
+    6,
+    14.6,
+    92.0
+   ],
+   "recomputed_display": [
+    78.6,
+    597,
+    760,
+    89,
+    6,
+    14.6,
+    92.0
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 597,
+    "truncated_n": 111,
+    "unknown_n": 0,
+    "pass1": 0.7855263157894737,
+    "pass8": 0.9368421052631579,
+    "trunc": 0.14605263157894738,
+    "acc_finished": 0.9198767334360555,
+    "pass1_within_8192": 0.7355263157894737,
+    "solved_any": 89,
+    "zero": 6,
+    "tokens": 3463250
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s202-r64.harder",
+   "section": "7.2, Q3",
+   "claim": "H-s202-r64 harder: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    76.1,
+    578,
+    760,
+    89,
+    6,
+    8.7,
+    83.3
+   ],
+   "recomputed_display": [
+    76.1,
+    578,
+    760,
+    89,
+    6,
+    8.7,
+    83.3
+   ],
+   "recomputed_unrounded": {
+    "problems": 95,
+    "attempts": 760,
+    "correct": 578,
+    "truncated_n": 66,
+    "unknown_n": 0,
+    "pass1": 0.7605263157894737,
+    "pass8": 0.9368421052631579,
+    "trunc": 0.0868421052631579,
+    "acc_finished": 0.8328530259365994,
+    "pass1_within_8192": 0.7381578947368421,
+    "solved_any": 89,
+    "zero": 6,
+    "tokens": 2793920
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.base.superhard",
+   "section": "7.2, Q3",
+   "claim": "base superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    25.8,
+    260,
+    1008,
+    74,
+    52,
+    0.0,
+    25.8
+   ],
+   "recomputed_display": [
+    25.8,
+    260,
+    1008,
+    74,
+    52,
+    0.0,
+    25.8
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 260,
+    "truncated_n": 0,
+    "unknown_n": 0,
+    "pass1": 0.25793650793650796,
+    "pass8": 0.5873015873015873,
+    "trunc": 0.0,
+    "acc_finished": 0.25793650793650796,
+    "pass1_within_8192": 0.25793650793650796,
+    "solved_any": 74,
+    "zero": 52,
+    "tokens": 2056825
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s101-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "H-s101-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    52.6,
+    530,
+    1008,
+    95,
+    31,
+    24.2,
+    69.4
+   ],
+   "recomputed_display": [
+    52.6,
+    530,
+    1008,
+    95,
+    31,
+    24.2,
+    69.4
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 530,
+    "truncated_n": 244,
+    "unknown_n": 0,
+    "pass1": 0.5257936507936508,
+    "pass8": 0.753968253968254,
+    "trunc": 0.24206349206349206,
+    "acc_finished": 0.693717277486911,
+    "pass1_within_8192": 0.4384920634920635,
+    "solved_any": 95,
+    "zero": 31,
+    "tokens": 7472169
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s101-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "R-s101-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    58.4,
+    589,
+    1008,
+    94,
+    32,
+    28.5,
+    81.7
+   ],
+   "recomputed_display": [
+    58.4,
+    589,
+    1008,
+    94,
+    32,
+    28.5,
+    81.7
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 589,
+    "truncated_n": 287,
+    "unknown_n": 0,
+    "pass1": 0.5843253968253969,
+    "pass8": 0.746031746031746,
+    "trunc": 0.2847222222222222,
+    "acc_finished": 0.8169209431345353,
+    "pass1_within_8192": 0.49603174603174605,
+    "solved_any": 94,
+    "zero": 32,
+    "tokens": 7288762
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.U-s101-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "U-s101-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    54.2,
+    546,
+    1008,
+    94,
+    32,
+    31.6,
+    79.2
+   ],
+   "recomputed_display": [
+    54.2,
+    546,
+    1008,
+    94,
+    32,
+    31.6,
+    79.2
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 546,
+    "truncated_n": 319,
+    "unknown_n": 0,
+    "pass1": 0.5416666666666666,
+    "pass8": 0.746031746031746,
+    "trunc": 0.31646825396825395,
+    "acc_finished": 0.7924528301886793,
+    "pass1_within_8192": 0.46825396825396826,
+    "solved_any": 94,
+    "zero": 32,
+    "tokens": 7390134
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s202-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "R-s202-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    53.3,
+    537,
+    1008,
+    91,
+    35,
+    30.3,
+    76.4
+   ],
+   "recomputed_display": [
+    53.3,
+    537,
+    1008,
+    91,
+    35,
+    30.3,
+    76.4
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 537,
+    "truncated_n": 305,
+    "unknown_n": 0,
+    "pass1": 0.5327380952380952,
+    "pass8": 0.7222222222222222,
+    "trunc": 0.30257936507936506,
+    "acc_finished": 0.7638691322901849,
+    "pass1_within_8192": 0.4732142857142857,
+    "solved_any": 91,
+    "zero": 35,
+    "tokens": 7366095
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.U-s202-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "U-s202-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    55.6,
+    560,
+    1008,
+    97,
+    29,
+    19.6,
+    69.1
+   ],
+   "recomputed_display": [
+    55.6,
+    560,
+    1008,
+    97,
+    29,
+    19.6,
+    69.1
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 560,
+    "truncated_n": 198,
+    "unknown_n": 0,
+    "pass1": 0.5555555555555556,
+    "pass8": 0.7698412698412699,
+    "trunc": 0.19642857142857142,
+    "acc_finished": 0.691358024691358,
+    "pass1_within_8192": 0.5099206349206349,
+    "solved_any": 97,
+    "zero": 29,
+    "tokens": 6441683
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s202-r128.superhard",
+   "section": "7.2, Q3",
+   "claim": "H-s202-r128 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    49.4,
+    498,
+    1008,
+    89,
+    37,
+    33.3,
+    74.1
+   ],
+   "recomputed_display": [
+    49.4,
+    498,
+    1008,
+    89,
+    37,
+    33.3,
+    74.1
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 498,
+    "truncated_n": 336,
+    "unknown_n": 0,
+    "pass1": 0.49404761904761907,
+    "pass8": 0.7063492063492064,
+    "trunc": 0.3333333333333333,
+    "acc_finished": 0.7410714285714286,
+    "pass1_within_8192": 0.4126984126984127,
+    "solved_any": 89,
+    "zero": 37,
+    "tokens": 7990446
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.R-s101-r64.superhard",
+   "section": "7.2, Q3",
+   "claim": "R-s101-r64 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    53.5,
+    539,
+    1008,
+    94,
+    32,
+    34.8,
+    82.0
+   ],
+   "recomputed_display": [
+    53.5,
+    539,
+    1008,
+    94,
+    32,
+    34.8,
+    82.0
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 539,
+    "truncated_n": 351,
+    "unknown_n": 0,
+    "pass1": 0.5347222222222222,
+    "pass8": 0.746031746031746,
+    "trunc": 0.3482142857142857,
+    "acc_finished": 0.8203957382039574,
+    "pass1_within_8192": 0.43253968253968256,
+    "solved_any": 94,
+    "zero": 32,
+    "tokens": 7831795
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.tier.H-s202-r64.superhard",
+   "section": "7.2, Q3",
+   "claim": "H-s202-r64 superhard: pass@1, correct/attempts, solved \u2265 1 of 8, 0/8, truncated, acc finished",
+   "report": [
+    52.1,
+    525,
+    1008,
+    94,
+    32,
+    19.9,
+    65.1
+   ],
+   "recomputed_display": [
+    52.1,
+    525,
+    1008,
+    94,
+    32,
+    19.9,
+    65.1
+   ],
+   "recomputed_unrounded": {
+    "problems": 126,
+    "attempts": 1008,
+    "correct": 525,
+    "truncated_n": 201,
+    "unknown_n": 0,
+    "pass1": 0.5208333333333334,
+    "pass8": 0.746031746031746,
+    "trunc": 0.19940476190476192,
+    "acc_finished": 0.6505576208178439,
+    "pass1_within_8192": 0.4732142857142857,
+    "solved_any": 94,
+    "zero": 32,
+    "tokens": 6416551
+   },
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 R-s101-r128 \u2212 U-s101-r128",
+   "report": [
+    4.2,
+    1.5,
+    6.8
+   ],
+   "recomputed_display": [
+    4.19,
+    1.58,
+    6.9
+   ],
+   "recomputed_unrounded": [
+    0.0418552036199095,
+    0.01583710407239819,
+    0.06900452488687783
+   ],
+   "production": {
+    "d": 0.041855203619909465,
+    "lo": 0.014705882352941235,
+    "hi": 0.0678733031674208
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128.t",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs U-s101-r128 truncation shares",
+   "report": [
+    20.5,
+    23.0
+   ],
+   "recomputed_display": [
+    20.5,
+    23.0
+   ],
+   "recomputed_unrounded": [
+    0.20475113122171945,
+    0.22963800904977374
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128.tt",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs U-s101-r128 truncation term",
+   "report": [
+    2.1,
+    0.4,
+    3.9
+   ],
+   "recomputed_display": [
+    2.14,
+    0.44,
+    3.94
+   ],
+   "recomputed_unrounded": [
+    0.021429201715204356,
+    0.004365612595319073,
+    0.039376329337040744
+   ],
+   "production": {
+    "d": 0.021429201715204356,
+    "lo": 0.004170611145908253,
+    "hi": 0.03900118737555617
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128.a",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs U-s101-r128 accuracy among finished",
+   "report": [
+    87.4,
+    84.8
+   ],
+   "recomputed_display": [
+    87.4,
+    84.8
+   ],
+   "recomputed_unrounded": [
+    0.8741109530583214,
+    0.8480176211453745
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128.at",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs U-s101-r128 accuracy term",
+   "report": [
+    2.0,
+    -0.1,
+    4.1
+   ],
+   "recomputed_display": [
+    2.04,
+    -0.11,
+    4.19
+   ],
+   "recomputed_unrounded": [
+    0.020426001904705067,
+    -0.0011103680875913463,
+    0.0418939195062026
+   ],
+   "production": {
+    "d": 0.020426001904705157,
+    "lo": -0.0011255656940639823,
+    "hi": 0.04125486695726788
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-U-s101-r128.p8",
+   "section": "7.2",
+   "claim": "R-s101-r128, U-s101-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    83.3,
+    83.3
+   ],
+   "recomputed_display": [
+    83.3,
+    83.3
+   ],
+   "recomputed_unrounded": [
+    0.832579185520362,
+    0.832579185520362
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 R-s202-r128 \u2212 U-s202-r128",
+   "report": [
+    -2.7,
+    -5.1,
+    -0.2
+   ],
+   "recomputed_display": [
+    -2.66,
+    -5.03,
+    -0.23
+   ],
+   "recomputed_unrounded": [
+    -0.026583710407239818,
+    -0.050339366515837106,
+    -0.0022624434389140274
+   ],
+   "production": {
+    "d": -0.026583710407239836,
+    "lo": -0.05090497737556565,
+    "hi": -0.00226244343891413
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128.t",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs U-s202-r128 truncation shares",
+   "report": [
+    23.0,
+    15.2
+   ],
+   "recomputed_display": [
+    23.0,
+    15.2
+   ],
+   "recomputed_unrounded": [
+    0.23020361990950225,
+    0.1515837104072398
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128.tt",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs U-s202-r128 truncation term",
+   "report": [
+    -6.3,
+    -8.2,
+    -4.3
+   ],
+   "recomputed_display": [
+    -6.28,
+    -8.2,
+    -4.33
+   ],
+   "recomputed_unrounded": [
+    -0.06276699326087751,
+    -0.0819529736007177,
+    -0.043319921053095005
+   ],
+   "production": {
+    "d": -0.06276699326087751,
+    "lo": -0.08239458769261493,
+    "hi": -0.04304851102526076
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128.a",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs U-s202-r128 accuracy among finished",
+   "report": [
+    82.1,
+    77.6
+   ],
+   "recomputed_display": [
+    82.1,
+    77.6
+   ],
+   "recomputed_unrounded": [
+    0.8207200587803086,
+    0.776
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128.at",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs U-s202-r128 accuracy term",
+   "report": [
+    3.6,
+    1.2,
+    6.1
+   ],
+   "recomputed_display": [
+    3.62,
+    1.19,
+    6.08
+   ],
+   "recomputed_unrounded": [
+    0.0361832828536377,
+    0.011879299466327188,
+    0.0607614192599157
+   ],
+   "production": {
+    "d": 0.03618328285363761,
+    "lo": 0.011777948613557968,
+    "hi": 0.06057106263754804
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-U-s202-r128.p8",
+   "section": "7.2",
+   "claim": "R-s202-r128, U-s202-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    81.4,
+    85.1
+   ],
+   "recomputed_display": [
+    81.4,
+    85.1
+   ],
+   "recomputed_unrounded": [
+    0.8144796380090498,
+    0.8506787330316742
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 R-s101-r128 \u2212 H-s101-r128",
+   "report": [
+    5.4,
+    2.5,
+    8.2
+   ],
+   "recomputed_display": [
+    5.37,
+    2.66,
+    8.26
+   ],
+   "recomputed_unrounded": [
+    0.05373303167420815,
+    0.026583710407239818,
+    0.08257918552036199
+   ],
+   "production": {
+    "d": 0.053733031674208065,
+    "lo": 0.025452488687782826,
+    "hi": 0.08201357466063341
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128.t",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs H-s101-r128 truncation shares",
+   "report": [
+    20.5,
+    17.7
+   ],
+   "recomputed_display": [
+    20.5,
+    17.7
+   ],
+   "recomputed_unrounded": [
+    0.20475113122171945,
+    0.17703619909502263
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128.tt",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs H-s101-r128 truncation term",
+   "report": [
+    -2.3,
+    -4.6,
+    0.0
+   ],
+   "recomputed_display": [
+    -2.29,
+    -4.62,
+    0.1
+   ],
+   "recomputed_unrounded": [
+    -0.02291321476852579,
+    -0.04615243564857091,
+    0.0009635727028545012
+   ],
+   "production": {
+    "d": -0.02291321476852579,
+    "lo": -0.046349064062408143,
+    "hi": 0.00047292216486337363
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128.a",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs H-s101-r128 accuracy among finished",
+   "report": [
+    87.4,
+    77.9
+   ],
+   "recomputed_display": [
+    87.4,
+    77.9
+   ],
+   "recomputed_unrounded": [
+    0.8741109530583214,
+    0.7793814432989691
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128.at",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs H-s101-r128 accuracy term",
+   "report": [
+    7.7,
+    5.2,
+    10.1
+   ],
+   "recomputed_display": [
+    7.66,
+    5.21,
+    10.14
+   ],
+   "recomputed_unrounded": [
+    0.0766462464427339,
+    0.0521358771194325,
+    0.10141135271009985
+   ],
+   "production": {
+    "d": 0.07664624644273381,
+    "lo": 0.05194464615142265,
+    "hi": 0.10121099277269931
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-H-s101-r128.p8",
+   "section": "7.2",
+   "claim": "R-s101-r128, H-s101-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    83.3,
+    82.8
+   ],
+   "recomputed_display": [
+    83.3,
+    82.8
+   ],
+   "recomputed_unrounded": [
+    0.832579185520362,
+    0.8280542986425339
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 U-s101-r128 \u2212 H-s101-r128",
+   "report": [
+    1.2,
+    -1.4,
+    3.8
+   ],
+   "recomputed_display": [
+    1.19,
+    -1.41,
+    3.85
+   ],
+   "recomputed_unrounded": [
+    0.011877828054298642,
+    -0.01414027149321267,
+    0.038461538461538464
+   ],
+   "production": {
+    "d": 0.0118778280542986,
+    "lo": -0.013574660633484226,
+    "hi": 0.03789592760181004
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128.t",
+   "section": "7.2",
+   "claim": "U-s101-r128 vs H-s101-r128 truncation shares",
+   "report": [
+    23.0,
+    17.7
+   ],
+   "recomputed_display": [
+    23.0,
+    17.7
+   ],
+   "recomputed_unrounded": [
+    0.22963800904977374,
+    0.17703619909502263
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128.tt",
+   "section": "7.2",
+   "claim": "U-s101-r128 vs H-s101-r128 truncation term",
+   "report": [
+    -4.3,
+    -6.3,
+    -2.2
+   ],
+   "recomputed_display": [
+    -4.28,
+    -6.27,
+    -2.23
+   ],
+   "recomputed_unrounded": [
+    -0.04280206815422056,
+    -0.06274468383814176,
+    -0.022256166648678584
+   ],
+   "production": {
+    "d": -0.04280206815422056,
+    "lo": -0.0627429748431181,
+    "hi": -0.022322389496842048
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128.a",
+   "section": "7.2",
+   "claim": "U-s101-r128 vs H-s101-r128 accuracy among finished",
+   "report": [
+    84.8,
+    77.9
+   ],
+   "recomputed_display": [
+    84.8,
+    77.9
+   ],
+   "recomputed_unrounded": [
+    0.8480176211453745,
+    0.7793814432989691
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128.at",
+   "section": "7.2",
+   "claim": "U-s101-r128 vs H-s101-r128 accuracy term",
+   "report": [
+    5.5,
+    2.9,
+    8.0
+   ],
+   "recomputed_display": [
+    5.47,
+    2.83,
+    8.06
+   ],
+   "recomputed_unrounded": [
+    0.05467989620851925,
+    0.028303768264406892,
+    0.0805886935088346
+   ],
+   "production": {
+    "d": 0.05467989620851907,
+    "lo": 0.029114161779545015,
+    "hi": 0.07972457415463077
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s101-r128-H-s101-r128.p8",
+   "section": "7.2",
+   "claim": "U-s101-r128, H-s101-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    83.3,
+    82.8
+   ],
+   "recomputed_display": [
+    83.3,
+    82.8
+   ],
+   "recomputed_unrounded": [
+    0.832579185520362,
+    0.8280542986425339
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 R-s202-r128 \u2212 H-s202-r128",
+   "report": [
+    3.1,
+    -0.1,
+    6.3
+   ],
+   "recomputed_display": [
+    3.05,
+    -0.17,
+    6.33
+   ],
+   "recomputed_unrounded": [
+    0.030542986425339366,
+    -0.0016968325791855204,
+    0.06334841628959276
+   ],
+   "production": {
+    "d": 0.03054298642533937,
+    "lo": -0.0011312217194570096,
+    "hi": 0.06334841628959276
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128.t",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs H-s202-r128 truncation shares",
+   "report": [
+    23.0,
+    25.5
+   ],
+   "recomputed_display": [
+    23.0,
+    25.5
+   ],
+   "recomputed_unrounded": [
+    0.23020361990950225,
+    0.25509049773755654
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128.tt",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs H-s202-r128 truncation term",
+   "report": [
+    2.0,
+    -0.3,
+    4.4
+   ],
+   "recomputed_display": [
+    2.03,
+    -0.37,
+    4.39
+   ],
+   "recomputed_unrounded": [
+    0.02025614526669203,
+    -0.003685032498655872,
+    0.04388831059168907
+   ],
+   "production": {
+    "d": 0.020256145266692026,
+    "lo": -0.0028357768929101546,
+    "hi": 0.0440198755918808
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128.a",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs H-s202-r128 accuracy among finished",
+   "report": [
+    82.1,
+    80.7
+   ],
+   "recomputed_display": [
+    82.1,
+    80.7
+   ],
+   "recomputed_unrounded": [
+    0.8207200587803086,
+    0.8071374335611238
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128.at",
+   "section": "7.2",
+   "claim": "R-s202-r128 vs H-s202-r128 accuracy term",
+   "report": [
+    1.0,
+    -1.8,
+    4.0
+   ],
+   "recomputed_display": [
+    1.03,
+    -1.88,
+    3.91
+   ],
+   "recomputed_unrounded": [
+    0.01028684115864735,
+    -0.018775460977253244,
+    0.03910247069527845
+   ],
+   "production": {
+    "d": 0.01028684115864735,
+    "lo": -0.01811937440514309,
+    "hi": 0.0395743768390265
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s202-r128-H-s202-r128.p8",
+   "section": "7.2",
+   "claim": "R-s202-r128, H-s202-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    81.4,
+    80.1
+   ],
+   "recomputed_display": [
+    81.4,
+    80.1
+   ],
+   "recomputed_unrounded": [
+    0.8144796380090498,
+    0.8009049773755657
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 U-s202-r128 \u2212 H-s202-r128",
+   "report": [
+    5.7,
+    2.5,
+    9.2
+   ],
+   "recomputed_display": [
+    5.71,
+    2.43,
+    9.11
+   ],
+   "recomputed_unrounded": [
+    0.057126696832579184,
+    0.024321266968325792,
+    0.09106334841628959
+   ],
+   "production": {
+    "d": 0.057126696832579205,
+    "lo": 0.02488687782805432,
+    "hi": 0.09219457013574661
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128.t",
+   "section": "7.2",
+   "claim": "U-s202-r128 vs H-s202-r128 truncation shares",
+   "report": [
+    15.2,
+    25.5
+   ],
+   "recomputed_display": [
+    15.2,
+    25.5
+   ],
+   "recomputed_unrounded": [
+    0.1515837104072398,
+    0.25509049773755654
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128.tt",
+   "section": "7.2",
+   "claim": "U-s202-r128 vs H-s202-r128 truncation term",
+   "report": [
+    8.2,
+    6.0,
+    10.4
+   ],
+   "recomputed_display": [
+    8.19,
+    6.03,
+    10.37
+   ],
+   "recomputed_unrounded": [
+    0.08193273482513734,
+    0.06028350326151984,
+    0.10367308919488065
+   ],
+   "production": {
+    "d": 0.08193273482513734,
+    "lo": 0.06030433324004216,
+    "hi": 0.10409081787489251
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128.a",
+   "section": "7.2",
+   "claim": "U-s202-r128 vs H-s202-r128 accuracy among finished",
+   "report": [
+    77.6,
+    80.7
+   ],
+   "recomputed_display": [
+    77.6,
+    80.7
+   ],
+   "recomputed_unrounded": [
+    0.776,
+    0.8071374335611238
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128.at",
+   "section": "7.2",
+   "claim": "U-s202-r128 vs H-s202-r128 accuracy term",
+   "report": [
+    -2.5,
+    -5.6,
+    0.8
+   ],
+   "recomputed_display": [
+    -2.48,
+    -5.6,
+    0.82
+   ],
+   "recomputed_unrounded": [
+    -0.02480603799255815,
+    -0.0560241182257837,
+    0.00819227884106003
+   ],
+   "production": {
+    "d": -0.02480603799255806,
+    "lo": -0.056438851462775726,
+    "hi": 0.008491540534171425
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.U-s202-r128-H-s202-r128.p8",
+   "section": "7.2",
+   "claim": "U-s202-r128, H-s202-r128 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    85.1,
+    80.1
+   ],
+   "recomputed_display": [
+    85.1,
+    80.1
+   ],
+   "recomputed_unrounded": [
+    0.8506787330316742,
+    0.8009049773755657
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64",
+   "section": "7.2, Q3, opening 5",
+   "claim": "stress all-221 R-s101-r128 \u2212 R-s101-r64",
+   "report": [
+    5.3,
+    3.0,
+    7.6
+   ],
+   "recomputed_display": [
+    5.26,
+    3.0,
+    7.58
+   ],
+   "recomputed_unrounded": [
+    0.05260180995475113,
+    0.02997737556561086,
+    0.0757918552036199
+   ],
+   "production": {
+    "d": 0.052601809954751055,
+    "lo": 0.029977375565610864,
+    "hi": 0.07579185520361986
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64.t",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs R-s101-r64 truncation shares",
+   "report": [
+    20.5,
+    26.1
+   ],
+   "recomputed_display": [
+    20.5,
+    26.1
+   ],
+   "recomputed_unrounded": [
+    0.20475113122171945,
+    0.26131221719457015
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64.tt",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs R-s101-r64 truncation term",
+   "report": [
+    4.9,
+    3.0,
+    6.9
+   ],
+   "recomputed_display": [
+    4.93,
+    3.0,
+    6.89
+   ],
+   "recomputed_unrounded": [
+    0.0493196408304815,
+    0.029993289718448297,
+    0.06886253436368277
+   ],
+   "production": {
+    "d": 0.0493196408304815,
+    "lo": 0.030241957830962722,
+    "hi": 0.06913841590037643
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64.a",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs R-s101-r64 accuracy among finished",
+   "report": [
+    87.4,
+    87.0
+   ],
+   "recomputed_display": [
+    87.4,
+    87.0
+   ],
+   "recomputed_unrounded": [
+    0.8741109530583214,
+    0.8698315467075038
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64.at",
+   "section": "7.2",
+   "claim": "R-s101-r128 vs R-s101-r64 accuracy term",
+   "report": [
+    0.3,
+    -1.4,
+    2.0
+   ],
+   "recomputed_display": [
+    0.33,
+    -1.34,
+    1.99
+   ],
+   "recomputed_unrounded": [
+    0.003282169124269594,
+    -0.013444480873565296,
+    0.01989466373631621
+   ],
+   "production": {
+    "d": 0.003282169124269594,
+    "lo": -0.013506894477121424,
+    "hi": 0.01983640415363184
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.2.c.R-s101-r128-R-s101-r64.p8",
+   "section": "7.2",
+   "claim": "R-s101-r128, R-s101-r64 pass@8 (n = 8: observed coverage at 8)",
+   "report": [
+    83.3,
+    82.8
+   ],
+   "recomputed_display": [
+    83.3,
+    82.8
+   ],
+   "recomputed_unrounded": [
+    0.832579185520362,
+    0.8280542986425339
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "Q3.tier.harder.s101",
+   "section": "Q3",
+   "claim": "stress harder R \u2212 U seed 101",
+   "report": [
+    4.1,
+    0.7,
+    7.8
+   ],
+   "recomputed_display": [
+    4.08,
+    0.53,
+    7.76
+   ],
+   "recomputed_unrounded": [
+    0.04078947368421053,
+    0.005263157894736842,
+    0.07763157894736843
+   ],
+   "production": {
+    "d": 0.04078947368421049,
+    "lo": 0.006578947368421018,
+    "hi": 0.07763157894736838
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "Q3.tier.superhard.s101",
+   "section": "Q3",
+   "claim": "stress superhard R \u2212 U seed 101",
+   "report": [
+    4.3,
+    0.5,
+    8.0
+   ],
+   "recomputed_display": [
+    4.27,
+    0.4,
+    7.94
+   ],
+   "recomputed_unrounded": [
+    0.04265873015873016,
+    0.003968253968253968,
+    0.07936507936507936
+   ],
+   "production": {
+    "d": 0.04265873015873023,
+    "lo": 0.004960317460317443,
+    "hi": 0.08035714285714285
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "Q3.tier.harder.s202",
+   "section": "Q3",
+   "claim": "stress harder R \u2212 U seed 202",
+   "report": [
+    -3.2,
+    -6.7,
+    0.3
+   ],
+   "recomputed_display": [
+    -3.16,
+    -6.71,
+    0.13
+   ],
+   "recomputed_unrounded": [
+    -0.031578947368421054,
+    -0.06710526315789474,
+    0.0013157894736842105
+   ],
+   "production": {
+    "d": -0.03157894736842104,
+    "lo": -0.06710526315789467,
+    "hi": 0.0026315789473684292
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "Q3.tier.superhard.s202",
+   "section": "Q3",
+   "claim": "stress superhard R \u2212 U seed 202",
+   "report": [
+    -2.3,
+    -5.6,
+    1.0
+   ],
+   "recomputed_display": [
+    -2.28,
+    -5.56,
+    1.19
+   ],
+   "recomputed_unrounded": [
+    -0.022817460317460316,
+    -0.05555555555555555,
+    0.011904761904761904
+   ],
+   "production": {
+    "d": -0.022817460317460347,
+    "lo": -0.05555555555555558,
+    "hi": 0.009920634920634885
+   },
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "open5.range",
+   "section": "opening 5",
+   "claim": "'trained checkpoints 62.4\u201369.5%' on 221 stress problems (all 8 trained cells: 60.1\u201369.5)",
+   "report": [
+    62.4,
+    69.5
+   ],
+   "recomputed_display": [
+    60.1,
+    69.5
+   ],
+   "recomputed_unrounded": [
+    0.6012443438914027,
+    0.6951357466063348
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "Minimum is H-s202 r128 60.1%; 62.4% is H-s202 r64."
+  },
+  {
+   "id": "open5.sh",
+   "section": "opening 5, 7.2",
+   "claim": "'SuperHard 25.8% \u2192 52.1\u201358.4%' (all 8 trained cells: 49.4\u201358.4)",
+   "report": [
+    52.1,
+    58.4
+   ],
+   "recomputed_display": [
+    49.4,
+    58.4
+   ],
+   "recomputed_unrounded": [
+    0.49404761904761907,
+    0.5843253968253969
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "Minimum is H-s202 r128 49.4%."
+  },
+  {
+   "id": "7.2.gain",
+   "section": "7.2",
+   "claim": "'every trained checkpoint gains 25\u201332 points over base' (8 trained cells: 22.8\u201332.2)",
+   "report": [
+    25,
+    32
+   ],
+   "recomputed_display": [
+    23,
+    32
+   ],
+   "recomputed_unrounded": [
+    0.2285067873303167,
+    0.32239819004524883
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "H-s202 r128 gains 22.8 points."
+  },
+  {
+   "id": "7.2.gainedlost",
+   "section": "7.2",
+   "claim": "each checkpoint solves 33\u201338 problems base never solved; loses 2\u20135 base solved",
+   "report": [
+    33,
+    38,
+    2,
+    5
+   ],
+   "recomputed_display": [
+    33,
+    38,
+    2,
+    8
+   ],
+   "recomputed_unrounded": [
+    33,
+    38,
+    2,
+    8
+   ],
+   "production": {
+    "gained": {
+     "H-s101-r128": 36,
+     "R-s101-r128": 35,
+     "U-s101-r128": 35,
+     "H-s202-r128": 33,
+     "R-s202-r128": 33,
+     "U-s202-r128": 38,
+     "R-s101-r64": 34,
+     "H-s202-r64": 34
+    },
+    "lost": {
+     "H-s101-r128": 5,
+     "R-s101-r128": 3,
+     "U-s101-r128": 3,
+     "H-s202-r128": 8,
+     "R-s202-r128": 5,
+     "U-s202-r128": 2,
+     "R-s101-r64": 3,
+     "H-s202-r64": 3
+    }
+   },
+   "status": "differs",
+   "note": "lost per cell {'H-s101-r128': 5, 'R-s101-r128': 3, 'U-s101-r128': 3, 'H-s202-r128': 8, 'R-s202-r128': 5, 'U-s202-r128': 2, 'R-s101-r64': 3, 'H-s202-r64': 3}; H-s202 r128 lost 8."
+  },
+  {
+   "id": "7.2.p8gap",
+   "section": "7.2",
+   "claim": "pass@8 differs by at most 3.7 points between arms (same seed, r128)",
+   "report": [
+    3.7
+   ],
+   "recomputed_display": [
+    3.6
+   ],
+   "recomputed_unrounded": [
+    0.03619909502262442
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "R vs U only; with H: max |\u0394| = 5.0 (U \u2212 H seed 202)."
+  },
+  {
+   "id": "7.2.h202drop",
+   "section": "7.2",
+   "claim": "H-s202 fell 2.3 points from r64 to r128 (62.4 \u2192 60.1)",
+   "report": [
+    2.3
+   ],
+   "recomputed_display": [
+    2.3
+   ],
+   "recomputed_unrounded": [
+    0.022624434389140302
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "8.cells",
+   "section": "8",
+   "claim": "R-s202 62.0 uncued / 57.3 cued; U-s202 64.6 / 69.3",
+   "report": [
+    62.0,
+    57.3,
+    64.6,
+    69.3
+   ],
+   "recomputed_display": [
+    62.0,
+    57.3,
+    64.6,
+    69.3
+   ],
+   "recomputed_unrounded": [
+    0.6197916666666666,
+    0.5729166666666666,
+    0.6458333333333334,
+    0.6927083333333334
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "8.gain",
+   "section": "8",
+   "claim": "cue gain R-s202 \u22124.7, U-s202 +4.7; difference in cue gain +2.1 (s101), \u22129.4 (s202)",
+   "report": [
+    -4.7,
+    4.7,
+    2.1,
+    -9.4
+   ],
+   "recomputed_display": [
+    -4.7,
+    4.7,
+    2.1,
+    -9.4
+   ],
+   "recomputed_unrounded": [
+    -0.046875,
+    0.046875,
+    0.02083333333333348,
+    -0.09375
+   ],
+   "production": {
+    "cue_gain": {
+     "base": {
+      "est": -0.010416666666666666,
+      "lo": -0.078125,
+      "hi": 0.057291666666666664
+     },
+     "R-s101": {
+      "est": 0.010416666666666666,
+      "lo": -0.036458333333333336,
+      "hi": 0.06770833333333333
+     },
+     "U-s101": {
+      "est": -0.010416666666666666,
+      "lo": -0.07291666666666667,
+      "hi": 0.041666666666666664
+     },
+     "R-s202": {
+      "est": -0.046875,
+      "lo": -0.09895833333333333,
+      "hi": 0.0
+     },
+     "U-s202": {
+      "est": 0.046875,
+      "lo": -0.005208333333333333,
+      "hi": 0.109375
+     }
+    },
+    "did": {
+     "s101": {
+      "est": 0.020833333333333332,
+      "lo": -0.0625,
+      "hi": 0.11979166666666667
+     },
+     "s202": {
+      "est": -0.09375,
+      "lo": -0.19270833333333334,
+      "hi": -0.015625
+     }
+    }
+   },
+   "status": "verified",
+   "note": "Intervals [\u22129.9, 0.0], [\u22120.5, +10.9], [\u22126.3, +12.0], [\u221219.3, \u22121.6] match the production cue_analysis.json (not re-bootstrapped)."
+  },
+  {
+   "id": "8.factor",
+   "section": "8",
+   "claim": "cue added +9 to +15 points more mentions of 'factor' (production output; text not re-decoded)",
+   "report": [
+    9,
+    15
+   ],
+   "recomputed_display": [
+    9,
+    15
+   ],
+   "recomputed_unrounded": [
+    0.08854166666666663,
+    0.15104166666666663
+   ],
+   "production": null,
+   "status": "claimed (production output only)",
+   "note": "checked against production cue_analysis.json only"
+  },
+  {
+   "id": "6.r0",
+   "section": "6",
+   "claim": "r0: no-update J_H original / rerun, hard, related, unrelated means, unrelated \u2212 related, unrelated \u2212 hard",
+   "report": [
+    40.0,
+    43.2,
+    41.5,
+    42.7,
+    40.5,
+    -2.2,
+    -0.9
+   ],
+   "recomputed_display": [
+    40.0,
+    43.2,
+    41.5,
+    42.7,
+    40.5,
+    -2.2,
+    -0.9
+   ],
+   "recomputed_unrounded": [
+    0.400390625,
+    0.431640625,
+    0.41455078125,
+    0.42724609375,
+    0.4052734375,
+    -0.02197265625,
+    -0.00927734375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "draws per branch: {'hard': 4, 'related': 4, 'unrelated': 4}; n per problem 16, cap 8,192 (DEFINITIONS \u00a74 item 1)"
+  },
+  {
+   "id": "6.r64",
+   "section": "6",
+   "claim": "r64: no-update J_H original / rerun, hard, related, unrelated means, unrelated \u2212 related, unrelated \u2212 hard",
+   "report": [
+    60.6,
+    63.1,
+    60.6,
+    61.6,
+    60.9,
+    -0.7,
+    0.2
+   ],
+   "recomputed_display": [
+    60.5,
+    63.1,
+    60.6,
+    61.6,
+    60.9,
+    -0.7,
+    0.2
+   ],
+   "recomputed_unrounded": [
+    0.60546875,
+    0.630859375,
+    0.6064453125,
+    0.61572265625,
+    0.60888671875,
+    -0.0068359375,
+    0.00244140625
+   ],
+   "production": null,
+   "status": "differs",
+   "note": "draws per branch: {'hard': 4, 'related': 4, 'unrelated': 4}; n per problem 16, cap 8,192 (DEFINITIONS \u00a74 item 1)"
+  },
+  {
+   "id": "6.zero",
+   "section": "6",
+   "claim": "three zero-gradient r64 draws (related 4101, 4102; unrelated 4103) give J_H 61.1, J_R 89.5, J_U 93.2 each",
+   "report": [
+    61.1,
+    89.5,
+    93.2,
+    61.1,
+    89.5,
+    93.2,
+    61.1,
+    89.5,
+    93.2
+   ],
+   "recomputed_display": [
+    61.1,
+    89.5,
+    93.2,
+    61.1,
+    89.5,
+    93.2,
+    61.1,
+    89.5,
+    93.2
+   ],
+   "recomputed_unrounded": [
+    0.611328125,
+    0.8950892857142857,
+    0.931640625,
+    0.611328125,
+    0.8950892857142857,
+    0.931640625,
+    0.611328125,
+    0.8950892857142857,
+    0.931640625
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "6.spread",
+   "section": "6",
+   "claim": "unrelated at r64 single draws 59.2%\u201363.3%",
+   "report": [
+    59.2,
+    63.3
+   ],
+   "recomputed_display": [
+    59.2,
+    63.3
+   ],
+   "recomputed_unrounded": [
+    0.591796875,
+    0.6328125
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s101.r0",
+   "section": "3.2, Q3",
+   "claim": "dev seed 101 round 0: R, U, R \u2212 U",
+   "report": [
+    41.7,
+    42.2,
+    -0.5
+   ],
+   "recomputed_display": [
+    41.7,
+    42.2,
+    -0.5
+   ],
+   "recomputed_unrounded": [
+    0.41745283018867924,
+    0.4221698113207547,
+    -0.004716981132075471
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s101.r32",
+   "section": "3.2, Q3",
+   "claim": "dev seed 101 round 32: R, U, R \u2212 U",
+   "report": [
+    54.2,
+    60.1,
+    -5.9
+   ],
+   "recomputed_display": [
+    54.2,
+    60.1,
+    -5.9
+   ],
+   "recomputed_unrounded": [
+    0.5424528301886793,
+    0.6014150943396226,
+    -0.0589622641509433
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s101.r64",
+   "section": "3.2, Q3",
+   "claim": "dev seed 101 round 64: R, U, R \u2212 U",
+   "report": [
+    73.6,
+    71.0,
+    2.6
+   ],
+   "recomputed_display": [
+    73.6,
+    71.0,
+    2.6
+   ],
+   "recomputed_unrounded": [
+    0.7358490566037735,
+    0.7099056603773585,
+    0.02594339622641506
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s101.r96",
+   "section": "3.2, Q3",
+   "claim": "dev seed 101 round 96: R, U, R \u2212 U",
+   "report": [
+    74.8,
+    68.4,
+    6.4
+   ],
+   "recomputed_display": [
+    74.8,
+    68.4,
+    6.4
+   ],
+   "recomputed_unrounded": [
+    0.7476415094339622,
+    0.6839622641509434,
+    0.06367924528301883
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s101.r128",
+   "section": "3.2, Q3",
+   "claim": "dev seed 101 round 128: R, U, R \u2212 U",
+   "report": [
+    72.9,
+    69.1,
+    3.8
+   ],
+   "recomputed_display": [
+    72.9,
+    69.1,
+    3.8
+   ],
+   "recomputed_unrounded": [
+    0.7287735849056604,
+    0.6910377358490566,
+    0.037735849056603765
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s202.r0",
+   "section": "3.2, Q3",
+   "claim": "dev seed 202 round 0: R, U, R \u2212 U",
+   "report": [
+    40.3,
+    42.2,
+    -1.9
+   ],
+   "recomputed_display": [
+    40.3,
+    42.2,
+    -1.9
+   ],
+   "recomputed_unrounded": [
+    0.4033018867924528,
+    0.4221698113207547,
+    -0.018867924528301883
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s202.r32",
+   "section": "3.2, Q3",
+   "claim": "dev seed 202 round 32: R, U, R \u2212 U",
+   "report": [
+    59.9,
+    61.1,
+    -1.2
+   ],
+   "recomputed_display": [
+    59.9,
+    61.1,
+    -1.2
+   ],
+   "recomputed_unrounded": [
+    0.5990566037735849,
+    0.6108490566037735,
+    -0.011792452830188593
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s202.r64",
+   "section": "3.2, Q3",
+   "claim": "dev seed 202 round 64: R, U, R \u2212 U",
+   "report": [
+    61.3,
+    67.9,
+    -6.6
+   ],
+   "recomputed_display": [
+    61.3,
+    67.9,
+    -6.6
+   ],
+   "recomputed_unrounded": [
+    0.6132075471698113,
+    0.6792452830188679,
+    -0.06603773584905659
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.2.dev.s202.r96",
+   "section": "3.2, Q3",
+   "claim": "dev seed 202 round 96: R, U, R \u2212 U",
+   "report": [
+    64.2,
+    67.9,
+    -3.8
+   ],
+   "recomputed_display": [
+    64.2,
+    67.9,
+    -3.8
+   ],
+   "recomputed_unrounded": [
+    0.6415094339622641,
+    0.6792452830188679,
+    -0.037735849056603765
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "table cell R \u2212 U disagrees with the difference of its displayed scores"
+  },
+  {
+   "id": "3.2.dev.s202.r128",
+   "section": "3.2, Q3",
+   "claim": "dev seed 202 round 128: R, U, R \u2212 U",
+   "report": [
+    65.6,
+    70.3,
+    -4.7
+   ],
+   "recomputed_display": [
+    65.6,
+    70.3,
+    -4.7
+   ],
+   "recomputed_unrounded": [
+    0.6556603773584906,
+    0.7028301886792453,
+    -0.047169811320754707
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.1.h202dev",
+   "section": "3.1",
+   "claim": "H-s202 (a2-r60) dev at rounds 64/96/128: 63.7/66.0/67.0",
+   "report": [
+    63.7,
+    66.0,
+    67.0
+   ],
+   "recomputed_display": [
+    63.7,
+    66.0,
+    67.0
+   ],
+   "recomputed_unrounded": [
+    0.6367924528301887,
+    0.660377358490566,
+    0.6698113207547169
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "3.1.probes",
+   "section": "3.1",
+   "claim": "base solves about 81% of J_R and J_U; every arm gains 8\u201315 points on both (six runs, r0 \u2192 r128)",
+   "report": [
+    81,
+    8,
+    15
+   ],
+   "recomputed_display": [
+    81,
+    8,
+    15
+   ],
+   "recomputed_unrounded": [
+    0.8111979166666669,
+    0.0848214285714286,
+    0.1484375
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "r0 values [80.5, 80.5, 80.5, 80.8, 80.8, 80.8, 81.2, 81.6, 81.6, 81.7, 81.7, 81.7]; gains [8.5, 9.4, 9.4, 9.8, 10.3, 10.3, 10.7, 11.3, 12.5, 12.5, 13.3, 14.8]"
+  },
+  {
+   "id": "6.link3",
+   "section": "6",
+   "claim": "dev pass@1 rose from 40\u201342% to 66\u201373% (six runs)",
+   "report": [
+    40,
+    42,
+    66,
+    73
+   ],
+   "recomputed_display": [
+    40,
+    42,
+    66,
+    73
+   ],
+   "recomputed_unrounded": [
+    0.4033018867924528,
+    0.4221698113207547,
+    0.6556603773584906,
+    0.7287735849056604
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.3.denoms",
+   "section": "7.3, opening 5",
+   "claim": "audit: 96 responses, 192 reads, 35 failures, 13 capped failures, 33 genuine, 6 policies",
+   "report": [
+    96,
+    192,
+    35,
+    13,
+    33,
+    6
+   ],
+   "recomputed_display": [
+    96,
+    192,
+    35,
+    13,
+    33,
+    6
+   ],
+   "recomputed_unrounded": [
+    96,
+    192,
+    35,
+    13,
+    33,
+    6
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "policies {'U-s101-r128': 16, 'base': 16, 'H-s101-r128': 16, 'R-s202-r128': 16, 'R-s101-r128': 16, 'U-s202-r128': 16}; grader-category failures [('math:precalculus/train/00152', 'R-s202-r128'), ('math:precalculus/train/00152', 'H-s101-r128')]"
+  },
+  {
+   "id": "7.3.reads",
+   "section": "7.3",
+   "claim": "failure reads 70 = yes 29 / no 27 / unclear 10 / n.a. 4",
+   "report": [
+    70,
+    29,
+    27,
+    10,
+    4
+   ],
+   "recomputed_display": [
+    70,
+    29,
+    27,
+    10,
+    4
+   ],
+   "recomputed_unrounded": [
+    70,
+    29,
+    27,
+    10,
+    4
+   ],
+   "production": null,
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "id": "7.3.pairs",
+   "section": "7.3, opening 5",
+   "claim": "of 33 genuine: both yes 13, both no 10; 29 of 66 judged reads",
+   "report": [
+    13,
+    10,
+    29,
+    66
+   ],
+   "recomputed_display": [
+    13,
+    10,
+    29,
+    66
+   ],
+   "recomputed_unrounded": [
+    13,
+    10,
+    29,
+    66
+   ],
+   "production": null,
+   "status": "verified",
+   "note": "pairs {'no,no': 10, 'no,unclear': 6, 'yes,yes': 13, 'unclear,yes': 2, 'unclear,unclear': 1, 'no,yes': 1}"
+  }
+ ],
+ "recomputed": {
+  "test.base.pass1": 0.525634765625,
+  "test.base.pass8": 0.8352163617516614,
+  "test.H-s101.pass1": 0.76953125,
+  "test.H-s101.pass8": 0.9370628452316438,
+  "test.H-s202.pass1": 0.723876953125,
+  "test.H-s202.pass8": 0.9075769061421523,
+  "test.H-s202-fb.pass1": 0.7431640625,
+  "test.H-s202-fb.pass8": 0.928149223407062,
+  "test.R-s101.pass1": 0.818603515625,
+  "test.R-s101.pass8": 0.9612719112166415,
+  "test.R-s202.pass1": 0.747802734375,
+  "test.R-s202.pass8": 0.9220936494312294,
+  "test.U-s101.pass1": 0.77685546875,
+  "test.U-s101.pass8": 0.9446191919678084,
+  "test.U-s202.pass1": 0.792236328125,
+  "test.U-s202.pass8": 0.9485036109685026,
+  "cgpu.R-s101.pass1": 0.822509765625,
+  "cgpu.R-s202.pass1": 0.76123046875,
+  "cgpu.U-s101.pass1": 0.778076171875,
+  "cgpu.U-s202.pass1": 0.792236328125,
+  "test.R-U.s101": {
+   "est": 0.041748046875,
+   "lo": 0.020263671875,
+   "hi": 0.063232421875
+  },
+  "test.R-H.s101": {
+   "est": 0.049072265625,
+   "lo": 0.01953125,
+   "hi": 0.079345703125
+  },
+  "test.U-H.s101": {
+   "est": 0.00732421875,
+   "lo": -0.019287109375,
+   "hi": 0.03564453125
+  },
+  "test.R-U.s202": {
+   "est": -0.04443359375,
+   "lo": -0.072271728515625,
+   "hi": -0.017822265625
+  },
+  "test.R-H.s202": {
+   "est": 0.02392578125,
+   "lo": -0.004150390625,
+   "hi": 0.05322265625
+  },
+  "test.U-H.s202": {
+   "est": 0.068359375,
+   "lo": 0.035888671875,
+   "hi": 0.102294921875
+  },
+  "test.R-U.mean": {
+   "est": -0.0013427734375,
+   "lo": -0.0186767578125,
+   "hi": 0.0150146484375
+  },
+  "test.R-H.mean": {
+   "est": 0.0364990234375,
+   "lo": 0.015866088867187503,
+   "hi": 0.057498168945312456
+  },
+  "test.U-H.mean": {
+   "est": 0.037841796875,
+   "lo": 0.016720581054687503,
+   "hi": 0.060546875
+  },
+  "range.trained6": [
+   0.723876953125,
+   0.818603515625
+  ],
+  "range.trained5_noHs202": [
+   0.747802734375,
+   0.818603515625
+  ],
+  "spearman.overall": -0.09077768195355068,
+  "spearman.B1": -0.038863290445383954,
+  "coverage": {
+   "unreachable": 14,
+   "became_reachable": {
+    "H-s101": 11,
+    "R-s101": 11,
+    "U-s101": 11,
+    "H-s202": 10,
+    "R-s202": 9,
+    "U-s202": 11
+   },
+   "base_reachable_mean_k16b": 0.5959429824561403,
+   "reachable_pass1": {
+    "H-s101": 0.8453947368421053,
+    "R-s101": 0.8804824561403509,
+    "U-s101": 0.8393640350877193,
+    "H-s202": 0.7963267543859649,
+    "R-s202": 0.8245614035087719,
+    "U-s202": 0.8612938596491229
+   },
+   "gain_vs_base_16_31": {
+    "H-s101": 0.23876953125,
+    "R-s101": 0.287841796875,
+    "U-s101": 0.24609375,
+    "H-s202": 0.193115234375,
+    "R-s202": 0.217041015625,
+    "U-s202": 0.261474609375
+   }
+  },
+  "test.decomp.s101": {
+   "tA": 0.106689453125,
+   "tB": 0.122314453125,
+   "aA": 0.9163705930582127,
+   "aB": 0.8851182197496523,
+   "trunc_term": {
+    "est": 0.014074131350061445,
+    "lo": 0.0002173876255597145,
+    "hi": 0.027744314503040095
+   },
+   "acc_term": {
+    "est": 0.027673915524938565,
+    "lo": 0.009493156010005815,
+    "hi": 0.046629588286332714
+   },
+   "residual": 1.3877787807814457e-17
+  },
+  "test.decomp.s202": {
+   "tA": 0.13134765625,
+   "tB": 0.081298828125,
+   "aA": 0.8608768971332209,
+   "aB": 0.8623438745681637,
+   "trunc_term": {
+    "est": -0.04312259011215623,
+    "lo": -0.060492586184037744,
+    "hi": -0.026846314957989385
+   },
+   "acc_term": {
+    "est": -0.001311003637843815,
+    "lo": -0.023957215797818537,
+    "hi": 0.020140772844085806
+   },
+   "residual": -4.85722573273506e-17
+  },
+  "length.test/all/all/R-s101-U-s101": {
+   "at12288": {
+    "est": 0.041748046875,
+    "lo": 0.02099609375,
+    "hi": 0.062744140625
+   },
+   "at16384": {
+    "est": 0.035888671875,
+    "lo": 0.014892578125,
+    "hi": 0.056884765625
+   },
+   "change": {
+    "est": -0.005859375,
+    "lo": -0.016357421875,
+    "hi": 0.003662109375
+   },
+   "means": [
+    0.818603515625,
+    0.841552734375,
+    0.77685546875,
+    0.8056640625
+   ]
+  },
+  "length.test/all/all/R-s202-U-s202": {
+   "at12288": {
+    "est": -0.04443359375,
+    "lo": -0.071533203125,
+    "hi": -0.017822265625
+   },
+   "at16384": {
+    "est": -0.039306640625,
+    "lo": -0.066650390625,
+    "hi": -0.013427734375
+   },
+   "change": {
+    "est": 0.005126953125,
+    "lo": -0.0029296875,
+    "hi": 0.012939453125
+   },
+   "means": [
+    0.747802734375,
+    0.76904296875,
+    0.792236328125,
+    0.808349609375
+   ]
+  },
+  "length.test/all/all/R-s101-H-s101": {
+   "at12288": {
+    "est": 0.049072265625,
+    "lo": 0.019769287109375006,
+    "hi": 0.079345703125
+   },
+   "at16384": {
+    "est": 0.04931640625,
+    "lo": 0.021234130859375006,
+    "hi": 0.080078125
+   },
+   "change": {
+    "est": 0.000244140625,
+    "lo": -0.0078125,
+    "hi": 0.008544921875
+   },
+   "means": [
+    0.818603515625,
+    0.841552734375,
+    0.76953125,
+    0.792236328125
+   ]
+  },
+  "length.test/all/all/U-s101-H-s101": {
+   "at12288": {
+    "est": 0.00732421875,
+    "lo": -0.02001953125,
+    "hi": 0.035400390625
+   },
+   "at16384": {
+    "est": 0.013427734375,
+    "lo": -0.010986328125,
+    "hi": 0.038818359375
+   },
+   "change": {
+    "est": 0.006103515625,
+    "lo": -0.00244140625,
+    "hi": 0.015380859375
+   },
+   "means": [
+    0.77685546875,
+    0.8056640625,
+    0.76953125,
+    0.792236328125
+   ]
+  },
+  "length.stress/all/all/R-s101-U-s101": {
+   "at12288": {
+    "est": 0.0418552036199095,
+    "lo": 0.01583710407239819,
+    "hi": 0.06787330316742081
+   },
+   "at16384": {
+    "est": 0.04072398190045249,
+    "lo": 0.015257352941176482,
+    "hi": 0.0673076923076923
+   },
+   "change": {
+    "est": -0.0011312217194570137,
+    "lo": -0.011312217194570135,
+    "hi": 0.009615384615384616
+   },
+   "means": [
+    0.6951357466063348,
+    0.7228506787330317,
+    0.6532805429864253,
+    0.6821266968325792
+   ]
+  },
+  "length.stress/all/harder/R-s101-U-s101": {
+   "at12288": {
+    "est": 0.04078947368421053,
+    "lo": 0.005263157894736842,
+    "hi": 0.07763157894736843
+   },
+   "at16384": {
+    "est": 0.042105263157894736,
+    "lo": 0.007894736842105263,
+    "hi": 0.07763157894736843
+   },
+   "change": {
+    "est": 0.0013157894736842105,
+    "lo": -0.010526315789473684,
+    "hi": 0.014473684210526316
+   },
+   "means": [
+    0.8421052631578947,
+    0.8605263157894737,
+    0.8013157894736842,
+    0.8184210526315789
+   ]
+  },
+  "length.stress/all/superhard/R-s101-U-s101": {
+   "at12288": {
+    "est": 0.04265873015873016,
+    "lo": 0.00496031746031746,
+    "hi": 0.07936507936507936
+   },
+   "at16384": {
+    "est": 0.03968253968253968,
+    "lo": 0.000992063492063492,
+    "hi": 0.07837301587301587
+   },
+   "change": {
+    "est": -0.002976190476190476,
+    "lo": -0.018849206349206348,
+    "hi": 0.012896825396825396
+   },
+   "means": [
+    0.5843253968253969,
+    0.6190476190476191,
+    0.5416666666666666,
+    0.5793650793650794
+   ]
+  },
+  "length.stress/all/all/R-s202-U-s202": {
+   "at12288": {
+    "est": -0.026583710407239818,
+    "lo": -0.050339366515837106,
+    "hi": -0.0022624434389140274
+   },
+   "at16384": {
+    "est": -0.021493212669683258,
+    "lo": -0.04581447963800905,
+    "hi": 0.002828054298642534
+   },
+   "change": {
+    "est": 0.005090497737556561,
+    "lo": -0.005090497737556561,
+    "hi": 0.015271493212669683
+   },
+   "means": [
+    0.6317873303167421,
+    0.6600678733031674,
+    0.6583710407239819,
+    0.6815610859728507
+   ]
+  },
+  "length.stress/all/harder/R-s202-U-s202": {
+   "at12288": {
+    "est": -0.031578947368421054,
+    "lo": -0.06710526315789474,
+    "hi": 0.002631578947368421
+   },
+   "at16384": {
+    "est": -0.015789473684210527,
+    "lo": -0.04736842105263158,
+    "hi": 0.014473684210526316
+   },
+   "change": {
+    "est": 0.015789473684210527,
+    "lo": 0.0013157894736842105,
+    "hi": 0.031578947368421054
+   },
+   "means": [
+    0.7631578947368421,
+    0.7934210526315789,
+    0.7947368421052632,
+    0.8092105263157895
+   ]
+  },
+  "length.stress/all/superhard/R-s202-U-s202": {
+   "at12288": {
+    "est": -0.022817460317460316,
+    "lo": -0.05654761904761905,
+    "hi": 0.010912698412698412
+   },
+   "at16384": {
+    "est": -0.025793650793650792,
+    "lo": -0.061507936507936505,
+    "hi": 0.00992063492063492
+   },
+   "change": {
+    "est": -0.002976190476190476,
+    "lo": -0.016865079365079364,
+    "hi": 0.010912698412698412
+   },
+   "means": [
+    0.5327380952380952,
+    0.5595238095238095,
+    0.5555555555555556,
+    0.5853174603174603
+   ]
+  },
+  "length.stress/all/all/R-s101-H-s101": {
+   "at12288": {
+    "est": 0.05373303167420815,
+    "lo": 0.026018099547511313,
+    "hi": 0.08201357466063348
+   },
+   "at16384": {
+    "est": 0.050339366515837106,
+    "lo": 0.023755656108597284,
+    "hi": 0.07748868778280543
+   },
+   "change": {
+    "est": -0.003393665158371041,
+    "lo": -0.015271493212669683,
+    "hi": 0.007918552036199095
+   },
+   "means": [
+    0.6951357466063348,
+    0.7228506787330317,
+    0.6414027149321267,
+    0.6725113122171946
+   ]
+  },
+  "length.stress/all/all/U-s101-H-s101": {
+   "at12288": {
+    "est": 0.011877828054298642,
+    "lo": -0.01414027149321267,
+    "hi": 0.03789592760180995
+   },
+   "at16384": {
+    "est": 0.009615384615384616,
+    "lo": -0.01753393665158371,
+    "hi": 0.03733031674208145
+   },
+   "change": {
+    "est": -0.0022624434389140274,
+    "lo": -0.01414027149321267,
+    "hi": 0.00904977375565611
+   },
+   "means": [
+    0.6532805429864253,
+    0.6821266968325792,
+    0.6414027149321267,
+    0.6725113122171946
+   ]
+  },
+  "length.stress/t1/all/R-s101-U-s101": {
+   "at12288": {
+    "est": 0.0390625,
+    "lo": -0.01953125,
+    "hi": 0.1015625
+   },
+   "at16384": {
+    "est": 0.05859375,
+    "lo": -0.00390625,
+    "hi": 0.125
+   },
+   "change": {
+    "est": 0.01953125,
+    "lo": -0.01171875,
+    "hi": 0.05078125
+   },
+   "means": [
+    0.71484375,
+    0.7578125,
+    0.67578125,
+    0.69921875
+   ]
+  },
+  "length.stress/t1/all/R-s202-U-s202": {
+   "at12288": {
+    "est": -0.01953125,
+    "lo": -0.0859375,
+    "hi": 0.046875
+   },
+   "at16384": {
+    "est": -0.01953125,
+    "lo": -0.0859375,
+    "hi": 0.04296875
+   },
+   "change": {
+    "est": 0.0,
+    "lo": -0.03125,
+    "hi": 0.03125
+   },
+   "means": [
+    0.67578125,
+    0.7109375,
+    0.6953125,
+    0.73046875
+   ]
+  },
+  "diag.r0": {
+   "none": [
+    0.400390625
+   ],
+   "ref": [
+    0.431640625,
+    0.431640625
+   ],
+   "means": {
+    "hard": 0.41455078125,
+    "related": 0.42724609375,
+    "unrelated": 0.4052734375
+   },
+   "draws": {
+    "hard": [
+     [
+      4101,
+      0.41015625,
+      0.7879464285714286,
+      0.775390625
+     ],
+     [
+      4102,
+      0.419921875,
+      0.8080357142857143,
+      0.798828125
+     ],
+     [
+      4103,
+      0.40625,
+      0.8080357142857143,
+      0.8203125
+     ],
+     [
+      4104,
+      0.421875,
+      0.8058035714285714,
+      0.78125
+     ]
+    ],
+    "related": [
+     [
+      4101,
+      0.416015625,
+      0.8035714285714286,
+      0.80078125
+     ],
+     [
+      4102,
+      0.439453125,
+      0.796875,
+      0.763671875
+     ],
+     [
+      4103,
+      0.43359375,
+      0.8080357142857143,
+      0.80078125
+     ],
+     [
+      4104,
+      0.419921875,
+      0.8058035714285714,
+      0.7734375
+     ]
+    ],
+    "unrelated": [
+     [
+      4101,
+      0.40625,
+      0.7991071428571429,
+      0.80859375
+     ],
+     [
+      4102,
+      0.42578125,
+      0.8058035714285714,
+      0.822265625
+     ],
+     [
+      4103,
+      0.404296875,
+      0.796875,
+      0.794921875
+     ],
+     [
+      4104,
+      0.384765625,
+      0.8035714285714286,
+      0.802734375
+     ]
+    ]
+   }
+  },
+  "diag.r64": {
+   "none": [
+    0.60546875
+   ],
+   "ref": [
+    0.630859375,
+    0.630859375
+   ],
+   "means": {
+    "hard": 0.6064453125,
+    "related": 0.61572265625,
+    "unrelated": 0.60888671875
+   },
+   "draws": {
+    "hard": [
+     [
+      4101,
+      0.599609375,
+      0.8861607142857143,
+      0.93359375
+     ],
+     [
+      4102,
+      0.607421875,
+      0.8861607142857143,
+      0.931640625
+     ],
+     [
+      4103,
+      0.6171875,
+      0.9017857142857143,
+      0.9296875
+     ],
+     [
+      4104,
+      0.6015625,
+      0.8861607142857143,
+      0.927734375
+     ]
+    ],
+    "related": [
+     [
+      4101,
+      0.611328125,
+      0.8950892857142857,
+      0.931640625
+     ],
+     [
+      4102,
+      0.611328125,
+      0.8950892857142857,
+      0.931640625
+     ],
+     [
+      4103,
+      0.62109375,
+      0.9017857142857143,
+      0.9296875
+     ],
+     [
+      4104,
+      0.619140625,
+      0.8928571428571429,
+      0.916015625
+     ]
+    ],
+    "unrelated": [
+     [
+      4101,
+      0.599609375,
+      0.8973214285714286,
+      0.939453125
+     ],
+     [
+      4102,
+      0.6328125,
+      0.8928571428571429,
+      0.9296875
+     ],
+     [
+      4103,
+      0.611328125,
+      0.8950892857142857,
+      0.931640625
+     ],
+     [
+      4104,
+      0.591796875,
+      0.8839285714285714,
+      0.939453125
+     ]
+    ]
+   }
+  },
+  "ordering": {
+   "s101.dev": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.004716981132075471
+     ],
+     [
+      32,
+      -0.0589622641509433
+     ],
+     [
+      64,
+      0.02594339622641506
+     ],
+     [
+      96,
+      0.06367924528301883
+     ],
+     [
+      128,
+      0.037735849056603765
+     ]
+    ],
+    "endpoint_sign": 1,
+    "earliest_round_with_endpoint_sign": 64,
+    "earliest_round_from_which_sign_holds": 64,
+    "n": 8,
+    "problems": 53,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   },
+   "s101.probe_J_H": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.015625
+     ],
+     [
+      32,
+      -0.09375
+     ],
+     [
+      64,
+      0.00390625
+     ],
+     [
+      96,
+      0.0703125
+     ],
+     [
+      128,
+      0.0625
+     ]
+    ],
+    "endpoint_sign": 1,
+    "earliest_round_with_endpoint_sign": 64,
+    "earliest_round_from_which_sign_holds": 64,
+    "n": 8,
+    "problems": 32,
+    "cap_by_round": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   "s101.probe_J_R": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      0.0
+     ],
+     [
+      32,
+      0.008928571428571397
+     ],
+     [
+      64,
+      0.0401785714285714
+     ],
+     [
+      96,
+      0.013392857142857206
+     ],
+     [
+      128,
+      -0.013392857142857206
+     ]
+    ],
+    "endpoint_sign": -1,
+    "earliest_round_with_endpoint_sign": 128,
+    "earliest_round_from_which_sign_holds": 128,
+    "n": 8,
+    "problems": 28,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   },
+   "s101.probe_J_U": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.00390625
+     ],
+     [
+      32,
+      -0.01953125
+     ],
+     [
+      64,
+      0.03515625
+     ],
+     [
+      96,
+      -0.0078125
+     ],
+     [
+      128,
+      0.01953125
+     ]
+    ],
+    "endpoint_sign": 1,
+    "earliest_round_with_endpoint_sign": 64,
+    "earliest_round_from_which_sign_holds": 128,
+    "n": 8,
+    "problems": 32,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   },
+   "s202.dev": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.018867924528301883
+     ],
+     [
+      32,
+      -0.011792452830188593
+     ],
+     [
+      64,
+      -0.06603773584905659
+     ],
+     [
+      96,
+      -0.037735849056603765
+     ],
+     [
+      128,
+      -0.047169811320754707
+     ]
+    ],
+    "endpoint_sign": -1,
+    "earliest_round_with_endpoint_sign": 0,
+    "earliest_round_from_which_sign_holds": 0,
+    "n": 8,
+    "problems": 53,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   },
+   "s202.probe_J_H": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.0234375
+     ],
+     [
+      32,
+      -0.01953125
+     ],
+     [
+      64,
+      -0.078125
+     ],
+     [
+      96,
+      -0.00390625
+     ],
+     [
+      128,
+      -0.05859375
+     ]
+    ],
+    "endpoint_sign": -1,
+    "earliest_round_with_endpoint_sign": 0,
+    "earliest_round_from_which_sign_holds": 0,
+    "n": 8,
+    "problems": 32,
+    "cap_by_round": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   "s202.probe_J_R": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.008928571428571397
+     ],
+     [
+      32,
+      0.0535714285714286
+     ],
+     [
+      64,
+      -0.0580357142857143
+     ],
+     [
+      96,
+      -0.0267857142857143
+     ],
+     [
+      128,
+      -0.017857142857142794
+     ]
+    ],
+    "endpoint_sign": -1,
+    "earliest_round_with_endpoint_sign": 0,
+    "earliest_round_from_which_sign_holds": 64,
+    "n": 8,
+    "problems": 28,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   },
+   "s202.probe_J_U": {
+    "R_minus_U_by_round": [
+     [
+      0,
+      -0.01171875
+     ],
+     [
+      32,
+      -0.015625
+     ],
+     [
+      64,
+      -0.0390625
+     ],
+     [
+      96,
+      -0.08203125
+     ],
+     [
+      128,
+      -0.0234375
+     ]
+    ],
+    "endpoint_sign": -1,
+    "earliest_round_with_endpoint_sign": 0,
+    "earliest_round_from_which_sign_holds": 0,
+    "n": 8,
+    "problems": 32,
+    "cap_by_round": [
+     8192,
+     8192,
+     12288,
+     12288,
+     12288
+    ]
+   }
+  },
+  "audit": {
+   "responses": 96,
+   "reads": 192,
+   "failures": 35,
+   "capped_failures": 13,
+   "genuine": 33,
+   "pairs": {
+    "no,no": 10,
+    "no,unclear": 6,
+    "yes,yes": 13,
+    "unclear,yes": 2,
+    "unclear,unclear": 1,
+    "no,yes": 1
+   }
+  },
+  "equations": {
+   "total": 107,
+   "failing": [
+    {
+     "line": 68,
+     "text": "63.2 \u2212 65.8 = \u22122.7",
+     "a": 63.2,
+     "b": 65.8,
+     "c": -2.7,
+     "a_minus_b_displayed": -2.6,
+     "fails": true
+    },
+    {
+     "line": 90,
+     "text": "78.3 \u2212 78.5 = \u22120.1",
+     "a": 78.3,
+     "b": 78.5,
+     "c": -0.1,
+     "a_minus_b_displayed": -0.2,
+     "fails": true
+    },
+    {
+     "line": 130,
+     "text": "63.2 \u2212 65.8 = \u22122.7",
+     "a": 63.2,
+     "b": 65.8,
+     "c": -2.7,
+     "a_minus_b_displayed": -2.6,
+     "fails": true
+    },
+    {
+     "line": 130,
+     "text": "66.0 \u2212 68.2 = \u22122.1",
+     "a": 66.0,
+     "b": 68.2,
+     "c": -2.1,
+     "a_minus_b_displayed": -2.2,
+     "fails": true
+    },
+    {
+     "line": 163,
+     "text": "58.4 \u2212 54.2 = +4.3",
+     "a": 58.4,
+     "b": 54.2,
+     "c": 4.3,
+     "a_minus_b_displayed": 4.2,
+     "fails": true
+    },
+    {
+     "line": 234,
+     "text": "78.3 \u2212 78.5 = \u22120.1",
+     "a": 78.3,
+     "b": 78.5,
+     "c": -0.1,
+     "a_minus_b_displayed": -0.2,
+     "fails": true
+    },
+    {
+     "line": 258,
+     "text": "82.3 \u2212 77.8 = +4.4",
+     "a": 82.3,
+     "b": 77.8,
+     "c": 4.4,
+     "a_minus_b_displayed": 4.5,
+     "fails": true
+    },
+    {
+     "line": 258,
+     "text": "77.8 \u2212 77.0 = +0.9",
+     "a": 77.8,
+     "b": 77.0,
+     "c": 0.9,
+     "a_minus_b_displayed": 0.8,
+     "fails": true
+    },
+    {
+     "line": 274,
+     "text": "82.3 \u2212 77.8 = +4.4",
+     "a": 82.3,
+     "b": 77.8,
+     "c": 4.4,
+     "a_minus_b_displayed": 4.5,
+     "fails": true
+    },
+    {
+     "line": 373,
+     "text": "85.5 \u2212 88.3 = \u22122.9",
+     "a": 85.5,
+     "b": 88.3,
+     "c": -2.9,
+     "a_minus_b_displayed": -2.8,
+     "fails": true
+    },
+    {
+     "line": 550,
+     "text": "84.2 \u2212 79.2 = +4.9",
+     "a": 84.2,
+     "b": 79.2,
+     "c": 4.9,
+     "a_minus_b_displayed": 5.0,
+     "fails": true
+    },
+    {
+     "line": 551,
+     "text": "80.6 \u2212 79.2 = +1.3",
+     "a": 80.6,
+     "b": 79.2,
+     "c": 1.3,
+     "a_minus_b_displayed": 1.4,
+     "fails": true
+    },
+    {
+     "line": 571,
+     "text": "86.1 \u2212 81.8 = +4.2",
+     "a": 86.1,
+     "b": 81.8,
+     "c": 4.2,
+     "a_minus_b_displayed": 4.3,
+     "fails": true
+    },
+    {
+     "line": 572,
+     "text": "58.4 \u2212 54.2 = +4.3",
+     "a": 58.4,
+     "b": 54.2,
+     "c": 4.3,
+     "a_minus_b_displayed": 4.2,
+     "fails": true
+    },
+    {
+     "line": 573,
+     "text": "63.2 \u2212 65.8 = \u22122.7",
+     "a": 63.2,
+     "b": 65.8,
+     "c": -2.7,
+     "a_minus_b_displayed": -2.6,
+     "fails": true
+    },
+    {
+     "line": 573,
+     "text": "66.0 \u2212 68.2 = \u22122.1",
+     "a": 66.0,
+     "b": 68.2,
+     "c": -2.1,
+     "a_minus_b_displayed": -2.2,
+     "fails": true
+    },
+    {
+     "line": 575,
+     "text": "56.0 \u2212 58.5 = \u22122.6",
+     "a": 56.0,
+     "b": 58.5,
+     "c": -2.6,
+     "a_minus_b_displayed": -2.5,
+     "fails": true
+    },
+    {
+     "line": 587,
+     "text": "68.2 \u2212 67.3 = +1.0",
+     "a": 68.2,
+     "b": 67.3,
+     "c": 1.0,
+     "a_minus_b_displayed": 0.9,
+     "fails": true
+    },
+    {
+     "line": 606,
+     "text": "67.6 \u2212 69.5 = \u22122.0",
+     "a": 67.6,
+     "b": 69.5,
+     "c": -2.0,
+     "a_minus_b_displayed": -1.9,
+     "fails": true
+    },
+    {
+     "line": 606,
+     "text": "71.1 \u2212 73.0 = \u22122.0",
+     "a": 71.1,
+     "b": 73.0,
+     "c": -2.0,
+     "a_minus_b_displayed": -1.9,
+     "fails": true
+    },
+    {
+     "line": 645,
+     "text": "40.5 \u2212 41.5 = \u22120.9",
+     "a": 40.5,
+     "b": 41.5,
+     "c": -0.9,
+     "a_minus_b_displayed": -1.0,
+     "fails": true
+    },
+    {
+     "line": 646,
+     "text": "60.9 \u2212 60.6 = +0.2",
+     "a": 60.9,
+     "b": 60.6,
+     "c": 0.2,
+     "a_minus_b_displayed": 0.3,
+     "fails": true
+    },
+    {
+     "line": 773,
+     "text": "63.2 \u2212 65.8 = \u22122.7",
+     "a": 63.2,
+     "b": 65.8,
+     "c": -2.7,
+     "a_minus_b_displayed": -2.6,
+     "fails": true
+    },
+    {
+     "line": 778,
+     "text": "69.5 \u2212 64.3 = +5.3",
+     "a": 69.5,
+     "b": 64.3,
+     "c": 5.3,
+     "a_minus_b_displayed": 5.2,
+     "fails": true
+    }
+   ]
+  }
+ },
+ "status_counts": {
+  "verified": 223,
+  "differs": 11,
+  "verified (estimate); interval differs by > 0.3": 1,
+  "claimed (production output only)": 1
+ },
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem, paired; per-seed intervals; two-seed means resample problems of the seed-mean difference"
+ },
+ "production_transcription_4_4_4_5": [
+  {
+   "table": "4.4 groups",
+   "run": "R-s101",
+   "report": [
+    [
+     27,
+     220,
+     9
+    ],
+    [
+     9,
+     119,
+     128
+    ],
+    [
+     0,
+     180,
+     76
+    ],
+    [
+     0,
+     25,
+     231
+    ]
+   ],
+   "production": [
+    [
+     27,
+     220,
+     9
+    ],
+    [
+     9,
+     119,
+     128
+    ],
+    [
+     0,
+     180,
+     76
+    ],
+    [
+     0,
+     25,
+     231
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 groups",
+   "run": "U-s101",
+   "report": [
+    [
+     22,
+     222,
+     12
+    ],
+    [
+     13,
+     122,
+     121
+    ],
+    [
+     0,
+     168,
+     88
+    ],
+    [
+     0,
+     20,
+     236
+    ]
+   ],
+   "production": [
+    [
+     22,
+     222,
+     12
+    ],
+    [
+     13,
+     122,
+     121
+    ],
+    [
+     0,
+     168,
+     88
+    ],
+    [
+     0,
+     20,
+     236
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 groups",
+   "run": "R-s202",
+   "report": [
+    [
+     27,
+     214,
+     15
+    ],
+    [
+     11,
+     130,
+     115
+    ],
+    [
+     0,
+     180,
+     76
+    ],
+    [
+     0,
+     44,
+     212
+    ]
+   ],
+   "production": [
+    [
+     27,
+     214,
+     15
+    ],
+    [
+     11,
+     130,
+     115
+    ],
+    [
+     0,
+     180,
+     76
+    ],
+    [
+     0,
+     44,
+     212
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 groups",
+   "run": "U-s202",
+   "report": [
+    [
+     28,
+     212,
+     16
+    ],
+    [
+     8,
+     119,
+     129
+    ],
+    [
+     0,
+     166,
+     90
+    ],
+    [
+     0,
+     29,
+     227
+    ]
+   ],
+   "production": [
+    [
+     28,
+     212,
+     16
+    ],
+    [
+     8,
+     119,
+     129
+    ],
+    [
+     0,
+     166,
+     90
+    ],
+    [
+     0,
+     29,
+     227
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 groups",
+   "run": "H-s101",
+   "report": [
+    [
+     32,
+     216,
+     8
+    ],
+    [
+     5,
+     111,
+     140
+    ],
+    [
+     31,
+     212,
+     13
+    ],
+    [
+     8,
+     102,
+     146
+    ]
+   ],
+   "production": [
+    [
+     32,
+     216,
+     8
+    ],
+    [
+     5,
+     111,
+     140
+    ],
+    [
+     31,
+     212,
+     13
+    ],
+    [
+     8,
+     102,
+     146
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 groups",
+   "run": "H-s202",
+   "report": [
+    [
+     14,
+     226,
+     16
+    ],
+    [
+     8,
+     112,
+     136
+    ],
+    [
+     23,
+     218,
+     15
+    ],
+    [
+     7,
+     121,
+     128
+    ]
+   ],
+   "production": [
+    [
+     14,
+     226,
+     16
+    ],
+    [
+     8,
+     112,
+     136
+    ],
+    [
+     23,
+     218,
+     15
+    ],
+    [
+     7,
+     121,
+     128
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "H-s101",
+   "report": [
+    [
+     428,
+     800,
+     1076,
+     1289
+    ],
+    [
+     12.8,
+     31.6,
+     48.6,
+     68.6
+    ]
+   ],
+   "production": [
+    [
+     428,
+     800,
+     1076,
+     1289
+    ],
+    [
+     12.8,
+     31.6,
+     48.6,
+     68.6
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "R-s101",
+   "report": [
+    [
+     400,
+     658,
+     817,
+     961
+    ],
+    [
+     10.6,
+     25.9,
+     46.1,
+     65.1
+    ]
+   ],
+   "production": [
+    [
+     400,
+     658,
+     817,
+     961
+    ],
+    [
+     10.6,
+     25.9,
+     46.1,
+     65.1
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "U-s101",
+   "report": [
+    [
+     390,
+     625,
+     788,
+     930
+    ],
+    [
+     9.2,
+     23.0,
+     40.9,
+     60.0
+    ]
+   ],
+   "production": [
+    [
+     390,
+     625,
+     788,
+     930
+    ],
+    [
+     9.2,
+     23.0,
+     40.9,
+     60.0
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "R-s202",
+   "report": [
+    [
+     394,
+     690,
+     926,
+     1100
+    ],
+    [
+     10.0,
+     23.2,
+     37.7,
+     54.1
+    ]
+   ],
+   "production": [
+    [
+     394,
+     690,
+     926,
+     1100
+    ],
+    [
+     10.0,
+     23.2,
+     37.7,
+     54.1
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "U-s202",
+   "report": [
+    [
+     378,
+     627,
+     799,
+     947
+    ],
+    [
+     9.3,
+     22.3,
+     37.7,
+     52.8
+    ]
+   ],
+   "production": [
+    [
+     378,
+     627,
+     799,
+     947
+    ],
+    [
+     9.3,
+     22.3,
+     37.7,
+     52.8
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 cumulative",
+   "run": "H-s202",
+   "report": [
+    [
+     444,
+     796,
+     1054,
+     1287
+    ],
+    [
+     12.7,
+     29.6,
+     51.2,
+     74.7
+    ]
+   ],
+   "production": [
+    [
+     444,
+     796,
+     1054,
+     1287
+    ],
+    [
+     12.7,
+     29.6,
+     51.2,
+     74.7
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.4 all-correct practice share after round 32",
+   "run": "R,U",
+   "report": "R 62\u201390%, U 74\u201392%",
+   "production": {
+    "R-s101": [
+     68.8,
+     88.3,
+     90.2
+    ],
+    "U-s101": [
+     78.1,
+     91.0,
+     92.2
+    ],
+    "R-s202": [
+     62.1,
+     78.1,
+     82.8
+    ],
+    "U-s202": [
+     74.2,
+     89.5,
+     88.7
+    ]
+   },
+   "match": null
+  },
+  {
+   "table": "4.5",
+   "run": "R-s101",
+   "report": [
+    29,
+    765,
+    [
+     12,
+     13,
+     4
+    ],
+    [
+     18,
+     10,
+     0,
+     1
+    ]
+   ],
+   "production": [
+    29,
+    765,
+    [
+     12,
+     13,
+     4
+    ],
+    [
+     18,
+     10,
+     0,
+     1
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.5",
+   "run": "U-s101",
+   "report": [
+    38,
+    768,
+    [
+     7,
+     23,
+     8
+    ],
+    [
+     17,
+     18,
+     0,
+     3
+    ]
+   ],
+   "production": [
+    38,
+    768,
+    [
+     7,
+     23,
+     8
+    ],
+    [
+     17,
+     18,
+     0,
+     3
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.5",
+   "run": "R-s202",
+   "report": [
+    19,
+    765,
+    [
+     13,
+     3,
+     3
+    ],
+    [
+     7,
+     10,
+     0,
+     2
+    ]
+   ],
+   "production": [
+    19,
+    765,
+    [
+     13,
+     3,
+     3
+    ],
+    [
+     7,
+     10,
+     0,
+     2
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.5",
+   "run": "U-s202",
+   "report": [
+    26,
+    768,
+    [
+     18,
+     6,
+     2
+    ],
+    [
+     13,
+     11,
+     1,
+     1
+    ]
+   ],
+   "production": [
+    26,
+    768,
+    [
+     18,
+     6,
+     2
+    ],
+    [
+     13,
+     11,
+     1,
+     1
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.5",
+   "run": "H-s101",
+   "report": [
+    13,
+    768,
+    [
+     11,
+     2,
+     0
+    ],
+    [
+     8,
+     4,
+     0,
+     1
+    ]
+   ],
+   "production": [
+    13,
+    768,
+    [
+     11,
+     2,
+     0
+    ],
+    [
+     8,
+     4,
+     0,
+     1
+    ]
+   ],
+   "match": true
+  },
+  {
+   "table": "4.5",
+   "run": "H-s202",
+   "report": [
+    21,
+    768,
+    [
+     14,
+     3,
+     4
+    ],
+    [
+     15,
+     5,
+     0,
+     1
+    ]
+   ],
+   "production": [
+    21,
+    768,
+    [
+     14,
+     3,
+     4
+    ],
+    [
+     15,
+     5,
+     0,
+     1
+    ]
+   ],
+   "match": true
+  }
+ ]
+}

@@ -1,0 +1,5707 @@
+{
+ "checks": {
+  "J_H_equals_first32_dev_in_order": true,
+  "J_H_text_gold_equal_dev": 32,
+  "audit_items": {
+   "in_stress": 16,
+   "n": 16,
+   "tier_match": 16
+  },
+  "cue_cued_is_uncued_plus_cue": 24,
+  "cue_cued_vs_uncued_same_ids_order": true,
+  "omni_tranche_id_equals_index": 200,
+  "omni_tranche_text_equals_omni_test_line": 200
+ },
+ "config_bundle_sha": {
+  "runs/qis-cal-lr1e-6-asym-s11/metrics.jsonl": [
+   [
+    "f7f34a1db6b972cff9077c93a9afba3e518daa4db80b946d0b814198967af174",
+    "/data/user_data/vineethb/qis/data/calib-panels-v1/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal-lr1e-6-sym-s11/metrics.jsonl": [
+   [
+    "f7f34a1db6b972cff9077c93a9afba3e518daa4db80b946d0b814198967af174",
+    "/data/user_data/vineethb/qis/data/calib-panels-v1/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr1e-6-asym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr1e-6-sym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr1e-6-sym-s22/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr2e-6-asym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr2e-6-sym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr2e-6-sym-s22/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr5e-7-asym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-cal8k-lr5e-7-sym-s11/metrics.jsonl": [
+   [
+    "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+    "/data/user_data/vineethb/qis/data/calib-panels-k8/bundle.json",
+    1
+   ]
+  ],
+  "runs/qis-main-H-s101-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    1
+   ]
+  ],
+  "runs/qis-main-H-s202-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    2
+   ]
+  ],
+  "runs/qis-main-R-s101-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    2
+   ]
+  ],
+  "runs/qis-main-R-s202-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    2
+   ]
+  ],
+  "runs/qis-main-U-s101-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    1
+   ]
+  ],
+  "runs/qis-main-U-s202-sym/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    3
+   ]
+  ],
+  "runs/superseded/qis-main-H-s101-sym-a1/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    1
+   ]
+  ],
+  "runs/superseded/qis-main-R-s101-sym-a1/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    1
+   ]
+  ],
+  "runs/superseded/qis-main-U-s101-sym-a1/metrics.jsonl": [
+   [
+    "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+    "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+    1
+   ]
+  ]
+ },
+ "eval_summaries": {
+  "cue-eval/v1/R-s101-cued/summary.json": {
+   "ckpt_model_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/R-s101-uncued/summary.json": {
+   "ckpt_model_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/R-s202-cued/summary.json": {
+   "ckpt_model_sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/R-s202-uncued/summary.json": {
+   "ckpt_model_sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/U-s101-cued/summary.json": {
+   "ckpt_model_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/U-s101-uncued/summary.json": {
+   "ckpt_model_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/U-s202-cued/summary.json": {
+   "ckpt_model_sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/U-s202-uncued/summary.json": {
+   "ckpt_model_sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/base-cued/summary.json": {
+   "ckpt_model_sha256": "base",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "cue-eval/v1/base-uncued/summary.json": {
+   "ckpt_model_sha256": "base",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "cue",
+   "problems": 24,
+   "seed_label": "cue-v1"
+  },
+  "stress-eval/H-s101-r128/summary.json": {
+   "ckpt_model_sha256": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/H-s202-r128/summary.json": {
+   "ckpt_model_sha256": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1",
+   "shard_seconds": [
+    3740.6349005699158,
+    3980.9013590812683,
+    3579.332505941391
+   ],
+   "shards": [
+    "/data/user_data/vineethb/qis/stress-eval/H-s202-r128-shards/k0",
+    "/data/user_data/vineethb/qis/stress-eval/H-s202-r128-shards/k1",
+    "/data/user_data/vineethb/qis/stress-eval/H-s202-r128-shards/k2"
+   ]
+  },
+  "stress-eval/H-s202-r64/summary.json": {
+   "ckpt_model_sha256": "37963facc1cc5b087a2757c77992847b5385c0d63c9e81553f68aa2c8802e7ee",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/R-s101-r128/summary.json": {
+   "ckpt_model_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/R-s101-r64/summary.json": {
+   "ckpt_model_sha256": "6fe89540d80db2eb78b3b3b4b71eb4029ab2fa3c3d54a35528094153a6c69a5a",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/R-s202-r128/summary.json": {
+   "ckpt_model_sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/U-s101-r128/summary.json": {
+   "ckpt_model_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/U-s202-r128/summary.json": {
+   "ckpt_model_sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "stress-eval/base/summary.json": {
+   "ckpt_model_sha256": "base",
+   "max_tokens": 12288,
+   "n": 8,
+   "panel": "stress",
+   "problems": 221,
+   "seed_label": "stress-v1"
+  },
+  "test-eval-cgpu/qis-cgpu-R-s101/summary.json": {
+   "ckpt_model_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval-cgpu/qis-cgpu-R-s202/summary.json": {
+   "ckpt_model_sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval-cgpu/qis-cgpu-U-s101/summary.json": {
+   "ckpt_model_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval-cgpu/qis-cgpu-U-s202/summary.json": {
+   "ckpt_model_sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-H-s101-sym/summary.json": {
+   "ckpt_model_sha256": "052c8a62b300385336538fb396ee537efd03cd081856130a19ac53cbf7c1c811",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-H-s202-sym-fallback/summary.json": {
+   "ckpt_model_sha256": "7b9ff3a400803f69784d43f7c7c025fe8de8a99079cf51a5c35255085ec8e67d",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final",
+   "shard_seconds": [
+    2719.7230389118195,
+    3301.323563337326,
+    2313.8162548542023,
+    3245.357535123825,
+    2209.4997124671936,
+    3269.170854330063
+   ],
+   "shards": [
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k0",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k1",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k2",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k3",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k4",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-fallback-shards/k5"
+   ]
+  },
+  "test-eval/qis-test-H-s202-sym/summary.json": {
+   "ckpt_model_sha256": "2513456224d4a7c8fbdac10c60263b732ce1a7bb1705ed4b90cac0dce77f2ee8",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final",
+   "shard_seconds": [
+    2587.389326095581,
+    3248.265679359436,
+    2517.0499243736267,
+    3694.5939173698425,
+    2562.549148082733,
+    3629.0608608722687
+   ],
+   "shards": [
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k0",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k1",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k2",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k3",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k4",
+    "/data/user_data/vineethb/qis/test-eval/qis-test-H-s202-sym-shards/k5"
+   ]
+  },
+  "test-eval/qis-test-R-s101-sym/summary.json": {
+   "ckpt_model_sha256": "aedcca6e6a443c880c153bf1dbcdefd1877632c0a7ba313735518a7c6e39689a",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-R-s202-sym/summary.json": {
+   "ckpt_model_sha256": "22fd8364b310691203900a1667af292f5c119012d600d2af74cd99cb1ae97c71",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-U-s101-sym/summary.json": {
+   "ckpt_model_sha256": "92aef0d2a53a93139a7759e488500126a324e000ffa47a17cca11ac87d919b70",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-U-s202-sym/summary.json": {
+   "ckpt_model_sha256": "7158b0952ee34f3278c9260a66ddadf57aa25b79fc51f541e61f5e8f41ad1354",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  },
+  "test-eval/qis-test-base/summary.json": {
+   "ckpt_model_sha256": "base",
+   "max_tokens": 12288,
+   "n": 32,
+   "panel": "test",
+   "problems": 128,
+   "seed_label": "test-final"
+  }
+ },
+ "extended": {
+  "all_omni_test_vs_study_sets": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "intermediate_algebra/train/01262",
+      "omni/00518"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/train/00879",
+      "omni/01717"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/train/00656",
+      "omni/01374"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/train/00481",
+      "omni/00486"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/test/00620",
+      "omni/01306"
+     ],
+     [
+      0.9565,
+      "omni/00330",
+      "omni/00423"
+     ],
+     [
+      0.8889,
+      "omni/01690",
+      "omni/00682"
+     ],
+     [
+      0.8167,
+      "intermediate_algebra/test/00348",
+      "omni/01586"
+     ],
+     [
+      0.7213,
+      "intermediate_algebra/test/00824",
+      "omni/01329"
+     ],
+     [
+      0.6875,
+      "number_theory/train/00733",
+      "omni/02134"
+     ],
+     [
+      0.6522,
+      "intermediate_algebra/train/00481",
+      "omni/01540"
+     ],
+     [
+      0.6429,
+      "syn-R2-068",
+      "omni/01351"
+     ],
+     [
+      0.6275,
+      "intermediate_algebra/train/00357",
+      "omni/01670"
+     ],
+     [
+      0.5882,
+      "syn-U1-036",
+      "omni/02570"
+     ],
+     [
+      0.5882,
+      "syn-U1-025",
+      "omni/02570"
+     ],
+     [
+      0.5882,
+      "syn-U1-012",
+      "omni/02570"
+     ],
+     [
+      0.5753,
+      "intermediate_algebra/test/00895",
+      "omni/00197"
+     ],
+     [
+      0.5556,
+      "syn-U3-017",
+      "omni/02570"
+     ],
+     [
+      0.5526,
+      "intermediate_algebra/test/00535",
+      "omni/02543"
+     ],
+     [
+      0.5325,
+      "intermediate_algebra/train/00331",
+      "omni/04140"
+     ],
+     [
+      0.5294,
+      "algebra/train/00081",
+      "omni/02826"
+     ],
+     [
+      0.5263,
+      "syn-U2-092",
+      "omni/01293"
+     ],
+     [
+      0.5132,
+      "intermediate_algebra/train/00331",
+      "omni/02529"
+     ],
+     [
+      0.5,
+      "syn-U1-036",
+      "omni/01307"
+     ],
+     [
+      0.5,
+      "syn-U1-036",
+      "omni/00388"
+     ],
+     [
+      0.5,
+      "syn-U1-025",
+      "omni/01307"
+     ],
+     [
+      0.5,
+      "syn-U1-025",
+      "omni/00388"
+     ],
+     [
+      0.5,
+      "syn-U1-012",
+      "omni/01307"
+     ],
+     [
+      0.5,
+      "syn-U1-012",
+      "omni/00388"
+     ],
+     [
+      0.5,
+      "syn-R2-068",
+      "omni/01260"
+     ],
+     [
+      0.5,
+      "number_theory/train/00376",
+      "omni/00427"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "intermediate_algebra/train/00481",
+     "omni/00486"
+    ],
+    "n_ge_thr": 31
+   },
+   "J5": {
+    "hits": [
+     [
+      1.0,
+      "intermediate_algebra/train/01262",
+      "omni/00518"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/train/00656",
+      "omni/01374"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/train/00481",
+      "omni/00486"
+     ],
+     [
+      1.0,
+      "intermediate_algebra/test/00620",
+      "omni/01306"
+     ],
+     [
+      0.9333,
+      "omni/00330",
+      "omni/00423"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "intermediate_algebra/train/00481",
+     "omni/00486"
+    ],
+    "n_ge_thr": 5
+   },
+   "n": 4428
+  },
+  "omni_used_vs_all_MATH": {
+   "J3m": {
+    "hits": [],
+    "max": 0.47619047619047616,
+    "max_pair": [
+     "omni/00919",
+     "intermediate_algebra/test/00589"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.30434782608695654,
+    "max_pair": [
+     "omni/02842",
+     "counting_and_probability/train/00557"
+    ],
+    "n_ge_thr": 0
+   },
+   "n_omni_used": 88
+  },
+  "screen_union_vs_J_R": {
+   "J3m": {
+    "hits": [
+     [
+      0.625,
+      "algebra/train/01440",
+      "algebra/train/01057"
+     ],
+     [
+      0.625,
+      "algebra/train/01440",
+      "algebra/train/00049"
+     ],
+     [
+      0.5517,
+      "algebra/train/00598",
+      "algebra/train/00998"
+     ],
+     [
+      0.5405,
+      "algebra/train/00598",
+      "algebra/train/01086"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/01184",
+      "intermediate_algebra/train/00495"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/00348",
+      "intermediate_algebra/train/00495"
+     ]
+    ],
+    "max": 0.625,
+    "max_pair": [
+     "algebra/train/01440",
+     "algebra/train/01057"
+    ],
+    "n_ge_thr": 6
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.24324324324324326,
+    "max_pair": [
+     "algebra/train/01371",
+     "algebra/train/00067"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_J_U": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "number_theory/train/00435",
+      "number_theory/train/00417"
+     ],
+     [
+      1.0,
+      "number_theory/train/00076",
+      "number_theory/train/00820"
+     ],
+     [
+      1.0,
+      "number_theory/train/00076",
+      "number_theory/train/00730"
+     ],
+     [
+      1.0,
+      "number_theory/train/00067",
+      "number_theory/train/00225"
+     ],
+     [
+      0.8889,
+      "number_theory/train/00686",
+      "syn-U1-099"
+     ],
+     [
+      0.7812,
+      "number_theory/train/00379",
+      "number_theory/train/00820"
+     ],
+     [
+      0.7812,
+      "number_theory/train/00379",
+      "number_theory/train/00730"
+     ],
+     [
+      0.75,
+      "number_theory/train/00067",
+      "number_theory/train/00666"
+     ],
+     [
+      0.6984,
+      "number_theory/train/00156",
+      "number_theory/train/00116"
+     ],
+     [
+      0.6667,
+      "number_theory/train/00376",
+      "number_theory/train/00387"
+     ],
+     [
+      0.6667,
+      "number_theory/train/00376",
+      "number_theory/train/00247"
+     ],
+     [
+      0.6667,
+      "number_theory/train/00376",
+      "number_theory/train/00237"
+     ],
+     [
+      0.6154,
+      "number_theory/train/00372",
+      "number_theory/train/00387"
+     ],
+     [
+      0.6154,
+      "number_theory/train/00372",
+      "number_theory/train/00247"
+     ],
+     [
+      0.6154,
+      "number_theory/train/00372",
+      "number_theory/train/00237"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U2-090"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U2-088"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U2-086"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-029"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-027"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-009"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-007"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-005"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "syn-U1-002"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "number_theory/train/00520"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "number_theory/train/00297"
+     ],
+     [
+      0.5714,
+      "number_theory/train/00376",
+      "number_theory/train/00232"
+     ],
+     [
+      0.5385,
+      "number_theory/train/00686",
+      "number_theory/train/00493"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00376",
+      "syn-U1-034"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00376",
+      "syn-U1-023"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00376",
+      "number_theory/train/00092"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U2-090"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U2-088"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U2-086"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-029"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-027"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-009"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-007"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-005"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "syn-U1-002"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "number_theory/train/00520"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "number_theory/train/00297"
+     ],
+     [
+      0.5333,
+      "number_theory/train/00372",
+      "number_theory/train/00232"
+     ],
+     [
+      0.5,
+      "number_theory/train/00807",
+      "number_theory/train/00820"
+     ],
+     [
+      0.5,
+      "number_theory/train/00807",
+      "number_theory/train/00730"
+     ],
+     [
+      0.5,
+      "number_theory/train/00376",
+      "syn-U1-018"
+     ],
+     [
+      0.5,
+      "number_theory/train/00376",
+      "syn-U1-017"
+     ],
+     [
+      0.5,
+      "number_theory/train/00376",
+      "syn-U1-014"
+     ],
+     [
+      0.5,
+      "number_theory/train/00376",
+      "number_theory/train/00161"
+     ],
+     [
+      0.5,
+      "number_theory/train/00372",
+      "syn-U1-034"
+     ],
+     [
+      0.5,
+      "number_theory/train/00372",
+      "syn-U1-023"
+     ],
+     [
+      0.5,
+      "number_theory/train/00372",
+      "number_theory/train/00092"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "number_theory/train/00067",
+     "number_theory/train/00225"
+    ],
+    "n_ge_thr": 52
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.4,
+    "max_pair": [
+     "number_theory/train/00686",
+     "syn-U2-082"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2711864406779661,
+    "max_pair": [
+     "intermediate_algebra/test/00091",
+     "intermediate_algebra/train/01058"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.16666666666666666,
+    "max_pair": [
+     "algebra/test/00996",
+     "syn-R2-030"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_dev": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "algebra/train/01291",
+      "algebra/train/01269"
+     ],
+     [
+      0.5753,
+      "algebra/train/01241",
+      "algebra/train/00172"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "algebra/train/01291",
+     "algebra/train/01269"
+    ],
+    "n_ge_thr": 2
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.44,
+    "max_pair": [
+     "algebra/train/01291",
+     "algebra/train/01269"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.358974358974359,
+    "max_pair": [
+     "omni/00953",
+     "intermediate_algebra/train/00020"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.2,
+    "max_pair": [
+     "number_theory/test/00090",
+     "number_theory/train/00299"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4166666666666667,
+    "max_pair": [
+     "precalculus/test/00514",
+     "intermediate_algebra/train/00443"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.18518518518518517,
+    "max_pair": [
+     "precalculus/train/00409",
+     "number_theory/train/00450"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "screen_union_vs_test": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "algebra/test/00730",
+      "algebra/train/01354"
+     ],
+     [
+      0.8983,
+      "algebra/test/00397",
+      "algebra/train/01587"
+     ],
+     [
+      0.8286,
+      "algebra/test/00680",
+      "algebra/train/01623"
+     ],
+     [
+      0.7292,
+      "algebra/test/00265",
+      "algebra/train/00637"
+     ],
+     [
+      0.725,
+      "intermediate_algebra/test/00383",
+      "intermediate_algebra/train/00301"
+     ],
+     [
+      0.697,
+      "intermediate_algebra/test/00376",
+      "intermediate_algebra/train/00801"
+     ],
+     [
+      0.6429,
+      "intermediate_algebra/test/00891",
+      "intermediate_algebra/train/00775"
+     ],
+     [
+      0.6389,
+      "intermediate_algebra/test/00150",
+      "intermediate_algebra/train/00801"
+     ],
+     [
+      0.6111,
+      "intermediate_algebra/test/00376",
+      "intermediate_algebra/train/01058"
+     ],
+     [
+      0.5882,
+      "algebra/test/00930",
+      "algebra/train/01587"
+     ],
+     [
+      0.5753,
+      "intermediate_algebra/test/00895",
+      "omni/00197"
+     ],
+     [
+      0.5641,
+      "intermediate_algebra/test/00150",
+      "intermediate_algebra/train/01058"
+     ],
+     [
+      0.5526,
+      "intermediate_algebra/test/00535",
+      "omni/02543"
+     ],
+     [
+      0.5254,
+      "algebra/test/00880",
+      "algebra/train/00433"
+     ],
+     [
+      0.5111,
+      "algebra/test/00234",
+      "algebra/train/00568"
+     ],
+     [
+      0.5085,
+      "algebra/test/00265",
+      "algebra/train/00816"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/test/00891",
+      "intermediate_algebra/train/00606"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/test/00891",
+      "intermediate_algebra/train/00048"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "algebra/test/00730",
+     "algebra/train/01354"
+    ],
+    "n_ge_thr": 18
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.5238095238095238,
+    "max_pair": [
+     "algebra/test/00730",
+     "algebra/train/01354"
+    ],
+    "n_ge_thr": 0
+   },
+   "id_overlap": 0,
+   "norm_text": 0
+  },
+  "train_vs_all_MATH_test": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "number_theory/train/00437",
+      "number_theory/test/00380"
+     ],
+     [
+      0.8462,
+      "algebra/train/00288",
+      "algebra/test/01114"
+     ],
+     [
+      0.8431,
+      "intermediate_algebra/train/00145",
+      "algebra/test/00308"
+     ],
+     [
+      0.8333,
+      "number_theory/train/00437",
+      "number_theory/test/00363"
+     ],
+     [
+      0.7692,
+      "syn-U1-036",
+      "number_theory/test/00222"
+     ],
+     [
+      0.7692,
+      "syn-U1-036",
+      "number_theory/test/00053"
+     ],
+     [
+      0.7692,
+      "syn-U1-025",
+      "number_theory/test/00222"
+     ],
+     [
+      0.7692,
+      "syn-U1-025",
+      "number_theory/test/00053"
+     ],
+     [
+      0.7692,
+      "syn-U1-012",
+      "number_theory/test/00222"
+     ],
+     [
+      0.7692,
+      "syn-U1-012",
+      "number_theory/test/00053"
+     ],
+     [
+      0.725,
+      "intermediate_algebra/train/00301",
+      "intermediate_algebra/test/00383"
+     ],
+     [
+      0.7143,
+      "syn-U3-017",
+      "number_theory/test/00222"
+     ],
+     [
+      0.7143,
+      "syn-U3-017",
+      "number_theory/test/00053"
+     ],
+     [
+      0.6957,
+      "intermediate_algebra/train/00481",
+      "intermediate_algebra/test/00510"
+     ],
+     [
+      0.6429,
+      "number_theory/train/00437",
+      "number_theory/test/00246"
+     ],
+     [
+      0.6429,
+      "number_theory/train/00437",
+      "number_theory/test/00039"
+     ],
+     [
+      0.625,
+      "syn-R2-068",
+      "intermediate_algebra/test/00172"
+     ],
+     [
+      0.6154,
+      "syn-U1-036",
+      "number_theory/test/00195"
+     ],
+     [
+      0.6154,
+      "syn-U1-036",
+      "number_theory/test/00189"
+     ],
+     [
+      0.6154,
+      "syn-U1-025",
+      "number_theory/test/00195"
+     ],
+     [
+      0.6154,
+      "syn-U1-025",
+      "number_theory/test/00189"
+     ],
+     [
+      0.6154,
+      "syn-U1-012",
+      "number_theory/test/00195"
+     ],
+     [
+      0.6154,
+      "syn-U1-012",
+      "number_theory/test/00189"
+     ],
+     [
+      0.5769,
+      "intermediate_algebra/train/00147",
+      "intermediate_algebra/test/00119"
+     ],
+     [
+      0.5714,
+      "syn-U3-017",
+      "number_theory/test/00195"
+     ],
+     [
+      0.5714,
+      "syn-U3-017",
+      "number_theory/test/00189"
+     ],
+     [
+      0.5667,
+      "algebra/train/00454",
+      "intermediate_algebra/test/00841"
+     ],
+     [
+      0.55,
+      "number_theory/train/00832",
+      "number_theory/test/00108"
+     ],
+     [
+      0.5357,
+      "algebra/train/00454",
+      "intermediate_algebra/test/00825"
+     ],
+     [
+      0.5333,
+      "syn-U1-036",
+      "counting_and_probability/test/00162"
+     ],
+     [
+      0.5333,
+      "syn-U1-025",
+      "counting_and_probability/test/00162"
+     ],
+     [
+      0.5333,
+      "syn-U1-012",
+      "counting_and_probability/test/00162"
+     ],
+     [
+      0.5263,
+      "number_theory/train/00437",
+      "number_theory/test/00126"
+     ],
+     [
+      0.5,
+      "syn-U3-017",
+      "counting_and_probability/test/00162"
+     ],
+     [
+      0.5,
+      "syn-U2-092",
+      "number_theory/test/00401"
+     ],
+     [
+      0.5,
+      "syn-U1-036",
+      "number_theory/test/00482"
+     ],
+     [
+      0.5,
+      "syn-U1-036",
+      "number_theory/test/00437"
+     ],
+     [
+      0.5,
+      "syn-U1-036",
+      "number_theory/test/00380"
+     ],
+     [
+      0.5,
+      "syn-U1-025",
+      "number_theory/test/00482"
+     ],
+     [
+      0.5,
+      "syn-U1-025",
+      "number_theory/test/00437"
+     ],
+     [
+      0.5,
+      "syn-U1-025",
+      "number_theory/test/00380"
+     ],
+     [
+      0.5,
+      "syn-U1-012",
+      "number_theory/test/00482"
+     ],
+     [
+      0.5,
+      "syn-U1-012",
+      "number_theory/test/00437"
+     ],
+     [
+      0.5,
+      "syn-U1-012",
+      "number_theory/test/00380"
+     ],
+     [
+      0.5,
+      "syn-R4-030",
+      "algebra/test/01122"
+     ],
+     [
+      0.5,
+      "syn-R2-068",
+      "intermediate_algebra/test/00598"
+     ],
+     [
+      0.5,
+      "number_theory/train/00437",
+      "number_theory/test/00301"
+     ],
+     [
+      0.5,
+      "number_theory/train/00437",
+      "number_theory/test/00222"
+     ],
+     [
+      0.5,
+      "number_theory/train/00149",
+      "number_theory/test/00172"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/00147",
+      "intermediate_algebra/test/00865"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/00048",
+      "intermediate_algebra/test/00891"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "number_theory/train/00437",
+     "number_theory/test/00380"
+    ],
+    "n_ge_thr": 51
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.6296296296296297,
+    "max_pair": [
+     "algebra/train/00288",
+     "algebra/test/01114"
+    ],
+    "n_ge_thr": 0
+   }
+  },
+  "training_screen_pool_union": {
+   "n": 1449
+  }
+ },
+ "hashes": {
+  "$P/data/calib-panels-k8/bundle.json": "a90a0d7143b1caac3210647041420cd8a9427d448f035708787692cfc0d2ef8d",
+  "$P/data/calib-panels-v1/bundle.json": "f7f34a1db6b972cff9077c93a9afba3e518daa4db80b946d0b814198967af174",
+  "$P/data/candidates-v1-study/calib_train.jsonl": "40721693d514a25224a970afb9d16adb488688e87da0804e2f1108c1d1ea3563",
+  "$P/data/candidates-v1-study/calib_val.jsonl": "594535077759e291dbd2e3f57f4353f9e9009e61a672c647c9ffdee581b5b34f",
+  "$P/data/candidates-v1-study/hard.jsonl": "376c13e2b4ec84e3747f4c421927e081297cbd017ba7c3f0bd4a7eba13be6151",
+  "$P/data/candidates-v1-study/hard_reserve.jsonl": "bf1e63e7bf24486d9c36348083e987e317d6ea1ca896be02e8e51e1f1c2c8ecf",
+  "$P/data/candidates-v1-study/probe_related_dev.jsonl": "de9541a39cfa9a3b8fc476c7029655c2e0921c4e546ab19df548ebc4e8db513f",
+  "$P/data/candidates-v1-study/probe_unrelated_dev.jsonl": "657499c4053bedd9b9ed23303bfe7fe8240059e44e41c5d5d51378f4d888dc6e",
+  "$P/data/candidates-v1-study/related.jsonl": "b8c3c53376213b9921ad43e2a69274c72e5698812e6e0154b75d4c6254fd5c22",
+  "$P/data/candidates-v1-study/target_dev.jsonl": "845c21ae646a8f9403b20098982e3e9c76fdf1fa9151e0fc1342e10597a32b73",
+  "$P/data/candidates-v1-study/target_test.jsonl": "8fc58ef2b399ac357d7f0077208eb113ad58b2400b64488d448861c2f50eb575",
+  "$P/data/candidates-v1-study/unrelated.jsonl": "22b95dae17473869496ab1b60e6feeffbc367ff36edc9febb6688aa87ea56860",
+  "$P/data/hsel-combined-v1/selection.json": "63e18fae5dc4923c7c59661661602d879b3513ee27d45e38c56e970095084312",
+  "$P/data/main-v1/bundle_main_v1.json": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+  "$P/data/main-v1/manifest.json": "6d9e2f4e56a5013aa59ec0af91b29b3288e6421ca3bf2b697141aad438a40467",
+  "$P/data/main-v1/target_test_sealed.json": "2ffe70ddd5f81bee5c9feadee6f08335d8b189b33f38ccab474263182dec29ca",
+  "$P/data/match-k8/match.json": "4baa8f39668135c6ff45219b7cc834c1e74082807f80c0f75de5357f13e73b25",
+  "$P/data/raw-21a5633/algebra/test.parquet": "0e04a850dac9cfc758eac0c80afd2d0cc65e29ea72f916c8ac1045b12af937f5",
+  "$P/data/raw-21a5633/algebra/train.parquet": "73347f5b55869f21ff094361025dbd12d291e971aa4d72142eacee10438e449f",
+  "$P/data/raw-21a5633/counting_and_probability/test.parquet": "c324818949c75a6227c0328a8499d58023cbbf6757cfc1736f5ab24cc8d87966",
+  "$P/data/raw-21a5633/counting_and_probability/train.parquet": "d37ae017930df41678edee50dcde18c17fb06afaff9eb505c1b95f1002bfcb31",
+  "$P/data/raw-21a5633/geometry/test.parquet": "98720f3a8134ad9784fd8951195245264495df03ffc5c9485a9a54ff5ae2431a",
+  "$P/data/raw-21a5633/geometry/train.parquet": "9dbf5e5b55499e696e0ba72da9d85d4f0be3acbf7eaa6cb014b0fc78bb63784f",
+  "$P/data/raw-21a5633/intermediate_algebra/test.parquet": "e859f72486c951c2017da880541ca729940eaa986b0364eb23e238983df9bfeb",
+  "$P/data/raw-21a5633/intermediate_algebra/train.parquet": "0c87f3798ebdfb915b1f9b6fc13c1a8d064c3cb91631ccbe85b83ed5d71150f6",
+  "$P/data/raw-21a5633/number_theory/test.parquet": "ba156c9c9fa2040836ba12135fd964e6e67d6bccd8c469ec4a3ad941f8f6fbe9",
+  "$P/data/raw-21a5633/number_theory/train.parquet": "81c08649149b39811f2d1d7ddf5dfccf6c4c8044a2e169cfb24db09160c941f4",
+  "$P/data/raw-21a5633/prealgebra/test.parquet": "301e5d8ade5c7b5038032532e498bdc9dca799e7f1061a63f2e7d980803240cc",
+  "$P/data/raw-21a5633/prealgebra/train.parquet": "765b526fb5c0b8385cb7be2c16bf4f6f28cf71f2bc15c826abfbb5fa7f8616cc",
+  "$P/data/raw-21a5633/precalculus/test.parquet": "da37474ba3761ae5727af3844a7ba963a735bd6a14c65e6137593669a4fe3b9c",
+  "$P/data/raw-21a5633/precalculus/train.parquet": "28bb1ff95525c8d32521509bef91de76339659f5467a381e6e8deea204538f0e",
+  "$P/data/rescreen-k8-h/h_k8.jsonl": "121309490faaaec55d585ce295f4396fd308882507569d7561d83e6f1eb33134",
+  "$P/data/rescreen-k8-h/related_k8.jsonl": "24ce7d84d0565557efa86c823a488e66a900241b7ed91afc33767d51a8937dbf",
+  "$P/data/rescreen-k8-h/unrelated_k8.jsonl": "17743a2cdd34efc6a50920c0d95da830f69ad23fdece60e478b4d4945d9e5391",
+  "$P/data/splits-v1/dup_pairs.json": "594bb679d6aae01054bd19c0c3531fb92927c87ee52fd5ffe18354157161961b",
+  "$P/data/splits-v1/manifest.jsonl": "6580712d65d412860ac74d012adb25dd21164d6378711aea441f06b377af206e",
+  "$P/data/stress.superseded-d143/stress_v1.json": "586edc319394b3dddd356fcc5696d9ecdbe8bd44e5d51aa76d7833c6d6a49af8",
+  "$P/data/stress/harder_v1.json": "0fb3490b38c5b8789c8f08168c7e8ce4549390f37e56fd87af923146432bd757",
+  "$P/data/stress/selection_report.json": "5cc7e781c31cdc5935a65a34333332e29178ad74ccedb69da6754a9d7783f96d",
+  "$P/data/stress/stress_v1.json": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+  "$P/data/stress/superhard_v1.json": "0cf1cf93deb32d9978d1ca610f523589741c843b203e7428ab01b7f6d210f318",
+  "$P/data/targets-v1/panels.json": "2ce7e35fc7258bcf5a401ea365b0686b2928b6fe1df655e783acff8e66e62a6e",
+  "W/data/cue/cue_v1_cued.json": "1b3aa7bf6ff62f5c441bb468abec552ead0dec0f19f06360015b1d7361b23aaa",
+  "W/data/cue/cue_v1_uncued.json": "c3399a42dbd346d2530ded4dacd230df0ca6d2f3825f9ae9f1066665a122aede",
+  "W/data/external/a17/candidates_v1.jsonl": "a0ac6ce53b95b867dc4f1d429b71372df7748e6af024f308d085659fe9133627",
+  "W/data/external/omni_tranche_v1.jsonl": "6c269ad4d3f861fd5454d91c886e954604ae81e990c900d7c2467d2c04ecc8e3",
+  "W/data/main_v1_manifest.json": "6d9e2f4e56a5013aa59ec0af91b29b3288e6421ca3bf2b697141aad438a40467",
+  "W/data/panels/panels.json": "2ce7e35fc7258bcf5a401ea365b0686b2928b6fe1df655e783acff8e66e62a6e",
+  "W/data/screening/hsel_k8.json": "3e37b60d71de736aa785eee580e2cb9d71819bcb3d843bc2da51b971a73a3ea7",
+  "W/data/screening/match_k8.json": "4baa8f39668135c6ff45219b7cc834c1e74082807f80c0f75de5357f13e73b25",
+  "W/data/stress/stress_v1.json": "757393bef80d5cf017d53bddbfcab84e049c77dee3b07b74898125379f76405d",
+  "W/research/evidence/a17/panels/audit_sample_v1.json": "d9bc7b6daa94c27a7f65dc97b424c2c96a4c11da7612313565a7816ba51b26b2"
+ },
+ "pairs": {
+  "H_train|J_H": {
+   "J3m": {
+    "hits": [],
+    "max": 0.34375,
+    "max_pair": [
+     "intermediate_algebra/train/01234",
+     "intermediate_algebra/train/00295"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.07692307692307693,
+    "max_pair": [
+     "intermediate_algebra/train/00477",
+     "intermediate_algebra/train/00295"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|J_R": {
+   "J3m": {
+    "hits": [],
+    "max": 0.30612244897959184,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/01272"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/01272"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.14285714285714285,
+    "max_pair": [
+     "intermediate_algebra/train/00147",
+     "number_theory/train/00376"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.061224489795918366,
+    "max_pair": [
+     "omni/02842",
+     "number_theory/train/00456"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|R_pool": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2903225806451613,
+    "max_pair": [
+     "intermediate_algebra/train/00147",
+     "syn-R2-071"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.024390243902439025,
+    "max_pair": [
+     "omni/02008",
+     "syn-R5-046"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|U_pool": {
+   "J3m": {
+    "hits": [],
+    "max": 0.23076923076923078,
+    "max_pair": [
+     "intermediate_algebra/train/00147",
+     "number_theory/train/00437"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08823529411764706,
+    "max_pair": [
+     "intermediate_algebra/train/00467",
+     "number_theory/train/00832"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.35294117647058826,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.2,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2972972972972973,
+    "max_pair": [
+     "intermediate_algebra/train/00481",
+     "intermediate_algebra/train/00568"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08928571428571429,
+    "max_pair": [
+     "omni/02316",
+     "intermediate_algebra/train/01241"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.16279069767441862,
+    "max_pair": [
+     "intermediate_algebra/train/01205",
+     "intermediate_algebra/test/00458"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.06976744186046512,
+    "max_pair": [
+     "omni/02842",
+     "algebra/test/00992"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|dev": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "algebra/train/01269",
+      "algebra/train/01291"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "algebra/train/01269",
+     "algebra/train/01291"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.44,
+    "max_pair": [
+     "algebra/train/01269",
+     "algebra/train/01291"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.28,
+    "max_pair": [
+     "intermediate_algebra/train/00147",
+     "intermediate_algebra/test/00097"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.13333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "precalculus/train/00115"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2413793103448276,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/train/00004"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.16129032258064516,
+    "max_pair": [
+     "omni/02008",
+     "omni/00720"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "H_train|test": {
+   "J3m": {
+    "hits": [
+     [
+      0.725,
+      "intermediate_algebra/train/00301",
+      "intermediate_algebra/test/00383"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/00048",
+      "intermediate_algebra/test/00891"
+     ]
+    ],
+    "max": 0.725,
+    "max_pair": [
+     "intermediate_algebra/train/00301",
+     "intermediate_algebra/test/00383"
+    ],
+    "n_ge_thr": 2
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.19444444444444445,
+    "max_pair": [
+     "intermediate_algebra/train/00048",
+     "intermediate_algebra/test/00891"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|J_R": {
+   "J3m": {
+    "hits": [],
+    "max": 0.25,
+    "max_pair": [
+     "algebra/train/01571",
+     "algebra/train/01061"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.06666666666666667,
+    "max_pair": [
+     "algebra/train/00643",
+     "algebra/train/00598"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.06593406593406594,
+    "max_pair": [
+     "intermediate_algebra/train/01041",
+     "number_theory/train/00456"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.036585365853658534,
+    "max_pair": [
+     "intermediate_algebra/train/01041",
+     "number_theory/train/00456"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.19047619047619047,
+    "max_pair": [
+     "intermediate_algebra/train/01148",
+     "intermediate_algebra/train/00081"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.04477611940298507,
+    "max_pair": [
+     "intermediate_algebra/train/00508",
+     "intermediate_algebra/train/00002"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3116883116883117,
+    "max_pair": [
+     "intermediate_algebra/train/01285",
+     "intermediate_algebra/train/00699"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.05970149253731343,
+    "max_pair": [
+     "intermediate_algebra/train/01285",
+     "intermediate_algebra/train/00699"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2465753424657534,
+    "max_pair": [
+     "intermediate_algebra/train/00494",
+     "intermediate_algebra/test/00860"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.0547945205479452,
+    "max_pair": [
+     "intermediate_algebra/train/00295",
+     "intermediate_algebra/test/00474"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.22535211267605634,
+    "max_pair": [
+     "intermediate_algebra/train/01285",
+     "intermediate_algebra/train/00975"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.037037037037037035,
+    "max_pair": [
+     "intermediate_algebra/train/00295",
+     "intermediate_algebra/train/00975"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.41228070175438597,
+    "max_pair": [
+     "intermediate_algebra/train/00165",
+     "omni/01384"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.109375,
+    "max_pair": [
+     "intermediate_algebra/train/00295",
+     "precalculus/test/00111"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_H|test": {
+   "J3m": {
+    "hits": [
+     [
+      0.75,
+      "algebra/train/01571",
+      "intermediate_algebra/test/00783"
+     ],
+     [
+      0.6438,
+      "algebra/train/01241",
+      "algebra/test/01027"
+     ]
+    ],
+    "max": 0.75,
+    "max_pair": [
+     "algebra/train/01571",
+     "intermediate_algebra/test/00783"
+    ],
+    "n_ge_thr": 2
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.6923076923076923,
+    "max_pair": [
+     "algebra/train/01571",
+     "intermediate_algebra/test/00783"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.09090909090909091,
+    "max_pair": [
+     "algebra/train/01520",
+     "number_theory/train/00717"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.043478260869565216,
+    "max_pair": [
+     "algebra/train/00598",
+     "number_theory/train/00067"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3404255319148936,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4,
+    "max_pair": [
+     "intermediate_algebra/train/00348",
+     "intermediate_algebra/train/01261"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.1111111111111111,
+    "max_pair": [
+     "algebra/train/00333",
+     "number_theory/train/00228"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.15384615384615385,
+    "max_pair": [
+     "algebra/train/01381",
+     "algebra/test/00778"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.045454545454545456,
+    "max_pair": [
+     "algebra/train/01408",
+     "algebra/test/00830"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2857142857142857,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "precalculus/train/00115"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.1,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "precalculus/train/00115"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.32142857142857145,
+    "max_pair": [
+     "intermediate_algebra/train/00348",
+     "intermediate_algebra/train/00092"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.0851063829787234,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "precalculus/test/00514"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_R|test": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3695652173913043,
+    "max_pair": [
+     "intermediate_algebra/train/01272",
+     "intermediate_algebra/test/00891"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.10344827586206896,
+    "max_pair": [
+     "algebra/train/00598",
+     "algebra/test/00109"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.24242424242424243,
+    "max_pair": [
+     "number_theory/train/00115",
+     "number_theory/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.05555555555555555,
+    "max_pair": [
+     "number_theory/train/00067",
+     "algebra/train/01135"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2631578947368421,
+    "max_pair": [
+     "number_theory/train/00340",
+     "number_theory/train/00214"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.02586206896551724,
+    "max_pair": [
+     "number_theory/train/00456",
+     "number_theory/train/00648"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.10638297872340426,
+    "max_pair": [
+     "number_theory/train/00456",
+     "algebra/test/00992"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.09090909090909091,
+    "max_pair": [
+     "number_theory/train/00456",
+     "algebra/test/00992"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.34782608695652173,
+    "max_pair": [
+     "number_theory/train/00248",
+     "number_theory/test/00090"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.2,
+    "max_pair": [
+     "number_theory/train/00248",
+     "number_theory/test/00090"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.10714285714285714,
+    "max_pair": [
+     "number_theory/train/00115",
+     "omni/01444"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.01694915254237288,
+    "max_pair": [
+     "number_theory/train/00067",
+     "omni/02772"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "J_U|test": {
+   "J3m": {
+    "hits": [],
+    "max": 0.09090909090909091,
+    "max_pair": [
+     "number_theory/train/00809",
+     "intermediate_algebra/test/00746"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.03773584905660377,
+    "max_pair": [
+     "number_theory/train/00717",
+     "algebra/test/00109"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|J_H": {
+   "J3m": {
+    "hits": [],
+    "max": 0.21875,
+    "max_pair": [
+     "syn-R2-071",
+     "algebra/train/01391"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.01818181818181818,
+    "max_pair": [
+     "syn-R5-046",
+     "algebra/train/00659"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|J_R": {
+   "J3m": {
+    "hits": [],
+    "max": 0.30303030303030304,
+    "max_pair": [
+     "syn-R4-074",
+     "intermediate_algebra/train/01184"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.061224489795918366,
+    "max_pair": [
+     "syn-R4-041",
+     "intermediate_algebra/train/01272"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.13157894736842105,
+    "max_pair": [
+     "syn-R4-007",
+     "number_theory/train/00248"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.1111111111111111,
+    "max_pair": [
+     "syn-R4-007",
+     "number_theory/train/00248"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|U_pool": {
+   "J3m": {
+    "hits": [],
+    "max": 0.21428571428571427,
+    "max_pair": [
+     "syn-R4-077",
+     "syn-U3-038"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.09375,
+    "max_pair": [
+     "syn-R5-046",
+     "syn-U1-063"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|calib_train": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "algebra/train/00769",
+      "algebra/train/01234"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "algebra/train/00769",
+     "algebra/train/01234"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.4482758620689655,
+    "max_pair": [
+     "algebra/train/00769",
+     "algebra/train/01234"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|calib_val": {
+   "J3m": {
+    "hits": [
+     [
+      0.7333,
+      "algebra/train/00454",
+      "algebra/train/00581"
+     ]
+    ],
+    "max": 0.7333333333333333,
+    "max_pair": [
+     "algebra/train/00454",
+     "algebra/train/00581"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.21951219512195122,
+    "max_pair": [
+     "algebra/train/00769",
+     "intermediate_algebra/train/00364"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.16666666666666666,
+    "max_pair": [
+     "syn-R5-063",
+     "intermediate_algebra/test/00458"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.041666666666666664,
+    "max_pair": [
+     "syn-R2-055",
+     "algebra/test/00996"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|dev": {
+   "J3m": {
+    "hits": [],
+    "max": 0.21875,
+    "max_pair": [
+     "syn-R2-071",
+     "algebra/train/01391"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.01818181818181818,
+    "max_pair": [
+     "syn-R5-046",
+     "algebra/train/00659"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3055555555555556,
+    "max_pair": [
+     "syn-R2-055",
+     "intermediate_algebra/test/00359"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.05263157894736842,
+    "max_pair": [
+     "algebra/train/01661",
+     "intermediate_algebra/test/00147"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.37142857142857144,
+    "max_pair": [
+     "syn-R2-055",
+     "omni/00664"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.03333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/01046",
+     "precalculus/test/00514"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "R_pool|test": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4117647058823529,
+    "max_pair": [
+     "syn-R2-055",
+     "intermediate_algebra/test/00117"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.15,
+    "max_pair": [
+     "intermediate_algebra/train/01046",
+     "algebra/test/00576"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|J_H": {
+   "J3m": {
+    "hits": [],
+    "max": 0.14563106796116504,
+    "max_pair": [
+     "number_theory/train/00817",
+     "intermediate_algebra/train/00295"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.019230769230769232,
+    "max_pair": [
+     "syn-U1-063",
+     "algebra/train/00659"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|J_R": {
+   "J3m": {
+    "hits": [],
+    "max": 0.08333333333333333,
+    "max_pair": [
+     "number_theory/train/00149",
+     "algebra/train/01440"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.024390243902439025,
+    "max_pair": [
+     "syn-U2-068",
+     "algebra/train/00333"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3125,
+    "max_pair": [
+     "syn-U1-036",
+     "number_theory/train/00376"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.07692307692307693,
+    "max_pair": [
+     "syn-U2-092",
+     "number_theory/train/00686"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3125,
+    "max_pair": [
+     "syn-U2-034",
+     "number_theory/train/00339"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.25,
+    "max_pair": [
+     "number_theory/train/00832",
+     "number_theory/train/00370"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.10256410256410256,
+    "max_pair": [
+     "syn-U2-092",
+     "intermediate_algebra/train/00734"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.046875,
+    "max_pair": [
+     "syn-U1-032",
+     "number_theory/train/00653"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.12790697674418605,
+    "max_pair": [
+     "number_theory/train/00817",
+     "intermediate_algebra/test/00474"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.0,
+    "max_pair": [
+     null,
+     null
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|dev": {
+   "J3m": {
+    "hits": [],
+    "max": 0.14563106796116504,
+    "max_pair": [
+     "number_theory/train/00817",
+     "intermediate_algebra/train/00295"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.019230769230769232,
+    "max_pair": [
+     "syn-U1-063",
+     "algebra/train/00659"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.1724137931034483,
+    "max_pair": [
+     "number_theory/train/00832",
+     "olympiadbench:2718"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.125,
+    "max_pair": [
+     "number_theory/train/00832",
+     "olympiadbench:2718"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2,
+    "max_pair": [
+     "number_theory/train/00832",
+     "olympiadbench:2603"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.18518518518518517,
+    "max_pair": [
+     "number_theory/train/00832",
+     "precalculus/train/00409"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "U_pool|test": {
+   "J3m": {
+    "hits": [],
+    "max": 0.1553398058252427,
+    "max_pair": [
+     "number_theory/train/00817",
+     "intermediate_algebra/test/00895"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.023255813953488372,
+    "max_pair": [
+     "number_theory/train/00832",
+     "intermediate_algebra/test/00353"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_train|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/00914",
+     "intermediate_algebra/train/00568"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.21951219512195122,
+    "max_pair": [
+     "algebra/train/01234",
+     "intermediate_algebra/train/00364"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_train|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.1643835616438356,
+    "max_pair": [
+     "number_theory/train/00122",
+     "algebra/test/00830"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.057692307692307696,
+    "max_pair": [
+     "algebra/train/00716",
+     "intermediate_algebra/test/00430"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_train|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2619047619047619,
+    "max_pair": [
+     "intermediate_algebra/train/00914",
+     "omni/00953"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.14285714285714285,
+    "max_pair": [
+     "intermediate_algebra/train/00327",
+     "precalculus/train/00115"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_train|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2909090909090909,
+    "max_pair": [
+     "intermediate_algebra/train/00327",
+     "intermediate_algebra/train/00004"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.15789473684210525,
+    "max_pair": [
+     "intermediate_algebra/train/00067",
+     "intermediate_algebra/test/00185"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_val|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4067796610169492,
+    "max_pair": [
+     "intermediate_algebra/train/00779",
+     "intermediate_algebra/test/00091"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.0625,
+    "max_pair": [
+     "intermediate_algebra/train/00551",
+     "intermediate_algebra/test/00159"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_val|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.2857142857142857,
+    "max_pair": [
+     "intermediate_algebra/train/00734",
+     "intermediate_algebra/test/00359"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.06060606060606061,
+    "max_pair": [
+     "intermediate_algebra/train/01031",
+     "intermediate_algebra/train/00907"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "calib_val|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4375,
+    "max_pair": [
+     "number_theory/train/00394",
+     "number_theory/train/00733"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.23076923076923078,
+    "max_pair": [
+     "number_theory/train/00394",
+     "number_theory/train/00733"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|J_H": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3793103448275862,
+    "max_pair": [
+     "algebra/train/01083",
+     "algebra/train/01241"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.14634146341463414,
+    "max_pair": [
+     "algebra/train/01083",
+     "algebra/train/01241"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 32,
+   "id_overlap": 32,
+   "norm_text": 32,
+   "simple_norm_text": 32
+  },
+  "dev|J_R": {
+   "J3m": {
+    "hits": [],
+    "max": 0.25,
+    "max_pair": [
+     "algebra/train/01571",
+     "algebra/train/01061"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.06666666666666667,
+    "max_pair": [
+     "algebra/train/00643",
+     "algebra/train/00598"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|J_U": {
+   "J3m": {
+    "hits": [],
+    "max": 0.06593406593406594,
+    "max_pair": [
+     "intermediate_algebra/train/01041",
+     "number_theory/train/00456"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.036585365853658534,
+    "max_pair": [
+     "intermediate_algebra/train/01041",
+     "number_theory/train/00456"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/01116",
+     "intermediate_algebra/train/00002"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08771929824561403,
+    "max_pair": [
+     "intermediate_algebra/train/01116",
+     "intermediate_algebra/train/00002"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.38095238095238093,
+    "max_pair": [
+     "intermediate_algebra/train/01262",
+     "intermediate_algebra/train/00699"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.14754098360655737,
+    "max_pair": [
+     "intermediate_algebra/train/01262",
+     "intermediate_algebra/train/00699"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|cue": {
+   "J3m": {
+    "hits": [
+     [
+      0.6667,
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/test/00091"
+     ]
+    ],
+    "max": 0.6666666666666666,
+    "max_pair": [
+     "intermediate_algebra/train/00107",
+     "intermediate_algebra/test/00091"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08333333333333333,
+    "max_pair": [
+     "intermediate_algebra/train/00107",
+     "intermediate_algebra/test/00091"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.23728813559322035,
+    "max_pair": [
+     "intermediate_algebra/train/01262",
+     "intermediate_algebra/train/00975"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.057971014492753624,
+    "max_pair": [
+     "intermediate_algebra/train/00232",
+     "intermediate_algebra/train/00357"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.41228070175438597,
+    "max_pair": [
+     "intermediate_algebra/train/00165",
+     "omni/01384"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.109375,
+    "max_pair": [
+     "intermediate_algebra/train/00295",
+     "precalculus/test/00111"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "dev|test": {
+   "J3m": {
+    "hits": [
+     [
+      0.7733,
+      "algebra/train/01083",
+      "algebra/test/00353"
+     ],
+     [
+      0.75,
+      "algebra/train/01571",
+      "intermediate_algebra/test/00783"
+     ],
+     [
+      0.6438,
+      "algebra/train/01241",
+      "algebra/test/01027"
+     ],
+     [
+      0.6,
+      "intermediate_algebra/train/00107",
+      "intermediate_algebra/test/00453"
+     ],
+     [
+      0.6,
+      "algebra/train/01083",
+      "algebra/test/00832"
+     ]
+    ],
+    "max": 0.7733333333333333,
+    "max_pair": [
+     "algebra/train/01083",
+     "algebra/test/00353"
+    ],
+    "n_ge_thr": 5
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.6923076923076923,
+    "max_pair": [
+     "algebra/train/01571",
+     "intermediate_algebra/test/00783"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "stress_Harder|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.203125,
+    "max_pair": [
+     "intermediate_algebra/train/00391",
+     "intermediate_algebra/test/00458"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.08695652173913043,
+    "max_pair": [
+     "intermediate_algebra/train/00600",
+     "intermediate_algebra/test/00430"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "stress_SuperHard|cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.24285714285714285,
+    "max_pair": [
+     "omni/01649",
+     "intermediate_algebra/test/00091"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.1111111111111111,
+    "max_pair": [
+     "omni/01332",
+     "algebra/test/00996"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "stress_SuperHard|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4107142857142857,
+    "max_pair": [
+     "precalculus/train/00559",
+     "precalculus/test/00064"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.21951219512195122,
+    "max_pair": [
+     "precalculus/train/00559",
+     "precalculus/test/00064"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "test|calib_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.44680851063829785,
+    "max_pair": [
+     "intermediate_algebra/test/00891",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.20588235294117646,
+    "max_pair": [
+     "intermediate_algebra/test/00891",
+     "intermediate_algebra/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "test|calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.42105263157894735,
+    "max_pair": [
+     "intermediate_algebra/test/00453",
+     "intermediate_algebra/train/00779"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.11363636363636363,
+    "max_pair": [
+     "intermediate_algebra/test/00507",
+     "intermediate_algebra/train/00184"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "test|cue": {
+   "J3m": {
+    "hits": [
+     [
+      0.5789,
+      "intermediate_algebra/test/00453",
+      "intermediate_algebra/test/00091"
+     ]
+    ],
+    "max": 0.5789473684210527,
+    "max_pair": [
+     "intermediate_algebra/test/00453",
+     "intermediate_algebra/test/00091"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.0851063829787234,
+    "max_pair": [
+     "intermediate_algebra/test/00315",
+     "intermediate_algebra/test/00329"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "test|stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.28888888888888886,
+    "max_pair": [
+     "intermediate_algebra/test/00783",
+     "algebra/test/01173"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.2,
+    "max_pair": [
+     "intermediate_algebra/test/00025",
+     "precalculus/train/00115"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  },
+  "test|stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.44776119402985076,
+    "max_pair": [
+     "intermediate_algebra/test/00482",
+     "omni/01350"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.12121212121212122,
+    "max_pair": [
+     "intermediate_algebra/test/00025",
+     "precalculus/test/00514"
+    ],
+    "n_ge_thr": 0
+   },
+   "exact_text": 0,
+   "id_overlap": 0,
+   "norm_text": 0,
+   "simple_norm_text": 0
+  }
+ },
+ "sets": {
+  "H_train": {
+   "distinct_ids": 46,
+   "distinct_norm_text": 46,
+   "families": {
+    "F1": 11,
+    "F2": 7,
+    "F3": 11,
+    "F4": 10,
+    "F8": 7
+   },
+   "ids": [
+    "algebra/train/00288",
+    "algebra/train/01269",
+    "intermediate_algebra/train/00048",
+    "intermediate_algebra/train/00074",
+    "intermediate_algebra/train/00076",
+    "intermediate_algebra/train/00147",
+    "intermediate_algebra/train/00301",
+    "intermediate_algebra/train/00340",
+    "intermediate_algebra/train/00379",
+    "intermediate_algebra/train/00427",
+    "intermediate_algebra/train/00431",
+    "intermediate_algebra/train/00467",
+    "intermediate_algebra/train/00477",
+    "intermediate_algebra/train/00481",
+    "intermediate_algebra/train/00522",
+    "intermediate_algebra/train/00592",
+    "intermediate_algebra/train/00656",
+    "intermediate_algebra/train/00995",
+    "intermediate_algebra/train/01036",
+    "intermediate_algebra/train/01095",
+    "intermediate_algebra/train/01097",
+    "intermediate_algebra/train/01174",
+    "intermediate_algebra/train/01205",
+    "intermediate_algebra/train/01234",
+    "intermediate_algebra/train/01249",
+    "omni/00136",
+    "omni/00524",
+    "omni/00542",
+    "omni/00622",
+    "omni/00852",
+    "omni/00984",
+    "omni/01012",
+    "omni/01386",
+    "omni/01413",
+    "omni/01473",
+    "omni/01558",
+    "omni/01690",
+    "omni/01788",
+    "omni/02008",
+    "omni/02204",
+    "omni/02316",
+    "omni/02460",
+    "omni/02796",
+    "omni/02804",
+    "omni/02842",
+    "omni/04174"
+   ],
+   "math_dup_groups": 25,
+   "math_gold_equals_manifest": 25,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "construction": 25
+   },
+   "math_items": 25,
+   "math_level": {
+    "Level 3": 1,
+    "Level 4": 4,
+    "Level 5": 20
+   },
+   "math_orig_split": {
+    "train": 25
+   },
+   "math_subject": {
+    "algebra": 2,
+    "intermediate_algebra": 23
+   },
+   "math_text_equals_manifest": 25,
+   "n_rows": 46,
+   "omni_text_equals_omni_test": 21,
+   "source": {
+    "MATH": 25,
+    "Omni-MATH": 21
+   }
+  },
+  "J_H": {
+   "distinct_ids": 32,
+   "distinct_norm_text": 32,
+   "ids": [
+    "intermediate_algebra/train/01148",
+    "intermediate_algebra/train/00791",
+    "intermediate_algebra/train/00542",
+    "intermediate_algebra/train/00508",
+    "algebra/train/00870",
+    "intermediate_algebra/train/01041",
+    "algebra/train/01241",
+    "intermediate_algebra/train/00409",
+    "intermediate_algebra/train/01190",
+    "algebra/train/00760",
+    "intermediate_algebra/train/00482",
+    "intermediate_algebra/train/00494",
+    "algebra/train/01341",
+    "algebra/train/01391",
+    "algebra/train/01026",
+    "intermediate_algebra/train/00683",
+    "intermediate_algebra/train/00929",
+    "intermediate_algebra/train/00999",
+    "intermediate_algebra/train/00709",
+    "algebra/train/01047",
+    "intermediate_algebra/train/00115",
+    "intermediate_algebra/train/01211",
+    "intermediate_algebra/train/00165",
+    "intermediate_algebra/train/01285",
+    "algebra/train/01516",
+    "intermediate_algebra/train/00278",
+    "algebra/train/01571",
+    "algebra/train/00659",
+    "algebra/train/00643",
+    "intermediate_algebra/train/00347",
+    "intermediate_algebra/train/00295",
+    "intermediate_algebra/train/01212"
+   ],
+   "math_dup_groups": 32,
+   "math_gold_equals_manifest": 32,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "study_dev": 32
+   },
+   "math_items": 32,
+   "math_level": {
+    "Level 4": 10,
+    "Level 5": 22
+   },
+   "math_orig_split": {
+    "train": 32
+   },
+   "math_subject": {
+    "algebra": 11,
+    "intermediate_algebra": 21
+   },
+   "math_text_equals_manifest": 32,
+   "n_rows": 32,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 32
+   }
+  },
+  "J_R": {
+   "distinct_ids": 28,
+   "distinct_norm_text": 28,
+   "ids": [
+    "intermediate_algebra/train/01272",
+    "algebra/train/01638",
+    "algebra/train/01460",
+    "intermediate_algebra/train/01023",
+    "intermediate_algebra/train/00064",
+    "algebra/train/01371",
+    "algebra/train/00333",
+    "intermediate_algebra/train/01189",
+    "intermediate_algebra/train/01084",
+    "algebra/train/01061",
+    "intermediate_algebra/train/01184",
+    "algebra/train/01095",
+    "algebra/train/01466",
+    "intermediate_algebra/train/00012",
+    "algebra/train/01286",
+    "algebra/train/01219",
+    "algebra/train/01408",
+    "algebra/train/01440",
+    "algebra/train/00103",
+    "intermediate_algebra/train/00292",
+    "algebra/train/00745",
+    "intermediate_algebra/train/00348",
+    "algebra/train/01520",
+    "intermediate_algebra/train/01056",
+    "intermediate_algebra/train/00294",
+    "algebra/train/00363",
+    "algebra/train/00598",
+    "algebra/train/01381"
+   ],
+   "math_dup_groups": 28,
+   "math_gold_equals_manifest": 28,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "study_dev": 28
+   },
+   "math_items": 28,
+   "math_level": {
+    "Level 1": 1,
+    "Level 2": 4,
+    "Level 3": 9,
+    "Level 4": 10,
+    "Level 5": 4
+   },
+   "math_orig_split": {
+    "train": 28
+   },
+   "math_subject": {
+    "algebra": 17,
+    "intermediate_algebra": 11
+   },
+   "math_text_equals_manifest": 28,
+   "n_rows": 28,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 28
+   }
+  },
+  "J_U": {
+   "distinct_ids": 32,
+   "distinct_norm_text": 32,
+   "ids": [
+    "number_theory/train/00809",
+    "number_theory/train/00254",
+    "number_theory/train/00115",
+    "number_theory/train/00256",
+    "number_theory/train/00863",
+    "number_theory/train/00357",
+    "number_theory/train/00372",
+    "number_theory/train/00802",
+    "number_theory/train/00801",
+    "number_theory/train/00160",
+    "number_theory/train/00067",
+    "number_theory/train/00140",
+    "number_theory/train/00095",
+    "number_theory/train/00282",
+    "number_theory/train/00379",
+    "number_theory/train/00435",
+    "number_theory/train/00717",
+    "number_theory/train/00807",
+    "number_theory/train/00258",
+    "number_theory/train/00458",
+    "number_theory/train/00076",
+    "number_theory/train/00012",
+    "number_theory/train/00412",
+    "number_theory/train/00340",
+    "number_theory/train/00686",
+    "number_theory/train/00169",
+    "number_theory/train/00156",
+    "number_theory/train/00460",
+    "number_theory/train/00248",
+    "number_theory/train/00306",
+    "number_theory/train/00376",
+    "number_theory/train/00456"
+   ],
+   "math_dup_groups": 32,
+   "math_gold_equals_manifest": 32,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "study_dev": 32
+   },
+   "math_items": 32,
+   "math_level": {
+    "Level 1": 4,
+    "Level 2": 5,
+    "Level 3": 7,
+    "Level 4": 8,
+    "Level 5": 8
+   },
+   "math_orig_split": {
+    "train": 32
+   },
+   "math_subject": {
+    "number_theory": 32
+   },
+   "math_text_equals_manifest": 32,
+   "n_rows": 32,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 32
+   }
+  },
+  "R_pool": {
+   "distinct_ids": 63,
+   "distinct_norm_text": 63,
+   "ids": [
+    "syn-R1-017",
+    "syn-R3-085",
+    "algebra/train/01732",
+    "syn-R5-063",
+    "syn-R5-065",
+    "syn-R5-026",
+    "syn-R4-070",
+    "syn-R5-047",
+    "syn-R4-049",
+    "syn-R5-027",
+    "syn-R4-077",
+    "algebra/train/00769",
+    "syn-R3-096",
+    "syn-R2-054",
+    "syn-R3-006",
+    "syn-R1-013",
+    "algebra/train/00352",
+    "syn-R4-012",
+    "syn-R4-010",
+    "syn-R2-068",
+    "syn-R5-075",
+    "syn-R4-074",
+    "syn-R3-005",
+    "syn-R4-098",
+    "syn-R2-069",
+    "syn-R5-046",
+    "syn-R4-072",
+    "syn-R3-020",
+    "syn-R4-007",
+    "syn-R4-091",
+    "syn-R4-041",
+    "algebra/train/01661",
+    "syn-R4-090",
+    "syn-R4-089",
+    "syn-R4-096",
+    "algebra/train/00454",
+    "algebra/train/00599",
+    "syn-R5-042",
+    "syn-R5-078",
+    "syn-R4-064",
+    "syn-R5-035",
+    "syn-R2-072",
+    "syn-R5-017",
+    "syn-R5-080",
+    "syn-R5-033",
+    "syn-R5-044",
+    "syn-R4-047",
+    "syn-R5-038",
+    "syn-R3-037",
+    "syn-R5-031",
+    "syn-R5-037",
+    "syn-R4-030",
+    "intermediate_algebra/train/01013",
+    "syn-R3-034",
+    "syn-R3-038",
+    "intermediate_algebra/train/01046",
+    "syn-R2-071",
+    "syn-R2-055",
+    "syn-R3-035",
+    "syn-R4-021",
+    "intermediate_algebra/train/00145",
+    "syn-R4-063",
+    "syn-R2-062"
+   ],
+   "math_dup_groups": 9,
+   "math_gold_equals_manifest": 9,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "construction": 9
+   },
+   "math_items": 9,
+   "math_level": {
+    "Level 3": 4,
+    "Level 4": 3,
+    "Level 5": 2
+   },
+   "math_orig_split": {
+    "train": 9
+   },
+   "math_subject": {
+    "algebra": 6,
+    "intermediate_algebra": 3
+   },
+   "math_text_equals_manifest": 9,
+   "n_rows": 63,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 9,
+    "authored-R1": 2,
+    "authored-R2": 7,
+    "authored-R3": 9,
+    "authored-R4": 19,
+    "authored-R5": 17
+   },
+   "template_families": 41
+  },
+  "U_pool": {
+   "distinct_ids": 63,
+   "distinct_norm_text": 63,
+   "ids": [
+    "syn-U2-098",
+    "syn-U3-013",
+    "number_theory/train/00437",
+    "syn-U2-008",
+    "syn-U2-077",
+    "syn-U3-078",
+    "syn-U1-040",
+    "syn-U2-034",
+    "syn-U3-059",
+    "syn-U3-099",
+    "syn-U3-032",
+    "number_theory/train/00708",
+    "syn-U1-036",
+    "syn-U3-026",
+    "syn-U1-012",
+    "syn-U2-012",
+    "number_theory/train/00797",
+    "syn-U3-038",
+    "syn-U2-027",
+    "syn-U2-018",
+    "syn-U3-069",
+    "syn-U1-063",
+    "syn-U3-029",
+    "syn-U3-094",
+    "syn-U3-091",
+    "syn-U3-097",
+    "syn-U3-048",
+    "syn-U1-025",
+    "syn-U3-008",
+    "syn-U3-118",
+    "syn-U1-053",
+    "number_theory/train/00107",
+    "syn-U3-106",
+    "syn-U1-098",
+    "syn-U3-081",
+    "number_theory/train/00817",
+    "number_theory/train/00683",
+    "syn-U3-063",
+    "syn-U1-052",
+    "syn-U1-032",
+    "syn-U3-108",
+    "syn-U3-117",
+    "syn-U3-077",
+    "syn-U1-045",
+    "syn-U3-068",
+    "syn-U2-036",
+    "syn-U3-100",
+    "syn-U3-034",
+    "syn-U3-050",
+    "syn-U3-028",
+    "syn-U3-071",
+    "syn-U3-079",
+    "number_theory/train/00149",
+    "syn-U3-088",
+    "syn-U2-092",
+    "number_theory/train/00832",
+    "syn-U3-017",
+    "syn-U3-112",
+    "syn-U3-080",
+    "syn-U2-068",
+    "number_theory/train/00014",
+    "syn-U3-070",
+    "syn-U2-009"
+   ],
+   "math_dup_groups": 9,
+   "math_gold_equals_manifest": 9,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "construction": 9
+   },
+   "math_items": 9,
+   "math_level": {
+    "Level 2": 3,
+    "Level 5": 6
+   },
+   "math_orig_split": {
+    "train": 9
+   },
+   "math_subject": {
+    "number_theory": 9
+   },
+   "math_text_equals_manifest": 9,
+   "n_rows": 63,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 9,
+    "authored-U1": 10,
+    "authored-U2": 11,
+    "authored-U3": 33
+   },
+   "template_families": 36
+  },
+  "calib_train": {
+   "distinct_ids": 59,
+   "distinct_norm_text": 59,
+   "ids": [
+    "intermediate_algebra/train/01059",
+    "intermediate_algebra/train/00597",
+    "intermediate_algebra/train/00303",
+    "intermediate_algebra/train/01269",
+    "intermediate_algebra/train/00785",
+    "number_theory/train/00806",
+    "intermediate_algebra/train/00590",
+    "number_theory/train/00090",
+    "algebra/train/01500",
+    "algebra/train/00521",
+    "algebra/train/01182",
+    "intermediate_algebra/train/00225",
+    "algebra/train/01558",
+    "number_theory/train/00339",
+    "intermediate_algebra/train/00002",
+    "intermediate_algebra/train/01012",
+    "algebra/train/01135",
+    "algebra/train/00716",
+    "algebra/train/01234",
+    "intermediate_algebra/train/00143",
+    "number_theory/train/00593",
+    "number_theory/train/00327",
+    "intermediate_algebra/train/00909",
+    "number_theory/train/00644",
+    "algebra/train/00081",
+    "intermediate_algebra/train/00914",
+    "intermediate_algebra/train/00174",
+    "intermediate_algebra/train/01170",
+    "intermediate_algebra/train/00836",
+    "algebra/train/01559",
+    "intermediate_algebra/train/00602",
+    "intermediate_algebra/train/00077",
+    "intermediate_algebra/train/01155",
+    "number_theory/train/00461",
+    "intermediate_algebra/train/00327",
+    "intermediate_algebra/train/00353",
+    "intermediate_algebra/train/01086",
+    "intermediate_algebra/train/00081",
+    "intermediate_algebra/train/00726",
+    "algebra/train/00786",
+    "intermediate_algebra/train/00067",
+    "number_theory/train/00498",
+    "number_theory/train/00655",
+    "number_theory/train/00143",
+    "number_theory/train/00370",
+    "intermediate_algebra/train/00879",
+    "algebra/train/00341",
+    "intermediate_algebra/train/00270",
+    "number_theory/train/00086",
+    "intermediate_algebra/train/00405",
+    "intermediate_algebra/train/01208",
+    "algebra/train/01708",
+    "intermediate_algebra/train/00515",
+    "number_theory/train/00122",
+    "intermediate_algebra/train/00459",
+    "algebra/train/01116",
+    "algebra/train/00761",
+    "intermediate_algebra/train/00447",
+    "number_theory/train/00828"
+   ],
+   "math_dup_groups": 59,
+   "math_gold_equals_manifest": 59,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "calib_train": 59
+   },
+   "math_items": 59,
+   "math_level": {
+    "Level 1": 3,
+    "Level 2": 1,
+    "Level 3": 9,
+    "Level 4": 13,
+    "Level 5": 33
+   },
+   "math_orig_split": {
+    "train": 59
+   },
+   "math_subject": {
+    "algebra": 14,
+    "intermediate_algebra": 31,
+    "number_theory": 14
+   },
+   "math_text_equals_manifest": 59,
+   "n_rows": 59,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "?": 59
+   }
+  },
+  "calib_val": {
+   "distinct_ids": 56,
+   "distinct_norm_text": 56,
+   "ids": [
+    "algebra/train/00909",
+    "intermediate_algebra/train/00779",
+    "algebra/train/00942",
+    "number_theory/train/00175",
+    "number_theory/train/00214",
+    "intermediate_algebra/train/00695",
+    "number_theory/train/00228",
+    "intermediate_algebra/train/00568",
+    "intermediate_algebra/train/00086",
+    "intermediate_algebra/train/00699",
+    "algebra/train/00594",
+    "number_theory/train/00481",
+    "intermediate_algebra/train/00246",
+    "number_theory/train/00731",
+    "algebra/train/00444",
+    "number_theory/train/00117",
+    "algebra/train/01616",
+    "intermediate_algebra/train/00739",
+    "intermediate_algebra/train/01245",
+    "number_theory/train/00565",
+    "intermediate_algebra/train/00693",
+    "intermediate_algebra/train/00087",
+    "number_theory/train/00394",
+    "intermediate_algebra/train/00184",
+    "number_theory/train/00527",
+    "intermediate_algebra/train/00182",
+    "intermediate_algebra/train/01159",
+    "number_theory/train/00364",
+    "number_theory/train/00648",
+    "intermediate_algebra/train/01241",
+    "intermediate_algebra/train/00373",
+    "algebra/train/00324",
+    "intermediate_algebra/train/00126",
+    "intermediate_algebra/train/00273",
+    "intermediate_algebra/train/00354",
+    "intermediate_algebra/train/00920",
+    "algebra/train/00581",
+    "number_theory/train/00507",
+    "algebra/train/01137",
+    "intermediate_algebra/train/00821",
+    "number_theory/train/00005",
+    "intermediate_algebra/train/00837",
+    "intermediate_algebra/train/01199",
+    "number_theory/train/00447",
+    "number_theory/train/00653",
+    "number_theory/train/00360",
+    "intermediate_algebra/train/00551",
+    "intermediate_algebra/train/00517",
+    "intermediate_algebra/train/00364",
+    "intermediate_algebra/train/01261",
+    "intermediate_algebra/train/00269",
+    "intermediate_algebra/train/00734",
+    "number_theory/train/00454",
+    "number_theory/train/00077",
+    "intermediate_algebra/train/01031",
+    "intermediate_algebra/train/00454"
+   ],
+   "math_dup_groups": 56,
+   "math_gold_equals_manifest": 56,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "calib_val": 56
+   },
+   "math_items": 56,
+   "math_level": {
+    "Level 1": 1,
+    "Level 2": 3,
+    "Level 3": 8,
+    "Level 4": 17,
+    "Level 5": 27
+   },
+   "math_orig_split": {
+    "train": 56
+   },
+   "math_subject": {
+    "algebra": 8,
+    "intermediate_algebra": 30,
+    "number_theory": 18
+   },
+   "math_text_equals_manifest": 56,
+   "n_rows": 56,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "?": 56
+   }
+  },
+  "cue": {
+   "distinct_ids": 24,
+   "distinct_norm_text": 24,
+   "ids": [
+    "intermediate_algebra/test/00474",
+    "intermediate_algebra/test/00458",
+    "algebra/test/00996",
+    "algebra/test/00778",
+    "intermediate_algebra/test/00159",
+    "intermediate_algebra/test/00091",
+    "algebra/test/01094",
+    "algebra/test/00992",
+    "algebra/test/00863",
+    "intermediate_algebra/test/00715",
+    "intermediate_algebra/test/00430",
+    "intermediate_algebra/test/00860",
+    "intermediate_algebra/test/00110",
+    "intermediate_algebra/test/00819",
+    "algebra/test/01153",
+    "algebra/test/00830",
+    "algebra/test/00561",
+    "algebra/test/01057",
+    "intermediate_algebra/test/00304",
+    "intermediate_algebra/test/00329",
+    "intermediate_algebra/test/00870",
+    "intermediate_algebra/test/00803",
+    "algebra/test/01144",
+    "intermediate_algebra/test/00168"
+   ],
+   "math_dup_groups": 24,
+   "math_gold_equals_manifest": 24,
+   "math_group_size_gt1": 1,
+   "math_internal_split": {
+    "test": 24
+   },
+   "math_items": 24,
+   "math_level": {
+    "Level 4": 5,
+    "Level 5": 19
+   },
+   "math_orig_split": {
+    "test": 24
+   },
+   "math_subject": {
+    "algebra": 10,
+    "intermediate_algebra": 14
+   },
+   "math_text_equals_manifest": 24,
+   "n_rows": 24,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "?": 24
+   }
+  },
+  "dev": {
+   "distinct_ids": 53,
+   "distinct_norm_text": 53,
+   "ids": [
+    "intermediate_algebra/train/01148",
+    "intermediate_algebra/train/00791",
+    "intermediate_algebra/train/00542",
+    "intermediate_algebra/train/00508",
+    "algebra/train/00870",
+    "intermediate_algebra/train/01041",
+    "algebra/train/01241",
+    "intermediate_algebra/train/00409",
+    "intermediate_algebra/train/01190",
+    "algebra/train/00760",
+    "intermediate_algebra/train/00482",
+    "intermediate_algebra/train/00494",
+    "algebra/train/01341",
+    "algebra/train/01391",
+    "algebra/train/01026",
+    "intermediate_algebra/train/00683",
+    "intermediate_algebra/train/00929",
+    "intermediate_algebra/train/00999",
+    "intermediate_algebra/train/00709",
+    "algebra/train/01047",
+    "intermediate_algebra/train/00115",
+    "intermediate_algebra/train/01211",
+    "intermediate_algebra/train/00165",
+    "intermediate_algebra/train/01285",
+    "algebra/train/01516",
+    "intermediate_algebra/train/00278",
+    "algebra/train/01571",
+    "algebra/train/00659",
+    "algebra/train/00643",
+    "intermediate_algebra/train/00347",
+    "intermediate_algebra/train/00295",
+    "intermediate_algebra/train/01212",
+    "intermediate_algebra/train/01264",
+    "intermediate_algebra/train/01262",
+    "intermediate_algebra/train/00282",
+    "intermediate_algebra/train/01172",
+    "intermediate_algebra/train/00688",
+    "intermediate_algebra/train/00120",
+    "intermediate_algebra/train/01116",
+    "algebra/train/01083",
+    "intermediate_algebra/train/00530",
+    "algebra/train/00525",
+    "algebra/train/01291",
+    "intermediate_algebra/train/00599",
+    "intermediate_algebra/train/01153",
+    "intermediate_algebra/train/00121",
+    "intermediate_algebra/train/00289",
+    "intermediate_algebra/train/00767",
+    "intermediate_algebra/train/00619",
+    "intermediate_algebra/train/00232",
+    "algebra/train/00006",
+    "intermediate_algebra/train/00107",
+    "intermediate_algebra/train/00277"
+   ],
+   "math_dup_groups": 53,
+   "math_gold_equals_manifest": 53,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "study_dev": 53
+   },
+   "math_items": 53,
+   "math_level": {
+    "Level 4": 17,
+    "Level 5": 36
+   },
+   "math_orig_split": {
+    "train": 53
+   },
+   "math_subject": {
+    "algebra": 15,
+    "intermediate_algebra": 38
+   },
+   "math_text_equals_manifest": 53,
+   "n_rows": 53,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 53
+   }
+  },
+  "stress_Harder": {
+   "distinct_ids": 95,
+   "distinct_norm_text": 95,
+   "families": 95,
+   "ids": [
+    "algebra/test/00888",
+    "algebra/test/00352",
+    "precalculus/train/00391",
+    "omni/01002",
+    "olympiadbench:2545",
+    "precalculus/train/00018",
+    "counting_and_probability/test/00300",
+    "olympiadbench:2409",
+    "omni/02304",
+    "intermediate_algebra/test/00359",
+    "number_theory/train/00557",
+    "olympiadbench:2669",
+    "precalculus/train/00169",
+    "precalculus/test/00305",
+    "olympiadbench:2787",
+    "intermediate_algebra/train/00196",
+    "number_theory/test/00511",
+    "olympiadbench:2280",
+    "algebra/test/00743",
+    "omni/03629",
+    "intermediate_algebra/train/00691",
+    "intermediate_algebra/test/00189",
+    "olympiadbench:2580",
+    "algebra/train/01402",
+    "algebra/train/01030",
+    "number_theory/train/00633",
+    "algebra/train/00800",
+    "number_theory/test/00064",
+    "intermediate_algebra/train/00600",
+    "omni/00173",
+    "precalculus/train/00537",
+    "omni/00793",
+    "algebra/test/01073",
+    "intermediate_algebra/train/00255",
+    "olympiadbench:3040",
+    "omni/02504",
+    "precalculus/test/00090",
+    "number_theory/test/00142",
+    "precalculus/train/00504",
+    "omni/02099",
+    "number_theory/test/00005",
+    "intermediate_algebra/test/00044",
+    "omni/01420",
+    "omni/00919",
+    "precalculus/test/00169",
+    "precalculus/test/00064",
+    "precalculus/train/00145",
+    "omni/01531",
+    "algebra/test/00263",
+    "intermediate_algebra/train/00393",
+    "precalculus/test/00451",
+    "precalculus/test/00541",
+    "algebra/test/01173",
+    "number_theory/train/00860",
+    "number_theory/test/00090",
+    "algebra/train/01699",
+    "intermediate_algebra/train/00357",
+    "number_theory/train/00294",
+    "olympiadbench:2408",
+    "precalculus/train/00115",
+    "precalculus/test/00204",
+    "intermediate_algebra/test/00780",
+    "counting_and_probability/test/00298",
+    "intermediate_algebra/test/00806",
+    "omni/00683",
+    "algebra/train/01560",
+    "number_theory/train/00538",
+    "olympiadbench:3030",
+    "algebra/train/01231",
+    "intermediate_algebra/train/00394",
+    "intermediate_algebra/train/00391",
+    "olympiadbench:2718",
+    "omni/01917",
+    "precalculus/test/00488",
+    "intermediate_algebra/test/00764",
+    "intermediate_algebra/test/00097",
+    "intermediate_algebra/train/00907",
+    "precalculus/train/00122",
+    "precalculus/test/00487",
+    "number_theory/train/00037",
+    "number_theory/train/00635",
+    "precalculus/test/00045",
+    "number_theory/train/00288",
+    "intermediate_algebra/train/00975",
+    "omni/01371",
+    "intermediate_algebra/test/00084",
+    "number_theory/test/00057",
+    "omni/00953",
+    "olympiadbench:2392",
+    "omni/00409",
+    "counting_and_probability/train/00236",
+    "intermediate_algebra/train/00330",
+    "intermediate_algebra/test/00147",
+    "intermediate_algebra/train/00749",
+    "intermediate_algebra/test/00338"
+   ],
+   "math_dup_groups": 69,
+   "math_gold_equals_manifest": 69,
+   "math_group_size_gt1": 0,
+   "math_internal_split": {
+    "calib_train": 5,
+    "calib_val": 7,
+    "construction": 19,
+    "study_dev": 4,
+    "test": 34
+   },
+   "math_items": 69,
+   "math_level": {
+    "Level 4": 28,
+    "Level 5": 41
+   },
+   "math_orig_split": {
+    "test": 34,
+    "train": 35
+   },
+   "math_subject": {
+    "algebra": 12,
+    "counting_and_probability": 3,
+    "intermediate_algebra": 22,
+    "number_theory": 14,
+    "precalculus": 18
+   },
+   "math_text_equals_manifest": 69,
+   "n_rows": 95,
+   "omni_text_equals_omni_test": 15,
+   "source": {
+    "MATH": 69,
+    "OlympiadBench": 11,
+    "Omni-MATH": 15
+   }
+  },
+  "stress_SuperHard": {
+   "distinct_ids": 126,
+   "distinct_norm_text": 126,
+   "families": 126,
+   "ids": [
+    "omni/01649",
+    "precalculus/train/00516",
+    "omni/00952",
+    "olympiadbench:2256",
+    "intermediate_algebra/train/00561",
+    "precalculus/train/00163",
+    "intermediate_algebra/test/00672",
+    "number_theory/train/00733",
+    "number_theory/train/00586",
+    "intermediate_algebra/train/00921",
+    "omni/00483",
+    "intermediate_algebra/test/00234",
+    "omni/01406",
+    "precalculus/test/00319",
+    "olympiadbench:2739",
+    "omni/01565",
+    "omni/01597",
+    "precalculus/test/00415",
+    "number_theory/train/00613",
+    "omni/01327",
+    "omni/01178",
+    "olympiadbench:2461",
+    "number_theory/train/00590",
+    "olympiadbench:2745",
+    "precalculus/train/00020",
+    "intermediate_algebra/train/00763",
+    "intermediate_algebra/test/00456",
+    "omni/03242",
+    "precalculus/train/00083",
+    "precalculus/train/00600",
+    "omni/01663",
+    "intermediate_algebra/train/00091",
+    "intermediate_algebra/test/00148",
+    "intermediate_algebra/train/00243",
+    "intermediate_algebra/train/00331",
+    "number_theory/train/00561",
+    "omni/01384",
+    "omni/02577",
+    "omni/03609",
+    "number_theory/train/00662",
+    "precalculus/test/00099",
+    "number_theory/train/00674",
+    "omni/01199",
+    "omni/01615",
+    "omni/03319",
+    "omni/00985",
+    "omni/03250",
+    "omni/00954",
+    "omni/01576",
+    "olympiadbench:2912",
+    "precalculus/train/00402",
+    "omni/00468",
+    "omni/01797",
+    "number_theory/train/00671",
+    "omni/00720",
+    "intermediate_algebra/train/00918",
+    "omni/02073",
+    "intermediate_algebra/test/00185",
+    "algebra/test/00447",
+    "precalculus/train/00232",
+    "omni/02215",
+    "olympiadbench:1747",
+    "intermediate_algebra/test/00242",
+    "number_theory/test/00140",
+    "omni/01748",
+    "omni/02027",
+    "omni/01350",
+    "omni/00131",
+    "omni/01628",
+    "omni/01818",
+    "intermediate_algebra/train/00580",
+    "intermediate_algebra/train/00092",
+    "olympiadbench:2979",
+    "omni/01542",
+    "omni/03336",
+    "number_theory/train/00656",
+    "precalculus/train/00738",
+    "omni/02102",
+    "omni/00577",
+    "omni/00664",
+    "omni/01813",
+    "omni/01694",
+    "precalculus/test/00111",
+    "number_theory/train/00664",
+    "olympiadbench:2859",
+    "precalculus/test/00514",
+    "precalculus/train/00559",
+    "olympiadbench:2242",
+    "intermediate_algebra/test/00291",
+    "intermediate_algebra/train/00631",
+    "number_theory/train/00553",
+    "number_theory/train/00623",
+    "precalculus/test/00057",
+    "omni/01444",
+    "omni/01626",
+    "olympiadbench:2603",
+    "omni/01332",
+    "number_theory/train/00126",
+    "intermediate_algebra/train/00511",
+    "omni/03245",
+    "omni/00652",
+    "omni/00330",
+    "precalculus/train/00502",
+    "olympiadbench:1678",
+    "precalculus/train/00409",
+    "olympiadbench:2742",
+    "intermediate_algebra/train/00004",
+    "precalculus/test/00116",
+    "intermediate_algebra/train/00655",
+    "precalculus/train/00152",
+    "omni/00091",
+    "intermediate_algebra/test/00732",
+    "olympiadbench:2968",
+    "omni/02772",
+    "omni/01488",
+    "number_theory/train/00581",
+    "intermediate_algebra/test/00368",
+    "omni/03614",
+    "precalculus/train/00077",
+    "omni/02132",
+    "olympiadbench:2790",
+    "number_theory/test/00293",
+    "omni/00200",
+    "omni/01828",
+    "omni/01608",
+    "number_theory/test/00433"
+   ],
+   "math_dup_groups": 60,
+   "math_gold_equals_manifest": 60,
+   "math_group_size_gt1": 2,
+   "math_internal_split": {
+    "calib_train": 3,
+    "calib_val": 6,
+    "construction": 25,
+    "excluded": 2,
+    "study_dev": 4,
+    "test": 20
+   },
+   "math_items": 60,
+   "math_level": {
+    "Level 4": 19,
+    "Level 5": 41
+   },
+   "math_orig_split": {
+    "test": 20,
+    "train": 40
+   },
+   "math_subject": {
+    "algebra": 1,
+    "intermediate_algebra": 22,
+    "number_theory": 17,
+    "precalculus": 20
+   },
+   "math_text_equals_manifest": 60,
+   "n_rows": 126,
+   "omni_text_equals_omni_test": 52,
+   "source": {
+    "MATH": 60,
+    "OlympiadBench": 14,
+    "Omni-MATH": 52
+   }
+  },
+  "test": {
+   "distinct_ids": 128,
+   "distinct_norm_text": 128,
+   "ids": [
+    "intermediate_algebra/test/00874",
+    "intermediate_algebra/test/00778",
+    "intermediate_algebra/test/00220",
+    "intermediate_algebra/test/00758",
+    "intermediate_algebra/test/00039",
+    "intermediate_algebra/test/00482",
+    "intermediate_algebra/test/00757",
+    "algebra/test/00379",
+    "intermediate_algebra/test/00818",
+    "intermediate_algebra/test/00703",
+    "intermediate_algebra/test/00211",
+    "intermediate_algebra/test/00150",
+    "intermediate_algebra/test/00280",
+    "intermediate_algebra/test/00631",
+    "intermediate_algebra/test/00000",
+    "algebra/test/00416",
+    "intermediate_algebra/test/00554",
+    "algebra/test/01142",
+    "intermediate_algebra/test/00528",
+    "intermediate_algebra/test/00206",
+    "algebra/test/00397",
+    "intermediate_algebra/test/00315",
+    "algebra/test/00382",
+    "intermediate_algebra/test/00533",
+    "intermediate_algebra/test/00025",
+    "intermediate_algebra/test/00209",
+    "intermediate_algebra/test/00676",
+    "algebra/test/00552",
+    "intermediate_algebra/test/00171",
+    "intermediate_algebra/test/00827",
+    "intermediate_algebra/test/00383",
+    "intermediate_algebra/test/00173",
+    "intermediate_algebra/test/00373",
+    "intermediate_algebra/test/00225",
+    "intermediate_algebra/test/00568",
+    "intermediate_algebra/test/00783",
+    "intermediate_algebra/test/00850",
+    "algebra/test/00576",
+    "intermediate_algebra/test/00815",
+    "intermediate_algebra/test/00353",
+    "algebra/test/00095",
+    "intermediate_algebra/test/00530",
+    "intermediate_algebra/test/00245",
+    "algebra/test/00806",
+    "intermediate_algebra/test/00348",
+    "algebra/test/00078",
+    "algebra/test/01080",
+    "intermediate_algebra/test/00728",
+    "algebra/test/00109",
+    "intermediate_algebra/test/00418",
+    "intermediate_algebra/test/00221",
+    "intermediate_algebra/test/00746",
+    "algebra/test/00880",
+    "intermediate_algebra/test/00872",
+    "algebra/test/00930",
+    "algebra/test/00305",
+    "intermediate_algebra/test/00360",
+    "algebra/test/00392",
+    "intermediate_algebra/test/00210",
+    "intermediate_algebra/test/00887",
+    "algebra/test/00531",
+    "intermediate_algebra/test/00114",
+    "algebra/test/00468",
+    "algebra/test/00495",
+    "intermediate_algebra/test/00478",
+    "algebra/test/00494",
+    "intermediate_algebra/test/00356",
+    "intermediate_algebra/test/00888",
+    "intermediate_algebra/test/00552",
+    "intermediate_algebra/test/00071",
+    "algebra/test/00885",
+    "intermediate_algebra/test/00643",
+    "intermediate_algebra/test/00693",
+    "algebra/test/00822",
+    "intermediate_algebra/test/00453",
+    "intermediate_algebra/test/00117",
+    "intermediate_algebra/test/00257",
+    "intermediate_algebra/test/00519",
+    "intermediate_algebra/test/00354",
+    "algebra/test/00594",
+    "intermediate_algebra/test/00620",
+    "intermediate_algebra/test/00030",
+    "algebra/test/00348",
+    "intermediate_algebra/test/00420",
+    "intermediate_algebra/test/00207",
+    "intermediate_algebra/test/00376",
+    "algebra/test/01128",
+    "algebra/test/00265",
+    "algebra/test/00680",
+    "algebra/test/00481",
+    "intermediate_algebra/test/00594",
+    "intermediate_algebra/test/00891",
+    "intermediate_algebra/test/00137",
+    "algebra/test/00620",
+    "algebra/test/00878",
+    "algebra/test/00054",
+    "intermediate_algebra/test/00875",
+    "intermediate_algebra/test/00741",
+    "intermediate_algebra/test/00178",
+    "algebra/test/00213",
+    "intermediate_algebra/test/00228",
+    "intermediate_algebra/test/00892",
+    "algebra/test/00832",
+    "algebra/test/00540",
+    "intermediate_algebra/test/00535",
+    "intermediate_algebra/test/00696",
+    "intermediate_algebra/test/00332",
+    "intermediate_algebra/test/00300",
+    "intermediate_algebra/test/00415",
+    "algebra/test/01027",
+    "algebra/test/00730",
+    "intermediate_algebra/test/00824",
+    "algebra/test/00742",
+    "intermediate_algebra/test/00490",
+    "algebra/test/00568",
+    "algebra/test/00541",
+    "algebra/test/00791",
+    "intermediate_algebra/test/00895",
+    "intermediate_algebra/test/00410",
+    "algebra/test/00234",
+    "intermediate_algebra/test/00570",
+    "intermediate_algebra/test/00507",
+    "algebra/test/00353",
+    "intermediate_algebra/test/00709",
+    "intermediate_algebra/test/00048",
+    "intermediate_algebra/test/00871",
+    "algebra/test/01168",
+    "intermediate_algebra/test/00365"
+   ],
+   "math_dup_groups": 128,
+   "math_gold_equals_manifest": 128,
+   "math_group_size_gt1": 1,
+   "math_internal_split": {
+    "test": 128
+   },
+   "math_items": 128,
+   "math_level": {
+    "Level 4": 51,
+    "Level 5": 77
+   },
+   "math_orig_split": {
+    "test": 128
+   },
+   "math_subject": {
+    "algebra": 43,
+    "intermediate_algebra": 85
+   },
+   "math_text_equals_manifest": 128,
+   "n_rows": 128,
+   "omni_text_equals_omni_test": 0,
+   "source": {
+    "MATH": 128
+   }
+  }
+ },
+ "sets_screening": {
+  "candidates-authored-v1/auth_related.jsonl": {
+   "distinct_ids": 198,
+   "n_rows": 198
+  },
+  "candidates-authored-v1/auth_unrelated.jsonl": {
+   "distinct_ids": 196,
+   "n_rows": 196
+  },
+  "candidates-authored-v2/auth2_related.jsonl": {
+   "distinct_ids": 296,
+   "n_rows": 296
+  },
+  "candidates-authored-v2/auth2_unrelated.jsonl": {
+   "distinct_ids": 118,
+   "n_rows": 118
+  },
+  "candidates-v1-study/calib_train.jsonl": {
+   "distinct_ids": 200,
+   "n_rows": 200
+  },
+  "candidates-v1-study/calib_val.jsonl": {
+   "distinct_ids": 200,
+   "n_rows": 200
+  },
+  "candidates-v1-study/hard.jsonl": {
+   "distinct_ids": 154,
+   "n_rows": 154
+  },
+  "candidates-v1-study/hard_reserve.jsonl": {
+   "distinct_ids": 30,
+   "n_rows": 30
+  },
+  "candidates-v1-study/probe_related_dev.jsonl": {
+   "distinct_ids": 31,
+   "n_rows": 31
+  },
+  "candidates-v1-study/probe_unrelated_dev.jsonl": {
+   "distinct_ids": 47,
+   "n_rows": 47
+  },
+  "candidates-v1-study/related.jsonl": {
+   "distinct_ids": 110,
+   "n_rows": 110
+  },
+  "candidates-v1-study/target_dev.jsonl": {
+   "distinct_ids": 63,
+   "n_rows": 63
+  },
+  "candidates-v1-study/target_test.jsonl": {
+   "distinct_ids": 209,
+   "n_rows": 209
+  },
+  "candidates-v1-study/unrelated.jsonl": {
+   "distinct_ids": 152,
+   "n_rows": 152
+  },
+  "omni-v1/omni_hard.jsonl": {
+   "distinct_ids": 195,
+   "n_rows": 195
+  },
+  "rescreen-k8-h/h_k8.jsonl": {
+   "distinct_ids": 107,
+   "n_rows": 107
+  },
+  "rescreen-k8-h/related_k8.jsonl": {
+   "distinct_ids": 302,
+   "n_rows": 302
+  },
+  "rescreen-k8-h/unrelated_k8.jsonl": {
+   "distinct_ids": 239,
+   "n_rows": 239
+  }
+ },
+ "within": {
+  "H_train": {
+   "J3m": {
+    "hits": [],
+    "max": 0.33064516129032256,
+    "max_pair": [
+     "intermediate_algebra/train/00592",
+     "intermediate_algebra/train/01249"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.23711340206185566,
+    "max_pair": [
+     "intermediate_algebra/train/00592",
+     "intermediate_algebra/train/01249"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "J_H": {
+   "J3m": {
+    "hits": [],
+    "max": 0.23711340206185566,
+    "max_pair": [
+     "algebra/train/01241",
+     "algebra/train/01026"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.05084745762711865,
+    "max_pair": [
+     "intermediate_algebra/train/01148",
+     "intermediate_algebra/train/01285"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "J_R": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "algebra/train/01466",
+      "algebra/train/00103"
+     ],
+     [
+      0.5094,
+      "algebra/train/01371",
+      "algebra/train/01095"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/train/01184",
+      "intermediate_algebra/train/00348"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "algebra/train/01466",
+     "algebra/train/00103"
+    ],
+    "n_ge_thr": 3
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.3783783783783784,
+    "max_pair": [
+     "algebra/train/01371",
+     "algebra/train/01095"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "J_U": {
+   "J3m": {
+    "hits": [
+     [
+      0.9167,
+      "number_theory/train/00372",
+      "number_theory/train/00376"
+     ],
+     [
+      0.7812,
+      "number_theory/train/00379",
+      "number_theory/train/00076"
+     ],
+     [
+      0.5,
+      "number_theory/train/00807",
+      "number_theory/train/00076"
+     ]
+    ],
+    "max": 0.9166666666666666,
+    "max_pair": [
+     "number_theory/train/00372",
+     "number_theory/train/00376"
+    ],
+    "n_ge_thr": 3
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.17647058823529413,
+    "max_pair": [
+     "number_theory/train/00169",
+     "number_theory/train/00248"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "R_pool": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "syn-R4-074",
+      "syn-R4-072"
+     ],
+     [
+      1.0,
+      "syn-R4-064",
+      "syn-R4-063"
+     ],
+     [
+      0.8333,
+      "syn-R5-033",
+      "syn-R5-031"
+     ],
+     [
+      0.8065,
+      "syn-R4-064",
+      "syn-R4-030"
+     ],
+     [
+      0.8065,
+      "syn-R4-030",
+      "syn-R4-063"
+     ],
+     [
+      0.8049,
+      "syn-R4-090",
+      "syn-R4-089"
+     ],
+     [
+      0.8,
+      "syn-R4-049",
+      "syn-R4-030"
+     ],
+     [
+      0.7647,
+      "syn-R1-017",
+      "syn-R3-005"
+     ],
+     [
+      0.7619,
+      "syn-R4-091",
+      "syn-R4-089"
+     ],
+     [
+      0.7576,
+      "syn-R5-038",
+      "syn-R5-037"
+     ],
+     [
+      0.7576,
+      "syn-R5-017",
+      "syn-R5-033"
+     ],
+     [
+      0.7561,
+      "syn-R4-091",
+      "syn-R4-090"
+     ],
+     [
+      0.7273,
+      "syn-R5-017",
+      "syn-R5-031"
+     ],
+     [
+      0.7027,
+      "syn-R5-026",
+      "syn-R5-027"
+     ],
+     [
+      0.6364,
+      "syn-R4-049",
+      "syn-R4-064"
+     ],
+     [
+      0.6364,
+      "syn-R4-049",
+      "syn-R4-063"
+     ],
+     [
+      0.6316,
+      "syn-R3-006",
+      "syn-R3-005"
+     ],
+     [
+      0.6296,
+      "syn-R2-068",
+      "syn-R2-055"
+     ],
+     [
+      0.625,
+      "syn-R2-068",
+      "syn-R5-017"
+     ],
+     [
+      0.5957,
+      "syn-R1-013",
+      "syn-R3-035"
+     ],
+     [
+      0.5938,
+      "syn-R4-012",
+      "syn-R4-010"
+     ],
+     [
+      0.587,
+      "syn-R4-098",
+      "syn-R4-091"
+     ],
+     [
+      0.5676,
+      "syn-R5-017",
+      "syn-R4-030"
+     ],
+     [
+      0.5625,
+      "syn-R2-068",
+      "syn-R5-033"
+     ],
+     [
+      0.5625,
+      "syn-R2-068",
+      "syn-R4-064"
+     ],
+     [
+      0.5625,
+      "syn-R2-068",
+      "syn-R4-063"
+     ],
+     [
+      0.5625,
+      "syn-R2-068",
+      "syn-R4-030"
+     ],
+     [
+      0.5556,
+      "syn-R5-038",
+      "syn-R5-031"
+     ],
+     [
+      0.5532,
+      "syn-R4-098",
+      "syn-R4-090"
+     ],
+     [
+      0.5526,
+      "syn-R5-017",
+      "syn-R5-038"
+     ],
+     [
+      0.5526,
+      "syn-R5-017",
+      "syn-R5-037"
+     ],
+     [
+      0.5455,
+      "syn-R3-037",
+      "syn-R3-038"
+     ],
+     [
+      0.5405,
+      "syn-R5-033",
+      "syn-R5-038"
+     ],
+     [
+      0.5312,
+      "syn-R2-068",
+      "syn-R5-031"
+     ],
+     [
+      0.5306,
+      "syn-R4-098",
+      "syn-R4-089"
+     ],
+     [
+      0.5294,
+      "syn-R4-070",
+      "syn-R5-046"
+     ],
+     [
+      0.5278,
+      "syn-R5-035",
+      "syn-R5-017"
+     ],
+     [
+      0.52,
+      "syn-R2-072",
+      "syn-R2-071"
+     ],
+     [
+      0.5185,
+      "syn-R2-068",
+      "syn-R2-072"
+     ],
+     [
+      0.5172,
+      "syn-R5-035",
+      "syn-R2-072"
+     ],
+     [
+      0.5152,
+      "syn-R5-033",
+      "syn-R2-055"
+     ],
+     [
+      0.5143,
+      "syn-R4-049",
+      "syn-R4-041"
+     ],
+     [
+      0.5135,
+      "syn-R5-033",
+      "syn-R4-063"
+     ],
+     [
+      0.5135,
+      "syn-R4-064",
+      "syn-R5-033"
+     ],
+     [
+      0.5135,
+      "syn-R3-085",
+      "syn-R5-075"
+     ],
+     [
+      0.5,
+      "syn-R5-047",
+      "syn-R5-046"
+     ],
+     [
+      0.5,
+      "syn-R5-033",
+      "syn-R5-037"
+     ],
+     [
+      0.5,
+      "syn-R2-054",
+      "syn-R2-055"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "syn-R4-074",
+     "syn-R4-072"
+    ],
+    "n_ge_thr": 48
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.41935483870967744,
+    "max_pair": [
+     "syn-R5-033",
+     "syn-R5-031"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "U_pool": {
+   "J3m": {
+    "hits": [
+     [
+      1.0,
+      "syn-U3-106",
+      "syn-U3-108"
+     ],
+     [
+      1.0,
+      "syn-U3-099",
+      "syn-U3-100"
+     ],
+     [
+      1.0,
+      "syn-U3-081",
+      "syn-U3-080"
+     ],
+     [
+      1.0,
+      "syn-U3-081",
+      "syn-U3-079"
+     ],
+     [
+      1.0,
+      "syn-U3-081",
+      "syn-U3-077"
+     ],
+     [
+      1.0,
+      "syn-U3-079",
+      "syn-U3-080"
+     ],
+     [
+      1.0,
+      "syn-U3-078",
+      "syn-U3-081"
+     ],
+     [
+      1.0,
+      "syn-U3-078",
+      "syn-U3-080"
+     ],
+     [
+      1.0,
+      "syn-U3-078",
+      "syn-U3-079"
+     ],
+     [
+      1.0,
+      "syn-U3-078",
+      "syn-U3-077"
+     ],
+     [
+      1.0,
+      "syn-U3-077",
+      "syn-U3-080"
+     ],
+     [
+      1.0,
+      "syn-U3-077",
+      "syn-U3-079"
+     ],
+     [
+      1.0,
+      "syn-U3-069",
+      "syn-U3-070"
+     ],
+     [
+      1.0,
+      "syn-U3-069",
+      "syn-U3-068"
+     ],
+     [
+      1.0,
+      "syn-U3-068",
+      "syn-U3-070"
+     ],
+     [
+      1.0,
+      "syn-U3-059",
+      "syn-U2-036"
+     ],
+     [
+      1.0,
+      "syn-U3-038",
+      "syn-U2-018"
+     ],
+     [
+      1.0,
+      "syn-U3-029",
+      "syn-U3-028"
+     ],
+     [
+      1.0,
+      "syn-U3-026",
+      "syn-U3-029"
+     ],
+     [
+      1.0,
+      "syn-U3-026",
+      "syn-U3-028"
+     ],
+     [
+      1.0,
+      "syn-U2-034",
+      "syn-U3-059"
+     ],
+     [
+      1.0,
+      "syn-U2-034",
+      "syn-U2-036"
+     ],
+     [
+      1.0,
+      "syn-U1-053",
+      "syn-U1-052"
+     ],
+     [
+      1.0,
+      "syn-U1-036",
+      "syn-U1-025"
+     ],
+     [
+      1.0,
+      "syn-U1-036",
+      "syn-U1-012"
+     ],
+     [
+      1.0,
+      "syn-U1-012",
+      "syn-U1-025"
+     ],
+     [
+      0.9091,
+      "syn-U1-036",
+      "syn-U3-017"
+     ],
+     [
+      0.9091,
+      "syn-U1-025",
+      "syn-U3-017"
+     ],
+     [
+      0.9091,
+      "syn-U1-012",
+      "syn-U3-017"
+     ],
+     [
+      0.75,
+      "syn-U3-100",
+      "syn-U3-028"
+     ],
+     [
+      0.75,
+      "syn-U3-099",
+      "syn-U3-029"
+     ],
+     [
+      0.75,
+      "syn-U3-099",
+      "syn-U3-028"
+     ],
+     [
+      0.75,
+      "syn-U3-099",
+      "syn-U3-026"
+     ],
+     [
+      0.75,
+      "syn-U3-029",
+      "syn-U3-100"
+     ],
+     [
+      0.75,
+      "syn-U3-026",
+      "syn-U3-100"
+     ],
+     [
+      0.6957,
+      "syn-U3-038",
+      "syn-U1-053"
+     ],
+     [
+      0.6957,
+      "syn-U3-038",
+      "syn-U1-052"
+     ],
+     [
+      0.6957,
+      "syn-U2-018",
+      "syn-U1-053"
+     ],
+     [
+      0.6957,
+      "syn-U2-018",
+      "syn-U1-052"
+     ],
+     [
+      0.6667,
+      "syn-U3-117",
+      "syn-U3-112"
+     ],
+     [
+      0.6522,
+      "syn-U3-088",
+      "syn-U3-080"
+     ],
+     [
+      0.6522,
+      "syn-U3-081",
+      "syn-U3-088"
+     ],
+     [
+      0.6522,
+      "syn-U3-079",
+      "syn-U3-088"
+     ],
+     [
+      0.6522,
+      "syn-U3-078",
+      "syn-U3-088"
+     ],
+     [
+      0.6522,
+      "syn-U3-077",
+      "syn-U3-088"
+     ],
+     [
+      0.65,
+      "syn-U3-108",
+      "syn-U3-112"
+     ],
+     [
+      0.65,
+      "syn-U3-106",
+      "syn-U3-112"
+     ],
+     [
+      0.6296,
+      "syn-U3-038",
+      "syn-U3-091"
+     ],
+     [
+      0.6296,
+      "syn-U2-018",
+      "syn-U3-091"
+     ],
+     [
+      0.625,
+      "syn-U3-100",
+      "syn-U3-080"
+     ],
+     [
+      0.625,
+      "syn-U3-100",
+      "syn-U3-079"
+     ],
+     [
+      0.625,
+      "syn-U3-099",
+      "syn-U3-081"
+     ],
+     [
+      0.625,
+      "syn-U3-099",
+      "syn-U3-080"
+     ],
+     [
+      0.625,
+      "syn-U3-099",
+      "syn-U3-079"
+     ],
+     [
+      0.625,
+      "syn-U3-099",
+      "syn-U3-077"
+     ],
+     [
+      0.625,
+      "syn-U3-081",
+      "syn-U3-100"
+     ],
+     [
+      0.625,
+      "syn-U3-078",
+      "syn-U3-100"
+     ],
+     [
+      0.625,
+      "syn-U3-078",
+      "syn-U3-099"
+     ],
+     [
+      0.625,
+      "syn-U3-077",
+      "syn-U3-100"
+     ],
+     [
+      0.619,
+      "syn-U2-098",
+      "syn-U3-112"
+     ]
+    ],
+    "max": 1.0,
+    "max_pair": [
+     "syn-U3-078",
+     "syn-U3-081"
+    ],
+    "n_ge_thr": 90
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.375,
+    "max_pair": [
+     "syn-U3-106",
+     "syn-U3-108"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "calib_train": {
+   "J3m": {
+    "hits": [
+     [
+      0.5625,
+      "number_theory/train/00339",
+      "number_theory/train/00327"
+     ]
+    ],
+    "max": 0.5625,
+    "max_pair": [
+     "number_theory/train/00339",
+     "number_theory/train/00327"
+    ],
+    "n_ge_thr": 1
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.1388888888888889,
+    "max_pair": [
+     "number_theory/train/00339",
+     "number_theory/train/00327"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "calib_val": {
+   "J3m": {
+    "hits": [],
+    "max": 0.1917808219178082,
+    "max_pair": [
+     "intermediate_algebra/train/00695",
+     "intermediate_algebra/train/00699"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.047619047619047616,
+    "max_pair": [
+     "number_theory/train/00228",
+     "intermediate_algebra/train/00269"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "cue": {
+   "J3m": {
+    "hits": [],
+    "max": 0.13157894736842105,
+    "max_pair": [
+     "intermediate_algebra/test/00715",
+     "intermediate_algebra/test/00168"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.017543859649122806,
+    "max_pair": [
+     "algebra/test/01094",
+     "algebra/test/00863"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "dev": {
+   "J3m": {
+    "hits": [],
+    "max": 0.3793103448275862,
+    "max_pair": [
+     "algebra/train/01241",
+     "algebra/train/01083"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.14634146341463414,
+    "max_pair": [
+     "algebra/train/01241",
+     "algebra/train/01083"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "stress_Harder": {
+   "J3m": {
+    "hits": [],
+    "max": 0.24489795918367346,
+    "max_pair": [
+     "intermediate_algebra/train/00394",
+     "intermediate_algebra/test/00764"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.07142857142857142,
+    "max_pair": [
+     "number_theory/train/00557",
+     "intermediate_algebra/train/00907"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "stress_SuperHard": {
+   "J3m": {
+    "hits": [],
+    "max": 0.4166666666666667,
+    "max_pair": [
+     "number_theory/train/00671",
+     "omni/00720"
+    ],
+    "n_ge_thr": 0
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.22580645161290322,
+    "max_pair": [
+     "number_theory/train/00671",
+     "omni/00720"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  },
+  "test": {
+   "J3m": {
+    "hits": [
+     [
+      0.9062,
+      "intermediate_algebra/test/00150",
+      "intermediate_algebra/test/00376"
+     ],
+     [
+      0.5517,
+      "algebra/test/00832",
+      "algebra/test/00353"
+     ],
+     [
+      0.5429,
+      "algebra/test/00397",
+      "algebra/test/00930"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/test/00420",
+      "intermediate_algebra/test/00376"
+     ],
+     [
+      0.5,
+      "intermediate_algebra/test/00206",
+      "intermediate_algebra/test/00530"
+     ]
+    ],
+    "max": 0.90625,
+    "max_pair": [
+     "intermediate_algebra/test/00150",
+     "intermediate_algebra/test/00376"
+    ],
+    "n_ge_thr": 5
+   },
+   "J5": {
+    "hits": [],
+    "max": 0.32653061224489793,
+    "max_pair": [
+     "algebra/test/00397",
+     "algebra/test/00930"
+    ],
+    "n_ge_thr": 0
+   },
+   "dup_norm_text": 0
+  }
+ }
+}

@@ -1,0 +1,411 @@
+{
+ "run_dir": "/data/user_data/vineethb/qis/runs/qis-main-R-s202-sym",
+ "problems": [],
+ "metrics_rows": 704,
+ "metrics_unparsable": 0,
+ "segments": [
+  {
+   "utc": 1794192274.0715594,
+   "job": "11081729",
+   "restart": "0",
+   "resume_round": 0,
+   "resume_from": null,
+   "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+   "gpu": "NVIDIA L40",
+   "host": "babel-w5-24",
+   "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51"
+  },
+  {
+   "utc": 1794205479.899588,
+   "job": "11094190",
+   "restart": "0",
+   "resume_round": 16,
+   "resume_from": "/data/user_data/vineethb/qis/ckpt/qis-main-R-s202-sym/round_0016",
+   "code_sha": "dd71b2066b83a415d4fb1e3a9a3d86a50488c60e",
+   "gpu": "NVIDIA L40S",
+   "host": "babel-p9-24",
+   "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51"
+  }
+ ],
+ "configs_distinct": [
+  {
+   "arm": "R",
+   "attempt_id": "a2",
+   "cap_schedule": [
+    [
+     0,
+     8192
+    ],
+    [
+     32,
+     12288
+    ]
+   ],
+   "ckpt_every": 16,
+   "eps_high": 0.2,
+   "eps_low": 0.2,
+   "eval_panels": {
+    "dev": 8,
+    "probe_J_R": 8,
+    "probe_J_U": 8
+   },
+   "eval_rounds": [
+    0,
+    32,
+    64,
+    96,
+    128
+   ],
+   "gpu_mem_util": 0.3,
+   "grad_clip": null,
+   "init_ckpt": null,
+   "lr": 2e-06,
+   "max_num_seqs": null,
+   "max_tokens": 12288,
+   "retain_rounds": [],
+   "rounds": 128,
+   "run_id": "qis-main-R-s202-sym",
+   "seed": 202
+  },
+  {
+   "arm": "R",
+   "attempt_id": "a2",
+   "cap_schedule": [
+    [
+     0,
+     8192
+    ],
+    [
+     32,
+     12288
+    ]
+   ],
+   "ckpt_every": 4,
+   "eps_high": 0.2,
+   "eps_low": 0.2,
+   "eval_panels": {
+    "dev": 8,
+    "probe_J_R": 8,
+    "probe_J_U": 8
+   },
+   "eval_rounds": [
+    0,
+    32,
+    64,
+    96,
+    128
+   ],
+   "gpu_mem_util": 0.3,
+   "grad_clip": null,
+   "init_ckpt": null,
+   "lr": 2e-06,
+   "max_num_seqs": null,
+   "max_tokens": 12288,
+   "retain_rounds": [],
+   "rounds": 128,
+   "run_id": "qis-main-R-s202-sym",
+   "seed": 202
+  }
+ ],
+ "events": {
+  "start": 2,
+  "checkpoint_started": 11,
+  "checkpoint_failed": 4,
+  "resume": 1,
+  "checkpoint": 5,
+  "complete": 1
+ },
+ "canonical_round_rows": 128,
+ "canonical_step_rows": 512,
+ "rounds_with_duplicate_rows": [
+  17,
+  18,
+  19
+ ],
+ "round_rows_by_segment": {
+  "0": 16,
+  "1": 112
+ },
+ "step_rows_by_segment": {
+  "0": 64,
+  "1": 448
+ },
+ "opt_step_labels_distinct": 524,
+ "opt_step_label_canonical_minmax": [
+  1,
+  524
+ ],
+ "train_records": {
+  "files": 128,
+  "attempts": 16384,
+  "schedule_ok": 16384,
+  "seed_ok": 16384,
+  "ntok_eq_len": 16384,
+  "le_cap": 16384,
+  "stop": 15594,
+  "stop_eos": 15594,
+  "unknown": 0,
+  "status_reward_ok": 16384,
+  "adv_ok": 16384,
+  "group_counts_ok": 128,
+  "zero_grad_steps_observed": 25,
+  "capped": 790,
+  "capped_ok": 790
+ },
+ "adv_max_abs_diff": 0.0,
+ "train_file_mtime_off_row": [],
+ "minibatch_zero_grad_match": {
+  "sorted": [
+   512,
+   512
+  ],
+  "unsorted": [
+   476,
+   512
+  ]
+ },
+ "minibatch_valid_tokens_match": {
+  "sorted": [
+   512,
+   512
+  ],
+  "unsorted": [
+   21,
+   512
+  ]
+ },
+ "evals": [
+  {
+   "panel": "dev",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "dev",
+   "round": 32,
+   "rows": 1,
+   "segment": 1,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "dev",
+   "round": 64,
+   "rows": 1,
+   "segment": 1,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "dev",
+   "round": 96,
+   "rows": 1,
+   "segment": 1,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "dev",
+   "round": 128,
+   "rows": 1,
+   "segment": 1,
+   "records": 424,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 424,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 32,
+   "rows": 1,
+   "segment": 1,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 64,
+   "rows": 1,
+   "segment": 1,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 96,
+   "rows": 1,
+   "segment": 1,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_R",
+   "round": 128,
+   "rows": 1,
+   "segment": 1,
+   "records": 224,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 224,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 0,
+   "rows": 1,
+   "segment": 0,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 32,
+   "rows": 1,
+   "segment": 1,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 8192
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 64,
+   "rows": 1,
+   "segment": 1,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 96,
+   "rows": 1,
+   "segment": 1,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  },
+  {
+   "panel": "probe_J_U",
+   "round": 128,
+   "rows": 1,
+   "segment": 1,
+   "records": 256,
+   "ids_eq_panel": true,
+   "n_each": [
+    8
+   ],
+   "seeds_ok": 256,
+   "counts_eq_row": true,
+   "mtime_minus_row_s": -0.0,
+   "max_tokens": 12288
+  }
+ ],
+ "record_side_dirs": {
+  "records/superseded-11081729": [
+   "train_r0016.jsonl.gz",
+   "train_r0017.jsonl.gz",
+   "train_r0018.jsonl.gz"
+  ]
+ }
+}

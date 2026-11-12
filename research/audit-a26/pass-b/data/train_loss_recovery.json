@@ -1,0 +1,3104 @@
+{
+ "H-s101|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.18055555555555555,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 13
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.18055555555555555,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 2,
+    "recovered_round": 34,
+    "solved_round": 24
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 47,
+    "p_local": 0.3977272727272727,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 48,
+    "solved_round": 44
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.1388888888888889,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.1388888888888889,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 17
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 34,
+    "p_local": 0.1111111111111111,
+    "pid": "omni/00984",
+    "presentations_to_recover": 3,
+    "recovered_round": 46,
+    "solved_round": 31
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 51,
+    "p_local": 0.1111111111111111,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 54,
+    "solved_round": 46
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.1111111111111111,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 66,
+    "solved_round": 61
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 67,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 74,
+    "solved_round": 66
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 77,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 11,
+    "recovered_round": 107,
+    "solved_round": 74
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 108,
+    "p_local": 0.009615384615384616,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 107
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.5,
+    "pid": "omni/02796",
+    "presentations_to_recover": 1,
+    "recovered_round": 8,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.10227272727272728,
+    "pid": "intermediate_algebra/train/01205",
+    "presentations_to_recover": 1,
+    "recovered_round": 12,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 22,
+    "p_local": 0.10227272727272728,
+    "pid": "intermediate_algebra/train/01205",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.10227272727272728,
+    "pid": "intermediate_algebra/train/01205",
+    "presentations_to_recover": 1,
+    "recovered_round": 30,
+    "solved_round": 24
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 19,
+    "p_local": 0.3958333333333333,
+    "pid": "omni/01788",
+    "presentations_to_recover": 1,
+    "recovered_round": 20,
+    "solved_round": 13
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.35,
+    "pid": "omni/01413",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.2625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 7
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.46875,
+    "pid": "omni/04174",
+    "presentations_to_recover": 3,
+    "recovered_round": 14,
+    "solved_round": 2
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.041666666666666664,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 26,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 41,
+    "p_local": 0.2727272727272727,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 42,
+    "solved_round": 40
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00379",
+    "presentations_to_recover": 1,
+    "recovered_round": 8,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00379",
+    "presentations_to_recover": 3,
+    "recovered_round": 26,
+    "solved_round": 10
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 12,
+    "p_local": 0.06818181818181818,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 17,
+    "solved_round": 9
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.06818181818181818,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 25,
+    "solved_round": 17
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 26,
+    "p_local": 0.06818181818181818,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 33,
+    "solved_round": 25
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 37,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 33
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 40,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 43,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 45,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 48,
+    "solved_round": 43
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 49,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 3,
+    "recovered_round": 60,
+    "solved_round": 48
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 35,
+    "p_local": 0.3854166666666667,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 34
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.2,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 11,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 12,
+    "p_local": 0.4,
+    "pid": "intermediate_algebra/train/01097",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 10
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.3888888888888889,
+    "pid": "omni/01690",
+    "presentations_to_recover": 1,
+    "recovered_round": 16,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 5,
+    "p_local": 0.140625,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 7,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 29,
+    "p_local": 0.140625,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 35,
+    "solved_round": 26
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 11,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 21,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 22,
+    "solved_round": 17
+   }
+  ],
+  "expected_losses_sampling_local": 40.1077641121146,
+  "expected_losses_sampling_pooled": 15.930710798719367,
+  "loss_episodes": 38,
+  "loss_rate": 0.019968470835522858,
+  "median_rounds_to_recover": 3.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 1903,
+  "presentations": 2048,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 33,
+  "problems_never_solved": 0,
+  "recovered": 37
+ },
+ "H-s101|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.1,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 17
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 40,
+    "p_local": 0.20833333333333334,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 46,
+    "solved_round": 31
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 72,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 6,
+    "recovered_round": 107,
+    "solved_round": 66
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 111,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 107
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.09375,
+    "pid": "intermediate_algebra/train/00379",
+    "presentations_to_recover": 3,
+    "recovered_round": 33,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.5625,
+    "pid": "omni/02796",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 25,
+    "solved_round": 17
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 45,
+    "p_local": 0.125,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 48,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 58,
+    "p_local": 0.125,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 67,
+    "solved_round": 48
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.45,
+    "pid": "omni/01413",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.2,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 12,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.05,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 30,
+    "solved_round": 19
+   }
+  ],
+  "expected_losses_sampling_local": 21.673589948891124,
+  "expected_losses_sampling_pooled": 8.196060617492355,
+  "loss_episodes": 14,
+  "loss_rate": 0.014989293361884369,
+  "median_rounds_to_recover": 6.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 934,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 30,
+  "problems_never_solved": 0,
+  "recovered": 13
+ },
+ "H-s202|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.10416666666666667,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 29,
+    "solved_round": 25
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 30,
+    "p_local": 0.10416666666666667,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 35,
+    "solved_round": 29
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 39,
+    "p_local": 0.5113636363636364,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 41,
+    "solved_round": 35
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 5,
+    "p_local": 0.3068181818181818,
+    "pid": "omni/02008",
+    "presentations_to_recover": 1,
+    "recovered_round": 6,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 3,
+    "p_local": 0.6944444444444444,
+    "pid": "omni/01690",
+    "presentations_to_recover": 1,
+    "recovered_round": 7,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.4090909090909091,
+    "pid": "omni/01558",
+    "presentations_to_recover": 1,
+    "recovered_round": 9,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.2,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 27,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 32,
+    "p_local": 0.2,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 27
+   },
+   {
+    "c_solved": 5,
+    "cap_change_between": false,
+    "lost_round": 40,
+    "p_local": 0.425,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 42,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.375,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 7
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 5,
+    "p_local": 0.10227272727272728,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 6,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.10227272727272728,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 10,
+    "solved_round": 6
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 19,
+    "p_local": 0.10227272727272728,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 20,
+    "solved_round": 13
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.10227272727272728,
+    "pid": "omni/02204",
+    "presentations_to_recover": 3,
+    "recovered_round": 33,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 61,
+    "p_local": 0.2159090909090909,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 63,
+    "solved_round": 54
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 70,
+    "p_local": 0.0625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 6,
+    "recovered_round": 86,
+    "solved_round": 68
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 91,
+    "p_local": 0.0625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 93,
+    "solved_round": 86
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 101,
+    "p_local": 0.14583333333333334,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 103,
+    "solved_round": 93
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 112,
+    "p_local": 0.14583333333333334,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 119,
+    "solved_round": 111
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 26,
+    "p_local": 0.20454545454545456,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 27,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 47,
+    "p_local": 0.07954545454545454,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 53,
+    "solved_round": 42
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 55,
+    "p_local": 0.07954545454545454,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 60,
+    "solved_round": 54
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 63,
+    "p_local": 0.07954545454545454,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 60
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.16666666666666666,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 12,
+    "solved_round": 7
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.1375,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 2,
+    "recovered_round": 14,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.1375,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 15
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 32,
+    "p_local": 0.4375,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.4090909090909091,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 58,
+    "solved_round": 55
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.2222222222222222,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 12
+   }
+  ],
+  "expected_losses_sampling_local": 32.06238842820262,
+  "expected_losses_sampling_pooled": 21.9440463405375,
+  "loss_episodes": 29,
+  "loss_rate": 0.015072765072765074,
+  "median_rounds_to_recover": 2.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 1924,
+  "presentations": 2048,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 24,
+  "problems_never_solved": 0,
+  "recovered": 28
+ },
+ "H-s202|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 3,
+    "recovered_round": 45,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.28125,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 70,
+    "p_local": 0.075,
+    "pid": "omni/02204",
+    "presentations_to_recover": 4,
+    "recovered_round": 93,
+    "solved_round": 65
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 112,
+    "p_local": 0.175,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 126,
+    "solved_round": 108
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 26,
+    "p_local": 0.175,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 32,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 48,
+    "p_local": 0.125,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 54,
+    "solved_round": 42
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.125,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 60
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.15625,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 32,
+    "p_local": 0.55,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 39,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.45,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 59,
+    "solved_round": 50
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.225,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 8
+   }
+  ],
+  "expected_losses_sampling_local": 15.516526205680098,
+  "expected_losses_sampling_pooled": 10.852623812827154,
+  "loss_episodes": 12,
+  "loss_rate": 0.012711864406779662,
+  "median_rounds_to_recover": 7.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 944,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 26,
+  "problems_never_solved": 0,
+  "recovered": 11
+ },
+ "R-s101|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 38,
+    "p_local": 0.325,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 43,
+    "solved_round": 34
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.2,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.2,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 31,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 56,
+    "p_local": 0.25,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 46
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/01174",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 21
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 71,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 82,
+    "solved_round": 67
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 97,
+    "p_local": 0.16666666666666666,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 104,
+    "solved_round": 89
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 13,
+    "p_local": 0.0625,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 29,
+    "p_local": 0.0625,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 52,
+    "p_local": 0.225,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 63,
+    "solved_round": 51
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.175,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 63,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 3,
+    "recovered_round": 81,
+    "solved_round": 61
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 52,
+    "p_local": 0.4,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 55,
+    "solved_round": 44
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.1,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.1,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 30,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 23,
+    "p_local": 0.225,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 26,
+    "solved_round": 15
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 50,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 56,
+    "solved_round": 41
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 68,
+    "p_local": 0.1,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 75,
+    "solved_round": 58
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 88,
+    "p_local": 0.1,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 93,
+    "solved_round": 86
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 112,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 117,
+    "solved_round": 104
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.6,
+    "pid": "omni/04174",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 6
+   }
+  ],
+  "expected_losses_sampling_local": 26.254089197928565,
+  "expected_losses_sampling_pooled": 17.418547280007257,
+  "loss_episodes": 22,
+  "loss_rate": 0.023887079261672096,
+  "median_rounds_to_recover": 6.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 921,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 26,
+  "problems_never_solved": 0,
+  "recovered": 21
+ },
+ "R-s101|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 38,
+    "p_local": 0.325,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 43,
+    "solved_round": 34
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.2,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.2,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 31,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 56,
+    "p_local": 0.25,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 46
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/01174",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 21
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 71,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 82,
+    "solved_round": 67
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 97,
+    "p_local": 0.16666666666666666,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 104,
+    "solved_round": 89
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 13,
+    "p_local": 0.0625,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 29,
+    "p_local": 0.0625,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 52,
+    "p_local": 0.225,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 63,
+    "solved_round": 51
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.175,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 14,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 63,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 3,
+    "recovered_round": 81,
+    "solved_round": 61
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 52,
+    "p_local": 0.4,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 55,
+    "solved_round": 44
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 11,
+    "p_local": 0.1,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.1,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 30,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 23,
+    "p_local": 0.225,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 26,
+    "solved_round": 15
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 50,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 56,
+    "solved_round": 41
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 68,
+    "p_local": 0.1,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 75,
+    "solved_round": 58
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 88,
+    "p_local": 0.1,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 93,
+    "solved_round": 86
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 112,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 117,
+    "solved_round": 104
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.6,
+    "pid": "omni/04174",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 6
+   }
+  ],
+  "expected_losses_sampling_local": 26.254089197928565,
+  "expected_losses_sampling_pooled": 17.418547280007257,
+  "loss_episodes": 22,
+  "loss_rate": 0.023887079261672096,
+  "median_rounds_to_recover": 6.0,
+  "not_recovered_by_128": 1,
+  "opportunities": 921,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 26,
+  "problems_never_solved": 0,
+  "recovered": 21
+ },
+ "R-s202|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.15,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 28,
+    "solved_round": 16
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 60,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 64,
+    "solved_round": 54
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.375,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 62,
+    "solved_round": 51
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.475,
+    "pid": "intermediate_algebra/train/00431",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.15625,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 41,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00379",
+    "presentations_to_recover": 1,
+    "recovered_round": 50,
+    "solved_round": 40
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.21875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.21875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 22,
+    "p_local": 0.175,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 32,
+    "solved_round": 15
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 42,
+    "p_local": 0.15,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 48,
+    "solved_round": 36
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.15,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 74,
+    "solved_round": 60
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 84,
+    "p_local": 0.15625,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 90,
+    "solved_round": 79
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 100,
+    "p_local": 0.0,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 95
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.46875,
+    "pid": "intermediate_algebra/train/01095",
+    "presentations_to_recover": 1,
+    "recovered_round": 16,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 13,
+    "p_local": 0.375,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 10
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 106,
+    "p_local": 0.2,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 113,
+    "solved_round": 99
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.4375,
+    "pid": "intermediate_algebra/train/00301",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 34,
+    "p_local": 0.20833333333333334,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 43,
+    "p_local": 0.20833333333333334,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 50,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.28125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 12
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 102,
+    "p_local": 0.0625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 114,
+    "solved_round": 92
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 119,
+    "p_local": 0.0625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 114
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.15,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 7
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.15,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 31,
+    "solved_round": 18
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.325,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 8
+   }
+  ],
+  "expected_losses_sampling_local": 23.458406050874945,
+  "expected_losses_sampling_pooled": 14.17279691539769,
+  "loss_episodes": 25,
+  "loss_rate": 0.02682403433476395,
+  "median_rounds_to_recover": 7.0,
+  "not_recovered_by_128": 2,
+  "opportunities": 932,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 19,
+  "problems_never_solved": 0,
+  "recovered": 23
+ },
+ "R-s202|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.15,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 28,
+    "solved_round": 16
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 60,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 64,
+    "solved_round": 54
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.375,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 62,
+    "solved_round": 51
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.475,
+    "pid": "intermediate_algebra/train/00431",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.15625,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 41,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00379",
+    "presentations_to_recover": 1,
+    "recovered_round": 50,
+    "solved_round": 40
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.21875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 4
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.21875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 22,
+    "p_local": 0.175,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 32,
+    "solved_round": 15
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 42,
+    "p_local": 0.15,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 48,
+    "solved_round": 36
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.15,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 74,
+    "solved_round": 60
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 84,
+    "p_local": 0.15625,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 90,
+    "solved_round": 79
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 100,
+    "p_local": 0.0,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 95
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.46875,
+    "pid": "intermediate_algebra/train/01095",
+    "presentations_to_recover": 1,
+    "recovered_round": 16,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 13,
+    "p_local": 0.375,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 23,
+    "solved_round": 10
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 106,
+    "p_local": 0.2,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 113,
+    "solved_round": 99
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 10,
+    "p_local": 0.4375,
+    "pid": "intermediate_algebra/train/00301",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 5
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 34,
+    "p_local": 0.20833333333333334,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 43,
+    "p_local": 0.20833333333333334,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 50,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.28125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 12
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 102,
+    "p_local": 0.0625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 114,
+    "solved_round": 92
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 119,
+    "p_local": 0.0625,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 114
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.15,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 18,
+    "solved_round": 7
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.15,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 31,
+    "solved_round": 18
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 17,
+    "p_local": 0.325,
+    "pid": "intermediate_algebra/train/00477",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 8
+   }
+  ],
+  "expected_losses_sampling_local": 23.458406050874945,
+  "expected_losses_sampling_pooled": 14.17279691539769,
+  "loss_episodes": 25,
+  "loss_rate": 0.02682403433476395,
+  "median_rounds_to_recover": 7.0,
+  "not_recovered_by_128": 2,
+  "opportunities": 932,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 19,
+  "problems_never_solved": 0,
+  "recovered": 23
+ },
+ "U-s101|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.03125,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.125,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 29,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 35,
+    "p_local": 0.34375,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 41,
+    "solved_round": 29
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 31,
+    "p_local": 0.3,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 40,
+    "solved_round": 24
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 46,
+    "p_local": 0.125,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 56,
+    "solved_round": 40
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 66,
+    "p_local": 0.0,
+    "pid": "omni/00984",
+    "presentations_to_recover": 7,
+    "recovered_round": 107,
+    "solved_round": 61
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 111,
+    "p_local": 0.075,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 121,
+    "solved_round": 107
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.5,
+    "pid": "omni/01788",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 2
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 69,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 78,
+    "solved_round": 68
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 121,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 128,
+    "solved_round": 115
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.1875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 33,
+    "p_local": 0.4375,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 25
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 79,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 7,
+    "recovered_round": 115,
+    "solved_round": 71
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 126,
+    "p_local": 0.0625,
+    "pid": "omni/02204",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 121
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 44,
+    "p_local": 0.25,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 51,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 6,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.6,
+    "pid": "omni/01012",
+    "presentations_to_recover": 1,
+    "recovered_round": 58,
+    "solved_round": 47
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 85,
+    "p_local": 0.15,
+    "pid": "omni/01012",
+    "presentations_to_recover": 3,
+    "recovered_round": 101,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 69,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 75,
+    "solved_round": 63
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 81,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 2,
+    "recovered_round": 94,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.175,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 27,
+    "solved_round": 12
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 55,
+    "p_local": 0.325,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 59,
+    "solved_round": 52
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 127,
+    "p_local": 0.35,
+    "pid": "omni/01473",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 120
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.075,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 2,
+    "recovered_round": 24,
+    "solved_round": 11
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 30,
+    "p_local": 0.2,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 41,
+    "solved_round": 26
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 58,
+    "p_local": 0.28125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 68,
+    "solved_round": 56
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 86,
+    "p_local": 0.175,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 88,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 100,
+    "p_local": 0.09375,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 112,
+    "solved_round": 93
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 125,
+    "p_local": 0.09375,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 117
+   }
+  ],
+  "expected_losses_sampling_local": 30.161543293643163,
+  "expected_losses_sampling_pooled": 19.43579921828949,
+  "loss_episodes": 29,
+  "loss_rate": 0.031487513572204126,
+  "median_rounds_to_recover": 8.5,
+  "not_recovered_by_128": 3,
+  "opportunities": 921,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 19,
+  "problems_never_solved": 0,
+  "recovered": 26
+ },
+ "U-s101|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 27,
+    "p_local": 0.03125,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 23
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.125,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 29,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 35,
+    "p_local": 0.34375,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 41,
+    "solved_round": 29
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 31,
+    "p_local": 0.3,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 40,
+    "solved_round": 24
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 46,
+    "p_local": 0.125,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 56,
+    "solved_round": 40
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 66,
+    "p_local": 0.0,
+    "pid": "omni/00984",
+    "presentations_to_recover": 7,
+    "recovered_round": 107,
+    "solved_round": 61
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 111,
+    "p_local": 0.075,
+    "pid": "omni/00984",
+    "presentations_to_recover": 2,
+    "recovered_round": 121,
+    "solved_round": 107
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 7,
+    "p_local": 0.5,
+    "pid": "omni/01788",
+    "presentations_to_recover": 1,
+    "recovered_round": 13,
+    "solved_round": 2
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 25,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 34,
+    "solved_round": 19
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 69,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 78,
+    "solved_round": 68
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 121,
+    "p_local": 0.3,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 128,
+    "solved_round": 115
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.1875,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 33,
+    "p_local": 0.4375,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 25
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 79,
+    "p_local": 0.15625,
+    "pid": "omni/02204",
+    "presentations_to_recover": 7,
+    "recovered_round": 115,
+    "solved_round": 71
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 126,
+    "p_local": 0.0625,
+    "pid": "omni/02204",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 121
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 44,
+    "p_local": 0.25,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 51,
+    "solved_round": 38
+   },
+   {
+    "c_solved": 6,
+    "cap_change_between": false,
+    "lost_round": 57,
+    "p_local": 0.6,
+    "pid": "omni/01012",
+    "presentations_to_recover": 1,
+    "recovered_round": 58,
+    "solved_round": 47
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 85,
+    "p_local": 0.15,
+    "pid": "omni/01012",
+    "presentations_to_recover": 3,
+    "recovered_round": 101,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 69,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 75,
+    "solved_round": 63
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 81,
+    "p_local": 0.15625,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 2,
+    "recovered_round": 94,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 20,
+    "p_local": 0.175,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 27,
+    "solved_round": 12
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 55,
+    "p_local": 0.325,
+    "pid": "omni/01473",
+    "presentations_to_recover": 1,
+    "recovered_round": 59,
+    "solved_round": 52
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 127,
+    "p_local": 0.35,
+    "pid": "omni/01473",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 120
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.075,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 2,
+    "recovered_round": 24,
+    "solved_round": 11
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 30,
+    "p_local": 0.2,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 41,
+    "solved_round": 26
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 58,
+    "p_local": 0.28125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 68,
+    "solved_round": 56
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 86,
+    "p_local": 0.175,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 88,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 100,
+    "p_local": 0.09375,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 2,
+    "recovered_round": 112,
+    "solved_round": 93
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 125,
+    "p_local": 0.09375,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 117
+   }
+  ],
+  "expected_losses_sampling_local": 30.161543293643163,
+  "expected_losses_sampling_pooled": 19.43579921828949,
+  "loss_episodes": 29,
+  "loss_rate": 0.031487513572204126,
+  "median_rounds_to_recover": 8.5,
+  "not_recovered_by_128": 3,
+  "opportunities": 921,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 19,
+  "problems_never_solved": 0,
+  "recovered": 26
+ },
+ "U-s202|all_hard": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.025,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 4,
+    "recovered_round": 49,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.45,
+    "pid": "omni/02008",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.1875,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 20,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.1875,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.125,
+    "pid": "omni/01473",
+    "presentations_to_recover": 2,
+    "recovered_round": 23,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.125,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 43,
+    "p_local": 0.4791666666666667,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 46,
+    "solved_round": 37
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 65,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 70,
+    "solved_round": 63
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 85,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 93,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 103,
+    "p_local": 0.15,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 108,
+    "solved_round": 93
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 26,
+    "p_local": 0.25,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 32,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 36,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 42,
+    "solved_round": 32
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 48,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 4,
+    "recovered_round": 74,
+    "solved_round": 42
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 84,
+    "p_local": 0.0625,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 79
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 23,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 13
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 56,
+    "p_local": 0.2708333333333333,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 61,
+    "solved_round": 48
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 74,
+    "p_local": 0.16666666666666666,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 75,
+    "solved_round": 64
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 106,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 113,
+    "solved_round": 99
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.125,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 11
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 34,
+    "p_local": 0.2708333333333333,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 5,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.45,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 69,
+    "solved_round": 59
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 12,
+    "p_local": 0.3125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 6
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 18,
+    "p_local": 0.125,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 15
+   }
+  ],
+  "expected_losses_sampling_local": 28.186895313821978,
+  "expected_losses_sampling_pooled": 16.073874852866982,
+  "loss_episodes": 23,
+  "loss_rate": 0.024864864864864864,
+  "median_rounds_to_recover": 5.5,
+  "not_recovered_by_128": 1,
+  "opportunities": 925,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 22,
+  "problems_never_solved": 0,
+  "recovered": 22
+ },
+ "U-s202|shared_only": {
+  "episodes": [
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 28,
+    "p_local": 0.025,
+    "pid": "intermediate_algebra/train/00048",
+    "presentations_to_recover": 4,
+    "recovered_round": 49,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 6,
+    "p_local": 0.45,
+    "pid": "omni/02008",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 1
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.1875,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 20,
+    "solved_round": 8
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 24,
+    "p_local": 0.1875,
+    "pid": "intermediate_algebra/train/01249",
+    "presentations_to_recover": 1,
+    "recovered_round": 33,
+    "solved_round": 20
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 9,
+    "p_local": 0.125,
+    "pid": "omni/01473",
+    "presentations_to_recover": 2,
+    "recovered_round": 23,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 8,
+    "p_local": 0.125,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 15,
+    "solved_round": 3
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 43,
+    "p_local": 0.4791666666666667,
+    "pid": "omni/00524",
+    "presentations_to_recover": 1,
+    "recovered_round": 46,
+    "solved_round": 37
+   },
+   {
+    "c_solved": 4,
+    "cap_change_between": false,
+    "lost_round": 65,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 70,
+    "solved_round": 63
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 85,
+    "p_local": 0.1,
+    "pid": "omni/02204",
+    "presentations_to_recover": 2,
+    "recovered_round": 93,
+    "solved_round": 75
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 103,
+    "p_local": 0.15,
+    "pid": "omni/02204",
+    "presentations_to_recover": 1,
+    "recovered_round": 108,
+    "solved_round": 93
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": false,
+    "lost_round": 26,
+    "p_local": 0.25,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 32,
+    "solved_round": 22
+   },
+   {
+    "c_solved": 2,
+    "cap_change_between": true,
+    "lost_round": 36,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 1,
+    "recovered_round": 42,
+    "solved_round": 32
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 48,
+    "p_local": 0.025,
+    "pid": "omni/00984",
+    "presentations_to_recover": 4,
+    "recovered_round": 74,
+    "solved_round": 42
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 84,
+    "p_local": 0.0625,
+    "pid": "omni/00984",
+    "presentations_to_recover": null,
+    "recovered_round": null,
+    "solved_round": 79
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 23,
+    "p_local": 0.25,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 13
+   },
+   {
+    "c_solved": 3,
+    "cap_change_between": false,
+    "lost_round": 56,
+    "p_local": 0.2708333333333333,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 61,
+    "solved_round": 48
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 74,
+    "p_local": 0.16666666666666666,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 75,
+    "solved_round": 64
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 106,
+    "p_local": 0.125,
+    "pid": "intermediate_algebra/train/00995",
+    "presentations_to_recover": 1,
+    "recovered_round": 113,
+    "solved_round": 99
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 15,
+    "p_local": 0.125,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 19,
+    "solved_round": 11
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": true,
+    "lost_round": 34,
+    "p_local": 0.2708333333333333,
+    "pid": "algebra/train/00288",
+    "presentations_to_recover": 1,
+    "recovered_round": 38,
+    "solved_round": 28
+   },
+   {
+    "c_solved": 5,
+    "cap_change_between": false,
+    "lost_round": 64,
+    "p_local": 0.45,
+    "pid": "intermediate_algebra/train/00427",
+    "presentations_to_recover": 1,
+    "recovered_round": 69,
+    "solved_round": 59
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 12,
+    "p_local": 0.3125,
+    "pid": "intermediate_algebra/train/00592",
+    "presentations_to_recover": 1,
+    "recovered_round": 17,
+    "solved_round": 6
+   },
+   {
+    "c_solved": 1,
+    "cap_change_between": false,
+    "lost_round": 18,
+    "p_local": 0.125,
+    "pid": "omni/00542",
+    "presentations_to_recover": 1,
+    "recovered_round": 24,
+    "solved_round": 15
+   }
+  ],
+  "expected_losses_sampling_local": 28.186895313821978,
+  "expected_losses_sampling_pooled": 16.073874852866982,
+  "loss_episodes": 23,
+  "loss_rate": 0.024864864864864864,
+  "median_rounds_to_recover": 5.5,
+  "not_recovered_by_128": 1,
+  "opportunities": 925,
+  "presentations": 1024,
+  "problems": 46,
+  "problems_all_correct_last_presentation": 22,
+  "problems_never_solved": 0,
+  "recovered": 22
+ }
+}

@@ -1,0 +1,1908 @@
+{
+ "selftest/env": {
+  "paths": [
+   "src",
+   "tests"
+  ],
+  "commits": [
+   "87c393a",
+   "91b1964",
+   "420f61d",
+   "421da8f",
+   "8f1d1fd",
+   "462da00",
+   "bb7760a",
+   "d1b38a0",
+   "29fe565",
+   "5f291a9",
+   "9952e19",
+   "5a27b7b"
+  ],
+  "steps": [
+   {
+    "from": "87c393a",
+    "to": "91b1964",
+    "changed": []
+   },
+   {
+    "from": "91b1964",
+    "to": "420f61d",
+    "changed": [
+     "src/qis/__init__.py",
+     "src/qis/data/__init__.py",
+     "src/qis/data/build.py",
+     "src/qis/data/math_source.py",
+     "src/qis/data/splits.py",
+     "src/qis/probe_gpu.py",
+     "src/qis/prompts.py",
+     "src/qis/seeds.py",
+     "src/qis/verify.py",
+     "tests/test_splits.py",
+     "tests/test_verify.py"
+    ]
+   },
+   {
+    "from": "420f61d",
+    "to": "421da8f",
+    "changed": [
+     "src/qis/train/__init__.py",
+     "src/qis/train/grpo.py",
+     "src/qis/train/schedule.py"
+    ]
+   },
+   {
+    "from": "421da8f",
+    "to": "8f1d1fd",
+    "changed": [
+     "src/qis/train/ckpt.py",
+     "src/qis/train/learner.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "src/qis/train/schedule.py",
+     "tests/test_grpo.py",
+     "tests/test_schedule.py"
+    ]
+   },
+   {
+    "from": "8f1d1fd",
+    "to": "462da00",
+    "changed": [
+     "src/qis/data/candidates.py",
+     "src/qis/data/smoke_bundle.py",
+     "src/qis/screen.py",
+     "src/qis/train/ckpt.py",
+     "src/qis/train/compare_runs.py",
+     "src/qis/train/precision_audit.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "462da00",
+    "to": "bb7760a",
+    "changed": [
+     "src/qis/train/ckpt.py",
+     "tests/test_grpo.py"
+    ]
+   },
+   {
+    "from": "bb7760a",
+    "to": "d1b38a0",
+    "changed": [
+     "src/qis/data/candidates.py",
+     "src/qis/train/precision_audit.py"
+    ]
+   },
+   {
+    "from": "d1b38a0",
+    "to": "29fe565",
+    "changed": [
+     "src/qis/analysis/__init__.py",
+     "src/qis/analysis/audit_export.py",
+     "src/qis/analysis/calib_select.py",
+     "src/qis/analysis/reconcile_screening.py",
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/stats.py",
+     "src/qis/analysis/trunc_monitor.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/data/authored.py",
+     "src/qis/data/aux_inputs.py",
+     "src/qis/data/bundle_main.py",
+     "src/qis/data/calib_panels.py",
+     "src/qis/data/match_aux.py",
+     "src/qis/data/rescreen_set.py",
+     "src/qis/data/select_hard.py",
+     "src/qis/data/select_hard_combined.py",
+     "src/qis/data/select_hard_k8.py",
+     "src/qis/data/select_targets.py",
+     "src/qis/data/shortlist.py",
+     "src/qis/diag_local.py",
+     "src/qis/diag_trunc.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/mode_diag.py",
+     "src/qis/peek.py",
+     "src/qis/smoke_long.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "tests/test_analysis.py",
+     "tests/test_capsched.py",
+     "tests/test_diag_local.py",
+     "tests/test_mode_diag.py"
+    ]
+   },
+   {
+    "from": "29fe565",
+    "to": "5f291a9",
+    "changed": [
+     "src/qis/analysis/curves.py",
+     "src/qis/analysis/probe_table.py",
+     "src/qis/analysis/train_summary.py",
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/analysis/wandb_tag_superseded.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/train/learner.py",
+     "src/qis/train/run.py",
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "5f291a9",
+    "to": "9952e19",
+    "changed": [
+     "src/qis/analysis/capcheck.py",
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/cue.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/per_problem.py",
+     "src/qis/analysis/r32_provenance.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/diag_local.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/peek.py",
+     "src/qis/train/run.py",
+     "tests/test_analysis.py",
+     "tests/test_diag_local.py",
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "9952e19",
+    "to": "5a27b7b",
+    "changed": [
+     "src/qis/analysis/cost_table.py"
+    ]
+   },
+   {
+    "from": "5a27b7b",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/a17_stress.py",
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_divergence.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py",
+     "src/qis/data/stress_panels.py",
+     "src/qis/eval_extend.py",
+     "src/qis/eval_merge.py",
+     "tests/test_eval_extend.py"
+    ]
+   }
+  ]
+ },
+ "data build/screening": {
+  "paths": [
+   "src/qis/data",
+   "src/qis/screen.py",
+   "src/qis/verify.py",
+   "src/qis/prompts.py",
+   "src/qis/train/rollout.py",
+   "src/qis/seeds.py",
+   "src/qis/mode_diag.py",
+   "src/qis/diag_trunc.py"
+  ],
+  "commits": [
+   "aa387c0",
+   "c811d31",
+   "462da00",
+   "f38e3bc",
+   "32937d3",
+   "ed7c00d",
+   "34012e5",
+   "0c11ce4",
+   "edc9d37",
+   "929eee8",
+   "33f5d43",
+   "9bb9ed9",
+   "e5bb076",
+   "fbc1409",
+   "2651761",
+   "90eac84",
+   "a7f70a5",
+   "eb84999",
+   "8f14106",
+   "e966ec0",
+   "d7e9bfd",
+   "fe5db0c",
+   "e137688",
+   "b8f36ca",
+   "8d1a6ff",
+   "5493a09",
+   "56b290d"
+  ],
+  "steps": [
+   {
+    "from": "aa387c0",
+    "to": "c811d31",
+    "changed": [
+     "src/qis/data/smoke_bundle.py",
+     "src/qis/prompts.py",
+     "src/qis/screen.py",
+     "src/qis/train/rollout.py"
+    ]
+   },
+   {
+    "from": "c811d31",
+    "to": "462da00",
+    "changed": [
+     "src/qis/data/candidates.py"
+    ]
+   },
+   {
+    "from": "462da00",
+    "to": "f38e3bc",
+    "changed": [
+     "src/qis/data/candidates.py"
+    ]
+   },
+   {
+    "from": "f38e3bc",
+    "to": "32937d3",
+    "changed": [
+     "src/qis/data/shortlist.py"
+    ]
+   },
+   {
+    "from": "32937d3",
+    "to": "ed7c00d",
+    "changed": []
+   },
+   {
+    "from": "ed7c00d",
+    "to": "34012e5",
+    "changed": [
+     "src/qis/data/calib_panels.py"
+    ]
+   },
+   {
+    "from": "34012e5",
+    "to": "0c11ce4",
+    "changed": [
+     "src/qis/data/select_hard.py"
+    ]
+   },
+   {
+    "from": "0c11ce4",
+    "to": "edc9d37",
+    "changed": [
+     "src/qis/data/select_targets.py"
+    ]
+   },
+   {
+    "from": "edc9d37",
+    "to": "929eee8",
+    "changed": [
+     "src/qis/data/authored.py"
+    ]
+   },
+   {
+    "from": "929eee8",
+    "to": "33f5d43",
+    "changed": [
+     "src/qis/data/shortlist.py"
+    ]
+   },
+   {
+    "from": "33f5d43",
+    "to": "9bb9ed9",
+    "changed": []
+   },
+   {
+    "from": "9bb9ed9",
+    "to": "e5bb076",
+    "changed": []
+   },
+   {
+    "from": "e5bb076",
+    "to": "fbc1409",
+    "changed": [
+     "src/qis/data/authored.py",
+     "src/qis/data/match_aux.py",
+     "src/qis/data/select_hard_combined.py"
+    ]
+   },
+   {
+    "from": "fbc1409",
+    "to": "2651761",
+    "changed": [
+     "src/qis/data/shortlist.py"
+    ]
+   },
+   {
+    "from": "2651761",
+    "to": "90eac84",
+    "changed": []
+   },
+   {
+    "from": "90eac84",
+    "to": "a7f70a5",
+    "changed": [
+     "src/qis/diag_trunc.py"
+    ]
+   },
+   {
+    "from": "a7f70a5",
+    "to": "eb84999",
+    "changed": [
+     "src/qis/data/rescreen_set.py",
+     "src/qis/data/shortlist.py"
+    ]
+   },
+   {
+    "from": "eb84999",
+    "to": "8f14106",
+    "changed": [
+     "src/qis/data/calib_panels.py"
+    ]
+   },
+   {
+    "from": "8f14106",
+    "to": "e966ec0",
+    "changed": [
+     "src/qis/data/shortlist.py"
+    ]
+   },
+   {
+    "from": "e966ec0",
+    "to": "d7e9bfd",
+    "changed": [
+     "src/qis/data/select_hard_k8.py"
+    ]
+   },
+   {
+    "from": "d7e9bfd",
+    "to": "fe5db0c",
+    "changed": [
+     "src/qis/data/aux_inputs.py"
+    ]
+   },
+   {
+    "from": "fe5db0c",
+    "to": "e137688",
+    "changed": [
+     "src/qis/data/bundle_main.py"
+    ]
+   },
+   {
+    "from": "e137688",
+    "to": "b8f36ca",
+    "changed": [
+     "src/qis/mode_diag.py"
+    ]
+   },
+   {
+    "from": "b8f36ca",
+    "to": "8d1a6ff",
+    "changed": [
+     "src/qis/mode_diag.py"
+    ]
+   },
+   {
+    "from": "8d1a6ff",
+    "to": "5493a09",
+    "changed": []
+   },
+   {
+    "from": "5493a09",
+    "to": "56b290d",
+    "changed": []
+   },
+   {
+    "from": "56b290d",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/data/stress_panels.py",
+     "src/qis/train/rollout.py"
+    ]
+   }
+  ]
+ },
+ "tests": {
+  "paths": [
+   "src",
+   "tests"
+  ],
+  "commits": [
+   "b984289",
+   "7e97236",
+   "910c13f",
+   "660df56",
+   "3d7ef51",
+   "29fe565",
+   "df285c9",
+   "5f291a9",
+   "e56a793",
+   "020b08b",
+   "98f12bd",
+   "6d4e33a",
+   "042cebd",
+   "fb4f344"
+  ],
+  "steps": [
+   {
+    "from": "b984289",
+    "to": "7e97236",
+    "changed": [
+     "src/qis/data/candidates.py",
+     "src/qis/data/smoke_bundle.py",
+     "src/qis/screen.py",
+     "src/qis/train/ckpt.py",
+     "src/qis/train/compare_runs.py",
+     "src/qis/train/learner.py",
+     "src/qis/train/precision_audit.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "tests/test_grpo.py"
+    ]
+   },
+   {
+    "from": "7e97236",
+    "to": "910c13f",
+    "changed": [
+     "src/qis/analysis/__init__.py",
+     "src/qis/analysis/stats.py",
+     "src/qis/data/authored.py",
+     "src/qis/data/aux_inputs.py",
+     "src/qis/data/bundle_main.py",
+     "src/qis/data/calib_panels.py",
+     "src/qis/data/match_aux.py",
+     "src/qis/data/rescreen_set.py",
+     "src/qis/data/select_hard.py",
+     "src/qis/data/select_hard_combined.py",
+     "src/qis/data/select_hard_k8.py",
+     "src/qis/data/select_targets.py",
+     "src/qis/data/shortlist.py",
+     "src/qis/diag_trunc.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/peek.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "910c13f",
+    "to": "660df56",
+    "changed": [
+     "src/qis/analysis/stats.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "660df56",
+    "to": "3d7ef51",
+    "changed": [
+     "src/qis/analysis/audit_export.py",
+     "src/qis/analysis/calib_select.py",
+     "src/qis/analysis/reconcile_screening.py",
+     "src/qis/analysis/trunc_monitor.py",
+     "src/qis/diag_local.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/mode_diag.py",
+     "tests/test_analysis.py",
+     "tests/test_diag_local.py",
+     "tests/test_mode_diag.py"
+    ]
+   },
+   {
+    "from": "3d7ef51",
+    "to": "29fe565",
+    "changed": [
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/smoke_long.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "tests/test_capsched.py"
+    ]
+   },
+   {
+    "from": "29fe565",
+    "to": "df285c9",
+    "changed": [
+     "src/qis/analysis/curves.py",
+     "src/qis/analysis/train_summary.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "df285c9",
+    "to": "5f291a9",
+    "changed": [
+     "src/qis/analysis/probe_table.py",
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/analysis/wandb_tag_superseded.py",
+     "src/qis/train/learner.py",
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "5f291a9",
+    "to": "e56a793",
+    "changed": [
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "e56a793",
+    "to": "020b08b",
+    "changed": [
+     "src/qis/analysis/capcheck.py",
+     "src/qis/analysis/r32_provenance.py",
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/diag_local.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/peek.py",
+     "tests/test_diag_local.py"
+    ]
+   },
+   {
+    "from": "020b08b",
+    "to": "98f12bd",
+    "changed": [
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/report_tables.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "98f12bd",
+    "to": "6d4e33a",
+    "changed": [
+     "src/qis/analysis/cue.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/per_problem.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/diag_local.py",
+     "src/qis/train/run.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "6d4e33a",
+    "to": "042cebd",
+    "changed": [
+     "src/qis/diag_local.py"
+    ]
+   },
+   {
+    "from": "042cebd",
+    "to": "fb4f344",
+    "changed": [
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/report_data.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "fb4f344",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/a17_stress.py",
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_divergence.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py",
+     "src/qis/data/stress_panels.py",
+     "src/qis/eval_extend.py",
+     "src/qis/eval_merge.py",
+     "tests/test_eval_extend.py"
+    ]
+   }
+  ]
+ },
+ "calibration": {
+  "paths": [
+   "src/qis/train",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/analysis/calib_select.py"
+  ],
+  "commits": [
+   "34012e5",
+   "8f14106",
+   "d217049",
+   "b151c90",
+   "789e1b2",
+   "a64f832"
+  ],
+  "steps": [
+   {
+    "from": "34012e5",
+    "to": "8f14106",
+    "changed": []
+   },
+   {
+    "from": "8f14106",
+    "to": "d217049",
+    "changed": []
+   },
+   {
+    "from": "d217049",
+    "to": "b151c90",
+    "changed": []
+   },
+   {
+    "from": "b151c90",
+    "to": "789e1b2",
+    "changed": [
+     "src/qis/analysis/calib_select.py"
+    ]
+   },
+   {
+    "from": "789e1b2",
+    "to": "a64f832",
+    "changed": [
+     "src/qis/analysis/calib_select.py"
+    ]
+   },
+   {
+    "from": "a64f832",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/train/learner.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py"
+    ]
+   }
+  ]
+ },
+ "ops/storage/recovery": {
+  "paths": [
+   "src",
+   "tests"
+  ],
+  "commits": [
+   "7614250",
+   "7487392",
+   "c430002",
+   "8f12bfa",
+   "0afd6e8",
+   "96181df",
+   "dd71b20",
+   "ea8b5fb",
+   "daeab07",
+   "6724cce",
+   "695a3d8",
+   "7735fea",
+   "5361d39",
+   "1125a1e",
+   "1e03098",
+   "9b9da6d",
+   "7a8190f"
+  ],
+  "steps": [
+   {
+    "from": "7614250",
+    "to": "7487392",
+    "changed": [
+     "src/qis/analysis/__init__.py",
+     "src/qis/analysis/audit_export.py",
+     "src/qis/analysis/calib_select.py",
+     "src/qis/analysis/reconcile_screening.py",
+     "src/qis/analysis/stats.py",
+     "src/qis/analysis/trunc_monitor.py",
+     "src/qis/data/authored.py",
+     "src/qis/data/aux_inputs.py",
+     "src/qis/data/bundle_main.py",
+     "src/qis/data/calib_panels.py",
+     "src/qis/data/match_aux.py",
+     "src/qis/data/rescreen_set.py",
+     "src/qis/data/select_hard.py",
+     "src/qis/data/select_hard_combined.py",
+     "src/qis/data/select_hard_k8.py",
+     "src/qis/data/select_targets.py",
+     "src/qis/data/shortlist.py",
+     "src/qis/diag_trunc.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/mode_diag.py",
+     "src/qis/peek.py",
+     "tests/test_analysis.py",
+     "tests/test_mode_diag.py"
+    ]
+   },
+   {
+    "from": "7487392",
+    "to": "c430002",
+    "changed": [
+     "src/qis/analysis/capcheck.py",
+     "src/qis/analysis/curves.py",
+     "src/qis/analysis/probe_table.py",
+     "src/qis/analysis/r32_provenance.py",
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/train_summary.py",
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/analysis/wandb_tag_superseded.py",
+     "src/qis/diag_local.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/peek.py",
+     "src/qis/smoke_long.py",
+     "src/qis/train/learner.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "tests/test_capsched.py",
+     "tests/test_diag_local.py",
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "c430002",
+    "to": "8f12bfa",
+    "changed": []
+   },
+   {
+    "from": "8f12bfa",
+    "to": "0afd6e8",
+    "changed": []
+   },
+   {
+    "from": "0afd6e8",
+    "to": "96181df",
+    "changed": []
+   },
+   {
+    "from": "96181df",
+    "to": "dd71b20",
+    "changed": [
+     "src/qis/make_main_exps.py"
+    ]
+   },
+   {
+    "from": "dd71b20",
+    "to": "ea8b5fb",
+    "changed": []
+   },
+   {
+    "from": "ea8b5fb",
+    "to": "daeab07",
+    "changed": []
+   },
+   {
+    "from": "daeab07",
+    "to": "6724cce",
+    "changed": []
+   },
+   {
+    "from": "6724cce",
+    "to": "695a3d8",
+    "changed": [
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/diag_local.py",
+     "tests/test_diag_local.py"
+    ]
+   },
+   {
+    "from": "695a3d8",
+    "to": "7735fea",
+    "changed": []
+   },
+   {
+    "from": "7735fea",
+    "to": "5361d39",
+    "changed": [
+     "src/qis/analysis/report_tables.py",
+     "src/qis/diag_local.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "5361d39",
+    "to": "1125a1e",
+    "changed": [
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/per_problem.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "1125a1e",
+    "to": "1e03098",
+    "changed": [
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "1e03098",
+    "to": "9b9da6d",
+    "changed": [
+     "src/qis/analysis/cue.py",
+     "src/qis/diag_local.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "9b9da6d",
+    "to": "7a8190f",
+    "changed": [
+     "src/qis/analysis/a17_stress.py",
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_divergence.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/data/stress_panels.py",
+     "src/qis/eval_extend.py",
+     "src/qis/eval_merge.py",
+     "tests/test_analysis.py",
+     "tests/test_eval_extend.py"
+    ]
+   },
+   {
+    "from": "7a8190f",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py"
+    ]
+   }
+  ]
+ },
+ "in-run monitoring/inspection": {
+  "paths": [
+   "src",
+   "tests"
+  ],
+  "commits": [
+   "33f5d43",
+   "539cd2a",
+   "e137688",
+   "9937ba3",
+   "b151c90",
+   "efdafdd",
+   "0a83a74",
+   "bbedc2f",
+   "5ca3afd",
+   "60d733d",
+   "41e5bb4",
+   "d3f4fda",
+   "788a0fd",
+   "df285c9",
+   "d6fae4d",
+   "d5015dc",
+   "2ba186a",
+   "0fe042b",
+   "637689b",
+   "9e3eeca",
+   "9d6349a",
+   "7c44fa5",
+   "736499d",
+   "702ca30",
+   "59d3927",
+   "8b1f93f",
+   "b1ea5c2",
+   "9edae28",
+   "805aada",
+   "fe39169",
+   "250ef01",
+   "65bad57",
+   "1d5acce",
+   "ade7e1e",
+   "7fb10b3",
+   "ab78c83",
+   "fe8e52b",
+   "4355f60",
+   "68ea1a2",
+   "8f12bfa",
+   "96181df",
+   "0d81754",
+   "95ff406",
+   "7c39137",
+   "4be2ef1",
+   "cb28eb7",
+   "d8461e8",
+   "7a49e17",
+   "695a3d8",
+   "285c313",
+   "66d6251",
+   "1125a1e",
+   "18d9b59",
+   "662174d",
+   "7f90760",
+   "f6cd98c"
+  ],
+  "steps": [
+   {
+    "from": "33f5d43",
+    "to": "539cd2a",
+    "changed": [
+     "src/qis/data/match_aux.py",
+     "src/qis/data/select_hard_combined.py"
+    ]
+   },
+   {
+    "from": "539cd2a",
+    "to": "e137688",
+    "changed": [
+     "src/qis/data/authored.py",
+     "src/qis/data/aux_inputs.py",
+     "src/qis/data/bundle_main.py",
+     "src/qis/data/calib_panels.py",
+     "src/qis/data/rescreen_set.py",
+     "src/qis/data/select_hard_k8.py",
+     "src/qis/data/shortlist.py",
+     "src/qis/diag_trunc.py"
+    ]
+   },
+   {
+    "from": "e137688",
+    "to": "9937ba3",
+    "changed": [
+     "src/qis/analysis/__init__.py",
+     "src/qis/analysis/stats.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "9937ba3",
+    "to": "b151c90",
+    "changed": []
+   },
+   {
+    "from": "b151c90",
+    "to": "efdafdd",
+    "changed": [
+     "src/qis/analysis/calib_select.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/mode_diag.py",
+     "tests/test_analysis.py",
+     "tests/test_mode_diag.py"
+    ]
+   },
+   {
+    "from": "efdafdd",
+    "to": "0a83a74",
+    "changed": []
+   },
+   {
+    "from": "0a83a74",
+    "to": "bbedc2f",
+    "changed": [
+     "src/qis/analysis/audit_export.py",
+     "src/qis/analysis/reconcile_screening.py",
+     "src/qis/analysis/trunc_monitor.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "bbedc2f",
+    "to": "5ca3afd",
+    "changed": [
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/diag_local.py",
+     "src/qis/make_test_exps.py",
+     "tests/test_diag_local.py"
+    ]
+   },
+   {
+    "from": "5ca3afd",
+    "to": "60d733d",
+    "changed": [
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py",
+     "src/qis/smoke_long.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py",
+     "tests/test_capsched.py"
+    ]
+   },
+   {
+    "from": "60d733d",
+    "to": "41e5bb4",
+    "changed": []
+   },
+   {
+    "from": "41e5bb4",
+    "to": "d3f4fda",
+    "changed": [
+     "src/qis/analysis/train_summary.py"
+    ]
+   },
+   {
+    "from": "d3f4fda",
+    "to": "788a0fd",
+    "changed": [
+     "src/qis/analysis/curves.py",
+     "src/qis/analysis/train_summary.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/make_main_exps.py"
+    ]
+   },
+   {
+    "from": "788a0fd",
+    "to": "df285c9",
+    "changed": [
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "df285c9",
+    "to": "d6fae4d",
+    "changed": []
+   },
+   {
+    "from": "d6fae4d",
+    "to": "d5015dc",
+    "changed": [
+     "src/qis/analysis/probe_table.py"
+    ]
+   },
+   {
+    "from": "d5015dc",
+    "to": "2ba186a",
+    "changed": []
+   },
+   {
+    "from": "2ba186a",
+    "to": "0fe042b",
+    "changed": [
+     "src/qis/analysis/trunc_study.py",
+     "src/qis/analysis/wandb_companion.py",
+     "src/qis/analysis/wandb_tag_superseded.py",
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/train/learner.py",
+     "tests/test_lmhead.py"
+    ]
+   },
+   {
+    "from": "0fe042b",
+    "to": "637689b",
+    "changed": [
+     "src/qis/evaluate_ckpt.py"
+    ]
+   },
+   {
+    "from": "637689b",
+    "to": "9e3eeca",
+    "changed": [
+     "src/qis/analysis/trunc_study.py"
+    ]
+   },
+   {
+    "from": "9e3eeca",
+    "to": "9d6349a",
+    "changed": [
+     "src/qis/make_main_exps.py",
+     "src/qis/make_test_exps.py"
+    ]
+   },
+   {
+    "from": "9d6349a",
+    "to": "7c44fa5",
+    "changed": [
+     "src/qis/analysis/wandb_companion.py"
+    ]
+   },
+   {
+    "from": "7c44fa5",
+    "to": "736499d",
+    "changed": []
+   },
+   {
+    "from": "736499d",
+    "to": "702ca30",
+    "changed": []
+   },
+   {
+    "from": "702ca30",
+    "to": "59d3927",
+    "changed": [
+     "src/qis/analysis/capcheck.py",
+     "src/qis/peek.py"
+    ]
+   },
+   {
+    "from": "59d3927",
+    "to": "8b1f93f",
+    "changed": []
+   },
+   {
+    "from": "8b1f93f",
+    "to": "b1ea5c2",
+    "changed": []
+   },
+   {
+    "from": "b1ea5c2",
+    "to": "9edae28",
+    "changed": []
+   },
+   {
+    "from": "9edae28",
+    "to": "805aada",
+    "changed": []
+   },
+   {
+    "from": "805aada",
+    "to": "fe39169",
+    "changed": []
+   },
+   {
+    "from": "fe39169",
+    "to": "250ef01",
+    "changed": []
+   },
+   {
+    "from": "250ef01",
+    "to": "65bad57",
+    "changed": []
+   },
+   {
+    "from": "65bad57",
+    "to": "1d5acce",
+    "changed": [
+     "src/qis/make_test_exps.py"
+    ]
+   },
+   {
+    "from": "1d5acce",
+    "to": "ade7e1e",
+    "changed": [
+     "src/qis/analysis/r32_provenance.py"
+    ]
+   },
+   {
+    "from": "ade7e1e",
+    "to": "7fb10b3",
+    "changed": []
+   },
+   {
+    "from": "7fb10b3",
+    "to": "ab78c83",
+    "changed": [
+     "src/qis/analysis/validate_endpoint.py"
+    ]
+   },
+   {
+    "from": "ab78c83",
+    "to": "fe8e52b",
+    "changed": []
+   },
+   {
+    "from": "fe8e52b",
+    "to": "4355f60",
+    "changed": []
+   },
+   {
+    "from": "4355f60",
+    "to": "68ea1a2",
+    "changed": []
+   },
+   {
+    "from": "68ea1a2",
+    "to": "8f12bfa",
+    "changed": []
+   },
+   {
+    "from": "8f12bfa",
+    "to": "96181df",
+    "changed": []
+   },
+   {
+    "from": "96181df",
+    "to": "0d81754",
+    "changed": [
+     "src/qis/make_main_exps.py"
+    ]
+   },
+   {
+    "from": "0d81754",
+    "to": "95ff406",
+    "changed": []
+   },
+   {
+    "from": "95ff406",
+    "to": "7c39137",
+    "changed": []
+   },
+   {
+    "from": "7c39137",
+    "to": "4be2ef1",
+    "changed": []
+   },
+   {
+    "from": "4be2ef1",
+    "to": "cb28eb7",
+    "changed": []
+   },
+   {
+    "from": "cb28eb7",
+    "to": "d8461e8",
+    "changed": []
+   },
+   {
+    "from": "d8461e8",
+    "to": "7a49e17",
+    "changed": []
+   },
+   {
+    "from": "7a49e17",
+    "to": "695a3d8",
+    "changed": [
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/diag_local.py",
+     "tests/test_diag_local.py"
+    ]
+   },
+   {
+    "from": "695a3d8",
+    "to": "285c313",
+    "changed": []
+   },
+   {
+    "from": "285c313",
+    "to": "66d6251",
+    "changed": [
+     "src/qis/analysis/report_tables.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "66d6251",
+    "to": "1125a1e",
+    "changed": [
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/per_problem.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/diag_local.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "1125a1e",
+    "to": "18d9b59",
+    "changed": [
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/validate_endpoint.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "18d9b59",
+    "to": "662174d",
+    "changed": [
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/cue.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/report_data.py",
+     "src/qis/diag_local.py",
+     "tests/test_analysis.py"
+    ]
+   },
+   {
+    "from": "662174d",
+    "to": "7f90760",
+    "changed": []
+   },
+   {
+    "from": "7f90760",
+    "to": "f6cd98c",
+    "changed": []
+   },
+   {
+    "from": "f6cd98c",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/a17_stress.py",
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_divergence.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py",
+     "src/qis/data/stress_panels.py",
+     "src/qis/eval_extend.py",
+     "src/qis/eval_merge.py",
+     "tests/test_eval_extend.py"
+    ]
+   }
+  ]
+ },
+ "training": {
+  "paths": [
+   "src/qis/train",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py"
+  ],
+  "commits": [
+   "b8f36ca",
+   "efdafdd",
+   "0a83a74",
+   "b2110c8",
+   "4927344",
+   "9d6349a",
+   "7c44fa5",
+   "0afd6e8",
+   "dd71b20",
+   "6724cce",
+   "d90dd8c",
+   "5f4b4d1",
+   "09f5080"
+  ],
+  "steps": [
+   {
+    "from": "b8f36ca",
+    "to": "efdafdd",
+    "changed": []
+   },
+   {
+    "from": "efdafdd",
+    "to": "0a83a74",
+    "changed": []
+   },
+   {
+    "from": "0a83a74",
+    "to": "b2110c8",
+    "changed": []
+   },
+   {
+    "from": "b2110c8",
+    "to": "4927344",
+    "changed": []
+   },
+   {
+    "from": "4927344",
+    "to": "9d6349a",
+    "changed": [
+     "src/qis/train/learner.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "9d6349a",
+    "to": "7c44fa5",
+    "changed": []
+   },
+   {
+    "from": "7c44fa5",
+    "to": "0afd6e8",
+    "changed": []
+   },
+   {
+    "from": "0afd6e8",
+    "to": "dd71b20",
+    "changed": []
+   },
+   {
+    "from": "dd71b20",
+    "to": "6724cce",
+    "changed": []
+   },
+   {
+    "from": "6724cce",
+    "to": "d90dd8c",
+    "changed": []
+   },
+   {
+    "from": "d90dd8c",
+    "to": "5f4b4d1",
+    "changed": [
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "5f4b4d1",
+    "to": "09f5080",
+    "changed": []
+   },
+   {
+    "from": "09f5080",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ },
+ "sealed test": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py"
+  ],
+  "commits": [
+   "03a90b7",
+   "60d733d",
+   "779c54d",
+   "a96dc7d",
+   "95ff406",
+   "73597a9",
+   "f9b294b",
+   "b77f066",
+   "815a9a6"
+  ],
+  "steps": [
+   {
+    "from": "03a90b7",
+    "to": "60d733d",
+    "changed": [
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "60d733d",
+    "to": "779c54d",
+    "changed": [
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "779c54d",
+    "to": "a96dc7d",
+    "changed": []
+   },
+   {
+    "from": "a96dc7d",
+    "to": "95ff406",
+    "changed": []
+   },
+   {
+    "from": "95ff406",
+    "to": "73597a9",
+    "changed": []
+   },
+   {
+    "from": "73597a9",
+    "to": "f9b294b",
+    "changed": [
+     "src/qis/eval_merge.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "f9b294b",
+    "to": "b77f066",
+    "changed": []
+   },
+   {
+    "from": "b77f066",
+    "to": "815a9a6",
+    "changed": []
+   },
+   {
+    "from": "815a9a6",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ },
+ "diag": {
+  "paths": [
+   "src/qis/train",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/diag_local.py",
+   "src/qis/analysis/interference.py",
+   "src/qis/evaluate_ckpt.py"
+  ],
+  "commits": [
+   "870c8f5",
+   "e265c1c",
+   "f3c70b5",
+   "4b47386",
+   "9742f50",
+   "594d408",
+   "042cebd"
+  ],
+  "steps": [
+   {
+    "from": "870c8f5",
+    "to": "e265c1c",
+    "changed": [
+     "src/qis/evaluate_ckpt.py",
+     "src/qis/train/learner.py",
+     "src/qis/train/rollout.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "e265c1c",
+    "to": "f3c70b5",
+    "changed": [
+     "src/qis/diag_local.py"
+    ]
+   },
+   {
+    "from": "f3c70b5",
+    "to": "4b47386",
+    "changed": [
+     "src/qis/diag_local.py"
+    ]
+   },
+   {
+    "from": "4b47386",
+    "to": "9742f50",
+    "changed": [
+     "src/qis/analysis/interference.py"
+    ]
+   },
+   {
+    "from": "9742f50",
+    "to": "594d408",
+    "changed": []
+   },
+   {
+    "from": "594d408",
+    "to": "042cebd",
+    "changed": [
+     "src/qis/diag_local.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "042cebd",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/interference.py"
+    ]
+   }
+  ]
+ },
+ "report": {
+  "paths": [
+   "src/qis/analysis"
+  ],
+  "commits": [
+   "f3c70b5",
+   "bea479c",
+   "1e03098",
+   "fb4f344",
+   "938edaa",
+   "41f055f"
+  ],
+  "steps": [
+   {
+    "from": "f3c70b5",
+    "to": "bea479c",
+    "changed": [
+     "src/qis/analysis/cost_table.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/per_problem.py",
+     "src/qis/analysis/report_tables.py",
+     "src/qis/analysis/validate_endpoint.py"
+    ]
+   },
+   {
+    "from": "bea479c",
+    "to": "1e03098",
+    "changed": [
+     "src/qis/analysis/report_data.py",
+     "src/qis/analysis/validate_endpoint.py"
+    ]
+   },
+   {
+    "from": "1e03098",
+    "to": "fb4f344",
+    "changed": [
+     "src/qis/analysis/cue.py",
+     "src/qis/analysis/figures.py",
+     "src/qis/analysis/interference.py",
+     "src/qis/analysis/report_data.py"
+    ]
+   },
+   {
+    "from": "fb4f344",
+    "to": "938edaa",
+    "changed": [
+     "src/qis/analysis/cost_table.py"
+    ]
+   },
+   {
+    "from": "938edaa",
+    "to": "41f055f",
+    "changed": []
+   },
+   {
+    "from": "41f055f",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/analysis/a17_stress.py",
+     "src/qis/analysis/a17_test.py",
+     "src/qis/analysis/a17_train.py",
+     "src/qis/analysis/a19_divergence.py",
+     "src/qis/analysis/a19_length.py",
+     "src/qis/analysis/cost_table.py"
+    ]
+   }
+  ]
+ },
+ "cue": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py",
+   "src/qis/analysis/cue.py"
+  ],
+  "commits": [
+   "594d408",
+   "6d4e33a"
+  ],
+  "steps": [
+   {
+    "from": "594d408",
+    "to": "6d4e33a",
+    "changed": [
+     "src/qis/analysis/cue.py",
+     "src/qis/train/run.py"
+    ]
+   },
+   {
+    "from": "6d4e33a",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/eval_merge.py"
+    ]
+   }
+  ]
+ },
+ "cgpu reruns": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py"
+  ],
+  "commits": [
+   "bcba941"
+  ],
+  "steps": [
+   {
+    "from": "bcba941",
+    "to": "HEAD",
+    "changed": [
+     "src/qis/eval_merge.py"
+    ]
+   }
+  ]
+ },
+ "stress": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py"
+  ],
+  "commits": [
+   "e218011",
+   "577aa9f",
+   "bcdc620",
+   "e4deb79",
+   "d06c7a5",
+   "5a99bac",
+   "b77f066",
+   "bcf3e47"
+  ],
+  "steps": [
+   {
+    "from": "e218011",
+    "to": "577aa9f",
+    "changed": []
+   },
+   {
+    "from": "577aa9f",
+    "to": "bcdc620",
+    "changed": [
+     "src/qis/eval_merge.py"
+    ]
+   },
+   {
+    "from": "bcdc620",
+    "to": "e4deb79",
+    "changed": []
+   },
+   {
+    "from": "e4deb79",
+    "to": "d06c7a5",
+    "changed": []
+   },
+   {
+    "from": "d06c7a5",
+    "to": "5a99bac",
+    "changed": []
+   },
+   {
+    "from": "5a99bac",
+    "to": "b77f066",
+    "changed": []
+   },
+   {
+    "from": "b77f066",
+    "to": "bcf3e47",
+    "changed": []
+   },
+   {
+    "from": "bcf3e47",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ },
+ "length": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py",
+   "src/qis/eval_extend.py"
+  ],
+  "commits": [
+   "5e70344",
+   "c894f2b",
+   "a674984",
+   "ef68bf8",
+   "0416921"
+  ],
+  "steps": [
+   {
+    "from": "5e70344",
+    "to": "c894f2b",
+    "changed": []
+   },
+   {
+    "from": "c894f2b",
+    "to": "a674984",
+    "changed": []
+   },
+   {
+    "from": "a674984",
+    "to": "ef68bf8",
+    "changed": [
+     "src/qis/eval_extend.py"
+    ]
+   },
+   {
+    "from": "ef68bf8",
+    "to": "0416921",
+    "changed": []
+   },
+   {
+    "from": "0416921",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ },
+ "sealed test (fallback r116)": {
+  "paths": [
+   "src/qis/evaluate_ckpt.py",
+   "src/qis/eval_merge.py",
+   "src/qis/train/rollout.py",
+   "src/qis/prompts.py",
+   "src/qis/verify.py",
+   "src/qis/seeds.py",
+   "src/qis/data/math_source.py",
+   "src/qis/train/run.py",
+   "src/qis/train/grpo.py"
+  ],
+  "commits": [
+   "7a8190f"
+  ],
+  "steps": [
+   {
+    "from": "7a8190f",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ },
+ "audits (A26)": {
+  "paths": [
+   "research/audit-a26/tools"
+  ],
+  "commits": [
+   "9b2fd05"
+  ],
+  "steps": [
+   {
+    "from": "9b2fd05",
+    "to": "HEAD",
+    "changed": []
+   }
+  ]
+ }
+}

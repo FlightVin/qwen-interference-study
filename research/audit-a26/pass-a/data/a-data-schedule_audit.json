@@ -1,0 +1,4109 @@
+{
+ "cross": {
+  "101": {
+   "checks": {
+    "R/U pair indices identical (same slot order)": 128,
+    "all 16 request seeds identical H=R=U": 128,
+    "shared ids+order identical H=R=U": 128,
+    "shared request seeds identical": 128
+   },
+   "example_round0": {
+    "H": [
+     [
+      1,
+      7,
+      10,
+      13
+     ],
+     [
+      3,
+      5,
+      8,
+      9
+     ],
+     [
+      0,
+      6,
+      14,
+      15
+     ],
+     [
+      2,
+      4,
+      11,
+      12
+     ]
+    ],
+    "R": [
+     [
+      2,
+      5,
+      9,
+      15
+     ],
+     [
+      0,
+      1,
+      11,
+      13
+     ],
+     [
+      6,
+      7,
+      8,
+      14
+     ],
+     [
+      3,
+      4,
+      10,
+      12
+     ]
+    ],
+    "U": [
+     [
+      2,
+      5,
+      9,
+      15
+     ],
+     [
+      0,
+      1,
+      11,
+      13
+     ],
+     [
+      6,
+      7,
+      8,
+      14
+     ],
+     [
+      3,
+      4,
+      10,
+      12
+     ]
+    ]
+   },
+   "example_round0_roles": {
+    "H": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "R": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux"
+    ],
+    "U": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux"
+    ]
+   },
+   "fail_rounds": [],
+   "minibatch_grouping": {
+    "H vs R shared groups in same minibatch order": 0,
+    "H vs R shared-slot partition equal": 0,
+    "R vs U full minibatch plan equal": 128,
+    "R vs U shared-slot partition equal": 128
+   }
+  },
+  "202": {
+   "checks": {
+    "R/U pair indices identical (same slot order)": 128,
+    "all 16 request seeds identical H=R=U": 128,
+    "shared ids+order identical H=R=U": 128,
+    "shared request seeds identical": 128
+   },
+   "example_round0": {
+    "H": [
+     [
+      3,
+      4,
+      13,
+      15
+     ],
+     [
+      5,
+      6,
+      8,
+      11
+     ],
+     [
+      1,
+      2,
+      10,
+      14
+     ],
+     [
+      0,
+      7,
+      9,
+      12
+     ]
+    ],
+    "R": [
+     [
+      5,
+      7,
+      11,
+      12
+     ],
+     [
+      0,
+      3,
+      13,
+      14
+     ],
+     [
+      2,
+      6,
+      9,
+      10
+     ],
+     [
+      1,
+      4,
+      8,
+      15
+     ]
+    ],
+    "U": [
+     [
+      5,
+      7,
+      11,
+      12
+     ],
+     [
+      0,
+      3,
+      13,
+      14
+     ],
+     [
+      2,
+      6,
+      9,
+      10
+     ],
+     [
+      1,
+      4,
+      8,
+      15
+     ]
+    ]
+   },
+   "example_round0_roles": {
+    "H": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra",
+     "hard_extra"
+    ],
+    "R": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux"
+    ],
+    "U": [
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "hard_common",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux",
+     "aux"
+    ]
+   },
+   "fail_rounds": [],
+   "minibatch_grouping": {
+    "H vs R shared groups in same minibatch order": 0,
+    "H vs R shared-slot partition equal": 2,
+    "R vs U full minibatch plan equal": 128,
+    "R vs U shared-slot partition equal": 128
+   }
+  }
+ },
+ "runs": {
+  "qis-main-H-s101-sym": {
+   "arm": "H",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "extra disjoint from shared": 128,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 18
+   },
+   "config_rows": [
+    {
+     "arm": "H",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 101
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "job": "11081726",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794111611.4246507,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794217671.0164487,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 70,
+   "group_totals": {
+    "all0": 100,
+    "all1": 659,
+    "mixed": 1289
+   },
+   "n_round_rows_total": 128,
+   "n_step_rows_total": 512,
+   "n_zero_grad_steps": 18,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 1,
+      "21": 4,
+      "22": 23,
+      "23": 18
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 22,
+      "algebra/train/01269": 22,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 23,
+      "intermediate_algebra/train/00301": 23,
+      "intermediate_algebra/train/00340": 23,
+      "intermediate_algebra/train/00379": 21,
+      "intermediate_algebra/train/00427": 23,
+      "intermediate_algebra/train/00431": 22,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 21,
+      "intermediate_algebra/train/00522": 22,
+      "intermediate_algebra/train/00592": 22,
+      "intermediate_algebra/train/00656": 22,
+      "intermediate_algebra/train/00995": 23,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 21,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 23,
+      "intermediate_algebra/train/01234": 23,
+      "intermediate_algebra/train/01249": 22,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 22,
+      "omni/00852": 22,
+      "omni/00984": 22,
+      "omni/01012": 22,
+      "omni/01386": 22,
+      "omni/01413": 22,
+      "omni/01473": 23,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 21,
+      "omni/02008": 23,
+      "omni/02204": 22,
+      "omni/02316": 20,
+      "omni/02460": 22,
+      "omni/02796": 22,
+      "omni/02804": 23,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    },
+    "hard_extra": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "18": 1,
+      "19": 1,
+      "20": 9,
+      "21": 6,
+      "22": 8,
+      "23": 8,
+      "24": 6,
+      "25": 5,
+      "26": 2
+     },
+     "max": 26,
+     "mean": 22.26086956521739,
+     "min": 18,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 22,
+      "algebra/train/01269": 23,
+      "intermediate_algebra/train/00048": 22,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 20,
+      "intermediate_algebra/train/00147": 23,
+      "intermediate_algebra/train/00301": 20,
+      "intermediate_algebra/train/00340": 22,
+      "intermediate_algebra/train/00379": 21,
+      "intermediate_algebra/train/00427": 20,
+      "intermediate_algebra/train/00431": 20,
+      "intermediate_algebra/train/00467": 20,
+      "intermediate_algebra/train/00477": 21,
+      "intermediate_algebra/train/00481": 23,
+      "intermediate_algebra/train/00522": 20,
+      "intermediate_algebra/train/00592": 23,
+      "intermediate_algebra/train/00656": 22,
+      "intermediate_algebra/train/00995": 24,
+      "intermediate_algebra/train/01036": 22,
+      "intermediate_algebra/train/01095": 25,
+      "intermediate_algebra/train/01097": 23,
+      "intermediate_algebra/train/01174": 25,
+      "intermediate_algebra/train/01205": 24,
+      "intermediate_algebra/train/01234": 24,
+      "intermediate_algebra/train/01249": 21,
+      "omni/00136": 26,
+      "omni/00524": 24,
+      "omni/00542": 22,
+      "omni/00622": 21,
+      "omni/00852": 24,
+      "omni/00984": 23,
+      "omni/01012": 22,
+      "omni/01386": 19,
+      "omni/01413": 20,
+      "omni/01473": 20,
+      "omni/01558": 20,
+      "omni/01690": 21,
+      "omni/01788": 25,
+      "omni/02008": 25,
+      "omni/02204": 26,
+      "omni/02316": 25,
+      "omni/02460": 18,
+      "omni/02796": 24,
+      "omni/02804": 21,
+      "omni/02842": 23,
+      "omni/04174": 22
+     },
+     "total": 1024
+    },
+    "hard_total": {
+     "expected": 44.52173913043478,
+     "hist": {
+      "40": 1,
+      "41": 1,
+      "42": 6,
+      "43": 7,
+      "44": 7,
+      "45": 9,
+      "46": 7,
+      "47": 5,
+      "48": 3
+     },
+     "max": 48,
+     "mean": 44.52173913043478,
+     "min": 40,
+     "per_problem": {
+      "algebra/train/00288": 44,
+      "algebra/train/01269": 45,
+      "intermediate_algebra/train/00048": 45,
+      "intermediate_algebra/train/00074": 46,
+      "intermediate_algebra/train/00076": 42,
+      "intermediate_algebra/train/00147": 46,
+      "intermediate_algebra/train/00301": 43,
+      "intermediate_algebra/train/00340": 45,
+      "intermediate_algebra/train/00379": 42,
+      "intermediate_algebra/train/00427": 43,
+      "intermediate_algebra/train/00431": 42,
+      "intermediate_algebra/train/00467": 43,
+      "intermediate_algebra/train/00477": 44,
+      "intermediate_algebra/train/00481": 44,
+      "intermediate_algebra/train/00522": 42,
+      "intermediate_algebra/train/00592": 45,
+      "intermediate_algebra/train/00656": 44,
+      "intermediate_algebra/train/00995": 47,
+      "intermediate_algebra/train/01036": 45,
+      "intermediate_algebra/train/01095": 46,
+      "intermediate_algebra/train/01097": 45,
+      "intermediate_algebra/train/01174": 47,
+      "intermediate_algebra/train/01205": 47,
+      "intermediate_algebra/train/01234": 47,
+      "intermediate_algebra/train/01249": 43,
+      "omni/00136": 48,
+      "omni/00524": 47,
+      "omni/00542": 44,
+      "omni/00622": 43,
+      "omni/00852": 46,
+      "omni/00984": 45,
+      "omni/01012": 44,
+      "omni/01386": 41,
+      "omni/01413": 42,
+      "omni/01473": 43,
+      "omni/01558": 42,
+      "omni/01690": 43,
+      "omni/01788": 46,
+      "omni/02008": 48,
+      "omni/02204": 48,
+      "omni/02316": 45,
+      "omni/02460": 40,
+      "omni/02796": 46,
+      "omni/02804": 44,
+      "omni/02842": 46,
+      "omni/04174": 45
+     },
+     "total": 2048
+    }
+   },
+   "round_rows_multi": {},
+   "seed": 101,
+   "superseded": {},
+   "zero_grad_steps": [
+    [
+     69,
+     1
+    ],
+    [
+     82,
+     3
+    ],
+    [
+     83,
+     2
+    ],
+    [
+     84,
+     1
+    ],
+    [
+     88,
+     2
+    ],
+    [
+     95,
+     1
+    ],
+    [
+     98,
+     1
+    ],
+    [
+     98,
+     2
+    ],
+    [
+     102,
+     1
+    ],
+    [
+     104,
+     1
+    ],
+    [
+     107,
+     3
+    ],
+    [
+     108,
+     2
+    ],
+    [
+     111,
+     1
+    ],
+    [
+     111,
+     2
+    ],
+    [
+     112,
+     0
+    ],
+    [
+     117,
+     2
+    ],
+    [
+     125,
+     0
+    ],
+    [
+     126,
+     1
+    ]
+   ]
+  },
+  "qis-main-H-s202-sym": {
+   "arm": "H",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "extra disjoint from shared": 128,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 20
+   },
+   "config_rows": [
+    {
+     "arm": "H",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    },
+    {
+     "arm": "H",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "7c44fa52e1bdc0277176574afed4c8fb76c01a10",
+     "job": "11082192",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794298576.0400808,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "09f508017675703c6f84c61054bd5f58a8a36fbe",
+     "job": "11112377",
+     "resume_round": 60,
+     "round": null,
+     "utc": 1794361909.838403,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": 60,
+     "utc": 1794361909.9824288,
+     "what": "resume"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794433507.6301367,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 73,
+   "group_totals": {
+    "all0": 79,
+    "all1": 682,
+    "mixed": 1287
+   },
+   "n_round_rows_total": 132,
+   "n_step_rows_total": 528,
+   "n_zero_grad_steps": 20,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 2,
+      "21": 4,
+      "22": 20,
+      "23": 20
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 23,
+      "algebra/train/01269": 23,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 22,
+      "intermediate_algebra/train/00301": 22,
+      "intermediate_algebra/train/00340": 22,
+      "intermediate_algebra/train/00379": 22,
+      "intermediate_algebra/train/00427": 22,
+      "intermediate_algebra/train/00431": 23,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 23,
+      "intermediate_algebra/train/00522": 21,
+      "intermediate_algebra/train/00592": 21,
+      "intermediate_algebra/train/00656": 23,
+      "intermediate_algebra/train/00995": 22,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 23,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 22,
+      "intermediate_algebra/train/01234": 22,
+      "intermediate_algebra/train/01249": 23,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 23,
+      "omni/00852": 21,
+      "omni/00984": 23,
+      "omni/01012": 23,
+      "omni/01386": 23,
+      "omni/01413": 22,
+      "omni/01473": 22,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 22,
+      "omni/02008": 20,
+      "omni/02204": 23,
+      "omni/02316": 22,
+      "omni/02460": 20,
+      "omni/02796": 21,
+      "omni/02804": 22,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    },
+    "hard_extra": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "18": 3,
+      "20": 3,
+      "21": 12,
+      "22": 8,
+      "23": 10,
+      "24": 2,
+      "25": 5,
+      "26": 2,
+      "27": 1
+     },
+     "max": 27,
+     "mean": 22.26086956521739,
+     "min": 18,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 23,
+      "algebra/train/01269": 18,
+      "intermediate_algebra/train/00048": 25,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 21,
+      "intermediate_algebra/train/00301": 21,
+      "intermediate_algebra/train/00340": 21,
+      "intermediate_algebra/train/00379": 20,
+      "intermediate_algebra/train/00427": 23,
+      "intermediate_algebra/train/00431": 23,
+      "intermediate_algebra/train/00467": 22,
+      "intermediate_algebra/train/00477": 20,
+      "intermediate_algebra/train/00481": 22,
+      "intermediate_algebra/train/00522": 21,
+      "intermediate_algebra/train/00592": 21,
+      "intermediate_algebra/train/00656": 21,
+      "intermediate_algebra/train/00995": 21,
+      "intermediate_algebra/train/01036": 18,
+      "intermediate_algebra/train/01095": 27,
+      "intermediate_algebra/train/01097": 25,
+      "intermediate_algebra/train/01174": 23,
+      "intermediate_algebra/train/01205": 22,
+      "intermediate_algebra/train/01234": 21,
+      "intermediate_algebra/train/01249": 22,
+      "omni/00136": 23,
+      "omni/00524": 22,
+      "omni/00542": 26,
+      "omni/00622": 23,
+      "omni/00852": 21,
+      "omni/00984": 23,
+      "omni/01012": 21,
+      "omni/01386": 23,
+      "omni/01413": 25,
+      "omni/01473": 24,
+      "omni/01558": 22,
+      "omni/01690": 24,
+      "omni/01788": 26,
+      "omni/02008": 25,
+      "omni/02204": 25,
+      "omni/02316": 21,
+      "omni/02460": 23,
+      "omni/02796": 22,
+      "omni/02804": 20,
+      "omni/02842": 21,
+      "omni/04174": 18
+     },
+     "total": 1024
+    },
+    "hard_total": {
+     "expected": 44.52173913043478,
+     "hist": {
+      "41": 3,
+      "42": 5,
+      "43": 9,
+      "44": 6,
+      "45": 8,
+      "46": 8,
+      "47": 2,
+      "48": 4,
+      "50": 1
+     },
+     "max": 50,
+     "mean": 44.52173913043478,
+     "min": 41,
+     "per_problem": {
+      "algebra/train/00288": 46,
+      "algebra/train/01269": 41,
+      "intermediate_algebra/train/00048": 48,
+      "intermediate_algebra/train/00074": 46,
+      "intermediate_algebra/train/00076": 44,
+      "intermediate_algebra/train/00147": 43,
+      "intermediate_algebra/train/00301": 43,
+      "intermediate_algebra/train/00340": 43,
+      "intermediate_algebra/train/00379": 42,
+      "intermediate_algebra/train/00427": 45,
+      "intermediate_algebra/train/00431": 46,
+      "intermediate_algebra/train/00467": 45,
+      "intermediate_algebra/train/00477": 43,
+      "intermediate_algebra/train/00481": 45,
+      "intermediate_algebra/train/00522": 42,
+      "intermediate_algebra/train/00592": 42,
+      "intermediate_algebra/train/00656": 44,
+      "intermediate_algebra/train/00995": 43,
+      "intermediate_algebra/train/01036": 41,
+      "intermediate_algebra/train/01095": 50,
+      "intermediate_algebra/train/01097": 47,
+      "intermediate_algebra/train/01174": 45,
+      "intermediate_algebra/train/01205": 44,
+      "intermediate_algebra/train/01234": 43,
+      "intermediate_algebra/train/01249": 45,
+      "omni/00136": 45,
+      "omni/00524": 45,
+      "omni/00542": 48,
+      "omni/00622": 46,
+      "omni/00852": 42,
+      "omni/00984": 46,
+      "omni/01012": 44,
+      "omni/01386": 46,
+      "omni/01413": 47,
+      "omni/01473": 46,
+      "omni/01558": 44,
+      "omni/01690": 46,
+      "omni/01788": 48,
+      "omni/02008": 45,
+      "omni/02204": 48,
+      "omni/02316": 43,
+      "omni/02460": 43,
+      "omni/02796": 43,
+      "omni/02804": 42,
+      "omni/02842": 44,
+      "omni/04174": 41
+     },
+     "total": 2048
+    }
+   },
+   "round_rows_multi": {
+    "61": {
+     "match_each": [
+      1,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       1,
+       10,
+       5
+      ],
+      [
+       1,
+       10,
+       5
+      ]
+     ]
+    },
+    "62": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       12,
+       4
+      ],
+      [
+       0,
+       8,
+       8
+      ]
+     ]
+    },
+    "63": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       1,
+       8,
+       7
+      ],
+      [
+       1,
+       9,
+       6
+      ]
+     ]
+    },
+    "64": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       1,
+       9,
+       6
+      ],
+      [
+       1,
+       10,
+       5
+      ]
+     ]
+    }
+   },
+   "seed": 202,
+   "superseded": {
+    "records_a2orig_r60-64": {
+     "files": 4,
+     "other_files": [
+      "SHA256SUMS",
+      "eval_dev_r0064.jsonl.gz",
+      "eval_probe_J_R_r0064.jsonl.gz",
+      "eval_probe_J_U_r0064.jsonl.gz"
+     ],
+     "rounds": [
+      {
+       "match_row_index": [
+        0,
+        1
+       ],
+       "n_rows": 2,
+       "rec": [
+        1,
+        10,
+        5
+       ],
+       "round_1based": 61
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        12,
+        4
+       ],
+       "round_1based": 62
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        1,
+        8,
+        7
+       ],
+       "round_1based": 63
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        1,
+        9,
+        6
+       ],
+       "round_1based": 64
+      }
+     ]
+    }
+   },
+   "zero_grad_steps": [
+    [
+     72,
+     1
+    ],
+    [
+     78,
+     3
+    ],
+    [
+     81,
+     2
+    ],
+    [
+     83,
+     0
+    ],
+    [
+     86,
+     3
+    ],
+    [
+     94,
+     0
+    ],
+    [
+     95,
+     1
+    ],
+    [
+     96,
+     3
+    ],
+    [
+     97,
+     3
+    ],
+    [
+     101,
+     3
+    ],
+    [
+     103,
+     0
+    ],
+    [
+     107,
+     0
+    ],
+    [
+     110,
+     0
+    ],
+    [
+     111,
+     1
+    ],
+    [
+     114,
+     2
+    ],
+    [
+     116,
+     0
+    ],
+    [
+     117,
+     3
+    ],
+    [
+     120,
+     3
+    ],
+    [
+     121,
+     0
+    ],
+    [
+     122,
+     2
+    ]
+   ]
+  },
+  "qis-main-R-s101-sym": {
+   "arm": "R",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 66
+   },
+   "config_rows": [
+    {
+     "arm": "R",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 101
+    },
+    {
+     "arm": "R",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 101
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "job": "11081724",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794107175.0148532,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "0afd6e89996ecb36ee0d0733dbbfa6507eb6afb8",
+     "job": "11092945",
+     "resume_round": 124,
+     "round": null,
+     "utc": 1794199904.8372889,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": 124,
+     "utc": 1794199904.8437855,
+     "what": "resume"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794207701.8290596,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 38,
+   "group_totals": {
+    "all0": 58,
+    "all1": 1029,
+    "mixed": 961
+   },
+   "n_round_rows_total": 132,
+   "n_step_rows_total": 528,
+   "n_zero_grad_steps": 66,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "aux": {
+     "expected": 16.253968253968253,
+     "hist": {
+      "16": 47,
+      "17": 16
+     },
+     "max": 17,
+     "mean": 16.253968253968253,
+     "min": 16,
+     "n_problems": 63,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00352": 16,
+      "algebra/train/00454": 16,
+      "algebra/train/00599": 16,
+      "algebra/train/00769": 16,
+      "algebra/train/01661": 16,
+      "algebra/train/01732": 16,
+      "intermediate_algebra/train/00145": 16,
+      "intermediate_algebra/train/01013": 16,
+      "intermediate_algebra/train/01046": 16,
+      "syn-R1-013": 16,
+      "syn-R1-017": 17,
+      "syn-R2-054": 16,
+      "syn-R2-055": 16,
+      "syn-R2-062": 16,
+      "syn-R2-068": 17,
+      "syn-R2-069": 17,
+      "syn-R2-071": 17,
+      "syn-R2-072": 17,
+      "syn-R3-005": 16,
+      "syn-R3-006": 16,
+      "syn-R3-020": 16,
+      "syn-R3-034": 16,
+      "syn-R3-035": 16,
+      "syn-R3-037": 16,
+      "syn-R3-038": 16,
+      "syn-R3-085": 16,
+      "syn-R3-096": 17,
+      "syn-R4-007": 16,
+      "syn-R4-010": 16,
+      "syn-R4-012": 16,
+      "syn-R4-021": 16,
+      "syn-R4-030": 16,
+      "syn-R4-041": 17,
+      "syn-R4-047": 17,
+      "syn-R4-049": 16,
+      "syn-R4-063": 16,
+      "syn-R4-064": 17,
+      "syn-R4-070": 16,
+      "syn-R4-072": 16,
+      "syn-R4-074": 16,
+      "syn-R4-077": 17,
+      "syn-R4-089": 16,
+      "syn-R4-090": 16,
+      "syn-R4-091": 17,
+      "syn-R4-096": 16,
+      "syn-R4-098": 17,
+      "syn-R5-017": 17,
+      "syn-R5-026": 16,
+      "syn-R5-027": 17,
+      "syn-R5-031": 17,
+      "syn-R5-033": 16,
+      "syn-R5-035": 16,
+      "syn-R5-037": 17,
+      "syn-R5-038": 16,
+      "syn-R5-042": 16,
+      "syn-R5-044": 16,
+      "syn-R5-046": 16,
+      "syn-R5-047": 16,
+      "syn-R5-063": 16,
+      "syn-R5-065": 16,
+      "syn-R5-075": 16,
+      "syn-R5-078": 16,
+      "syn-R5-080": 16
+     },
+     "total": 1024
+    },
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 1,
+      "21": 4,
+      "22": 23,
+      "23": 18
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 22,
+      "algebra/train/01269": 22,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 23,
+      "intermediate_algebra/train/00301": 23,
+      "intermediate_algebra/train/00340": 23,
+      "intermediate_algebra/train/00379": 21,
+      "intermediate_algebra/train/00427": 23,
+      "intermediate_algebra/train/00431": 22,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 21,
+      "intermediate_algebra/train/00522": 22,
+      "intermediate_algebra/train/00592": 22,
+      "intermediate_algebra/train/00656": 22,
+      "intermediate_algebra/train/00995": 23,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 21,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 23,
+      "intermediate_algebra/train/01234": 23,
+      "intermediate_algebra/train/01249": 22,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 22,
+      "omni/00852": 22,
+      "omni/00984": 22,
+      "omni/01012": 22,
+      "omni/01386": 22,
+      "omni/01413": 22,
+      "omni/01473": 23,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 21,
+      "omni/02008": 23,
+      "omni/02204": 22,
+      "omni/02316": 20,
+      "omni/02460": 22,
+      "omni/02796": 22,
+      "omni/02804": 23,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    }
+   },
+   "round_rows_multi": {
+    "125": {
+     "match_each": [
+      1,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       5,
+       11
+      ]
+     ]
+    },
+    "126": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       4,
+       12
+      ]
+     ]
+    },
+    "127": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       1,
+       3,
+       12
+      ],
+      [
+       1,
+       6,
+       9
+      ]
+     ]
+    },
+    "128": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       4,
+       12
+      ],
+      [
+       0,
+       6,
+       10
+      ]
+     ]
+    }
+   },
+   "seed": 101,
+   "superseded": {
+    "records/superseded-11081724": {
+     "files": 4,
+     "other_files": [
+      "eval_dev_r0128.jsonl.gz",
+      "eval_probe_J_R_r0128.jsonl.gz",
+      "eval_probe_J_U_r0128.jsonl.gz"
+     ],
+     "rounds": [
+      {
+       "match_row_index": [
+        0,
+        1
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 125
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 126
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        1,
+        3,
+        12
+       ],
+       "round_1based": 127
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        4,
+        12
+       ],
+       "round_1based": 128
+      }
+     ]
+    }
+   },
+   "zero_grad_steps": [
+    [
+     37,
+     1
+    ],
+    [
+     42,
+     1
+    ],
+    [
+     45,
+     0
+    ],
+    [
+     49,
+     2
+    ],
+    [
+     52,
+     0
+    ],
+    [
+     57,
+     3
+    ],
+    [
+     60,
+     0
+    ],
+    [
+     60,
+     1
+    ],
+    [
+     63,
+     1
+    ],
+    [
+     64,
+     3
+    ],
+    [
+     66,
+     1
+    ],
+    [
+     67,
+     1
+    ],
+    [
+     68,
+     1
+    ],
+    [
+     69,
+     0
+    ],
+    [
+     70,
+     1
+    ],
+    [
+     74,
+     2
+    ],
+    [
+     75,
+     1
+    ],
+    [
+     76,
+     0
+    ],
+    [
+     76,
+     1
+    ],
+    [
+     77,
+     2
+    ],
+    [
+     79,
+     0
+    ],
+    [
+     80,
+     3
+    ],
+    [
+     82,
+     2
+    ],
+    [
+     82,
+     3
+    ],
+    [
+     83,
+     0
+    ],
+    [
+     85,
+     0
+    ],
+    [
+     87,
+     1
+    ],
+    [
+     88,
+     1
+    ],
+    [
+     90,
+     0
+    ],
+    [
+     91,
+     0
+    ],
+    [
+     92,
+     1
+    ],
+    [
+     94,
+     0
+    ],
+    [
+     95,
+     1
+    ],
+    [
+     97,
+     1
+    ],
+    [
+     98,
+     1
+    ],
+    [
+     98,
+     3
+    ],
+    [
+     101,
+     2
+    ],
+    [
+     102,
+     0
+    ],
+    [
+     103,
+     2
+    ],
+    [
+     104,
+     1
+    ],
+    [
+     104,
+     3
+    ],
+    [
+     105,
+     1
+    ],
+    [
+     106,
+     1
+    ],
+    [
+     107,
+     1
+    ],
+    [
+     107,
+     2
+    ],
+    [
+     108,
+     0
+    ],
+    [
+     111,
+     0
+    ],
+    [
+     111,
+     1
+    ],
+    [
+     111,
+     3
+    ],
+    [
+     112,
+     3
+    ],
+    [
+     113,
+     1
+    ],
+    [
+     115,
+     2
+    ],
+    [
+     116,
+     0
+    ],
+    [
+     116,
+     2
+    ],
+    [
+     117,
+     3
+    ],
+    [
+     118,
+     1
+    ],
+    [
+     119,
+     0
+    ],
+    [
+     119,
+     2
+    ],
+    [
+     120,
+     2
+    ],
+    [
+     120,
+     3
+    ],
+    [
+     121,
+     0
+    ],
+    [
+     122,
+     1
+    ],
+    [
+     123,
+     0
+    ],
+    [
+     123,
+     2
+    ],
+    [
+     124,
+     0
+    ],
+    [
+     125,
+     3
+    ]
+   ]
+  },
+  "qis-main-R-s202-sym": {
+   "arm": "R",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 25
+   },
+   "config_rows": [
+    {
+     "arm": "R",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    },
+    {
+     "arm": "R",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "job": "11081729",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794192274.0715594,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "dd71b2066b83a415d4fb1e3a9a3d86a50488c60e",
+     "job": "11094190",
+     "resume_round": 16,
+     "round": null,
+     "utc": 1794205479.899588,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": 16,
+     "utc": 1794205480.3293943,
+     "what": "resume"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794274242.8851755,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 59,
+   "group_totals": {
+    "all0": 48,
+    "all1": 900,
+    "mixed": 1100
+   },
+   "n_round_rows_total": 131,
+   "n_step_rows_total": 527,
+   "n_zero_grad_steps": 25,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "aux": {
+     "expected": 16.253968253968253,
+     "hist": {
+      "15": 1,
+      "16": 45,
+      "17": 17
+     },
+     "max": 17,
+     "mean": 16.253968253968253,
+     "min": 15,
+     "n_problems": 63,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00352": 16,
+      "algebra/train/00454": 17,
+      "algebra/train/00599": 16,
+      "algebra/train/00769": 16,
+      "algebra/train/01661": 16,
+      "algebra/train/01732": 16,
+      "intermediate_algebra/train/00145": 17,
+      "intermediate_algebra/train/01013": 16,
+      "intermediate_algebra/train/01046": 16,
+      "syn-R1-013": 16,
+      "syn-R1-017": 16,
+      "syn-R2-054": 16,
+      "syn-R2-055": 16,
+      "syn-R2-062": 16,
+      "syn-R2-068": 16,
+      "syn-R2-069": 16,
+      "syn-R2-071": 16,
+      "syn-R2-072": 17,
+      "syn-R3-005": 16,
+      "syn-R3-006": 16,
+      "syn-R3-020": 16,
+      "syn-R3-034": 16,
+      "syn-R3-035": 16,
+      "syn-R3-037": 16,
+      "syn-R3-038": 16,
+      "syn-R3-085": 16,
+      "syn-R3-096": 16,
+      "syn-R4-007": 17,
+      "syn-R4-010": 16,
+      "syn-R4-012": 16,
+      "syn-R4-021": 16,
+      "syn-R4-030": 16,
+      "syn-R4-041": 16,
+      "syn-R4-047": 17,
+      "syn-R4-049": 17,
+      "syn-R4-063": 16,
+      "syn-R4-064": 17,
+      "syn-R4-070": 17,
+      "syn-R4-072": 16,
+      "syn-R4-074": 17,
+      "syn-R4-077": 16,
+      "syn-R4-089": 16,
+      "syn-R4-090": 17,
+      "syn-R4-091": 17,
+      "syn-R4-096": 16,
+      "syn-R4-098": 16,
+      "syn-R5-017": 16,
+      "syn-R5-026": 16,
+      "syn-R5-027": 16,
+      "syn-R5-031": 16,
+      "syn-R5-033": 17,
+      "syn-R5-035": 16,
+      "syn-R5-037": 17,
+      "syn-R5-038": 16,
+      "syn-R5-042": 17,
+      "syn-R5-044": 17,
+      "syn-R5-046": 16,
+      "syn-R5-047": 16,
+      "syn-R5-063": 17,
+      "syn-R5-065": 16,
+      "syn-R5-075": 15,
+      "syn-R5-078": 17,
+      "syn-R5-080": 16
+     },
+     "total": 1024
+    },
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 2,
+      "21": 4,
+      "22": 20,
+      "23": 20
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 23,
+      "algebra/train/01269": 23,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 22,
+      "intermediate_algebra/train/00301": 22,
+      "intermediate_algebra/train/00340": 22,
+      "intermediate_algebra/train/00379": 22,
+      "intermediate_algebra/train/00427": 22,
+      "intermediate_algebra/train/00431": 23,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 23,
+      "intermediate_algebra/train/00522": 21,
+      "intermediate_algebra/train/00592": 21,
+      "intermediate_algebra/train/00656": 23,
+      "intermediate_algebra/train/00995": 22,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 23,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 22,
+      "intermediate_algebra/train/01234": 22,
+      "intermediate_algebra/train/01249": 23,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 23,
+      "omni/00852": 21,
+      "omni/00984": 23,
+      "omni/01012": 23,
+      "omni/01386": 23,
+      "omni/01413": 22,
+      "omni/01473": 22,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 22,
+      "omni/02008": 20,
+      "omni/02204": 23,
+      "omni/02316": 22,
+      "omni/02460": 20,
+      "omni/02796": 21,
+      "omni/02804": 22,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    }
+   },
+   "round_rows_multi": {
+    "17": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       14,
+       2
+      ],
+      [
+       2,
+       11,
+       3
+      ]
+     ]
+    },
+    "18": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       1,
+       10,
+       5
+      ],
+      [
+       1,
+       11,
+       4
+      ]
+     ]
+    },
+    "19": {
+     "match_each": [
+      0,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       9,
+       7
+      ],
+      [
+       0,
+       10,
+       6
+      ]
+     ]
+    }
+   },
+   "seed": 202,
+   "superseded": {
+    "records/superseded-11081729": {
+     "files": 3,
+     "other_files": [],
+     "rounds": [
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        14,
+        2
+       ],
+       "round_1based": 17
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        1,
+        10,
+        5
+       ],
+       "round_1based": 18
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        9,
+        7
+       ],
+       "round_1based": 19
+      }
+     ]
+    }
+   },
+   "zero_grad_steps": [
+    [
+     58,
+     1
+    ],
+    [
+     61,
+     2
+    ],
+    [
+     76,
+     2
+    ],
+    [
+     78,
+     1
+    ],
+    [
+     83,
+     2
+    ],
+    [
+     96,
+     0
+    ],
+    [
+     96,
+     2
+    ],
+    [
+     96,
+     3
+    ],
+    [
+     97,
+     2
+    ],
+    [
+     97,
+     3
+    ],
+    [
+     101,
+     0
+    ],
+    [
+     105,
+     1
+    ],
+    [
+     106,
+     1
+    ],
+    [
+     106,
+     2
+    ],
+    [
+     107,
+     3
+    ],
+    [
+     110,
+     1
+    ],
+    [
+     112,
+     3
+    ],
+    [
+     113,
+     0
+    ],
+    [
+     115,
+     2
+    ],
+    [
+     116,
+     0
+    ],
+    [
+     117,
+     0
+    ],
+    [
+     119,
+     1
+    ],
+    [
+     120,
+     0
+    ],
+    [
+     121,
+     0
+    ],
+    [
+     126,
+     0
+    ]
+   ]
+  },
+  "qis-main-U-s101-sym": {
+   "arm": "U",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 53
+   },
+   "config_rows": [
+    {
+     "arm": "U",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 101
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "9d6349ae7db7411c52f0c53197831a040b4633de",
+     "job": "11081725",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794110687.5307865,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794192002.7295322,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 27,
+   "group_totals": {
+    "all0": 60,
+    "all1": 1058,
+    "mixed": 930
+   },
+   "n_round_rows_total": 128,
+   "n_step_rows_total": 512,
+   "n_zero_grad_steps": 53,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "aux": {
+     "expected": 16.253968253968253,
+     "hist": {
+      "16": 47,
+      "17": 16
+     },
+     "max": 17,
+     "mean": 16.253968253968253,
+     "min": 16,
+     "n_problems": 63,
+     "never": 0,
+     "per_problem": {
+      "number_theory/train/00014": 16,
+      "number_theory/train/00107": 16,
+      "number_theory/train/00149": 16,
+      "number_theory/train/00437": 16,
+      "number_theory/train/00683": 16,
+      "number_theory/train/00708": 16,
+      "number_theory/train/00797": 16,
+      "number_theory/train/00817": 16,
+      "number_theory/train/00832": 16,
+      "syn-U1-012": 16,
+      "syn-U1-025": 16,
+      "syn-U1-032": 17,
+      "syn-U1-036": 17,
+      "syn-U1-040": 16,
+      "syn-U1-045": 16,
+      "syn-U1-052": 16,
+      "syn-U1-053": 17,
+      "syn-U1-063": 16,
+      "syn-U1-098": 16,
+      "syn-U2-008": 16,
+      "syn-U2-009": 16,
+      "syn-U2-012": 16,
+      "syn-U2-018": 17,
+      "syn-U2-027": 16,
+      "syn-U2-034": 16,
+      "syn-U2-036": 16,
+      "syn-U2-068": 16,
+      "syn-U2-077": 16,
+      "syn-U2-092": 16,
+      "syn-U2-098": 17,
+      "syn-U3-008": 16,
+      "syn-U3-013": 16,
+      "syn-U3-017": 17,
+      "syn-U3-026": 16,
+      "syn-U3-028": 17,
+      "syn-U3-029": 16,
+      "syn-U3-032": 17,
+      "syn-U3-034": 16,
+      "syn-U3-038": 16,
+      "syn-U3-048": 16,
+      "syn-U3-050": 16,
+      "syn-U3-059": 16,
+      "syn-U3-063": 16,
+      "syn-U3-068": 16,
+      "syn-U3-069": 16,
+      "syn-U3-070": 16,
+      "syn-U3-071": 17,
+      "syn-U3-077": 17,
+      "syn-U3-078": 16,
+      "syn-U3-079": 16,
+      "syn-U3-080": 16,
+      "syn-U3-081": 16,
+      "syn-U3-088": 16,
+      "syn-U3-091": 17,
+      "syn-U3-094": 17,
+      "syn-U3-097": 16,
+      "syn-U3-099": 17,
+      "syn-U3-100": 17,
+      "syn-U3-106": 16,
+      "syn-U3-108": 16,
+      "syn-U3-112": 16,
+      "syn-U3-117": 17,
+      "syn-U3-118": 17
+     },
+     "total": 1024
+    },
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 1,
+      "21": 4,
+      "22": 23,
+      "23": 18
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 22,
+      "algebra/train/01269": 22,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 23,
+      "intermediate_algebra/train/00301": 23,
+      "intermediate_algebra/train/00340": 23,
+      "intermediate_algebra/train/00379": 21,
+      "intermediate_algebra/train/00427": 23,
+      "intermediate_algebra/train/00431": 22,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 21,
+      "intermediate_algebra/train/00522": 22,
+      "intermediate_algebra/train/00592": 22,
+      "intermediate_algebra/train/00656": 22,
+      "intermediate_algebra/train/00995": 23,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 21,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 23,
+      "intermediate_algebra/train/01234": 23,
+      "intermediate_algebra/train/01249": 22,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 22,
+      "omni/00852": 22,
+      "omni/00984": 22,
+      "omni/01012": 22,
+      "omni/01386": 22,
+      "omni/01413": 22,
+      "omni/01473": 23,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 21,
+      "omni/02008": 23,
+      "omni/02204": 22,
+      "omni/02316": 20,
+      "omni/02460": 22,
+      "omni/02796": 22,
+      "omni/02804": 23,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    }
+   },
+   "round_rows_multi": {},
+   "seed": 101,
+   "superseded": {},
+   "zero_grad_steps": [
+    [
+     26,
+     2
+    ],
+    [
+     39,
+     0
+    ],
+    [
+     49,
+     0
+    ],
+    [
+     50,
+     3
+    ],
+    [
+     54,
+     3
+    ],
+    [
+     59,
+     1
+    ],
+    [
+     59,
+     3
+    ],
+    [
+     63,
+     1
+    ],
+    [
+     64,
+     1
+    ],
+    [
+     65,
+     3
+    ],
+    [
+     68,
+     1
+    ],
+    [
+     69,
+     0
+    ],
+    [
+     72,
+     3
+    ],
+    [
+     81,
+     2
+    ],
+    [
+     82,
+     3
+    ],
+    [
+     85,
+     1
+    ],
+    [
+     87,
+     2
+    ],
+    [
+     88,
+     1
+    ],
+    [
+     90,
+     0
+    ],
+    [
+     91,
+     3
+    ],
+    [
+     92,
+     0
+    ],
+    [
+     92,
+     1
+    ],
+    [
+     93,
+     3
+    ],
+    [
+     94,
+     0
+    ],
+    [
+     98,
+     0
+    ],
+    [
+     98,
+     3
+    ],
+    [
+     99,
+     0
+    ],
+    [
+     99,
+     3
+    ],
+    [
+     100,
+     1
+    ],
+    [
+     101,
+     1
+    ],
+    [
+     101,
+     2
+    ],
+    [
+     102,
+     0
+    ],
+    [
+     102,
+     1
+    ],
+    [
+     102,
+     2
+    ],
+    [
+     104,
+     0
+    ],
+    [
+     104,
+     1
+    ],
+    [
+     106,
+     0
+    ],
+    [
+     107,
+     1
+    ],
+    [
+     108,
+     2
+    ],
+    [
+     108,
+     3
+    ],
+    [
+     111,
+     0
+    ],
+    [
+     112,
+     2
+    ],
+    [
+     113,
+     0
+    ],
+    [
+     115,
+     3
+    ],
+    [
+     117,
+     3
+    ],
+    [
+     118,
+     1
+    ],
+    [
+     118,
+     2
+    ],
+    [
+     118,
+     3
+    ],
+    [
+     122,
+     1
+    ],
+    [
+     122,
+     3
+    ],
+    [
+     123,
+     0
+    ],
+    [
+     123,
+     2
+    ],
+    [
+     124,
+     0
+    ]
+   ]
+  },
+  "qis-main-U-s202-sym": {
+   "arm": "U",
+   "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+   "bundle_sha256_now": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+   "checks": {
+    "adv recompute ok": 2048,
+    "prompt_id matches round_plan": 2048,
+    "records match last round row": 128,
+    "request seed matches": 2048,
+    "slots": 2048,
+    "step valid_tokens == planned minibatch token sum": 512,
+    "step zero-grad <-> plan minibatch all non-mixed": 512,
+    "zero-grad step: all 32 adv == 0": 65
+   },
+   "config_rows": [
+    {
+     "arm": "U",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    },
+    {
+     "arm": "U",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    },
+    {
+     "arm": "U",
+     "attempt_id": "a2",
+     "bundle": "/data/user_data/vineethb/qis/data/main-v1/bundle_main_v1.json",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "cap_schedule": [
+      [
+       0,
+       8192
+      ],
+      [
+       32,
+       12288
+      ]
+     ],
+     "seed": 202
+    }
+   ],
+   "events": [
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "dd71b2066b83a415d4fb1e3a9a3d86a50488c60e",
+     "job": "11094037",
+     "resume_round": 0,
+     "round": null,
+     "utc": 1794207965.101596,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "6724cce98be3d15c555204373e723356e63e47f4",
+     "job": "11097811",
+     "resume_round": 64,
+     "round": null,
+     "utc": 1794247808.777136,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": 64,
+     "utc": 1794247809.0401056,
+     "what": "resume"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": "0e255243d8cca981a653c4fd42b38beeeb163cee924886fa166b972d585d8c51",
+     "code_sha": "d90dd8cc14325511cfb3c67b8bbb2072a2450c79",
+     "job": "11100159",
+     "resume_round": 64,
+     "round": null,
+     "utc": 1794261352.106552,
+     "what": "start"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": 64,
+     "utc": 1794261352.1133482,
+     "what": "resume"
+    },
+    {
+     "attempt_id": "a2",
+     "bundle_sha": null,
+     "code_sha": null,
+     "job": null,
+     "resume_round": null,
+     "round": null,
+     "utc": 1794301809.0531685,
+     "what": "complete"
+    }
+   ],
+   "fail_examples": [],
+   "first_zero_grad_round_1based": 15,
+   "group_totals": {
+    "all0": 54,
+    "all1": 1047,
+    "mixed": 947
+   },
+   "n_round_rows_total": 161,
+   "n_step_rows_total": 644,
+   "n_zero_grad_steps": 65,
+   "plan_zero_grad_mismatch": [],
+   "presentations": {
+    "aux": {
+     "expected": 16.253968253968253,
+     "hist": {
+      "15": 1,
+      "16": 45,
+      "17": 17
+     },
+     "max": 17,
+     "mean": 16.253968253968253,
+     "min": 15,
+     "n_problems": 63,
+     "never": 0,
+     "per_problem": {
+      "number_theory/train/00014": 17,
+      "number_theory/train/00107": 16,
+      "number_theory/train/00149": 16,
+      "number_theory/train/00437": 16,
+      "number_theory/train/00683": 16,
+      "number_theory/train/00708": 16,
+      "number_theory/train/00797": 16,
+      "number_theory/train/00817": 17,
+      "number_theory/train/00832": 16,
+      "syn-U1-012": 16,
+      "syn-U1-025": 16,
+      "syn-U1-032": 17,
+      "syn-U1-036": 16,
+      "syn-U1-040": 17,
+      "syn-U1-045": 16,
+      "syn-U1-052": 17,
+      "syn-U1-053": 16,
+      "syn-U1-063": 17,
+      "syn-U1-098": 16,
+      "syn-U2-008": 17,
+      "syn-U2-009": 16,
+      "syn-U2-012": 16,
+      "syn-U2-018": 16,
+      "syn-U2-027": 16,
+      "syn-U2-034": 16,
+      "syn-U2-036": 17,
+      "syn-U2-068": 16,
+      "syn-U2-077": 16,
+      "syn-U2-092": 16,
+      "syn-U2-098": 16,
+      "syn-U3-008": 17,
+      "syn-U3-013": 16,
+      "syn-U3-017": 16,
+      "syn-U3-026": 16,
+      "syn-U3-028": 16,
+      "syn-U3-029": 16,
+      "syn-U3-032": 16,
+      "syn-U3-034": 16,
+      "syn-U3-038": 16,
+      "syn-U3-048": 16,
+      "syn-U3-050": 16,
+      "syn-U3-059": 17,
+      "syn-U3-063": 17,
+      "syn-U3-068": 17,
+      "syn-U3-069": 15,
+      "syn-U3-070": 16,
+      "syn-U3-071": 17,
+      "syn-U3-077": 16,
+      "syn-U3-078": 16,
+      "syn-U3-079": 16,
+      "syn-U3-080": 16,
+      "syn-U3-081": 16,
+      "syn-U3-088": 16,
+      "syn-U3-091": 16,
+      "syn-U3-094": 16,
+      "syn-U3-097": 16,
+      "syn-U3-099": 16,
+      "syn-U3-100": 17,
+      "syn-U3-106": 17,
+      "syn-U3-108": 16,
+      "syn-U3-112": 16,
+      "syn-U3-117": 17,
+      "syn-U3-118": 17
+     },
+     "total": 1024
+    },
+    "hard_common": {
+     "expected": 22.26086956521739,
+     "hist": {
+      "20": 2,
+      "21": 4,
+      "22": 20,
+      "23": 20
+     },
+     "max": 23,
+     "mean": 22.26086956521739,
+     "min": 20,
+     "n_problems": 46,
+     "never": 0,
+     "per_problem": {
+      "algebra/train/00288": 23,
+      "algebra/train/01269": 23,
+      "intermediate_algebra/train/00048": 23,
+      "intermediate_algebra/train/00074": 23,
+      "intermediate_algebra/train/00076": 22,
+      "intermediate_algebra/train/00147": 22,
+      "intermediate_algebra/train/00301": 22,
+      "intermediate_algebra/train/00340": 22,
+      "intermediate_algebra/train/00379": 22,
+      "intermediate_algebra/train/00427": 22,
+      "intermediate_algebra/train/00431": 23,
+      "intermediate_algebra/train/00467": 23,
+      "intermediate_algebra/train/00477": 23,
+      "intermediate_algebra/train/00481": 23,
+      "intermediate_algebra/train/00522": 21,
+      "intermediate_algebra/train/00592": 21,
+      "intermediate_algebra/train/00656": 23,
+      "intermediate_algebra/train/00995": 22,
+      "intermediate_algebra/train/01036": 23,
+      "intermediate_algebra/train/01095": 23,
+      "intermediate_algebra/train/01097": 22,
+      "intermediate_algebra/train/01174": 22,
+      "intermediate_algebra/train/01205": 22,
+      "intermediate_algebra/train/01234": 22,
+      "intermediate_algebra/train/01249": 23,
+      "omni/00136": 22,
+      "omni/00524": 23,
+      "omni/00542": 22,
+      "omni/00622": 23,
+      "omni/00852": 21,
+      "omni/00984": 23,
+      "omni/01012": 23,
+      "omni/01386": 23,
+      "omni/01413": 22,
+      "omni/01473": 22,
+      "omni/01558": 22,
+      "omni/01690": 22,
+      "omni/01788": 22,
+      "omni/02008": 20,
+      "omni/02204": 23,
+      "omni/02316": 22,
+      "omni/02460": 20,
+      "omni/02796": 21,
+      "omni/02804": 22,
+      "omni/02842": 23,
+      "omni/04174": 23
+     },
+     "total": 1024
+    }
+   },
+   "round_rows_multi": {
+    "65": {
+     "match_each": [
+      1,
+      1,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       1,
+       5,
+       10
+      ],
+      [
+       1,
+       5,
+       10
+      ],
+      [
+       1,
+       5,
+       10
+      ]
+     ]
+    },
+    "66": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       3,
+       13
+      ],
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       6,
+       10
+      ]
+     ]
+    },
+    "67": {
+     "match_each": [
+      0,
+      1,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       6,
+       10
+      ],
+      [
+       0,
+       4,
+       12
+      ],
+      [
+       0,
+       4,
+       12
+      ]
+     ]
+    },
+    "68": {
+     "match_each": [
+      1,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       6,
+       10
+      ],
+      [
+       0,
+       8,
+       8
+      ],
+      [
+       0,
+       6,
+       10
+      ]
+     ]
+    },
+    "69": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       8,
+       8
+      ],
+      [
+       0,
+       6,
+       10
+      ],
+      [
+       0,
+       7,
+       9
+      ]
+     ]
+    },
+    "70": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       7,
+       9
+      ],
+      [
+       0,
+       4,
+       12
+      ]
+     ]
+    },
+    "71": {
+     "match_each": [
+      0,
+      1,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       4,
+       12
+      ],
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       5,
+       11
+      ]
+     ]
+    },
+    "72": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       7,
+       9
+      ],
+      [
+       0,
+       7,
+       9
+      ],
+      [
+       0,
+       3,
+       13
+      ]
+     ]
+    },
+    "73": {
+     "match_each": [
+      1,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       6,
+       10
+      ],
+      [
+       0,
+       8,
+       8
+      ],
+      [
+       0,
+       6,
+       10
+      ]
+     ]
+    },
+    "74": {
+     "match_each": [
+      0,
+      1,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       1,
+       3,
+       12
+      ],
+      [
+       1,
+       6,
+       9
+      ],
+      [
+       1,
+       6,
+       9
+      ]
+     ]
+    },
+    "75": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       1,
+       8,
+       7
+      ],
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       7,
+       9
+      ]
+     ]
+    },
+    "76": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       7,
+       9
+      ],
+      [
+       0,
+       4,
+       12
+      ],
+      [
+       0,
+       8,
+       8
+      ]
+     ]
+    },
+    "77": {
+     "match_each": [
+      1,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       6,
+       10
+      ],
+      [
+       0,
+       4,
+       12
+      ],
+      [
+       0,
+       6,
+       10
+      ]
+     ]
+    },
+    "78": {
+     "match_each": [
+      1,
+      1,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       3,
+       13
+      ],
+      [
+       0,
+       3,
+       13
+      ],
+      [
+       0,
+       3,
+       13
+      ]
+     ]
+    },
+    "79": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       1,
+       8,
+       7
+      ],
+      [
+       1,
+       6,
+       9
+      ],
+      [
+       0,
+       7,
+       9
+      ]
+     ]
+    },
+    "80": {
+     "match_each": [
+      0,
+      0,
+      1
+     ],
+     "n_rows": 3,
+     "rows": [
+      [
+       0,
+       8,
+       8
+      ],
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       4,
+       12
+      ]
+     ]
+    },
+    "81": {
+     "match_each": [
+      1,
+      1
+     ],
+     "n_rows": 2,
+     "rows": [
+      [
+       0,
+       5,
+       11
+      ],
+      [
+       0,
+       5,
+       11
+      ]
+     ]
+    }
+   },
+   "seed": 202,
+   "superseded": {
+    "records/superseded-11094037": {
+     "files": 16,
+     "other_files": [],
+     "rounds": [
+      {
+       "match_row_index": [
+        0,
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        5,
+        10
+       ],
+       "round_1based": 65
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        3,
+        13
+       ],
+       "round_1based": 66
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        6,
+        10
+       ],
+       "round_1based": 67
+      },
+      {
+       "match_row_index": [
+        0,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        6,
+        10
+       ],
+       "round_1based": 68
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        8,
+        8
+       ],
+       "round_1based": 69
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 70
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        4,
+        12
+       ],
+       "round_1based": 71
+      },
+      {
+       "match_row_index": [
+        0,
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        7,
+        9
+       ],
+       "round_1based": 72
+      },
+      {
+       "match_row_index": [
+        0,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        6,
+        10
+       ],
+       "round_1based": 73
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        3,
+        12
+       ],
+       "round_1based": 74
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        8,
+        7
+       ],
+       "round_1based": 75
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        7,
+        9
+       ],
+       "round_1based": 76
+      },
+      {
+       "match_row_index": [
+        0,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        6,
+        10
+       ],
+       "round_1based": 77
+      },
+      {
+       "match_row_index": [
+        0,
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        3,
+        13
+       ],
+       "round_1based": 78
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        8,
+        7
+       ],
+       "round_1based": 79
+      },
+      {
+       "match_row_index": [
+        0
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        8,
+        8
+       ],
+       "round_1based": 80
+      }
+     ]
+    },
+    "records/superseded-11097811": {
+     "files": 17,
+     "other_files": [],
+     "rounds": [
+      {
+       "match_row_index": [
+        0,
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        5,
+        10
+       ],
+       "round_1based": 65
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 66
+      },
+      {
+       "match_row_index": [
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        4,
+        12
+       ],
+       "round_1based": 67
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        8,
+        8
+       ],
+       "round_1based": 68
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        6,
+        10
+       ],
+       "round_1based": 69
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        7,
+        9
+       ],
+       "round_1based": 70
+      },
+      {
+       "match_row_index": [
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 71
+      },
+      {
+       "match_row_index": [
+        0,
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        7,
+        9
+       ],
+       "round_1based": 72
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        8,
+        8
+       ],
+       "round_1based": 73
+      },
+      {
+       "match_row_index": [
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        6,
+        9
+       ],
+       "round_1based": 74
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 75
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        4,
+        12
+       ],
+       "round_1based": 76
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        4,
+        12
+       ],
+       "round_1based": 77
+      },
+      {
+       "match_row_index": [
+        0,
+        1,
+        2
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        3,
+        13
+       ],
+       "round_1based": 78
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        1,
+        6,
+        9
+       ],
+       "round_1based": 79
+      },
+      {
+       "match_row_index": [
+        1
+       ],
+       "n_rows": 3,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 80
+      },
+      {
+       "match_row_index": [
+        0,
+        1
+       ],
+       "n_rows": 2,
+       "rec": [
+        0,
+        5,
+        11
+       ],
+       "round_1based": 81
+      }
+     ]
+    }
+   },
+   "zero_grad_steps": [
+    [
+     14,
+     0
+    ],
+    [
+     46,
+     2
+    ],
+    [
+     48,
+     0
+    ],
+    [
+     48,
+     3
+    ],
+    [
+     55,
+     1
+    ],
+    [
+     59,
+     0
+    ],
+    [
+     59,
+     1
+    ],
+    [
+     61,
+     0
+    ],
+    [
+     61,
+     1
+    ],
+    [
+     65,
+     1
+    ],
+    [
+     66,
+     0
+    ],
+    [
+     66,
+     1
+    ],
+    [
+     67,
+     3
+    ],
+    [
+     70,
+     0
+    ],
+    [
+     71,
+     3
+    ],
+    [
+     77,
+     0
+    ],
+    [
+     77,
+     1
+    ],
+    [
+     78,
+     1
+    ],
+    [
+     79,
+     1
+    ],
+    [
+     80,
+     1
+    ],
+    [
+     82,
+     0
+    ],
+    [
+     82,
+     2
+    ],
+    [
+     85,
+     0
+    ],
+    [
+     89,
+     3
+    ],
+    [
+     90,
+     0
+    ],
+    [
+     91,
+     0
+    ],
+    [
+     91,
+     1
+    ],
+    [
+     93,
+     3
+    ],
+    [
+     94,
+     0
+    ],
+    [
+     94,
+     2
+    ],
+    [
+     95,
+     2
+    ],
+    [
+     95,
+     3
+    ],
+    [
+     97,
+     0
+    ],
+    [
+     97,
+     1
+    ],
+    [
+     97,
+     2
+    ],
+    [
+     97,
+     3
+    ],
+    [
+     99,
+     0
+    ],
+    [
+     100,
+     3
+    ],
+    [
+     101,
+     3
+    ],
+    [
+     102,
+     0
+    ],
+    [
+     104,
+     0
+    ],
+    [
+     104,
+     2
+    ],
+    [
+     105,
+     1
+    ],
+    [
+     106,
+     2
+    ],
+    [
+     107,
+     3
+    ],
+    [
+     108,
+     0
+    ],
+    [
+     109,
+     1
+    ],
+    [
+     111,
+     0
+    ],
+    [
+     111,
+     3
+    ],
+    [
+     113,
+     1
+    ],
+    [
+     114,
+     3
+    ],
+    [
+     115,
+     2
+    ],
+    [
+     116,
+     0
+    ],
+    [
+     117,
+     0
+    ],
+    [
+     117,
+     2
+    ],
+    [
+     117,
+     3
+    ],
+    [
+     119,
+     1
+    ],
+    [
+     119,
+     2
+    ],
+    [
+     120,
+     2
+    ],
+    [
+     122,
+     3
+    ],
+    [
+     125,
+     1
+    ],
+    [
+     125,
+     2
+    ],
+    [
+     125,
+     3
+    ],
+    [
+     126,
+     0
+    ],
+    [
+     127,
+     1
+    ]
+   ]
+  }
+ }
+}

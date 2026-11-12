@@ -1,0 +1,6766 @@
+{
+ "compare_inrun": {
+  "r0_diag_none_vs_inrun_r0_all_runs": {
+   "probe_J_H": {
+    "diag_none": 0.400390625,
+    "inrun": {
+     "H-s101": 0.42578125,
+     "H-s202": 0.41015625,
+     "R-s101": 0.41796875,
+     "R-s202": 0.41015625,
+     "U-s101": 0.43359375,
+     "U-s202": 0.43359375
+    }
+   },
+   "probe_J_R": {
+    "diag_none": 0.828125,
+    "inrun": {
+     "H-s101": 0.8080357142857143,
+     "H-s202": 0.8080357142857143,
+     "R-s101": 0.8169642857142857,
+     "R-s202": 0.8080357142857143,
+     "U-s101": 0.8169642857142857,
+     "U-s202": 0.8169642857142857
+    }
+   },
+   "probe_J_U": {
+    "diag_none": 0.806640625,
+    "inrun": {
+     "H-s101": 0.8046875,
+     "H-s202": 0.8046875,
+     "R-s101": 0.8125,
+     "R-s202": 0.8046875,
+     "U-s101": 0.81640625,
+     "U-s202": 0.81640625
+    }
+   }
+  },
+  "r64_diag_none_vs_Rs101_inrun_r64": {
+   "probe_J_H": {
+    "diag_none": 0.60546875,
+    "diag_none_trunc": 0.37109375,
+    "inrun": 0.73828125,
+    "inrun_trunc": 0.21484375
+   },
+   "probe_J_R": {
+    "diag_none": 0.9017857142857143,
+    "diag_none_trunc": 0.05580357142857143,
+    "inrun": 0.9151785714285714,
+    "inrun_trunc": 0.013392857142857142
+   },
+   "probe_J_U": {
+    "diag_none": 0.939453125,
+    "diag_none_trunc": 0.0234375,
+    "inrun": 0.95703125,
+    "inrun_trunc": 0.00390625
+   }
+  }
+ },
+ "r0": {
+  "branch_types": {
+   "probe_J_H": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      0.009765625,
+      0.01953125,
+      0.005859375,
+      0.021484375
+     ],
+     "related": [
+      0.015625,
+      0.0390625,
+      0.033203125,
+      0.01953125
+     ],
+     "unrelated": [
+      0.005859375,
+      0.025390625,
+      0.00390625,
+      -0.015625
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.07411255411255412,
+    "range_of_type_means": 0.02197265625,
+    "related_minus_unrelated_by_seed": [
+     0.009765625,
+     0.013671875,
+     0.029296875,
+     0.03515625
+    ],
+    "rerun_minus_none": 0.03125,
+    "type_means": {
+     "hard": 0.01416015625,
+     "related": 0.02685546875,
+     "unrelated": 0.0048828125
+    },
+    "type_means_vs_none_cycled": {
+     "hard": -0.01708984375,
+     "related": -0.00439453125,
+     "unrelated": -0.0263671875
+    },
+    "type_sd": {
+     "hard": 0.007543379053552388,
+     "related": 0.01109161786289116,
+     "unrelated": 0.016763532798937154
+    }
+   },
+   "probe_J_R": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      -0.04017857142857143,
+      -0.020089285714285716,
+      -0.020089285714285716,
+      -0.022321428571428572
+     ],
+     "related": [
+      -0.024553571428571428,
+      -0.03125,
+      -0.020089285714285716,
+      -0.022321428571428572
+     ],
+     "unrelated": [
+      -0.029017857142857144,
+      -0.022321428571428572,
+      -0.03125,
+      -0.024553571428571428
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.9262337662337662,
+    "range_of_type_means": 0.002232142857142856,
+    "related_minus_unrelated_by_seed": [
+     0.004464285714285716,
+     -0.008928571428571428,
+     0.011160714285714284,
+     0.002232142857142856
+    ],
+    "rerun_minus_none": -0.0200892857142857,
+    "type_means": {
+     "hard": -0.02566964285714286,
+     "related": -0.024553571428571428,
+     "unrelated": -0.026785714285714284
+    },
+    "type_means_vs_none_cycled": {
+     "hard": -0.005580357142857151,
+     "related": -0.004464285714285726,
+     "unrelated": -0.006696428571428575
+    },
+    "type_sd": {
+     "hard": 0.00972968514183186,
+     "related": 0.004821979686315371,
+     "unrelated": 0.004075316648103915
+    }
+   },
+   "probe_J_U": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      -0.03125,
+      -0.0078125,
+      0.013671875,
+      -0.025390625
+     ],
+     "related": [
+      -0.005859375,
+      -0.04296875,
+      -0.005859375,
+      -0.033203125
+     ],
+     "unrelated": [
+      0.001953125,
+      0.015625,
+      -0.01171875,
+      -0.00390625
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.21714285714285714,
+    "range_of_type_means": 0.0224609375,
+    "related_minus_unrelated_by_seed": [
+     -0.0078125,
+     -0.05859375,
+     0.005859375,
+     -0.029296875
+    ],
+    "rerun_minus_none": -0.013671875,
+    "type_means": {
+     "hard": -0.0126953125,
+     "related": -0.02197265625,
+     "unrelated": 0.00048828125
+    },
+    "type_means_vs_none_cycled": {
+     "hard": 0.0009765625,
+     "related": -0.00830078125,
+     "unrelated": 0.01416015625
+    },
+    "type_sd": {
+     "hard": 0.020203282095290237,
+     "related": 0.019028356439681617,
+     "unrelated": 0.011541079362783747
+    }
+   }
+  },
+  "delta_vs_none": {
+   "hard-4101": {
+    "probe_J_H": {
+     "diff": 0.009765625,
+     "draws": 10000,
+     "hi": 0.03515625,
+     "lo": -0.013671875,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.04017857142857143,
+     "draws": 10000,
+     "hi": -0.015625,
+     "lo": -0.06473214285714286,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.03125,
+     "draws": 10000,
+     "hi": 0.001953125,
+     "lo": -0.068359375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4102": {
+    "probe_J_H": {
+     "diff": 0.01953125,
+     "draws": 10000,
+     "hi": 0.048828125,
+     "lo": -0.0078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.020089285714285716,
+     "draws": 10000,
+     "hi": 0.008928571428571428,
+     "lo": -0.049107142857142856,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0078125,
+     "draws": 10000,
+     "hi": 0.017578125,
+     "lo": -0.03515625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4103": {
+    "probe_J_H": {
+     "diff": 0.005859375,
+     "draws": 10000,
+     "hi": 0.033203125,
+     "lo": -0.01953125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.020089285714285716,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.05803571428571429,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.013671875,
+     "draws": 10000,
+     "hi": 0.033203125,
+     "lo": -0.005859375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4104": {
+    "probe_J_H": {
+     "diff": 0.021484375,
+     "draws": 10000,
+     "hi": 0.06645507812499929,
+     "lo": -0.025390625,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.022321428571428572,
+     "draws": 10000,
+     "hi": 0.008928571428571428,
+     "lo": -0.05580357142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.025390625,
+     "draws": 10000,
+     "hi": 0.00390625,
+     "lo": -0.0546875,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "none_cycled": {
+    "probe_J_H": {
+     "diff": 0.03125,
+     "draws": 10000,
+     "hi": 0.072265625,
+     "lo": -0.0078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.020089285714285716,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.05580357142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.013671875,
+     "draws": 10000,
+     "hi": 0.009765625,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "none_rerun": {
+    "probe_J_H": {
+     "diff": 0.03125,
+     "draws": 10000,
+     "hi": 0.072265625,
+     "lo": -0.0078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.020089285714285716,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.05580357142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.013671875,
+     "draws": 10000,
+     "hi": 0.009765625,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4101": {
+    "probe_J_H": {
+     "diff": 0.015625,
+     "draws": 10000,
+     "hi": 0.044921875,
+     "lo": -0.01171875,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.024553571428571428,
+     "draws": 10000,
+     "hi": 0.002232142857142857,
+     "lo": -0.05357142857142857,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.005859375,
+     "draws": 10000,
+     "hi": 0.02734375,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4102": {
+    "probe_J_H": {
+     "diff": 0.0390625,
+     "draws": 10000,
+     "hi": 0.068359375,
+     "lo": 0.013623046875000044,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.03125,
+     "draws": 10000,
+     "hi": -0.002232142857142857,
+     "lo": -0.06473214285714286,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.04296875,
+     "draws": 10000,
+     "hi": -0.015625,
+     "lo": -0.07421875,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4103": {
+    "probe_J_H": {
+     "diff": 0.033203125,
+     "draws": 10000,
+     "hi": 0.06640625,
+     "lo": 0.001953125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.020089285714285716,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.060267857142857144,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.005859375,
+     "draws": 10000,
+     "hi": 0.01953125,
+     "lo": -0.03515625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4104": {
+    "probe_J_H": {
+     "diff": 0.01953125,
+     "draws": 10000,
+     "hi": 0.0625,
+     "lo": -0.01953125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.022321428571428572,
+     "draws": 10000,
+     "hi": 0.004464285714285714,
+     "lo": -0.049107142857142856,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.033203125,
+     "draws": 10000,
+     "hi": 0.001953125,
+     "lo": -0.0703125,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4101": {
+    "probe_J_H": {
+     "diff": 0.005859375,
+     "draws": 10000,
+     "hi": 0.0390625,
+     "lo": -0.03125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.029017857142857144,
+     "draws": 10000,
+     "hi": 0.004464285714285714,
+     "lo": -0.06473214285714286,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.001953125,
+     "draws": 10000,
+     "hi": 0.025390625,
+     "lo": -0.0234375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4102": {
+    "probe_J_H": {
+     "diff": 0.025390625,
+     "draws": 10000,
+     "hi": 0.0625,
+     "lo": -0.009765625,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.022321428571428572,
+     "draws": 10000,
+     "hi": 0.0,
+     "lo": -0.044642857142857144,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.015625,
+     "draws": 10000,
+     "hi": 0.046875,
+     "lo": -0.015625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4103": {
+    "probe_J_H": {
+     "diff": 0.00390625,
+     "draws": 10000,
+     "hi": 0.029296875,
+     "lo": -0.021484375,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.03125,
+     "draws": 10000,
+     "hi": 0.0,
+     "lo": -0.06473214285714286,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.01171875,
+     "draws": 10000,
+     "hi": 0.013671875,
+     "lo": -0.037109375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4104": {
+    "probe_J_H": {
+     "diff": -0.015625,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.05078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.024553571428571428,
+     "draws": 10000,
+     "hi": 0.004464285714285714,
+     "lo": -0.05803571428571429,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.00390625,
+     "draws": 10000,
+     "hi": 0.01953125,
+     "lo": -0.02734375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   }
+  },
+  "eval_seeds_identical_across_branches": true,
+  "evals": {
+   "hard-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 210,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.41015625,
+     "per_problem_c": [
+      0,
+      2,
+      1,
+      0,
+      16,
+      0,
+      16,
+      0,
+      1,
+      16,
+      0,
+      0,
+      1,
+      15,
+      16,
+      4,
+      10,
+      2,
+      2,
+      14,
+      0,
+      7,
+      0,
+      12,
+      15,
+      6,
+      7,
+      16,
+      16,
+      1,
+      0,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.41015625,
+     "seeds_set": null,
+     "status": {
+      "correct": 210,
+      "truncated": 1,
+      "wrong": 301
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 353,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3315,
+     "pass1": 0.7879464285714286,
+     "per_problem_c": [
+      11,
+      13,
+      16,
+      16,
+      13,
+      16,
+      16,
+      12,
+      1,
+      15,
+      14,
+      6,
+      16,
+      0,
+      16,
+      13,
+      16,
+      13,
+      16,
+      15,
+      8,
+      8,
+      16,
+      3,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.7879464285714286,
+     "seeds_set": null,
+     "status": {
+      "correct": 353,
+      "wrong": 95
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 397,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.775390625,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      15,
+      5,
+      11,
+      2,
+      2,
+      14,
+      13,
+      14,
+      1,
+      16,
+      6,
+      15,
+      16,
+      16,
+      16,
+      5,
+      16,
+      15,
+      13,
+      16,
+      16,
+      16,
+      15,
+      13,
+      16,
+      9,
+      12,
+      12,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.775390625,
+     "seeds_set": null,
+     "status": {
+      "correct": 397,
+      "truncated": 3,
+      "wrong": 112
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.005859375,
+     "truncated": 3,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.15625,
+     "capped": 0,
+     "grad_norm_preclip": 0.5632169246673584,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/00984",
+      "omni/02008",
+      "omni/02842"
+     ],
+     "prompt_idx": [
+      14,
+      30,
+      38,
+      44
+     ]
+    }
+   },
+   "hard-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 215,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.419921875,
+     "per_problem_c": [
+      0,
+      1,
+      0,
+      0,
+      16,
+      1,
+      16,
+      3,
+      3,
+      16,
+      0,
+      1,
+      1,
+      13,
+      16,
+      4,
+      8,
+      2,
+      0,
+      13,
+      0,
+      8,
+      0,
+      15,
+      15,
+      7,
+      9,
+      16,
+      16,
+      1,
+      0,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.419921875,
+     "seeds_set": null,
+     "status": {
+      "correct": 215,
+      "truncated": 2,
+      "wrong": 295
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.00390625,
+     "truncated": 2,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 362,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2608,
+     "pass1": 0.8080357142857143,
+     "per_problem_c": [
+      13,
+      15,
+      16,
+      16,
+      12,
+      16,
+      16,
+      11,
+      3,
+      15,
+      14,
+      6,
+      16,
+      3,
+      16,
+      13,
+      16,
+      15,
+      16,
+      16,
+      9,
+      8,
+      16,
+      2,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8080357142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 362,
+      "wrong": 86
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 409,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.798828125,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      14,
+      7,
+      10,
+      0,
+      1,
+      14,
+      13,
+      14,
+      2,
+      16,
+      12,
+      15,
+      16,
+      16,
+      15,
+      2,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      13,
+      13,
+      12,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.798828125,
+     "seeds_set": null,
+     "status": {
+      "correct": 409,
+      "truncated": 1,
+      "wrong": 102
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.15625,
+     "capped": 0,
+     "grad_norm_preclip": 0.49400612711906433,
+     "mixed_groups": 3,
+     "prompt_ids": [
+      "intermediate_algebra/train/00477",
+      "intermediate_algebra/train/01095",
+      "intermediate_algebra/train/01249",
+      "omni/02460"
+     ],
+     "prompt_idx": [
+      12,
+      19,
+      24,
+      41
+     ]
+    }
+   },
+   "hard-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 208,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.40625,
+     "per_problem_c": [
+      0,
+      3,
+      0,
+      0,
+      16,
+      0,
+      16,
+      2,
+      2,
+      16,
+      0,
+      0,
+      0,
+      15,
+      16,
+      5,
+      7,
+      1,
+      0,
+      12,
+      0,
+      7,
+      0,
+      14,
+      16,
+      5,
+      9,
+      16,
+      16,
+      0,
+      1,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.40625,
+     "seeds_set": null,
+     "status": {
+      "correct": 208,
+      "truncated": 1,
+      "wrong": 303
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 362,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2875,
+     "pass1": 0.8080357142857143,
+     "per_problem_c": [
+      14,
+      15,
+      16,
+      16,
+      13,
+      15,
+      16,
+      12,
+      3,
+      16,
+      15,
+      4,
+      16,
+      0,
+      16,
+      14,
+      15,
+      14,
+      16,
+      16,
+      7,
+      7,
+      16,
+      7,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8080357142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 362,
+      "wrong": 86
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 420,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 4446,
+     "pass1": 0.8203125,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      13,
+      9,
+      12,
+      1,
+      3,
+      13,
+      12,
+      16,
+      2,
+      16,
+      11,
+      15,
+      16,
+      16,
+      15,
+      5,
+      16,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      12,
+      14,
+      14,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.8203125,
+     "seeds_set": null,
+     "status": {
+      "correct": 420,
+      "wrong": 92
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.0625,
+     "capped": 0,
+     "grad_norm_preclip": 0.36422303318977356,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/01386",
+      "omni/02008",
+      "omni/02204"
+     ],
+     "prompt_idx": [
+      14,
+      32,
+      38,
+      39
+     ]
+    }
+   },
+   "hard-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 216,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.421875,
+     "per_problem_c": [
+      0,
+      3,
+      0,
+      0,
+      16,
+      0,
+      16,
+      2,
+      4,
+      16,
+      0,
+      0,
+      0,
+      14,
+      16,
+      3,
+      11,
+      4,
+      0,
+      13,
+      0,
+      9,
+      0,
+      15,
+      14,
+      11,
+      8,
+      16,
+      16,
+      1,
+      0,
+      8
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.421875,
+     "seeds_set": null,
+     "status": {
+      "correct": 216,
+      "truncated": 1,
+      "wrong": 295
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 361,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2514,
+     "pass1": 0.8058035714285714,
+     "per_problem_c": [
+      14,
+      14,
+      16,
+      16,
+      12,
+      15,
+      16,
+      12,
+      0,
+      16,
+      14,
+      8,
+      16,
+      0,
+      16,
+      14,
+      16,
+      15,
+      16,
+      16,
+      7,
+      8,
+      16,
+      4,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8058035714285714,
+     "seeds_set": null,
+     "status": {
+      "correct": 361,
+      "wrong": 87
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 400,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 7258,
+     "pass1": 0.78125,
+     "per_problem_c": [
+      16,
+      14,
+      16,
+      15,
+      6,
+      9,
+      1,
+      1,
+      13,
+      14,
+      14,
+      0,
+      16,
+      9,
+      13,
+      16,
+      15,
+      14,
+      4,
+      14,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      13,
+      15,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.78125,
+     "seeds_set": null,
+     "status": {
+      "correct": 400,
+      "wrong": 112
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.3125,
+     "capped": 0,
+     "grad_norm_preclip": 0.6789345145225525,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "algebra/train/01269",
+      "intermediate_algebra/train/01234",
+      "omni/00984",
+      "omni/02008"
+     ],
+     "prompt_idx": [
+      1,
+      23,
+      30,
+      38
+     ]
+    }
+   },
+   "none": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 205,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.400390625,
+     "per_problem_c": [
+      0,
+      1,
+      1,
+      0,
+      16,
+      0,
+      16,
+      1,
+      2,
+      16,
+      1,
+      0,
+      1,
+      15,
+      16,
+      2,
+      7,
+      4,
+      0,
+      12,
+      0,
+      5,
+      0,
+      11,
+      16,
+      5,
+      9,
+      16,
+      16,
+      1,
+      0,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.400390625,
+     "seeds_set": null,
+     "status": {
+      "correct": 205,
+      "truncated": 1,
+      "wrong": 306
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 371,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3066,
+     "pass1": 0.828125,
+     "per_problem_c": [
+      12,
+      12,
+      16,
+      16,
+      14,
+      16,
+      16,
+      12,
+      4,
+      15,
+      14,
+      8,
+      16,
+      1,
+      16,
+      13,
+      16,
+      15,
+      16,
+      16,
+      11,
+      11,
+      16,
+      5,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.828125,
+     "seeds_set": null,
+     "status": {
+      "correct": 371,
+      "wrong": 77
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 413,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.806640625,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      14,
+      9,
+      13,
+      2,
+      1,
+      14,
+      12,
+      15,
+      1,
+      16,
+      11,
+      16,
+      16,
+      15,
+      15,
+      3,
+      15,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      12,
+      14,
+      15,
+      12
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.806640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 413,
+      "truncated": 4,
+      "wrong": 95
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.0078125,
+     "truncated": 4,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "none_cycled": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 221,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.431640625,
+     "per_problem_c": [
+      0,
+      2,
+      0,
+      0,
+      16,
+      1,
+      16,
+      4,
+      4,
+      15,
+      1,
+      0,
+      0,
+      14,
+      16,
+      7,
+      9,
+      0,
+      0,
+      12,
+      0,
+      11,
+      0,
+      13,
+      15,
+      7,
+      9,
+      16,
+      16,
+      1,
+      2,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.431640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 221,
+      "truncated": 1,
+      "wrong": 290
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 362,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2621,
+     "pass1": 0.8080357142857143,
+     "per_problem_c": [
+      14,
+      15,
+      16,
+      16,
+      13,
+      16,
+      16,
+      9,
+      2,
+      16,
+      15,
+      8,
+      16,
+      0,
+      16,
+      15,
+      16,
+      15,
+      16,
+      15,
+      6,
+      9,
+      16,
+      3,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8080357142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 362,
+      "wrong": 86
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 406,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.79296875,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      15,
+      7,
+      10,
+      0,
+      2,
+      14,
+      11,
+      15,
+      2,
+      16,
+      13,
+      14,
+      16,
+      16,
+      15,
+      3,
+      16,
+      16,
+      13,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      9,
+      15,
+      15,
+      11
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.79296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 406,
+      "truncated": 2,
+      "wrong": 104
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.00390625,
+     "truncated": 2,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "none_rerun": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 221,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.431640625,
+     "per_problem_c": [
+      0,
+      2,
+      0,
+      0,
+      16,
+      1,
+      16,
+      4,
+      4,
+      15,
+      1,
+      0,
+      0,
+      14,
+      16,
+      7,
+      9,
+      0,
+      0,
+      12,
+      0,
+      11,
+      0,
+      13,
+      15,
+      7,
+      9,
+      16,
+      16,
+      1,
+      2,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.431640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 221,
+      "truncated": 1,
+      "wrong": 290
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 362,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2621,
+     "pass1": 0.8080357142857143,
+     "per_problem_c": [
+      14,
+      15,
+      16,
+      16,
+      13,
+      16,
+      16,
+      9,
+      2,
+      16,
+      15,
+      8,
+      16,
+      0,
+      16,
+      15,
+      16,
+      15,
+      16,
+      15,
+      6,
+      9,
+      16,
+      3,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8080357142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 362,
+      "wrong": 86
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 406,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.79296875,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      15,
+      7,
+      10,
+      0,
+      2,
+      14,
+      11,
+      15,
+      2,
+      16,
+      13,
+      14,
+      16,
+      16,
+      15,
+      3,
+      16,
+      16,
+      13,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      9,
+      15,
+      15,
+      11
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.79296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 406,
+      "truncated": 2,
+      "wrong": 104
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.00390625,
+     "truncated": 2,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "related-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 213,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.416015625,
+     "per_problem_c": [
+      0,
+      1,
+      2,
+      0,
+      16,
+      0,
+      16,
+      3,
+      3,
+      16,
+      1,
+      1,
+      0,
+      15,
+      16,
+      4,
+      10,
+      4,
+      0,
+      12,
+      0,
+      5,
+      0,
+      15,
+      15,
+      5,
+      10,
+      16,
+      16,
+      0,
+      0,
+      11
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.416015625,
+     "seeds_set": null,
+     "status": {
+      "correct": 213,
+      "truncated": 1,
+      "wrong": 298
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 360,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2632,
+     "pass1": 0.8035714285714286,
+     "per_problem_c": [
+      13,
+      14,
+      16,
+      16,
+      11,
+      16,
+      16,
+      14,
+      2,
+      14,
+      14,
+      8,
+      16,
+      0,
+      16,
+      13,
+      15,
+      12,
+      16,
+      16,
+      11,
+      9,
+      16,
+      2,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8035714285714286,
+     "seeds_set": null,
+     "status": {
+      "correct": 360,
+      "wrong": 88
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 410,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 7527,
+     "pass1": 0.80078125,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      14,
+      7,
+      9,
+      0,
+      3,
+      14,
+      12,
+      16,
+      2,
+      16,
+      15,
+      15,
+      16,
+      16,
+      14,
+      5,
+      16,
+      16,
+      10,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      12,
+      13,
+      14,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.80078125,
+     "seeds_set": null,
+     "status": {
+      "correct": 410,
+      "wrong": 102
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.75,
+     "capped": 0,
+     "grad_norm_preclip": 1.1502048969268799,
+     "mixed_groups": 3,
+     "prompt_ids": [
+      "algebra/train/01661",
+      "syn-R4-096",
+      "syn-R5-044",
+      "intermediate_algebra/train/01013"
+     ],
+     "prompt_idx": [
+      31,
+      34,
+      45,
+      52
+     ]
+    }
+   },
+   "related-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 225,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.439453125,
+     "per_problem_c": [
+      0,
+      4,
+      0,
+      0,
+      16,
+      0,
+      16,
+      2,
+      4,
+      16,
+      0,
+      0,
+      1,
+      16,
+      16,
+      5,
+      9,
+      3,
+      0,
+      13,
+      0,
+      8,
+      0,
+      15,
+      15,
+      6,
+      11,
+      16,
+      16,
+      1,
+      1,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.439453125,
+     "seeds_set": null,
+     "status": {
+      "correct": 225,
+      "truncated": 1,
+      "wrong": 286
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 357,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2784,
+     "pass1": 0.796875,
+     "per_problem_c": [
+      13,
+      14,
+      16,
+      16,
+      12,
+      16,
+      16,
+      11,
+      0,
+      16,
+      12,
+      9,
+      16,
+      0,
+      16,
+      14,
+      14,
+      14,
+      16,
+      16,
+      10,
+      7,
+      16,
+      4,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.796875,
+     "seeds_set": null,
+     "status": {
+      "correct": 357,
+      "wrong": 91
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 391,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.763671875,
+     "per_problem_c": [
+      16,
+      14,
+      16,
+      13,
+      5,
+      9,
+      1,
+      1,
+      15,
+      13,
+      15,
+      0,
+      16,
+      8,
+      15,
+      16,
+      16,
+      13,
+      3,
+      16,
+      15,
+      13,
+      15,
+      16,
+      16,
+      14,
+      15,
+      16,
+      9,
+      14,
+      14,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.763671875,
+     "seeds_set": null,
+     "status": {
+      "correct": 391,
+      "truncated": 1,
+      "wrong": 120
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.46875,
+     "capped": 0,
+     "grad_norm_preclip": 1.0406596660614014,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "syn-R1-017",
+      "syn-R4-098",
+      "syn-R4-072",
+      "intermediate_algebra/train/00145"
+     ],
+     "prompt_idx": [
+      0,
+      23,
+      26,
+      60
+     ]
+    }
+   },
+   "related-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 222,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8162,
+     "pass1": 0.43359375,
+     "per_problem_c": [
+      0,
+      4,
+      0,
+      0,
+      16,
+      0,
+      16,
+      2,
+      3,
+      16,
+      1,
+      0,
+      2,
+      14,
+      16,
+      4,
+      10,
+      2,
+      0,
+      12,
+      0,
+      9,
+      0,
+      15,
+      15,
+      5,
+      12,
+      16,
+      16,
+      2,
+      1,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.43359375,
+     "seeds_set": null,
+     "status": {
+      "correct": 222,
+      "wrong": 290
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 362,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3211,
+     "pass1": 0.8080357142857143,
+     "per_problem_c": [
+      12,
+      14,
+      16,
+      16,
+      12,
+      16,
+      16,
+      9,
+      4,
+      15,
+      16,
+      7,
+      16,
+      1,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      5,
+      11,
+      16,
+      1,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8080357142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 362,
+      "wrong": 86
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 410,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 5239,
+     "pass1": 0.80078125,
+     "per_problem_c": [
+      16,
+      15,
+      16,
+      15,
+      5,
+      9,
+      1,
+      0,
+      14,
+      12,
+      16,
+      0,
+      16,
+      11,
+      16,
+      16,
+      16,
+      15,
+      5,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      13,
+      14,
+      13,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.80078125,
+     "seeds_set": null,
+     "status": {
+      "correct": 410,
+      "wrong": 102
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.5,
+     "capped": 0,
+     "grad_norm_preclip": 0.6785891652107239,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "syn-R5-026",
+      "syn-R5-046",
+      "syn-R3-034",
+      "syn-R2-071"
+     ],
+     "prompt_idx": [
+      5,
+      25,
+      53,
+      56
+     ]
+    }
+   },
+   "related-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 215,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 6562,
+     "pass1": 0.419921875,
+     "per_problem_c": [
+      0,
+      0,
+      1,
+      0,
+      16,
+      1,
+      16,
+      0,
+      6,
+      16,
+      0,
+      1,
+      1,
+      15,
+      16,
+      7,
+      13,
+      1,
+      1,
+      12,
+      0,
+      4,
+      0,
+      14,
+      15,
+      6,
+      9,
+      16,
+      16,
+      0,
+      1,
+      11
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.419921875,
+     "seeds_set": null,
+     "status": {
+      "correct": 215,
+      "wrong": 297
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 361,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3902,
+     "pass1": 0.8058035714285714,
+     "per_problem_c": [
+      13,
+      14,
+      16,
+      16,
+      12,
+      16,
+      16,
+      13,
+      1,
+      14,
+      15,
+      7,
+      16,
+      0,
+      16,
+      15,
+      15,
+      14,
+      16,
+      16,
+      10,
+      8,
+      16,
+      3,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8058035714285714,
+     "seeds_set": null,
+     "status": {
+      "correct": 361,
+      "wrong": 87
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 396,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.7734375,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      14,
+      6,
+      8,
+      0,
+      0,
+      14,
+      11,
+      16,
+      2,
+      16,
+      11,
+      15,
+      16,
+      16,
+      15,
+      5,
+      16,
+      15,
+      12,
+      16,
+      16,
+      16,
+      13,
+      14,
+      16,
+      11,
+      12,
+      11,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.7734375,
+     "seeds_set": null,
+     "status": {
+      "correct": 396,
+      "truncated": 2,
+      "wrong": 114
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.00390625,
+     "truncated": 2,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.5625,
+     "capped": 0,
+     "grad_norm_preclip": 0.8244099617004395,
+     "mixed_groups": 3,
+     "prompt_ids": [
+      "syn-R5-063",
+      "syn-R4-074",
+      "syn-R5-042",
+      "syn-R5-078"
+     ],
+     "prompt_idx": [
+      3,
+      21,
+      37,
+      38
+     ]
+    }
+   },
+   "unrelated-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 208,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 7714,
+     "pass1": 0.40625,
+     "per_problem_c": [
+      0,
+      2,
+      0,
+      0,
+      16,
+      0,
+      16,
+      1,
+      1,
+      16,
+      0,
+      0,
+      2,
+      9,
+      16,
+      5,
+      11,
+      2,
+      0,
+      11,
+      0,
+      6,
+      0,
+      14,
+      16,
+      6,
+      10,
+      16,
+      16,
+      0,
+      1,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.40625,
+     "seeds_set": null,
+     "status": {
+      "correct": 208,
+      "wrong": 304
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 358,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2728,
+     "pass1": 0.7991071428571429,
+     "per_problem_c": [
+      13,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      10,
+      2,
+      14,
+      15,
+      4,
+      16,
+      1,
+      16,
+      14,
+      15,
+      14,
+      16,
+      16,
+      7,
+      9,
+      16,
+      2,
+      16,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.7991071428571429,
+     "seeds_set": null,
+     "status": {
+      "correct": 358,
+      "wrong": 90
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 414,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.80859375,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      15,
+      9,
+      9,
+      2,
+      1,
+      12,
+      13,
+      15,
+      2,
+      16,
+      11,
+      16,
+      16,
+      16,
+      16,
+      4,
+      16,
+      15,
+      14,
+      16,
+      15,
+      16,
+      15,
+      15,
+      16,
+      13,
+      15,
+      13,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.80859375,
+     "seeds_set": null,
+     "status": {
+      "correct": 414,
+      "truncated": 1,
+      "wrong": 97
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.59375,
+     "capped": 0,
+     "grad_norm_preclip": 0.9249904751777649,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "number_theory/train/00107",
+      "syn-U3-081",
+      "syn-U2-036",
+      "number_theory/train/00149"
+     ],
+     "prompt_idx": [
+      31,
+      34,
+      45,
+      52
+     ]
+    }
+   },
+   "unrelated-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 218,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 7693,
+     "pass1": 0.42578125,
+     "per_problem_c": [
+      0,
+      0,
+      1,
+      0,
+      16,
+      0,
+      16,
+      2,
+      3,
+      16,
+      0,
+      0,
+      1,
+      14,
+      16,
+      5,
+      11,
+      4,
+      0,
+      10,
+      0,
+      10,
+      0,
+      13,
+      16,
+      10,
+      9,
+      16,
+      16,
+      0,
+      1,
+      12
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.42578125,
+     "seeds_set": null,
+     "status": {
+      "correct": 218,
+      "wrong": 294
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 361,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2987,
+     "pass1": 0.8058035714285714,
+     "per_problem_c": [
+      12,
+      13,
+      16,
+      16,
+      13,
+      16,
+      16,
+      14,
+      2,
+      16,
+      13,
+      5,
+      16,
+      1,
+      16,
+      13,
+      15,
+      15,
+      16,
+      16,
+      9,
+      9,
+      16,
+      4,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8058035714285714,
+     "seeds_set": null,
+     "status": {
+      "correct": 361,
+      "wrong": 87
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 421,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3794,
+     "pass1": 0.822265625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      15,
+      9,
+      9,
+      3,
+      1,
+      14,
+      15,
+      15,
+      2,
+      16,
+      11,
+      14,
+      16,
+      16,
+      15,
+      5,
+      16,
+      15,
+      12,
+      16,
+      15,
+      16,
+      15,
+      15,
+      16,
+      14,
+      15,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.822265625,
+     "seeds_set": null,
+     "status": {
+      "correct": 421,
+      "wrong": 91
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.5625,
+     "capped": 0,
+     "grad_norm_preclip": 0.8267787098884583,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "syn-U2-098",
+      "syn-U3-094",
+      "syn-U3-048",
+      "number_theory/train/00014"
+     ],
+     "prompt_idx": [
+      0,
+      23,
+      26,
+      60
+     ]
+    }
+   },
+   "unrelated-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 207,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.404296875,
+     "per_problem_c": [
+      0,
+      2,
+      2,
+      0,
+      16,
+      0,
+      16,
+      1,
+      1,
+      16,
+      1,
+      0,
+      1,
+      15,
+      16,
+      4,
+      7,
+      0,
+      0,
+      13,
+      0,
+      6,
+      0,
+      14,
+      15,
+      5,
+      10,
+      16,
+      16,
+      0,
+      1,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.404296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 207,
+      "truncated": 1,
+      "wrong": 304
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 357,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 2966,
+     "pass1": 0.796875,
+     "per_problem_c": [
+      12,
+      13,
+      16,
+      16,
+      13,
+      16,
+      16,
+      13,
+      1,
+      16,
+      16,
+      6,
+      16,
+      1,
+      15,
+      14,
+      15,
+      13,
+      16,
+      16,
+      9,
+      6,
+      16,
+      3,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.796875,
+     "seeds_set": null,
+     "status": {
+      "correct": 357,
+      "no_answer": 1,
+      "wrong": 90
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 407,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.794921875,
+     "per_problem_c": [
+      16,
+      13,
+      16,
+      14,
+      7,
+      12,
+      1,
+      3,
+      15,
+      10,
+      14,
+      0,
+      16,
+      9,
+      14,
+      16,
+      15,
+      15,
+      5,
+      16,
+      15,
+      13,
+      16,
+      16,
+      16,
+      15,
+      15,
+      16,
+      13,
+      14,
+      16,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.794921875,
+     "seeds_set": null,
+     "status": {
+      "correct": 407,
+      "truncated": 3,
+      "wrong": 102
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.005859375,
+     "truncated": 3,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.625,
+     "capped": 0,
+     "grad_norm_preclip": 0.6143794059753418,
+     "mixed_groups": 3,
+     "prompt_ids": [
+      "syn-U3-078",
+      "syn-U3-097",
+      "syn-U3-088",
+      "syn-U3-017"
+     ],
+     "prompt_idx": [
+      5,
+      25,
+      53,
+      56
+     ]
+    }
+   },
+   "unrelated-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 197,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 7324,
+     "pass1": 0.384765625,
+     "per_problem_c": [
+      0,
+      0,
+      2,
+      0,
+      16,
+      0,
+      16,
+      3,
+      2,
+      16,
+      0,
+      0,
+      0,
+      11,
+      16,
+      3,
+      9,
+      0,
+      0,
+      11,
+      0,
+      5,
+      0,
+      12,
+      16,
+      7,
+      8,
+      16,
+      16,
+      2,
+      0,
+      10
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.384765625,
+     "seeds_set": null,
+     "status": {
+      "correct": 197,
+      "wrong": 315
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 360,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 3636,
+     "pass1": 0.8035714285714286,
+     "per_problem_c": [
+      13,
+      14,
+      16,
+      16,
+      11,
+      16,
+      16,
+      13,
+      3,
+      15,
+      11,
+      8,
+      16,
+      1,
+      16,
+      14,
+      14,
+      15,
+      16,
+      16,
+      6,
+      11,
+      16,
+      4,
+      16,
+      15,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8035714285714286,
+     "seeds_set": null,
+     "status": {
+      "correct": 360,
+      "wrong": 88
+     },
+     "trunc_ntok_values": [],
+     "trunc_share": 0.0,
+     "truncated": 0,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 411,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.802734375,
+     "per_problem_c": [
+      16,
+      14,
+      16,
+      12,
+      9,
+      14,
+      0,
+      2,
+      13,
+      14,
+      16,
+      1,
+      16,
+      13,
+      14,
+      16,
+      16,
+      15,
+      4,
+      16,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      11,
+      14,
+      13,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.802734375,
+     "seeds_set": null,
+     "status": {
+      "correct": 411,
+      "truncated": 1,
+      "wrong": 100
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.001953125,
+     "truncated": 1,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.5625,
+     "capped": 0,
+     "grad_norm_preclip": 1.0831061601638794,
+     "mixed_groups": 4,
+     "prompt_ids": [
+      "syn-U2-008",
+      "syn-U1-063",
+      "syn-U3-063",
+      "syn-U1-052"
+     ],
+     "prompt_idx": [
+      3,
+      21,
+      37,
+      38
+     ]
+    }
+   }
+  },
+  "identical_eval_groups": [
+   [
+    "none_cycled",
+    "none_rerun"
+   ]
+  ]
+ },
+ "r64": {
+  "branch_types": {
+   "probe_J_H": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      -0.005859375,
+      0.001953125,
+      0.01171875,
+      -0.00390625
+     ],
+     "related": [
+      0.005859375,
+      0.005859375,
+      0.015625,
+      0.013671875
+     ],
+     "unrelated": [
+      -0.005859375,
+      0.02734375,
+      0.005859375,
+      -0.013671875
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.5395670995670996,
+    "range_of_type_means": 0.00927734375,
+    "related_minus_unrelated_by_seed": [
+     0.01171875,
+     -0.021484375,
+     0.009765625,
+     0.02734375
+    ],
+    "rerun_minus_none": 0.025390625,
+    "type_means": {
+     "hard": 0.0009765625,
+     "related": 0.01025390625,
+     "unrelated": 0.00341796875
+    },
+    "type_means_vs_none_cycled": {
+     "hard": -0.0244140625,
+     "related": -0.01513671875,
+     "unrelated": -0.02197265625
+    },
+    "type_sd": {
+     "hard": 0.007893460711576915,
+     "related": 0.005136632108743327,
+     "unrelated": 0.017856234572789682
+    }
+   },
+   "probe_J_R": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      -0.015625,
+      -0.015625,
+      0.0,
+      -0.015625
+     ],
+     "related": [
+      -0.006696428571428571,
+      -0.006696428571428571,
+      0.0,
+      -0.008928571428571428
+     ],
+     "unrelated": [
+      -0.004464285714285714,
+      -0.008928571428571428,
+      -0.006696428571428571,
+      -0.017857142857142856
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.37714285714285717,
+    "range_of_type_means": 0.006138392857142858,
+    "related_minus_unrelated_by_seed": [
+     -0.002232142857142857,
+     0.002232142857142857,
+     0.006696428571428571,
+     0.008928571428571428
+    ],
+    "rerun_minus_none": -0.008928571428571397,
+    "type_means": {
+     "hard": -0.01171875,
+     "related": -0.005580357142857142,
+     "unrelated": -0.009486607142857142
+    },
+    "type_means_vs_none_cycled": {
+     "hard": -0.002790178571428603,
+     "related": 0.003348214285714246,
+     "unrelated": -0.0005580357142857539
+    },
+    "type_sd": {
+     "hard": 0.0078125,
+     "related": 0.0038661848383233863,
+     "unrelated": 0.005870436695706659
+    }
+   },
+   "probe_J_U": {
+    "cycled_minus_rerun": 0.0,
+    "per_draw": {
+     "hard": [
+      -0.005859375,
+      -0.0078125,
+      -0.009765625,
+      -0.01171875
+     ],
+     "related": [
+      -0.0078125,
+      -0.0078125,
+      -0.009765625,
+      -0.0234375
+     ],
+     "unrelated": [
+      0.0,
+      -0.009765625,
+      -0.0078125,
+      0.0
+     ]
+    },
+    "perm_n": 34650,
+    "perm_p_range": 0.17264069264069265,
+    "range_of_type_means": 0.0078125,
+    "related_minus_unrelated_by_seed": [
+     -0.0078125,
+     0.001953125,
+     -0.001953125,
+     -0.0234375
+    ],
+    "rerun_minus_none": 0.01171875,
+    "type_means": {
+     "hard": -0.0087890625,
+     "related": -0.01220703125,
+     "unrelated": -0.00439453125
+    },
+    "type_means_vs_none_cycled": {
+     "hard": -0.0205078125,
+     "related": -0.02392578125,
+     "unrelated": -0.01611328125
+    },
+    "type_sd": {
+     "hard": 0.0025214735326871203,
+     "related": 0.007543379053552388,
+     "unrelated": 0.005136632108743327
+    }
+   }
+  },
+  "delta_vs_none": {
+   "hard-4101": {
+    "probe_J_H": {
+     "diff": -0.005859375,
+     "draws": 10000,
+     "hi": 0.033203125,
+     "lo": -0.048828125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.015625,
+     "draws": 10000,
+     "hi": 0.008928571428571428,
+     "lo": -0.04241071428571429,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.005859375,
+     "draws": 10000,
+     "hi": 0.0078125,
+     "lo": -0.021484375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4102": {
+    "probe_J_H": {
+     "diff": 0.001953125,
+     "draws": 10000,
+     "hi": 0.041015625,
+     "lo": -0.04296875,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.015625,
+     "draws": 10000,
+     "hi": 0.013392857142857142,
+     "lo": -0.046875,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0078125,
+     "draws": 10000,
+     "hi": 0.013671875,
+     "lo": -0.041015625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4103": {
+    "probe_J_H": {
+     "diff": 0.01171875,
+     "draws": 10000,
+     "hi": 0.0390625,
+     "lo": -0.015625,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": 0.0,
+     "draws": 10000,
+     "hi": 0.03577008928571347,
+     "lo": -0.03571428571428571,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.009765625,
+     "draws": 10000,
+     "hi": 0.013671875,
+     "lo": -0.044921875,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "hard-4104": {
+    "probe_J_H": {
+     "diff": -0.00390625,
+     "draws": 10000,
+     "hi": 0.033203125,
+     "lo": -0.041015625,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.015625,
+     "draws": 10000,
+     "hi": 0.008928571428571428,
+     "lo": -0.04017857142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.01171875,
+     "draws": 10000,
+     "hi": 0.00390625,
+     "lo": -0.02734375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "none_cycled": {
+    "probe_J_H": {
+     "diff": 0.025390625,
+     "draws": 10000,
+     "hi": 0.0625,
+     "lo": -0.0078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.008928571428571428,
+     "draws": 10000,
+     "hi": 0.020089285714285716,
+     "lo": -0.03571428571428571,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.01171875,
+     "draws": 10000,
+     "hi": 0.03515625,
+     "lo": -0.009765625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "none_rerun": {
+    "probe_J_H": {
+     "diff": 0.025390625,
+     "draws": 10000,
+     "hi": 0.0625,
+     "lo": -0.0078125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.008928571428571428,
+     "draws": 10000,
+     "hi": 0.020089285714285716,
+     "lo": -0.03571428571428571,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.01171875,
+     "draws": 10000,
+     "hi": 0.03515625,
+     "lo": -0.009765625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4101": {
+    "probe_J_H": {
+     "diff": 0.005859375,
+     "draws": 10000,
+     "hi": 0.04296875,
+     "lo": -0.033203125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.006696428571428571,
+     "draws": 10000,
+     "hi": 0.024553571428571428,
+     "lo": -0.04017857142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0078125,
+     "draws": 10000,
+     "hi": 0.017578125,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4102": {
+    "probe_J_H": {
+     "diff": 0.005859375,
+     "draws": 10000,
+     "hi": 0.04296875,
+     "lo": -0.033203125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.006696428571428571,
+     "draws": 10000,
+     "hi": 0.024553571428571428,
+     "lo": -0.04017857142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0078125,
+     "draws": 10000,
+     "hi": 0.017578125,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4103": {
+    "probe_J_H": {
+     "diff": 0.015625,
+     "draws": 10000,
+     "hi": 0.048828125,
+     "lo": -0.017578125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": 0.0,
+     "draws": 10000,
+     "hi": 0.033482142857142856,
+     "lo": -0.03794642857142857,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.009765625,
+     "draws": 10000,
+     "hi": 0.009765625,
+     "lo": -0.033203125,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "related-4104": {
+    "probe_J_H": {
+     "diff": 0.013671875,
+     "draws": 10000,
+     "hi": 0.052734375,
+     "lo": -0.02734375,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.008928571428571428,
+     "draws": 10000,
+     "hi": 0.024553571428571428,
+     "lo": -0.046875,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0234375,
+     "draws": 10000,
+     "hi": 0.001953125,
+     "lo": -0.056640625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4101": {
+    "probe_J_H": {
+     "diff": -0.005859375,
+     "draws": 10000,
+     "hi": 0.033203125,
+     "lo": -0.048828125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.004464285714285714,
+     "draws": 10000,
+     "hi": 0.017857142857142856,
+     "lo": -0.03125,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.0,
+     "draws": 10000,
+     "hi": 0.017578125,
+     "lo": -0.017578125,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4102": {
+    "probe_J_H": {
+     "diff": 0.02734375,
+     "draws": 10000,
+     "hi": 0.060546875,
+     "lo": -0.00390625,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.008928571428571428,
+     "draws": 10000,
+     "hi": 0.03125,
+     "lo": -0.046875,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.009765625,
+     "draws": 10000,
+     "hi": 0.01171875,
+     "lo": -0.041015625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4103": {
+    "probe_J_H": {
+     "diff": 0.005859375,
+     "draws": 10000,
+     "hi": 0.04296875,
+     "lo": -0.033203125,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.006696428571428571,
+     "draws": 10000,
+     "hi": 0.024553571428571428,
+     "lo": -0.04017857142857143,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": -0.0078125,
+     "draws": 10000,
+     "hi": 0.017578125,
+     "lo": -0.0390625,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   },
+   "unrelated-4104": {
+    "probe_J_H": {
+     "diff": -0.013671875,
+     "draws": 10000,
+     "hi": 0.015625,
+     "lo": -0.044921875,
+     "n_problems": 32,
+     "seed": 26111111
+    },
+    "probe_J_R": {
+     "diff": -0.017857142857142856,
+     "draws": 10000,
+     "hi": 0.004464285714285714,
+     "lo": -0.044642857142857144,
+     "n_problems": 28,
+     "seed": 26111111
+    },
+    "probe_J_U": {
+     "diff": 0.0,
+     "draws": 10000,
+     "hi": 0.0234375,
+     "lo": -0.0234375,
+     "n_problems": 32,
+     "seed": 26111111
+    }
+   }
+  },
+  "eval_seeds_identical_across_branches": true,
+  "evals": {
+   "hard-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 307,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.599609375,
+     "per_problem_c": [
+      0,
+      1,
+      4,
+      0,
+      16,
+      11,
+      16,
+      2,
+      14,
+      16,
+      3,
+      7,
+      9,
+      13,
+      16,
+      6,
+      16,
+      14,
+      1,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      1,
+      1,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.599609375,
+     "seeds_set": null,
+     "status": {
+      "correct": 307,
+      "truncated": 198,
+      "wrong": 7
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.38671875,
+     "truncated": 198,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 397,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8861607142857143,
+     "per_problem_c": [
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      6,
+      2,
+      16,
+      13,
+      15,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      13,
+      16,
+      16,
+      11,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8861607142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 397,
+      "truncated": 31,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.06919642857142858,
+     "truncated": 31,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 478,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.93359375,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      11,
+      10,
+      12,
+      15,
+      16,
+      16,
+      11,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      7,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.93359375,
+     "seeds_set": null,
+     "status": {
+      "correct": 478,
+      "truncated": 13,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.025390625,
+     "truncated": 13,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.6875,
+     "capped": 7,
+     "grad_norm_preclip": 0.27190282940864563,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/00984",
+      "omni/02008",
+      "omni/02842"
+     ],
+     "prompt_idx": [
+      14,
+      30,
+      38,
+      44
+     ]
+    }
+   },
+   "hard-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 311,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.607421875,
+     "per_problem_c": [
+      1,
+      3,
+      4,
+      0,
+      16,
+      9,
+      16,
+      7,
+      15,
+      16,
+      6,
+      4,
+      12,
+      8,
+      16,
+      1,
+      16,
+      12,
+      2,
+      16,
+      0,
+      15,
+      0,
+      15,
+      16,
+      16,
+      14,
+      16,
+      16,
+      4,
+      4,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.607421875,
+     "seeds_set": null,
+     "status": {
+      "correct": 311,
+      "truncated": 188,
+      "wrong": 13
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.3671875,
+     "truncated": 188,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 397,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8861607142857143,
+     "per_problem_c": [
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      4,
+      1,
+      16,
+      13,
+      16,
+      16,
+      13,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      14,
+      14,
+      16,
+      11,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8861607142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 397,
+      "truncated": 33,
+      "wrong": 18
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.07366071428571429,
+     "truncated": 33,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 477,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.931640625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      10,
+      10,
+      13,
+      15,
+      16,
+      16,
+      7,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.931640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 477,
+      "truncated": 15,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.029296875,
+     "truncated": 15,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.625,
+     "capped": 8,
+     "grad_norm_preclip": 0.349653422832489,
+     "mixed_groups": 3,
+     "prompt_ids": [
+      "intermediate_algebra/train/00477",
+      "intermediate_algebra/train/01095",
+      "intermediate_algebra/train/01249",
+      "omni/02460"
+     ],
+     "prompt_idx": [
+      12,
+      19,
+      24,
+      41
+     ]
+    }
+   },
+   "hard-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 316,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.6171875,
+     "per_problem_c": [
+      0,
+      5,
+      3,
+      0,
+      16,
+      11,
+      16,
+      7,
+      15,
+      16,
+      4,
+      8,
+      10,
+      10,
+      16,
+      6,
+      16,
+      11,
+      2,
+      16,
+      0,
+      16,
+      0,
+      16,
+      16,
+      14,
+      14,
+      16,
+      16,
+      1,
+      5,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.6171875,
+     "seeds_set": null,
+     "status": {
+      "correct": 316,
+      "truncated": 183,
+      "wrong": 13
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.357421875,
+     "truncated": 183,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 404,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9017857142857143,
+     "per_problem_c": [
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      3,
+      16,
+      15,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      15,
+      15,
+      16,
+      12,
+      12,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.9017857142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 404,
+      "truncated": 27,
+      "wrong": 17
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.060267857142857144,
+     "truncated": 27,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 476,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9296875,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      10,
+      9,
+      14,
+      15,
+      16,
+      16,
+      7,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      15,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.9296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 476,
+      "truncated": 12,
+      "wrong": 24
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.0234375,
+     "truncated": 12,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.6875,
+     "capped": 9,
+     "grad_norm_preclip": 0.3034735321998596,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "intermediate_algebra/train/00522",
+      "omni/01386",
+      "omni/02008",
+      "omni/02204"
+     ],
+     "prompt_idx": [
+      14,
+      32,
+      38,
+      39
+     ]
+    }
+   },
+   "hard-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 308,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.6015625,
+     "per_problem_c": [
+      0,
+      4,
+      5,
+      0,
+      16,
+      9,
+      16,
+      4,
+      12,
+      16,
+      1,
+      13,
+      10,
+      10,
+      16,
+      3,
+      16,
+      14,
+      1,
+      16,
+      0,
+      16,
+      0,
+      15,
+      16,
+      13,
+      13,
+      16,
+      16,
+      2,
+      4,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.6015625,
+     "seeds_set": null,
+     "status": {
+      "correct": 308,
+      "truncated": 194,
+      "wrong": 10
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.37890625,
+     "truncated": 194,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 397,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8861607142857143,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      9,
+      3,
+      16,
+      13,
+      15,
+      16,
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      13,
+      12,
+      14,
+      16,
+      10,
+      12,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8861607142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 397,
+      "truncated": 24,
+      "wrong": 27
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05357142857142857,
+     "truncated": 24,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 475,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.927734375,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      11,
+      11,
+      12,
+      15,
+      14,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      4,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      15,
+      16,
+      15,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.927734375,
+     "seeds_set": null,
+     "status": {
+      "correct": 475,
+      "truncated": 14,
+      "wrong": 23
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.02734375,
+     "truncated": 14,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.4375,
+     "capped": 15,
+     "grad_norm_preclip": 0.24170973896980286,
+     "mixed_groups": 1,
+     "prompt_ids": [
+      "algebra/train/01269",
+      "intermediate_algebra/train/01234",
+      "omni/00984",
+      "omni/02008"
+     ],
+     "prompt_idx": [
+      1,
+      23,
+      30,
+      38
+     ]
+    }
+   },
+   "none": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 310,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.60546875,
+     "per_problem_c": [
+      0,
+      3,
+      0,
+      0,
+      16,
+      13,
+      16,
+      8,
+      15,
+      16,
+      4,
+      11,
+      11,
+      9,
+      16,
+      4,
+      16,
+      13,
+      1,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      14,
+      13,
+      16,
+      16,
+      1,
+      2,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.60546875,
+     "seeds_set": null,
+     "status": {
+      "correct": 310,
+      "truncated": 190,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.37109375,
+     "truncated": 190,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 404,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9017857142857143,
+     "per_problem_c": [
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      5,
+      16,
+      15,
+      16,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      11,
+      16,
+      16,
+      10,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.9017857142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 404,
+      "truncated": 25,
+      "wrong": 19
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05580357142857143,
+     "truncated": 25,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 481,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.939453125,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      10,
+      10,
+      13,
+      15,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      6,
+      16,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.939453125,
+     "seeds_set": null,
+     "status": {
+      "correct": 481,
+      "truncated": 12,
+      "wrong": 19
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.0234375,
+     "truncated": 12,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "none_cycled": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 323,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.630859375,
+     "per_problem_c": [
+      0,
+      3,
+      5,
+      0,
+      15,
+      12,
+      16,
+      6,
+      14,
+      16,
+      4,
+      9,
+      15,
+      13,
+      16,
+      7,
+      16,
+      12,
+      0,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      16,
+      14,
+      16,
+      16,
+      3,
+      1,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.630859375,
+     "seeds_set": null,
+     "status": {
+      "correct": 323,
+      "truncated": 172,
+      "wrong": 17
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.3359375,
+     "truncated": 172,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 400,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8928571428571429,
+     "per_problem_c": [
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      5,
+      3,
+      16,
+      14,
+      15,
+      16,
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      14,
+      16,
+      12,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8928571428571429,
+     "seeds_set": null,
+     "status": {
+      "correct": 400,
+      "truncated": 32,
+      "wrong": 16
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.07142857142857142,
+     "truncated": 32,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 487,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.951171875,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      15,
+      16,
+      13,
+      13,
+      16,
+      15,
+      14,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.951171875,
+     "seeds_set": null,
+     "status": {
+      "correct": 487,
+      "truncated": 13,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.025390625,
+     "truncated": 13,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "none_rerun": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 323,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.630859375,
+     "per_problem_c": [
+      0,
+      3,
+      5,
+      0,
+      15,
+      12,
+      16,
+      6,
+      14,
+      16,
+      4,
+      9,
+      15,
+      13,
+      16,
+      7,
+      16,
+      12,
+      0,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      16,
+      14,
+      16,
+      16,
+      3,
+      1,
+      15
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.630859375,
+     "seeds_set": null,
+     "status": {
+      "correct": 323,
+      "truncated": 172,
+      "wrong": 17
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.3359375,
+     "truncated": 172,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 400,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8928571428571429,
+     "per_problem_c": [
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      5,
+      3,
+      16,
+      14,
+      15,
+      16,
+      11,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      14,
+      16,
+      12,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8928571428571429,
+     "seeds_set": null,
+     "status": {
+      "correct": 400,
+      "truncated": 32,
+      "wrong": 16
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.07142857142857142,
+     "truncated": 32,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 487,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.951171875,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      15,
+      16,
+      13,
+      13,
+      16,
+      15,
+      14,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.951171875,
+     "seeds_set": null,
+     "status": {
+      "correct": 487,
+      "truncated": 13,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.025390625,
+     "truncated": 13,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": null,
+     "capped": null,
+     "grad_norm_preclip": null,
+     "mixed_groups": null,
+     "prompt_ids": null,
+     "prompt_idx": null
+    }
+   },
+   "related-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 313,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.611328125,
+     "per_problem_c": [
+      0,
+      0,
+      5,
+      0,
+      16,
+      8,
+      16,
+      8,
+      15,
+      16,
+      3,
+      8,
+      13,
+      11,
+      16,
+      8,
+      15,
+      13,
+      1,
+      16,
+      0,
+      15,
+      0,
+      15,
+      16,
+      15,
+      15,
+      16,
+      16,
+      2,
+      2,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.611328125,
+     "seeds_set": null,
+     "status": {
+      "correct": 313,
+      "truncated": 187,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.365234375,
+     "truncated": 187,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 401,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8950892857142857,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      5,
+      4,
+      16,
+      11,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      13,
+      16,
+      16,
+      13,
+      11,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8950892857142857,
+     "seeds_set": null,
+     "status": {
+      "correct": 401,
+      "truncated": 26,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05803571428571429,
+     "truncated": 26,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 477,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.931640625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      12,
+      9,
+      12,
+      15,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      14,
+      15,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.931640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 477,
+      "truncated": 15,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.029296875,
+     "truncated": 15,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 1.0,
+     "capped": 0,
+     "grad_norm_preclip": 0.0,
+     "mixed_groups": 0,
+     "prompt_ids": [
+      "algebra/train/01661",
+      "syn-R4-096",
+      "syn-R5-044",
+      "intermediate_algebra/train/01013"
+     ],
+     "prompt_idx": [
+      31,
+      34,
+      45,
+      52
+     ]
+    }
+   },
+   "related-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 313,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.611328125,
+     "per_problem_c": [
+      0,
+      0,
+      5,
+      0,
+      16,
+      8,
+      16,
+      8,
+      15,
+      16,
+      3,
+      8,
+      13,
+      11,
+      16,
+      8,
+      15,
+      13,
+      1,
+      16,
+      0,
+      15,
+      0,
+      15,
+      16,
+      15,
+      15,
+      16,
+      16,
+      2,
+      2,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.611328125,
+     "seeds_set": null,
+     "status": {
+      "correct": 313,
+      "truncated": 187,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.365234375,
+     "truncated": 187,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 401,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8950892857142857,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      5,
+      4,
+      16,
+      11,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      13,
+      16,
+      16,
+      13,
+      11,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8950892857142857,
+     "seeds_set": null,
+     "status": {
+      "correct": 401,
+      "truncated": 26,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05803571428571429,
+     "truncated": 26,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 477,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.931640625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      12,
+      9,
+      12,
+      15,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      14,
+      15,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.931640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 477,
+      "truncated": 15,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.029296875,
+     "truncated": 15,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 1.0,
+     "capped": 0,
+     "grad_norm_preclip": 0.0,
+     "mixed_groups": 0,
+     "prompt_ids": [
+      "syn-R1-017",
+      "syn-R4-098",
+      "syn-R4-072",
+      "intermediate_algebra/train/00145"
+     ],
+     "prompt_idx": [
+      0,
+      23,
+      26,
+      60
+     ]
+    }
+   },
+   "related-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 318,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.62109375,
+     "per_problem_c": [
+      1,
+      1,
+      5,
+      0,
+      15,
+      14,
+      16,
+      9,
+      16,
+      16,
+      3,
+      7,
+      11,
+      8,
+      16,
+      8,
+      15,
+      13,
+      2,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      16,
+      14,
+      16,
+      16,
+      1,
+      2,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.62109375,
+     "seeds_set": null,
+     "status": {
+      "correct": 318,
+      "truncated": 182,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.35546875,
+     "truncated": 182,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 404,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9017857142857143,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      2,
+      16,
+      16,
+      16,
+      16,
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      13,
+      16,
+      16,
+      13,
+      9,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.9017857142857143,
+     "seeds_set": null,
+     "status": {
+      "correct": 404,
+      "truncated": 22,
+      "wrong": 22
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.049107142857142856,
+     "truncated": 22,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 476,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9296875,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      15,
+      16,
+      10,
+      9,
+      13,
+      16,
+      14,
+      16,
+      10,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.9296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 476,
+      "truncated": 15,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.029296875,
+     "truncated": 15,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.625,
+     "capped": 10,
+     "grad_norm_preclip": 0.5011168122291565,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "syn-R5-026",
+      "syn-R5-046",
+      "syn-R3-034",
+      "syn-R2-071"
+     ],
+     "prompt_idx": [
+      5,
+      25,
+      53,
+      56
+     ]
+    }
+   },
+   "related-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 317,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.619140625,
+     "per_problem_c": [
+      1,
+      1,
+      2,
+      0,
+      16,
+      8,
+      16,
+      5,
+      13,
+      16,
+      6,
+      9,
+      14,
+      8,
+      16,
+      8,
+      16,
+      14,
+      0,
+      16,
+      0,
+      15,
+      0,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      3,
+      4,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.619140625,
+     "seeds_set": null,
+     "status": {
+      "correct": 317,
+      "truncated": 182,
+      "wrong": 13
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.35546875,
+     "truncated": 182,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 400,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8928571428571429,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      9,
+      0,
+      16,
+      15,
+      16,
+      16,
+      12,
+      16,
+      16,
+      16,
+      15,
+      16,
+      14,
+      15,
+      16,
+      16,
+      7,
+      12,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8928571428571429,
+     "seeds_set": null,
+     "status": {
+      "correct": 400,
+      "truncated": 25,
+      "wrong": 23
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05580357142857143,
+     "truncated": 25,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 469,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.916015625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      11,
+      7,
+      11,
+      16,
+      15,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      5,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.916015625,
+     "seeds_set": null,
+     "status": {
+      "correct": 469,
+      "truncated": 16,
+      "wrong": 27
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.03125,
+     "truncated": 16,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.96875,
+     "capped": 1,
+     "grad_norm_preclip": 0.19832338392734528,
+     "mixed_groups": 1,
+     "prompt_ids": [
+      "syn-R5-063",
+      "syn-R4-074",
+      "syn-R5-042",
+      "syn-R5-078"
+     ],
+     "prompt_idx": [
+      3,
+      21,
+      37,
+      38
+     ]
+    }
+   },
+   "unrelated-4101": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 307,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.599609375,
+     "per_problem_c": [
+      0,
+      3,
+      2,
+      0,
+      16,
+      7,
+      16,
+      6,
+      15,
+      16,
+      2,
+      6,
+      14,
+      11,
+      16,
+      5,
+      16,
+      11,
+      1,
+      16,
+      0,
+      16,
+      0,
+      15,
+      16,
+      16,
+      13,
+      16,
+      16,
+      4,
+      0,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.599609375,
+     "seeds_set": null,
+     "status": {
+      "correct": 307,
+      "truncated": 185,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.361328125,
+     "truncated": 185,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 402,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8973214285714286,
+     "per_problem_c": [
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      8,
+      2,
+      16,
+      12,
+      16,
+      16,
+      13,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      13,
+      16,
+      16,
+      10,
+      13,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8973214285714286,
+     "seeds_set": null,
+     "status": {
+      "correct": 402,
+      "truncated": 30,
+      "wrong": 16
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.06696428571428571,
+     "truncated": 30,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 481,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.939453125,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      15,
+      11,
+      10,
+      13,
+      16,
+      14,
+      16,
+      12,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      15,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.939453125,
+     "seeds_set": null,
+     "status": {
+      "correct": 481,
+      "truncated": 10,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.01953125,
+     "truncated": 10,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.96875,
+     "capped": 0,
+     "grad_norm_preclip": 0.4725768268108368,
+     "mixed_groups": 1,
+     "prompt_ids": [
+      "number_theory/train/00107",
+      "syn-U3-081",
+      "syn-U2-036",
+      "number_theory/train/00149"
+     ],
+     "prompt_idx": [
+      31,
+      34,
+      45,
+      52
+     ]
+    }
+   },
+   "unrelated-4102": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 324,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.6328125,
+     "per_problem_c": [
+      0,
+      5,
+      3,
+      0,
+      16,
+      12,
+      16,
+      8,
+      14,
+      16,
+      6,
+      8,
+      11,
+      12,
+      16,
+      6,
+      16,
+      13,
+      0,
+      16,
+      0,
+      16,
+      0,
+      16,
+      16,
+      13,
+      15,
+      16,
+      16,
+      6,
+      2,
+      14
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.6328125,
+     "seeds_set": null,
+     "status": {
+      "correct": 324,
+      "truncated": 173,
+      "wrong": 15
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.337890625,
+     "truncated": 173,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 400,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8928571428571429,
+     "per_problem_c": [
+      12,
+      15,
+      16,
+      16,
+      15,
+      16,
+      16,
+      11,
+      1,
+      16,
+      12,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      13,
+      15,
+      15,
+      16,
+      12,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8928571428571429,
+     "seeds_set": null,
+     "status": {
+      "correct": 400,
+      "truncated": 25,
+      "wrong": 23
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05580357142857143,
+     "truncated": 25,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 476,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.9296875,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      8,
+      9,
+      15,
+      16,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      6,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.9296875,
+     "seeds_set": null,
+     "status": {
+      "correct": 476,
+      "truncated": 12,
+      "wrong": 24
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.0234375,
+     "truncated": 12,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.90625,
+     "capped": 0,
+     "grad_norm_preclip": 0.7593207359313965,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "syn-U2-098",
+      "syn-U3-094",
+      "syn-U3-048",
+      "number_theory/train/00014"
+     ],
+     "prompt_idx": [
+      0,
+      23,
+      26,
+      60
+     ]
+    }
+   },
+   "unrelated-4103": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 313,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.611328125,
+     "per_problem_c": [
+      0,
+      0,
+      5,
+      0,
+      16,
+      8,
+      16,
+      8,
+      15,
+      16,
+      3,
+      8,
+      13,
+      11,
+      16,
+      8,
+      15,
+      13,
+      1,
+      16,
+      0,
+      15,
+      0,
+      15,
+      16,
+      15,
+      15,
+      16,
+      16,
+      2,
+      2,
+      13
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.611328125,
+     "seeds_set": null,
+     "status": {
+      "correct": 313,
+      "truncated": 187,
+      "wrong": 12
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.365234375,
+     "truncated": 187,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 401,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8950892857142857,
+     "per_problem_c": [
+      13,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      5,
+      4,
+      16,
+      11,
+      16,
+      16,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      13,
+      16,
+      16,
+      13,
+      11,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8950892857142857,
+     "seeds_set": null,
+     "status": {
+      "correct": 401,
+      "truncated": 26,
+      "wrong": 21
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05803571428571429,
+     "truncated": 26,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 477,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.931640625,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      12,
+      9,
+      12,
+      15,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      14,
+      15,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.931640625,
+     "seeds_set": null,
+     "status": {
+      "correct": 477,
+      "truncated": 15,
+      "wrong": 20
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.029296875,
+     "truncated": 15,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 1.0,
+     "capped": 0,
+     "grad_norm_preclip": 0.0,
+     "mixed_groups": 0,
+     "prompt_ids": [
+      "syn-U3-078",
+      "syn-U3-097",
+      "syn-U3-088",
+      "syn-U3-017"
+     ],
+     "prompt_idx": [
+      5,
+      25,
+      53,
+      56
+     ]
+    }
+   },
+   "unrelated-4104": {
+    "probe_J_H": {
+     "attempts": 512,
+     "correct": 303,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.591796875,
+     "per_problem_c": [
+      0,
+      3,
+      3,
+      1,
+      16,
+      9,
+      16,
+      7,
+      12,
+      16,
+      4,
+      8,
+      10,
+      7,
+      16,
+      4,
+      16,
+      14,
+      2,
+      16,
+      0,
+      15,
+      0,
+      16,
+      16,
+      15,
+      13,
+      16,
+      16,
+      4,
+      0,
+      12
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.591796875,
+     "seeds_set": null,
+     "status": {
+      "correct": 303,
+      "truncated": 191,
+      "wrong": 18
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.373046875,
+     "truncated": 191,
+     "unknown": 0
+    },
+    "probe_J_R": {
+     "attempts": 448,
+     "correct": 396,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.8839285714285714,
+     "per_problem_c": [
+      12,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      7,
+      2,
+      16,
+      14,
+      16,
+      16,
+      8,
+      16,
+      16,
+      16,
+      16,
+      16,
+      13,
+      11,
+      15,
+      16,
+      12,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 28,
+     "row_matches_records": true,
+     "row_pass1": 0.8839285714285714,
+     "seeds_set": null,
+     "status": {
+      "correct": 396,
+      "truncated": 26,
+      "wrong": 26
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.05803571428571429,
+     "truncated": 26,
+     "unknown": 0
+    },
+    "probe_J_U": {
+     "attempts": 512,
+     "correct": 481,
+     "extra_ids_in_file": 0,
+     "n_per_problem": [
+      16
+     ],
+     "ntok_max": 8192,
+     "pass1": 0.939453125,
+     "per_problem_c": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      12,
+      12,
+      13,
+      15,
+      15,
+      16,
+      11,
+      16,
+      13,
+      16,
+      16,
+      16,
+      16,
+      9,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      16,
+      14,
+      16,
+      16,
+      16
+     ],
+     "problems": 32,
+     "row_matches_records": true,
+     "row_pass1": 0.939453125,
+     "seeds_set": null,
+     "status": {
+      "correct": 481,
+      "truncated": 14,
+      "wrong": 17
+     },
+     "trunc_ntok_values": [
+      8192
+     ],
+     "trunc_share": 0.02734375,
+     "truncated": 14,
+     "unknown": 0
+    },
+    "update_row": {
+     "batch_reward": 0.90625,
+     "capped": 0,
+     "grad_norm_preclip": 0.589073896408081,
+     "mixed_groups": 2,
+     "prompt_ids": [
+      "syn-U2-008",
+      "syn-U1-063",
+      "syn-U3-063",
+      "syn-U1-052"
+     ],
+     "prompt_idx": [
+      3,
+      21,
+      37,
+      38
+     ]
+    }
+   }
+  },
+  "identical_eval_groups": [
+   [
+    "none_cycled",
+    "none_rerun"
+   ],
+   [
+    "related-4101",
+    "related-4102",
+    "unrelated-4103"
+   ]
+  ]
+ }
+}

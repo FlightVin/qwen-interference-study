@@ -1,0 +1,142 @@
+{
+ "multibox_census": {
+  "base": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 1823,
+   "ge2_distinct": 454,
+   "ge2_reward1": 816,
+   "ge2_reward0_finished": 1007,
+   "ge2_reward0_capped": 0,
+   "ge2_reward0_finished_nonlast_equals_gold": 5
+  },
+  "H-s101": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 1874,
+   "ge2_distinct": 301,
+   "ge2_reward1": 1492,
+   "ge2_reward0_finished": 347,
+   "ge2_reward0_capped": 35,
+   "ge2_reward0_finished_nonlast_equals_gold": 8
+  },
+  "R-s101": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 2291,
+   "ge2_distinct": 187,
+   "ge2_reward1": 2050,
+   "ge2_reward0_finished": 226,
+   "ge2_reward0_capped": 15,
+   "ge2_reward0_finished_nonlast_equals_gold": 0
+  },
+  "U-s101": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 454,
+   "ge2_distinct": 65,
+   "ge2_reward1": 359,
+   "ge2_reward0_finished": 91,
+   "ge2_reward0_capped": 4,
+   "ge2_reward0_finished_nonlast_equals_gold": 1
+  },
+  "H-s202": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 2257,
+   "ge2_distinct": 175,
+   "ge2_reward1": 1839,
+   "ge2_reward0_finished": 394,
+   "ge2_reward0_capped": 24,
+   "ge2_reward0_finished_nonlast_equals_gold": 1
+  },
+  "R-s202": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 483,
+   "ge2_distinct": 88,
+   "ge2_reward1": 366,
+   "ge2_reward0_finished": 103,
+   "ge2_reward0_capped": 14,
+   "ge2_reward0_finished_nonlast_equals_gold": 1
+  },
+  "U-s202": {
+   "responses": 4096,
+   "extract_mismatch": 0,
+   "ge2_boxes": 500,
+   "ge2_distinct": 64,
+   "ge2_reward1": 391,
+   "ge2_reward0_finished": 104,
+   "ge2_reward0_capped": 5,
+   "ge2_reward0_finished_nonlast_equals_gold": 1
+  }
+ },
+ "trace_c_example": {
+  "cell": "base",
+  "problem": "intermediate_algebra/test/00373",
+  "sample": 15,
+  "gold": "2",
+  "boxes": [
+   "2",
+   "\\infty"
+  ],
+  "record_extracted": "\\infty",
+  "status": "wrong",
+  "reward": 0,
+  "finish": "stop",
+  "n_tokens": 1556
+ },
+ "trace_a": {
+  "problem": "intermediate_algebra/test/00874",
+  "sample": 4,
+  "gold": "-3(x+2)(x-1)",
+  "seed": 1478459057,
+  "n_tokens": 926,
+  "finish": "stop",
+  "status": "correct",
+  "reward": 1,
+  "extracted": "q(x) = -3(x + 2)(x - 1)",
+  "my_last_box": "q(x) = -3(x + 2)(x - 1)",
+  "tail": "tches the condition.\n\nGood.\n\n---\n\n### Step 5: Determine the constant $ c $\n\nWe are given:\n\n$$\nq(3) = -30\n$$\n\nSo:\n\n$$\nq(3) = (3 + 2)(3 - 1) \\cdot c = 5 \\cdot 2 \\cdot c = 10c = -30\n$$\n\nSolve:\n\n$$\n10c = -30 \\Rightarrow c = -3\n$$\n\n---\n\n### Step 6: Final form of $ q(x) $\n\nSo:\n\n$$\nq(x) = (x + 2)(x - 1)(-3)\n$$\n\n$$\nq(x) = -3(x + 2)(x - 1)\n$$\n\n---\n\n### \u2705 Final Answer:\n\n$$\n\\boxed{q(x) = -3(x + 2)(x - 1)}\n$$"
+ },
+ "trace_b": {
+  "problem": "intermediate_algebra/test/00874",
+  "sample": 26,
+  "gold": "-3(x+2)(x-1)",
+  "original": {
+   "seed": 1478459057,
+   "n_tokens": 12288,
+   "finish": "length",
+   "status": "truncated",
+   "reward": 0,
+   "extracted": null
+  },
+  "row": {
+   "prompt_id": "intermediate_algebra/test/00874",
+   "sample": 26,
+   "n_tokens_1": 12288,
+   "finish_1": "length",
+   "reward_1": 0,
+   "status_1": "truncated",
+   "extended": true,
+   "n_tokens_2": 13719,
+   "finish_2": "stop",
+   "reward_2": 1,
+   "status_2": "correct",
+   "extracted_2": "-3x^2 - 3x + 6",
+   "new_tokens": 1431
+  },
+  "len_new_ids": 1431,
+  "original_tail": "take is in expanding -3(x + 2)(x - 1) as -3x\u00b2 + 3x + 6. Let's do it properly:\n\n(x + 2)(x - 1) = x * x + x * (-1) + 2 * x + 2 * (-1) = x\u00b2 - x + 2x - 2 = x\u00b2 + x - 2\n\nWait, this is different from what I thought earlier.\n\nWait, no, wait: (x + 2)(x - 1) = x(x - 1) + 2(x - 1) = x\u00b2 - x + 2x - 2 = x\u00b2 + x - ",
+  "full_tail": "merator degree 2, denominator degree 1 \u2192 no horizontal asymptote.\n\nAnd q(3) = -30, which is correct.\n\nSo this q(x) = -3(x + 2)(x - 1) = -3x\u00b2 - 3x + 6 is the correct answer.\n\nSo finally, q(x) = -3x\u00b2 - 3x + 6\n\nWe can write this as q(x) = -3(x\u00b2 + x - 2) = -3(x + 2)(x - 1), but the problem asks for q(x), so we can leave it in standard polynomial form.\n\nSo final answer is:\n\n$$\n\\boxed{-3x^2 - 3x + 6}\n$$",
+  "my_last_box_full": "-3x^2 - 3x + 6",
+  "problem_c_12288": 16,
+  "problem_c_16384": 17
+ },
+ "id_overlap": {
+  "test_stress": 0,
+  "test_cue": 0,
+  "stress_cue": 0,
+  "stress_ids_from_math_test_split": 54
+ }
+}
