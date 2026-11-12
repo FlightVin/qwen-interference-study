@@ -1,0 +1,745 @@
+{
+ "policies": {
+  "base": {
+   "all": {
+    "pass1": 0.5078125,
+    "truncated": 0.0,
+    "acc_finished": 0.5078125,
+    "attempts": 512,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.193359375,
+    "single_box_wrong": 0.298828125,
+    "unknown": 0,
+    "pass1_within_8192": 0.5078125
+   },
+   "counting_and_probability": {
+    "pass1": 0.453125,
+    "truncated": 0.0,
+    "acc_finished": 0.453125,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.265625,
+    "single_box_wrong": 0.28125,
+    "unknown": 0,
+    "pass1_within_8192": 0.453125
+   },
+   "geometry": {
+    "pass1": 0.3515625,
+    "truncated": 0.0,
+    "acc_finished": 0.3515625,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.28125,
+    "single_box_wrong": 0.3671875,
+    "unknown": 0,
+    "pass1_within_8192": 0.3515625
+   },
+   "prealgebra": {
+    "pass1": 0.8203125,
+    "truncated": 0.0,
+    "acc_finished": 0.8203125,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0546875,
+    "single_box_wrong": 0.125,
+    "unknown": 0,
+    "pass1_within_8192": 0.8203125
+   },
+   "precalculus": {
+    "pass1": 0.40625,
+    "truncated": 0.0,
+    "acc_finished": 0.40625,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.171875,
+    "single_box_wrong": 0.421875,
+    "unknown": 0,
+    "pass1_within_8192": 0.40625
+   },
+   "gpu": "L40S"
+  },
+  "H-s101": {
+   "all": {
+    "pass1": 0.734375,
+    "truncated": 0.033203125,
+    "acc_finished": 0.7595959595959596,
+    "attempts": 512,
+    "no_box": 0.005859375,
+    "multi_box_wrong": 0.09765625,
+    "single_box_wrong": 0.12890625,
+    "unknown": 0,
+    "pass1_within_8192": 0.71875
+   },
+   "counting_and_probability": {
+    "pass1": 0.7890625,
+    "truncated": 0.0078125,
+    "acc_finished": 0.7952755905511811,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.109375,
+    "single_box_wrong": 0.09375,
+    "unknown": 0,
+    "pass1_within_8192": 0.7578125
+   },
+   "geometry": {
+    "pass1": 0.703125,
+    "truncated": 0.0625,
+    "acc_finished": 0.75,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.1328125,
+    "single_box_wrong": 0.1015625,
+    "unknown": 0,
+    "pass1_within_8192": 0.6953125
+   },
+   "prealgebra": {
+    "pass1": 0.8671875,
+    "truncated": 0.0,
+    "acc_finished": 0.8671875,
+    "attempts": 128,
+    "no_box": 0.015625,
+    "multi_box_wrong": 0.0,
+    "single_box_wrong": 0.1171875,
+    "unknown": 0,
+    "pass1_within_8192": 0.859375
+   },
+   "precalculus": {
+    "pass1": 0.578125,
+    "truncated": 0.0625,
+    "acc_finished": 0.6166666666666667,
+    "attempts": 128,
+    "no_box": 0.0078125,
+    "multi_box_wrong": 0.1484375,
+    "single_box_wrong": 0.203125,
+    "unknown": 0,
+    "pass1_within_8192": 0.5625
+   },
+   "gpu": "L40S"
+  },
+  "H-s202": {
+   "all": {
+    "pass1": 0.755859375,
+    "truncated": 0.052734375,
+    "acc_finished": 0.797938144329897,
+    "attempts": 512,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.130859375,
+    "single_box_wrong": 0.060546875,
+    "unknown": 0,
+    "pass1_within_8192": 0.7109375
+   },
+   "counting_and_probability": {
+    "pass1": 0.7734375,
+    "truncated": 0.0390625,
+    "acc_finished": 0.8048780487804879,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.1484375,
+    "single_box_wrong": 0.0390625,
+    "unknown": 0,
+    "pass1_within_8192": 0.7578125
+   },
+   "geometry": {
+    "pass1": 0.75,
+    "truncated": 0.09375,
+    "acc_finished": 0.8275862068965517,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.1484375,
+    "single_box_wrong": 0.0078125,
+    "unknown": 0,
+    "pass1_within_8192": 0.6796875
+   },
+   "prealgebra": {
+    "pass1": 0.859375,
+    "truncated": 0.0,
+    "acc_finished": 0.859375,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0234375,
+    "single_box_wrong": 0.1171875,
+    "unknown": 0,
+    "pass1_within_8192": 0.8515625
+   },
+   "precalculus": {
+    "pass1": 0.640625,
+    "truncated": 0.078125,
+    "acc_finished": 0.6949152542372882,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.203125,
+    "single_box_wrong": 0.078125,
+    "unknown": 0,
+    "pass1_within_8192": 0.5546875
+   },
+   "gpu": "L40"
+  },
+  "R-s101": {
+   "all": {
+    "pass1": 0.791015625,
+    "truncated": 0.03515625,
+    "acc_finished": 0.819838056680162,
+    "attempts": 512,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.099609375,
+    "single_box_wrong": 0.07421875,
+    "unknown": 0,
+    "pass1_within_8192": 0.765625
+   },
+   "counting_and_probability": {
+    "pass1": 0.7890625,
+    "truncated": 0.0234375,
+    "acc_finished": 0.808,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.109375,
+    "single_box_wrong": 0.078125,
+    "unknown": 0,
+    "pass1_within_8192": 0.78125
+   },
+   "geometry": {
+    "pass1": 0.8046875,
+    "truncated": 0.0703125,
+    "acc_finished": 0.865546218487395,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.109375,
+    "single_box_wrong": 0.015625,
+    "unknown": 0,
+    "pass1_within_8192": 0.75
+   },
+   "prealgebra": {
+    "pass1": 0.8671875,
+    "truncated": 0.0,
+    "acc_finished": 0.8671875,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0078125,
+    "single_box_wrong": 0.125,
+    "unknown": 0,
+    "pass1_within_8192": 0.8671875
+   },
+   "precalculus": {
+    "pass1": 0.703125,
+    "truncated": 0.046875,
+    "acc_finished": 0.7377049180327869,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.171875,
+    "single_box_wrong": 0.078125,
+    "unknown": 0,
+    "pass1_within_8192": 0.6640625
+   },
+   "gpu": "L40"
+  },
+  "R-s202": {
+   "all": {
+    "pass1": 0.720703125,
+    "truncated": 0.03515625,
+    "acc_finished": 0.7469635627530364,
+    "attempts": 512,
+    "no_box": 0.001953125,
+    "multi_box_wrong": 0.044921875,
+    "single_box_wrong": 0.197265625,
+    "unknown": 0,
+    "pass1_within_8192": 0.6953125
+   },
+   "counting_and_probability": {
+    "pass1": 0.7421875,
+    "truncated": 0.0,
+    "acc_finished": 0.7421875,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.015625,
+    "single_box_wrong": 0.2421875,
+    "unknown": 0,
+    "pass1_within_8192": 0.7265625
+   },
+   "geometry": {
+    "pass1": 0.609375,
+    "truncated": 0.1015625,
+    "acc_finished": 0.6782608695652174,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0703125,
+    "single_box_wrong": 0.21875,
+    "unknown": 0,
+    "pass1_within_8192": 0.578125
+   },
+   "prealgebra": {
+    "pass1": 0.875,
+    "truncated": 0.0,
+    "acc_finished": 0.875,
+    "attempts": 128,
+    "no_box": 0.0078125,
+    "multi_box_wrong": 0.0,
+    "single_box_wrong": 0.1171875,
+    "unknown": 0,
+    "pass1_within_8192": 0.8671875
+   },
+   "precalculus": {
+    "pass1": 0.65625,
+    "truncated": 0.0390625,
+    "acc_finished": 0.6829268292682927,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.09375,
+    "single_box_wrong": 0.2109375,
+    "unknown": 0,
+    "pass1_within_8192": 0.609375
+   },
+   "gpu": "L40"
+  },
+  "U-s101": {
+   "all": {
+    "pass1": 0.76171875,
+    "truncated": 0.060546875,
+    "acc_finished": 0.8108108108108109,
+    "attempts": 512,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.03125,
+    "single_box_wrong": 0.146484375,
+    "unknown": 0,
+    "pass1_within_8192": 0.72265625
+   },
+   "counting_and_probability": {
+    "pass1": 0.8046875,
+    "truncated": 0.0390625,
+    "acc_finished": 0.8373983739837398,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.015625,
+    "single_box_wrong": 0.140625,
+    "unknown": 0,
+    "pass1_within_8192": 0.75
+   },
+   "geometry": {
+    "pass1": 0.7109375,
+    "truncated": 0.1171875,
+    "acc_finished": 0.8053097345132744,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0546875,
+    "single_box_wrong": 0.1171875,
+    "unknown": 0,
+    "pass1_within_8192": 0.6875
+   },
+   "prealgebra": {
+    "pass1": 0.875,
+    "truncated": 0.0,
+    "acc_finished": 0.875,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0078125,
+    "single_box_wrong": 0.1171875,
+    "unknown": 0,
+    "pass1_within_8192": 0.875
+   },
+   "precalculus": {
+    "pass1": 0.65625,
+    "truncated": 0.0859375,
+    "acc_finished": 0.717948717948718,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.046875,
+    "single_box_wrong": 0.2109375,
+    "unknown": 0,
+    "pass1_within_8192": 0.578125
+   },
+   "gpu": "L40S"
+  },
+  "U-s202": {
+   "all": {
+    "pass1": 0.734375,
+    "truncated": 0.0234375,
+    "acc_finished": 0.752,
+    "attempts": 512,
+    "no_box": 0.00390625,
+    "multi_box_wrong": 0.0234375,
+    "single_box_wrong": 0.21484375,
+    "unknown": 0,
+    "pass1_within_8192": 0.716796875
+   },
+   "counting_and_probability": {
+    "pass1": 0.7109375,
+    "truncated": 0.0,
+    "acc_finished": 0.7109375,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0,
+    "single_box_wrong": 0.2890625,
+    "unknown": 0,
+    "pass1_within_8192": 0.7109375
+   },
+   "geometry": {
+    "pass1": 0.6875,
+    "truncated": 0.046875,
+    "acc_finished": 0.7213114754098361,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.03125,
+    "single_box_wrong": 0.234375,
+    "unknown": 0,
+    "pass1_within_8192": 0.6640625
+   },
+   "prealgebra": {
+    "pass1": 0.8515625,
+    "truncated": 0.0,
+    "acc_finished": 0.8515625,
+    "attempts": 128,
+    "no_box": 0.015625,
+    "multi_box_wrong": 0.0078125,
+    "single_box_wrong": 0.125,
+    "unknown": 0,
+    "pass1_within_8192": 0.8515625
+   },
+   "precalculus": {
+    "pass1": 0.6875,
+    "truncated": 0.046875,
+    "acc_finished": 0.7213114754098361,
+    "attempts": 128,
+    "no_box": 0.0,
+    "multi_box_wrong": 0.0546875,
+    "single_box_wrong": 0.2109375,
+    "unknown": 0,
+    "pass1_within_8192": 0.640625
+   },
+   "gpu": "L40S"
+  }
+ },
+ "gains": {
+  "H-s101": {
+   "control": [
+    0.2265625,
+    0.14453125,
+    0.30859375
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.3359375,
+     0.1953125,
+     0.484375
+    ],
+    "geometry": [
+     0.3515625,
+     0.1796875,
+     0.5234375
+    ],
+    "prealgebra": [
+     0.046875,
+     -0.046875,
+     0.1640625
+    ],
+    "precalculus": [
+     0.171875,
+     -0.015625,
+     0.328125
+    ]
+   },
+   "J_U": [
+    0.1328125,
+    0.05078125,
+    0.2265625
+   ],
+   "J_U_8k": [
+    0.125,
+    0.04296875,
+    0.21875
+   ],
+   "J_R": [
+    0.08482142857142858,
+    0.03125,
+    0.15178571428571427
+   ],
+   "rho": 1.7058823529411764
+  },
+  "H-s202": {
+   "control": [
+    0.248046875,
+    0.166015625,
+    0.3301269531249993
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.3203125,
+     0.203125,
+     0.453125
+    ],
+    "geometry": [
+     0.3984375,
+     0.2109375,
+     0.5859375
+    ],
+    "prealgebra": [
+     0.0390625,
+     -0.0546875,
+     0.15625
+    ],
+    "precalculus": [
+     0.234375,
+     0.0546875,
+     0.390625
+    ]
+   },
+   "J_U": [
+    0.09765625,
+    0.0234375,
+    0.18359375
+   ],
+   "J_U_8k": [
+    0.09765625,
+    0.0234375,
+    0.18359375
+   ],
+   "J_R": [
+    0.10267857142857142,
+    0.022321428571428572,
+    0.19642857142857142
+   ],
+   "rho": 2.54
+  },
+  "R-s101": {
+   "control": [
+    0.283203125,
+    0.19921875,
+    0.369140625
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.3359375,
+     0.21855468750000018,
+     0.46875
+    ],
+    "geometry": [
+     0.453125,
+     0.2578125,
+     0.6484375
+    ],
+    "prealgebra": [
+     0.046875,
+     -0.03125,
+     0.15625
+    ],
+    "precalculus": [
+     0.296875,
+     0.125,
+     0.4609375
+    ]
+   },
+   "J_U": [
+    0.1484375,
+    0.078125,
+    0.23046875
+   ],
+   "J_U_8k": [
+    0.13671875,
+    0.0703125,
+    0.21494140624999858
+   ],
+   "J_R": [
+    0.09375,
+    0.004464285714285714,
+    0.1875
+   ],
+   "rho": 1.9078947368421053
+  },
+  "R-s202": {
+   "control": [
+    0.212890625,
+    0.150390625,
+    0.275390625
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.2890625,
+     0.1796875,
+     0.421875
+    ],
+    "geometry": [
+     0.2578125,
+     0.1328125,
+     0.390625
+    ],
+    "prealgebra": [
+     0.0546875,
+     -0.0234375,
+     0.1640625
+    ],
+    "precalculus": [
+     0.25,
+     0.140625,
+     0.359375
+    ]
+   },
+   "J_U": [
+    0.11328125,
+    0.0390625,
+    0.1953125
+   ],
+   "J_U_8k": [
+    0.109375,
+    0.03896484375000009,
+    0.1875
+   ],
+   "J_R": [
+    0.09375,
+    0.03571428571428571,
+    0.16071428571428573
+   ],
+   "rho": 1.8793103448275863
+  },
+  "U-s101": {
+   "control": [
+    0.25390625,
+    0.177734375,
+    0.333984375
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.3515625,
+     0.2109375,
+     0.5078125
+    ],
+    "geometry": [
+     0.359375,
+     0.1953125,
+     0.53125
+    ],
+    "prealgebra": [
+     0.0546875,
+     -0.0234375,
+     0.1640625
+    ],
+    "precalculus": [
+     0.25,
+     0.109375,
+     0.390625
+    ]
+   },
+   "J_U": [
+    0.125,
+    0.05078125,
+    0.2109375
+   ],
+   "J_U_8k": [
+    0.11328125,
+    0.04296875,
+    0.1953125
+   ],
+   "J_R": [
+    0.10714285714285714,
+    0.03571428571428571,
+    0.1875
+   ],
+   "rho": 2.03125
+  },
+  "U-s202": {
+   "control": [
+    0.2265625,
+    0.154296875,
+    0.30078125
+   ],
+   "control_by_subject": {
+    "counting_and_probability": [
+     0.2578125,
+     0.109375,
+     0.421875
+    ],
+    "geometry": [
+     0.3359375,
+     0.1875,
+     0.4921875
+    ],
+    "prealgebra": [
+     0.03125,
+     -0.046875,
+     0.140625
+    ],
+    "precalculus": [
+     0.28125,
+     0.1484375,
+     0.3984375
+    ]
+   },
+   "J_U": [
+    0.125,
+    0.05078125,
+    0.20703125
+   ],
+   "J_U_8k": [
+    0.125,
+    0.05078125,
+    0.20703125
+   ],
+   "J_R": [
+    0.10267857142857142,
+    0.04017857142857143,
+    0.17410714285714285
+   ],
+   "rho": 1.8125
+  }
+ },
+ "contrasts": {
+  "s101": {
+   "H-R": [
+    -0.056640625,
+    -0.099609375,
+    -0.015625
+   ],
+   "H-U": [
+    -0.02734375,
+    -0.0703125,
+    0.013671875
+   ],
+   "R-U": [
+    0.029296875,
+    -0.001953125,
+    0.0625
+   ]
+  },
+  "s202": {
+   "H-R": [
+    0.03515625,
+    -0.00390625,
+    0.076171875
+   ],
+   "H-U": [
+    0.021484375,
+    -0.013671875,
+    0.056640625
+   ],
+   "R-U": [
+    -0.013671875,
+    -0.0546875,
+    0.025390625
+   ]
+  }
+ },
+ "decision": {
+  "H": {
+   "seed_mean_control_gain": 0.2373046875,
+   "seed_mean_JU_gain": 0.115234375,
+   "rho": 2.059322033898305,
+   "verdict": "general transfer",
+   "format_drop": 0.033203125,
+   "single_box_wrong_drop": 0.2041015625
+  },
+  "R": {
+   "seed_mean_control_gain": 0.248046875,
+   "seed_mean_JU_gain": 0.130859375,
+   "rho": 1.8955223880597014,
+   "verdict": "general transfer",
+   "format_drop": 0.0849609375,
+   "single_box_wrong_drop": 0.1630859375
+  },
+  "U": {
+   "seed_mean_control_gain": 0.240234375,
+   "seed_mean_JU_gain": 0.125,
+   "rho": 1.921875,
+   "verdict": "general transfer",
+   "format_drop": 0.1220703125,
+   "single_box_wrong_drop": 0.1181640625
+  }
+ },
+ "missing": []
+}
