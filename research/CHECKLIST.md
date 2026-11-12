@@ -50,7 +50,9 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 - 3.2 Reconstruct endpoints, base, common-GPU reruns, curves, probes, branches, coverage, stress tiers, length, costs.
 - 3.3 Check pairing, missing attempts, weighting, interval units, signs, bootstrap pairing; same traced cases.
 
-## 4. Discrepancies                                                                    [active]
+## 4. Discrepancies                                                                    [done 899b4a9]
+- 161 scripted comparisons, 157 agree, 4 resolved (`comparison.md`); 38 defects: 11 interpretation, 8 number, 19 wording
+  (`discrepancies.md`); D162 lists the changed conclusions. DEFINITIONS v1.1 being applied (agent).
 - 4.0 Agent reconcile: `comparison.md` (A vs B), sensitivity (test #30 variant, multi-box, unknowns),
   `discrepancies.md`, `definitions-v1.1-changes.md`.
 - 4.1 Compare A vs B after both are written; resolve from primary records; fix at source; rerun downstream.
@@ -66,7 +68,9 @@ Previous checklist (study execution, all closed): git 045c528. Deliverables live
 ## 6. Report rewrite (A26 §5 order)                                                    [pending]
 - 6.1 Task → data and measurements → questions → procedure → results → interpretation → appendices.
 
-## 7. Figures and render (A26 §6)                                                      [pending]
+## 7. Figures and render (A26 §6)                                                      [active]
+- 7.0 Agent figures: `reports/build/build_v3.py` → `reports/tables/v3/`, `reports/figures/v3/` (F1–F12), captions,
+  previews at 830 px and 400 px, value check against pass A/B.
 - 7.1 Regenerate from verified tables; consistent H/R/U colours, seed line styles.
 - 7.2 Render from a clean checkout; inspect every figure at display width and at a narrow viewport.
 
