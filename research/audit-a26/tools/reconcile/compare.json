@@ -1,0 +1,2813 @@
+[
+ {
+  "group": "test cell",
+  "quantity": "base: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.525634765625,
+   0.8352163617516614,
+   116,
+   2
+  ],
+  "B": [
+   0.525634765625,
+   0.8352163617516614,
+   116,
+   2.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "H-s101: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.76953125,
+   0.9370628452316438,
+   125,
+   445
+  ],
+  "B": [
+   0.76953125,
+   0.9370628452316438,
+   125,
+   445.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "R-s101: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.818603515625,
+   0.9612719112166415,
+   125,
+   437
+  ],
+  "B": [
+   0.818603515625,
+   0.9612719112166415,
+   125,
+   437.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "U-s101: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.77685546875,
+   0.9446191919678084,
+   125,
+   501
+  ],
+  "B": [
+   0.77685546875,
+   0.9446191919678084,
+   125,
+   501.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "H-s202: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.723876953125,
+   0.9075769061421523,
+   122,
+   632
+  ],
+  "B": [
+   0.723876953125,
+   0.9075769061421523,
+   122,
+   632.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "R-s202: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.747802734375,
+   0.9220936494312294,
+   123,
+   538
+  ],
+  "B": [
+   0.747802734375,
+   0.9220936494312294,
+   123,
+   538.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "U-s202: pass@1, pass@8, solved>=1/32, truncated",
+  "A": [
+   0.792236328125,
+   0.9485036109685026,
+   124,
+   333
+  ],
+  "B": [
+   0.792236328125,
+   0.9485036109685026,
+   124,
+   333.0
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "H-s202 r116 fallback: pass@1, pass@8, truncation share",
+  "A": [
+   0.7431640625,
+   0.928149223407062,
+   0.147705078125
+  ],
+  "B": [
+   0.7431640625,
+   0.928149223407062,
+   0.147705078125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "cgpu R-s101: pass@1",
+  "A": [
+   0.822509765625
+  ],
+  "B": [
+   0.822509765625
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "cgpu U-s101: pass@1",
+  "A": [
+   0.778076171875
+  ],
+  "B": [
+   0.778076171875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "cgpu R-s202: pass@1",
+  "A": [
+   0.76123046875
+  ],
+  "B": [
+   0.76123046875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test cell",
+  "quantity": "cgpu U-s202: pass@1",
+  "A": [
+   0.792236328125
+  ],
+  "B": [
+   0.792236328125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-U s101 [95%]",
+  "A": [
+   0.041748046875,
+   0.020263671875,
+   0.063232421875
+  ],
+  "B": [
+   0.041748046875,
+   0.020263671875,
+   0.063232421875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-U s202 [95%]",
+  "A": [
+   -0.04443359375,
+   -0.072271728515625,
+   -0.017822265625
+  ],
+  "B": [
+   -0.04443359375,
+   -0.07275390625,
+   -0.017578125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048217773437500555,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-U two-seed mean (point)",
+  "A": [
+   -0.0013427734375
+  ],
+  "B": [
+   -0.0013427734375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-H s101 [95%]",
+  "A": [
+   0.049072265625,
+   0.01953125,
+   0.079345703125
+  ],
+  "B": [
+   0.049072265625,
+   0.020751953125,
+   0.0791015625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.001220703125,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-H s202 [95%]",
+  "A": [
+   0.02392578125,
+   -0.004150390625,
+   0.05322265625
+  ],
+  "B": [
+   0.02392578125,
+   -0.0048828125,
+   0.05322265625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000732421875,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-H two-seed mean (point)",
+  "A": [
+   0.0364990234375
+  ],
+  "B": [
+   0.0364990234375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "U-H s101 [95%]",
+  "A": [
+   0.00732421875,
+   -0.019287109375,
+   0.03564453125
+  ],
+  "B": [
+   0.00732421875,
+   -0.019287109375,
+   0.035888671875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000244140625,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "U-H s202 [95%]",
+  "A": [
+   0.068359375,
+   0.035888671875,
+   0.102294921875
+  ],
+  "B": [
+   0.068359375,
+   0.035638427734375006,
+   0.10230102539062491
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00025024414062499445,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "U-H two-seed mean (point)",
+  "A": [
+   0.037841796875
+  ],
+  "B": [
+   0.037841796875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "cgpu R-U s101 [95%]",
+  "A": [
+   0.04443359375,
+   0.024169921875,
+   0.064697265625
+  ],
+  "B": [
+   0.04443359375,
+   0.0244140625,
+   0.065673828125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0009765625,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "cgpu R-U s202 [95%]",
+  "A": [
+   -0.031005859375,
+   -0.0595703125,
+   -0.003662109375
+  ],
+  "B": [
+   -0.031005859375,
+   -0.059576416015624994,
+   -0.004150390625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048828125,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "H-s101 - base (point)",
+  "A": [
+   0.243896484375
+  ],
+  "B": [
+   0.243896484375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-s101 - base (point)",
+  "A": [
+   0.29296875
+  ],
+  "B": [
+   0.29296875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "U-s101 - base (point)",
+  "A": [
+   0.251220703125
+  ],
+  "B": [
+   0.251220703125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "H-s202 - base (point)",
+  "A": [
+   0.1982421875
+  ],
+  "B": [
+   0.1982421875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "R-s202 - base (point)",
+  "A": [
+   0.22216796875
+  ],
+  "B": [
+   0.22216796875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "test contrast",
+  "quantity": "U-s202 - base (point)",
+  "A": [
+   0.2666015625
+  ],
+  "B": [
+   0.2666015625
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "R-s101: identical token sequences, problems with equal c",
+  "A": [
+   48,
+   62
+  ],
+  "B": [
+   48,
+   62
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "R-s101: rerun - original [95%]",
+  "A": [
+   0.00390625,
+   -0.008056640625,
+   0.015625
+  ],
+  "B": [
+   0.00390625,
+   -0.008056640625,
+   0.01611328125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048828125,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "R-s202: identical token sequences, problems with equal c",
+  "A": [
+   133,
+   46
+  ],
+  "B": [
+   133,
+   46
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "R-s202: rerun - original [95%]",
+  "A": [
+   0.013427734375,
+   0.00146484375,
+   0.025146484375
+  ],
+  "B": [
+   0.013427734375,
+   0.002197265625,
+   0.025634765625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000732421875,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "U-s101: identical token sequences, problems with equal c",
+  "A": [
+   1964,
+   79
+  ],
+  "B": [
+   1964,
+   79
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "U-s101: rerun - original [95%]",
+  "A": [
+   0.001220703125,
+   -0.00927734375,
+   0.011962890625
+  ],
+  "B": [
+   0.001220703125,
+   -0.009521484375,
+   0.011474609375
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048828125,
+  "agree": true
+ },
+ {
+  "group": "cgpu rerun",
+  "quantity": "U-s202: identical token sequences, problems with equal c",
+  "A": [
+   4096,
+   128
+  ],
+  "B": [
+   4096,
+   128
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "decomposition",
+  "quantity": "R-U s101: tR, tU, aR, aU, trunc term, acc term",
+  "A": [
+   0.106689453125,
+   0.122314453125,
+   0.9163705930582127,
+   0.8851182197496523,
+   0.014074131350061445,
+   0.027673915524938565
+  ],
+  "B": [
+   0.106689453125,
+   0.122314453125,
+   0.9163705930582127,
+   0.8851182197496523,
+   0.014074131350061445,
+   0.027673915524938565
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "decomposition",
+  "quantity": "R-U s202: tR, tU, aR, aU, trunc term, acc term",
+  "A": [
+   0.13134765625,
+   0.081298828125,
+   0.8608768971332209,
+   0.8623438745681637,
+   -0.04312259011215623,
+   -0.001311003637843815
+  ],
+  "B": [
+   0.13134765625,
+   0.081298828125,
+   0.8608768971332209,
+   0.8623438745681637,
+   -0.04312259011215623,
+   -0.001311003637843815
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "coverage",
+  "quantity": "R-U s202: both-solved problems, their contribution",
+  "A": [
+   122,
+   -0.042236328125
+  ],
+  "B": [
+   122,
+   -0.042236328125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "base: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.372737556561086,
+   0.25793650793650796,
+   0.525,
+   0.0005656108597285068,
+   0.3729485002829655,
+   152
+  ],
+  "B": [
+   0.372737556561086,
+   0.25793650793650796,
+   0.525,
+   0.0005656108597285068,
+   0.3729485002829655,
+   152
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "base harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   399,
+   1,
+   0.8210526315789474,
+   0.525691699604743
+  ],
+  "B": [
+   399.0,
+   1.0,
+   0.8210526315789474,
+   0.525691699604743
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "base superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   260,
+   0,
+   0.5873015873015873,
+   0.25793650793650796
+  ],
+  "B": [
+   260.0,
+   0.0,
+   0.5873015873015873,
+   0.25793650793650796
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "H-s101-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6414027149321267,
+   0.5257936507936508,
+   0.7947368421052632,
+   0.17703619909502263,
+   0.7793814432989691,
+   183
+  ],
+  "B": [
+   0.6414027149321267,
+   0.5257936507936508,
+   0.7947368421052632,
+   0.17703619909502263,
+   0.7793814432989691,
+   183
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s101-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   604,
+   69,
+   0.9263157894736842,
+   0.874095513748191
+  ],
+  "B": [
+   604.0,
+   69.0,
+   0.9263157894736842,
+   0.874095513748191
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s101-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   530,
+   244,
+   0.753968253968254,
+   0.693717277486911
+  ],
+  "B": [
+   530.0,
+   244.0,
+   0.753968253968254,
+   0.693717277486911
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "R-s101-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6951357466063348,
+   0.5843253968253969,
+   0.8421052631578947,
+   0.20475113122171945,
+   0.8741109530583214,
+   184
+  ],
+  "B": [
+   0.6951357466063348,
+   0.5843253968253969,
+   0.8421052631578947,
+   0.20475113122171945,
+   0.8741109530583214,
+   184
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s101-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   640,
+   75,
+   0.9473684210526315,
+   0.9343065693430657
+  ],
+  "B": [
+   640.0,
+   75.0,
+   0.9473684210526315,
+   0.9343065693430657
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s101-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   589,
+   287,
+   0.746031746031746,
+   0.8169209431345353
+  ],
+  "B": [
+   589.0,
+   287.0,
+   0.746031746031746,
+   0.8169209431345353
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "U-s101-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6532805429864253,
+   0.5416666666666666,
+   0.8013157894736842,
+   0.22963800904977374,
+   0.8480176211453745,
+   184
+  ],
+  "B": [
+   0.6532805429864253,
+   0.5416666666666666,
+   0.8013157894736842,
+   0.22963800904977374,
+   0.8480176211453745,
+   184
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "U-s101-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   609,
+   87,
+   0.9473684210526315,
+   0.9049034175334324
+  ],
+  "B": [
+   609.0,
+   87.0,
+   0.9473684210526315,
+   0.9049034175334324
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "U-s101-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   546,
+   319,
+   0.746031746031746,
+   0.7924528301886793
+  ],
+  "B": [
+   546.0,
+   319.0,
+   0.746031746031746,
+   0.7924528301886793
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "H-s202-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6012443438914027,
+   0.49404761904761907,
+   0.743421052631579,
+   0.25509049773755654,
+   0.8071374335611238,
+   177
+  ],
+  "B": [
+   0.6012443438914027,
+   0.49404761904761907,
+   0.743421052631579,
+   0.25509049773755654,
+   0.8071374335611238,
+   177
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s202-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   565,
+   115,
+   0.9263157894736842,
+   0.875968992248062
+  ],
+  "B": [
+   565.0,
+   115.0,
+   0.9263157894736842,
+   0.875968992248062
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s202-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   498,
+   336,
+   0.7063492063492064,
+   0.7410714285714286
+  ],
+  "B": [
+   498.0,
+   336.0,
+   0.7063492063492064,
+   0.7410714285714286
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "R-s202-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6317873303167421,
+   0.5327380952380952,
+   0.7631578947368421,
+   0.23020361990950225,
+   0.8207200587803086,
+   180
+  ],
+  "B": [
+   0.6317873303167421,
+   0.5327380952380952,
+   0.7631578947368421,
+   0.23020361990950225,
+   0.8207200587803086,
+   180
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s202-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   580,
+   102,
+   0.9368421052631579,
+   0.8814589665653495
+  ],
+  "B": [
+   580.0,
+   102.0,
+   0.9368421052631579,
+   0.8814589665653495
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s202-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   537,
+   305,
+   0.7222222222222222,
+   0.7638691322901849
+  ],
+  "B": [
+   537.0,
+   305.0,
+   0.7222222222222222,
+   0.7638691322901849
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "U-s202-r128: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6583710407239819,
+   0.5555555555555556,
+   0.7947368421052632,
+   0.1515837104072398,
+   0.776,
+   188
+  ],
+  "B": [
+   0.6583710407239819,
+   0.5555555555555556,
+   0.7947368421052632,
+   0.1515837104072398,
+   0.776,
+   188
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "U-s202-r128 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   604,
+   70,
+   0.9578947368421052,
+   0.8753623188405797
+  ],
+  "B": [
+   604.0,
+   70.0,
+   0.9578947368421052,
+   0.8753623188405797
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "U-s202-r128 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   560,
+   198,
+   0.7698412698412699,
+   0.691358024691358
+  ],
+  "B": [
+   560.0,
+   198.0,
+   0.7698412698412699,
+   0.691358024691358
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "R-s101-r64: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.6425339366515838,
+   0.5347222222222222,
+   0.7855263157894737,
+   0.26131221719457015,
+   0.8698315467075038,
+   183
+  ],
+  "B": [
+   0.6425339366515838,
+   0.5347222222222222,
+   0.7855263157894737,
+   0.26131221719457015,
+   0.8698315467075038,
+   183
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s101-r64 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   597,
+   111,
+   0.9368421052631579,
+   0.9198767334360555
+  ],
+  "B": [
+   597.0,
+   111.0,
+   0.9368421052631579,
+   0.9198767334360555
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "R-s101-r64 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   539,
+   351,
+   0.746031746031746,
+   0.8203957382039574
+  ],
+  "B": [
+   539.0,
+   351.0,
+   0.746031746031746,
+   0.8203957382039574
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress cell",
+  "quantity": "H-s202-r64: pass@1, SuperHard, Harder, trunc, acc finished, solved/221",
+  "A": [
+   0.623868778280543,
+   0.5208333333333334,
+   0.7605263157894737,
+   0.1510180995475113,
+   0.7348434377081945,
+   183
+  ],
+  "B": [
+   0.623868778280543,
+   0.5208333333333334,
+   0.7605263157894737,
+   0.1510180995475113,
+   0.7348434377081945,
+   183
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s202-r64 harder: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   578,
+   66,
+   0.9368421052631579,
+   0.8328530259365994
+  ],
+  "B": [
+   578.0,
+   66.0,
+   0.9368421052631579,
+   0.8328530259365994
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress tier",
+  "quantity": "H-s202-r64 superhard: correct, truncated, solved>=1/8, acc finished",
+  "A": [
+   525,
+   201,
+   0.746031746031746,
+   0.6505576208178439
+  ],
+  "B": [
+   525.0,
+   201.0,
+   0.746031746031746,
+   0.6505576208178439
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s101 all [95%]",
+  "A": [
+   0.0418552036199095,
+   0.01583710407239819,
+   0.06900452488687783
+  ],
+  "B": [
+   0.0418552036199095,
+   0.015271493212669683,
+   0.06787330316742081
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0011312217194570234,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s101 all: trunc term, acc term",
+  "A": [
+   0.021429201715204356,
+   0.020426001904705067
+  ],
+  "B": [
+   0.021429201715204356,
+   0.020426001904705067
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s202 all [95%]",
+  "A": [
+   -0.026583710407239818,
+   -0.050339366515837106,
+   -0.0022624434389140274
+  ],
+  "B": [
+   -0.026583710407239818,
+   -0.050339366515837106,
+   -0.0016968325791855204
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000565610859728507,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s202 all: trunc term, acc term",
+  "A": [
+   -0.06276699326087751,
+   0.0361832828536377
+  ],
+  "B": [
+   -0.06276699326087751,
+   0.0361832828536377
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-H s101 all [95%]",
+  "A": [
+   0.05373303167420815,
+   0.026583710407239818,
+   0.08257918552036199
+  ],
+  "B": [
+   0.05373303167420815,
+   0.026018099547511313,
+   0.08144796380090498
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0011312217194570096,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-H s101 all: trunc term, acc term",
+  "A": [
+   -0.02291321476852579,
+   0.0766462464427339
+  ],
+  "B": [
+   -0.02291321476852579,
+   0.0766462464427339
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "U-H s101 all [95%]",
+  "A": [
+   0.011877828054298642,
+   -0.01414027149321267,
+   0.038461538461538464
+  ],
+  "B": [
+   0.011877828054298642,
+   -0.014720022624434377,
+   0.038461538461538464
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000579751131221707,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "U-H s101 all: trunc term, acc term",
+  "A": [
+   -0.04280206815422056,
+   0.05467989620851925
+  ],
+  "B": [
+   -0.04280206815422056,
+   0.05467989620851925
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-H s202 all [95%]",
+  "A": [
+   0.030542986425339366,
+   -0.0016968325791855204,
+   0.06334841628959276
+  ],
+  "B": [
+   0.030542986425339366,
+   -0.0005656108597285068,
+   0.06278280542986425
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0011312217194570135,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-H s202 all: trunc term, acc term",
+  "A": [
+   0.02025614526669203,
+   0.01028684115864735
+  ],
+  "B": [
+   0.02025614526669203,
+   0.01028684115864735
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "U-H s202 all [95%]",
+  "A": [
+   0.057126696832579184,
+   0.024321266968325792,
+   0.09106334841628959
+  ],
+  "B": [
+   0.057126696832579184,
+   0.023755656108597284,
+   0.09106334841628959
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285082,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "U-H s202 all: trunc term, acc term",
+  "A": [
+   0.08193273482513734,
+   -0.02480603799255815
+  ],
+  "B": [
+   0.08193273482513734,
+   -0.02480603799255815
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-s101-r128 - R-s101-r64 all [95%]",
+  "A": [
+   0.05260180995475113,
+   0.02997737556561086,
+   0.0757918552036199
+  ],
+  "B": [
+   0.05260180995475113,
+   0.030542986425339366,
+   0.0757918552036199
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285048,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-s101-r128 - R-s101-r64 all: trunc term, acc term",
+  "A": [
+   0.0493196408304815,
+   0.003282169124269594
+  ],
+  "B": [
+   0.0493196408304815,
+   0.003282169124269594
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "H-s202 r128 - r64 (point)",
+  "A": [
+   -0.022624434389140302
+  ],
+  "B": [
+   -0.02262443438914027
+  ],
+  "kind": "exact",
+  "max_abs_diff": 3.122502256758253e-17,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s101 harder [95%]",
+  "A": [
+   0.04078947368421053,
+   0.005263157894736842,
+   0.07763157894736843
+  ],
+  "B": [
+   0.04078947368421053,
+   0.005263157894736842,
+   0.07631578947368421
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0013157894736842146,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s101 superhard [95%]",
+  "A": [
+   0.04265873015873016,
+   0.003968253968253968,
+   0.07936507936507936
+  ],
+  "B": [
+   0.04265873015873016,
+   0.00496031746031746,
+   0.08035714285714286
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0009920634920635024,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s202 harder [95%]",
+  "A": [
+   -0.031578947368421054,
+   -0.06710526315789474,
+   0.0013157894736842105
+  ],
+  "B": [
+   -0.031578947368421054,
+   -0.06710526315789474,
+   0.002631578947368421
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0013157894736842105,
+  "agree": true
+ },
+ {
+  "group": "stress contrast",
+  "quantity": "R-U s202 superhard [95%]",
+  "A": [
+   -0.022817460317460316,
+   -0.05555555555555555,
+   0.011904761904761904
+  ],
+  "B": [
+   -0.022817460317460316,
+   -0.05654761904761905,
+   0.010912698412698412
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0009920634920634955,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "test H-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   445,
+   93,
+   141,
+   211,
+   0.76953125,
+   0.792236328125
+  ],
+  "B": [
+   445,
+   93,
+   141,
+   211,
+   0.76953125,
+   0.792236328125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "test R-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   437,
+   94,
+   50,
+   293,
+   0.818603515625,
+   0.841552734375
+  ],
+  "B": [
+   437,
+   94,
+   50,
+   293,
+   0.818603515625,
+   0.841552734375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "test U-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   501,
+   118,
+   67,
+   316,
+   0.77685546875,
+   0.8056640625
+  ],
+  "B": [
+   501,
+   118,
+   67,
+   316,
+   0.77685546875,
+   0.8056640625
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "test R-s202: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   538,
+   87,
+   104,
+   347,
+   0.747802734375,
+   0.76904296875
+  ],
+  "B": [
+   538,
+   87,
+   104,
+   347,
+   0.747802734375,
+   0.76904296875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "test U-s202: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   333,
+   66,
+   65,
+   202,
+   0.792236328125,
+   0.808349609375
+  ],
+  "B": [
+   333,
+   66,
+   65,
+   202,
+   0.792236328125,
+   0.808349609375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "stress H-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   313,
+   55,
+   126,
+   132,
+   0.6414027149321267,
+   0.6725113122171946
+  ],
+  "B": [
+   313,
+   55,
+   126,
+   132,
+   0.6414027149321267,
+   0.6725113122171946
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "stress R-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   362,
+   49,
+   61,
+   252,
+   0.6951357466063348,
+   0.7228506787330317
+  ],
+  "B": [
+   362,
+   49,
+   61,
+   252,
+   0.6951357466063348,
+   0.7228506787330317
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "stress U-s101: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   406,
+   51,
+   64,
+   291,
+   0.6532805429864253,
+   0.6821266968325792
+  ],
+  "B": [
+   406,
+   51,
+   64,
+   291,
+   0.6532805429864253,
+   0.6821266968325792
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "stress R-s202: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   407,
+   50,
+   96,
+   261,
+   0.6317873303167421,
+   0.6600678733031674
+  ],
+  "B": [
+   407,
+   50,
+   96,
+   261,
+   0.6317873303167421,
+   0.6600678733031674
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length row",
+  "quantity": "stress U-s202: capped, recovered, finished wrong, still capped, pass@1 12k, 16k",
+  "A": [
+   268,
+   41,
+   81,
+   146,
+   0.6583710407239819,
+   0.6815610859728507
+  ],
+  "B": [
+   268,
+   41,
+   81,
+   146,
+   0.6583710407239819,
+   0.6815610859728507
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - U-s101 at 12,288 [95%]",
+  "A": [
+   0.041748046875,
+   0.02099609375,
+   0.062744140625
+  ],
+  "B": [
+   0.041748046875,
+   0.020263671875,
+   0.063232421875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000732421875,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - U-s101 at 16,384 [95%]",
+  "A": [
+   0.035888671875,
+   0.014892578125,
+   0.056884765625
+  ],
+  "B": [
+   0.035888671875,
+   0.01513671875,
+   0.05712890625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000244140625,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - U-s101 change [95%]",
+  "A": [
+   -0.005859375,
+   -0.016357421875,
+   0.003662109375
+  ],
+  "B": [
+   -0.005859375,
+   -0.015869140625,
+   0.003662109375
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048828125,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s202 - U-s202 at 12,288 [95%]",
+  "A": [
+   -0.04443359375,
+   -0.071533203125,
+   -0.017822265625
+  ],
+  "B": [
+   -0.04443359375,
+   -0.07275390625,
+   -0.017578125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.001220703125,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s202 - U-s202 at 16,384 [95%]",
+  "A": [
+   -0.039306640625,
+   -0.066650390625,
+   -0.013427734375
+  ],
+  "B": [
+   -0.039306640625,
+   -0.067138671875,
+   -0.013427734375
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.00048828125,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s202 - U-s202 change [95%]",
+  "A": [
+   0.005126953125,
+   -0.0029296875,
+   0.012939453125
+  ],
+  "B": [
+   0.005126953125,
+   -0.0029296875,
+   0.012939453125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - H-s101 at 12,288 [95%]",
+  "A": [
+   0.049072265625,
+   0.019769287109375006,
+   0.079345703125
+  ],
+  "B": [
+   0.049072265625,
+   0.020751953125,
+   0.0791015625
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0009826660156249944,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - H-s101 at 16,384 [95%]",
+  "A": [
+   0.04931640625,
+   0.021234130859375006,
+   0.080078125
+  ],
+  "B": [
+   0.04931640625,
+   0.021484375,
+   0.079345703125
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000732421875,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test R-s101 - H-s101 change [95%]",
+  "A": [
+   0.000244140625,
+   -0.0078125,
+   0.008544921875
+  ],
+  "B": [
+   0.000244140625,
+   -0.0078125,
+   0.008544921875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test U-s101 - H-s101 at 12,288 [95%]",
+  "A": [
+   0.00732421875,
+   -0.02001953125,
+   0.035400390625
+  ],
+  "B": [
+   0.00732421875,
+   -0.019287109375,
+   0.035888671875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000732421875,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test U-s101 - H-s101 at 16,384 [95%]",
+  "A": [
+   0.013427734375,
+   -0.010986328125,
+   0.038818359375
+  ],
+  "B": [
+   0.013427734375,
+   -0.010498046875,
+   0.03955688476562491
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0007385253906249112,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "test U-s101 - H-s101 change [95%]",
+  "A": [
+   0.006103515625,
+   -0.00244140625,
+   0.015380859375
+  ],
+  "B": [
+   0.006103515625,
+   -0.002197265625,
+   0.01513671875
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000244140625,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - U-s101 at 12,288 [95%]",
+  "A": [
+   0.0418552036199095,
+   0.01583710407239819,
+   0.06787330316742081
+  ],
+  "B": [
+   0.0418552036199095,
+   0.015271493212669683,
+   0.06787330316742081
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285065,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - U-s101 at 16,384 [95%]",
+  "A": [
+   0.04072398190045249,
+   0.015257352941176482,
+   0.0673076923076923
+  ],
+  "B": [
+   0.04072398190045249,
+   0.01414027149321267,
+   0.0673076923076923
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0011170814479638125,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - U-s101 change [95%]",
+  "A": [
+   -0.0011312217194570137,
+   -0.011312217194570135,
+   0.009615384615384616
+  ],
+  "B": [
+   -0.0011312217194570137,
+   -0.011312217194570135,
+   0.009615384615384616
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s202 - U-s202 at 12,288 [95%]",
+  "A": [
+   -0.026583710407239818,
+   -0.050339366515837106,
+   -0.0022624434389140274
+  ],
+  "B": [
+   -0.026583710407239818,
+   -0.050339366515837106,
+   -0.0016968325791855204
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000565610859728507,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s202 - U-s202 at 16,384 [95%]",
+  "A": [
+   -0.021493212669683258,
+   -0.04581447963800905,
+   0.002828054298642534
+  ],
+  "B": [
+   -0.021493212669683258,
+   -0.04581447963800905,
+   0.003393665158371041
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000565610859728507,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s202 - U-s202 change [95%]",
+  "A": [
+   0.005090497737556561,
+   -0.005090497737556561,
+   0.015271493212669683
+  ],
+  "B": [
+   0.005090497737556561,
+   -0.005090497737556561,
+   0.015271493212669683
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - H-s101 at 12,288 [95%]",
+  "A": [
+   0.05373303167420815,
+   0.026018099547511313,
+   0.08201357466063348
+  ],
+  "B": [
+   0.05373303167420815,
+   0.026018099547511313,
+   0.08144796380090498
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285048,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - H-s101 at 16,384 [95%]",
+  "A": [
+   0.050339366515837106,
+   0.023755656108597284,
+   0.07748868778280543
+  ],
+  "B": [
+   0.050339366515837106,
+   0.02319004524886878,
+   0.07692307692307693
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285048,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress R-s101 - H-s101 change [95%]",
+  "A": [
+   -0.003393665158371041,
+   -0.015271493212669683,
+   0.007918552036199095
+  ],
+  "B": [
+   -0.003393665158371041,
+   -0.015271493212669683,
+   0.007918552036199095
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress U-s101 - H-s101 at 12,288 [95%]",
+  "A": [
+   0.011877828054298642,
+   -0.01414027149321267,
+   0.03789592760180995
+  ],
+  "B": [
+   0.011877828054298642,
+   -0.014720022624434377,
+   0.038461538461538464
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.000579751131221707,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress U-s101 - H-s101 at 16,384 [95%]",
+  "A": [
+   0.009615384615384616,
+   -0.01753393665158371,
+   0.03733031674208145
+  ],
+  "B": [
+   0.009615384615384616,
+   -0.018665158371040724,
+   0.03677884615384595
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.001131221719457013,
+  "agree": true
+ },
+ {
+  "group": "length contrast",
+  "quantity": "stress U-s101 - H-s101 change [95%]",
+  "A": [
+   -0.0022624434389140274,
+   -0.01414027149321267,
+   0.00904977375565611
+  ],
+  "B": [
+   -0.0022624434389140274,
+   -0.014705882352941176,
+   0.00904977375565611
+  ],
+  "kind": "ci",
+  "max_abs_diff": 0.0005656108597285065,
+  "agree": true
+ },
+ {
+  "group": "cue",
+  "quantity": "s202 cells: R uncued, R cued, U uncued, U cued",
+  "A": [
+   0.6197916666666666,
+   0.5729166666666666,
+   0.6458333333333334,
+   0.6927083333333334
+  ],
+  "B": [
+   0.6197916666666666,
+   0.5729166666666666,
+   0.6458333333333334,
+   0.6927083333333334
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "cue",
+  "quantity": "cue gain R-s202, U-s202, DiD s101, DiD s202 (cue gain R - U s101, cue gain R - U s202)",
+  "A": [
+   -0.046875,
+   0.046875,
+   0.02083333333333348,
+   -0.09375
+  ],
+  "B": [
+   -0.046875,
+   0.046875,
+   0.020833333333333332,
+   -0.09375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 1.491862189340054e-16,
+  "agree": true
+ },
+ {
+  "group": "audit",
+  "quantity": "responses, reads, reward-0, capped reward-0",
+  "A": [
+   96,
+   192,
+   35,
+   13
+  ],
+  "B": [
+   96,
+   192,
+   35,
+   13
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s101 dev: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.004716981132075471,
+   -0.0589622641509433,
+   0.02594339622641506,
+   0.06367924528301883,
+   0.037735849056603765
+  ],
+  "B": [
+   -0.0047169811320754715,
+   -0.0589622641509434,
+   0.025943396226415096,
+   0.06367924528301887,
+   0.03773584905660377
+  ],
+  "kind": "exact",
+  "max_abs_diff": 9.71445146547012e-17,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s101 dev: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   64,
+   64
+  ],
+  "B": [
+   64,
+   64
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s101 J_H: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.015625,
+   -0.09375,
+   0.00390625,
+   0.0703125,
+   0.0625
+  ],
+  "B": [
+   -0.015625,
+   -0.09375,
+   0.00390625,
+   0.0703125,
+   0.0625
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s101 J_H: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   64,
+   64
+  ],
+  "B": [
+   64,
+   64
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s101 J_R: R-U at rounds 0/32/64/96/128",
+  "A": [
+   0.0,
+   0.008928571428571397,
+   0.0401785714285714,
+   0.013392857142857206,
+   -0.013392857142857206
+  ],
+  "B": [
+   0.0,
+   0.008928571428571428,
+   0.04017857142857143,
+   0.013392857142857142,
+   -0.013392857142857142
+  ],
+  "kind": "exact",
+  "max_abs_diff": 6.418476861114186e-17,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s101 J_R: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   128,
+   128
+  ],
+  "B": [
+   128,
+   128
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s101 J_U: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.00390625,
+   -0.01953125,
+   0.03515625,
+   -0.0078125,
+   0.01953125
+  ],
+  "B": [
+   -0.00390625,
+   -0.01953125,
+   0.03515625,
+   -0.0078125,
+   0.01953125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s101 J_U: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   64,
+   128
+  ],
+  "B": [
+   64,
+   128
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s202 dev: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.018867924528301883,
+   -0.011792452830188593,
+   -0.06603773584905659,
+   -0.037735849056603765,
+   -0.047169811320754707
+  ],
+  "B": [
+   -0.018867924528301886,
+   -0.01179245283018868,
+   -0.0660377358490566,
+   -0.03773584905660377,
+   -0.04716981132075472
+  ],
+  "kind": "exact",
+  "max_abs_diff": 8.673617379884035e-17,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s202 dev: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   32,
+   32
+  ],
+  "kind": "exact",
+  "max_abs_diff": 32.0,
+  "agree": false
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s202 J_H: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.0234375,
+   -0.01953125,
+   -0.078125,
+   -0.00390625,
+   -0.05859375
+  ],
+  "B": [
+   -0.0234375,
+   -0.01953125,
+   -0.078125,
+   -0.00390625,
+   -0.05859375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s202 J_H: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   32,
+   32
+  ],
+  "kind": "exact",
+  "max_abs_diff": 32.0,
+  "agree": false
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s202 J_R: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.008928571428571397,
+   0.0535714285714286,
+   -0.0580357142857143,
+   -0.0267857142857143,
+   -0.017857142857142794
+  ],
+  "B": [
+   -0.008928571428571428,
+   0.05357142857142857,
+   -0.05803571428571429,
+   -0.026785714285714284,
+   -0.017857142857142856
+  ],
+  "kind": "exact",
+  "max_abs_diff": 6.245004513516506e-17,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s202 J_R: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   0,
+   64
+  ],
+  "B": [
+   64,
+   64
+  ],
+  "kind": "exact",
+  "max_abs_diff": 64.0,
+  "agree": false
+ },
+ {
+  "group": "in-run R-U",
+  "quantity": "s202 J_U: R-U at rounds 0/32/64/96/128",
+  "A": [
+   -0.01171875,
+   -0.015625,
+   -0.0390625,
+   -0.08203125,
+   -0.0234375
+  ],
+  "B": [
+   -0.01171875,
+   -0.015625,
+   -0.0390625,
+   -0.08203125,
+   -0.0234375
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "ordering",
+  "quantity": "s202 J_U: earliest round with endpoint sign (A counts r0; B trained rounds only), round from which it holds",
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   32,
+   32
+  ],
+  "kind": "exact",
+  "max_abs_diff": 32.0,
+  "agree": false
+ },
+ {
+  "group": "dev curve",
+  "quantity": "H-s202 (a2-r60) dev r64, r96, r128",
+  "A": [
+   0.6367924528301887,
+   0.660377358490566,
+   0.6698113207547169
+  ],
+  "B": [
+   0.6367924528301887,
+   0.660377358490566,
+   0.6698113207547169
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "H-s101: all-wrong, mixed, all-correct",
+  "A": [
+   100,
+   1289,
+   659
+  ],
+  "B": [
+   100,
+   1289,
+   659
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "H-s101: zero-gradient steps, first round",
+  "A": [
+   18,
+   70
+  ],
+  "B": [
+   18,
+   70
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "H-s101: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "R-s101: all-wrong, mixed, all-correct",
+  "A": [
+   58,
+   961,
+   1029
+  ],
+  "B": [
+   58,
+   961,
+   1029
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "R-s101: zero-gradient steps, first round",
+  "A": [
+   66,
+   38
+  ],
+  "B": [
+   66,
+   38
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "R-s101: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "U-s101: all-wrong, mixed, all-correct",
+  "A": [
+   60,
+   930,
+   1058
+  ],
+  "B": [
+   60,
+   930,
+   1058
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "U-s101: zero-gradient steps, first round",
+  "A": [
+   53,
+   27
+  ],
+  "B": [
+   53,
+   27
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "U-s101: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "H-s202: all-wrong, mixed, all-correct",
+  "A": [
+   79,
+   1287,
+   682
+  ],
+  "B": [
+   79,
+   1287,
+   682
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "H-s202: zero-gradient steps, first round",
+  "A": [
+   20,
+   73
+  ],
+  "B": [
+   20,
+   73
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "H-s202: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "R-s202: all-wrong, mixed, all-correct",
+  "A": [
+   48,
+   1100,
+   900
+  ],
+  "B": [
+   48,
+   1100,
+   900
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "R-s202: zero-gradient steps, first round",
+  "A": [
+   25,
+   59
+  ],
+  "B": [
+   25,
+   59
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "R-s202: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "groups",
+  "quantity": "U-s202: all-wrong, mixed, all-correct",
+  "A": [
+   54,
+   947,
+   1047
+  ],
+  "B": [
+   54,
+   947,
+   1047
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "U-s202: zero-gradient steps, first round",
+  "A": [
+   65,
+   15
+  ],
+  "B": [
+   65,
+   15
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "momentum-only",
+  "quantity": "U-s202: identical (round, minibatch) set of zero-gradient steps",
+  "A": [
+   1
+  ],
+  "B": [
+   1
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "diagnostic",
+  "quantity": "r0: mean \u0394J_H vs none (hard, related, unrelated)",
+  "A": [
+   0.01416015625,
+   0.02685546875,
+   0.0048828125
+  ],
+  "B": [
+   0.01416015625,
+   0.02685546875,
+   0.0048828125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "diagnostic",
+  "quantity": "r0: none_rerun - none (J_H)",
+  "A": [
+   0.03125
+  ],
+  "B": [
+   0.03125
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "diagnostic",
+  "quantity": "r64: mean \u0394J_H vs none (hard, related, unrelated)",
+  "A": [
+   0.0009765625,
+   0.01025390625,
+   0.00341796875
+  ],
+  "B": [
+   0.0009765625,
+   0.01025390625,
+   0.00341796875
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ },
+ {
+  "group": "diagnostic",
+  "quantity": "r64: none_rerun - none (J_H)",
+  "A": [
+   0.025390625
+  ],
+  "B": [
+   0.025390625
+  ],
+  "kind": "exact",
+  "max_abs_diff": 0.0,
+  "agree": true
+ }
+]

@@ -1,0 +1,103 @@
+{
+ "report_jobs": 260,
+ "report_allocs": 274,
+ "report_gpu_h": 315.5780555555556,
+ "report_cpu_h": 2555.4944444444445,
+ "passb_jobs": 266,
+ "passb_allocs": 280,
+ "passb_gpu_h": 317.0425,
+ "passb_cpu_h": 2567.2319444444443,
+ "only_in_passb": [
+  {
+   "jobid": "11122475",
+   "expid": "qis-a26-ckpt-list",
+   "gpu_h": 0.0,
+   "cpu_h": 0.021944444444444444,
+   "allocs": 1,
+   "states": [
+    "COMPLETED"
+   ]
+  },
+  {
+   "jobid": "11122477",
+   "expid": "qis-a26-ckpt-k0",
+   "gpu_h": 0.37555555555555553,
+   "cpu_h": 3.0044444444444443,
+   "allocs": 1,
+   "states": [
+    "RUNNING"
+   ]
+  },
+  {
+   "jobid": "11122479",
+   "expid": "qis-a26-ckpt-k1",
+   "gpu_h": 0.31027777777777776,
+   "cpu_h": 2.482222222222222,
+   "allocs": 1,
+   "states": [
+    "COMPLETED"
+   ]
+  },
+  {
+   "jobid": "11122480",
+   "expid": "qis-a26-ckpt-k2",
+   "gpu_h": 0.37555555555555553,
+   "cpu_h": 3.0044444444444443,
+   "allocs": 1,
+   "states": [
+    "RUNNING"
+   ]
+  },
+  {
+   "jobid": "11122481",
+   "expid": "qis-a26-ckpt-k3",
+   "gpu_h": 0.37555555555555553,
+   "cpu_h": 3.0044444444444443,
+   "allocs": 1,
+   "states": [
+    "RUNNING"
+   ]
+  },
+  {
+   "jobid": "11122684",
+   "expid": "qis-control-base",
+   "gpu_h": 0.0275,
+   "cpu_h": 0.22,
+   "allocs": 1,
+   "states": [
+    "RUNNING"
+   ]
+  }
+ ],
+ "only_in_report": [],
+ "only_b_gpu_h": 1.4644444444444444,
+ "only_b_cpu_h": 11.737499999999999,
+ "common_jobs": 260,
+ "common_diffs": [],
+ "common_gpu_h_report": 315.5780555555556,
+ "common_gpu_h_passb": 315.5780555555556,
+ "common_cpu_h_report": 2555.4944444444445,
+ "common_cpu_h_passb": 2555.4944444444445,
+ "passb_running_rows": [
+  {
+   "elapsed_s": 1352,
+   "expid": "qis-a26-ckpt-k0",
+   "jobid": "11122477"
+  },
+  {
+   "elapsed_s": 1352,
+   "expid": "qis-a26-ckpt-k2",
+   "jobid": "11122480"
+  },
+  {
+   "elapsed_s": 1352,
+   "expid": "qis-a26-ckpt-k3",
+   "jobid": "11122481"
+  },
+  {
+   "elapsed_s": 99,
+   "expid": "qis-control-base",
+   "jobid": "11122684"
+  }
+ ]
+}

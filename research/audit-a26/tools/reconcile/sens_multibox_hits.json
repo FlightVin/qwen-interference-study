@@ -1,0 +1,773 @@
+{
+ "rule": "A26 reconcile: sensitivity (b) \"any box\" rule. For every finished reward-0 response, test whether an EARLIER\n\\boxed{}/\\fbox{} content (not the last one, which the frozen rule grades) is verifier-equivalent to gold, and whether\nthe gold is split across several boxes (joined box contents verify). Then recompute pass@1 and per-seed contrasts with\n\"correct = last box correct OR any earlier box correct\" (capped attempts stay 0; unknown stays 0).\n\nUses the project verifier qis.verify.Verifier (unchanged 779c54d..9b2fd05) on compute, as the reconcile brief allows,\nand the Qwen3 tokenizer to decode stored token ids. Run:\n  env PYTHONPATH=<worktree>/src python sens_multibox.py OUT_JSON\n",
+ "cells": {
+  "stress|R-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1117,
+   "finished_reward0": 244,
+   "finished_reward0_ge2_boxes": 65,
+   "earlier_box_equiv_gold": 9,
+   "earlier_box_exact_gold": 8,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 3,
+   "correct_any_box": 1129,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6317873303167421,
+   "pass1_any_box": 0.6385746606334841,
+   "change": 0.006787330316742057
+  },
+  "stress|U-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1164,
+   "finished_reward0": 336,
+   "finished_reward0_ge2_boxes": 58,
+   "earlier_box_equiv_gold": 0,
+   "earlier_box_exact_gold": 0,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 1166,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6583710407239819,
+   "pass1_any_box": 0.6595022624434389,
+   "change": 0.0011312217194570096
+  },
+  "stress|R-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1229,
+   "finished_reward0": 177,
+   "finished_reward0_ge2_boxes": 107,
+   "earlier_box_equiv_gold": 4,
+   "earlier_box_exact_gold": 3,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 1235,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6951357466063348,
+   "pass1_any_box": 0.6985294117647058,
+   "change": 0.0033936651583710287
+  },
+  "stress|U-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1155,
+   "finished_reward0": 207,
+   "finished_reward0_ge2_boxes": 43,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 5,
+   "correct_any_box": 1161,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6532805429864253,
+   "pass1_any_box": 0.6566742081447964,
+   "change": 0.0033936651583710287
+  },
+  "stress|H-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1134,
+   "finished_reward0": 321,
+   "finished_reward0_ge2_boxes": 201,
+   "earlier_box_equiv_gold": 9,
+   "earlier_box_exact_gold": 6,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 4,
+   "correct_any_box": 1147,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6414027149321267,
+   "pass1_any_box": 0.6487556561085973,
+   "change": 0.007352941176470562
+  },
+  "stress|H-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1063,
+   "finished_reward0": 254,
+   "finished_reward0_ge2_boxes": 199,
+   "earlier_box_equiv_gold": 4,
+   "earlier_box_exact_gold": 3,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 1,
+   "correct_any_box": 1068,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6012443438914027,
+   "pass1_any_box": 0.6040723981900452,
+   "change": 0.002828054298642524
+  }
+ },
+ "contrasts": {
+  "stress|R-s202-r128 - U-s202-r128": {
+   "last_box": {
+    "diff": -0.026583710407239818,
+    "lo": -0.05090497737556561,
+    "hi": -0.0022624434389140274
+   },
+   "any_box": {
+    "diff": -0.02092760180995475,
+    "lo": -0.04524886877828054,
+    "hi": 0.003393665158371041
+   }
+  }
+ },
+ "examples": [
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 0,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 1,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 2,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "\\text{B}"
+   ],
+   "extracted": "\\text{B}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 4,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 6,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 7,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "omni:omni/03336",
+   "sample": 2,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "0",
+    "\\frac{1}{2}",
+    "1",
+    "0",
+    "\\frac{1}{2}",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00656",
+   "sample": 4,
+   "gold": "16",
+   "boxes": [
+    "16",
+    "C"
+   ],
+   "extracted": "C",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:number_theory/train/00656",
+   "sample": 7,
+   "gold": "16",
+   "boxes": [
+    "16",
+    "C"
+   ],
+   "extracted": "C",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 0,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 1,
+   "gold": "2,4",
+   "boxes": [
+    "2 \\text{ and } 4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s202-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 2,
+   "gold": "2,4",
+   "boxes": [
+    "4",
+    "2",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s202-r128",
+   "pid": "math:precalculus/test/00319",
+   "sample": 0,
+   "gold": "2, -1",
+   "boxes": [
+    "-1",
+    "2"
+   ],
+   "extracted": "2",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s202-r128",
+   "pid": "omni:omni/01597",
+   "sample": 4,
+   "gold": "(995,1),(176,10),(80,21)",
+   "boxes": [
+    "(995, 1)",
+    "(176, 10)",
+    "(80, 21)",
+    "(995, 1)",
+    "(176, 10)",
+    "(80, 21)"
+   ],
+   "extracted": "(80, 21)",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "omni:omni/03336",
+   "sample": 1,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "0",
+    "\\frac{1}{2}",
+    "1",
+    "0",
+    "\\frac{1}{2}",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "omni:omni/03336",
+   "sample": 5,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "\\dfrac{1}{2}",
+    "1",
+    "",
+    "0",
+    "\\frac{1}{2}",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "math:number_theory/train/00656",
+   "sample": 7,
+   "gold": "16",
+   "boxes": [
+    "C",
+    "16",
+    "C"
+   ],
+   "extracted": "C",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "omni:omni/00652",
+   "sample": 0,
+   "gold": "(0,1), (1,1), (2,2)",
+   "boxes": [
+    "(0, 1)",
+    "(1, 1)",
+    "(2, 2)"
+   ],
+   "extracted": "(2, 2)",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 3,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "R-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 6,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 1,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "omni:omni/03336",
+   "sample": 0,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "p = 0 \\text{ and } p = \\frac{1}{2}",
+    "p = 1 \\text{ and } p = \\frac{1}{2}"
+   ],
+   "extracted": "p = 1 \\text{ and } p = \\frac{1}{2}",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "omni:omni/00577",
+   "sample": 1,
+   "gold": "(16,4,1),(1,16,4)",
+   "boxes": [
+    "(16, 4, 1)",
+    "(1, 16, 4)"
+   ],
+   "extracted": "(1, 16, 4)",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 3,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 5,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "U-s101-r128",
+   "pid": "math:precalculus/test/00487",
+   "sample": 1,
+   "gold": "27,93",
+   "boxes": [
+    "27",
+    "93"
+   ],
+   "extracted": "93",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/train/00163",
+   "sample": 2,
+   "gold": "\\frac{1 + \\sqrt{5}}{2}",
+   "boxes": [
+    "x = \\frac{1 + \\sqrt{5}}{2}",
+    "x = \\phi"
+   ],
+   "extracted": "x = \\phi",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "olympiadbench:2461",
+   "sample": 5,
+   "gold": "\\frac{\\log 2}{\\log 2-\\log 3}",
+   "boxes": [
+    "x = \\log_{3/2} \\frac{1}{2}",
+    "x = \\log_{3/2} 2^{-1} = -\\log_{3/2} 2",
+    "x = \\log_{3/2} \\frac{1}{2}",
+    "x = \\log_{3/2} \\frac{1}{2}",
+    "x = \\frac{1}{\\log_2 \\frac{3}{2}}"
+   ],
+   "extracted": "x = \\frac{1}{\\log_2 \\frac{3}{2}}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "omni:omni/03336",
+   "sample": 4,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "\\frac{1}{2}",
+    "1",
+    "\\frac{1}{2}",
+    "\\frac{1}{2}",
+    "\\frac{1}{2}",
+    "\\frac{1}{2}"
+   ],
+   "extracted": "\\frac{1}{2}",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "omni:omni/03336",
+   "sample": 7,
+   "gold": "0, \\frac{1}{2}, 1",
+   "boxes": [
+    "\\frac{1}{2}",
+    "\\frac{1}{2}",
+    "0",
+    "\\frac{1}{2}",
+    "1",
+    "\\frac{1}{2}"
+   ],
+   "extracted": "\\frac{1}{2}",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "omni:omni/02102",
+   "sample": 0,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "omni:omni/02102",
+   "sample": 7,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "1",
+    "1",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:number_theory/train/00664",
+   "sample": 1,
+   "gold": "8",
+   "boxes": [
+    "\\text{D}",
+    "8",
+    "D"
+   ],
+   "extracted": "D",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:number_theory/train/00664",
+   "sample": 5,
+   "gold": "8",
+   "boxes": [
+    "8",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D"
+   ],
+   "extracted": "D",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 0,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 1,
+   "gold": "2,4",
+   "boxes": [
+    "4",
+    "2",
+    "4",
+    "2, 4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 2,
+   "gold": "2,4",
+   "boxes": [
+    "4",
+    "2 \\text{ and } 4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 5,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s101-r128",
+   "pid": "math:precalculus/test/00541",
+   "sample": 5,
+   "gold": "-\\frac{4}{3}",
+   "boxes": [
+    "-\\frac{4}{3}",
+    "-\\frac{4}{3}",
+    "-\\frac{3}{4}",
+    "-\\frac{4}{3}",
+    "-\\frac{4}{3}",
+    "-\\frac{3}{4}"
+   ],
+   "extracted": "-\\frac{3}{4}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s202-r128",
+   "pid": "olympiadbench:2461",
+   "sample": 4,
+   "gold": "\\frac{\\log 2}{\\log 2-\\log 3}",
+   "boxes": [
+    "x = \\frac{\\log 2}{\\log \\frac{2}{3}}",
+    "x = \\log_{\\frac{3}{2}} 2",
+    "x = \\log_{\\frac{3}{2}} 2",
+    "x = \\frac{\\log 2}{\\log \\frac{2}{3}}",
+    "x = \\log_{\\frac{3}{2}} 2",
+    "x = \\log_{\\frac{3}{2}} 2"
+   ],
+   "extracted": "x = \\log_{\\frac{3}{2}} 2",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 0,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s202-r128",
+   "pid": "math:number_theory/train/00662",
+   "sample": 2,
+   "gold": "1",
+   "boxes": [
+    "1",
+    "B"
+   ],
+   "extracted": "B",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s202-r128",
+   "pid": "omni:omni/00577",
+   "sample": 4,
+   "gold": "(16,4,1),(1,16,4)",
+   "boxes": [
+    "(1, 16, 4)",
+    "(16, 4, 1)",
+    "(1, 16, 4)",
+    "(16, 4, 1)",
+    "(1, 16, 4)",
+    "(16, 4, 1)"
+   ],
+   "extracted": "(16, 4, 1)",
+   "kind": "split"
+  },
+  {
+   "panel": "stress",
+   "cell": "H-s202-r128",
+   "pid": "math:precalculus/train/00152",
+   "sample": 6,
+   "gold": "2,4",
+   "boxes": [
+    "2",
+    "4",
+    "2",
+    "4",
+    "2",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  }
+ ],
+ "verifier_calls": 329
+}

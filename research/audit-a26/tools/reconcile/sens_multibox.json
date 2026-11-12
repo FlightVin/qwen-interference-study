@@ -1,0 +1,1104 @@
+{
+ "rule": "A26 reconcile: sensitivity (b) \"any box\" rule. For every finished reward-0 response, test whether an EARLIER\n\\boxed{}/\\fbox{} content (not the last one, which the frozen rule grades) is verifier-equivalent to gold, and whether\nthe gold is split across several boxes (joined box contents verify). Then recompute pass@1 and per-seed contrasts with\n\"correct = last box correct OR any earlier box correct\" (capped attempts stay 0; unknown stays 0).\n\nUses the project verifier qis.verify.Verifier (unchanged 779c54d..9b2fd05) on compute, as the reconcile brief allows,\nand the Qwen3 tokenizer to decode stored token ids. Run:\n  env PYTHONPATH=<worktree>/src python sens_multibox.py OUT_JSON\n",
+ "cells": {
+  "test|base": {
+   "attempts": 4096,
+   "correct_last_box": 2153,
+   "finished_reward0": 1939,
+   "finished_reward0_ge2_boxes": 1007,
+   "earlier_box_equiv_gold": 7,
+   "earlier_box_exact_gold": 5,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 3,
+   "correct_any_box": 2163,
+   "unknown_status_kept_0": 2,
+   "pass1_last_box": 0.525634765625,
+   "pass1_any_box": 0.528076171875,
+   "change": 0.00244140625
+  },
+  "test|H-s101": {
+   "attempts": 4096,
+   "correct_last_box": 3152,
+   "finished_reward0": 499,
+   "finished_reward0_ge2_boxes": 347,
+   "earlier_box_equiv_gold": 13,
+   "earlier_box_exact_gold": 8,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 3167,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.76953125,
+   "pass1_any_box": 0.773193359375,
+   "change": 0.003662109375
+  },
+  "test|R-s101": {
+   "attempts": 4096,
+   "correct_last_box": 3353,
+   "finished_reward0": 306,
+   "finished_reward0_ge2_boxes": 226,
+   "earlier_box_equiv_gold": 2,
+   "earlier_box_exact_gold": 0,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3355,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.818603515625,
+   "pass1_any_box": 0.819091796875,
+   "change": 0.00048828125
+  },
+  "test|U-s101": {
+   "attempts": 4096,
+   "correct_last_box": 3182,
+   "finished_reward0": 413,
+   "finished_reward0_ge2_boxes": 91,
+   "earlier_box_equiv_gold": 2,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3184,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.77685546875,
+   "pass1_any_box": 0.77734375,
+   "change": 0.00048828125
+  },
+  "test|H-s202": {
+   "attempts": 4096,
+   "correct_last_box": 2965,
+   "finished_reward0": 499,
+   "finished_reward0_ge2_boxes": 394,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 2966,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.723876953125,
+   "pass1_any_box": 0.72412109375,
+   "change": 0.000244140625
+  },
+  "test|R-s202": {
+   "attempts": 4096,
+   "correct_last_box": 3063,
+   "finished_reward0": 495,
+   "finished_reward0_ge2_boxes": 103,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3064,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.747802734375,
+   "pass1_any_box": 0.748046875,
+   "change": 0.000244140625
+  },
+  "test|U-s202": {
+   "attempts": 4096,
+   "correct_last_box": 3245,
+   "finished_reward0": 518,
+   "finished_reward0_ge2_boxes": 104,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3246,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.792236328125,
+   "pass1_any_box": 0.79248046875,
+   "change": 0.000244140625
+  },
+  "test|H-s202-fb116": {
+   "attempts": 4096,
+   "correct_last_box": 3044,
+   "finished_reward0": 447,
+   "finished_reward0_ge2_boxes": 325,
+   "earlier_box_equiv_gold": 2,
+   "earlier_box_exact_gold": 2,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3046,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.7431640625,
+   "pass1_any_box": 0.74365234375,
+   "change": 0.00048828125
+  },
+  "test|cgpu-R-s101": {
+   "attempts": 4096,
+   "correct_last_box": 3369,
+   "finished_reward0": 279,
+   "finished_reward0_ge2_boxes": 209,
+   "earlier_box_equiv_gold": 3,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3372,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.822509765625,
+   "pass1_any_box": 0.8232421875,
+   "change": 0.000732421875
+  },
+  "test|cgpu-R-s202": {
+   "attempts": 4096,
+   "correct_last_box": 3118,
+   "finished_reward0": 472,
+   "finished_reward0_ge2_boxes": 111,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3119,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.76123046875,
+   "pass1_any_box": 0.761474609375,
+   "change": 0.000244140625
+  },
+  "test|cgpu-U-s101": {
+   "attempts": 4096,
+   "correct_last_box": 3187,
+   "finished_reward0": 404,
+   "finished_reward0_ge2_boxes": 90,
+   "earlier_box_equiv_gold": 3,
+   "earlier_box_exact_gold": 2,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3190,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.778076171875,
+   "pass1_any_box": 0.77880859375,
+   "change": 0.000732421875
+  },
+  "test|cgpu-U-s202": {
+   "attempts": 4096,
+   "correct_last_box": 3245,
+   "finished_reward0": 518,
+   "finished_reward0_ge2_boxes": 104,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 3246,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.792236328125,
+   "pass1_any_box": 0.79248046875,
+   "change": 0.000244140625
+  },
+  "stress|base": {
+   "attempts": 1768,
+   "correct_last_box": 659,
+   "finished_reward0": 1108,
+   "finished_reward0_ge2_boxes": 535,
+   "earlier_box_equiv_gold": 11,
+   "earlier_box_exact_gold": 10,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 0,
+   "correct_any_box": 670,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.372737556561086,
+   "pass1_any_box": 0.37895927601809953,
+   "change": 0.0062217194570135526
+  },
+  "stress|H-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1134,
+   "finished_reward0": 321,
+   "finished_reward0_ge2_boxes": 201,
+   "earlier_box_equiv_gold": 9,
+   "earlier_box_exact_gold": 6,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 4,
+   "correct_any_box": 1147,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6414027149321267,
+   "pass1_any_box": 0.6487556561085973,
+   "change": 0.007352941176470562
+  },
+  "stress|R-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1229,
+   "finished_reward0": 177,
+   "finished_reward0_ge2_boxes": 107,
+   "earlier_box_equiv_gold": 4,
+   "earlier_box_exact_gold": 3,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 1235,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6951357466063348,
+   "pass1_any_box": 0.6985294117647058,
+   "change": 0.0033936651583710287
+  },
+  "stress|U-s101-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1155,
+   "finished_reward0": 207,
+   "finished_reward0_ge2_boxes": 43,
+   "earlier_box_equiv_gold": 1,
+   "earlier_box_exact_gold": 1,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 5,
+   "correct_any_box": 1161,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6532805429864253,
+   "pass1_any_box": 0.6566742081447964,
+   "change": 0.0033936651583710287
+  },
+  "stress|H-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1063,
+   "finished_reward0": 254,
+   "finished_reward0_ge2_boxes": 199,
+   "earlier_box_equiv_gold": 4,
+   "earlier_box_exact_gold": 3,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 1,
+   "correct_any_box": 1068,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6012443438914027,
+   "pass1_any_box": 0.6040723981900452,
+   "change": 0.002828054298642524
+  },
+  "stress|R-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1117,
+   "finished_reward0": 244,
+   "finished_reward0_ge2_boxes": 65,
+   "earlier_box_equiv_gold": 9,
+   "earlier_box_exact_gold": 8,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 3,
+   "correct_any_box": 1129,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6317873303167421,
+   "pass1_any_box": 0.6385746606334841,
+   "change": 0.006787330316742057
+  },
+  "stress|U-s202-r128": {
+   "attempts": 1768,
+   "correct_last_box": 1164,
+   "finished_reward0": 336,
+   "finished_reward0_ge2_boxes": 58,
+   "earlier_box_equiv_gold": 0,
+   "earlier_box_exact_gold": 0,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 1166,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6583710407239819,
+   "pass1_any_box": 0.6595022624434389,
+   "change": 0.0011312217194570096
+  },
+  "stress|R-s101-r64": {
+   "attempts": 1768,
+   "correct_last_box": 1136,
+   "finished_reward0": 170,
+   "finished_reward0_ge2_boxes": 107,
+   "earlier_box_equiv_gold": 8,
+   "earlier_box_exact_gold": 5,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 8,
+   "correct_any_box": 1152,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.6425339366515838,
+   "pass1_any_box": 0.6515837104072398,
+   "change": 0.009049773755656076
+  },
+  "stress|H-s202-r64": {
+   "attempts": 1768,
+   "correct_last_box": 1103,
+   "finished_reward0": 398,
+   "finished_reward0_ge2_boxes": 248,
+   "earlier_box_equiv_gold": 9,
+   "earlier_box_exact_gold": 8,
+   "earlier_box_verifier_unknown": 0,
+   "split_across_boxes": 2,
+   "correct_any_box": 1114,
+   "unknown_status_kept_0": 0,
+   "pass1_last_box": 0.623868778280543,
+   "pass1_any_box": 0.6300904977375565,
+   "change": 0.0062217194570135526
+  }
+ },
+ "contrasts": {
+  "test|R-s101 - U-s101": {
+   "last_box": {
+    "diff": 0.041748046875,
+    "lo": 0.020751953125,
+    "hi": 0.062744140625
+   },
+   "any_box": {
+    "diff": 0.041748046875,
+    "lo": 0.020751953125,
+    "hi": 0.0625
+   }
+  },
+  "test|R-s101 - H-s101": {
+   "last_box": {
+    "diff": 0.049072265625,
+    "lo": 0.020013427734375006,
+    "hi": 0.078857421875
+   },
+   "any_box": {
+    "diff": 0.0458984375,
+    "lo": 0.01708984375,
+    "hi": 0.075439453125
+   }
+  },
+  "test|U-s101 - H-s101": {
+   "last_box": {
+    "diff": 0.00732421875,
+    "lo": -0.01904296875,
+    "hi": 0.035400390625
+   },
+   "any_box": {
+    "diff": 0.004150390625,
+    "lo": -0.021728515625,
+    "hi": 0.031494140625
+   }
+  },
+  "test|R-s202 - U-s202": {
+   "last_box": {
+    "diff": -0.04443359375,
+    "lo": -0.072265625,
+    "hi": -0.017822265625
+   },
+   "any_box": {
+    "diff": -0.04443359375,
+    "lo": -0.072021484375,
+    "hi": -0.017822265625
+   }
+  },
+  "test|R-s202 - H-s202": {
+   "last_box": {
+    "diff": 0.02392578125,
+    "lo": -0.004150390625,
+    "hi": 0.0537109375
+   },
+   "any_box": {
+    "diff": 0.02392578125,
+    "lo": -0.004150390625,
+    "hi": 0.0537109375
+   }
+  },
+  "test|U-s202 - H-s202": {
+   "last_box": {
+    "diff": 0.068359375,
+    "lo": 0.034912109375,
+    "hi": 0.102783203125
+   },
+   "any_box": {
+    "diff": 0.068359375,
+    "lo": 0.035150146484375006,
+    "hi": 0.10254516601562491
+   }
+  },
+  "test|cgpu-R-s101 - cgpu-U-s101": {
+   "last_box": {
+    "diff": 0.04443359375,
+    "lo": 0.024658203125,
+    "hi": 0.065185546875
+   },
+   "any_box": {
+    "diff": 0.04443359375,
+    "lo": 0.0244140625,
+    "hi": 0.065185546875
+   }
+  },
+  "test|cgpu-R-s202 - cgpu-U-s202": {
+   "last_box": {
+    "diff": -0.031005859375,
+    "lo": -0.05908203125,
+    "hi": -0.003662109375
+   },
+   "any_box": {
+    "diff": -0.031005859375,
+    "lo": -0.058837890625,
+    "hi": -0.00390625
+   }
+  },
+  "stress|R-s101-r128 - U-s101-r128": {
+   "last_box": {
+    "diff": 0.0418552036199095,
+    "lo": 0.015271493212669683,
+    "hi": 0.06787330316742081
+   },
+   "any_box": {
+    "diff": 0.0418552036199095,
+    "lo": 0.01583710407239819,
+    "hi": 0.06787330316742081
+   }
+  },
+  "stress|R-s101-r128 - H-s101-r128": {
+   "last_box": {
+    "diff": 0.05373303167420815,
+    "lo": 0.026018099547511313,
+    "hi": 0.08201357466063348
+   },
+   "any_box": {
+    "diff": 0.049773755656108594,
+    "lo": 0.022058823529411766,
+    "hi": 0.07748868778280543
+   }
+  },
+  "stress|U-s101-r128 - H-s101-r128": {
+   "last_box": {
+    "diff": 0.011877828054298642,
+    "lo": -0.015271493212669683,
+    "hi": 0.03902714932126697
+   },
+   "any_box": {
+    "diff": 0.007918552036199095,
+    "lo": -0.018665158371040724,
+    "hi": 0.033936651583710405
+   }
+  },
+  "stress|R-s202-r128 - U-s202-r128": {
+   "last_box": {
+    "diff": -0.026583710407239818,
+    "lo": -0.05090497737556561,
+    "hi": -0.0022624434389140274
+   },
+   "any_box": {
+    "diff": -0.02092760180995475,
+    "lo": -0.04524886877828054,
+    "hi": 0.003393665158371041
+   }
+  },
+  "stress|R-s202-r128 - H-s202-r128": {
+   "last_box": {
+    "diff": 0.030542986425339366,
+    "lo": -0.0011312217194570137,
+    "hi": 0.06391402714932126
+   },
+   "any_box": {
+    "diff": 0.034502262443438916,
+    "lo": 0.0022624434389140274,
+    "hi": 0.06843891402714933
+   }
+  },
+  "stress|U-s202-r128 - H-s202-r128": {
+   "last_box": {
+    "diff": 0.057126696832579184,
+    "lo": 0.023755656108597284,
+    "hi": 0.0916289592760181
+   },
+   "any_box": {
+    "diff": 0.05542986425339366,
+    "lo": 0.022058823529411766,
+    "hi": 0.08993212669683258
+   }
+  }
+ },
+ "examples": [
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00025",
+   "sample": 19,
+   "gold": "1,-2",
+   "boxes": [
+    "-2",
+    "1",
+    "-2",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "split"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00025",
+   "sample": 24,
+   "gold": "1,-2",
+   "boxes": [
+    "-2",
+    "1",
+    "-2",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "split"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00025",
+   "sample": 28,
+   "gold": "1,-2",
+   "boxes": [
+    "1",
+    "-2",
+    "1"
+   ],
+   "extracted": "1",
+   "kind": "split"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00373",
+   "sample": 15,
+   "gold": "2",
+   "boxes": [
+    "2",
+    "\\infty"
+   ],
+   "extracted": "\\infty",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00552",
+   "sample": 28,
+   "gold": "11",
+   "boxes": [
+    "11",
+    "xy + xz + yz"
+   ],
+   "extracted": "xy + xz + yz",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00071",
+   "sample": 1,
+   "gold": "6",
+   "boxes": [
+    "6",
+    "3"
+   ],
+   "extracted": "3",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00643",
+   "sample": 12,
+   "gold": "x^2",
+   "boxes": [
+    "Q(x) = x^2",
+    "Q(x) = x",
+    "Q(x) = x"
+   ],
+   "extracted": "Q(x) = x",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00332",
+   "sample": 3,
+   "gold": "\\frac{5049}{20200}",
+   "boxes": [
+    "\\frac{1}{4} - \\frac{1}{200} + \\frac{1}{202}",
+    "\\frac{505}{2020} - \\frac{10}{2020} + \\frac{10}{2020}",
+    "\\frac{505 - 10 + 10}{2020}",
+    "\\frac{505}{2020}",
+    "\\frac{101}{404}",
+    "\\frac{101}{404}"
+   ],
+   "extracted": "\\frac{101}{404}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "intermediate_algebra/test/00300",
+   "sample": 25,
+   "gold": "0",
+   "boxes": [
+    "4",
+    "0",
+    "4",
+    "0",
+    "4"
+   ],
+   "extracted": "4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "base",
+   "pid": "algebra/test/00742",
+   "sample": 28,
+   "gold": "6",
+   "boxes": [
+    "3",
+    "6",
+    "312",
+    "x + y = 5 + 6 = \\boxed{11}",
+    "11",
+    "11"
+   ],
+   "extracted": "11",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00874",
+   "sample": 7,
+   "gold": "-3(x+2)(x-1)",
+   "boxes": [
+    "q(x) = -3(x + 2)(x - 1)",
+    "q(x) = -3x^2 + 3x + 6"
+   ],
+   "extracted": "q(x) = -3x^2 + 3x + 6",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00173",
+   "sample": 1,
+   "gold": "[3,\\infty)",
+   "boxes": [
+    "x \\ge 3",
+    "x \\ge 3",
+    "x \\ge 3",
+    "[3, \\infty)",
+    ""
+   ],
+   "extracted": "",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "algebra/test/00806",
+   "sample": 12,
+   "gold": "\\dfrac{1}{5}",
+   "boxes": [
+    "0.24",
+    "0.24",
+    "0.24",
+    "0.24",
+    "0.24",
+    "0.24"
+   ],
+   "extracted": "0.24",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00872",
+   "sample": 0,
+   "gold": "24,-3",
+   "boxes": [
+    "-3",
+    "24",
+    "-3",
+    "24",
+    "-3",
+    "24"
+   ],
+   "extracted": "24",
+   "kind": "split"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00872",
+   "sample": 10,
+   "gold": "24,-3",
+   "boxes": [
+    "-3",
+    "24",
+    "-3",
+    "24",
+    "-3",
+    "24"
+   ],
+   "extracted": "24",
+   "kind": "split"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00356",
+   "sample": 0,
+   "gold": "(-\\infty,4)",
+   "boxes": [
+    "(-\\infty, 4)",
+    "k < 4",
+    "k < 4",
+    "(-\\infty, 4)",
+    "k < 4",
+    "k < 4"
+   ],
+   "extracted": "k < 4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00356",
+   "sample": 1,
+   "gold": "(-\\infty,4)",
+   "boxes": [
+    "(-\\infty, 4)",
+    "k < 4"
+   ],
+   "extracted": "k < 4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00356",
+   "sample": 20,
+   "gold": "(-\\infty,4)",
+   "boxes": [
+    "k < 4",
+    "(-\\infty, 4)",
+    "-6 < k < 4",
+    "-6 < k < 4"
+   ],
+   "extracted": "-6 < k < 4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00137",
+   "sample": 31,
+   "gold": "\\sqrt5",
+   "boxes": [
+    "\\sqrt{5}",
+    "\\sqrt{5}",
+    "5",
+    "5",
+    "5",
+    "5"
+   ],
+   "extracted": "5",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00741",
+   "sample": 27,
+   "gold": "\\frac{19}{540}",
+   "boxes": [
+    "\\frac{19}{540}",
+    "\\frac{1}{36}",
+    "\\frac{1}{36}",
+    "\\frac{1}{36}",
+    "\\frac{1}{36}",
+    "\\frac{1}{36}"
+   ],
+   "extracted": "\\frac{1}{36}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00535",
+   "sample": 20,
+   "gold": "117649",
+   "boxes": [
+    "7^6",
+    "7^4",
+    "7^{12}",
+    "7^{12}",
+    "7^{12}",
+    "7^{12}"
+   ],
+   "extracted": "7^{12}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00570",
+   "sample": 0,
+   "gold": "\\frac{197}{2}",
+   "boxes": [
+    "197",
+    "197",
+    "197",
+    "197",
+    "197",
+    "197"
+   ],
+   "extracted": "197",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "algebra/test/00353",
+   "sample": 12,
+   "gold": "0.75",
+   "boxes": [
+    "0.75",
+    "4.50",
+    "4.50",
+    "4.50"
+   ],
+   "extracted": "4.50",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00709",
+   "sample": 8,
+   "gold": "\\frac{2807}{27}",
+   "boxes": [
+    "104",
+    "\\frac{2807}{27}",
+    "104",
+    "104"
+   ],
+   "extracted": "104",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s101",
+   "pid": "intermediate_algebra/test/00048",
+   "sample": 20,
+   "gold": "8,-112",
+   "boxes": [
+    "-112, 8",
+    "-112",
+    "8"
+   ],
+   "extracted": "8",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "R-s101",
+   "pid": "intermediate_algebra/test/00872",
+   "sample": 4,
+   "gold": "24,-3",
+   "boxes": [
+    "24",
+    "-3",
+    "24",
+    "-3, 24",
+    "-3",
+    "24"
+   ],
+   "extracted": "24",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "R-s101",
+   "pid": "intermediate_algebra/test/00048",
+   "sample": 21,
+   "gold": "8,-112",
+   "boxes": [
+    "-112, 8",
+    "-112",
+    "8"
+   ],
+   "extracted": "8",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "U-s101",
+   "pid": "intermediate_algebra/test/00211",
+   "sample": 30,
+   "gold": "4",
+   "boxes": [
+    "4",
+    "2",
+    "2",
+    "2"
+   ],
+   "extracted": "2",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "U-s101",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 7,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "\\frac{3}{x + 1} - \\frac{1}{x - 2}",
+    ""
+   ],
+   "extracted": "",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s202",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 18,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "\\frac{3}{x + 1} - \\frac{1}{x - 2}",
+    "\\frac{2x - 7}{(x + 1)(x - 2)}",
+    "\\frac{2x - 7}{x^2 - x - 2}",
+    "\\frac{7}{2}",
+    "\\frac{7}{2}",
+    "\\frac{7}{2}"
+   ],
+   "extracted": "\\frac{7}{2}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "R-s202",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 25,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "\\frac{2x - 7}{(x + 1)(x - 2)}",
+    "\\frac{2x - 7}{x^2 + x - 2}",
+    "\\frac{2x - 7}{x^2 + x - 2}",
+    "\\frac{2x - 7}{x^2 + x - 2}"
+   ],
+   "extracted": "\\frac{2x - 7}{x^2 + x - 2}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "U-s202",
+   "pid": "intermediate_algebra/test/00824",
+   "sample": 18,
+   "gold": "-\\frac{2010012}{2010013}",
+   "boxes": [
+    "-\\frac{2010012}{2010013}",
+    "\\frac{2010012}{2010013}",
+    "\\frac{2010012}{2010013}"
+   ],
+   "extracted": "\\frac{2010012}{2010013}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s202-fb116",
+   "pid": "intermediate_algebra/test/00874",
+   "sample": 28,
+   "gold": "-3(x+2)(x-1)",
+   "boxes": [
+    "-3x^2 + 3x + 6",
+    "-3(x + 2)(x - 1)",
+    "-3x^2 + 3x + 6",
+    "-3x^2 + 3x + 6"
+   ],
+   "extracted": "-3x^2 + 3x + 6",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "H-s202-fb116",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 6,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "\\frac{3}{x+1} - \\frac{1}{x-2}",
+    "\\frac{3}{x+1} - \\frac{1}{x-2}",
+    "\\frac{7}{2}",
+    "\\frac{3}{x+1} - \\frac{1}{x-2}",
+    "\\frac{7}{2}",
+    "\\frac{7}{2}"
+   ],
+   "extracted": "\\frac{7}{2}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-R-s101",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 3,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "\\frac{3}{x+1} - \\frac{1}{x-2}",
+    "\\frac{3}{x + 1} - \\frac{1}{x - 2}",
+    "\\dfrac{7}{2}",
+    "\\dfrac{7}{2}"
+   ],
+   "extracted": "\\dfrac{7}{2}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-R-s101",
+   "pid": "intermediate_algebra/test/00478",
+   "sample": 11,
+   "gold": "\\frac{2x-7}{(x+1)(x-2)}",
+   "boxes": [
+    "",
+    "\\frac{2x - 7}{(x + 1)(x - 2)}",
+    "\\frac{2x - 7}{(x + 1)(x - 2)}",
+    "\\dfrac{7}{2}",
+    "\\dfrac{7}{2}"
+   ],
+   "extracted": "\\dfrac{7}{2}",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-R-s101",
+   "pid": "intermediate_algebra/test/00048",
+   "sample": 5,
+   "gold": "8,-112",
+   "boxes": [
+    "-112, 8",
+    "-112",
+    "8"
+   ],
+   "extracted": "8",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-R-s202",
+   "pid": "intermediate_algebra/test/00356",
+   "sample": 13,
+   "gold": "(-\\infty,4)",
+   "boxes": [
+    "k < 4",
+    "(-\\infty, 4)",
+    "k < 4"
+   ],
+   "extracted": "k < 4",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-U-s101",
+   "pid": "intermediate_algebra/test/00211",
+   "sample": 30,
+   "gold": "4",
+   "boxes": [
+    "4",
+    "2",
+    "2",
+    "2"
+   ],
+   "extracted": "2",
+   "kind": "earlier_box"
+  },
+  {
+   "panel": "test",
+   "cell": "cgpu-U-s101",
+   "pid": "intermediate_algebra/test/00887",
+   "sample": 18,
+   "gold": "\\frac{2}{r}",
+   "boxes": [
+    "\\frac{2}{r}",
+    "- \\frac{2}{r}",
+    "- \\frac{2}{r}",
+    "\\frac{2}{r}",
+    "- \\frac{2}{r}"
+   ],
+   "extracted": "- \\frac{2}{r}",
+   "kind": "earlier_box"
+  }
+ ],
+ "verifier_calls": 2701
+}

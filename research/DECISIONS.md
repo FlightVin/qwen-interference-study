@@ -1099,3 +1099,27 @@ comparison are pre-registered in `research/audit-a26/transfer/PREREG.md` before 
 training study.
 **Interpretation rule.** If all arms gain similarly on subjects none of them trained on, the J_U rise is read as general
 improvement from GRPO training, not skill transfer from the shared hard problems.
+
+## D162 — 2026-11-12 ~05:00Z (Thu 12:00 AM EST) — A26 audit: corrections that change conclusions of report v2
+**Evidence.** Audit pass A (`research/audit-a26/pass-a/`) and the independent pass B (`pass-b/`) agree on every shared count
+and point estimate (157 of 161 scripted comparisons; the 4 others resolved in `research/audit-a26/comparison.md`). No defect
+changes a training update, a grade, an endpoint score or a primary contrast. The discrepancy log
+(`research/audit-a26/discrepancies.md`) lists 38 defects: 11 change an interpretation, 8 change a number, 19 are wording.
+**Corrections that change a conclusion (report v3 adopts each):**
+1. Length extension (I1, I2). Old: "more room does not rescue those answers"; R-s202 "did not lose arithmetic skill". New:
+   4,096 more tokens raised every checkpoint's pass@1 by 1.6–3.1 points and recovered 12–24% of capped attempts; only the
+   R − U ordering stayed (change ≤ 0.6 points). Accuracy among finished compares selected responses; the skill claim is withdrawn.
+2. Timing (I3). Old: the R − U sign appeared between rounds 32 and 64 in both seeds. New: seed 101 at round 64; seed 202 U is
+   ahead from round 32 (before the cap change) by no more than the round-0 gap between identical policies.
+3. Allocation (I4). Old: practice "was a better use of the slots". New: R − H and U − H point estimates are positive in both
+   seeds, but 2 of 4 per-seed intervals include 0, and the H-s202 cells mixed GPU types. No curriculum recommendation.
+4. Updates (I5). Old: practice slots "cost generation time without updating the model". New: 18–66 of 512 steps per run moved
+   the weights with zero gradient (stored AdamW moments); every step updated the weights.
+5. Interference (I6, I7). Old: link 1 "not detected" at 3 points. New: the local diagnostic ran at cap 8,192, its reference
+   evaluations differ by up to 3.1 J_H points across GPUs, and the sign of mean ΔJ_H depends on the reference; the test
+   cannot resolve the effect. Loss on training prompts occurs at the sampling rate. Stalls were never defined or measured.
+6. Hardware (I8). New: training GPU type differs between runs (H-s101 L40; H-s202 and R-s202 switched L40 → L40S). Arm
+   contrasts are not hardware-matched; "run-to-run variation" includes this confound.
+7. Response audit (I9). "Fixable by factoring practice" is a reader annotation about a hypothetical intervention, not an effect.
+**Action.** DEFINITIONS v1 → v1.1 (`research/audit-a26/definitions-v1.1-changes.md`); report v3 is written from the audited
+tables; report v2 stays archived unchanged.
