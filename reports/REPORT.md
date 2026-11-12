@@ -332,7 +332,7 @@ H-s202 rounds 64–128 are trajectory a2-r60.*
 ![Dev pass@1 against cumulative hard training attempts](figures/v3/f04_dev_hard_attempts.png)
 
 *Figure 4. The same dev evaluations against cumulative hard training attempts: H reaches 16,384 at round 128, R and U
-reach 8,192 and also generate 8,192 practice attempts. Markers and intervals as in Figure 3.*
+reach 8,192 and also generate 8,192 practice attempts. Markers as in Figure 3; no intervals drawn (sizes in `t03_curves`).*
 
 Dev pass@1 rose from 40.3–42.2% at round 0 to 65.6–72.9% at round 128 across the six runs. The R and U values:
 
@@ -371,9 +371,10 @@ Points; 8 attempts per problem. Every interval at the "first" round includes zer
 
 ![Training paths in J_H and J_R](figures/v3/f05_traj_JH_JR.png)
 
-*Figure 5. Path of each run through rounds 0 → 128 (arrows; ringed marker at round 128). x: J_H (32 problems × 8
-attempts); y: J_R (28 × 8). Every policy is scored on every probe. Open markers: cap 8,192; filled: 12,288. No intervals
-drawn; 95% problem-bootstrap intervals are ±11.3 to ±14.6 points (J_H) and ±6.0 to ±11.6 points (J_R).*
+*Figure 5. Path of each run through rounds 0 → 128 (arrows; large black-edged marker and arm letter at round 128),
+one panel per seed. x: J_H (32 problems × 8 attempts); y: J_R (28 × 8). Every policy is scored on every probe. Open
+markers: cap 8,192; filled: 12,288. No intervals drawn; 95% problem-bootstrap intervals are ±11.3 to ±14.6 points
+(J_H) and ±6.0 to ±11.6 points (J_R).*
 
 ![Training paths in J_H and J_U](figures/v3/f06_traj_JH_JU.png)
 
@@ -404,8 +405,8 @@ their absolute values are in [`t03_curves.md`](tables/v3/t03_curves.md). Source:
 
 ![Control-panel gains beside the probe gains](figures/v3/f12_control.png)
 
-*Figure 12. Six round-128 endpoints. Left: gain over the base policy on the control panel (64 problems × 8 attempts, cap
-12,288). Middle and right: the same run's J_U and J_R gain from round 0 to round 128 (in-run, 8 attempts). Bars: 95%
+*Figure 7. Six round-128 endpoints. Top: gain over the base policy on the control panel (64 problems × 8 attempts, cap
+12,288). Middle and bottom: the same run's J_U and J_R gain from round 0 to round 128 (in-run, 8 attempts). Bars: 95%
 paired problem-bootstrap intervals (10,000 draws). The base scores 50.8% on control and about 81% on J_U and J_R, so the
 control panel has more room to gain.*
 
@@ -509,14 +510,18 @@ branches) or `none_rerun` (separate L40S job; `none_cycled` gives identical valu
 
 Sources: [`t04_diag.md`](tables/v3/t04_diag.md) (every draw, J_R and J_U); [`pass-b/train.md`](../research/audit-a26/pass-b/train.md) §5.
 
-![One optimizer step: change in J against two no-update references](figures/v3/f07_delta_j.png)
+![One optimizer step from the base policy: change in J against two no-update references](figures/v3/f07a_delta_j_r0.png)
 
-*Figure 7. Each point is one update draw: one GRPO step (4 prompts × 8 attempts; hard, related or unrelated) from the
-base policy (left) or R-s101 round 64 (right), then J_H (32 problems), J_R (28) and J_U (32) at 16 attempts per problem,
-cap 8,192, identical evaluation seeds. y: draw minus `none` (solid line). Dashed line: `none_rerun`; the gap between the
-two references (+3.1 and +2.5 J_H points) is the reference noise. Crossed open markers: the three round-64 draws with
-exactly zero gradient (related-4101, related-4102, unrelated-4103); AdamW still stepped, and their evaluations are
-identical. No intervals drawn.*
+*Figure 8. Each point is one update draw: one GRPO step (4 prompts × 8 attempts; hard, related or unrelated) from the
+base policy (round 0), then J_H (32 problems), J_R (28) and J_U (32) at 16 attempts per problem, cap 8,192, identical
+evaluation seeds; one panel per probe. y: draw minus `none` (solid line). Dashed line: `none_rerun`; the gap between the
+two references (+3.1 J_H points) is the reference noise. No intervals drawn.*
+
+![One optimizer step from R-s101 round 64: change in J against two no-update references](figures/v3/f07b_delta_j_r64.png)
+
+*Figure 9. As Figure 8, from R-s101 round 64; the gap between the two references is +2.5 J_H points. Crossed open
+markers: the three draws with exactly zero gradient (related-4101, related-4102, unrelated-4103); AdamW still stepped,
+and their evaluations are identical. No intervals drawn.*
 
 **What happened.** The two references for the same weights differ by +3.1 (r0) and +2.5 (r64) J_H points. That gap is
 larger than the range of the three type means in 5 of 6 (source, probe) cells. Every type-mean ΔJ_H is positive against
@@ -568,13 +573,13 @@ bootstrap of the per-problem change. Source: [`t05_length.md`](tables/v3/t05_len
 
 ![pass@1 before and after 4,096 more tokens](figures/v3/f08_length_pass1.png)
 
-*Figure 8. Five round-128 endpoints (H-s202 not extended). Left: sealed test (128 problems × 32 attempts); right: stress
+*Figure 10. Five round-128 endpoints (H-s202 not extended). Top: sealed test (128 problems × 32 attempts); bottom: stress
 (221 × 8). Open marker: pass@1 at cap 12,288; filled: after every capped attempt was continued by up to 4,096 tokens.
 95% paired problem-bootstrap intervals of each gain are in `t05_length`.*
 
 ![What happened to capped attempts given 4,096 more tokens](figures/v3/f08b_length_capped.png)
 
-*Figure 8b. For the same five endpoints, the attempts capped at 12,288 (n at the right of each bar) split into recovered
+*Figure 11. For the same five endpoints, the attempts capped at 12,288 (n in each row label) split into recovered
 (finished and correct), finished wrong and still capped at 16,384; shares are of the capped attempts.*
 
 | Contrast | Panel | At 12,288 (points) | 95% interval | At 16,384 (points) | 95% interval | Change (points) | 95% interval |
@@ -589,7 +594,7 @@ interval containing zero: [`t06_length_contrasts.md`](tables/v3/t06_length_contr
 
 ![Paired contrasts before and after the extension](figures/v3/f09_length_contrasts.png)
 
-*Figure 9. R − U per seed, and R − H and U − H for seed 101, on the sealed test (128 × 32) and stress (221 × 8). Open
+*Figure 12. R − U per seed, and R − H and U − H for seed 101, on the sealed test (128 × 32) and stress (221 × 8). Open
 marker: contrast at cap 12,288; filled: at 16,384. Bars: 95% paired problem-bootstrap intervals. Intervals of the change
 itself are in `t06_length_contrasts`.*
 
@@ -633,7 +638,7 @@ Intervals: problem bootstrap within the tier. Source: [`t07_stress.md`](tables/v
 
 ![Stress-panel pass@1 per tier](figures/v3/f10_stress_tiers.png)
 
-*Figure 10. Stress pass@1 per tier (Harder 95 problems, SuperHard 126; 8 attempts per problem, cap 12,288) for the base,
+*Figure 13. Stress pass@1 per tier (Harder 95 problems, SuperHard 126; 8 attempts per problem, cap 12,288) for the base,
 the six round-128 endpoints (filled markers) and R-s101 r64 and H-s202 r64, trajectory a2-r60 (open markers). Bars: 95%
 problem-bootstrap intervals within the tier. All cells ran on L40S except H-s202 r128 (L40 and RTX A6000).*
 
@@ -652,7 +657,7 @@ Intervals: paired problem bootstrap within the tier. Per-tier R − H and U − 
 
 ![Stress-panel paired contrasts within each training seed](figures/v3/f11_stress_contrasts.png)
 
-*Figure 11. Stress R − U, R − H and U − H between endpoints of the same seed, on all 221 problems, Harder (95) and
+*Figure 14. Stress R − U, R − H and U − H between endpoints of the same seed, on all 221 problems, Harder (95) and
 SuperHard (126); 8 attempts per problem. Bars: 95% paired problem-bootstrap intervals within the tier.*
 
 **What happened.**

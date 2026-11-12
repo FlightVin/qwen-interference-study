@@ -558,6 +558,7 @@ LSTYLE = {101: "-", 202: "--"}
 INK = "#222222"
 MUTED = "#666666"
 GRID = "#DDDDDD"
+FIGW = 6.0  # inches; at 200 dpi = 1,200 px. 13-pt text is ~11 px at a 372-px content column (420-px viewport).
 
 
 def setup_mpl():
@@ -565,12 +566,12 @@ def setup_mpl():
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     plt.rcParams.update({
-        "font.size": 10, "axes.titlesize": 12, "axes.labelsize": 10, "xtick.labelsize": 10, "ytick.labelsize": 10,
-        "legend.fontsize": 10, "figure.titlesize": 12, "axes.edgecolor": "#888888", "axes.linewidth": 0.8,
-        "axes.labelcolor": INK, "xtick.color": INK, "ytick.color": INK, "text.color": INK,
-        "axes.spines.top": False, "axes.spines.right": False, "lines.linewidth": 2, "lines.markersize": 7,
+        "font.size": 13, "axes.titlesize": 14, "axes.labelsize": 13, "xtick.labelsize": 12, "ytick.labelsize": 12,
+        "legend.fontsize": 12, "figure.titlesize": 14, "figure.titleweight": "bold", "axes.edgecolor": "#888888",
+        "axes.linewidth": 0.9, "axes.labelcolor": INK, "xtick.color": INK, "ytick.color": INK, "text.color": INK,
+        "axes.spines.top": False, "axes.spines.right": False, "lines.linewidth": 2.2, "lines.markersize": 8,
         "savefig.dpi": 200, "figure.dpi": 100, "svg.hashsalt": "qis", "axes.grid": False,
-        "font.family": "DejaVu Sans"})
+        "legend.handlelength": 2.2, "legend.columnspacing": 1.4, "font.family": "DejaVu Sans"})
     return plt
 
 
@@ -589,32 +590,34 @@ def arm_seed(name):
 
 
 def hgrid(ax):
-    ax.xaxis.grid(True, color=GRID, lw=0.6)
+    ax.xaxis.grid(True, color=GRID, lw=0.7)
     ax.set_axisbelow(True)
 
 
-def dot_ci(ax, y, x, ci, color, marker, ls, filled=True, ms=7):
-    ax.plot([ci[0], ci[1]], [y, y], color=color, lw=1.8, ls=ls, solid_capstyle="butt")
-    ax.plot([x], [y], marker=marker, ms=ms, color=color, mfc=color if filled else "white", mec=color, mew=1.6,
+def dot_ci(ax, y, x, ci, color, marker, ls, filled=True, ms=8):
+    ax.plot([ci[0], ci[1]], [y, y], color=color, lw=2.0, ls=ls, solid_capstyle="butt")
+    ax.plot([x], [y], marker=marker, ms=ms, color=color, mfc=color if filled else "white", mec=color, mew=1.8,
             ls="none", zorder=3)
 
 
-def seed_legend_handles(plt):
-    from matplotlib.lines import Line2D
-    return [Line2D([], [], color=MUTED, marker="o", ls="-", label="seed 101"),
-            Line2D([], [], color=MUTED, marker="s", ls="--", label="seed 202")]
+def title(fig, text):
+    fig.suptitle(text, x=0.01, ha="left", y=1.0)
 
 
-def arm_legend_handles():
+def bottom_legend(fig, handles, ncol):
+    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=ncol, frameon=False)
+
+
+def arm_handles(short=True):
     from matplotlib.lines import Line2D
-    return [Line2D([], [], color=COLOR[a], lw=3, label={"H": "H (hard only)", "R": "R (hard + factoring practice)",
-                                                         "U": "U (hard + modular practice)"}[a]) for a in ARMS]
+    lab = {"H": "H: hard only", "R": "R: hard + factoring", "U": "U: hard + modular"}
+    return [Line2D([], [], color=COLOR[a], lw=3, label=lab[a]) for a in ARMS]
 
 
 def f01_endpoints(plt, t01, fdir):
     order = ["base", "H-s101", "H-s202", "R-s101", "R-s202", "U-s101", "U-s202"]
     by = {r["cell"]: r for r in t01}
-    fig, ax = plt.subplots(figsize=(6.6, 3.6))
+    fig, ax = plt.subplots(figsize=(FIGW, 4.6))
     for i, cell in enumerate(order):
         r = by[cell]
         if cell == "base":
@@ -626,79 +629,80 @@ def f01_endpoints(plt, t01, fdir):
     ax.set_yticks(range(len(order)), ["base"] + [c + " r128" for c in order[1:]])
     ax.invert_yaxis()
     ax.set_xlim(45, 90)
-    ax.set_xlabel("pass@1 on 128 sealed-test problems, 32 attempts each (%)")
-    ax.set_title("Sealed test: base policy and round-128 endpoints", loc="left")
+    ax.set_xlabel("pass@1 on 128 sealed-test problems,\n32 attempts each (%)")
+    title(fig, "Sealed test: base and round-128 endpoints")
     hgrid(ax)
+    fig.tight_layout()
     save(fig, fdir, "f01_endpoints")
 
 
-def contrast_rows(ax, rows, xkey, cikey, ytick_labels=True, color=INK, offset=0.0, filled=True):
-    labels = []
-    y = 0
-    ys = []
-    for gi, (a, b) in enumerate(CONTRASTS):
+def contrast_rows(ax, rows, xkey, cikey, color=INK):
+    labels, ys, y = [], [], 0
+    for a, b in CONTRASTS:
         for s in SEEDS:
             r = next(r for r in rows if r["contrast"] == f"{a}-{b}" and r["seed"] == s)
-            dot_ci(ax, y + offset, 100 * r[xkey], [100 * v for v in r[cikey]], color, MARKER[s], LSTYLE[s], filled)
+            dot_ci(ax, y, 100 * r[xkey], [100 * v for v in r[cikey]], color, MARKER[s], LSTYLE[s])
             labels.append(f"{a} − {b}, seed {s}")
             ys.append(y)
             y += 1
         y += 0.6
-    if ytick_labels:
-        ax.set_yticks(ys, labels)
-    ax.axvline(0, color=MUTED, lw=1, zorder=1)
+    ax.set_yticks(ys, labels)
+    ax.axvline(0, color=MUTED, lw=1.1, zorder=1)
     return ys
 
 
 def f02_contrasts(plt, t02, fdir):
     rows = [r for r in t02 if r.get("contrast") in ("R-U", "R-H", "U-H")]
-    fig, ax = plt.subplots(figsize=(6.6, 3.8))
+    fig, ax = plt.subplots(figsize=(FIGW, 4.8))
     contrast_rows(ax, rows, "diff", "ci95")
     ax.invert_yaxis()
-    ax.set_xlabel("Difference in sealed-test pass@1 (percentage points)")
-    ax.set_title("Sealed test: paired contrasts within each training seed", loc="left")
+    ax.set_xlabel("Difference in sealed-test pass@1 (points)")
+    title(fig, "Sealed test: paired contrasts per seed")
     hgrid(ax)
+    fig.tight_layout()
     save(fig, fdir, "f02_contrasts_test")
 
 
-def _curve_axes(plt, t03, fdir, name, xkey, xlabel, title, panel="dev", ylabel=None):
+def cap_handles(rounds_text=True):
     from matplotlib.lines import Line2D
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.7), sharey=True)
+    return [Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, mew=1.8, ls="none",
+                   label="open: cap 8,192 (r0, r32)"),
+            Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: cap 12,288 (r64–r128)")]
+
+
+def _curve_axes(plt, t03, fdir, name, xkey, xlabel, ttl):
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 7.6), sharex=True, sharey=True)
     for ax, s in zip(axes, SEEDS):
         for a in ARMS:
             run = f"{a}-s{s}"
-            pts_ = sorted([r for r in t03 if r["run"] == run and r["panel"] == panel], key=lambda r: r["round"])
+            pts_ = sorted([r for r in t03 if r["run"] == run and r["panel"] == "dev"], key=lambda r: r["round"])
             xs = [r[xkey] / (1000 if xkey == "cum_hard_attempts" else 1) for r in pts_]
             ys = [100 * r["pass1"] for r in pts_]
-            ax.plot(xs, ys, color=COLOR[a], ls=LSTYLE[s], lw=2, zorder=2)
+            ax.plot(xs, ys, color=COLOR[a], ls=LSTYLE[s], zorder=2)
             for x, y, r in zip(xs, ys, pts_):
                 filled = r["cap"] == 12288
-                ax.plot([x], [y], marker=MARKER[s], ms=7, color=COLOR[a], mfc=COLOR[a] if filled else "white",
-                        mec=COLOR[a], mew=1.6, ls="none", zorder=3)
+                ax.plot([x], [y], marker=MARKER[s], ms=8, color=COLOR[a], mfc=COLOR[a] if filled else "white",
+                        mec=COLOR[a], mew=1.8, ls="none", zorder=3)
         if xkey == "round":
-            ax.axvline(32, color=MUTED, lw=1, ls=":", zorder=1)
-            ax.text(30, 0.98, "cap 8,192", transform=ax.get_xaxis_transform(), ha="right", va="top",
-                    fontsize=10, color=MUTED)
-            ax.text(34, 0.98, "cap 12,288", transform=ax.get_xaxis_transform(), ha="left", va="top",
-                    fontsize=10, color=MUTED)
+            ax.axvline(32, color=MUTED, lw=1.1, ls=":", zorder=1)
+            ax.text(30, 0.98, "cap 8,192", transform=ax.get_xaxis_transform(), ha="right", va="top", fontsize=12,
+                    color=MUTED)
+            ax.text(34, 0.98, "cap 12,288", transform=ax.get_xaxis_transform(), ha="left", va="top", fontsize=12,
+                    color=MUTED)
             ax.set_xticks(ROUNDS, ["0\nbase"] + [str(r) for r in ROUNDS[1:]])
             ax.set_xlim(-6, 134)
         else:
             ax.set_xticks([0, 4, 8, 12, 16], ["0\nbase", "4", "8", "12", "16"])
             ax.set_xlim(-0.8, 17)
-        ax.set_ylim(38, 80)
+        ax.set_ylim(38, 81)
         ax.set_title(f"Seed {s}", loc="left")
-        ax.set_xlabel(xlabel)
-        ax.yaxis.grid(True, color=GRID, lw=0.6)
+        ax.set_ylabel("pass@1 on 53 dev\nproblems (%)")
+        ax.yaxis.grid(True, color=GRID, lw=0.7)
         ax.set_axisbelow(True)
-    axes[0].set_ylabel(ylabel or "pass@1 on 53 dev problems,\n8 attempts each (%)")
-    handles = arm_legend_handles() + [
-        Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, ls="none",
-               label="open: evaluated at cap 8,192 (rounds 0, 32)"),
-        Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: cap 12,288 (rounds 64–128)")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle(title, x=0.01, ha="left", y=1.0)
+    axes[1].set_xlabel(xlabel)
+    title(fig, ttl)
     fig.tight_layout()
+    bottom_legend(fig, arm_handles() + cap_handles(), 2)
     save(fig, fdir, name)
 
 
@@ -707,14 +711,22 @@ def f03_dev_rounds(plt, t03, fdir):
 
 
 def f04_dev_hard(plt, t03, fdir):
-    _curve_axes(plt, t03, fdir, "f04_dev_hard_attempts", "cum_hard_attempts",
-                "Hard training attempts (thousands)",
-                "Dev pass@1 against cumulative hard training attempts")
+    _curve_axes(plt, t03, fdir, "f04_dev_hard_attempts", "cum_hard_attempts", "Hard training attempts (thousands)",
+                "Dev pass@1 against hard training attempts")
 
 
-def _traj(plt, t03, fdir, name, ypanel, ylabel, title):
+# arm-letter label offsets (points) at each path end, chosen per figure, seed and arm so labels clear each other
+END_OFFSET = {
+    ("probe_J_R", 101): {"H": (-10, 0, "right"), "R": (10, -4, "left"), "U": (-10, 4, "right")},
+    ("probe_J_R", 202): {"H": (6, 12, "left"), "R": (-12, -6, "right"), "U": (10, 0, "left")},
+    ("probe_J_U", 101): {"H": (-12, 4, "right"), "R": (10, 0, "left"), "U": (2, -17, "center")},
+    ("probe_J_U", 202): {"H": (10, -6, "left"), "R": (-12, 4, "right"), "U": (10, 0, "left")},
+}
+
+
+def _traj(plt, t03, fdir, name, ypanel, ylabel, ttl):
     from matplotlib.lines import Line2D
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.9), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 7.9), sharex=True, sharey=True)
     by = {(r["run"], r["round"], r["panel"]): r for r in t03}
     for ax, s in zip(axes, SEEDS):
         starts = []
@@ -724,257 +736,256 @@ def _traj(plt, t03, fdir, name, ypanel, ylabel, title):
             ys = [100 * by[(run, rnd, ypanel)]["pass1"] for rnd in ROUNDS]
             for i in range(len(ROUNDS) - 1):
                 ax.annotate("", xy=(xs[i + 1], ys[i + 1]), xytext=(xs[i], ys[i]),
-                            arrowprops=dict(arrowstyle="-|>", color=COLOR[a], lw=1.6, ls=LSTYLE[s],
-                                            shrinkA=4, shrinkB=4, mutation_scale=11), zorder=2)
-            for i, rnd in enumerate(ROUNDS):
+                            arrowprops=dict(arrowstyle="-|>", color=COLOR[a], lw=1.8, ls=LSTYLE[s],
+                                            shrinkA=5, shrinkB=5, mutation_scale=14), zorder=2)
+            for i, rnd in enumerate(ROUNDS[:-1]):
                 filled = by[(run, rnd, ypanel)]["cap"] == 12288
-                ax.plot([xs[i]], [ys[i]], marker=MARKER[s], ms=6, color=COLOR[a], mfc=COLOR[a] if filled else "white",
-                        mec=COLOR[a], mew=1.4, ls="none", zorder=3)
+                ax.plot([xs[i]], [ys[i]], marker=MARKER[s], ms=7, color=COLOR[a], mfc=COLOR[a] if filled else "white",
+                        mec=COLOR[a], mew=1.6, ls="none", zorder=3)
+            ax.plot([xs[-1]], [ys[-1]], marker=MARKER[s], ms=9.5, color=COLOR[a], mec=INK, mew=1.6, ls="none", zorder=4)
+            dx, dy, ha = END_OFFSET[(ypanel, s)][a]
+            ax.annotate(a, (xs[-1], ys[-1]), xytext=(dx, dy), textcoords="offset points", ha=ha, va="center",
+                        fontsize=13, fontweight="bold", color=INK, zorder=5)
             starts.append((xs[0], ys[0]))
-            ax.plot([xs[-1]], [ys[-1]], marker="o", ms=15, mfc="none", mec=INK, mew=1.2, ls="none", zorder=4)
-        sx = sum(p[0] for p in starts) / len(starts)
-        sy = min(p[1] for p in starts)
-        ax.annotate("r0", (sx, sy), xytext=(0, -8), textcoords="offset points", fontsize=10, color=INK,
-                    ha="center", va="top")
-        ax.margins(0.1)
+        sx = min(p[0] for p in starts)
+        sy = sum(p[1] for p in starts) / len(starts)
+        ax.annotate("r0", (sx, sy), xytext=(-10, 0), textcoords="offset points", fontsize=12, color=INK,
+                    ha="right", va="center")
         ax.set_title(f"Seed {s}", loc="left")
-        ax.set_xlabel("J_H: pass@1 on 32 hard dev problems,\n8 attempts each (%)")
-        ax.xaxis.grid(True, color=GRID, lw=0.6)
-        ax.yaxis.grid(True, color=GRID, lw=0.6)
+        ax.set_ylabel(ylabel)
+        ax.xaxis.grid(True, color=GRID, lw=0.7)
+        ax.yaxis.grid(True, color=GRID, lw=0.7)
         ax.set_axisbelow(True)
-    axes[0].set_ylabel(ylabel)
-    handles = arm_legend_handles() + [
-        Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, ls="none", label="open: cap 8,192 (r0, r32)"),
-        Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: cap 12,288 (r64–r128)"),
-        Line2D([], [], color=INK, marker="o", ms=13, mfc="none", mew=1.2, ls="none",
-               label="ring: round 128 (path end)")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle(title, x=0.01, ha="left", y=1.0)
+        ax.margins(x=0.12, y=0.1)
+    axes[1].set_xlabel("J_H: pass@1 on 32 hard dev problems (%)")
+    title(fig, ttl)
     fig.tight_layout()
+    end = Line2D([], [], color=MUTED, marker="o", ms=9.5, mec=INK, mew=1.6, ls="none",
+                 label="large, black edge: round 128")
+    bottom_legend(fig, arm_handles() + cap_handles() + [end], 2)
     save(fig, fdir, name)
 
 
 def f05_traj_jr(plt, t03, fdir):
-    _traj(plt, t03, fdir, "f05_traj_JH_JR", "probe_J_R",
-          "J_R: pass@1 on 28 factoring problems,\n8 attempts each (%)",
-          "Training paths in (J_H, J_R): rounds 0 → 32 → 64 → 96 → 128")
+    _traj(plt, t03, fdir, "f05_traj_JH_JR", "probe_J_R", "J_R: pass@1 on 28\nfactoring problems (%)",
+          "Training paths in (J_H, J_R), rounds 0 → 128")
 
 
 def f06_traj_ju(plt, t03, fdir):
-    _traj(plt, t03, fdir, "f06_traj_JH_JU", "probe_J_U",
-          "J_U: pass@1 on 32 modular-arithmetic\nproblems, 8 attempts each (%)",
-          "Training paths in (J_H, J_U): rounds 0 → 32 → 64 → 96 → 128")
+    _traj(plt, t03, fdir, "f06_traj_JH_JU", "probe_J_U", "J_U: pass@1 on 32 modular-\narithmetic problems (%)",
+          "Training paths in (J_H, J_U), rounds 0 → 128")
+
+
+DIAG_PROBES = [("probe_J_H", "ΔJ_H"), ("probe_J_R", "ΔJ_R"), ("probe_J_U", "ΔJ_U")]
+
+
+def _diag_limits(t04):
+    lim = {}
+    for p, _ in DIAG_PROBES:
+        vals = [100 * r["d_vs_none_" + p] for r in t04] + [0.0]
+        lo, hi = min(vals), max(vals)
+        pad = 0.08 * (hi - lo)
+        lim[p] = (lo - pad, hi + pad)
+    return lim
+
+
+def _diag_fig(plt, t04, fdir, lab, ttl, name):
+    from matplotlib.lines import Line2D
+    lim = _diag_limits(t04)
+    fig, axes = plt.subplots(3, 1, figsize=(FIGW, 8.0), sharex=True)
+    tcol = {"hard": COLOR["H"], "related": COLOR["R"], "unrelated": COLOR["U"]}
+    off = {4101: -0.24, 4102: -0.08, 4103: 0.08, 4104: 0.24}
+    rr = [r for r in t04 if r["label"] == lab]
+    rerun = next(r for r in rr if r["branch"] == "none_rerun")
+    any_mo = any(r.get("momentum_only") for r in rr)
+    for ax, (p, plab) in zip(axes, DIAG_PROBES):
+        ax.axhline(0, color=INK, lw=1.3, zorder=1)
+        ax.axhline(100 * rerun["d_vs_none_" + p], color=MUTED, lw=1.6, ls="--", zorder=1)
+        for xi, typ in enumerate(("hard", "related", "unrelated")):
+            for r in rr:
+                if r["type"] != typ:
+                    continue
+                mo = r["momentum_only"]
+                ax.plot([xi + off[r["draw_seed"]]], [100 * r["d_vs_none_" + p]], marker="X" if mo else "o",
+                        ms=10 if mo else 8, color=tcol[typ], mfc="white" if mo else tcol[typ], mec=tcol[typ],
+                        mew=1.8, ls="none", zorder=3)
+        ax.set_xticks([0, 1, 2], ["hard", "related", "unrelated"])
+        ax.set_xlim(-0.5, 2.5)
+        ax.set_ylim(*lim[p])
+        ax.yaxis.grid(True, color=GRID, lw=0.7)
+        ax.set_axisbelow(True)
+        ax.set_ylabel(f"{plab} vs none\n(points)")
+    axes[-1].set_xlabel("Update type (4 draws each)")
+    title(fig, ttl)
+    fig.tight_layout()
+    handles = [Line2D([], [], color=INK, lw=1.3, label="none (same job)"),
+               Line2D([], [], color=MUTED, lw=1.6, ls="--", label="none_rerun = none_cycled"),
+               Line2D([], [], color=MUTED, marker="o", ls="none", label="one update draw")]
+    if any_mo:
+        handles.append(Line2D([], [], color=MUTED, marker="X", mfc="white", ls="none", ms=10,
+                              label="momentum-only draw"))
+    bottom_legend(fig, handles, 2)
+    save(fig, fdir, name)
 
 
 def f07_diag(plt, t04, fdir):
-    from matplotlib.lines import Line2D
-    probes = [("probe_J_H", "ΔJ_H"), ("probe_J_R", "ΔJ_R"), ("probe_J_U", "ΔJ_U")]
-    fig, axes = plt.subplots(3, 2, figsize=(6.9, 8.2), sharex=True)
-    tcol = {"hard": COLOR["H"], "related": COLOR["R"], "unrelated": COLOR["U"]}
-    off = {4101: -0.21, 4102: -0.07, 4103: 0.07, 4104: 0.21}
-    for ci, (lab, ctitle) in enumerate((("r0", "Round 0 (base policy)"), ("r64", "R-s101 round 64"))):
-        rr = [r for r in t04 if r["label"] == lab]
-        rerun = next(r for r in rr if r["branch"] == "none_rerun")
-        for ri, (p, plab) in enumerate(probes):
-            ax = axes[ri, ci]
-            ax.axhline(0, color=INK, lw=1.2, zorder=1)
-            ax.axhline(100 * rerun["d_vs_none_" + p], color=MUTED, lw=1.4, ls="--", zorder=1)
-            for xi, typ in enumerate(("hard", "related", "unrelated")):
-                for r in rr:
-                    if r["type"] != typ:
-                        continue
-                    mo = r["momentum_only"]
-                    ax.plot([xi + off[r["draw_seed"]]], [100 * r["d_vs_none_" + p]], marker="X" if mo else "o",
-                            ms=8 if mo else 7, color=tcol[typ], mfc="white" if mo else tcol[typ], mec=tcol[typ],
-                            mew=1.6, ls="none", zorder=3)
-            ax.set_xticks([0, 1, 2], ["hard", "related", "unrelated"])
-            ax.set_xlim(-0.5, 2.5)
-            ax.yaxis.grid(True, color=GRID, lw=0.6)
-            ax.set_axisbelow(True)
-            if ci == 0:
-                ax.set_ylabel(f"{plab} vs none\n(points)")
-            if ri == 0:
-                ax.set_title(ctitle, loc="left")
-            if ri == 2:
-                ax.set_xlabel("Update type (4 draws each)")
-        # same y range within a row
-    for ri in range(3):
-        lo = min(axes[ri, 0].get_ylim()[0], axes[ri, 1].get_ylim()[0])
-        hi = max(axes[ri, 0].get_ylim()[1], axes[ri, 1].get_ylim()[1])
-        for ci in range(2):
-            axes[ri, ci].set_ylim(lo, hi)
-    handles = [Line2D([], [], color=INK, lw=1.2, label="none: no update, same job"),
-               Line2D([], [], color=MUTED, lw=1.4, ls="--", label="none_rerun = none_cycled"),
-               Line2D([], [], color=MUTED, marker="o", ls="none", label="one update draw"),
-               Line2D([], [], color=MUTED, marker="X", mfc="white", ls="none", ms=8,
-                      label="momentum-only (zero gradient)")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle("One optimizer step: change in J against two no-update references", x=0.01, ha="left", y=1.0)
-    fig.tight_layout()
-    save(fig, fdir, "f07_delta_j")
+    _diag_fig(plt, t04, fdir, "r0", "One step from the base policy (round 0)", "f07a_delta_j_r0")
+    _diag_fig(plt, t04, fdir, "r64", "One step from R-s101 round 64", "f07b_delta_j_r64")
 
 
-def _length_dumbbell(ax, rows, ytick=True):
-    order = ["H-s101", "R-s101", "U-s101", "R-s202", "U-s202"]
-    for i, run in enumerate(order):
-        r = next(r for r in rows if r["run"] == run)
-        a, s = arm_seed(run)
-        x1, x2 = 100 * r["pass1_12288"], 100 * r["pass1_16384"]
-        ax.plot([x1, x2], [i, i], color=COLOR[a], lw=2, ls=LSTYLE[s], zorder=2)
-        ax.plot([x1], [i], marker=MARKER[s], ms=7, color=COLOR[a], mfc="white", mec=COLOR[a], mew=1.6, ls="none",
-                zorder=3)
-        ax.plot([x2], [i], marker=MARKER[s], ms=7, color=COLOR[a], ls="none", zorder=3)
-    if ytick:
-        ax.set_yticks(range(len(order)), [o + " r128" for o in order])
-        ax.invert_yaxis()
-    hgrid(ax)
+LEN_ORDER = ["H-s101", "R-s101", "U-s101", "R-s202", "U-s202"]
 
 
 def f08_length_pass1(plt, t05, fdir):
     from matplotlib.lines import Line2D
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.2), sharey=True)
-    for ax, (panel, title, xl) in zip(axes, (("test", "Sealed test", "pass@1 (%)"),
-                                             ("stress", "Stress panels", "pass@1 (%)"))):
-        _length_dumbbell(ax, [r for r in t05 if r["panel"] == panel], ytick=(panel == "test"))
-        ax.set_title(title, loc="left")
-        ax.set_xlabel(xl)
-    handles = [Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, ls="none",
-                      label="cap 12,288 (original)"),
-               Line2D([], [], color=MUTED, marker="o", ls="none", label="after extending capped attempts to 16,384")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle("Length extension: pass@1 before and after 4,096 more tokens", x=0.01, ha="left", y=1.0)
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 7.0))
+    for ax, (panel, ttl) in zip(axes, (("test", "Sealed test (128 problems × 32 attempts)"),
+                                       ("stress", "Stress panels (221 problems × 8 attempts)"))):
+        rows = [r for r in t05 if r["panel"] == panel]
+        for i, run in enumerate(LEN_ORDER):
+            r = next(r for r in rows if r["run"] == run)
+            a, s = arm_seed(run)
+            x1, x2 = 100 * r["pass1_12288"], 100 * r["pass1_16384"]
+            ax.plot([x1, x2], [i, i], color=COLOR[a], ls=LSTYLE[s], zorder=2)
+            ax.plot([x1], [i], marker=MARKER[s], ms=8, color=COLOR[a], mfc="white", mec=COLOR[a], mew=1.8,
+                    ls="none", zorder=3)
+            ax.plot([x2], [i], marker=MARKER[s], ms=8, color=COLOR[a], ls="none", zorder=3)
+        lo = min(100 * r["pass1_12288"] for r in rows)
+        hi = max(100 * r["pass1_16384"] for r in rows)
+        ax.set_xlim(lo - 1.2, hi + 1.2)
+        ax.set_yticks(range(len(LEN_ORDER)), [o + " r128" for o in LEN_ORDER])
+        ax.invert_yaxis()
+        ax.set_title(ttl, loc="left")
+        ax.set_xlabel("pass@1 (%)")
+        hgrid(ax)
+    title(fig, "pass@1 before and after 4,096 more tokens")
     fig.tight_layout()
+    bottom_legend(fig, [Line2D([], [], color=MUTED, marker="o", mfc="white", mec=MUTED, mew=1.8, ls="none",
+                               label="cap 12,288"),
+                        Line2D([], [], color=MUTED, marker="o", ls="none", label="extended to 16,384")], 2)
     save(fig, fdir, "f08_length_pass1")
 
 
-SEG = [("recovered", "recovered: finished correct", "#2E2E2E"),
+SEG = [("recovered", "finished correct", "#2E2E2E"),
        ("finished_wrong", "finished wrong", "#8C8C8C"),
-       ("still_capped", "still capped at 16,384", "#D4D4D4")]
+       ("still_capped", "still capped", "#D4D4D4")]
 
 
 def f08b_length_capped(plt, t05, fdir):
     from matplotlib.patches import Patch
-    order = ["H-s101", "R-s101", "U-s101", "R-s202", "U-s202"]
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.2), sharey=True)
-    for ax, (panel, title) in zip(axes, (("test", "Sealed test"), ("stress", "Stress panels"))):
-        for i, run in enumerate(order):
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 6.6), sharex=True)
+    for ax, (panel, ttl) in zip(axes, (("test", "Sealed test"), ("stress", "Stress panels"))):
+        labels = []
+        for i, run in enumerate(LEN_ORDER):
             r = next(r for r in t05 if r["panel"] == panel and r["run"] == run)
             left = 0
             for key, _, col in SEG:
                 w = 100 * r[key + "_share"]
                 ax.barh(i, w, left=left, height=0.62, color=col, edgecolor="white", linewidth=1.5)
                 left += w
-            ax.annotate(f"n = {r['capped_at_12288']}", (101, i), xytext=(2, 0), textcoords="offset points",
-                        va="center", ha="left", fontsize=10, color=INK, annotation_clip=False)
-        if panel == "test":
-            ax.set_yticks(range(len(order)), [o + " r128" for o in order])
-            ax.invert_yaxis()
+            labels.append(f"{run} r128, n = {r['capped_at_12288']}")
+        ax.set_yticks(range(len(LEN_ORDER)), labels)
+        ax.invert_yaxis()
         ax.set_xlim(0, 100)
         ax.set_xticks([0, 25, 50, 75, 100])
-        ax.set_title(title, loc="left")
-        ax.set_xlabel("Share of attempts capped at 12,288 (%)")
+        ax.set_title(ttl, loc="left")
         ax.spines["left"].set_visible(False)
         ax.tick_params(axis="y", length=0)
-    handles = [Patch(facecolor=col, edgecolor="#888888", label=lab) for _, lab, col in SEG]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=3, frameon=False)
-    fig.suptitle("What happened to capped attempts given 4,096 more tokens", x=0.01, ha="left", y=1.0)
-    fig.tight_layout(w_pad=3.0)
+    axes[1].set_xlabel("Share of the capped attempts (%)")
+    title(fig, "Capped attempts after 4,096 more tokens")
+    fig.tight_layout()
+    bottom_legend(fig, [Patch(facecolor=col, edgecolor="#888888", label=lab) for _, lab, col in SEG], 3)
     save(fig, fdir, "f08b_length_capped")
 
 
 def f09_length_contrasts(plt, t06, fdir):
     from matplotlib.lines import Line2D
     order = [("R-s101", "U-s101"), ("R-s202", "U-s202"), ("R-s101", "H-s101"), ("U-s101", "H-s101")]
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.3), sharey=True, sharex=True)
-    for ax, (panel, title) in zip(axes, (("test", "Sealed test"), ("stress", "Stress panels"))):
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 7.0), sharex=True)
+    for ax, (panel, ttl) in zip(axes, (("test", "Sealed test (128 × 32)"), ("stress", "Stress panels (221 × 8)"))):
         for i, (a, b) in enumerate(order):
             r = next(r for r in t06 if r["panel"] == panel and r["A"] == a and r["B"] == b)
             s = int(a[-3:])
-            dot_ci(ax, i - 0.14, 100 * r["diff_12288"], [100 * v for v in r["ci95_12288"]], INK, MARKER[s],
+            dot_ci(ax, i - 0.16, 100 * r["diff_12288"], [100 * v for v in r["ci95_12288"]], INK, MARKER[s],
                    LSTYLE[s], filled=False)
-            dot_ci(ax, i + 0.14, 100 * r["diff_16384"], [100 * v for v in r["ci95_16384"]], INK, MARKER[s],
+            dot_ci(ax, i + 0.16, 100 * r["diff_16384"], [100 * v for v in r["ci95_16384"]], INK, MARKER[s],
                    LSTYLE[s], filled=True)
-        if panel == "test":
-            ax.set_yticks(range(len(order)), [f"{a[0]} − {b[0]}, seed {a[-3:]}" for a, b in order])
-            ax.invert_yaxis()
-        ax.axvline(0, color=MUTED, lw=1, zorder=1)
-        ax.set_title(title, loc="left")
-        ax.set_xlabel("Difference in pass@1 (points)")
+        ax.set_yticks(range(len(order)), [f"{a[0]} − {b[0]}, seed {a[-3:]}" for a, b in order])
+        ax.invert_yaxis()
+        ax.axvline(0, color=MUTED, lw=1.1, zorder=1)
+        ax.set_title(ttl, loc="left")
         hgrid(ax)
-    handles = [Line2D([], [], color=INK, marker="o", mfc="white", ls="none", label="cap 12,288"),
-               Line2D([], [], color=INK, marker="o", ls="none", label="after extension to 16,384")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle("Length extension: paired contrasts before and after", x=0.01, ha="left", y=1.0)
+    axes[1].set_xlabel("Difference in pass@1 (points)")
+    title(fig, "Paired contrasts before and after the extension")
     fig.tight_layout()
+    bottom_legend(fig, [Line2D([], [], color=INK, marker="o", mfc="white", mew=1.8, ls="none", label="cap 12,288"),
+                        Line2D([], [], color=INK, marker="o", ls="none", label="extended to 16,384")], 2)
     save(fig, fdir, "f09_length_contrasts")
 
 
 def f10_stress(plt, t07, fdir):
+    from matplotlib.lines import Line2D
     order = ["base", "H-s101-r128", "H-s202-r128", "R-s101-r128", "R-s202-r128", "U-s101-r128", "U-s202-r128",
              "R-s101-r64", "H-s202-r64"]
-    from matplotlib.lines import Line2D
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 4.2), sharey=True, sharex=True)
-    for ax, (tier, title) in zip(axes, (("harder", "Harder (95 problems)"), ("superhard", "SuperHard (126 problems)"))):
-        for i, cell in enumerate(order):
+    ys = [i + (0.5 if c.endswith("r64") else 0) for i, c in enumerate(order)]
+    fig, axes = plt.subplots(2, 1, figsize=(FIGW, 8.0), sharex=True)
+    for ax, (tier, ttl) in zip(axes, (("harder", "Harder (95 problems)"), ("superhard", "SuperHard (126 problems)"))):
+        for y, cell in zip(ys, order):
             r = next(r for r in t07 if r["cell"] == cell and r["tier"] == tier)
             if cell == "base":
                 col, mk, ls, filled = COLOR["base"], "D", "-", True
             else:
                 a, s = arm_seed(cell)
                 col, mk, ls, filled = COLOR[a], MARKER[s], LSTYLE[s], cell.endswith("r128")
-            y = i + (0.5 if cell.endswith("r64") else 0)
             dot_ci(ax, y, 100 * r["pass1"], [100 * v for v in r["pass1_ci95"]], col, mk, ls, filled)
-        if tier == "harder":
-            ax.set_yticks([i + (0.5 if c.endswith("r64") else 0) for i, c in enumerate(order)],
-                          [stress_label(c) for c in order])
-            ax.invert_yaxis()
-        ax.set_title(title, loc="left")
+        ax.set_yticks(ys, [stress_label(c) for c in order])
+        ax.invert_yaxis()
+        ax.set_title(ttl, loc="left")
         ax.set_xticks([20, 40, 60, 80])
         hgrid(ax)
-    fig.supxlabel("pass@1, 8 attempts per problem (%)", fontsize=10, y=0.06)
-    handles = [Line2D([], [], color=MUTED, marker="o", ls="none", label="round 128 (endpoint)"),
-               Line2D([], [], color=MUTED, marker="o", mfc="white", ls="none", label="round 64 (intermediate)")]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=False)
-    fig.suptitle("Stress panels: pass@1 per tier", x=0.01, ha="left", y=1.0)
+    axes[1].set_xlabel("pass@1, 8 attempts per problem (%)")
+    title(fig, "Stress panels: pass@1 per tier")
     fig.tight_layout()
+    bottom_legend(fig, [Line2D([], [], color=MUTED, marker="o", ls="none", label="filled: round 128"),
+                        Line2D([], [], color=MUTED, marker="o", mfc="white", mew=1.8, ls="none",
+                               label="open: round 64")], 2)
     save(fig, fdir, "f10_stress_tiers")
 
 
 def f11_stress_contrasts(plt, t08, fdir):
-    fig, axes = plt.subplots(1, 3, figsize=(6.9, 3.9), sharey=True, sharex=True)
-    for k, (ax, (tier, title)) in enumerate(zip(axes, (("all", "All (221)"), ("harder", "Harder (95)"),
-                                                     ("superhard", "SuperHard (126)")))):
-        contrast_rows(ax, [r for r in t08 if r["tier"] == tier], "diff", "ci95", ytick_labels=(k == 0))
-        ax.set_title(title, loc="left")
+    fig, axes = plt.subplots(3, 1, figsize=(FIGW, 9.0), sharex=True)
+    for ax, (tier, ttl) in zip(axes, (("all", "All 221 problems"), ("harder", "Harder (95 problems)"),
+                                      ("superhard", "SuperHard (126 problems)"))):
+        contrast_rows(ax, [r for r in t08 if r["tier"] == tier], "diff", "ci95")
+        ax.invert_yaxis()
+        ax.set_title(ttl, loc="left")
         hgrid(ax)
-    axes[0].invert_yaxis()
-    axes[1].set_xlabel("Difference in stress pass@1 (percentage points)")
-    fig.suptitle("Stress panels: paired contrasts within each training seed", x=0.01, ha="left", y=1.0)
+    axes[-1].set_xticks([-5, 0, 5, 10])
+    axes[-1].set_xlabel("Difference in stress pass@1 (points)")
+    title(fig, "Stress panels: paired contrasts per seed")
     fig.tight_layout()
     save(fig, fdir, "f11_stress_contrasts")
 
 
 def f12_control(plt, t09, fdir):
     order = ["H-s101", "H-s202", "R-s101", "R-s202", "U-s101", "U-s202"]
-    fig, axes = plt.subplots(1, 3, figsize=(6.9, 3.4), sharey=True, sharex=True)
-    for k, (ax, (key, title)) in enumerate(zip(axes, (("control_gain", "Control panel"), ("J_U_gain", "J_U"),
-                                                      ("J_R_gain", "J_R")))):
+    fig, axes = plt.subplots(3, 1, figsize=(FIGW, 8.6), sharex=True)
+    for ax, (key, ttl) in zip(axes, (("control_gain", "Control panel (64 problems)"), ("J_U_gain", "J_U (32 problems)"),
+                                     ("J_R_gain", "J_R (28 problems)"))):
         for i, run in enumerate(order):
             r = next(r for r in t09 if r["run"] == run)
             a, s = arm_seed(run)
             dot_ci(ax, i, 100 * r[key], [100 * v for v in r[key + "_ci95"]], COLOR[a], MARKER[s], LSTYLE[s])
-        if k == 0:
-            ax.set_yticks(range(len(order)), [o + " r128" for o in order])
-        ax.set_xticks([0, 10, 20, 30])
-        ax.axvline(0, color=MUTED, lw=1, zorder=1)
-        ax.set_title(title, loc="left")
+        ax.set_yticks(range(len(order)), [o + " r128" for o in order])
+        ax.invert_yaxis()
+        ax.axvline(0, color=MUTED, lw=1.1, zorder=1)
+        ax.set_title(ttl, loc="left")
         hgrid(ax)
-    axes[0].invert_yaxis()
-    axes[1].set_xlabel("Gain in pass@1 over the start policy (percentage points)")
-    fig.suptitle("Gains on subjects no arm practises, beside the probe gains", x=0.01, ha="left", y=1.0)
+    axes[-1].set_xticks([0, 10, 20, 30, 40])
+    axes[-1].set_xlabel("Gain in pass@1 over the start policy (points)")
+    title(fig, "Gains on unpractised subjects and on the probes")
     fig.tight_layout()
     save(fig, fdir, "f12_control")
-
 
 # ----------------------------------------------------------------------------------------------------------------
 def build(root, tdir, fdir, counts_path):

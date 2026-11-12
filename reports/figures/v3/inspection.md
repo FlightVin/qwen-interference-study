@@ -13,12 +13,14 @@ fixed, and that every number in `reports/tables/v3/` agrees with the audit passe
 - Previews: `sips --resampleWidth 830` (reading width) and `--resampleWidth 400` (narrow width) into a scratch directory
   outside the repo. Each preview was opened with the Read tool and checked for clipped titles, legible labels, overlap, and a
   legend that covers data.
-- Size: every figure is 6.4–6.9 in wide at 200 dpi (1,271–1,376 px), body text 10 pt, titles 12 pt.
+- Size (first build; current sizes in §4): every figure is 6.4–6.9 in wide at 200 dpi (1,271–1,376 px), body text 10 pt, titles 12 pt.
 - Palette: H `#3F5A87`, R `#E07B12`, U `#2BB39A`, base `#222222`. Simulated colour-vision deficiency (Machado 2009, OKLab
   ΔE ×100): worst pair 14.4 (deutan) against a floor of 8; normal vision 24.1 against a floor of 15. Seed is a second cue
   (circle and solid line = 101; square and dashed line = 202).
 
-## 2. Inspection record (final build)
+## 2. Inspection record (first build, 10-pt text; superseded by §4)
+
+Figure names below use the first build's F-numbers. §4 records the current figures and their report numbers.
 | Figure | 830 px | 400 px | Fixed during inspection |
 |---|---|---|---|
 | F1 `f01_endpoints` | pass | pass (small text) | none |
@@ -96,3 +98,85 @@ Values without a pass-A counterpart:
 - H-run curve points and per-run probe values: pass A computed only the R and U dev values and the R − U differences, and
   both match;
 - interval bounds computed by the build: checked by the independent bootstrap above.
+
+## 4. Narrow-screen redesign (current figures)
+Reason: the render inspection (`render-inspection.md`) found that at a 420-px viewport, figure text was 7.5–8.1 px. The
+owner requires every label to be legible without zooming. Change in `build_v3.py`:
+- Width 6.0 in (1,188–1,189 px at 200 dpi).
+- Base font 13 pt; ticks and legends 12 pt; titles 14 pt.
+- Side-by-side panels are now stacked top to bottom.
+- The diagnostic figure is split in two, because six stacked panels would exceed 9 in.
+- Legends sit below the plot area.
+
+Text size in a report rendered at 420 px (content column 372 px; scale 372/1,188 = 0.313):
+
+| Element | Size | At 420 px | At 1024 px (column 782 px) |
+|---|---|---|---|
+| axis labels, annotations | 13 pt = 36 px | 11.3 px | 23.8 px |
+| ticks, legends | 12 pt = 33 px | 10.4 px | 21.9 px |
+| titles | 14 pt = 39 px | 12.2 px | 25.6 px |
+
+Previews: `sips --resampleWidth 830` and `--resampleWidth 420`. Each preview was opened with the Read tool.
+
+| Report figure | File | Size (px) | 830 px | 420 px | Changed in this pass |
+|---|---|---|---|---|---|
+| 1 | `f01_endpoints.png` | 1189 × 913 | pass | pass | Width and fonts only; x label on two lines. |
+| 2 | `f02_contrasts_test.png` | 1188 × 955 | pass | pass | Width and fonts only. |
+| 3 | `f03_dev_rounds.png` | 1188 × 1735 | pass | pass | Seed panels stacked; legend below. |
+| 4 | `f04_dev_hard_attempts.png` | 1188 × 1735 | pass | pass | Seed panels stacked; legend below. |
+| 5 | `f05_traj_JH_JR.png` | 1188 × 1795 | pass | pass | Seed panels stacked with a shared J_H axis. Rings replaced by a smaller black-edged end marker with the arm letter beside it, and label offsets were set per path so no label covers a marker or arrow. The first try put seed-202 "H" on the H arrow, so it was moved. "r0" now sits left of the start cluster, clear of the axis. |
+| 6 | `f06_traj_JH_JU.png` | 1189 × 1795 | pass | pass | As Figure 5. Seed-101 H and U end markers first touched, so the end marker was reduced (11 → 9.5 pt) and the "U" label moved below. The two points remain close because their values are close (J_H 68.8 vs 70.3). |
+| 7 | `f12_control.png` | 1189 × 1715 | pass | pass | Three panels stacked; x ticks 0–40. |
+| 8 | `f07a_delta_j_r0.png` (new) | 1188 × 1766 | pass | pass | Round-0 half of the old `f07_delta_j.png`; 3 stacked probe panels. |
+| 9 | `f07b_delta_j_r64.png` (new) | 1188 × 1766 | pass | pass | Round-64 half; same y range per probe as Figure 8 so the two compare directly. |
+| 10 | `f08_length_pass1.png` | 1188 × 1516 | pass | pass | Panels stacked. The x range now runs from 1.2 points below the lowest marker to 1.2 above the highest, so no marker sits on the axis. Counts moved into the panel titles. |
+| 11 | `f08b_length_capped.png` | 1189 × 1436 | pass | pass | Panels stacked; x label "Share of the capped attempts (%)"; n moved into the row labels. |
+| 12 | `f09_length_contrasts.png` | 1188 × 1516 | pass | pass | Panels stacked. |
+| 13 | `f10_stress_tiers.png` | 1188 × 1716 | pass | pass | Tiers stacked; one x label under the bottom panel (no more off-centre shared label). |
+| 14 | `f11_stress_contrasts.png` | 1188 × 1795 | pass | pass | Tiers stacked; x ticks −5 to 10. |
+
+The old `f07_delta_j.png` was deleted after `REPORT.md` stopped linking to it. Other files mention its name only as text in
+dated records. Report numbering is now page order 1–14; `REPORT.md` embeds and captions and `captions.md` were updated.
+
+Value check after the rebuild (`python3 reports/build/check_v3.py`, 2026-11-12). The tables are byte-identical to the
+committed ones.
+
+```
+table | check kind | values checked | mismatches
+t01_endpoints | A point | 26 | 0
+t01_endpoints | B interval | 12 | 0
+t01_endpoints | B point | 54 | 0
+t01_endpoints | counts | 12 | 0
+t01_endpoints | indep. bootstrap | 24 | 0
+t02_contrasts_test | A interval | 16 | 0
+t02_contrasts_test | A point | 11 | 0
+t02_contrasts_test | B interval | 16 | 0
+t02_contrasts_test | B point | 19 | 0
+t03_curves | A derived R−U | 40 | 0
+t03_curves | A point | 23 | 0
+t03_curves | B point | 240 | 0
+t03_curves | indep. bootstrap | 240 | 0
+t03_curves | protocol | 120 | 0
+t04_diag | A derived mean | 6 | 0
+t04_diag | A point | 80 | 0
+t04_diag | B point | 186 | 0
+t04_diag | momentum-only set | 2 | 0
+t05_length | A point | 60 | 0
+t05_length | B point | 60 | 0
+t05_length | counts | 10 | 0
+t05_length | indep. bootstrap | 20 | 0
+t06_length_contrasts | A interval | 48 | 0
+t06_length_contrasts | A point | 24 | 0
+t06_length_contrasts | B interval | 48 | 0
+t06_length_contrasts | B point | 24 | 0
+t07_stress | A point | 63 | 0
+t07_stress | B point | 54 | 0
+t07_stress | indep. bootstrap | 54 | 0
+t08_stress_contrasts | A interval | 20 | 0
+t08_stress_contrasts | A point | 10 | 0
+t08_stress_contrasts | B interval | 36 | 0
+t08_stress_contrasts | B point | 36 | 0
+t09_control | B derived gain | 12 | 0
+t09_control | control.json | 24 | 0
+TOTAL | all | 1730 | 0
+```
