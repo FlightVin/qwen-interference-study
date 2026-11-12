@@ -95,7 +95,8 @@ def analyse(G, norms, mixed, n_boot=300, seed=0, boot=True):
     # same-problem split-half pairs
     sp = {}
     for L in labels:
-        cs = [C[i[0], i[1]] for p, i in idx_of.items() if p.startswith(L + "|") and len(i) == 2]
+        cs = [C[i[x], i[y]] for p, i in idx_of.items() if p.startswith(L + "|")
+              for x in range(len(i)) for y in range(x + 1, len(i))]
         if cs:
             sp[L] = {"n_pairs": len(cs), "mean_cos": float(np.mean(cs)), "median_cos": float(np.median(cs)),
                      "conflict_rate": float(np.mean(np.array(cs) < 0))}
