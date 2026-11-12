@@ -4,7 +4,8 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 
 ## 0. Owner instructions (NON-NEGOTIABLE)
 - 0.1 No training runs. Propose them instead. Sampling, gradients and forward passes on stored checkpoints are allowed.
-- 0.2 Ceilings: 2 general GPUs, 6 preempt GPUs, one GPU per job; guard `ops/qis-submit`.
+- 0.2 Ceilings: 8 general GPUs (owner amendment 2026-11-12, until told otherwise; supersedes the 2 of the mandate),
+      6 preempt GPUs, one GPU per job; guard `ops/qis-submit`.
 - 0.3 All outputs in `reports/<ID>/`. Deliverables: `00-initial-theory.md`, `01-understanding.md`, updated READMEs.
 - 0.4 Do not invent results, citations or numbers. Mark what is unverified.
 - 0.5 Records of the first study stay frozen. Control only this project's jobs. Times in EST. Owner writing standard.

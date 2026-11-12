@@ -119,4 +119,8 @@ follow from it, and every later owner amendment in order.
 
 ## 4. Owner amendments
 
-None yet.
+### 2026-11-12 (owner message) — general GPU ceiling raised
+> You may use all 8 general GPUs for the time-being until I instruct otherwise.
+
+Ceiling: 8 general GPUs (the account limit), until the owner says otherwise. The preempt ceiling stays at 6. This
+supersedes the 2-general-GPU ceiling of the mandate for now.
