@@ -1,0 +1,7 @@
+{"run_date": "2026-11-12", "source": "$P/runs/<run>/records/train_r0000..r0127.jsonl.gz (canonical files), sum of len(ids)",
+ "qis-main-H-s101-sym": {"attempts": 16384, "gen_tokens": 68642010},
+ "qis-main-R-s101-sym": {"attempts": 16384, "gen_tokens": 65139694},
+ "qis-main-U-s101-sym": {"attempts": 16384, "gen_tokens": 59993025},
+ "qis-main-H-s202-sym": {"attempts": 16384, "gen_tokens": 74729697},
+ "qis-main-R-s202-sym": {"attempts": 16384, "gen_tokens": 54119489},
+ "qis-main-U-s202-sym": {"attempts": 16384, "gen_tokens": 52772341}}
