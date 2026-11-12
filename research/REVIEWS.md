@@ -1220,3 +1220,14 @@ Opened 18:05Z; closed late at 19:05Z without an entry. Only action: monitor 1110
 5. **GPUs.** None in use.
 6. **Most important.** Nothing pending; await owner direction.
 7. **Reconciliation.** No live project jobs after the standby cancel. Watcher re-armed.
+
+## Review 113 — 2026-11-12 00:50Z (7:50 PM EST Wed; after the deadline)
+1. **Changes.** None in the study. Report delivered 23:46Z (ca0d8cf) before the 00:30Z deadline. No project jobs in
+   Slurm. `ops/qis-submit` returned to 3 general slots at 00:30Z (A21/A23 window ended). An untracked file
+   `reports/vineeth-notes.md` (not created by the orchestrator) is present; left untouched and uncommitted.
+2. **Competing explanation still plausible.** Run-to-run path dependence vs an arm effect for R − U (unchanged).
+3. **Distinguishing task.** More training seeds per arm (report Q4); requires an owner decision.
+4. **Schedule.** Deadline met.
+5. **GPUs.** None in use.
+6. **Most important.** None; await owner direction.
+7. **Reconciliation.** No live project jobs. Watcher alive (bjk37sia9).
