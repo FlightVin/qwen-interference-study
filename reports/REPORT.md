@@ -527,33 +527,35 @@ group counts. Totals equal the table above.
 Bottom: share of shared hard groups (slots 0–7) in which all 8 attempts were wrong. Colour: arm; line style and marker:
 seed. Dotted line: the cap change after round 32.*
 
-Three observations follow. First, R and U practice lost contrast at similar rates: from round 65 on, 78–92% of practice
-groups were all correct in every R and U run (200–236 of 256 per quarter), against 44–57% of H's extra hard groups.
-After about round 64, the practice half of each R or U update therefore came mostly from the 8–22% of practice groups
-that were still mixed, plus AdamW momentum. Second, all-wrong shared hard groups were common only in rounds 1–32
-(14–32 of 256) and rare afterwards (1–17 of 256). Third, R-s202 kept more mixed practice groups than the other R and U
+Three observations follow. First, R and U practice lost contrast at similar rates. Practice groups that still carried
+contrast fell from 65–70% of 256 in rounds 1–32 to 22–38% in rounds 33–64 and 8–22% in rounds 65–128, against 40–54%
+of H's extra hard groups in rounds 65–128 (102–139 of 256). All-correct groups give no direct gradient, so after round 64 the direct
+practice gradient came entirely from the 8–22% of practice groups still mixed; AdamW moments carried earlier gradients.
+The jump in rounds 33–64 coincides with the cap increase from 8,192 to 12,288 tokens, so part of it may come from fewer
+truncated attempts rather than from learning. Second, all-wrong shared hard groups made up 5–13% of 256 in rounds 1–32
+and 0.4–7% afterwards. Third, R-s202 kept more mixed practice groups than the other R and U
 runs (377 of 1,024 against 267–315) and had the fewest all-correct shared hard groups (253 of 1,024 against 301–348).
 This is consistent with its lower endpoint, but the count does not say whether slower learning caused or followed it.
-**Consequence:** the R/U contrast was tested mainly in the first half of training; in the second half both practice
-pools were close to saturated, and the arms differed mostly in which saturated pool filled the divisor.
+**Consequence:** most of the reward contrast from practice arrived before round 65. After that, both practice pools
+were close to saturated, so the second half of training could add little practice-specific signal for R or U.
 
 #### 5.4.4 Ray interference and the local one-step diagnostic
 
 **The mechanism.** Schaul et al. (2019) describe *ray interference*: learning stalls when (a) the gradient for one task
-works against the gradient for another, and (b) the data an agent learns from depend on its current performance, as in
-on-policy RL. In their two-task bandit, the points where one task is solved and the other is not are saddle points, and
+works against the gradient for another, and (b) learning progress is coupled to current performance, because an on-policy
+agent generates its own training data. In their two-task bandit, the points where one task is solved and the other is not are saddle points, and
 learning can sit near them for a long time. In plain terms: an update that helps task A can lower success on task B; on
 policy, lower success on B means fewer rewarded attempts on B, which means less signal to recover B. POPE (Qu et al.,
 2026, §3.2 and Figure 5) shows this in a two-problem LLM experiment: plotting J(easy) against J(hard) over training,
 mixing in an *unrelated* easy problem gave fast progress on the easy problem while J(hard) stagnated; a *related* easy
-problem slightly accelerated learning on the hard one. Figures 6 and 7 above are our POPE-style plots.
+problem gave faster hard-problem learning than the unrelated one (POPE uses one hard problem in this experiment). Figures 6 and 7 above are our POPE-style plots.
 
 **What we measured against each link.**
 
 | Link in the mechanism | Our observation | Same checkpoint or trajectory? |
 |---|---|---|
 | One update of type X lowers J on type Y | one-step ΔJ (this section): not resolved from reference noise | two source checkpoints: base, R-s101 r64 |
-| Lower success removes future reward signal | all-wrong shared hard groups (§5.4.3): frequent only in rounds 1–32 | training records of all six runs; never linked to a ΔJ |
+| Lower success removes future reward signal | all-wrong shared hard groups (§5.4.3): 5–13% in rounds 1–32, 0.4–7% afterwards | training records of all six runs; never linked to a ΔJ |
 | Loss of a previously solved problem | loss and recovery (§5.4.5): at the rate binomial sampling predicts | training records; different problems from the probes |
 | Sustained stall on hard problems | not defined or measured | — |
 
@@ -787,7 +789,7 @@ unrelated practice by 4.2 points in seed 101 (81.9% vs 77.7%) and lost by 4.4 po
 Practice of either kind scored above more hard problems in point estimate in both seeds (R − H +4.9 and +2.4; U − H
 +0.7 and +6.8), at lower token cost (52.8–65.1 M training response tokens for R and U against 68.6–74.7 M for H), but
 two of those four intervals include zero. The practice pools were close to saturated after round 64 (§5.4.3), so most
-of the R/U comparison happened in the first half of training.
+of the practice-specific reward contrast arrived in the first half of training.
 
 **Why the seeds differ, and how much the diagnostics explain.** The seed-202 R deficit is almost entirely a truncation
 term (−4.3 of −4.4 points, §5.4.2); it comes from many problems the base already solved sometimes, not from new
@@ -797,9 +799,9 @@ and two runs per arm cannot separate an arm effect from run-to-run variation, wh
 
 **Limits of transfer (interpretation).** The response audit splits the 70 reads of the 35 reward-0 responses into
 missed the factoring (26), factored incorrectly (9), factored then failed later (17), hit the cap (11), grader
-limitation (6 reads; both reads of 2 responses) and another method (1). Read as stages, recognising when to factor is the most frequent obstacle, and
-finishing within the cap is the next. These are two readers' judgements of the same 35 responses, not 70 independent
-model failures. Direct factoring practice targets execution, which was the least frequent obstacle; this may explain
+limitation (6 reads: both reads of 2 responses, one read of 2 others) and another method (1). Read as stages, recognising when to factor is the most frequent obstacle (26 reads),
+failing after a correct factoring is next (17), and hitting the cap follows (11). These are two readers' judgements of the same 35 responses, not 70 independent
+model failures. Direct factoring practice targets execution, the least frequent of the four failure categories (9 reads); this may explain
 why R gained no consistent edge on Harder and SuperHard, but the audit cannot test that.
 
 **What held across both seeds.**
@@ -851,7 +853,7 @@ Full traces with file paths and seeds: [`pass-a/traces.md`](../research/audit-a2
 | Case | Problem and attempt | What happened |
 |---|---|---|
 | Graded success | sealed test `intermediate_algebra/test/00874` (find q(x) from a hole at x = −2, an asymptote at x = 1 and q(3) = −30; gold `-3(x+2)(x-1)`), R-s101 attempt 3 | 2,345 tokens, finished; last box `-3(x + 2)(x - 1)`; reward 1. This policy solved the problem in 16 of 32 attempts. |
-| Genuine failure | same problem, R-s101 attempt 0 | finished; boxed `(x + 2)(x - 1)(x - 6)`: the factors are right but the constraint q(3) = −30 is not met; reward 0. |
+| Genuine failure | same problem, R-s101 attempt 0 | boxed `(x + 2)(x - 1)(x - 6)`: it gives the hole at x = −2, the asymptote at x = 1 and q(3) = −30, but a cubic q over the cubic numerator leaves a horizontal asymptote, which the problem excludes; reward 0. |
 | Verifier edge case | stress `math:precalculus/train/00152` (gold `2,4`), R-s202 r128 attempt 0 | 8 boxes, the last four `2`, `4`, `2`, `4`; the grader reads only the last box (`4`); reward 0. Both audit readers called it a grader limitation. U-s101 boxed `2 \text{ and } 4` and scored 1. |
 | Continued beyond 12,288 | sealed test `algebra/test/00348` (gold `3`), R-s202 attempt 10 | capped at 12,288 tokens mid-derivation (reward 0); continued from its own prefix for 1,068 new tokens to 13,356; boxed `3`; reward 1 at 16,384. |
 | Continued, still capped | sealed test `algebra/test/00054` (gold `69`), R-s202 attempt 8 | reached 16,384 tokens without finishing; its text contains `\boxed{60}`, which is wrong and, being capped, scores 0 by rule. |
@@ -1164,11 +1166,12 @@ were complete, although the version-3 checklist still marked them active.
 | Study-design diagram added | new figure | Figure 1 |
 | Worked GRPO group of 8 with advantages | new explanation | §1 |
 | Slots defined as positions filled from larger pools | wording | §1 |
-| Groups without reward contrast per pool and quarter; practice pools 78–92% all correct from round 65 | new analysis of audited records | §5.4.3, Figure 9, `tables/v4/t10_signal` |
-| Consequence: the R/U contrast was tested mainly in rounds 1–64 | new interpretation | §5.4.3, §6 |
+| Groups without reward contrast per pool and quarter; practice groups with contrast fell to 8–22% from round 65 | new analysis of audited records | §5.4.3, Figure 9, `tables/v4/t10_signal` |
+| Consequence: most practice-specific reward contrast arrived before round 65; part of the rise in rounds 33–64 coincides with the cap increase | new interpretation | §5.4.3, §6 |
 | Ray interference explained from the primary sources (Schaul et al. 2019; POPE §3.2, Figure 5); each link mapped to a measurement | new interpretation; no number changed | §5.4.4, References |
 | "What the eight slots bought", "Why the seeds differ" and "Limits of transfer" paragraphs | consolidated discussion | §6 |
 | Response-audit reads by stage; 6 grader-limitation reads and 1 "other method" read stated | completed count | §6 |
 | Raw examples: success, genuine failure, verifier edge case, continued beyond 12,288 | new appendix | Appendix I |
 | Figures renumbered in page order (v3 Figures 1–7 → 2–8, 8–14 → 10–16) | numbering | throughout |
+| Independent review of all v4 additions: 2 wrong statements, 9 overstated or imprecise ones, all fixed | audit | [`audit-a27/review-v4.md`](../research/audit-a27/review-v4.md) |
 
