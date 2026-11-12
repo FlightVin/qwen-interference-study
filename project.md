@@ -901,3 +901,11 @@ Applied: supersedes the A22 cap of 7. General ceiling 8 until the report is deli
 (A7). `ops/qis-submit` set to 8. Stress shards k0, k1 (11119925, 11119926) moved to general; k2 (11119927) stays on
 preempt until an endpoint shard ends, so the peak at RUN_COMPLETE is 8 (6 endpoint + 2 stress). Recorded as CHECKLIST
 0.30 and D158.
+
+## 38. Owner instruction A24 (received 2026-11-12 ~00:55Z = Wed 7:55 PM EST): stop the hourly reviews
+
+> Please stop your hourly reviews.
+
+Applied: the session cron job that sent the hourly review prompt (1c83fcbe) was cancelled and the background `ae-watch`
+watcher was stopped. Supersedes the hourly-review requirement of A17. No project jobs are running. Recorded as
+CHECKLIST 0.31.
