@@ -1,0 +1,237 @@
+{
+ "name": "t05_length",
+ "title": "Length extension 12,288 \u2192 16,384 tokens",
+ "purpose": "Every attempt that hit the 12,288-token cap was continued for up to 4,096 more tokens and regraded; other attempts keep their score. Change interval: paired problem bootstrap of the per-problem change. Shares in brackets are of the capped attempts. H-s202 was not extended.",
+ "sources": [
+  "research/audit-a26/pass-b/data/eval_length.json",
+  "reports/tables/v3/perproblem_counts.json"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "panel": "test",
+   "checkpoint": "H-s101 r128",
+   "run": "H-s101",
+   "problems": 128,
+   "n": 32,
+   "attempts": 4096,
+   "pass1_12288": 0.76953125,
+   "pass1_16384": 0.792236328125,
+   "gain": 0.022705078125,
+   "gain_ci95": [
+    0.015380859375,
+    0.031005859375
+   ],
+   "capped_at_12288": 445,
+   "recovered": 93,
+   "finished_wrong": 141,
+   "still_capped": 211,
+   "recovered_share": 0.20898876404494382,
+   "finished_wrong_share": 0.31685393258426964,
+   "still_capped_share": 0.47415730337078654
+  },
+  {
+   "panel": "test",
+   "checkpoint": "R-s101 r128",
+   "run": "R-s101",
+   "problems": 128,
+   "n": 32,
+   "attempts": 4096,
+   "pass1_12288": 0.818603515625,
+   "pass1_16384": 0.841552734375,
+   "gain": 0.02294921875,
+   "gain_ci95": [
+    0.014404296875,
+    0.033203125
+   ],
+   "capped_at_12288": 437,
+   "recovered": 94,
+   "finished_wrong": 50,
+   "still_capped": 293,
+   "recovered_share": 0.2151029748283753,
+   "finished_wrong_share": 0.11441647597254005,
+   "still_capped_share": 0.6704805491990846
+  },
+  {
+   "panel": "test",
+   "checkpoint": "U-s101 r128",
+   "run": "U-s101",
+   "problems": 128,
+   "n": 32,
+   "attempts": 4096,
+   "pass1_12288": 0.77685546875,
+   "pass1_16384": 0.8056640625,
+   "gain": 0.02880859375,
+   "gain_ci95": [
+    0.0185546875,
+    0.04052734375
+   ],
+   "capped_at_12288": 501,
+   "recovered": 118,
+   "finished_wrong": 67,
+   "still_capped": 316,
+   "recovered_share": 0.23552894211576847,
+   "finished_wrong_share": 0.13373253493013973,
+   "still_capped_share": 0.6307385229540918
+  },
+  {
+   "panel": "test",
+   "checkpoint": "R-s202 r128",
+   "run": "R-s202",
+   "problems": 128,
+   "n": 32,
+   "attempts": 4096,
+   "pass1_12288": 0.747802734375,
+   "pass1_16384": 0.76904296875,
+   "gain": 0.021240234375,
+   "gain_ci95": [
+    0.015380859375,
+    0.02783203125
+   ],
+   "capped_at_12288": 538,
+   "recovered": 87,
+   "finished_wrong": 104,
+   "still_capped": 347,
+   "recovered_share": 0.16171003717472118,
+   "finished_wrong_share": 0.19330855018587362,
+   "still_capped_share": 0.6449814126394052
+  },
+  {
+   "panel": "test",
+   "checkpoint": "U-s202 r128",
+   "run": "U-s202",
+   "problems": 128,
+   "n": 32,
+   "attempts": 4096,
+   "pass1_12288": 0.792236328125,
+   "pass1_16384": 0.808349609375,
+   "gain": 0.01611328125,
+   "gain_ci95": [
+    0.0087890625,
+    0.0244140625
+   ],
+   "capped_at_12288": 333,
+   "recovered": 66,
+   "finished_wrong": 65,
+   "still_capped": 202,
+   "recovered_share": 0.1981981981981982,
+   "finished_wrong_share": 0.19519519519519518,
+   "still_capped_share": 0.6066066066066066
+  },
+  {
+   "panel": "stress",
+   "checkpoint": "H-s101 r128",
+   "run": "H-s101",
+   "problems": 221,
+   "n": 8,
+   "attempts": 1768,
+   "pass1_12288": 0.6414027149321267,
+   "pass1_16384": 0.6725113122171946,
+   "gain": 0.031108597285067874,
+   "gain_ci95": [
+    0.020361990950226245,
+    0.04355203619909502
+   ],
+   "capped_at_12288": 313,
+   "recovered": 55,
+   "finished_wrong": 126,
+   "still_capped": 132,
+   "recovered_share": 0.1757188498402556,
+   "finished_wrong_share": 0.402555910543131,
+   "still_capped_share": 0.4217252396166134
+  },
+  {
+   "panel": "stress",
+   "checkpoint": "R-s101 r128",
+   "run": "R-s101",
+   "problems": 221,
+   "n": 8,
+   "attempts": 1768,
+   "pass1_12288": 0.6951357466063348,
+   "pass1_16384": 0.7228506787330317,
+   "gain": 0.027714932126696845,
+   "gain_ci95": [
+    0.01809954751131222,
+    0.03789592760180995
+   ],
+   "capped_at_12288": 362,
+   "recovered": 49,
+   "finished_wrong": 61,
+   "still_capped": 252,
+   "recovered_share": 0.13535911602209943,
+   "finished_wrong_share": 0.1685082872928177,
+   "still_capped_share": 0.6961325966850829
+  },
+  {
+   "panel": "stress",
+   "checkpoint": "U-s101 r128",
+   "run": "U-s101",
+   "problems": 221,
+   "n": 8,
+   "attempts": 1768,
+   "pass1_12288": 0.6532805429864253,
+   "pass1_16384": 0.6821266968325792,
+   "gain": 0.028846153846153855,
+   "gain_ci95": [
+    0.019230769230769232,
+    0.03959276018099547
+   ],
+   "capped_at_12288": 406,
+   "recovered": 51,
+   "finished_wrong": 64,
+   "still_capped": 291,
+   "recovered_share": 0.12561576354679804,
+   "finished_wrong_share": 0.15763546798029557,
+   "still_capped_share": 0.7167487684729064
+  },
+  {
+   "panel": "stress",
+   "checkpoint": "R-s202 r128",
+   "run": "R-s202",
+   "problems": 221,
+   "n": 8,
+   "attempts": 1768,
+   "pass1_12288": 0.6317873303167421,
+   "pass1_16384": 0.6600678733031674,
+   "gain": 0.02828054298642535,
+   "gain_ci95": [
+    0.019230769230769232,
+    0.03789592760180995
+   ],
+   "capped_at_12288": 407,
+   "recovered": 50,
+   "finished_wrong": 96,
+   "still_capped": 261,
+   "recovered_share": 0.12285012285012285,
+   "finished_wrong_share": 0.23587223587223588,
+   "still_capped_share": 0.6412776412776413
+  },
+  {
+   "panel": "stress",
+   "checkpoint": "U-s202 r128",
+   "run": "U-s202",
+   "problems": 221,
+   "n": 8,
+   "attempts": 1768,
+   "pass1_12288": 0.6583710407239819,
+   "pass1_16384": 0.6815610859728507,
+   "gain": 0.023190045248868807,
+   "gain_ci95": [
+    0.015271493212669683,
+    0.032805429864253395
+   ],
+   "capped_at_12288": 268,
+   "recovered": 41,
+   "finished_wrong": 81,
+   "still_capped": 146,
+   "recovered_share": 0.15298507462686567,
+   "finished_wrong_share": 0.30223880597014924,
+   "still_capped_share": 0.5447761194029851
+  }
+ ]
+}

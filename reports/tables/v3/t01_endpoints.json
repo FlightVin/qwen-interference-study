@@ -1,0 +1,227 @@
+{
+ "name": "t01_endpoints",
+ "title": "Sealed test: base and round-128 endpoints",
+ "purpose": "Sealed-test pass@1 (128 problems \u00d7 32 attempts, cap 12,288) of the base policy and the six round-128 endpoints, with the round-116 fallback and the four L40S reruns as supplementary rows (not endpoints). Interval for pass@1: problem bootstrap of the mean of c/32. Gain over base: paired problem bootstrap (audit pass B).",
+ "sources": [
+  "research/audit-a26/pass-b/data/eval_test.json",
+  "reports/tables/v3/perproblem_counts.json"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "cell": "base",
+   "role": "base",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 2153.0,
+   "pass1": 0.525634765625,
+   "pass1_ci95": [
+    0.465087890625,
+    0.585693359375
+   ],
+   "truncation_share": 0.00048828125,
+   "pass8_unbiased": 0.8352163617516614,
+   "coverage_at_32": 0.90625
+  },
+  {
+   "cell": "H-s101",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3152.0,
+   "pass1": 0.76953125,
+   "pass1_ci95": [
+    0.714837646484375,
+    0.822021484375
+   ],
+   "truncation_share": 0.108642578125,
+   "pass8_unbiased": 0.9370628452316438,
+   "coverage_at_32": 0.9765625,
+   "gain_over_base": 0.243896484375,
+   "gain_over_base_ci95": [
+    0.196533203125,
+    0.291748046875
+   ]
+  },
+  {
+   "cell": "R-s101",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3353.0,
+   "pass1": 0.818603515625,
+   "pass1_ci95": [
+    0.767333984375,
+    0.86669921875
+   ],
+   "truncation_share": 0.106689453125,
+   "pass8_unbiased": 0.9612719112166415,
+   "coverage_at_32": 0.9765625,
+   "gain_over_base": 0.29296875,
+   "gain_over_base_ci95": [
+    0.2451171875,
+    0.342041015625
+   ]
+  },
+  {
+   "cell": "U-s101",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3182.0,
+   "pass1": 0.77685546875,
+   "pass1_ci95": [
+    0.724365234375,
+    0.82666015625
+   ],
+   "truncation_share": 0.122314453125,
+   "pass8_unbiased": 0.9446191919678084,
+   "coverage_at_32": 0.9765625,
+   "gain_over_base": 0.251220703125,
+   "gain_over_base_ci95": [
+    0.20458984375,
+    0.2978515625
+   ]
+  },
+  {
+   "cell": "H-s202",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 2965.0,
+   "pass1": 0.723876953125,
+   "pass1_ci95": [
+    0.664306640625,
+    0.7802734375
+   ],
+   "truncation_share": 0.154296875,
+   "pass8_unbiased": 0.9075769061421523,
+   "coverage_at_32": 0.953125,
+   "gain_over_base": 0.1982421875,
+   "gain_over_base_ci95": [
+    0.15283203125,
+    0.2451171875
+   ]
+  },
+  {
+   "cell": "R-s202",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3063.0,
+   "pass1": 0.747802734375,
+   "pass1_ci95": [
+    0.690673828125,
+    0.8012756347656249
+   ],
+   "truncation_share": 0.13134765625,
+   "pass8_unbiased": 0.9220936494312294,
+   "coverage_at_32": 0.9609375,
+   "gain_over_base": 0.22216796875,
+   "gain_over_base_ci95": [
+    0.180419921875,
+    0.264404296875
+   ]
+  },
+  {
+   "cell": "U-s202",
+   "role": "endpoint",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3245.0,
+   "pass1": 0.792236328125,
+   "pass1_ci95": [
+    0.73974609375,
+    0.84033203125
+   ],
+   "truncation_share": 0.081298828125,
+   "pass8_unbiased": 0.9485036109685026,
+   "coverage_at_32": 0.96875,
+   "gain_over_base": 0.2666015625,
+   "gain_over_base_ci95": [
+    0.219482421875,
+    0.31494140625
+   ]
+  },
+  {
+   "cell": "H-s202-fb-r116",
+   "role": "supplementary",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3044.0,
+   "pass1": 0.7431640625,
+   "pass1_ci95": [
+    0.68505859375,
+    0.79833984375
+   ],
+   "truncation_share": 0.147705078125,
+   "pass8_unbiased": 0.928149223407062,
+   "coverage_at_32": 0.9609375
+  },
+  {
+   "cell": "cgpu-R-s101",
+   "role": "supplementary",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3369.0,
+   "pass1": 0.822509765625,
+   "pass1_ci95": [
+    0.772216796875,
+    0.86962890625
+   ],
+   "truncation_share": 0.109375,
+   "pass8_unbiased": 0.9621204308799901,
+   "coverage_at_32": 0.9765625
+  },
+  {
+   "cell": "cgpu-R-s202",
+   "role": "supplementary",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3118.0,
+   "pass1": 0.76123046875,
+   "pass1_ci95": [
+    0.705810546875,
+    0.81396484375
+   ],
+   "truncation_share": 0.12353515625,
+   "pass8_unbiased": 0.9342859186489261,
+   "coverage_at_32": 0.9609375
+  },
+  {
+   "cell": "cgpu-U-s101",
+   "role": "supplementary",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3187.0,
+   "pass1": 0.778076171875,
+   "pass1_ci95": [
+    0.726318359375,
+    0.8271484375
+   ],
+   "truncation_share": 0.123291015625,
+   "pass8_unbiased": 0.9513985966719907,
+   "coverage_at_32": 0.96875
+  },
+  {
+   "cell": "cgpu-U-s202",
+   "role": "supplementary",
+   "problems": 128,
+   "attempts": 4096,
+   "correct": 3245.0,
+   "pass1": 0.792236328125,
+   "pass1_ci95": [
+    0.73974609375,
+    0.84033203125
+   ],
+   "truncation_share": 0.081298828125,
+   "pass8_unbiased": 0.9485036109685026,
+   "coverage_at_32": 0.96875
+  }
+ ]
+}

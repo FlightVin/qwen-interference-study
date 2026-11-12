@@ -1,0 +1,156 @@
+{
+ "name": "t09_control",
+ "title": "Control panel: gains on subjects no arm practises",
+ "purpose": "Control panel `control_v1`: 64 MATH test problems (16 each from geometry, counting and probability, precalculus, prealgebra; levels 4\u20135), none used in any study set; 8 attempts, cap 12,288, base and the six round-128 endpoints (pre-registered in transfer/PREREG.md). Control gain = endpoint \u2212 base. J_U and J_R gains = in-run pass@1 at round 128 (cap 12,288) \u2212 round 0 (cap 8,192) of the same run. Intervals: paired problem bootstrap, 10,000 draws, numpy default_rng(2026) (transfer agent).",
+ "sources": [
+  "research/audit-a26/transfer/control.json",
+  "research/audit-a26/transfer/control.md",
+  "research/audit-a26/pass-b/data/train_curves.json (probe gains cross-checked)"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "run": "H-s101",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.734375,
+   "control_gain": 0.2265625,
+   "control_gain_ci95": [
+    0.14453125,
+    0.30859375
+   ],
+   "J_U_gain": 0.1328125,
+   "J_U_gain_ci95": [
+    0.05078125,
+    0.2265625
+   ],
+   "J_R_gain": 0.08482142857142858,
+   "J_R_gain_ci95": [
+    0.03125,
+    0.15178571428571427
+   ],
+   "J_U_gain_within_8192": 0.125,
+   "rho_control_over_J_U": 1.7058823529411764,
+   "control_gpu": "L40S"
+  },
+  {
+   "run": "H-s202",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.755859375,
+   "control_gain": 0.248046875,
+   "control_gain_ci95": [
+    0.166015625,
+    0.3301269531249993
+   ],
+   "J_U_gain": 0.09765625,
+   "J_U_gain_ci95": [
+    0.0234375,
+    0.18359375
+   ],
+   "J_R_gain": 0.10267857142857142,
+   "J_R_gain_ci95": [
+    0.022321428571428572,
+    0.19642857142857142
+   ],
+   "J_U_gain_within_8192": 0.09765625,
+   "rho_control_over_J_U": 2.54,
+   "control_gpu": "L40"
+  },
+  {
+   "run": "R-s101",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.791015625,
+   "control_gain": 0.283203125,
+   "control_gain_ci95": [
+    0.19921875,
+    0.369140625
+   ],
+   "J_U_gain": 0.1484375,
+   "J_U_gain_ci95": [
+    0.078125,
+    0.23046875
+   ],
+   "J_R_gain": 0.09375,
+   "J_R_gain_ci95": [
+    0.004464285714285714,
+    0.1875
+   ],
+   "J_U_gain_within_8192": 0.13671875,
+   "rho_control_over_J_U": 1.9078947368421053,
+   "control_gpu": "L40"
+  },
+  {
+   "run": "R-s202",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.720703125,
+   "control_gain": 0.212890625,
+   "control_gain_ci95": [
+    0.150390625,
+    0.275390625
+   ],
+   "J_U_gain": 0.11328125,
+   "J_U_gain_ci95": [
+    0.0390625,
+    0.1953125
+   ],
+   "J_R_gain": 0.09375,
+   "J_R_gain_ci95": [
+    0.03571428571428571,
+    0.16071428571428573
+   ],
+   "J_U_gain_within_8192": 0.109375,
+   "rho_control_over_J_U": 1.8793103448275863,
+   "control_gpu": "L40"
+  },
+  {
+   "run": "U-s101",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.76171875,
+   "control_gain": 0.25390625,
+   "control_gain_ci95": [
+    0.177734375,
+    0.333984375
+   ],
+   "J_U_gain": 0.125,
+   "J_U_gain_ci95": [
+    0.05078125,
+    0.2109375
+   ],
+   "J_R_gain": 0.10714285714285714,
+   "J_R_gain_ci95": [
+    0.03571428571428571,
+    0.1875
+   ],
+   "J_U_gain_within_8192": 0.11328125,
+   "rho_control_over_J_U": 2.03125,
+   "control_gpu": "L40S"
+  },
+  {
+   "run": "U-s202",
+   "control_base_pass1": 0.5078125,
+   "control_endpoint_pass1": 0.734375,
+   "control_gain": 0.2265625,
+   "control_gain_ci95": [
+    0.154296875,
+    0.30078125
+   ],
+   "J_U_gain": 0.125,
+   "J_U_gain_ci95": [
+    0.05078125,
+    0.20703125
+   ],
+   "J_R_gain": 0.10267857142857142,
+   "J_R_gain_ci95": [
+    0.04017857142857143,
+    0.17410714285714285
+   ],
+   "J_U_gain_within_8192": 0.125,
+   "rho_control_over_J_U": 1.8125,
+   "control_gpu": "L40S"
+  }
+ ]
+}

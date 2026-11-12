@@ -1,0 +1,2177 @@
+{
+ "name": "t03_curves",
+ "title": "In-run evaluations over training rounds",
+ "purpose": "pass@1 of each run at rounds 0, 32, 64, 96 and 128 on dev and the three probes (8 attempts per problem). Round 0 is the same base policy in every run; its spread is cross-job sampling noise. The evaluation cap is 8,192 at rounds 0 and 32 and 12,288 from round 64. H-s202 rounds 64\u2013128 are trajectory a2-r60 (resumed from round 60). Intervals in the JSON: problem bootstrap.",
+ "sources": [
+  "research/audit-a26/pass-b/data/train_curves.json",
+  "research/audit-a26/pass-b/data/train_rewards.json"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "run": "H-s101",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 177,
+   "pass1": 0.41745283018867924,
+   "pass1_ci95": [
+    0.3136792452830189,
+    0.5259433962264151
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 109,
+   "pass1": 0.42578125,
+   "pass1_ci95": [
+    0.28515625,
+    0.5703125
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 181,
+   "pass1": 0.8080357142857143,
+   "pass1_ci95": [
+    0.6964285714285714,
+    0.90625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 206,
+   "pass1": 0.8046875,
+   "pass1_ci95": [
+    0.6875,
+    0.90625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.00390625,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 229,
+   "pass1": 0.5400943396226415,
+   "pass1_ci95": [
+    0.4339622641509434,
+    0.6462264150943396
+   ],
+   "cap": 8192,
+   "truncation_share": 0.16981132075471697,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 146,
+   "pass1": 0.5703125,
+   "pass1_ci95": [
+    0.4296875,
+    0.7109375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.14453125,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 184,
+   "pass1": 0.8214285714285714,
+   "pass1_ci95": [
+    0.6964285714285714,
+    0.9285714285714286
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 214,
+   "pass1": 0.8359375,
+   "pass1_ci95": [
+    0.73828125,
+    0.91796875
+   ],
+   "cap": 8192,
+   "truncation_share": 0.02734375,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 270,
+   "pass1": 0.6367924528301887,
+   "pass1_ci95": [
+    0.5330188679245284,
+    0.7335495283018859
+   ],
+   "cap": 12288,
+   "truncation_share": 0.125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 168,
+   "pass1": 0.65625,
+   "pass1_ci95": [
+    0.5234375,
+    0.78125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1171875,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 188,
+   "pass1": 0.8392857142857143,
+   "pass1_ci95": [
+    0.7276785714285714,
+    0.9330357142857143
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 226,
+   "pass1": 0.8828125,
+   "pass1_ci95": [
+    0.8125,
+    0.94140625
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 271,
+   "pass1": 0.6391509433962265,
+   "pass1_ci95": [
+    0.5283018867924528,
+    0.7405660377358491
+   ],
+   "cap": 12288,
+   "truncation_share": 0.11320754716981132,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 172,
+   "pass1": 0.671875,
+   "pass1_ci95": [
+    0.53125,
+    0.80078125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.09765625,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 189,
+   "pass1": 0.84375,
+   "pass1_ci95": [
+    0.7366071428571429,
+    0.9330357142857143
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 226,
+   "pass1": 0.8828125,
+   "pass1_ci95": [
+    0.796875,
+    0.953125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 281,
+   "pass1": 0.6627358490566038,
+   "pass1_ci95": [
+    0.5589033018867925,
+    0.7594339622641509
+   ],
+   "cap": 12288,
+   "truncation_share": 0.16981132075471697,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 176,
+   "pass1": 0.6875,
+   "pass1_ci95": [
+    0.55859375,
+    0.80859375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.16015625,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 200,
+   "pass1": 0.8928571428571429,
+   "pass1_ci95": [
+    0.8035714285714286,
+    0.9642857142857143
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s101",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 240,
+   "pass1": 0.9375,
+   "pass1_ci95": [
+    0.86328125,
+    0.98828125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 171,
+   "pass1": 0.4033018867924528,
+   "pass1_ci95": [
+    0.29952830188679247,
+    0.5118514150943387
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 105,
+   "pass1": 0.41015625,
+   "pass1_ci95": [
+    0.265625,
+    0.55859375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 181,
+   "pass1": 0.8080357142857143,
+   "pass1_ci95": [
+    0.6964285714285714,
+    0.90625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 206,
+   "pass1": 0.8046875,
+   "pass1_ci95": [
+    0.69140625,
+    0.90234375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 240,
+   "pass1": 0.5660377358490566,
+   "pass1_ci95": [
+    0.46226415094339623,
+    0.6650943396226415
+   ],
+   "cap": 8192,
+   "truncation_share": 0.14386792452830188,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 145,
+   "pass1": 0.56640625,
+   "pass1_ci95": [
+    0.4375,
+    0.69140625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.140625,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 185,
+   "pass1": 0.8258928571428571,
+   "pass1_ci95": [
+    0.7008928571428571,
+    0.9285714285714286
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 225,
+   "pass1": 0.87890625,
+   "pass1_ci95": [
+    0.8046875,
+    0.94140625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.015625,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "H-s202",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 270,
+   "pass1": 0.6367924528301887,
+   "pass1_ci95": [
+    0.5330188679245284,
+    0.7382075471698113
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1509433962264151,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 157,
+   "pass1": 0.61328125,
+   "pass1_ci95": [
+    0.48046875,
+    0.74609375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1640625,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 193,
+   "pass1": 0.8616071428571429,
+   "pass1_ci95": [
+    0.7589285714285714,
+    0.9464285714285714
+   ],
+   "cap": 12288,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 233,
+   "pass1": 0.91015625,
+   "pass1_ci95": [
+    0.84765625,
+    0.9609375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 280,
+   "pass1": 0.660377358490566,
+   "pass1_ci95": [
+    0.5589622641509434,
+    0.7570754716981132
+   ],
+   "cap": 12288,
+   "truncation_share": 0.21462264150943397,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 171,
+   "pass1": 0.66796875,
+   "pass1_ci95": [
+    0.54296875,
+    0.7890625
+   ],
+   "cap": 12288,
+   "truncation_share": 0.2109375,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 206,
+   "pass1": 0.9196428571428571,
+   "pass1_ci95": [
+    0.8392857142857143,
+    0.9776785714285714
+   ],
+   "cap": 12288,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 227,
+   "pass1": 0.88671875,
+   "pass1_ci95": [
+    0.80859375,
+    0.953125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.03515625,
+   "cum_hard_attempts": 12288,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 284,
+   "pass1": 0.6698113207547169,
+   "pass1_ci95": [
+    0.5683962264150944,
+    0.7641509433962265
+   ],
+   "cap": 12288,
+   "truncation_share": 0.2099056603773585,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 174,
+   "pass1": 0.6796875,
+   "pass1_ci95": [
+    0.55078125,
+    0.80078125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.21875,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 204,
+   "pass1": 0.9107142857142857,
+   "pass1_ci95": [
+    0.84375,
+    0.9642857142857143
+   ],
+   "cap": 12288,
+   "truncation_share": 0.017857142857142856,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "H-s202",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 231,
+   "pass1": 0.90234375,
+   "pass1_ci95": [
+    0.828125,
+    0.9609375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.03125,
+   "cum_hard_attempts": 16384,
+   "trajectory": "a2-r60"
+  },
+  {
+   "run": "R-s101",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 177,
+   "pass1": 0.41745283018867924,
+   "pass1_ci95": [
+    0.3160377358490566,
+    0.5235849056603774
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0047169811320754715,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 107,
+   "pass1": 0.41796875,
+   "pass1_ci95": [
+    0.28125,
+    0.55859375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.00390625,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 183,
+   "pass1": 0.8169642857142857,
+   "pass1_ci95": [
+    0.7008928571428571,
+    0.9196428571428571
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 208,
+   "pass1": 0.8125,
+   "pass1_ci95": [
+    0.7109375,
+    0.90234375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 230,
+   "pass1": 0.5424528301886793,
+   "pass1_ci95": [
+    0.4456957547169812,
+    0.6415094339622641
+   ],
+   "cap": 8192,
+   "truncation_share": 0.11084905660377359,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 135,
+   "pass1": 0.52734375,
+   "pass1_ci95": [
+    0.390625,
+    0.6640625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.13671875,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 188,
+   "pass1": 0.8392857142857143,
+   "pass1_ci95": [
+    0.7366071428571429,
+    0.9285714285714286
+   ],
+   "cap": 8192,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 223,
+   "pass1": 0.87109375,
+   "pass1_ci95": [
+    0.78515625,
+    0.9453125
+   ],
+   "cap": 8192,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 312,
+   "pass1": 0.7358490566037735,
+   "pass1_ci95": [
+    0.6367924528301887,
+    0.8254716981132075
+   ],
+   "cap": 12288,
+   "truncation_share": 0.19811320754716982,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 189,
+   "pass1": 0.73828125,
+   "pass1_ci95": [
+    0.6092773437500001,
+    0.85546875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.21484375,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 205,
+   "pass1": 0.9151785714285714,
+   "pass1_ci95": [
+    0.8258928571428571,
+    0.9776785714285714
+   ],
+   "cap": 12288,
+   "truncation_share": 0.013392857142857142,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 245,
+   "pass1": 0.95703125,
+   "pass1_ci95": [
+    0.91796875,
+    0.98828125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.00390625,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 317,
+   "pass1": 0.7476415094339622,
+   "pass1_ci95": [
+    0.6509433962264151,
+    0.8349646226415085
+   ],
+   "cap": 12288,
+   "truncation_share": 0.19103773584905662,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 194,
+   "pass1": 0.7578125,
+   "pass1_ci95": [
+    0.6328125,
+    0.87109375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.16796875,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 208,
+   "pass1": 0.9285714285714286,
+   "pass1_ci95": [
+    0.8571428571428571,
+    0.9821428571428571
+   ],
+   "cap": 12288,
+   "truncation_share": 0.022321428571428572,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 246,
+   "pass1": 0.9609375,
+   "pass1_ci95": [
+    0.921875,
+    0.9921875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01171875,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 309,
+   "pass1": 0.7287735849056604,
+   "pass1_ci95": [
+    0.6297169811320755,
+    0.8183962264150944
+   ],
+   "cap": 12288,
+   "truncation_share": 0.18396226415094338,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 196,
+   "pass1": 0.765625,
+   "pass1_ci95": [
+    0.6483398437500001,
+    0.875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.15234375,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 204,
+   "pass1": 0.9107142857142857,
+   "pass1_ci95": [
+    0.8348214285714286,
+    0.96875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.03125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s101",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 246,
+   "pass1": 0.9609375,
+   "pass1_ci95": [
+    0.9140625,
+    0.99609375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0078125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 171,
+   "pass1": 0.4033018867924528,
+   "pass1_ci95": [
+    0.29952830188679247,
+    0.5118514150943387
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 105,
+   "pass1": 0.41015625,
+   "pass1_ci95": [
+    0.265625,
+    0.55859375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 181,
+   "pass1": 0.8080357142857143,
+   "pass1_ci95": [
+    0.6964285714285714,
+    0.90625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 206,
+   "pass1": 0.8046875,
+   "pass1_ci95": [
+    0.69140625,
+    0.90234375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 254,
+   "pass1": 0.5990566037735849,
+   "pass1_ci95": [
+    0.49764150943396224,
+    0.7004716981132075
+   ],
+   "cap": 8192,
+   "truncation_share": 0.1179245283018868,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 155,
+   "pass1": 0.60546875,
+   "pass1_ci95": [
+    0.4765625,
+    0.73046875
+   ],
+   "cap": 8192,
+   "truncation_share": 0.125,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 197,
+   "pass1": 0.8794642857142857,
+   "pass1_ci95": [
+    0.7767857142857143,
+    0.9598214285714286
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 221,
+   "pass1": 0.86328125,
+   "pass1_ci95": [
+    0.78125,
+    0.93359375
+   ],
+   "cap": 8192,
+   "truncation_share": 0.01953125,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 260,
+   "pass1": 0.6132075471698113,
+   "pass1_ci95": [
+    0.5094339622641509,
+    0.714622641509434
+   ],
+   "cap": 12288,
+   "truncation_share": 0.11556603773584906,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 158,
+   "pass1": 0.6171875,
+   "pass1_ci95": [
+    0.48828125,
+    0.7421875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1171875,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 184,
+   "pass1": 0.8214285714285714,
+   "pass1_ci95": [
+    0.7008928571428571,
+    0.9241071428571429
+   ],
+   "cap": 12288,
+   "truncation_share": 0.008928571428571428,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 232,
+   "pass1": 0.90625,
+   "pass1_ci95": [
+    0.83984375,
+    0.96484375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.015625,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 272,
+   "pass1": 0.6415094339622641,
+   "pass1_ci95": [
+    0.535377358490566,
+    0.7405660377358491
+   ],
+   "cap": 12288,
+   "truncation_share": 0.19103773584905662,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 173,
+   "pass1": 0.67578125,
+   "pass1_ci95": [
+    0.54296875,
+    0.796875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.16015625,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 197,
+   "pass1": 0.8794642857142857,
+   "pass1_ci95": [
+    0.7767857142857143,
+    0.9598214285714286
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 225,
+   "pass1": 0.87890625,
+   "pass1_ci95": [
+    0.796875,
+    0.94921875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.015625,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 278,
+   "pass1": 0.6556603773584906,
+   "pass1_ci95": [
+    0.5518867924528302,
+    0.7547169811320755
+   ],
+   "cap": 12288,
+   "truncation_share": 0.22169811320754718,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 173,
+   "pass1": 0.67578125,
+   "pass1_ci95": [
+    0.55078125,
+    0.79296875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.203125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 202,
+   "pass1": 0.9017857142857143,
+   "pass1_ci95": [
+    0.8214285714285714,
+    0.9642857142857143
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "R-s202",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 235,
+   "pass1": 0.91796875,
+   "pass1_ci95": [
+    0.8671875,
+    0.96484375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0234375,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 179,
+   "pass1": 0.4221698113207547,
+   "pass1_ci95": [
+    0.31839622641509435,
+    0.5260023584905651
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 111,
+   "pass1": 0.43359375,
+   "pass1_ci95": [
+    0.29296875,
+    0.57421875
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 183,
+   "pass1": 0.8169642857142857,
+   "pass1_ci95": [
+    0.7008928571428571,
+    0.9196428571428571
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 209,
+   "pass1": 0.81640625,
+   "pass1_ci95": [
+    0.70703125,
+    0.91015625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 255,
+   "pass1": 0.6014150943396226,
+   "pass1_ci95": [
+    0.49292452830188677,
+    0.7028301886792453
+   ],
+   "cap": 8192,
+   "truncation_share": 0.1721698113207547,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 159,
+   "pass1": 0.62109375,
+   "pass1_ci95": [
+    0.484375,
+    0.75
+   ],
+   "cap": 8192,
+   "truncation_share": 0.18359375,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 186,
+   "pass1": 0.8303571428571429,
+   "pass1_ci95": [
+    0.7276785714285714,
+    0.9196428571428571
+   ],
+   "cap": 8192,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 228,
+   "pass1": 0.890625,
+   "pass1_ci95": [
+    0.8125,
+    0.95703125
+   ],
+   "cap": 8192,
+   "truncation_share": 0.01953125,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 301,
+   "pass1": 0.7099056603773585,
+   "pass1_ci95": [
+    0.6108490566037735,
+    0.8018867924528302
+   ],
+   "cap": 12288,
+   "truncation_share": 0.14858490566037735,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 188,
+   "pass1": 0.734375,
+   "pass1_ci95": [
+    0.60546875,
+    0.8515625
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1640625,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 196,
+   "pass1": 0.875,
+   "pass1_ci95": [
+    0.7767857142857143,
+    0.9553571428571429
+   ],
+   "cap": 12288,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 236,
+   "pass1": 0.921875,
+   "pass1_ci95": [
+    0.87109375,
+    0.96484375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.02734375,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 290,
+   "pass1": 0.6839622641509434,
+   "pass1_ci95": [
+    0.5825471698113207,
+    0.7783018867924528
+   ],
+   "cap": 12288,
+   "truncation_share": 0.23349056603773585,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 176,
+   "pass1": 0.6875,
+   "pass1_ci95": [
+    0.56640625,
+    0.80078125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.24609375,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 205,
+   "pass1": 0.9151785714285714,
+   "pass1_ci95": [
+    0.84375,
+    0.96875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.008928571428571428,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 248,
+   "pass1": 0.96875,
+   "pass1_ci95": [
+    0.94140625,
+    0.9921875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01953125,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 293,
+   "pass1": 0.6910377358490566,
+   "pass1_ci95": [
+    0.589622641509434,
+    0.7830188679245284
+   ],
+   "cap": 12288,
+   "truncation_share": 0.19811320754716982,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 180,
+   "pass1": 0.703125,
+   "pass1_ci95": [
+    0.578125,
+    0.8203125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.203125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 207,
+   "pass1": 0.9241071428571429,
+   "pass1_ci95": [
+    0.8526785714285714,
+    0.9821428571428571
+   ],
+   "cap": 12288,
+   "truncation_share": 0.008928571428571428,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s101",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 241,
+   "pass1": 0.94140625,
+   "pass1_ci95": [
+    0.88671875,
+    0.98046875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.01953125,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 0,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 179,
+   "pass1": 0.4221698113207547,
+   "pass1_ci95": [
+    0.31839622641509435,
+    0.5260023584905651
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 0,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 111,
+   "pass1": 0.43359375,
+   "pass1_ci95": [
+    0.29296875,
+    0.57421875
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 0,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 183,
+   "pass1": 0.8169642857142857,
+   "pass1_ci95": [
+    0.7008928571428571,
+    0.9196428571428571
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 0,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 209,
+   "pass1": 0.81640625,
+   "pass1_ci95": [
+    0.70703125,
+    0.91015625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 0,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 32,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 259,
+   "pass1": 0.6108490566037735,
+   "pass1_ci95": [
+    0.5094339622641509,
+    0.7075471698113207
+   ],
+   "cap": 8192,
+   "truncation_share": 0.12971698113207547,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 32,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 160,
+   "pass1": 0.625,
+   "pass1_ci95": [
+    0.4921875,
+    0.75390625
+   ],
+   "cap": 8192,
+   "truncation_share": 0.12890625,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 32,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 185,
+   "pass1": 0.8258928571428571,
+   "pass1_ci95": [
+    0.7098214285714286,
+    0.9241071428571429
+   ],
+   "cap": 8192,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 32,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 225,
+   "pass1": 0.87890625,
+   "pass1_ci95": [
+    0.796875,
+    0.94921875
+   ],
+   "cap": 8192,
+   "truncation_share": 0.00390625,
+   "cum_hard_attempts": 2048,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 64,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 288,
+   "pass1": 0.6792452830188679,
+   "pass1_ci95": [
+    0.5778301886792453,
+    0.7783018867924528
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1509433962264151,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 64,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 178,
+   "pass1": 0.6953125,
+   "pass1_ci95": [
+    0.56640625,
+    0.8203125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1328125,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 64,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 197,
+   "pass1": 0.8794642857142857,
+   "pass1_ci95": [
+    0.7901785714285714,
+    0.9508928571428571
+   ],
+   "cap": 12288,
+   "truncation_share": 0.004464285714285714,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 64,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 242,
+   "pass1": 0.9453125,
+   "pass1_ci95": [
+    0.89453125,
+    0.984375
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0078125,
+   "cum_hard_attempts": 4096,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 96,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 288,
+   "pass1": 0.6792452830188679,
+   "pass1_ci95": [
+    0.5778301886792453,
+    0.7759433962264151
+   ],
+   "cap": 12288,
+   "truncation_share": 0.18632075471698112,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 96,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 174,
+   "pass1": 0.6796875,
+   "pass1_ci95": [
+    0.546875,
+    0.80078125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1875,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 96,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 203,
+   "pass1": 0.90625,
+   "pass1_ci95": [
+    0.8169642857142857,
+    0.9732142857142857
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 96,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 246,
+   "pass1": 0.9609375,
+   "pass1_ci95": [
+    0.9296875,
+    0.98828125
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0078125,
+   "cum_hard_attempts": 6144,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 128,
+   "panel": "dev",
+   "problems": 53,
+   "n": 8,
+   "attempts": 424,
+   "correct": 298,
+   "pass1": 0.7028301886792453,
+   "pass1_ci95": [
+    0.6037735849056604,
+    0.7948113207547169
+   ],
+   "cap": 12288,
+   "truncation_share": 0.14150943396226415,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 128,
+   "panel": "probe_J_H",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 188,
+   "pass1": 0.734375,
+   "pass1_ci95": [
+    0.609375,
+    0.84765625
+   ],
+   "cap": 12288,
+   "truncation_share": 0.1171875,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 128,
+   "panel": "probe_J_R",
+   "problems": 28,
+   "n": 8,
+   "attempts": 224,
+   "correct": 206,
+   "pass1": 0.9196428571428571,
+   "pass1_ci95": [
+    0.8303571428571429,
+    0.9866071428571429
+   ],
+   "cap": 12288,
+   "truncation_share": 0.0,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  },
+  {
+   "run": "U-s202",
+   "round": 128,
+   "panel": "probe_J_U",
+   "problems": 32,
+   "n": 8,
+   "attempts": 256,
+   "correct": 241,
+   "pass1": 0.94140625,
+   "pass1_ci95": [
+    0.875,
+    0.9921875
+   ],
+   "cap": 12288,
+   "truncation_share": 0.015625,
+   "cum_hard_attempts": 8192,
+   "trajectory": "a2"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "name": "t02_contrasts_test",
+ "title": "Sealed test: paired contrasts per training seed",
+ "purpose": "Difference in sealed-test pass@1 between two round-128 endpoints of the same training seed. Interval: paired problem bootstrap over the 128 problems (same resampled problems for both policies). It covers problem and attempt sampling only, not training-run variation.",
+ "sources": [
+  "research/audit-a26/pass-b/data/eval_test.json"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "contrast": "R-U",
+   "seed": 101,
+   "A": "R-s101",
+   "B": "U-s101",
+   "pass1_A": 0.818603515625,
+   "pass1_B": 0.77685546875,
+   "diff": 0.041748046875,
+   "ci95": [
+    0.020263671875,
+    0.063232421875
+   ],
+   "share_draws_gt0": 0.9998
+  },
+  {
+   "contrast": "R-U",
+   "seed": 202,
+   "A": "R-s202",
+   "B": "U-s202",
+   "pass1_A": 0.747802734375,
+   "pass1_B": 0.792236328125,
+   "diff": -0.04443359375,
+   "ci95": [
+    -0.07275390625,
+    -0.017578125
+   ],
+   "share_draws_gt0": 0.0002
+  },
+  {
+   "contrast": "R-H",
+   "seed": 101,
+   "A": "R-s101",
+   "B": "H-s101",
+   "pass1_A": 0.818603515625,
+   "pass1_B": 0.76953125,
+   "diff": 0.049072265625,
+   "ci95": [
+    0.020751953125,
+    0.0791015625
+   ],
+   "share_draws_gt0": 0.9996
+  },
+  {
+   "contrast": "R-H",
+   "seed": 202,
+   "A": "R-s202",
+   "B": "H-s202",
+   "pass1_A": 0.747802734375,
+   "pass1_B": 0.723876953125,
+   "diff": 0.02392578125,
+   "ci95": [
+    -0.0048828125,
+    0.05322265625
+   ],
+   "share_draws_gt0": 0.9484
+  },
+  {
+   "contrast": "U-H",
+   "seed": 101,
+   "A": "U-s101",
+   "B": "H-s101",
+   "pass1_A": 0.77685546875,
+   "pass1_B": 0.76953125,
+   "diff": 0.00732421875,
+   "ci95": [
+    -0.019287109375,
+    0.035888671875
+   ],
+   "share_draws_gt0": 0.6998
+  },
+  {
+   "contrast": "U-H",
+   "seed": 202,
+   "A": "U-s202",
+   "B": "H-s202",
+   "pass1_A": 0.792236328125,
+   "pass1_B": 0.723876953125,
+   "diff": 0.068359375,
+   "ci95": [
+    0.035638427734375006,
+    0.10230102539062491
+   ],
+   "share_draws_gt0": 1.0
+  },
+  {
+   "contrast": "R-U (L40S reruns)",
+   "seed": 101,
+   "A": "cgpu-R-s101",
+   "B": "cgpu-U-s101",
+   "pass1_A": 0.822509765625,
+   "pass1_B": 0.778076171875,
+   "diff": 0.04443359375,
+   "ci95": [
+    0.0244140625,
+    0.065673828125
+   ],
+   "share_draws_gt0": 0.9999
+  },
+  {
+   "contrast": "R-U (L40S reruns)",
+   "seed": 202,
+   "A": "cgpu-R-s202",
+   "B": "cgpu-U-s202",
+   "pass1_A": 0.76123046875,
+   "pass1_B": 0.792236328125,
+   "diff": -0.031005859375,
+   "ci95": [
+    -0.059576416015624994,
+    -0.004150390625
+   ],
+   "share_draws_gt0": 0.0121
+  },
+  {
+   "contrast": "R-U",
+   "two_seed_mean": -0.0013427734375,
+   "two_seed_halfrange": 0.0430908203125,
+   "kind": "two_seed"
+  },
+  {
+   "contrast": "R-H",
+   "two_seed_mean": 0.0364990234375,
+   "two_seed_halfrange": 0.0125732421875,
+   "kind": "two_seed"
+  },
+  {
+   "contrast": "U-H",
+   "two_seed_mean": 0.037841796875,
+   "two_seed_halfrange": 0.030517578125,
+   "kind": "two_seed"
+  }
+ ]
+}

@@ -1,0 +1,422 @@
+{
+ "name": "t07_stress",
+ "title": "Stress panels: pass@1 per tier",
+ "purpose": "pass@1 on the stress panels (8 attempts per problem, cap 12,288): all 221 problems, Harder (95) and SuperHard (126). Tiers come from one annotation of solution structure, not from model success. Interval: problem bootstrap within the tier. The two round-64 cells are the only intermediate checkpoints evaluated; H-s202 r64 is trajectory a2-r60.",
+ "sources": [
+  "research/audit-a26/pass-b/data/eval_stress.json",
+  "reports/tables/v3/perproblem_counts.json"
+ ],
+ "bootstrap": {
+  "draws": 10000,
+  "rng": "numpy default_rng(20261111)",
+  "unit": "problem",
+  "interval": "percentile 95%"
+ },
+ "rows": [
+  {
+   "cell": "base",
+   "label": "base",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 659.0,
+   "pass1": 0.372737556561086,
+   "pass1_ci95": [
+    0.3263433257918552,
+    0.41968325791855204
+   ],
+   "truncation_share": 0.0005656108597285068,
+   "coverage_at_8": 0.6877828054298643
+  },
+  {
+   "cell": "base",
+   "label": "base",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 399.0,
+   "pass1": 0.525,
+   "pass1_ci95": [
+    0.4513157894736842,
+    0.5986842105263158
+   ],
+   "truncation_share": 0.0013157894736842105,
+   "coverage_at_8": 0.8210526315789474
+  },
+  {
+   "cell": "base",
+   "label": "base",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 260.0,
+   "pass1": 0.25793650793650796,
+   "pass1_ci95": [
+    0.20535714285714285,
+    0.3134920634920635
+   ],
+   "truncation_share": 0.0,
+   "coverage_at_8": 0.5873015873015873
+  },
+  {
+   "cell": "H-s101-r128",
+   "label": "H-s101 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1134.0,
+   "pass1": 0.6414027149321267,
+   "pass1_ci95": [
+    0.5910633484162896,
+    0.6911764705882353
+   ],
+   "truncation_share": 0.17703619909502263,
+   "coverage_at_8": 0.8280542986425339
+  },
+  {
+   "cell": "H-s101-r128",
+   "label": "H-s101 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 604.0,
+   "pass1": 0.7947368421052632,
+   "pass1_ci95": [
+    0.7315789473684211,
+    0.8526315789473684
+   ],
+   "truncation_share": 0.09078947368421053,
+   "coverage_at_8": 0.9263157894736842
+  },
+  {
+   "cell": "H-s101-r128",
+   "label": "H-s101 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 530.0,
+   "pass1": 0.5257936507936508,
+   "pass1_ci95": [
+    0.4583333333333333,
+    0.5942460317460317
+   ],
+   "truncation_share": 0.24206349206349206,
+   "coverage_at_8": 0.753968253968254
+  },
+  {
+   "cell": "R-s101-r128",
+   "label": "R-s101 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1229.0,
+   "pass1": 0.6951357466063348,
+   "pass1_ci95": [
+    0.6447963800904978,
+    0.744343891402715
+   ],
+   "truncation_share": 0.20475113122171945,
+   "coverage_at_8": 0.832579185520362
+  },
+  {
+   "cell": "R-s101-r128",
+   "label": "R-s101 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 640.0,
+   "pass1": 0.8421052631578947,
+   "pass1_ci95": [
+    0.7855263157894737,
+    0.8921052631578947
+   ],
+   "truncation_share": 0.09868421052631579,
+   "coverage_at_8": 0.9473684210526315
+  },
+  {
+   "cell": "R-s101-r128",
+   "label": "R-s101 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 589.0,
+   "pass1": 0.5843253968253969,
+   "pass1_ci95": [
+    0.5109126984126984,
+    0.6567460317460317
+   ],
+   "truncation_share": 0.2847222222222222,
+   "coverage_at_8": 0.746031746031746
+  },
+  {
+   "cell": "U-s101-r128",
+   "label": "U-s101 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1155.0,
+   "pass1": 0.6532805429864253,
+   "pass1_ci95": [
+    0.6035067873303167,
+    0.7024886877828054
+   ],
+   "truncation_share": 0.22963800904977374,
+   "coverage_at_8": 0.832579185520362
+  },
+  {
+   "cell": "U-s101-r128",
+   "label": "U-s101 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 609.0,
+   "pass1": 0.8013157894736842,
+   "pass1_ci95": [
+    0.7407894736842106,
+    0.8578947368421053
+   ],
+   "truncation_share": 0.11447368421052631,
+   "coverage_at_8": 0.9473684210526315
+  },
+  {
+   "cell": "U-s101-r128",
+   "label": "U-s101 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 546.0,
+   "pass1": 0.5416666666666666,
+   "pass1_ci95": [
+    0.4712301587301587,
+    0.6091269841269841
+   ],
+   "truncation_share": 0.31646825396825395,
+   "coverage_at_8": 0.746031746031746
+  },
+  {
+   "cell": "H-s202-r128",
+   "label": "H-s202 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1063.0,
+   "pass1": 0.6012443438914027,
+   "pass1_ci95": [
+    0.5492081447963801,
+    0.6521634615384614
+   ],
+   "truncation_share": 0.25509049773755654,
+   "coverage_at_8": 0.8009049773755657
+  },
+  {
+   "cell": "H-s202-r128",
+   "label": "H-s202 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 565.0,
+   "pass1": 0.743421052631579,
+   "pass1_ci95": [
+    0.6763157894736842,
+    0.8092105263157895
+   ],
+   "truncation_share": 0.1513157894736842,
+   "coverage_at_8": 0.9263157894736842
+  },
+  {
+   "cell": "H-s202-r128",
+   "label": "H-s202 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 498.0,
+   "pass1": 0.49404761904761907,
+   "pass1_ci95": [
+    0.42162698412698413,
+    0.5654761904761905
+   ],
+   "truncation_share": 0.3333333333333333,
+   "coverage_at_8": 0.7063492063492064
+  },
+  {
+   "cell": "R-s202-r128",
+   "label": "R-s202 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1117.0,
+   "pass1": 0.6317873303167421,
+   "pass1_ci95": [
+    0.581447963800905,
+    0.6809954751131222
+   ],
+   "truncation_share": 0.23020361990950225,
+   "coverage_at_8": 0.8144796380090498
+  },
+  {
+   "cell": "R-s202-r128",
+   "label": "R-s202 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 580.0,
+   "pass1": 0.7631578947368421,
+   "pass1_ci95": [
+    0.6973684210526315,
+    0.8236842105263158
+   ],
+   "truncation_share": 0.13421052631578947,
+   "coverage_at_8": 0.9368421052631579
+  },
+  {
+   "cell": "R-s202-r128",
+   "label": "R-s202 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 537.0,
+   "pass1": 0.5327380952380952,
+   "pass1_ci95": [
+    0.4623015873015873,
+    0.6031746031746031
+   ],
+   "truncation_share": 0.30257936507936506,
+   "coverage_at_8": 0.7222222222222222
+  },
+  {
+   "cell": "U-s202-r128",
+   "label": "U-s202 r128",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1164.0,
+   "pass1": 0.6583710407239819,
+   "pass1_ci95": [
+    0.6085972850678733,
+    0.7070135746606335
+   ],
+   "truncation_share": 0.1515837104072398,
+   "coverage_at_8": 0.8506787330316742
+  },
+  {
+   "cell": "U-s202-r128",
+   "label": "U-s202 r128",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 604.0,
+   "pass1": 0.7947368421052632,
+   "pass1_ci95": [
+    0.7328947368421053,
+    0.85
+   ],
+   "truncation_share": 0.09210526315789473,
+   "coverage_at_8": 0.9578947368421052
+  },
+  {
+   "cell": "U-s202-r128",
+   "label": "U-s202 r128",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 560.0,
+   "pass1": 0.5555555555555556,
+   "pass1_ci95": [
+    0.48412698412698413,
+    0.625
+   ],
+   "truncation_share": 0.19642857142857142,
+   "coverage_at_8": 0.7698412698412699
+  },
+  {
+   "cell": "R-s101-r64",
+   "label": "R-s101 r64",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1136.0,
+   "pass1": 0.6425339366515838,
+   "pass1_ci95": [
+    0.5921945701357466,
+    0.6934389140271493
+   ],
+   "truncation_share": 0.26131221719457015,
+   "coverage_at_8": 0.8280542986425339
+  },
+  {
+   "cell": "R-s101-r64",
+   "label": "R-s101 r64",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 597.0,
+   "pass1": 0.7855263157894737,
+   "pass1_ci95": [
+    0.7223684210526315,
+    0.8447368421052631
+   ],
+   "truncation_share": 0.14605263157894738,
+   "coverage_at_8": 0.9368421052631579
+  },
+  {
+   "cell": "R-s101-r64",
+   "label": "R-s101 r64",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 539.0,
+   "pass1": 0.5347222222222222,
+   "pass1_ci95": [
+    0.4642857142857143,
+    0.6041914682539679
+   ],
+   "truncation_share": 0.3482142857142857,
+   "coverage_at_8": 0.746031746031746
+  },
+  {
+   "cell": "H-s202-r64",
+   "label": "H-s202 r64 (a2-r60)",
+   "tier": "all",
+   "problems": 221,
+   "attempts": 1768,
+   "correct": 1103.0,
+   "pass1": 0.623868778280543,
+   "pass1_ci95": [
+    0.5746464932126697,
+    0.6725113122171946
+   ],
+   "truncation_share": 0.1510180995475113,
+   "coverage_at_8": 0.8280542986425339
+  },
+  {
+   "cell": "H-s202-r64",
+   "label": "H-s202 r64 (a2-r60)",
+   "tier": "harder",
+   "problems": 95,
+   "attempts": 760,
+   "correct": 578.0,
+   "pass1": 0.7605263157894737,
+   "pass1_ci95": [
+    0.6947039473684211,
+    0.8210526315789474
+   ],
+   "truncation_share": 0.0868421052631579,
+   "coverage_at_8": 0.9368421052631579
+  },
+  {
+   "cell": "H-s202-r64",
+   "label": "H-s202 r64 (a2-r60)",
+   "tier": "superhard",
+   "problems": 126,
+   "attempts": 1008,
+   "correct": 525.0,
+   "pass1": 0.5208333333333334,
+   "pass1_ci95": [
+    0.45337301587301587,
+    0.5873015873015873
+   ],
+   "truncation_share": 0.19940476190476192,
+   "coverage_at_8": 0.746031746031746
+  }
+ ]
+}
