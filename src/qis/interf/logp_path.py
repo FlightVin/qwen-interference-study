@@ -29,6 +29,16 @@ from qis.interf.grad_geom import load_set
 from qis.train.learner import Learner
 
 
+def fp32_logprob(model, p_ids, ids):
+    """Mean token log-probability of the response, all compute in FP32 (no autocast)."""
+    dev = next(model.parameters()).device
+    x = torch.tensor([list(p_ids) + list(ids)], device=dev)
+    with torch.autocast("cuda", enabled=False):
+        logits = model(input_ids=x).logits[0, len(p_ids) - 1:-1].float()
+    lp = torch.log_softmax(logits, -1).gather(1, x[0, len(p_ids):, None])[:, 0]
+    return float(lp.double().mean())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
@@ -38,6 +48,10 @@ def main():
     ap.add_argument("--alphas", default="0.5,1,2")
     ap.add_argument("--samples", type=int, default=8)
     ap.add_argument("--max-prompts", type=int, default=0)
+    ap.add_argument("--precision", default="train", choices=["train", "fp32", "fp32-wround"],
+                    help="train: BF16 autocast, the training code path. fp32: FP32 weights and FP32 compute. "
+                         "fp32-wround: FP32 compute, every weight first rounded to its nearest BF16 value "
+                         "(separates rounding of the weights from rounding of the activations).")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     alphas = [float(x) for x in a.alphas.split(",")]
@@ -80,7 +94,10 @@ def main():
         out = np.zeros(len(attempts))
         with torch.no_grad():
             for i, (p_ids, ids) in enumerate(attempts):
-                out[i] = float(learner.token_logprobs(p_ids, ids, train=False).double().mean())
+                if a.precision == "train":
+                    out[i] = float(learner.token_logprobs(p_ids, ids, train=False).double().mean())
+                else:
+                    out[i] = fp32_logprob(model, p_ids, ids)
         conds.append(name); rows.append(out)
         np.savez(npz + ".tmp.npz", conds=np.array(conds), lp=np.stack(rows))
         os.replace(npz + ".tmp.npz", npz)
@@ -98,7 +115,10 @@ def main():
                 continue
             with torch.no_grad():
                 for n in names:
-                    params[n].copy_((base[n] + al * (sd[n].float() - base[n])).to(params[n].device))
+                    w = base[n] + al * (sd[n].float() - base[n])
+                    if a.precision == "fp32-wround":
+                        w = w.to(torch.bfloat16).float()
+                    params[n].copy_(w.to(params[n].device))
             run_cond(cname)
         del sd
     open(os.path.join(a.out, "DONE"), "w").write("ok\n")
