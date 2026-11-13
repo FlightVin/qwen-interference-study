@@ -66,8 +66,9 @@ def key(a, b):
 
 # ---------- g1: cosine histograms at the highest-powered base checkpoint
 ck0 = "base64" if "base64" in out else "base"
-z = np.load(os.path.join(RES, f"qis-ui-geom-{ck0}", "small.npz"))
-gs = [g for g in json.load(open(os.path.join(RES, f"qis-ui-geom-{ck0}", "groups_slim.json"))) if g["row"] >= 0]
+ckh = ck0 if os.path.exists(os.path.join(RES, f"qis-ui-geom-{ck0}", "small.npz")) else "base"   # base64 matrix exceeds the harvest cap
+z = np.load(os.path.join(RES, f"qis-ui-geom-{ckh}", "small.npz"))
+gs = [g for g in json.load(open(os.path.join(RES, f"qis-ui-geom-{ckh}", "groups_slim.json"))) if g["row"] >= 0]
 gs.sort(key=lambda g: g["row"])
 lab = np.array([g["label"] for g in gs]); pid = np.array([g["label"] + "|" + g["prompt_id"] for g in gs])
 Cm = z["cos"].astype(np.float64)
@@ -81,7 +82,7 @@ for sel, name, col in ((~same_d, "different domains", C[0]), (same_d & ~same_p, 
     axs[0].hist(c[sel], bins=bins, density=True, histtype="step", lw=1.5, color=col,
                 label=f"{name}: mean {c[sel].mean():+.4f}, n = {sel.sum():,}")
 axs[0].axvline(0, color=INK, lw=0.6); axs[0].set_xlabel("cosine between two group gradients"); axs[0].set_ylabel("density")
-axs[0].set_title(f"Pairwise gradient cosines, base model ({ck0})"); axs[0].legend(fontsize=6.5, loc="upper right")
+axs[0].set_title(f"Pairwise gradient cosines, base model ({ckh})"); axs[0].legend(fontsize=6.5, loc="upper right")
 axs[0].set_xlim(-0.2, 0.3)
 g = out[ck0]
 names, vals, lo, hi = [], [], [], []
