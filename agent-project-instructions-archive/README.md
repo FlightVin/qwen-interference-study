@@ -6,3 +6,4 @@ named by its ID (root `README.md`). Its `project-instructions.md` links to the s
 | File | Study |
 |---|---|
 | [`Nov-12-2026-00-vineeth-babel-slurm-initial-study/project-instructions.md`](Nov-12-2026-00-vineeth-babel-slurm-initial-study/project-instructions.md) | GRPO with auxiliary math practice, Qwen3-1.7B |
+| [`Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/project-instructions.md`](Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/project-instructions.md) | why the first study saw no interference (theory and measurements) |

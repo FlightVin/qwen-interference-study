@@ -1,35 +1,46 @@
 # STATE — study `Nov-12-2026-01-vineeth-babel-slurm-understanding-interference`
 
 Purpose: the current scientific state of this study. Mandate: `agent-project-instructions-archive/<ID>/project-instructions.md`.
-Plan: `CHECKLIST.md`. Last update: 2026-11-12 (study start).
+Plan: `CHECKLIST.md`. Handover: `HANDOVER.md`. Last update: 2026-11-12, 21:30 EST.
 
 ## Question
 The first study trained Qwen3-1.7B with GRPO on hard algebra plus factoring drills (R), modular-arithmetic drills (U) or
 more hard problems (H). It found no evidence of interference. This study asks why.
 
-## Established (from the first study; source `reports/Nov-12-2026-00-…/experiments-report.md`)
-- Every arm gained 20–29 points on the sealed test and 21–28 points on untrained subjects.
-- R and U scored at or above H in all four comparisons. R − U flipped sign between the two seeds (+4.2, −4.4 points).
-- A one-update test could not resolve any cross-domain effect: reference noise was 2.5–3.1 points.
-- The weights moved little: ‖θ − θ_base‖ / ‖θ_base‖ = 4.8e-4 to 5.7e-4 at round 128 (checkpoint audit).
-- One model scale only (Qwen3-1.7B). No same-seed R and U checkpoints exist below round 128.
+## Established (source: `reports/<ID>/01-understanding.md` and its `tables/`)
+- Base-model group gradients of different problems are almost orthogonal with a small positive mean. Cross-domain cosine
+  0.0003–0.0007; within-domain 0.0003–0.0013; same problem 0.020; conflict rates 48.7–49.8% (`qis-ui-geom-base64`).
+- Domains do not separate: cross-domain overlap is 0.45–1.26 of within-domain overlap. Estimated cosine between
+  expected domain gradients 0.21–0.56, all positive.
+- Each of the six runs raised the GRPO objective of all four domains at base-model samples (24 of 24 positive;
+  `qis-ui-lp`). Practice arms moved their own domain about 1.7–1.8 times more.
+- Run updates share a cosine of 0.03–0.05 whatever the arm; arm-specific trace about 0.01 (`qis-ui-wdelta`).
+- The shared part formed in rounds 1–64 (first halves 0.044, second halves 0.004).
+- At trained checkpoints the same-problem cosine is 0.0037 ± 0.0024 pooled; cross-domain cosine stays ≥ 0.
+- The averaged update is 2.4–3.3 times more effective than one run at equal norm; one run minus the mean of the
+  others loses 75–96% of its effect (log-probability measure).
+- Forward pass and sampler use BF16-rounded weights; 20–23% of weights differ from base after rounding. The output
+  change at half the update is 8–10% of the full change.
+- Trained R-s101 answers are 3.3 times longer than base answers on dev (5,753 against 1,734 tokens).
 
 ## Uncertain
-- Whether per-domain gradients conflict at all (never measured).
-- Whether the first-order (linear) description of training holds over the 512 steps.
-- Whether a smaller model, stronger domain contrast or longer training would show interference.
+- Whether averaged weights score higher (accuracy), not only move log-probabilities. Pending: `qis-ui-soup`, `qis-ui-soup-b`.
+- Whether BF16 rounding of the weights causes the non-proportional response. Pending: `qis-ui-lpprec`.
+- Gradient geometry on other model sizes at 64 answers. Pending: `qis-ui-geom-q06x64`, `qis-ui-geom-q4x64`.
+- Why the shared signal fades so early; what the shared direction is (answer length is one candidate).
+- Everything about a second model size after training. The capacity hypothesis is untested.
 
-## Hypotheses under test
-- H1 gradient alignment from pre-training. H2 capacity. H3 small-step (near-linear) regime.
-- H4 setup: domains too similar; practice saturated by round 64; evaluation too noisy to detect small interference.
-- H5 the coupling that ray interference needs (success-dependent learning signal) was weak in our setup.
+## Verdicts
+- Gradient alignment: consistent in the weak form (no conflict), not in the strong form (cosines are near zero).
+- Capacity: not needed for the result; untested.
+- Domains too similar: consistent. Too short / too small: not consistent as stated. Evaluation insensitive: true for
+  the one-update test, not the reason for the main result.
+- Ray interference: its preconditions (negative coupling, hard problems near zero success) were absent.
 
 ## Decisions
-- Measurements use stored checkpoints only. No training (mandate).
-- Gradients are measured on fresh on-policy samples at each checkpoint, 16 answers per problem, split into two groups
-  of 8, so that sampling noise can be separated from true alignment.
+- See `DECISIONS.md` U1–U10.
 
 ## Next actions
-1. Finish the literature read; write `00-initial-theory.md` with toy-model figures.
-2. Run the measurement jobs (`qis-ui-*`): weight-update geometry, gradient geometry, linearity test.
-3. Write `01-understanding.md`; update the README files.
+1. Harvest the pending jobs; fill the three "pending" places in `01-understanding.md` (Sections 1.5, 1.6, 1.7) and
+   update the Summary if a result changes a verdict.
+2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).

@@ -75,19 +75,19 @@ Cm = z["cos"].astype(np.float64)
 iu = np.triu_indices(len(gs), 1)
 same_p = (pid[:, None] == pid[None, :])[iu]; same_d = (lab[:, None] == lab[None, :])[iu]
 c = Cm[iu]
-fig, axs = plt.subplots(1, 2, figsize=(9, 3.1))
+fig, axs = plt.subplots(1, 2, figsize=(9.6, 3.1)); fig.subplots_adjust(wspace=0.28)
 bins = np.linspace(-0.2, 0.3, 101)
 for sel, name, col in ((~same_d, "different domains", C[0]), (same_d & ~same_p, "same domain, different problems", C[2]),
                        (same_p, "same problem, independent samples", C[1])):
     axs[0].hist(c[sel], bins=bins, density=True, histtype="step", lw=1.5, color=col,
                 label=f"{name}: mean {c[sel].mean():+.4f}, n = {sel.sum():,}")
 axs[0].axvline(0, color=INK, lw=0.6); axs[0].set_xlabel("cosine between two group gradients"); axs[0].set_ylabel("density")
-axs[0].set_title(f"Pairwise gradient cosines, base model ({ckh})"); axs[0].legend(fontsize=6.5, loc="upper right")
+axs[0].set_title(f"Pairwise gradient cosines, base model ({ckh})"); axs[0].legend(fontsize=6, loc="upper center", bbox_to_anchor=(0.5, -0.22))
 axs[0].set_xlim(-0.2, 0.3)
 g = out[ck0]
 names, vals, lo, hi = [], [], [], []
 for a in DOM:
-    names.append(f"{SHORT[a]} same\nproblem"); vals.append(g["same_problem"][a]["mean_cos"]); lo.append(np.nan); hi.append(np.nan)
+    names.append(f"{SHORT[a]}*"); vals.append(g["same_problem"][a]["mean_cos"]); lo.append(np.nan); hi.append(np.nan)
 for i, a in enumerate(DOM):
     for b in DOM[i:]:
         k = key(a, b)
@@ -101,12 +101,12 @@ for xi, l, h in zip(x, lo, hi):
         axs[1].plot([xi, xi], [l, h], color=INK, lw=1)
 axs[1].set_xticks(x); axs[1].set_xticklabels(names, fontsize=6.5); axs[1].set_yscale("symlog", linthresh=0.005)
 axs[1].axhline(0, color=INK, lw=0.6); axs[1].set_ylabel("mean cosine (symlog axis)")
-axs[1].set_title("Mean cosine by pair type; bars = 95% bootstrap over problems")
+axs[1].set_title(f"Mean cosine by pair type ({ck0}); X* = same problem")
 fig.savefig(os.path.join(FIG, "g1_cos_hist.png")); plt.close(fig)
 
 # ---------- g2 / g3: by checkpoint
 PAIRS = [("hard", "hard"), ("hard", "related"), ("hard", "unrelated"), ("related", "unrelated"), ("hard", "control")]
-fig, axs = plt.subplots(1, 3, figsize=(11.5, 3.2))
+fig, axs = plt.subplots(1, 3, figsize=(12.5, 3.2)); fig.subplots_adjust(wspace=0.33)
 x = np.arange(len(cks))
 for j, (a, b) in enumerate(PAIRS):
     k = key(a, b)
@@ -116,17 +116,17 @@ for j, (a, b) in enumerate(PAIRS):
     axs[0].errorbar(x + off, v, yerr=[np.array(v) - np.array([q[0] for q in ci]), np.array([q[1] for q in ci]) - np.array(v)],
                     fmt="o", ms=4, color=C[j], lw=1, label=f"{SHORT[a]}-{SHORT[b]}")
 axs[0].axhline(0, color=INK, lw=0.6); axs[0].set_xticks(x); axs[0].set_xticklabels(cks, rotation=35, ha="right", fontsize=7)
-axs[0].set_ylabel("mean pairwise cosine (different problems)"); axs[0].set_title("Cross-domain and within-domain cosine"); axs[0].legend(fontsize=7, ncol=2)
+axs[0].set_ylabel("mean cosine, different problems"); axs[0].set_title("Cosine by domain pair (95% interval)"); axs[0].legend(fontsize=7, ncol=2)
 for j, a in enumerate(DOM):
     v = [out[c_]["same_problem"].get(a, {}).get("mean_cos", np.nan) for c_ in cks]
     axs[1].plot(x, v, "o-", ms=4, lw=1.2, color=C[j], label=SHORT[a])
 axs[1].axhline(0, color=INK, lw=0.6); axs[1].set_xticks(x); axs[1].set_xticklabels(cks, rotation=35, ha="right", fontsize=7)
-axs[1].set_ylabel("mean cosine, same problem, independent samples"); axs[1].set_title("Signal share of one group gradient"); axs[1].legend(fontsize=7)
+axs[1].set_ylabel("mean cosine, same problem"); axs[1].set_title("Repeatable share of one group gradient"); axs[1].legend(fontsize=7)
 for j, a in enumerate(DOM):
     v = [out[c_]["n_mixed"].get(a, 0) / max(out[c_]["groups_total"].get(a, 1), 1) for c_ in cks]
     axs[2].plot(x, v, "o-", ms=4, lw=1.2, color=C[j], label=SHORT[a])
 axs[2].set_xticks(x); axs[2].set_xticklabels(cks, rotation=35, ha="right", fontsize=7); axs[2].set_ylim(0, 1)
-axs[2].set_ylabel("share of groups that are mixed"); axs[2].set_title("Groups that give any gradient"); axs[2].legend(fontsize=7)
+axs[2].set_ylabel("share of groups with a gradient"); axs[2].set_title("Groups with right and wrong answers"); axs[2].legend(fontsize=7)
 fig.savefig(os.path.join(FIG, "g2_progress.png")); plt.close(fig)
 
 # ---------- g4: by layer at ck0

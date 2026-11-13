@@ -98,3 +98,44 @@ for c in conds[1:]:
     print(f"{c:18s}", " ".join(f"{p[:1].upper()} S={out['S'][c][p]:+.4f} [{out['S_ci'][c][p][0]:+.4f},{out['S_ci'][c][p][1]:+.4f}] dC={out['dC'][c][p]:+.3f} dW={out['dW'][c][p]:+.3f} |" for p in DOM))
 for r, v in out["linearity"].items():
     print(r, {p: {k: round(x, 2) for k, x in q.items()} for p, q in v.items()})
+
+# ---------- l2: (a) mean log-prob change of base answers against alpha (log-log); (b) equal-norm comparison
+C = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300"]
+plt.rcParams.update({"axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.6, "axes.spines.top": False,
+                     "axes.spines.right": False, "legend.frameon": False})
+fig, axs = plt.subplots(1, 2, figsize=(11, 3.4)); fig.subplots_adjust(wspace=0.25)
+six = [r for r in runs if r.endswith("r128")]
+for j, r in enumerate(six + ["mean6"]):
+    al = sorted(float(c.split("@")[1]) for c in conds if c.split("@")[0] == r)
+    y = [-np.mean([out["d_all"][f"{r}@{a:g}"][p] for p in DOM]) for a in al]
+    axs[0].plot(al, y, "o-", ms=4, lw=1.3, color=C[j % 6] if r != "mean6" else INK, label=r)
+a0 = np.array([0.5, 1, 2]); ref = -np.mean([out["d_all"]["R-s101-r128@1"][p] for p in DOM])
+axs[0].plot(a0, ref * a0 ** 2, "--", color=MUTED, lw=1, label="proportional to alpha^2 (smooth model)")
+# rounding model: a weight changes in the forward pass only if |alpha * delta| exceeds half a BF16 step. With Gaussian
+# delta and a threshold of 1.25 sd (which gives the measured 21% of changed weights at alpha = 1), the squared size of
+# the effective update is proportional to sum_k (2k - 1) P(|z| > (2k - 1) * 1.25 / alpha).
+from math import erfc, sqrt
+def n_eff(al, t=1.25):
+    return sum((2 * k - 1) * erfc((2 * k - 1) * t / al / sqrt(2)) for k in range(1, 40))
+axs[0].plot(a0, [ref * n_eff(x) / n_eff(1.0) for x in a0], ":", color=MUTED, lw=1.4, label="BF16 rounding model (Section 2.3)")
+axs[0].set_xscale("log"); axs[0].set_yscale("log"); axs[0].set_xticks([0.5, 1, 2]); axs[0].set_xticklabels(["0.5", "1", "2"])
+axs[0].set_xlabel("alpha (fraction of the run's weight update applied)")
+axs[0].set_ylabel("fall in mean token log-prob of base answers (nats)")
+axs[0].set_title("Output change is not proportional to alpha"); axs[0].legend(fontsize=6.5, ncol=2)
+grp = [("norm 0.60", ["scaled-R101@1", "mean6@1", "loo5@1"]), ("norm 1.26", ["R-s101-r128@1", "mean6x@1", "resid-R101@1"])]
+names = {"scaled-R101@1": "R-s101 run, scaled down", "mean6@1": "mean of six runs", "loo5@1": "mean of the five other runs",
+         "R-s101-r128@1": "R-s101 run", "mean6x@1": "mean of six, scaled up", "resid-R101@1": "R-s101 minus mean of five\n(norm 1.36)"}
+xt, xl, k = [], [], 0
+for gname, cs in grp:
+    for c in cs:
+        for j, p in enumerate(DOM):
+            v = out["S"][c][p]; lo, hi = out["S_ci"][c][p]
+            axs[1].bar(k + (j - 1.5) * 0.2, v, width=0.18, color=C[j], label=p if k == 0 else None)
+            axs[1].plot([k + (j - 1.5) * 0.2] * 2, [lo, hi], color=INK, lw=0.8)
+        xt.append(k); xl.append(names[c]); k += 1
+    k += 0.4
+axs[1].axhline(0, color=INK, lw=0.6); axs[1].set_xticks(xt); axs[1].set_xticklabels(xl, fontsize=6.5, rotation=20, ha="right")
+axs[1].set_ylabel("surrogate transfer S_D (95% interval over problems)")
+axs[1].set_title("Equal norm: the averaged update moves every domain more"); axs[1].legend(fontsize=7, title="domain of the answers", title_fontsize=7)
+fig.savefig(os.path.join(FIG, "l2_linearity_soup.png")); plt.close(fig)
+print("rounding model N(0.5)/N(1), N(2)/N(1):", n_eff(0.5) / n_eff(1.0), n_eff(2.0) / n_eff(1.0), "flip share at 1:", erfc(1.25 / sqrt(2)))
