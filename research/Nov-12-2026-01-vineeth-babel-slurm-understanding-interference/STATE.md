@@ -26,7 +26,7 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 ## Uncertain
 - Whether averaged weights score higher (accuracy), not only move log-probabilities. Pending: `qis-ui-soup`, `qis-ui-soup-b`.
 - Whether BF16 rounding of the weights causes the non-proportional response. Pending: `qis-ui-lpprec`.
-- Gradient geometry on other model sizes at 64 answers. Pending: `qis-ui-geom-q06x64`, `qis-ui-geom-q4x64`.
+- Gradient geometry on other model sizes at 64 answers. Out of scope (owner, 2026-11-12); future work, M1.
 - Why the shared signal fades so early; what the shared direction is (answer length is one candidate).
 - Everything about a second model size after training. The capacity hypothesis is untested.
 
@@ -41,6 +41,6 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - See `DECISIONS.md` U1–U10.
 
 ## Next actions
-1. Harvest the pending jobs; fill the three "pending" places in `01-understanding.md` (Sections 1.5, 1.6, 1.7) and
+1. Harvest the pending jobs; fill the two "pending" places in `01-understanding.md` (Sections 1.5, 1.6) and
    update the Summary if a result changes a verdict.
 2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).

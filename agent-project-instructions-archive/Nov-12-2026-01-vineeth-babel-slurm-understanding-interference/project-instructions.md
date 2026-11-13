@@ -124,3 +124,10 @@ follow from it, and every later owner amendment in order.
 
 Ceiling: 8 general GPUs (the account limit), until the owner says otherwise. The preempt ceiling stays at 6. This
 supersedes the 2-general-GPU ceiling of the mandate for now.
+
+### 2026-11-12 (owner message) — scale gradient runs removed from scope
+> Please remove gradient geometry on 0.6B and 4B from your scope of experiments and leave them as future work.
+
+The 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B (jobs 11131757 and 11131734) were cancelled while pending.
+`01-understanding.md` lists them as future work (Section 3, M1). The 16-answer run on Qwen3-0.6B had already finished;
+its result stays in Section 1.7, marked underpowered.

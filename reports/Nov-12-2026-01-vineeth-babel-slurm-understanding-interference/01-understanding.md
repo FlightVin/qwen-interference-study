@@ -5,9 +5,10 @@ the domains. Section 1 reports what we measured on the stored checkpoints. Secti
 each claim as derived, supported or speculation. Section 3 proposes the experiments that would separate the
 explanations that remain. Background theory and literature: [`00-initial-theory.md`](00-initial-theory.md).
 
-Status of the evidence (2026-11-12, 23:00 EST): Sections 1.1–1.6 rest on completed jobs. Four results are pending and
-are marked **pending** where they belong: the accuracy of the averaged checkpoints (Section 1.5), the precision test
-(Section 1.6) and the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B (Section 1.7).
+Status of the evidence (2026-11-12, 23:00 EST): Sections 1.1–1.6 rest on completed jobs. Two results are pending and
+are marked **pending** where they belong: the accuracy of the averaged checkpoints (Section 1.5) and the precision
+test (Section 1.6). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
+2026-11-12. They are future work (Section 3, M1).
 
 ## Summary
 
@@ -73,7 +74,7 @@ initialisation (Section 1.7).
 | Group gradients at the base model and five trained checkpoints | `geom-base`, `geom-base64`, `geom-<run>-r64/r128` | `src/qis/interf/grad_geom.py`, `sketch.py`, `summ.py`; `build/analyze_geom.py`, `build/analyze_geom_extra.py` | `tables/geom_summary.json`, `tables/geom_extra.json` |
 | Log-probability of base answers under each trained model | `lp` | `src/qis/interf/logp_path.py`; `build/analyze_lp.py` | `tables/lp_summary.json` |
 | Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | pending |
-| Gradients on Qwen3-0.6B and Qwen3-4B | `geom-q06`, `geom-q06x64`, `geom-q4x64` | as above | `tables/geom_summary.json` (0.6B, 16 answers) |
+| Gradients on Qwen3-0.6B (16 answers) | `geom-q06` | as above | `tables/geom_summary.json` |
 
 Paths are relative to the repository root for `src/` and to this folder for `build/` and `tables/`. The job recipes
 are in `research/Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/recipes/`.
@@ -373,20 +374,21 @@ answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of th
 `qis-ui-soup`, 53 problems × 32 answers). The first study reported the truncation; the factor of 3.3 in length is
 new. It is a change that all domains share. We measured it for one trained model only.
 
-### 1.7 Model size: one underpowered measurement, two pending
+### 1.7 Model size: one underpowered measurement
 
 | Model at initialisation | Answers per problem | Pass rate H / R / U / C | Mixed groups | Same-problem cosine | Cross-domain cosine | Conflict rate |
 |---|---|---|---|---|---|---|
 | Qwen3-0.6B | 16 | 0.04 / 0.17 / 0.16 / 0.30 | 238 | 0.018 (84 pairs) | 0.0007 | 48.6% |
 | Qwen3-1.7B | 16 | 0.19 / 0.59 / 0.56 / 0.54 | 374 | 0.031 (169 pairs) | 0.0009 | 49.0% |
 | Qwen3-1.7B | 64 | 0.21 / 0.59 / 0.58 / 0.54 | 1,512 | 0.020 (4,778 pairs) | 0.00045 | 49.4% |
-| Qwen3-0.6B | 64 | **pending** | | | | |
-| Qwen3-4B | 64 | **pending** | | | | |
 
 The 16-answer run on Qwen3-0.6B shows no conflict: the mean cross-domain cosine is positive and the conflict rate is
 below 50%. It cannot show more. The 16-answer and 64-answer runs on Qwen3-1.7B differ by a factor of 2 in the
 cross-domain cosine, so a 16-answer run does not resolve a difference between model sizes. Also, Qwen3-0.6B solves
 hard problems only 4% of the time, so only 19 hard groups are mixed.
+
+This study has no 64-answer measurement on Qwen3-0.6B and no measurement on Qwen3-4B. The owner removed both from the
+scope on 2026-11-12, and the queued jobs were cancelled before they started. Section 3 (M1) lists them as future work.
 
 A gradient at initialisation is also a limited test of the capacity hypothesis. That hypothesis is about what happens
 after many updates compete for the same parameters. Section 3 proposes the training experiment that tests it.
@@ -633,7 +635,7 @@ the time), and the comparison confounds size with signal.
 weights, gradients and two Adam moments for 4 × 10⁹ parameters need about 64 GB). Pool rebuilding and evaluation:
 about 60. Total about 490 GPU-hours. The 0.6B half alone costs about 100 GPU-hours and tests the direction of H2.
 
-The pending jobs `qis-ui-geom-q06x64` and `qis-ui-geom-q4x64` give the first row of the prediction table for the
+The 64-answer gradient measurement at initialisation (M1) gives the first row of the prediction table for the
 current pools at no training cost.
 
 ### E3. Coupling experiment: a hard pool the model cannot solve yet
@@ -697,6 +699,7 @@ updates with mean6.
 |---|---|---|
 | One rerun of R-s101 with checkpoints at rounds 2, 4, 8, 16, 32; gradient geometry with 64 answers at each | when the shared signal forms and fades (Section 2.7, item 1) | 25 + 6 × 4 ≈ 50 GPU-hours |
 | 64-answer gradient geometry at the five stored trained checkpoints | whether domain-specific or conflicting signal exists late | about 50 GPU-hours |
+| 64-answer gradient geometry at initialisation on Qwen3-0.6B and Qwen3-4B (recipes `qis-ui-geom-q06x64`, `qis-ui-geom-q4x64` exist; not run) | whether the cross-domain cosine or the conflict rate changes with model size | about 8 GPU-hours each (est.; the 1.7B run took about 4) |
 | Dev accuracy of averaged checkpoints (in progress) | whether the shared part carries the *accuracy* gain | about 15 GPU-hours |
 | Mechanistic studies 1–5 of Section 1.9 | what the shared direction is and where it sits | under 20 GPU-hours |
 
