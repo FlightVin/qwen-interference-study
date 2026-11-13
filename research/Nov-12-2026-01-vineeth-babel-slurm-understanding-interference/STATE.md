@@ -1,7 +1,7 @@
 # STATE — study `Nov-12-2026-01-vineeth-babel-slurm-understanding-interference`
 
 Purpose: the current scientific state of this study. Mandate: `agent-project-instructions-archive/<ID>/project-instructions.md`.
-Plan: `CHECKLIST.md`. Handover: `HANDOVER.md`. Last update: 2026-11-12, 21:30 EST.
+Plan: `CHECKLIST.md`. Handover: `HANDOVER.md`. Last update: 2026-11-13, 01:45 EST.
 
 ## Question
 The first study trained Qwen3-1.7B with GRPO on hard algebra plus factoring drills (R), modular-arithmetic drills (U) or
@@ -24,10 +24,18 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - Precision test (`qis-ui-lpprec`, hard + related): FP32 weights follow alpha^2 (0.26–0.27 at half the update);
   weights rounded to BF16 reproduce the training setup (0.08–0.09). Rounding is the cause. Rounded weights give 41%
   (R-s101) and 15% (mean6) of the FP32 output change.
+- Rank-r parts of the update (`qis-ui-lowrank-*`, FP32): rank 8 per matrix (0.6% of the parameters) gives 67–77% of
+  the effect; the remainder after rank 64 (45–47% of the squared norm) gives 2–3%.
+- Dev pass@1: base 41.4%, R-s101 72.4%, mean6 63.6%, scaled-R101 52.7%, resid-R101 43.3% (`qis-ui-soup`, `-b`).
+- Domain probe at the base model (`qis-ui-probe`): 12 further domains, no negative coupling under the correctness
+  reward. Products of k-digit integers give pass@1 97.7% (k=2) to 5.5% (k=6), 1.8% (k=7), 0.09% (k=8).
+- A brevity reward opposes the correctness reward: 16 of 16 cross-problem cosines negative, 10 intervals below zero
+  (`qis-ui-geom-short`). First negative coupling measured in either study.
 - Trained R-s101 answers are 3.3 times longer than base answers on dev (5,753 against 1,734 tokens).
 
 ## Uncertain
-- Whether averaged weights score higher (accuracy), not only move log-probabilities. Pending: `qis-ui-soup`, `qis-ui-soup-b`.
+- Dev accuracy of loo5 and mean6x: `qis-ui-soup-b` running (mean6x takes more than 3.75 h).
+- Whether the brevity conflict lowers accuracy in training: not run; proposed (`04`, mixture 7; `01`, E1).
 - Gradient geometry on other model sizes at 64 answers. Out of scope (owner, 2026-11-12); future work, M1.
 - Why the shared signal fades so early; what the shared direction is (answer length is one candidate).
 - Everything about a second model size after training. The capacity hypothesis is untested.
@@ -40,9 +48,9 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - Ray interference: its preconditions (negative coupling, hard problems near zero success) were absent.
 
 ## Decisions
-- See `DECISIONS.md` U1–U10.
+- See `DECISIONS.md` U1–U14.
 
 ## Next actions
-1. Harvest the pending jobs; fill the "pending" place in `01-understanding.md` (Section 1.5) and
-   update the Summary if a result changes a verdict.
+1. Fill Section 1.5 of `01` and the markers in `03` and `05` when `qis-ui-soup-b` ends; fill the zero-band rows of
+   `04` when `qis-ui-probe2` ends; number audit; commit.
 2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).

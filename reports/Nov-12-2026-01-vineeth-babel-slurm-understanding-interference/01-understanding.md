@@ -15,7 +15,8 @@ They are future work (Section 3, M1).
 **The domains did not interfere because their training signals did not point in different directions.** At the base
 model, the expected gradient of each domain has a small positive overlap with the expected gradient of every other
 domain. The overlap between two domains is about as large as the overlap between two problems of one domain. We found
-no negative overlap in any measurement.
+no negative overlap between domains in any measurement. A negative overlap appears only when the reward itself
+changes: a brevity reward opposes the correctness reward (`04-domains-to-explore.md`, Section 4).
 
 The measurements give five results.
 
@@ -710,6 +711,11 @@ reference without a second domain.
 | E1-b | Code generation with executable tests (for example, short Python functions) | a different subject and output format; Li et al. 2025 report that math RL lowers code accuracy at 7B |
 | E1-c | A task rewarded only for a correct answer within a short token limit (for example, mental arithmetic with a 256-token cap) | a designed conflict: the trained math models write answers 3.3 times longer; this domain rewards the opposite |
 | E1-d | H only, 16 slots | reference for the hard score without a second domain |
+
+A first measurement of this kind exists. A brevity reward on the base-model answers of our pools has a negative
+cosine with the correctness gradient in all 16 domain pairs; 10 intervals lie below zero
+([`04-domains-to-explore.md`](04-domains-to-explore.md), Section 4). The conflict that E1-c needs is therefore
+present at the base model.
 
 Before training, run the gradient measurement of Section 1.2 at the base model for each pair (64 answers per problem,
 about 3 GPU-hours per pair). This gives ρ for each pair and makes the prediction below quantitative in advance.

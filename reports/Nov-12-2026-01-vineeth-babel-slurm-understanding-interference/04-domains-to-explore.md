@@ -5,7 +5,7 @@ precondition of ray interference: no negative coupling between domains, and no d
 document lists mixtures that supply one or both, with the base performance of Qwen3-1.7B and the evidence for each.
 
 **Main point.** We measured 16 domains at the base model and found no pair of naturally occurring domains with
-negative coupling. Hardness is easy to supply: a procedural task gives any success rate from 98% to 0%. Negative
+negative coupling. Hardness is easy to supply: procedural tasks give any success rate from 98% to 0%. Negative
 coupling must be built into the reward. Section 4 lists three ways to do it and one measured case.
 
 Evidence labels: **M** = measured in this study on Qwen3-1.7B; **P** = published, verified against the source
@@ -24,7 +24,8 @@ Ray interference (Schaul et al. 2019; `00-initial-theory.md`, §3) needs two thi
 ## 2. Measured: base performance and coupling of 16 domains
 
 Method. Qwen3-1.7B base, the first study's prompt, sampler and grader (boxed final answer, 12,288-token limit).
-100 problems per domain (AIME: 30), 16 answers per problem, 2 groups of 8. "Mixed groups" have at least one correct
+100 problems per domain (AIME: 30), 16 answers per problem, 2 groups of 8. The four pools of `qis-ui-probe2` have
+32 answers per problem and no gradient measurement. "Mixed groups" have at least one correct
 and one wrong answer; only they give a gradient. Coupling is the mean cosine between group gradients of different
 problems, in units of 10⁻⁴, with a 95% interval (bootstrap over problems). Jobs `qis-ui-probe`, `qis-ui-probe2`; code
 `src/qis/interf/build_probe_panel.py`, `grad_geom.py`, `summ_reward.py`; data
@@ -37,7 +38,10 @@ problems, in units of 10⁻⁴, with a 95% interval (bootstrap over problems). J
 | `mult4` | 4446 × 4505 | 76.6% | 148 | +102 [+67, +146] | +3.2 [−2.2, +8.6] | some success |
 | `mult5` | 29090 × 13198 | 42.7% | 164 | +73 [+39, +113] | +4.5 [−0.4, +10.6] | some success |
 | `mult6` | 788012 × 971041 | 5.5% | 59 | +104 [+33, +184] | +8.7 [+0.2, +18.3] | marginal |
-ZERO-ROWS
+| `mult7` (32 answers per problem, no gradients) | 9069615 × 9665140 | 1.8% (57 of 3,200) | not measured | not measured | not measured | marginal |
+| `mult8` (same) | 69516578 × 88506531 | 0.09% (3 of 3,200) | not measured | not measured | not measured | near zero |
+| `mult10` (same) | 3168637674 × 7985552153 | 0.47% (15 of 3,200) | not measured | not measured | not measured | near zero |
+| `add9x12`: sum of two 12-digit strings in base 9 (same) | 606254345275 + 304765415548, "written in base 9" | 0% (0 of 3,200) | none | no gradient exists | no gradient exists | none |
 | `add10`: sum of two 6-digit integers, digits 0–8 | 544127 + 112573 | 91.0% | 51 | +17 [−123, +249] | −1.9 [−10.2, +6.9] | solved |
 | `add9`: the same strings, read and answered in base 9 | same, "written in base 9" | 19.9% | 130 | +185 [+113, +270] | +10.2 [−1.3, +21.3] | marginal |
 | `mult10s`: product of two 2-digit strings, digits 0–8 | 65 × 20 | 96.3% | 32 | +304 [+46, +799] | +3.4 [−6.7, +14.1] | solved |
@@ -57,7 +61,9 @@ Four results.
    of the first study. Transfer inside the family should be large.
 3. **A stated rule change decouples a task.** Base-9 multiplication has cosine −1.5 to +4.3 with every base-10
    multiplication pool, and +45 with itself. The model treats it as a separate task, not as an opposing one.
-4. **Hardness is a clean dial.** pass@1 falls from 97.7% to 5.5% between 2 and 6 digits. ZERO-SENTENCE
+4. **Hardness is a clean dial.** pass@1 falls from 97.7% to 5.5% between 2 and 6 digits. At 7, 8 and 10 digits it is 1.8%, 0.09%
+   and 0.47%; the order of the last two is not monotone, and we did not find the reason. Base-9 addition of 12-digit
+   strings gave no correct answer in 3,200. This is the zero-start domain.
 
 ## 3. Published reference points
 
@@ -76,7 +82,33 @@ unknown.
 
 ## 4. How to obtain negative coupling
 
-BREVITY-SECTION
+**Measured: a brevity reward opposes the correctness reward (M).** We took the base-model answers of the four
+first-study pools (1,888 groups of 8 answers) and computed a second gradient for each group with a brevity reward:
+1 for an answer shorter than the median length of its group, 0 otherwise. Every group is mixed under this reward.
+We then compared correctness gradients with brevity gradients of *different* problems, so the two never share
+samples. Job `qis-ui-geom-short`; data `slurm-agentic-engineering/results/qis-ui-geom-short/summary.json`.
+
+| Correctness gradient of | Cosine with the brevity gradient of the same domain (10⁻⁴) | Range over the four brevity domains (10⁻⁴) | Intervals below zero | ρ (point estimates) |
+|---|---|---|---|---|
+| Remainder drills | −24.8 [−39.4, −11.7] | −16.4 to −25.4 | 4 of 4 | −0.79 to −0.86 |
+| Other subjects (control) | −18.7 [−33.2, −4.3] | −11.7 to −18.7 | 4 of 4 | −0.87 to −1.03 |
+| Hard algebra | −9.0 [−17.6, −0.4] | −4.9 to −9.0 | 1 of 4 | −0.26 to −0.85 |
+| Factoring drills | −3.2 [−12.7, +6.5] | −1.1 to −7.7 | 1 of 4 | −0.12 to −0.45 |
+
+1. All 16 means are negative, and 10 of 16 intervals lie below zero. This is the only negative coupling we measured
+   in either study.
+2. The size is comparable to the positive coupling between the math pools (+2.5 to +12.5), with the opposite sign.
+3. ρ is the estimated cosine between the *expected* gradients (`01`, §1.2). The ray-interference model needs
+   ρ = −1/2. Nine of the 16 point estimates are below −0.5. ρ has no interval here, and a value below −1 shows the
+   noise of the estimate.
+4. The brevity gradient is one strongly shared direction. Brevity gradients of different problems have cosines of
+   +38 to +91 in every domain pair (all intervals above zero). Inside one domain this is 6 to 22 times the value for
+   correctness gradients.
+5. The result agrees with the first study: its trained models wrote answers 3.3 times longer (`01`, §1.6).
+   Correctness training pushes length up; a brevity reward pushes it down.
+
+The dial is the weight λ of the brevity reward, or the share of batch slots that use it. A hard token cap is the
+limiting case.
 
 Two further constructions give a conflict by design. Neither is measured.
 
@@ -96,17 +128,18 @@ hard algebra pool of the first study unless stated.
 | 2 | `mult4` + `mult5` | none; positive transfer | some: 43% | M: cosine +76 | procedural |
 | 3 | `mult4` + `mult9` | none; no transfer (decoupled) | some: 79% | M: cosine +2.0 [−9.3, +14.3] | procedural |
 | 4 | Hard algebra + `arc` or `gsm8k` | none; no transfer | some: 66%, 81% | M: cosine +1.8, −0.3 | `allenai/ai2_arc`, `openai/gsm8k` |
-| 5 | `mult5` + `mult6`, then MULT-NEXT | starvation only: B gives few gradients, the cosine is positive | marginal: 5.5%; none: MULT-NEXT-RATE | M for the cosine; S for the outcome | procedural |
+| 5 | `mult5` + `mult6`, then `mult5` + `mult8` | starvation only: B gives few gradients, the cosine is positive | marginal: 5.5%; near zero: 0.09% | M for the cosine; S for the outcome | procedural |
 | 6 | Hard algebra + AIME 2024 | starvation only | marginal: 11.0% | M: cosine +8.5 [−12.2, +30.3] | `Maxwell-Jia/AIME_2024` (30 problems; use as a probe, not a training pool) |
-| 7 | Correctness + brevity on the same problems | BREVITY-ROW | some | BREVITY-EVID | first study pools |
+| 7 | Correctness + brevity reward (weight λ) on the first-study pools | some to great, set by λ | some | M: cosine −3 to −25, ρ −0.1 to −1.0 | first study pools |
 | 8 | Math + code | some (published at 7B: −3 to −7 points) | some: MBPP 55.4 (P) | P at 7B; not measured here | `google-research-datasets/mbpp`, `openai/openai_humaneval`; needs a sandboxed verifier |
 | 9 | Code + CountDown puzzle | great (published at 7B: training on CountDown alone lowers the code average by 38 points) | none at 7B: 1.05% (P) | P at 7B; not measured here | `open-thought/reasoning-gym` (`countdown`); needs a verifier for expressions |
-| 10 | `add10` rule against `add9` rule, no cue | great, by construction | some (A: 91%) and none (B answers are never sampled) | S | procedural (Section 4) |
-| 11 | Mixture 10 with B = MULT-NEXT in place of `add9` rule, plus brevity | both preconditions at once | none | S | procedural |
+| 10 | `add10` rule against `add9` rule, no cue | great, by construction | some (A: 91%); none expected for B, whose answers the base model rarely samples | S | procedural (Section 4) |
+| 11 | `add9` (20%) + `add9x12` (0%), each with a brevity reward of weight λ | both preconditions at once: negative coupling from the reward, zero start from B | none: 0 of 3,200 | M for both preconditions separately; S for the outcome. The brevity coupling was measured on the math pools, not on these tasks | procedural |
 
 Mixtures 1–4 are controls: they should show no interference, with and without transfer. Mixtures 5–6 supply the
 zero-start precondition alone. Mixtures 7–10 supply negative coupling alone, at three strengths. Mixture 11 supplies
-both and is the direct test of ray interference.
+both and is the direct test of ray interference. A curriculum from `add9` (6 digits) to `add9x12` gives B a path
+from 20% to 0% inside one family.
 
 ## 6. Other axes worth varying
 
