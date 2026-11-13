@@ -10,6 +10,10 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 0.4 Do not invent results, citations or numbers. Mark what is unverified.
 - 0.5 Records of the first study stay frozen. Control only this project's jobs. Times in EST. Owner writing standard.
 - 0.6 Gradient geometry on Qwen3-0.6B and Qwen3-4B is out of scope and is future work (owner amendment 2026-11-12).
+- 0.7 The finished 16-answer Qwen3-0.6B run is removed from the report (owner amendment 2026-11-12, 23:00 EST).
+- 0.8 New deliverables (same amendment): capacity work (literature first; run only experiments that discriminate, or
+      propose) included in `01` before it is final; `02` and `03` = 10–15 minute synopses of `00` and `01` with figures;
+      `04-domains-to-explore.md` (domain mixtures for ray interference on Qwen3-1.7B); `05-summary.md` (10 minutes).
 
 ## 1. Setup
 - 1.1 Read both reports, HANDOVER, the training code, the checkpoint inventory. [done]
@@ -46,3 +50,19 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 5.2 Audit: numbers in `01-understanding.md` against the tables (one pass done on 2026-11-12; corrections applied).
       Repeat after 4.4. [active]
 - 5.3 HANDOVER, STATE, recipes copied to `research/<ID>/recipes/`; commit. [done; repeat after 4.4]
+
+## 6. Capacity (owner amendment 0.8)
+- 6.1 Literature review: intrinsic dimension, rank and sparsity of updates, task vectors, superposition, scale. [active]
+- 6.2 Decide which measurements on stored checkpoints discriminate; run those, propose the rest. [pending, needs 6.1]
+- 6.3 Write the capacity section of `01-understanding.md`; remove the 0.6B run (0.7). [pending, needs 6.2]
+
+## 7. Domain mixtures for ray interference (`reports/<ID>/04-domains-to-explore.md`)
+- 7.1 Literature and dataset survey: reported negative transfer, candidate datasets, published small-model scores. [active]
+- 7.2 Measure what is cheap and decisive on Qwen3-1.7B base (pass rates; gradient coupling of a shortlist). [pending, needs 7.1]
+- 7.3 Write `04-domains-to-explore.md`. [pending]
+
+## 8. Synopses and summary
+- 8.1 `02` synopsis of `00-initial-theory.md`. [pending]
+- 8.2 `03` synopsis of `01-understanding.md`. [pending, needs 4.4 and 6.3]
+- 8.3 `05-summary.md`. [pending, needs 7.3, 8.1, 8.2]
+- 8.4 README updates, number audit, HANDOVER, commit. [pending]

@@ -7,8 +7,8 @@ explanations that remain. Background theory and literature: [`00-initial-theory.
 
 Status of the evidence (2026-11-12, 23:30 EST): Sections 1.1–1.4 and 1.6 rest on completed jobs. One result is
 partly pending and is marked **pending** where it belongs: the accuracy of four of the five averaged checkpoints
-(Section 1.5). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
-2026-11-12. They are future work (Section 3, M1).
+(Section 1.5). The owner removed all gradient measurements on Qwen3-0.6B and Qwen3-4B from this study on 2026-11-12.
+They are future work (Section 3, M1).
 
 ## Summary
 
@@ -66,8 +66,7 @@ question is what that shared direction is and when domain-specific signal exists
 ### 1.0 What we measured, and where the code is
 
 All measurements use forward and backward passes on stored checkpoints. No model was trained. One model size exists in
-the first study (Qwen3-1.7B), so "scale" is covered only by gradient measurements on other Qwen3 sizes at
-initialisation (Section 1.7).
+the first study (Qwen3-1.7B), so this study has no measurement on a second size (Section 1.7).
 
 | Measurement | Job (`qis-ui-…`) | Code | Table |
 |---|---|---|---|
@@ -76,7 +75,6 @@ initialisation (Section 1.7).
 | Log-probability of base answers under each trained model | `lp` | `src/qis/interf/logp_path.py`; `build/analyze_lp.py` | `tables/lp_summary.json` |
 | Precision test of the response along the update | `lpprec` | `src/qis/interf/logp_path.py --precision`; `build/analyze_lpprec.py` | `tables/lpprec.json` |
 | Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | pending |
-| Gradients on Qwen3-0.6B (16 answers) | `geom-q06` | as above | `tables/geom_summary.json` |
 
 Paths are relative to the repository root for `src/` and to this folder for `build/` and `tables/`. The job recipes
 are in `research/Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/recipes/`.
@@ -216,7 +214,7 @@ different problems share sits in the first two thirds of the network. The weight
 ![Gradient geometry by checkpoint](figures/g2_progress.png)
 
 *Figure G2. Left: mean cosine between different problems, by domain pair and checkpoint. Middle: same-problem cosine.
-Right: share of groups that are mixed. `q06` is Qwen3-0.6B at initialisation; the others are Qwen3-1.7B.*
+Right: share of groups that are mixed.*
 
 | Checkpoint | Pass rate H / R / U | Mixed groups | Same-problem cosine | Cross-domain cosine | Conflict rate, cross-domain |
 |---|---|---|---|---|---|
@@ -427,24 +425,9 @@ answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of th
 `qis-ui-soup`, 53 problems × 32 answers). The first study reported the truncation; the factor of 3.3 in length is
 new. It is a change that all domains share. We measured it for one trained model only.
 
-### 1.7 Model size: one underpowered measurement
+### 1.7 Model size and capacity
 
-| Model at initialisation | Answers per problem | Pass rate H / R / U / C | Mixed groups | Same-problem cosine | Cross-domain cosine | Conflict rate |
-|---|---|---|---|---|---|---|
-| Qwen3-0.6B | 16 | 0.04 / 0.17 / 0.16 / 0.30 | 238 | 0.018 (84 pairs) | 0.0007 | 48.6% |
-| Qwen3-1.7B | 16 | 0.19 / 0.59 / 0.56 / 0.54 | 374 | 0.031 (169 pairs) | 0.0009 | 49.0% |
-| Qwen3-1.7B | 64 | 0.21 / 0.59 / 0.58 / 0.54 | 1,512 | 0.020 (4,778 pairs) | 0.00045 | 49.4% |
-
-The 16-answer run on Qwen3-0.6B shows no conflict: the mean cross-domain cosine is positive and the conflict rate is
-below 50%. It cannot show more. The 16-answer and 64-answer runs on Qwen3-1.7B differ by a factor of 2 in the
-cross-domain cosine, so a 16-answer run does not resolve a difference between model sizes. Also, Qwen3-0.6B solves
-hard problems only 4% of the time, so only 19 hard groups are mixed.
-
-This study has no 64-answer measurement on Qwen3-0.6B and no measurement on Qwen3-4B. The owner removed both from the
-scope on 2026-11-12, and the queued jobs were cancelled before they started. Section 3 (M1) lists them as future work.
-
-A gradient at initialisation is also a limited test of the capacity hypothesis. That hypothesis is about what happens
-after many updates compete for the same parameters. Section 3 proposes the training experiment that tests it.
+CAPACITY-SECTION-PLACEHOLDER
 
 ### 1.8 What we could not measure
 
@@ -607,7 +590,7 @@ the cosine of the rounded updates.
 Two statements of the mandate deserve a direct answer.
 
 - *"Maybe gradient updates for our domains do not conflict at scale."* They do not conflict at 1.7B. Whether this is
-  because of scale is unknown. The 16-answer measurement at 0.6B shows no conflict either, with low power.
+  because of scale is unknown: no other size was measured.
 - *"Smaller models may show interference because updates must share the same parameters."* Our data cannot test this.
   One observation bears on it: at 1.7B the runs already share parameters and input directions heavily, and still do
   not conflict. Sharing parameters is not sufficient for conflict; the directions must also oppose.
@@ -674,8 +657,8 @@ conflicts.
 **Design.** Run arms H, R and U (the first study's recipe) on Qwen3-0.6B and Qwen3-4B, two seeds each. Add arm E1-c
 at each size if E1 shows conflict at 1.7B; a capacity effect is visible only where a conflict exists. Rebuild the
 pools for each size so that the base model's success rates match the first study's bands (hard: 2–12 of 32; practice:
-12–24 of 32). Without this, a smaller model has almost no mixed hard groups (0.6B solves the current hard pool 4% of
-the time), and the comparison confounds size with signal.
+12–24 of 32). Without this, a smaller model is likely to have few mixed hard groups, and the comparison confounds
+size with signal.
 
 | Outcome | If H2 holds | If S1/N1 hold | If scale does not matter |
 |---|---|---|---|

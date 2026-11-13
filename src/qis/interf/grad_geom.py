@@ -18,6 +18,9 @@ Adam preconditioning (--optim CKPT_DIR/optim.pt): with v the stored second-momen
 and P = 1 / (sqrt(v_hat) + eps), the scaled sketch holds g * sqrt(P). Its inner products are g_a^T P g_b, the
 first-order effect of an Adam-preconditioned step along g_a on the objective of group b (momentum ignored).
 
+A set label that ends with "~short" (for example hard~short=RECORDS:PANEL:hard) uses a brevity reward in place of
+correctness: r_i = 1 when answer i is shorter than the median length of its group. The samples are unchanged.
+
 Usage: python -m qis.interf.grad_geom --model BASE --ckpt DIR|base --out DIR
          --set hard=RECORDS.jsonl.gz:PANEL.json:hard [--set ...] [--optim FILE] [--max-prompts N]
 """
@@ -102,7 +105,14 @@ def main():
         for label, pid, problem, recs in sets:
             for h in range(len(recs) // N_HALF):
                 groups.append((label, pid, problem, h, recs[h * N_HALF:(h + 1) * N_HALF]))
-    rewards = [torch.tensor([[r["reward"] for r in g[4]]], dtype=torch.float32) for g in groups]
+    def group_rewards(g):
+        # Label suffix "~short": an alternative reward on the same samples. r_i = 1 when answer i is shorter than the
+        # median length of its group of 8, else 0. It measures how a brevity reward couples with the correctness reward.
+        if g[0].endswith("~short"):
+            n = torch.tensor([float(r["n_tokens"]) for r in g[4]])
+            return (n < float(np.median(n.numpy()))).float()[None]
+        return torch.tensor([[r["reward"] for r in g[4]]], dtype=torch.float32)
+    rewards = [group_rewards(g) for g in groups]
     mixed = [bool(0 < float(r.sum()) < N_HALF) for r in rewards]
     n_mixed = sum(mixed)
     print(f"groups {len(groups)} mixed {n_mixed}", flush=True)

@@ -131,3 +131,25 @@ supersedes the 2-general-GPU ceiling of the mandate for now.
 The 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B (jobs 11131757 and 11131734) were cancelled while pending.
 `01-understanding.md` lists them as future work (Section 3, M1). The 16-answer run on Qwen3-0.6B had already finished;
 its result stays in Section 1.7, marked underpowered.
+
+### 2026-11-12 (owner message, about 23:00 EST) — remove the 0.6B run; synopses; capacity; domain study; summary
+> > The finished 16-answer run on Qwen3-0.6B stays in Section 1.7, marked underpowered. Tell me if you want that removed as well.
+>
+> Yes, please remove it.
+>
+> After the last stage in
+> > Dev accuracy of the last three averaged checkpoints
+>
+> which appears to be the last task, finalize 01-understanding.md. Also write versions of 00-initial-theory.md and 01-understanding.md as 02 and 03 that can be skimmed through and parsed with 10-15 minutes (each). These new documents must serve as complete synopses of the more verbose documents, and must convey key information succintly with apt use of images and plots.
+>
+> Secondly, the question of "capacity" is curious, and you should propose or run a few experiments on the existing checkpoints that tell us something about this. Please review adjacent literature before doing so, and only finalize 01-understanding.md once this is completed and included. Please do not run spurious experiments just for the sake of running them, and exercise judgement as a vetted research scientist. Stating that such "capacity" experiments only make sense when we have trained with additional sizes, and instead proposing future experiments is also valid.
+>
+> Lastly, as an additional study, since we haven't achieved the pre-conditions for ray interference - i.e., negative coupling and near zero success rates on hard problems - it is of vital importance that we are able to curate domain mixtures that demonstrate this behavior for qwen-1.7B. You are tasked with finding such domains and dataset mixtures that allow interference to happen along different axes including (1) scale of interference (no interference, some interference, great interference), (2) hardness of tasks (some initial success, marginal initial success, no initial success), (3) other important axes for an empirical study of what does pre-training and model scale induce to cause many domains (hypotheses) to not have significant ray interference on a broad range of tasks.
+>
+> This new study will go within 04-domains-to-explore.md which should be short and succint document listing key information points such as existing performance and dataset names / links, etc. (you are to deem what "key" information constitutes) that we can use as reference for further evaluations.
+>
+> Finally end with a 05-summary.md that can be scanned wthin 10 minutes for broader direction and understanding, as well as synopses of all the previous markdown files.
+
+Deliverables added, all in `reports/<ID>/`: `02-*` (synopsis of `00-initial-theory.md`), `03-*` (synopsis of
+`01-understanding.md`), `04-domains-to-explore.md`, `05-summary.md`. `01-understanding.md` is final only after the
+averaged-checkpoint accuracy and the capacity work are included. The 16-answer Qwen3-0.6B run leaves the report.

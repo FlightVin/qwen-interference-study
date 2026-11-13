@@ -23,7 +23,7 @@ plt.rcParams.update({"font.size": 9, "axes.edgecolor": MUTED, "axes.labelcolor":
                      "grid.linewidth": 0.6, "axes.spines.top": False, "axes.spines.right": False,
                      "figure.dpi": 150, "savefig.bbox": "tight", "axes.titlesize": 9.5, "legend.frameon": False})
 RES = sys.argv[1]
-ORDER = ["q06", "base", "base64", "q4", "R-s101-r64", "H-s202-r64", "R-s202-r128", "U-s202-r128", "H-s101-r128"]
+ORDER = ["base", "base64", "R-s101-r64", "H-s202-r64", "R-s202-r128", "U-s202-r128", "H-s101-r128"]
 DOM = ["hard", "related", "unrelated", "control"]
 SHORT = {"hard": "H", "related": "R", "unrelated": "U", "control": "C"}
 out = {}
