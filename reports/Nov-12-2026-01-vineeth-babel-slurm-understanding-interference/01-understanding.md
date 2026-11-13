@@ -21,18 +21,18 @@ The measurements give five results.
 
 1. **Gradients of different problems are almost orthogonal, with a small positive mean.** The mean cosine between two
    group gradients is 0.020 for the same problem, 0.0003–0.0013 for two problems of one domain, and 0.0003–0.0007 for
-   two domains. Conflict rates between different problems are 48.7–49.8% (independent directions give 50%).
+   two domains. Conflict rates between different problems are 48.7–49.7% (independent directions give 50%).
 2. **Every run moved every domain in the helpful direction.** Each of the six trained models raises the probability of
    correct base-model answers relative to wrong ones, on all four domains (24 of 24 values positive; 17 of 24 with a
-   95% interval above zero). Each practice arm moves its own domain about 1.7–1.8 times more than the other runs do.
+   95% interval above zero). Each practice arm moves its own domain about 1.6–1.8 times more than the other runs do.
 3. **About 96% of each run's weight update is specific to that run.** Two runs share a cosine of 0.03–0.05, and the
-   arm does not matter. The shared 4% carries most of the effect: removing it from one run removes 75–96% of that
+   arm does not matter. The shared 4% carries most of the effect: removing it from one run removes 75–97% of that
    run's effect on the four domains.
 4. **The shared part formed in rounds 1–64.** First-half updates of two runs have cosine 0.044; second-half updates
    0.004. By round 64 the repeatable part of the gradient is no longer measurable at our sample size.
 5. **The model that is sampled and scored is a rounded copy of the trained weights.** Only 20–23% of the weights
    differ from the base model after rounding to BF16. Rounding makes the output change grow much faster than the
-   update: half of an update gives 8–9% of the output change with rounded weights and 26–27% in FP32.
+   update: half of an update gives 8–9% of the output change with rounded weights and 25–27% in FP32.
 
 The verdicts on the hypotheses of the mandate:
 
@@ -161,7 +161,7 @@ type with 95% intervals (64-answer run); X\* = two groups of the same problem. C
 | Pair type (base model, 64 answers) | Pairs | Mean cosine | 95% interval | Conflict rate |
 |---|---|---|---|---|
 | Same problem, independent samples | 4,778 | 0.0201 | — | 40–44% |
-| H–H, different problems | 40,188 | 0.00025 | [−0.00033, 0.00100] | 49.8% |
+| H–H, different problems | 40,188 | 0.00025 | [−0.00033, 0.00100] | 49.7% |
 | R–R, different problems | 114,301 | 0.00085 | [0.00019, 0.00159] | 49.2% |
 | U–U, different problems | 114,307 | 0.00125 | [0.00042, 0.00228] | 48.7% |
 | C–C, different problems | 33,239 | 0.00042 | [−0.00026, 0.00112] | 49.6% |
@@ -281,7 +281,7 @@ of mixed groups are 34 (hard), 61 (related), 59 (unrelated), 33 (control). Inter
 2. **Each practice arm moved its own domain more than the other runs did, on average.** The R runs score 0.0101–0.0115 on the related pool against
    0.0037–0.0112 for the other four runs. The U runs score 0.0066–0.0069 on the unrelated pool against 0.0030–0.0051.
    The ranges overlap for one run (H-s101 scores 0.0112 on the related pool). The ratio of the means is 1.8 for R and
-   1.7 for U. This is domain-specific learning, on top of the common gain.
+   1.6 for U. This is domain-specific learning, on top of the common gain.
    The first study's probes did not show it; the probes started at 81% and had little room.
 3. **The log-probability of base answers fell for correct and wrong answers alike.** Under the trained models the
    mean token log-probability of a base answer is lower by 0.11–0.28 nats, for all domains. S_D comes from the small difference between the two: for R-s101 on the hard pool, correct answers fall by 0.146 and wrong ones by 0.167. So the main
@@ -319,9 +319,9 @@ applied (Section 1.6). Right: S_D for weight sets of equal norm.*
 | loo5 (norm 0.65) | 0.0038 | 0.0027 | 0.0032 | 0.0014 |
 
 1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (mean6x against R-s101). The same holds at the smaller norm (mean6 against
-   scaled-R101: 1.8–3.6 times).
+   scaled-R101: 1.9–3.6 times).
 2. **Removing the shared part removes most of the effect.** resid-R101 keeps 88% of the direction of the R-s101
-   update, and its norm is larger (1.36 against 1.26). Its S falls by 95% on hard, 79% on related, 96% on unrelated and 75% on control.
+   update, and its norm is larger (1.36 against 1.26). Its S falls by 96% on hard, 79% on related, 97% on unrelated and 75% on control.
 3. **A small effect remains on the related pool and on control.** The residual of this R run keeps a positive effect on the related pool
    (0.0024, interval [0.0005, 0.0043]) and on control (0.0017, [0.0003, 0.0031]). On hard and unrelated it is zero
    within the interval.
@@ -333,7 +333,7 @@ direct test. Jobs `qis-ui-soup` and `qis-ui-soup-b` evaluate each model on the f
 
 | Model | Update norm | pass@1 | pass@8 | Mean answer length (tokens) | Answers cut at the limit |
 |---|---|---|---|---|---|
-| Base | 0 | 41.4% | 65.3% | 1,734 | 0% |
+| Base | 0 | 41.4% | 65.3% | 1,735 | 0% |
 | R-s101, round 128 | 1.26 | 72.4% | 89.9% | 5,753 | 19.0% |
 | mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
 | scaled-R101 (R-s101 at the norm of mean6) | 0.60 | 52.7% | 78.3% | 2,947 | 0.4% |
@@ -371,7 +371,7 @@ answers (Figure L2, left).
 |---|---|---|
 | Fall in log-probability of base answers | 0.076–0.100 | 4.9–7.3 |
 | A smooth second-order model (fall ∝ α²) | 0.25 | 4 |
-| S_D (median; range) | 0.13 (0.02–0.31) | 2.1 (−1.9 to 6.5) |
+| S_D (median; range) | 0.12 (0.02–0.31) | 2.1 (−1.9 to 6.5) |
 | A first-order model (S ∝ α) | 0.5 | 2 |
 
 Half of the update produces 8–10% of the output change, not 25–50%. Two facts explain why this can happen.
@@ -429,8 +429,8 @@ The same holds for the surrogate S on these two domains (pooled; 95% interval ov
 | Weights; compute | Update | S at α = 0.5 | S at α = 1 | S at α = 2 |
 |---|---|---|---|---|
 | FP32; FP32 | R-s101 | 0.0075 [0.0053, 0.0097] | 0.0146 [0.0080, 0.0213] | 0.0022 [−0.0141, 0.0179] |
-| FP32; FP32 | mean6 | 0.0047 [0.0029, 0.0064] | 0.0169 [0.0116, 0.0224] | 0.0320 [0.0181, 0.0463] |
-| Rounded to BF16; FP32 | R-s101 | 0.0014 [0.0009, 0.0018] | 0.0105 [0.0073, 0.0137] | 0.0061 [−0.0081, 0.0193] |
+| FP32; FP32 | mean6 | 0.0047 [0.0029, 0.0064] | 0.0169 [0.0116, 0.0224] | 0.0319 [0.0181, 0.0463] |
+| Rounded to BF16; FP32 | R-s101 | 0.0014 [0.0009, 0.0018] | 0.0105 [0.0073, 0.0137] | 0.0060 [−0.0081, 0.0193] |
 | Rounded to BF16; FP32 | mean6 | 0.0003 [0.0002, 0.0005] | 0.0031 [0.0020, 0.0042] | 0.0254 [0.0177, 0.0327] |
 
 In FP32, half of the R-s101 update gives 51% of its S, as the first-order model predicts. For mean6 it gives 28%, which
@@ -442,7 +442,7 @@ The single-threshold rounding model above is too simple at α = 2. It predicts 3
 on these two domains, and FP32 weights give 2.9–3.3. The faster growth at large α is therefore also an effect of
 rounding.
 
-**Answers became much longer.** On the dev set the base model's answers have a mean length of 1,734 tokens. The
+**Answers became much longer.** On the dev set the base model's answers have a mean length of 1,735 tokens. The
 answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of them reach the 12,288-token limit (job
 `qis-ui-soup`, 53 problems × 32 answers). The first study reported the truncation; the factor of 3.3 in length is
 new. It is a change that all domains share. We measured the length for the models of Section 1.5 only.
@@ -483,7 +483,7 @@ domains (1,888 answers: 8 for each of the 236 problems of the four pools). Code:
 | Part of the update applied | mean6: share of squared norm | mean6: S relative to full | mean6: fall relative to full | R-s101: share of squared norm | R-s101: S relative to full | R-s101: fall relative to full |
 |---|---|---|---|---|---|---|
 | Rank 1 per matrix | 11% | 0.27 [0.23, 0.31] | 0.27 | 8% | 0.33 [0.28, 0.41] | 0.19 |
-| Rank 8 per matrix | 27% | 0.67 [0.62, 0.70] | 0.69 | 23% | 0.77 [0.70, 0.87] | 0.60 |
+| Rank 8 per matrix | 27% | 0.67 [0.62, 0.70] | 0.68 | 23% | 0.77 [0.70, 0.87] | 0.60 |
 | Rank 64 per matrix | 55% | 0.87 [0.85, 0.89] | 0.88 | 53% | 0.94 [0.91, 0.98] | 0.85 |
 | Remainder after rank 1 | 89% | 0.28 [0.23, 0.32] | 0.24 | 92% | 0.50 [0.44, 0.60] | 0.37 |
 | Remainder after rank 8 | 73% | 0.07 [0.05, 0.10] | 0.04 | 77% | 0.13 [0.09, 0.17] | 0.08 |
@@ -516,7 +516,7 @@ The table gives four results.
    change (Sections 1.4 and 1.5), so nothing competed for these directions.
 3. The rank-r directions come from the finished update. A run restricted to rank 8 from the start may not find them.
 4. Three earlier results point the same way. The update is 0.05% of the weight norm. Two runs share 49% of their
-   top-8 input subspace per matrix. The shared 4% of the update carries 75–96% of the effect.
+   top-8 input subspace per matrix. The shared 4% of the update carries 75–97% of the effect.
 
 **Conclusion for this study.** A capacity limit can matter only where two domains need changes that oppose each
 other. We found no such pair, so the capacity hypothesis is neither supported nor refuted. A test needs (a) a pair
@@ -679,7 +679,7 @@ the cosine of the rounded updates.
 | S1. The domains are too similar | no domain structure in gradients or in effects | cross-domain ≈ within-domain overlap; control subjects gain as much as trained ones | **Consistent.** The domains are similar in what the training signal asks for, even where the subject differs |
 | S2. Training too short or learning rate too small | small weight change; outputs change little | weight change 0.05% of the norm, but dev pass@1 41% → 72% and answers 3.3 times longer | **Not consistent** as stated: the outputs changed a lot. A longer run could still meet conflict later; untested |
 | S3. The evaluation cannot detect interference | effects below the noise of the test | one update changes few effective weights (Section 2.5); repeat noise was 2.5–3.1 points | **Consistent** for the one-update test. **Not the explanation** of the main result, since the delivered effects are positive |
-| N1. The run learned one generic behaviour (new) | one shared direction carries the effect on all domains | removing the shared part removes 75–96% of the effect; all domains move together | **Consistent** |
+| N1. The run learned one generic behaviour (new) | one shared direction carries the effect on all domains | removing the shared part removes 75–97% of the effect; all domains move together | **Consistent** |
 | N2. Updates are mostly sampling noise (new) | low cosine between runs; averaging helps | cosine 0.04; averaged update 2.4–3.3 times more effective at equal norm | **Consistent** for log-probabilities and for dev accuracy at norm 0.60 (22.2 against 11.3 points); accuracy at norm 1.26 **pending** |
 
 Two statements of the mandate deserve a direct answer.

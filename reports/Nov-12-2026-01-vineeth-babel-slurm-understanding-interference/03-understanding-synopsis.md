@@ -76,7 +76,7 @@ Full text: `01-understanding.md`, Section 1.1.
 | Pair type (base model, 64 answers) | Mean cosine | Conflict rate |
 |---|---|---|
 | Same problem, independent samples | 0.0201 | 40–44% |
-| Two problems of one domain (H–H, R–R, U–U, C–C) | 0.00025 to 0.00125 | 48.7–49.8% |
+| Two problems of one domain (H–H, R–R, U–U, C–C) | 0.00025 to 0.00125 | 48.7–49.7% |
 | Two domains (six pairs) | 0.00027 to 0.00066 | 49.1–49.5% |
 
 ![Gradient cosines at the base model](figures/g1_cos_hist.png)
@@ -139,7 +139,7 @@ Bold marks the domain that the arm practised in slots 8–15. All arms train on 
 *Figure L1. Every cell of S_D, for each trained model (rows) and domain (columns), is positive.*
 
 1. **No negative entry.** All 24 values are positive; 17 have a 95% interval above zero.
-2. **Each practice arm moved its own domain more than the other runs did, on average.** The ratio of the means, own arm against the other four runs, is 1.8 for R and 1.7 for U. This is domain-specific learning, on top of the common gain.
+2. **Each practice arm moved its own domain more than the other runs did, on average.** The ratio of the means, own arm against the other four runs, is 1.8 for R and 1.6 for U. This is domain-specific learning, on top of the common gain.
 3. **The log-probability of base answers fell for correct and wrong answers alike.** The fall is 0.11–0.28 nats per token, for all domains. S_D comes from the small difference between the two.
 
 Full text: `01-understanding.md`, Section 1.4.
@@ -169,16 +169,16 @@ If the useful part of an update is the shared part, averaging the six updates ke
 
 *Figure L2. Left: the fall in log-probability grows much faster than the applied fraction α of the update (Section 2.6); right: at equal norm the averaged update gives a larger S_D than one run.*
 
-1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (`mean6x` against R-s101). The same holds at the smaller norm (`mean6` against `scaled-R101`: 1.8–3.6 times).
-2. **Removing the shared part removes most of the effect.** `resid-R101` keeps 88% of the direction of the R-s101 update, with a larger norm. Its S falls by 95% on hard, 79% on related, 96% on unrelated and 75% on control.
+1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (`mean6x` against R-s101). The same holds at the smaller norm (`mean6` against `scaled-R101`: 1.9–3.6 times).
+2. **Removing the shared part removes most of the effect.** `resid-R101` keeps 88% of the direction of the R-s101 update, with a larger norm. Its S falls by 96% on hard, 79% on related, 97% on unrelated and 75% on control.
 3. **A small effect remains on the related pool and on control.** The residual keeps a positive effect on the related pool and on control. On hard and unrelated it is zero within the interval.
 4. **An average that never saw R-s101 does as well as one that did.** `loo5` matches `mean6` on every domain.
 
-The direct test is accuracy. Job `qis-ui-soup` evaluates each model on the first study's dev panel (53 problems × 32 answers, 12,288-token limit). Six of seven models are done.
+The direct test is accuracy. Jobs `qis-ui-soup` and `qis-ui-soup-b` evaluate each model on the first study's dev panel (53 problems × 32 answers, 12,288-token limit). Six of seven models are done.
 
 | Model | Update norm | pass@1 | pass@8 | Mean answer length (tokens) | Answers cut at the limit |
 |---|---|---|---|---|---|
-| Base | 0 | 41.4% | 65.3% | 1,734 | 0% |
+| Base | 0 | 41.4% | 65.3% | 1,735 | 0% |
 | R-s101, round 128 | 1.26 | 72.4% | 89.9% | 5,753 | 19.0% |
 | mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
 | scaled-R101 (R-s101 at the norm of mean6) | 0.60 | 52.7% | 78.3% | 2,947 | 0.4% |
@@ -270,7 +270,7 @@ Full text: `01-understanding.md`, Sections 2.1–2.5.
 | S1. The domains are too similar | cross-domain ≈ within-domain overlap; control subjects gain as much as trained ones | **Consistent** |
 | S2. Training too short or learning rate too small | weight change 0.05% of the norm, but dev pass@1 41% → 72% and answers 3.3 times longer | **Not consistent** as stated: the outputs changed a lot. A longer run could still meet conflict later; untested |
 | S3. The evaluation cannot detect interference | one update changes few effective weights; repeat noise was 2.5–3.1 points | **Consistent** for the one-update test. **Not the explanation** of the main result |
-| N1. The run learned one generic behaviour (new) | removing the shared part removes 75–96% of the effect; all domains move together | **Consistent** |
+| N1. The run learned one generic behaviour (new) | removing the shared part removes 75–97% of the effect; all domains move together | **Consistent** |
 | N2. Updates are mostly sampling noise (new) | cosine 0.04; averaged update 2.4–3.3 times more effective at equal norm | **Consistent** for log-probabilities and for dev accuracy at norm 0.60 (22.2 against 11.3 points); accuracy at norm 1.26 **pending** |
 
 The gradient updates do not conflict at 1.7B; whether this is because of scale is unknown. Sharing parameters is not sufficient for conflict; the directions must also oppose.
@@ -284,7 +284,7 @@ Full text: `01-understanding.md`, Section 2.6.
 3. **Why R and U flipped between seeds in the first study.** If 96% of an update is run-specific noise, a 4-point flip needs no arm effect (supported in direction; the size is not derived).
 4. **The size of the response at large updates.** Doubling the update multiplies the output change by 5–7. Rounding causes the excess over α²; the rounding model does not reproduce its size.
 
-Section 1.9 of the source lists five mechanistic studies that address points 1 and 2.
+Section 1.9 of the source lists five mechanistic studies that address point 2. The rerun with early checkpoints (M1) addresses point 1.
 
 Full text: `01-understanding.md`, Sections 1.8, 1.9 and 2.7.
 

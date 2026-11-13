@@ -18,15 +18,15 @@ coupling with the correctness reward. Base-9 addition of 12-digit strings has a 
 
 | # | Finding | Evidence | Strength |
 |---|---|---|---|
-| 1 | Gradients of different domains do not conflict at the base model. Mean cosine 0.0003–0.0007; conflict rates 48.7–49.8% (independent directions: 50%) | 1,512 group gradients, 64 answers per problem (`01`, §1.2) | measured; intervals for the hard pool are wide |
+| 1 | Gradients of different domains do not conflict at the base model. Mean cosine 0.0003–0.0007; conflict rates 49.1–49.5% (independent directions: 50%) | 1,512 group gradients, 64 answers per problem (`01`, §1.2) | measured; intervals for the hard pool are wide |
 | 2 | Every trained model helped every domain: 24 of 24 effects positive, 17 with a 95% interval above zero | log-probability of base answers under six trained models (`01`, §1.4) | measured |
-| 3 | Two runs share 4% of their weight update (cosine 0.03–0.05), whatever their arm. That shared part carries 75–96% of a run's effect | six stored checkpoints; averaged weight sets (`01`, §1.1, §1.5) | measured |
+| 3 | Two runs share 4% of their weight update (cosine 0.03–0.05), whatever their arm. That shared part carries 75–97% of a run's effect | six stored checkpoints; averaged weight sets (`01`, §1.1, §1.5) | measured |
 | 4 | The shared part also carries the accuracy gain. At equal norm the mean of six runs gains 22.2 points of dev pass@1, one run 11.3. With the shared part removed, a run gains 1.9 points against 31.0 | dev panel, 53 problems × 32 answers (`01`, §1.5) | measured; no intervals |
 | 5 | The shared part formed in rounds 1–64. Later updates of two runs have cosine 0.004 | update halves of two runs (`01`, §1.1) | measured on two runs |
-| 6 | The model that is sampled is a BF16-rounded copy. Rounding the weights explains why half of an update gives 8–9% of the output change; in FP32 it gives 26–27% | precision test (`01`, §1.6) | measured; cause confirmed |
+| 6 | The model that is sampled is a BF16-rounded copy. Rounding the weights explains why half of an update gives 8–9% of the output change; in FP32 it gives 25–27% | precision test (`01`, §1.6) | measured; cause confirmed |
 | 7 | The learned change needs little of the model: 8 directions per weight matrix (0.6% of the parameters) carry 67–77% of the effect | rank-r parts of the update (`01`, §1.7) | measured; directions chosen after training |
 | 8 | Capacity is untested. Every published test varies model size, width or the trainable subspace | literature review (`01`, §1.7) | one model size exists |
-| 9 | Among 16 further domains, no pair has negative coupling under the correctness reward | base-model probe (`04`, §2) | measured; wide intervals for 4 domains |
+| 9 | Among 12 further domains with measured gradients, no pair has negative coupling under the correctness reward | base-model probe (`04`, §2) | measured; wide intervals for 4 domains |
 | 10 | A brevity reward opposes the correctness reward: 16 of 16 cosines negative, 10 intervals below zero | same base answers, second reward (`04`, §4) | measured at the base model only |
 | 11 | Success of the base model falls from 97.7% (2-digit products) to 5.5% (6-digit), 0.09% (8-digit) and 0 of 3,200 (12-digit base-9 addition) | probes (`04`, §2) | measured |
 
@@ -48,8 +48,9 @@ pre-training and scale remove it". Three steps follow.
 1. **Build the conflict, with a dial.** Train correctness together with a brevity reward of weight λ, and the
    contradictory-rule mixture of `04`, §4. Measure the coupling at the base model before each run. This gives a
    dose-response curve of harm against measured conflict (`04`, mixtures 7 and 10; `01`, E1).
-2. **Add the zero-start domain.** Combine a conflict with a domain the model cannot solve (`04`, mixtures 5 and 11;
-   `01`, E3). This is the direct test of ray interference.
+2. **Add the zero-start domain.** Combine a conflict with a domain the model cannot solve (`04`, mixture 11). This
+   is the direct test of ray interference. Mixtures 5 and 6 of `04` and E3 of `01` test the zero-start domain
+   alone, without a built conflict.
 3. **Then vary capacity.** Repeat the clearest conflict at Qwen3-0.6B and 4B (`01`, E2) and at update rank 1, 8 and
    64 (`01`, E6). Capacity can matter only where a conflict exists, so this step comes last.
 
@@ -92,7 +93,7 @@ main formulas.
 figures, the verdict table and one table of all proposed experiments.
 
 **[`04-domains-to-explore.md`](04-domains-to-explore.md): domains and mixtures.** A reference table of 16 domains
-with base pass rates and gradient coupling on Qwen3-1.7B, published reference points, three ways to obtain negative
+with base pass rates (gradient coupling for 12) on Qwen3-1.7B, published reference points, three ways to obtain negative
 coupling (one measured), 11 candidate mixtures ordered by expected interference and by starting success, and nine
 further axes to vary. Its main point: hardness is easy to supply with procedural tasks; negative coupling must be
 built into the reward.

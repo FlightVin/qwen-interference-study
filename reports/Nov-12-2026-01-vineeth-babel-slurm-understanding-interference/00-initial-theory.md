@@ -11,8 +11,8 @@ from the simulations: [`tables/theory_numbers.json`](tables/theory_numbers.json)
 
 ## Summary
 
-1. **"Interference" has six definitions in the literature, and they are not equivalent.** They measure a gradient
-   angle, an outcome, a kernel, a representation, a weight vector, or a learning dynamic (§1).
+1. **"Interference" has seven definitions in the literature, and they are not equivalent.** They measure a gradient
+   angle, an outcome (two forms), a kernel, a representation, a weight vector, or a learning dynamic (§1).
 2. **To first order, all of them reduce to one number:** the inner product of two gradients. A step on task A changes
    the loss of task B by −η⟨g_B, g_A⟩ (§2.1). The sign of this number is the sign of the interaction.
 3. **A negative inner product is not enough for harm.** Harm needs more. In supervised multi-task learning it needs

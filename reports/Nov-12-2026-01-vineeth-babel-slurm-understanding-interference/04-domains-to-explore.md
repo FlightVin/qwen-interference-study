@@ -4,7 +4,7 @@ Purpose: a reference list of domains and dataset mixtures for the next experimen
 precondition of ray interference: no negative coupling between domains, and no domain near zero success. This
 document lists mixtures that supply one or both, with the base performance of Qwen3-1.7B and the evidence for each.
 
-**Main point.** We measured 16 domains at the base model and found no pair of naturally occurring domains with
+**Main point.** We measured 16 domains at the base model (pass rates for all 16, gradient coupling for 12) and found no pair of naturally occurring domains with
 negative coupling. Hardness is easy to supply: procedural tasks give any success rate from 98% to 0%. Negative
 coupling must be built into the reward. Section 4 lists three ways to do it and one measured case.
 
@@ -35,7 +35,7 @@ problems, in units of 10⁻⁴, with a 95% interval (bootstrap over problems). J
 |---|---|---|---|---|---|---|
 | `mult2`: product of two 2-digit integers | 18 × 40 | 97.7% | 27 of 200 | +121 [−160, +557] | +1.1 [−10.8, +11.4] | solved |
 | `mult3` | 408 × 125 | 90.8% | 87 | +128 [+55, +239] | +8.3 [+0.1, +17.5] | solved |
-| `mult4` | 4446 × 4505 | 76.6% | 148 | +102 [+67, +146] | +3.2 [−2.2, +8.6] | some success |
+| `mult4` | 4446 × 4505 | 76.6% | 148 | +102 [+67, +146] | +3.2 [−2.2, +8.5] | some success |
 | `mult5` | 29090 × 13198 | 42.7% | 164 | +73 [+39, +113] | +4.5 [−0.4, +10.6] | some success |
 | `mult6` | 788012 × 971041 | 5.5% | 59 | +104 [+33, +184] | +8.7 [+0.2, +18.3] | marginal |
 | `mult7` (32 answers per problem, no gradients) | 9069615 × 9665140 | 1.8% (57 of 3,200) | not measured | not measured | not measured | marginal |
@@ -46,7 +46,7 @@ problems, in units of 10⁻⁴, with a 95% interval (bootstrap over problems). J
 | `add9`: the same strings, read and answered in base 9 | same, "written in base 9" | 19.9% | 130 | +185 [+113, +270] | +10.2 [−1.3, +21.3] | marginal |
 | `mult10s`: product of two 2-digit strings, digits 0–8 | 65 × 20 | 96.3% | 32 | +304 [+46, +799] | +3.4 [−6.7, +14.1] | solved |
 | `mult9`: the same strings in base 9 | same, "written in base 9" | 78.8% | 134 | +45 [+16, +79] | +3.1 [−2.3, +9.2] | some success |
-| `gsm8k`: word problems (`openai/gsm8k`, test, first 100) | | 81.1% | 71 | −9 [−35, +26] | −0.3 [−7.4, +6.0] | some success |
+| `gsm8k`: word problems (`openai/gsm8k`, test, first 100) | | 81.1% | 71 | −9 [−35, +26] | −0.2 [−7.4, +6.0] | some success |
 | `arc`: science multiple choice (`allenai/ai2_arc`, ARC-Challenge test) | | 66.2% | 143 | +92 [+60, +129] | +1.8 [−3.0, +6.3] | some success |
 | `aime24`: competition math (`Maxwell-Jia/AIME_2024`) | | 11.0% | 15 of 60 | +45 [−72, +138] | +8.5 [−12.2, +30.3] | marginal |
 | Hard algebra, factoring drills, remainder drills, other subjects (first study pools) | | 41% on the dev set | 1,512 of 1,888 (64 answers) | +2.5 to +12.5 | +2.5 [−4.6, +10.8] (hard with hard) | some success |
@@ -104,7 +104,7 @@ samples. Job `qis-ui-geom-short`; data `slurm-agentic-engineering/results/qis-ui
 4. The brevity gradient is one strongly shared direction. Brevity gradients of different problems have cosines of
    +38 to +91 in every domain pair (all intervals above zero). Inside one domain this is 6 to 22 times the value for
    correctness gradients.
-5. The result agrees with the first study: its trained models wrote answers 3.3 times longer (`01`, §1.6).
+5. The result agrees with the first study: its trained model R-s101 wrote answers 3.3 times longer (`01`, §1.6).
    Correctness training pushes length up; a brevity reward pushes it down.
 
 The dial is the weight λ of the brevity reward, or the share of batch slots that use it. A hard token cap is the
@@ -127,7 +127,7 @@ hard algebra pool of the first study unless stated.
 | 1 | Hard algebra + factoring drills | none (reference) | some: 12–24 of 32 | M: cosine ≥ 0, first study outcome | first study pools |
 | 2 | `mult4` + `mult5` | none; positive transfer | some: 43% | M: cosine +76 | procedural |
 | 3 | `mult4` + `mult9` | none; no transfer (decoupled) | some: 79% | M: cosine +2.0 [−9.3, +14.3] | procedural |
-| 4 | Hard algebra + `arc` or `gsm8k` | none; no transfer | some: 66%, 81% | M: cosine +1.8, −0.3 | `allenai/ai2_arc`, `openai/gsm8k` |
+| 4 | Hard algebra + `arc` or `gsm8k` | none; no transfer | some: 66%, 81% | M: cosine +1.8, −0.2 | `allenai/ai2_arc`, `openai/gsm8k` |
 | 5 | `mult5` + `mult6`, then `mult5` + `mult8` | starvation only: B gives few gradients, the cosine is positive | marginal: 5.5%; near zero: 0.09% | M for the cosine; S for the outcome | procedural |
 | 6 | Hard algebra + AIME 2024 | starvation only | marginal: 11.0% | M: cosine +8.5 [−12.2, +30.3] | `Maxwell-Jia/AIME_2024` (30 problems; use as a probe, not a training pool) |
 | 7 | Correctness + brevity reward (weight λ) on the first-study pools | some to great, set by λ | some | M: cosine −3 to −25, ρ −0.1 to −1.0 | first study pools |
@@ -152,7 +152,7 @@ from 20% to 0% inside one family.
 | Model size | the capacity hypothesis predicts more harm in a smaller model at equal conflict | Qwen3-0.6B, 1.7B, 4B with pools rebuilt to equal start rates (`01`, E2) |
 | Update rank | a capacity dial at one size | LoRA rank 1, 8, 64 (`01`, E6) |
 | Mixture ratio and order | POPE and Yang et al. report effects of the easy share and of the training order | share of B in the batch: 1/8, 1/2, 7/8; A then B against mixed |
-| Answer length | all trained models of the first study wrote 3.3 times longer answers; length is a shared resource under a token limit | token cap; brevity reward |
+| Answer length | the trained model R-s101 of the first study wrote 3.3 times longer answers (measured for one model); length is a shared resource under a token limit | token cap; brevity reward |
 | Weight precision | BF16 rounding hides small updates (`01`, §1.6) and may hide or delay interference | FP32 against BF16 forward pass (`01`, E4) |
 
 ## 7. Recommended first set
