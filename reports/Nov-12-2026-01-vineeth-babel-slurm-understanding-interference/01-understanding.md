@@ -39,7 +39,7 @@ The verdicts on the hypotheses of the mandate:
 | Hypothesis | Verdict |
 |---|---|
 | Gradient alignment from pre-training | Supported in a weak form: no conflict, small positive overlap. Not supported in a strong form: the cosines are near zero, not large |
-| Capacity | Not needed to explain our result, because there is no conflict to absorb. Not tested: we have one model size |
+| Capacity | Not needed to explain our result, because there is no conflict to absorb. Not tested: we have one model size. The learned change needs little of the model: 8 directions per weight matrix (0.6% of the parameters) carry 67–77% of the effect (Section 1.7) |
 | Domains too similar | Supported, and stronger than expected: even geometry and probability problems share the direction |
 | Training too short, learning rate too small | Partly supported: the update is small (0.05% of the weight norm), but the outputs changed a lot, so "too small to matter" is false |
 | Evaluation cannot detect interference | Supported for the one-update test of the first study. Not the reason for the main result |
@@ -74,6 +74,7 @@ the first study (Qwen3-1.7B), so this study has no measurement on a second size 
 | Group gradients at the base model and five trained checkpoints | `geom-base`, `geom-base64`, `geom-<run>-r64/r128` | `src/qis/interf/grad_geom.py`, `sketch.py`, `summ.py`; `build/analyze_geom.py`, `build/analyze_geom_extra.py` | `tables/geom_summary.json`, `tables/geom_extra.json` |
 | Log-probability of base answers under each trained model | `lp` | `src/qis/interf/logp_path.py`; `build/analyze_lp.py` | `tables/lp_summary.json` |
 | Precision test of the response along the update | `lpprec` | `src/qis/interf/logp_path.py --precision`; `build/analyze_lpprec.py` | `tables/lpprec.json` |
+| Rank-r parts of the update (Section 1.7) | `lowrank-mean6`, `lowrank-R101` | `src/qis/interf/lowrank_path.py`; `build/analyze_lowrank.py` | `tables/lowrank.json` |
 | Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | pending |
 
 Paths are relative to the repository root for `src/` and to this folder for `build/` and `tables/`. The job recipes
@@ -425,9 +426,81 @@ answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of th
 `qis-ui-soup`, 53 problems × 32 answers). The first study reported the truncation; the factor of 3.3 in length is
 new. It is a change that all domains share. We measured it for one trained model only.
 
-### 1.7 Model size and capacity
+### 1.7 Model size and capacity: what one model size can show
 
-CAPACITY-SECTION-PLACEHOLDER
+**Main point.** Our checkpoints cannot test the capacity hypothesis. They can measure how much of the model the
+learned change needs. It needs little: 0.6% of the parameters carry two thirds of the effect.
+
+**What the literature tests, and how.** We reviewed the work that links model size to interference (verified entries:
+`research/Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/LIT-NOTES.md`). Every result that supports
+"larger models interfere less" comes from a comparison across sizes, widths or trainable subspaces.
+
+| Source | What was varied | Result |
+|---|---|---|
+| Aghajanyan et al. 2020 | model size; training in a random subspace | the subspace dimension that reaches 90% of full performance on MRPC falls from 1,608 (BERT-Base) to 207 (RoBERTa-Large) |
+| Ortiz-Jimenez et al. 2023 | CLIP model size | "larger models are more weight disentangled" |
+| Yadav et al. 2024 | PaLM-2 size, 1B to 64B | "larger models are consistently easier to merge" |
+| Shaham et al. 2023 (abstract only) | translation model size against data size | substantial interference mainly when the model is very small relative to the data |
+| Luo et al. 2023 | BLOOMZ size, 1B to 7B | the opposite direction: forgetting grows with size (the authors note the higher starting score as a possible cause) |
+
+No source tests capacity on checkpoints of one size. The direction of the size effect is also not settled (last row).
+
+**Sparse updates are not evidence of spare capacity.** Mukherjee et al. 2025 report that RL fine-tuning changes only
+5–30% of the parameters and read this as a sub-network. Their models are stored in BF16. Shenfeld et al. 2025 show
+that the sparsity comes from BF16 training and disappears in FP32 with equal performance. Miahi and Belilovsky 2026
+and Gao and Gao 2026 report the same rounding effect under GRPO, the latter on Qwen3-1.7B. Zhu et al. 2025 qualify
+it: rounding amplifies the sparsity and does not explain all of it. Our data agree with the rounding explanation:
+20–23% of the BF16 weights changed, the FP32 update is dense, and rounding alone reproduces the training-setup
+response (Section 1.6). We therefore do not count the 20–23% as a measure of capacity use.
+
+**What we measured: the number of directions that carry the effect.** For each of the 197 weight matrices we split
+the update into its best rank-r part (truncated SVD) and the remainder. We applied each part alone to the base model,
+with FP32 weights and FP32 compute, and measured S and the fall in log-probability on the base answers of the four
+domains (1,888 answers of 236 problems, 8 per problem). Code: `src/qis/interf/lowrank_path.py`, `build/analyze_lowrank.py`; numbers:
+`tables/lowrank.json`; jobs `qis-ui-lowrank-mean6` and `qis-ui-lowrank-R101`. Intervals: bootstrap over problems.
+
+| Part of the update applied | mean6: share of squared norm | mean6: S relative to full | mean6: fall relative to full | R-s101: share of squared norm | R-s101: S relative to full | R-s101: fall relative to full |
+|---|---|---|---|---|---|---|
+| Rank 1 per matrix | 11% | 0.27 [0.23, 0.31] | 0.27 | 8% | 0.33 [0.28, 0.41] | 0.19 |
+| Rank 8 per matrix | 27% | 0.67 [0.62, 0.70] | 0.69 | 23% | 0.77 [0.70, 0.87] | 0.60 |
+| Rank 64 per matrix | 55% | 0.87 [0.85, 0.89] | 0.88 | 53% | 0.94 [0.91, 0.98] | 0.85 |
+| Remainder after rank 1 | 89% | 0.28 [0.23, 0.32] | 0.24 | 92% | 0.50 [0.44, 0.60] | 0.37 |
+| Remainder after rank 8 | 73% | 0.07 [0.05, 0.10] | 0.04 | 77% | 0.13 [0.09, 0.17] | 0.08 |
+| Remainder after rank 64 | 45% | 0.02 [0.01, 0.03] | 0.006 | 47% | 0.03 [0.02, 0.05] | 0.013 |
+
+The full update gives S = 0.0140 [0.0100, 0.0179] for mean6 (norm 0.60) and 0.0126 [0.0082, 0.0170] for R-s101 at
+round 128 (norm 1.26). S is the mean over the four domains; 187 mixed groups.
+
+![Rank-r parts of the update](figures/c1_lowrank.png)
+
+*Figure C1. Effect of the rank-r part of the update and of the remainder, relative to the full update.*
+
+The table gives four results.
+
+1. **Eight directions per matrix carry most of the effect.** The rank-8 part holds 23–27% of the squared norm and
+   gives 67–77% of S. The remainder holds 73–77% of the squared norm and gives 7–13% of S.
+2. **Almost half of the update has no measurable effect.** The remainder after rank 64 holds 45–47% of the squared
+   norm. It gives 2–3% of S and about 1% of the fall in log-probability.
+3. **The result holds for one run and for the mean of six runs.** Averaging is therefore not what makes the effect
+   low-rank. It also holds for each domain: the rank-8 part gives 0.62–0.68 of S per domain for mean6 and 0.63–0.86
+   for R-s101.
+4. **The parts do not add.** The rank-1 part and its remainder give 0.27 + 0.28 = 0.55 of S for mean6 and 0.83 for
+   R-s101. S is not a linear function of the update at this size, as Section 1.6 found for mean6 at α = 0.5.
+
+**What this does and does not show.**
+
+1. It shows that the *demand* is small. A rank-8 change per matrix has 10.0 × 10⁶ parameters, 0.58% of the model
+   (computed from the matrix shapes). The training signal of four domains fits in it together.
+2. It does not show that the model has spare capacity for conflicting demands. The domains ask for one shared
+   change (Sections 1.4 and 1.5), so nothing competed for these directions.
+3. The rank-r directions come from the finished update. A run restricted to rank 8 from the start may not find them.
+4. Three earlier results point the same way. The update is 0.05% of the weight norm. Two runs share 49% of their
+   top-8 input subspace per matrix. The shared 4% of the update carries 75–96% of the effect.
+
+**Conclusion for this study.** A capacity limit can matter only where two domains need changes that oppose each
+other. We found no such pair, so the capacity hypothesis is neither supported nor refuted. A test needs (a) a pair
+of domains with measured conflict (`04-domains-to-explore.md`) and (b) a variable that changes capacity: model size
+(Section 3, E2) or the rank of the trainable update at one size (Section 3, E6).
 
 ### 1.8 What we could not measure
 
@@ -580,7 +653,7 @@ the cosine of the rounded updates.
 | Hypothesis | What it predicts for our measurements | What we measured | Verdict |
 |---|---|---|---|
 | H1. Pre-training aligned the domain gradients | cross-domain cosine > 0; cross-domain overlap close to within-domain overlap | cosine 0.0003–0.0007 > 0; ratio 0.45–1.26 | **Consistent** in the weak form (no conflict). The strong form (large cosine) is **not consistent**: the cosine of group gradients is below 0.001. The role of pre-training is untested |
-| H2. Capacity absorbs the conflict | conflict exists in the gradients (cosine < 0) but outcomes are fine; updates of different arms use different parameters | no negative cosine; arm-specific part is 1% of the update; updates share input subspaces (49%) | **Not needed** for our result. **Untested** as a statement about smaller models |
+| H2. Capacity absorbs the conflict | conflict exists in the gradients (cosine < 0) but outcomes are fine; updates of different arms use different parameters | no negative cosine; arm-specific part is 1% of the update; updates share input subspaces (49%) | **Not needed** for our result. **Untested** as a statement about smaller models. The demand is small: a rank-8 part per matrix carries 67–77% of the effect (Section 1.7) |
 | S1. The domains are too similar | no domain structure in gradients or in effects | cross-domain ≈ within-domain overlap; control subjects gain as much as trained ones | **Consistent.** The domains are similar in what the training signal asks for, even where the subject differs |
 | S2. Training too short or learning rate too small | small weight change; outputs change little | weight change 0.05% of the norm, but dev pass@1 41% → 72% and answers 3.3 times longer | **Not consistent** as stated: the outputs changed a lot. A longer run could still meet conflict later; untested |
 | S3. The evaluation cannot detect interference | effects below the noise of the test | one update changes few effective weights (Section 2.5); repeat noise was 2.5–3.1 points | **Consistent** for the one-update test. **Not the explanation** of the main result, since the delivered effects are positive |
@@ -729,6 +802,30 @@ updates with mean6.
 
 **Cost.** 2 runs × about 25 GPU-hours + evaluation: about 60 GPU-hours.
 
+### E6. Capacity experiment at one model size: limit the rank of the update
+
+**Hypothesis tested.** H2, without a second model size. If capacity absorbs conflict, a run that may change only a
+few directions per matrix has less room, and interference appears as the rank falls.
+
+**Design.** Train low-rank adapters (LoRA) of rank 1, 8 and 64 on all weight matrices of Qwen3-1.7B, and full
+fine-tuning as the reference. Use two mixtures: H + R (no conflict measured) and the mixture with the strongest
+measured conflict from [`04-domains-to-explore.md`](04-domains-to-explore.md). For each rank also train each domain
+alone. The interference measure is the score of a domain in the mixture minus its score when trained alone, at
+equal rank.
+
+| Outcome | If H2 holds (capacity absorbs conflict) | If direction decides (S1/N1) |
+|---|---|---|
+| H + R, all ranks | no gap at any rank | no gap at any rank |
+| Conflicting mixture, gap against rank | the gap grows as the rank falls; near zero at full rank | the gap is present at every rank, of similar size |
+| Rank 8 against full fine-tuning, single domain | not predicted: Section 1.7 gives 67–77% for directions chosen after training | not predicted |
+
+A limit of this design: rank is not model size. A rank-limited run still reads all features of the 1.7B model. E6
+tests whether room in the *update* matters; E2 tests whether room in the *model* matters.
+
+**Cost (est.).** 4 capacity levels × 2 mixtures × 2 seeds, plus single-domain references (4 levels × 3 domains):
+28 runs. Adapter runs need less memory but the same sampling, so about 20 GPU-hours each: about 560 GPU-hours. A
+first pass with ranks 1 and 64, one seed and the conflicting mixture only costs about 120 GPU-hours.
+
 ### M1. Measurements that need no new recipe
 
 | Measurement | Purpose | Cost |
@@ -747,16 +844,30 @@ updates with mean6.
 3. E1 without the code arm (about 190 GPU-hours). It is the direct test of the main conclusion: interference appears
    when the directions oppose.
 4. E2 at 0.6B (about 100 GPU-hours), with the E1-c arm if E1 found conflict.
-5. E3, E4, E5 and the 4B half of E2, in the order that the results of steps 1–4 suggest.
+5. E3, E4, E5, E6 and the 4B half of E2, in the order that the results of steps 1–4 suggest. Run E6 only after E1 or
+   the mixtures of `04-domains-to-explore.md` show a conflict; without one, E6 cannot separate the hypotheses.
 
 ## References
 
 Full entries, with a label for how each source was checked, are in the reference list of
-[`00-initial-theory.md`](00-initial-theory.md). Sources cited in this document:
+[`00-initial-theory.md`](00-initial-theory.md). The sources of Section 1.7 were checked on 2026-11-12 against the
+arXiv pages; the notes are in `research/Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/LIT-NOTES.md`.
+Where a title is missing below, we did not record it. Sources cited in this document:
 
+- Aghajanyan, Zettlemoyer, Gupta (2020). Intrinsic dimensionality explains the effectiveness of language model
+  fine-tuning. arXiv:2012.13255.
+- Gao, Gao (2026). arXiv:2610.41073.
 - Li, Pan, Lin, Sun, He, Wu (2025). Can one domain help others? arXiv:2507.17512.
+- Luo et al. (2023). arXiv:2308.08747.
+- Miahi, Belilovsky (2026). arXiv:2602.03839.
+- Mukherjee, Yuan, Hakkani-Tur, Peng (2025). arXiv:2505.11711.
+- Ortiz-Jimenez, Favero, Frossard (2023). Task arithmetic in the tangent space. arXiv:2305.12827.
 - Qu, Setlur, Smith, Salakhutdinov, Kumar (2026). POPE. arXiv:2601.18779.
 - Schaul, Borsa, Modayil, Pascanu (2019). Ray interference. arXiv:1904.11455.
+- Shaham et al. (2023). arXiv:2212.07530 (abstract only).
 - Shao et al. (2025). Spurious rewards: rethinking training signals in RLVR. arXiv:2506.10947.
+- Shenfeld, Pari, Agrawal (2025). arXiv:2509.04259.
+- Yadav et al. (2024). arXiv:2410.03617.
+- Zhu et al. (2025). arXiv:2511.08567.
 - First study: [`understanding-experiments.md`](../Nov-12-2026-00-vineeth-babel-slurm-initial-study/understanding-experiments.md),
   [`experiments-report.md`](../Nov-12-2026-00-vineeth-babel-slurm-initial-study/experiments-report.md).

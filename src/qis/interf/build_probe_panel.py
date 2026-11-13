@@ -13,7 +13,11 @@ Public pools (downloaded when the node has network access; skipped with a note o
   aime24            Maxwell-Jia/AIME_2024, all 30 problems
   arc               allenai/ai2_arc, config ARC-Challenge, test split, first n; gold = the answer letter
 
-Usage: python -m qis.interf.build_probe_panel --out FILE.json [--n 100] [--seed 20261112]
+With --hard the panel holds only the pools that look for the zero-success band:
+  mult7, mult8, mult10   product of two k-digit integers
+  add9x12                sum of two 12-digit strings with digits 0-8, read in base 9; the answer is in base 9
+
+Usage: python -m qis.interf.build_probe_panel --out FILE.json [--n 100] [--seed 20261112] [--hard]
 """
 import argparse
 import json
@@ -37,8 +41,26 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--n", type=int, default=100)
     ap.add_argument("--seed", type=int, default=20261112)
+    ap.add_argument("--hard", action="store_true")
     a = ap.parse_args()
     pools, notes = {}, {}
+    if a.hard:
+        for k in (7, 8, 10):
+            rng = random.Random(a.seed + k)
+            pools[f"mult{k}"] = []
+            for i in range(a.n):
+                x, y = rng.randint(10 ** (k - 1), 10 ** k - 1), rng.randint(10 ** (k - 1), 10 ** k - 1)
+                pools[f"mult{k}"].append({"id": f"mult{k}/{i:03d}", "problem": f"Compute {x} \\times {y}.", "gold": str(x * y)})
+        rng = random.Random(a.seed + 300)
+        pools["add9x12"] = []
+        for i in range(a.n):
+            x, y = digits9(rng, 12), digits9(rng, 12)
+            pools["add9x12"].append({"id": f"add9x12/{i:03d}", "problem": f"The numbers {x} and {y} are written in base 9. "
+                                     f"Compute {x} + {y}. Give the answer in base 9.",
+                                     "gold": to_base(int(x, 9) + int(y, 9), 9)})
+        json.dump({"version": "probe-hard-v1", "seed": a.seed, "notes": notes, "pools": pools}, open(a.out, "w"))
+        print(json.dumps({"pools": {k: len(v) for k, v in pools.items()}}, indent=1))
+        return
     for k in (2, 3, 4, 5, 6):
         rng = random.Random(a.seed + k)
         items = []
