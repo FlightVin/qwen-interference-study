@@ -337,7 +337,7 @@ answers, 12,288-token limit). Three models are done:
 | R-s101, round 128 | 1.26 | 72.4% | 89.9% | 5,753 | 19.0% |
 | mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
 
-The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (72%), with an update
+The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (71%), with an update
 of half the norm. One run of each arm contributes one sixth to this mean, so the part that the arms share carries
 most of the accuracy gain. We did not compute intervals for these values; the summaries hold totals only.
 **Pending:** mean6x, loo5, resid-R101 and scaled-R101. They give the comparisons at equal norm.
