@@ -6,7 +6,8 @@ each claim as derived, supported or speculation. Section 3 proposes the experime
 explanations that remain. Background theory and literature: [`00-initial-theory.md`](00-initial-theory.md).
 
 Status of the evidence (2026-11-12, 23:30 EST): Sections 1.1–1.4 and 1.6 rest on completed jobs. One result is
-pending and is marked **pending** where it belongs: the accuracy of the averaged checkpoints (Section 1.5). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
+partly pending and is marked **pending** where it belongs: the accuracy of four of the five averaged checkpoints
+(Section 1.5). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
 2026-11-12. They are future work (Section 3, M1).
 
 ## Summary
@@ -326,9 +327,20 @@ applied (Section 1.6). Right: S_D for weight sets of equal norm.*
    within the interval.
 4. **An average that never saw R-s101 does as well as one that did.** loo5 matches mean6 on every domain.
 
-These are effects on the log-probability of base answers. Whether the averaged weights also *score* higher is the
-direct test. **Pending:** dev-set accuracy (53 problems × 32 answers) of mean6, mean6x, loo5, resid-R101 and
-scaled-R101. Completed so far: base 41.4% pass@1; R-s101 round 128 72.4% pass@1.
+These are effects on the log-probability of base answers. Whether the averaged weights also *score* well is the
+direct test. Job `qis-ui-soup` evaluates each model on the first study's dev panel (53 problems × 32 answers = 1,696
+answers, 12,288-token limit). Three models are done:
+
+| Model | Update norm | pass@1 | pass@8 | Mean answer length (tokens) | Answers cut at the limit |
+|---|---|---|---|---|---|
+| Base | 0 | 41.4% | 65.3% | 1,734 | 0% |
+| R-s101, round 128 | 1.26 | 72.4% | 89.9% | 5,753 | 19.0% |
+| mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
+
+The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (72%), with an update
+of half the norm. One run of each arm contributes one sixth to this mean, so the part that the arms share carries
+most of the accuracy gain. We did not compute intervals for these values; the summaries hold totals only.
+**Pending:** mean6x, loo5, resid-R101 and scaled-R101. They give the comparisons at equal norm.
 
 ### 1.6 The output change is not proportional to the update, and rounding is the cause
 
