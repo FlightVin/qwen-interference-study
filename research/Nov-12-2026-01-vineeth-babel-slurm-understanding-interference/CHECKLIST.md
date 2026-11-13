@@ -33,7 +33,7 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 3.3 Surrogate transfer matrix and response along the training direction (`qis-ui-lp`, job 11130858). [done]
 - 3.4 Averaged checkpoints: log-probability effect [done]; dev accuracy: six of seven models done
       (`qis-ui-soup` 11130401, cancelled at 01:41 EST on 2026-11-13 after a requeue; `qis-ui-soup-b` 11131755);
-      mean6x running since 02:20 EST. [active]
+      all seven models done at 07:19 EST on 2026-11-13; mean6x 44.8% (overshoot). [done]
 - 3.5 Precision test: FP32 against BF16-rounded weights (`qis-ui-lpprec`, job 11132332); `tables/lpprec.json`. [done]
 - 3.6 Scale: Qwen3-0.6B at 16 answers [done]. The 64-answer runs on 0.6B and 4B (jobs 11131757, 11131734) were
       cancelled while pending: out of scope by owner amendment 0.6, listed as future work in M1. [closed]
@@ -41,15 +41,15 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
       synthetic data [done].
 
 ## 4. Phase 2 — writing (`reports/<ID>/01-understanding.md`)
-- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done; mean6x row pending 3.4]
+- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done]
 - 4.2 Theory section; each claim marked derived / supported / speculation; verdict per hypothesis. [done]
 - 4.3 Proposed experiments E1–E5 and M1 with predictions per hypothesis and compute cost. [done]
-- 4.4 Section 1.6 filled with the precision result [done]. Section 1.5 filled with six rows; mean6x row open. [active, needs 3.4]
+- 4.4 Section 1.6 filled with the precision result [done]. Section 1.5 filled with all seven rows. [done]
 
 ## 5. Phase 3 — documentation and close
 - 5.1 Update root `README.md`, `reports/README.md`, `research/README.md`, archive README, `envs/README.md`. [done]
 - 5.2 Audit: numbers in `01-understanding.md` against the tables (one pass done on 2026-11-12; corrections applied).
-      Repeat after 4.4. [active]
+      Second pass (subagent, about 1,370 numbers, 30+ recomputed) done on 2026-11-13; corrections applied. [done]
 - 5.3 HANDOVER, STATE, recipes copied to `research/<ID>/recipes/`; commit. [done; repeat after 4.4]
 
 ## 6. Capacity (owner amendment 0.8)
@@ -67,6 +67,6 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 
 ## 8. Synopses and summary
 - 8.1 `02-theory-synopsis.md`. [done]
-- 8.2 `03-understanding-synopsis.md` written and reviewed; mean6x row open. [active, needs 3.4]
+- 8.2 `03-understanding-synopsis.md` written and reviewed; all rows filled. [done]
 - 8.3 `05-summary.md`. [done]
-- 8.4 Final `01` (fill Section 1.5 after 3.4), README updates, number audit, HANDOVER, STATE, commit. [active: only the mean6x row and the final audit remain]
+- 8.4 Final `01` (fill Section 1.5 after 3.4), README updates, number audit, HANDOVER, STATE, commit. [done 2026-11-13; audit corrections in commit 80413e9]

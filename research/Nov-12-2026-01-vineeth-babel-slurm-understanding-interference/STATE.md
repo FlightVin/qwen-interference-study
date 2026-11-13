@@ -34,7 +34,7 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - Trained R-s101 answers are 3.3 times longer than base answers on dev (5,753 against 1,734 tokens).
 
 ## Uncertain
-- Dev pass@1 of loo5: 64.3% (mean6 63.6%). mean6x: `qis-ui-soup-b` running since 02:20 EST, more than 3.75 h.
+- Dev pass@1 of loo5: 64.3% (mean6 63.6%). mean6x (norm 1.26): 44.8%, 55.2% of answers cut at the limit: overshoot.
 - Whether the brevity conflict lowers accuracy in training: not run; proposed (`04`, mixture 7; `01`, E1).
 - Gradient geometry on other model sizes at 64 answers. Out of scope (owner, 2026-11-12); future work, M1.
 - Why the shared signal fades so early; what the shared direction is (answer length is one candidate).
@@ -51,6 +51,5 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - See `DECISIONS.md` U1–U14.
 
 ## Next actions
-1. When `qis-ui-soup-b` ends: fill the mean6x row in `01` (Section 1.5) and `03` (Section 2.5), update the status
-   lines and row N2, run the number audit, commit, report to the owner.
+1. All jobs are done and all deliverables are written. Nothing is running.
 2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).

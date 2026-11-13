@@ -5,8 +5,7 @@ the domains. Section 1 reports what we measured on the stored checkpoints. Secti
 each claim as derived, supported or speculation. Section 3 proposes the experiments that would separate the
 explanations that remain. Background theory and literature: [`00-initial-theory.md`](00-initial-theory.md).
 
-Status of the evidence (2026-11-13, 03:45 EST): Sections 1.1–1.7 rest on completed jobs. One value is **pending**:
-the dev accuracy of the weight set mean6x (Section 1.5). Six of the seven accuracy rows are measured. The owner removed all gradient measurements on Qwen3-0.6B and Qwen3-4B from this study on 2026-11-12.
+Status of the evidence (2026-11-13, 07:30 EST): all sections rest on completed jobs. Nothing is pending. The owner removed all gradient measurements on Qwen3-0.6B and Qwen3-4B from this study on 2026-11-12.
 They are future work (Section 3, M1).
 
 ## Summary
@@ -27,7 +26,8 @@ The measurements give five results.
    95% interval above zero). Each practice arm moves its own domain about 1.6–1.8 times more than the other runs do.
 3. **About 96% of each run's weight update is specific to that run.** Two runs share a cosine of 0.03–0.05, and the
    arm does not matter. The shared 4% carries most of the effect: removing it from one run removes 75–97% of that
-   run's effect on the four domains.
+   run's effect on the four domains. Dev accuracy agrees: at equal norm 0.60 the mean of six runs gains 22.2 points,
+   one run 11.3. Scaled 2.1 times, the mean overshoots (44.8% against 72.4%); 55% of its answers hit the token limit.
 4. **The shared part formed in rounds 1–64.** First-half updates of two runs have cosine 0.044; second-half updates
    0.004. By round 64 the repeatable part of the gradient is no longer measurable at our sample size.
 5. **The model that is sampled and scored is a rounded copy of the trained weights.** Only 20–23% of the weights
@@ -75,7 +75,7 @@ the first study (Qwen3-1.7B), so this study has no measurement on a second size 
 | Log-probability of base answers under each trained model | `lp` | `src/qis/interf/logp_path.py`; `build/analyze_lp.py` | `tables/lp_summary.json` |
 | Precision test of the response along the update | `lpprec` | `src/qis/interf/logp_path.py --precision`; `build/analyze_lpprec.py` | `tables/lpprec.json` |
 | Rank-r parts of the update (Section 1.7) | `lowrank-mean6`, `lowrank-R101` | `src/qis/interf/lowrank_path.py`; `build/analyze_lowrank.py` | `tables/lowrank.json` |
-| Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | 1.5 (mean6x accuracy pending) |
+| Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | 1.5 |
 
 Paths are relative to the repository root for `src/` and to this folder for `build/` and `tables/`. The job recipes
 are in `research/Nov-12-2026-01-vineeth-babel-slurm-understanding-interference/recipes/`.
@@ -318,7 +318,7 @@ applied (Section 1.6). Right: S_D for weight sets of equal norm.*
 | mean6 (norm 0.60) | 0.0036 | 0.0028 | 0.0028 | 0.0014 |
 | loo5 (norm 0.65) | 0.0038 | 0.0027 | 0.0032 | 0.0014 |
 
-1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (mean6x against R-s101). The same holds at the smaller norm (mean6 against
+1. **At equal norm the averaged update has an S 2.4–3.3 times larger than one run** (mean6x against R-s101). The same holds at the smaller norm (mean6 against
    scaled-R101: 1.9–3.6 times).
 2. **Removing the shared part removes most of the effect.** resid-R101 keeps 88% of the direction of the R-s101
    update, and its norm is larger (1.36 against 1.26). Its S falls by 96% on hard, 79% on related, 97% on unrelated and 75% on control.
@@ -339,9 +339,9 @@ direct test. Jobs `qis-ui-soup` and `qis-ui-soup-b` evaluate each model on the f
 | scaled-R101 (R-s101 at the norm of mean6) | 0.60 | 52.7% | 78.3% | 2,947 | 0.4% |
 | resid-R101 (R-s101 minus the mean of the other five) | 1.36 | 43.3% | 72.4% | 3,063 | 1.2% |
 | loo5 (mean of the five runs without R-s101) | 0.65 | 64.3% | 83.3% | 3,966 | 5.7% |
-| mean6x (mean6 scaled to the norm of R-s101) | 1.26 | pending | pending | pending | pending |
+| mean6x (mean6 scaled to the norm of R-s101) | 1.26 | 44.8% | 59.9% | 10,048 | 55.2% |
 
-The accuracy results agree with the log-probability results.
+The accuracy results agree with the log-probability results at norm 0.60. At norm 1.26 they do not (result 6).
 
 1. **At equal norm the averaged update gains twice as much as one run.** mean6 gains 22.2 points of pass@1 over the
    base model; scaled-R101 gains 11.3 points at the same norm of 0.60.
@@ -359,8 +359,21 @@ within noise.
 5. **An average that never saw R-s101 scores as well as one that did.** loo5 reaches 64.3% pass@1 against 63.6% for
    mean6. The gain is therefore not a copy of R-s101 inside the average.
 
-**Pending:** the mean6x row. Its evaluation started at 02:20 EST on 2026-11-13 in job `qis-ui-soup-b`. It gives the
-comparison with R-s101 at equal norm 1.26.
+6. **Scaled to the norm of one run, the averaged update overshoots.** mean6x scores 44.8% pass@1 against 72.4% for
+   R-s101 at the same norm of 1.26. Its pass@8 (59.9%) is below the base model's (65.3%). The cause is answer
+   length: the mean answer has 10,048 tokens, 75.0% of the answers exceed 8,192 tokens and 55.2% reach the
+   12,288-token limit. The share of correct answers (44.75%) nearly equals the share of answers that finished
+   (44.81%). We did not check whether the grader can accept an answer cut at the limit.
+
+Result 6 limits result 1 of the log-probability table. S for mean6x is 2.4–3.3 times S for R-s101, but its accuracy
+is lower. S scores answers that the base model wrote, so it cannot see that the new model writes answers too long
+to finish. S is a valid measure of direction; it is not a measure of accuracy far from the base model.
+
+Result 6 also shows what "equal norm" compares. mean6x is mean6 multiplied by 2.1. R-s101 has cosine 0.43 with the
+mean, so it holds the shared direction with a length of about 0.54 (0.43 × 1.26), close to the norm of mean6 (0.60).
+mean6x therefore applies the shared direction about 2.3 times more strongly than any single run does. The fair
+comparison is at norm 0.60 (result 1). Longer answers are part of the shared direction: base 1,735 tokens, mean6
+4,078, mean6x 10,048. This agrees with Section 1.6, where twice the update changes the output 4.9–7.3 times more.
 
 ### 1.6 The output change is not proportional to the update, and rounding is the cause
 
@@ -624,10 +637,11 @@ that is independent across runs and has no preferred effect on any domain, then:
 - the noise part lowers performance on all domains alike, if it has any effect;
 - averaging runs removes noise and keeps the common part.
 
-Section 1.5 confirms the third point at the level of log-probabilities: the averaged update is 2.4–3.3 times more
-effective at equal norm, and the residual of one run has a small effect on its own domain and on control and none on the other two. The model predicts
+Section 1.5 confirms the third point at the level of log-probabilities: the S of the averaged update is 2.4–3.3 times
+larger at equal norm, and the residual of one run has a small effect on its own domain and on control and none on the other two. The model predicts
 a factor of √(0.20/0.04) = 2.2 for a response that is linear in the common part. The measured factor is larger, which
-agrees with the nonlinear response of Section 1.6.
+agrees with the nonlinear response of Section 1.6. Dev accuracy confirms the point at norm 0.60 (22.2 against 11.3
+points) and shows an overshoot at norm 1.26 (Section 1.5, result 6).
 
 ### 2.4 Ray interference cannot start: both of its ingredients are missing
 
@@ -680,7 +694,7 @@ the cosine of the rounded updates.
 | S2. Training too short or learning rate too small | small weight change; outputs change little | weight change 0.05% of the norm, but dev pass@1 41% → 72% and answers 3.3 times longer | **Not consistent** as stated: the outputs changed a lot. A longer run could still meet conflict later; untested |
 | S3. The evaluation cannot detect interference | effects below the noise of the test | one update changes few effective weights (Section 2.5); repeat noise was 2.5–3.1 points | **Consistent** for the one-update test. **Not the explanation** of the main result, since the delivered effects are positive |
 | N1. The run learned one generic behaviour (new) | one shared direction carries the effect on all domains | removing the shared part removes 75–97% of the effect; all domains move together | **Consistent** |
-| N2. Updates are mostly sampling noise (new) | low cosine between runs; averaging helps | cosine 0.04; averaged update 2.4–3.3 times more effective at equal norm | **Consistent** for log-probabilities and for dev accuracy at norm 0.60 (22.2 against 11.3 points); accuracy at norm 1.26 **pending** |
+| N2. Updates are mostly sampling noise (new) | low cosine between runs; averaging helps | cosine 0.04; S of the averaged update 2.4–3.3 times larger at equal norm | **Consistent** for log-probabilities and for dev accuracy at norm 0.60 (22.2 against 11.3 points). At norm 1.26 the averaged update overshoots: 44.8% against 72.4%, with 55% of answers cut at the token limit |
 
 Two statements of the mandate deserve a direct answer.
 
@@ -861,13 +875,13 @@ first pass with ranks 1 and 64, one seed and the conflicting mixture only costs 
 | One rerun of R-s101 with checkpoints at rounds 2, 4, 8, 16, 32 and 64; gradient geometry with 64 answers at each | when the shared signal forms and fades (Section 2.7, item 1) | 25 + 6 × 4 ≈ 50 GPU-hours |
 | 64-answer gradient geometry at the five stored trained checkpoints | whether domain-specific or conflicting signal exists late | about 50 GPU-hours |
 | 64-answer gradient geometry at initialisation on Qwen3-0.6B and Qwen3-4B (recipes `qis-ui-geom-q06x64`, `qis-ui-geom-q4x64` exist; not run) | whether the cross-domain cosine or the conflict rate changes with model size | about 8 GPU-hours each (est.; the 1.7B run took about 4) |
-| Dev accuracy of averaged checkpoints (done except mean6x; Section 1.5) | whether the shared part carries the *accuracy* gain | about 15 GPU-hours |
+| Dev accuracy of averaged checkpoints (done; Section 1.5) | whether the shared part carries the *accuracy* gain | about 15 GPU-hours |
 | Mechanistic studies 1–5 of Section 1.9 | what the shared direction is and where it sits | under 20 GPU-hours |
 
 ### Recommended order
 
-1. Finish the accuracy evaluation of mean6x (running; no new cost). Averaging already helps accuracy at norm 0.60;
-   mean6x gives the comparison at norm 1.26.
+1. Done in this study: the accuracy evaluation of the averaged checkpoints (Section 1.5). A cheap follow-up is the
+   accuracy of mean6 scaled by 1.25, 1.5 and 1.75, to find where the gain turns into overshoot (about 6 GPU-hours).
 2. M1 without the 0.6B and 4B rows, and the mechanistic studies (about 120 GPU-hours). They tell us what the shared direction is.
 3. E1 without the code arm (about 190 GPU-hours). It is the direct test of the main conclusion: interference appears
    when the directions oppose.

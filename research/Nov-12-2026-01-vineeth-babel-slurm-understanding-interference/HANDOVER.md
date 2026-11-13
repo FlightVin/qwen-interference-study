@@ -21,7 +21,7 @@ Purpose: what a new agent or reader needs to continue this study. Written 2026-1
 | Experiment | Job | State | When it finishes, do this |
 |---|---|---|---|
 | `qis-ui-soup` | 11130401 | cancelled 2026-11-13, 01:41 EST | Nothing. It evaluated base, R-s101-r128 and mean6, hit its time limit in mean6x, requeued, and would have written to the folder that `qis-ui-soup-b` uses. |
-| `qis-ui-soup-b` | 11131755 | running; resid-R101, scaled-R101, loo5 done; mean6x since 02:20 EST | Harvest; read `summary_mean6x.json`; fill the mean6x row in `01` Section 1.5 and `03` Section 2.5. |
+| `qis-ui-soup-b` | 11131755 | completed 2026-11-13, 07:19 EST, harvested | Done: all seven accuracy rows in `01` Section 1.5. |
 | `qis-ui-lowrank-mean6`, `qis-ui-lowrank-R101` | 11133405, 11133408 | completed, harvested | Done: `tables/lowrank.json`, Section 1.7. |
 | `qis-ui-probe`, `qis-ui-probe2` | 11133430, 11134233 | completed, harvested | Done: `04-domains-to-explore.md`, Section 2. |
 | `qis-ui-geom-short` | 11133402 | completed, harvested | Done: brevity coupling, `04-domains-to-explore.md`, Section 4. |
