@@ -52,17 +52,20 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 5.3 HANDOVER, STATE, recipes copied to `research/<ID>/recipes/`; commit. [done; repeat after 4.4]
 
 ## 6. Capacity (owner amendment 0.8)
-- 6.1 Literature review: intrinsic dimension, rank and sparsity of updates, task vectors, superposition, scale. [active]
-- 6.2 Decide which measurements on stored checkpoints discriminate; run those, propose the rest. [pending, needs 6.1]
-- 6.3 Write the capacity section of `01-understanding.md`; remove the 0.6B run (0.7). [pending, needs 6.2]
+- 6.1 Literature review: intrinsic dimension, rank and sparsity of updates, task vectors, scale (`LIT-NOTES.md`). [done]
+- 6.2 Decision (DECISIONS U12): one measurement discriminates on stored checkpoints, the rank-r truncation of the
+      update (`qis-ui-lowrank-mean6` 11133405, `qis-ui-lowrank-R101` 11133408). The rest needs other sizes. [done]
+- 6.3 Section 1.7 of `01-understanding.md` written; E6 (rank-limited training) proposed; 0.6B run removed. [done]
 
 ## 7. Domain mixtures for ray interference (`reports/<ID>/04-domains-to-explore.md`)
-- 7.1 Literature and dataset survey: reported negative transfer, candidate datasets, published small-model scores. [active]
-- 7.2 Measure what is cheap and decisive on Qwen3-1.7B base (pass rates; gradient coupling of a shortlist). [pending, needs 7.1]
-- 7.3 Write `04-domains-to-explore.md`. [pending]
+- 7.1 Literature and dataset survey (`LIT-NOTES.md` sections 2–4). [done]
+- 7.2 Measurements on Qwen3-1.7B base: pass rates and gradient coupling of 12 domains (`qis-ui-probe` 11133430)
+      [done]; brevity-reward coupling (`qis-ui-geom-short` 11133402) [active]; zero-success band, 4 pools
+      (`qis-ui-probe2` 11134233) [active].
+- 7.3 Write `04-domains-to-explore.md`: drafted; fill the brevity and zero-band results. [active, needs 7.2]
 
 ## 8. Synopses and summary
-- 8.1 `02` synopsis of `00-initial-theory.md`. [pending]
-- 8.2 `03` synopsis of `01-understanding.md`. [pending, needs 4.4 and 6.3]
-- 8.3 `05-summary.md`. [pending, needs 7.3, 8.1, 8.2]
-- 8.4 README updates, number audit, HANDOVER, commit. [pending]
+- 8.1 `02-theory-synopsis.md`. [done]
+- 8.2 `03-understanding-synopsis.md` (subagent drafting; fill accuracy rows after 3.4; review numbers). [active]
+- 8.3 `05-summary.md`. [pending, needs 7.3, 8.2]
+- 8.4 Final `01` (fill Section 1.5 after 3.4), README updates, number audit, HANDOVER, STATE, commit. [pending]

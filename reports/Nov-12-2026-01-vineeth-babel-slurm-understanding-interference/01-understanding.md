@@ -41,7 +41,7 @@ The verdicts on the hypotheses of the mandate:
 | Gradient alignment from pre-training | Supported in a weak form: no conflict, small positive overlap. Not supported in a strong form: the cosines are near zero, not large |
 | Capacity | Not needed to explain our result, because there is no conflict to absorb. Not tested: we have one model size. The learned change needs little of the model: 8 directions per weight matrix (0.6% of the parameters) carry 67–77% of the effect (Section 1.7) |
 | Domains too similar | Supported, and stronger than expected: even geometry and probability problems share the direction |
-| Training too short, learning rate too small | Partly supported: the update is small (0.05% of the weight norm), but the outputs changed a lot, so "too small to matter" is false |
+| Training too short, learning rate too small | Not supported as stated: the update is small (0.05% of the weight norm), but the outputs changed a lot, so "too small to matter" is false. A longer run could still meet conflict later; untested |
 | Evaluation cannot detect interference | Supported for the one-update test of the first study. Not the reason for the main result |
 
 The more important question that came out of this work is different from the one we started with. The runs learned
@@ -101,7 +101,7 @@ groups from 221 problems. The other runs use 16 answers per problem (2 groups). 
 | Cosine expected for independent directions | 0 ± 2.4 × 10⁻⁵ |
 | Share of coordinates where two runs moved in the same direction | 54% |
 | Mean absolute change of one weight | 11–13 learning rates (512 steps of 2 × 10⁻⁶) |
-| Stable rank of the update of one weight matrix (median of 196) | 12.7 |
+| Stable rank of the update of one weight matrix (median of the 196 matrices in the blocks) | 12.7 |
 
 ![Cosine between run updates](figures/w1_cosine.png)
 
@@ -120,7 +120,8 @@ Three observations follow.
 
 **Where the update sits.** The three MLP matrices of each block hold about 24% of the squared update each. The
 attention matrices hold 4–8% each and the embedding 2%. The relative change is about 10⁻³ for every matrix type and
-0.3 × 10⁻³ for the embedding. The cosine between runs is 0.05–0.06 in blocks 0–9 and falls to about 0.02 in the last
+0.3 × 10⁻³ for the embedding. The value for the whole model (0.5 × 10⁻³) is lower because the normalisation weights
+hold a large share of the weight norm and almost did not change (relative change 6 × 10⁻⁶). The cosine between runs is 0.05–0.06 in blocks 0–9 and falls to about 0.02 in the last
 blocks. It is highest in the embedding (0.16).
 
 ![Where the update sits](figures/w2_where.png)
@@ -277,9 +278,10 @@ of mixed groups are 34 (hard), 61 (related), 59 (unrelated), 33 (control). Inter
 
 1. **No negative entry.** All 24 values are positive; 17 have a 95% interval above zero. The R runs raise the
    remainder domain, the U runs raise the factoring domain, and all runs raise the control subjects.
-2. **Each practice arm moved its own domain most.** The R runs score 0.0101–0.0115 on the related pool against
+2. **Each practice arm moved its own domain more than the other runs did, on average.** The R runs score 0.0101–0.0115 on the related pool against
    0.0037–0.0112 for the other four runs. The U runs score 0.0066–0.0069 on the unrelated pool against 0.0030–0.0051.
-   The ratio of the means is 1.8 for R and 1.7 for U. This is domain-specific learning, on top of the common gain.
+   The ranges overlap for one run (H-s101 scores 0.0112 on the related pool). The ratio of the means is 1.8 for R and
+   1.7 for U. This is domain-specific learning, on top of the common gain.
    The first study's probes did not show it; the probes started at 81% and had little room.
 3. **The log-probability of base answers fell for correct and wrong answers alike.** Under the trained models the
    mean token log-probability of a base answer is lower by 0.11–0.28 nats, for all domains. S_D comes from the small difference between the two: for R-s101 on the hard pool, correct answers fall by 0.146 and wrong ones by 0.167. So the main
@@ -300,14 +302,14 @@ remove run-specific noise. We built five weight sets (`make_soup.py`).
 
 The norm of mean6 agrees with a simple model. If each update is a shared part plus an independent part, and two
 updates have cosine 0.04, the mean of six has 0.04 + 0.96/6 = 0.20 of the squared norm of one update, so 0.45 of its
-norm. The measured ratio is 0.598/1.332 = 0.45.
+norm. The measured ratio is 0.598/1.332 = 0.45, where 1.332 is the mean norm of the six updates.
 
 ![Linearity and averaged updates](figures/l2_linearity_soup.png)
 
 *Figure L2. Left: fall in mean token log-probability of base answers against the fraction α of the update that is
 applied (Section 1.6). Right: S_D for weight sets of equal norm.*
 
-| Comparison at equal norm | S hard | S related | S unrelated | S control |
+| Weight set | S hard | S related | S unrelated | S control |
 |---|---|---|---|---|
 | R-s101 update (norm 1.26) | 0.0086 | 0.0115 | 0.0051 | 0.0067 |
 | mean6x (norm 1.26) | 0.0273 | 0.0280 | 0.0169 | 0.0198 |
@@ -316,12 +318,11 @@ applied (Section 1.6). Right: S_D for weight sets of equal norm.*
 | mean6 (norm 0.60) | 0.0036 | 0.0028 | 0.0028 | 0.0014 |
 | loo5 (norm 0.65) | 0.0038 | 0.0027 | 0.0032 | 0.0014 |
 
-1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (mean6x against R-s101), and
-   3.1–3.9 times more effective than the mean of the six runs. The same holds at the smaller norm (mean6 against
+1. **At equal norm the averaged update is 2.4–3.3 times more effective than one run** (mean6x against R-s101). The same holds at the smaller norm (mean6 against
    scaled-R101: 1.8–3.6 times).
 2. **Removing the shared part removes most of the effect.** resid-R101 keeps 88% of the direction of the R-s101
-   update and all of its norm. Its S falls by 95% on hard, 79% on related, 96% on unrelated and 75% on control.
-3. **What remains is the arm's own domain.** The residual of this R run keeps a positive effect on the related pool
+   update, and its norm is larger (1.36 against 1.26). Its S falls by 95% on hard, 79% on related, 96% on unrelated and 75% on control.
+3. **A small effect remains on the related pool and on control.** The residual of this R run keeps a positive effect on the related pool
    (0.0024, interval [0.0005, 0.0043]) and on control (0.0017, [0.0003, 0.0031]). On hard and unrelated it is zero
    within the interval.
 4. **An average that never saw R-s101 does as well as one that did.** loo5 matches mean6 on every domain.
@@ -337,7 +338,7 @@ answers, 12,288-token limit). Three models are done:
 | mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
 
 The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (71%), with an update
-of half the norm. One run of each arm contributes one sixth to this mean, so the part that the arms share carries
+of half the norm. The mean holds two runs of each arm, so the part that the arms share carries
 most of the accuracy gain. We did not compute intervals for these values; the summaries hold totals only.
 **Pending:** mean6x, loo5, resid-R101 and scaled-R101. They give the comparisons at equal norm.
 
@@ -424,7 +425,7 @@ rounding.
 **Answers became much longer.** On the dev set the base model's answers have a mean length of 1,734 tokens. The
 answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of them reach the 12,288-token limit (job
 `qis-ui-soup`, 53 problems × 32 answers). The first study reported the truncation; the factor of 3.3 in length is
-new. It is a change that all domains share. We measured it for one trained model only.
+new. It is a change that all domains share. We measured the length for the models of Section 1.5 only.
 
 ### 1.7 Model size and capacity: what one model size can show
 
@@ -453,10 +454,10 @@ it: rounding amplifies the sparsity and does not explain all of it. Our data agr
 20–23% of the BF16 weights changed, the FP32 update is dense, and rounding alone reproduces the training-setup
 response (Section 1.6). We therefore do not count the 20–23% as a measure of capacity use.
 
-**What we measured: the number of directions that carry the effect.** For each of the 197 weight matrices we split
+**What we measured: the number of directions that carry the effect.** For each of the 197 weight matrices (196 in the blocks, and the embedding) we split
 the update into its best rank-r part (truncated SVD) and the remainder. We applied each part alone to the base model,
 with FP32 weights and FP32 compute, and measured S and the fall in log-probability on the base answers of the four
-domains (1,888 answers of 236 problems, 8 per problem). Code: `src/qis/interf/lowrank_path.py`, `build/analyze_lowrank.py`; numbers:
+domains (1,888 answers: 8 for each of the 236 problems of the four pools). Code: `src/qis/interf/lowrank_path.py`, `build/analyze_lowrank.py`; numbers:
 `tables/lowrank.json`; jobs `qis-ui-lowrank-mean6` and `qis-ui-lowrank-R101`. Intervals: bootstrap over problems.
 
 | Part of the update applied | mean6: share of squared norm | mean6: S relative to full | mean6: fall relative to full | R-s101: share of squared norm | R-s101: S relative to full | R-s101: fall relative to full |
@@ -506,7 +507,7 @@ of domains with measured conflict (`04-domains-to-explore.md`) and (b) a variabl
 
 | Question | Why not | What would measure it |
 |---|---|---|
-| Gradient geometry in rounds 1–32, when the shared part formed | no checkpoint before round 64 | a rerun that saves checkpoints every 4 rounds (Section 3, M1) |
+| Gradient geometry in rounds 1–32, when the shared part formed | no checkpoint before round 64 | a rerun that saves early checkpoints (Section 3, M1) |
 | Whether domain-specific signal exists late in training | 16 answers per problem gives 16–61 mixed groups per pool | 64 answers at the trained checkpoints, about 10 GPU-hours each |
 | An interval for the ratio of cross-domain to within-domain overlap | the full cosine matrix of the 64-answer run is 4.3 MB, above the 2 MB harvest limit; it is on Babel at `~/ae-qis/results-large/` | a job that bootstraps the ratio on the cluster |
 | Alignment of base gradients with the run updates | the count sketch has noise 0.0007 per cosine; the mean over 374 groups is 0.3 × 10⁻⁴ ± 0.4 × 10⁻⁴ | exact inner products with the six updates, computed during the gradient pass |
@@ -604,7 +605,7 @@ that is independent across runs and has no preferred effect on any domain, then:
 - averaging runs removes noise and keeps the common part.
 
 Section 1.5 confirms the third point at the level of log-probabilities: the averaged update is 2.4–3.3 times more
-effective at equal norm, and the residual of one run has almost no effect outside its own domain. The model predicts
+effective at equal norm, and the residual of one run has a small effect on its own domain and on control and none on the other two. The model predicts
 a factor of √(0.20/0.04) = 2.2 for a response that is linear in the common part. The measured factor is larger, which
 agrees with the nonlinear response of Section 1.6.
 
@@ -622,7 +623,8 @@ learning signal that vanishes when success vanishes.
    hard pool was chosen so that the base model solves each problem 2–12 times in 32 tries (p = 0.06–0.38). The first
    study found that all-wrong hard groups were rare after round 32 (0.4–7%).
 3. **The interfering domain went silent [supported by the first study and Section 1.3].** A group with all answers
-   correct gives exactly zero gradient. After round 64, 78–92% of practice groups gave no signal in the first study. A
+   correct gives exactly zero gradient. After round 64, 78–92% of practice groups gave no signal in the first study (our samples at the trained checkpoints
+   give 52–87%, Section 1.3). A
    domain that gives no gradient cannot interfere, whatever its direction.
 
 So our study was not a test in which ray interference could have appeared and did not. It was a setting in which its
@@ -680,8 +682,9 @@ Two statements of the mandate deserve a direct answer.
    run-to-run differences in final score are expected, and a 4-point flip needs no arm effect. **[supported in
    direction; the size is not derived]** The first study linked the flip to truncated answers, which fits a noisy
    drift in answer length.
-4. **The response at large updates.** Doubling the update multiplies the output change by 5–7, above both models of
-   Section 1.6.
+4. **The size of the response at large updates.** Doubling the update multiplies the output change by 5–7. The
+   precision test shows that rounding causes the excess over α² (Section 1.6); the single-threshold rounding model
+   does not reproduce its size.
 
 ## 3. Proposed experiments
 
@@ -690,7 +693,7 @@ No training run was started in this study. The cost basis is the first study: on
 estimates, scaled from that number, and are marked "est.". Evaluation of one trained checkpoint on the 53-problem dev
 set with 32 answers took 2.3 GPU-hours in this study.
 
-Every training experiment below should save checkpoints at rounds 4, 8, 16, 32, 64 and 128 and the optimizer state,
+Every training experiment below should save checkpoints at rounds 2, 4, 8, 16, 32, 64 and 128 and the optimizer state,
 so that the measurements of Section 1 can be repeated at each point.
 
 ### E1. Domain experiment: domains that ask for opposite things
@@ -698,7 +701,8 @@ so that the measurements of Section 1 can be repeated at each point.
 **Hypothesis tested.** S1 and N1: our domains did not interfere because they ask for the same generic change.
 Interference appears when two domains ask for changes that oppose each other.
 
-**Design.** Keep the hard math pool (H) in slots 0–7. Fill slots 8–15 with one of three second domains.
+**Design.** Keep the hard math pool (H) in slots 0–7. Fill slots 8–15 with a second domain (arms a to c). Arm d is the
+reference without a second domain.
 
 | Arm | Second domain | Why |
 |---|---|---|
@@ -740,7 +744,7 @@ size with signal.
 | Cosine between arm updates against size | larger at 0.6B (forced sharing) with negative arm-difference effects | similar | similar |
 | E1-c gap against size | grows as size falls | present at all sizes, similar size | present, similar |
 
-**Cost (est.).** 0.6B: 6 runs × about 12 GPU-hours = 70. 4B: 6 runs × about 60 GPU-hours = 360, on 80 GB GPUs (FP32
+**Cost (est.).** 0.6B: 6 runs × about 12 GPU-hours = about 70. 4B: 6 runs × about 60 GPU-hours = 360, on 80 GB GPUs (FP32
 weights, gradients and two Adam moments for 4 × 10⁹ parameters need about 64 GB). Pool rebuilding and evaluation:
 about 60. Total about 490 GPU-hours. The 0.6B half alone costs about 100 GPU-hours and tests the direction of H2.
 
@@ -773,13 +777,12 @@ candidate problem) and 30 for evaluations. Total about 230 GPU-hours.
 learning.
 
 **Design.** Repeat R-s101 with (a) the original setup, (b) FP32 forward pass and FP32 sampler weights, (c) the
-original setup with a learning rate 4 times larger. Compare the dev curve in the first 16 rounds, the cosine between
-runs, and the share of changed BF16 weights per round.
+original setup with a learning rate 4 times larger. Compare the dev curve in the first 16 rounds, the cosine of each
+update with mean6, and the share of changed BF16 weights per round.
 
 | Outcome | If rounding matters | If it does not |
 |---|---|---|
 | Dev score in rounds 1–8, (b) against (a) | (b) improves earlier | equal |
-| Cosine between two seeds of (b) against two seeds of (a) | different | equal |
 
 **Cost.** 3 runs × about 25 GPU-hours, FP32 sampling about twice slower (est.): about 100 GPU-hours. Job
 `qis-ui-lpprec` tested the forward-pass half of the claim and confirmed it (Section 1.6). E4 tests the other half:
@@ -797,7 +800,7 @@ updates with mean6.
 
 | Outcome | If the shared gain is reward-driven | If it is partly reward-independent |
 |---|---|---|
-| Dev and control gain of (a) and (b) | near zero | a visible share of the 20–29 point gain |
+| Dev and control gain of (a) and (b) | near zero | a visible share of the gain |
 | Cosine of the (b) update with mean6 | near the null | comparable to 0.09, the cosine of a real run with the mean of the five others |
 
 **Cost.** 2 runs × about 25 GPU-hours + evaluation: about 60 GPU-hours.
@@ -830,7 +833,7 @@ first pass with ranks 1 and 64, one seed and the conflicting mixture only costs 
 
 | Measurement | Purpose | Cost |
 |---|---|---|
-| One rerun of R-s101 with checkpoints at rounds 2, 4, 8, 16, 32; gradient geometry with 64 answers at each | when the shared signal forms and fades (Section 2.7, item 1) | 25 + 6 × 4 ≈ 50 GPU-hours |
+| One rerun of R-s101 with checkpoints at rounds 2, 4, 8, 16, 32 and 64; gradient geometry with 64 answers at each | when the shared signal forms and fades (Section 2.7, item 1) | 25 + 6 × 4 ≈ 50 GPU-hours |
 | 64-answer gradient geometry at the five stored trained checkpoints | whether domain-specific or conflicting signal exists late | about 50 GPU-hours |
 | 64-answer gradient geometry at initialisation on Qwen3-0.6B and Qwen3-4B (recipes `qis-ui-geom-q06x64`, `qis-ui-geom-q4x64` exist; not run) | whether the cross-domain cosine or the conflict rate changes with model size | about 8 GPU-hours each (est.; the 1.7B run took about 4) |
 | Dev accuracy of averaged checkpoints (in progress) | whether the shared part carries the *accuracy* gain | about 15 GPU-hours |
@@ -840,7 +843,7 @@ first pass with ranks 1 and 64, one seed and the conflicting mixture only costs 
 
 1. Finish the pending accuracy evaluation of the averaged checkpoints (no new cost). It decides whether averaging
    helps accuracy and not only log-probabilities.
-2. M1 and the mechanistic studies (about 120 GPU-hours). They tell us what the shared direction is.
+2. M1 without the 0.6B and 4B rows, and the mechanistic studies (about 120 GPU-hours). They tell us what the shared direction is.
 3. E1 without the code arm (about 190 GPU-hours). It is the direct test of the main conclusion: interference appears
    when the directions oppose.
 4. E2 at 0.6B (about 100 GPU-hours), with the E1-c arm if E1 found conflict.
