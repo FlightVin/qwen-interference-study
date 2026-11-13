@@ -29,17 +29,17 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 3.3 Surrogate transfer matrix and response along the training direction (`qis-ui-lp`, job 11130858). [done]
 - 3.4 Averaged checkpoints: log-probability effect [done]; dev accuracy (`qis-ui-soup` 11130401 running,
       `qis-ui-soup-b` 11131755 pending). [active]
-- 3.5 Precision test: FP32 against BF16-rounded weights (`qis-ui-lpprec`, job 11132332). [active]
+- 3.5 Precision test: FP32 against BF16-rounded weights (`qis-ui-lpprec`, job 11132332); `tables/lpprec.json`. [done]
 - 3.6 Scale: Qwen3-0.6B at 16 answers [done]. The 64-answer runs on 0.6B and 4B (jobs 11131757, 11131734) were
       cancelled while pending: out of scope by owner amendment 0.6, listed as future work in M1. [closed]
 - 3.7 Canary for the job family (`qis-ui-canary`) [done]; sketch norm check 0.998–1.002 [done]; estimator test on
       synthetic data [done].
 
 ## 4. Phase 2 — writing (`reports/<ID>/01-understanding.md`)
-- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done, two places pending 3.4–3.5]
+- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done, one place pending 3.4]
 - 4.2 Theory section; each claim marked derived / supported / speculation; verdict per hypothesis. [done]
 - 4.3 Proposed experiments E1–E5 and M1 with predictions per hypothesis and compute cost. [done]
-- 4.4 Fill the pending places when 3.4–3.5 finish; revise verdicts if needed. [pending, needs 3.4–3.5]
+- 4.4 Section 1.6 filled with the precision result [done]. Fill Section 1.5 when 3.4 finishes. [pending, needs 3.4]
 
 ## 5. Phase 3 — documentation and close
 - 5.1 Update root `README.md`, `reports/README.md`, `research/README.md`, archive README, `envs/README.md`. [done]

@@ -22,13 +22,13 @@ Purpose: what a new agent or reader needs to continue this study. Written 2026-1
 |---|---|---|---|
 | `qis-ui-soup` | 11130401 | running | It evaluates base, R-s101-r128, mean6, mean6x, then loo5, resid-R101, scaled-R101 until its 8-hour limit. Harvest; read `summary_<model>.json`. |
 | `qis-ui-soup-b` | 11131755 | pending on `preempt` | Evaluates resid-R101, scaled-R101, loo5, mean6x and skips models already done. Its export phase copies all summaries. |
-| `qis-ui-lpprec` | 11132332 | running | Harvest; compare `fp32/`, `fp32-wround/`, `train/` `lp.npz` (same format as `qis-ui-lp`). |
+| `qis-ui-lpprec` | 11132332 | completed 22:45 EST, harvested | Done: `build/analyze_lpprec.py`, `tables/lpprec.json`, Section 1.6. |
 | `qis-ui-geom-q4x64`, `qis-ui-geom-q06x64` | 11131734, 11131757 | cancelled 2026-11-12, 22:44 EST, before start | Nothing. The owner removed them from the scope. They are future work (`01-understanding.md`, M1). |
 
 Both soup jobs write to `$PROJ_DATA/ui/soup-eval/<model>/`. If both reach the same model at the same time, cancel the
 older job (`ae slurm cancel 11130401`) after it has finished mean6x.
 
-Then fill the two places marked **pending** in `01-understanding.md` (Sections 1.5, 1.6), the status line at its
+Then fill the place marked **pending** in `01-understanding.md` (Section 1.5), the status line at its
 top, and the verdict table if a result changes a verdict.
 
 ## 3. How to regenerate the tables and figures

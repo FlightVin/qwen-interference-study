@@ -5,9 +5,8 @@ the domains. Section 1 reports what we measured on the stored checkpoints. Secti
 each claim as derived, supported or speculation. Section 3 proposes the experiments that would separate the
 explanations that remain. Background theory and literature: [`00-initial-theory.md`](00-initial-theory.md).
 
-Status of the evidence (2026-11-12, 23:00 EST): Sections 1.1–1.6 rest on completed jobs. Two results are pending and
-are marked **pending** where they belong: the accuracy of the averaged checkpoints (Section 1.5) and the precision
-test (Section 1.6). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
+Status of the evidence (2026-11-12, 23:30 EST): Sections 1.1–1.4 and 1.6 rest on completed jobs. One result is
+pending and is marked **pending** where it belongs: the accuracy of the averaged checkpoints (Section 1.5). The owner removed the 64-answer gradient runs on Qwen3-0.6B and Qwen3-4B from this study on
 2026-11-12. They are future work (Section 3, M1).
 
 ## Summary
@@ -31,7 +30,8 @@ The measurements give five results.
 4. **The shared part formed in rounds 1–64.** First-half updates of two runs have cosine 0.044; second-half updates
    0.004. By round 64 the repeatable part of the gradient is no longer measurable at our sample size.
 5. **The model that is sampled and scored is a rounded copy of the trained weights.** Only 20–23% of the weights
-   differ from the base model after rounding to BF16. The output change grows much faster than the size of the update.
+   differ from the base model after rounding to BF16. Rounding makes the output change grow much faster than the
+   update: half of an update gives 8–9% of the output change with rounded weights and 26–27% in FP32.
 
 The verdicts on the hypotheses of the mandate:
 
@@ -73,6 +73,7 @@ initialisation (Section 1.7).
 | Weight updates of the six runs | `wdelta` | `src/qis/interf/wdelta.py`; `build/analyze_wdelta.py`, `build/analyze_halves.py` | `tables/wdelta_summary.json`, `tables/halves.json` |
 | Group gradients at the base model and five trained checkpoints | `geom-base`, `geom-base64`, `geom-<run>-r64/r128` | `src/qis/interf/grad_geom.py`, `sketch.py`, `summ.py`; `build/analyze_geom.py`, `build/analyze_geom_extra.py` | `tables/geom_summary.json`, `tables/geom_extra.json` |
 | Log-probability of base answers under each trained model | `lp` | `src/qis/interf/logp_path.py`; `build/analyze_lp.py` | `tables/lp_summary.json` |
+| Precision test of the response along the update | `lpprec` | `src/qis/interf/logp_path.py --precision`; `build/analyze_lpprec.py` | `tables/lpprec.json` |
 | Averaged checkpoints | `soup`, `soup-b` | `src/qis/interf/make_soup.py`; `qis.evaluate_ckpt` | pending |
 | Gradients on Qwen3-0.6B (16 answers) | `geom-q06` | as above | `tables/geom_summary.json` |
 
@@ -329,7 +330,7 @@ These are effects on the log-probability of base answers. Whether the averaged w
 direct test. **Pending:** dev-set accuracy (53 problems × 32 answers) of mean6, mean6x, loo5, resid-R101 and
 scaled-R101. Completed so far: base 41.4% pass@1; R-s101 round 128 72.4% pass@1.
 
-### 1.6 The output change is not proportional to the update, and rounding is the likely cause
+### 1.6 The output change is not proportional to the update, and rounding is the cause
 
 We applied a fraction α of each run's update, θ_base + α τ, and measured the mean token log-probability of base
 answers (Figure L2, left).
@@ -366,8 +367,48 @@ predicts an output change at α = 0.5 of 0.059 times the change at α = 1. The m
 model gives 0.25. At α = 2 the rounding model predicts 3.4 and the smooth model 4; the measurement is 4.9–7.3, so a
 further nonlinearity acts at large updates. The model uses one threshold for all weights, which is a simplification.
 
-**Pending:** job `qis-ui-lpprec` repeats the measurement with FP32 compute, and with FP32 compute on weights rounded
-to BF16. If rounding of the weights is the cause, the first is close to α² and the second reproduces the BF16 result.
+**The precision test confirms that rounding of the weights is the cause (measured).** Job `qis-ui-lpprec` repeated
+the measurement in three ways, for R-s101 at round 128 and for mean6 (the mean of the six runs, Section 1.5), on the
+872 hard and related answers (109 problems, 95 mixed groups). Code: `src/qis/interf/logp_path.py --precision`,
+`build/analyze_lpprec.py`; numbers: `tables/lpprec.json`. Each ratio is relative to α = 1 in the same row.
+
+| Weights; compute | Update | Fall at α = 1 (nats per token) | α = 0.25 | α = 0.5 | α = 2 |
+|---|---|---|---|---|---|
+| FP32; FP32 | R-s101 | 0.415 | 0.066 | 0.274 | 2.92 |
+| FP32; FP32 | mean6 | 0.291 | 0.060 | 0.255 | 3.27 |
+| Rounded to BF16; FP32 | R-s101 | 0.172 | 0.007 | 0.087 | 5.72 |
+| Rounded to BF16; FP32 | mean6 | 0.045 | 0.007 | 0.076 | 10.4 |
+| FP32 under BF16 autocast (training setup) | R-s101 | 0.173 | 0.007 | 0.087 | 5.68 |
+| FP32 under BF16 autocast (training setup) | mean6 | 0.045 | 0.006 | 0.075 | 10.4 |
+| Smooth model (fall ∝ α²) | | | 0.0625 | 0.25 | 4 |
+
+The table gives three results.
+
+1. With FP32 weights the fall follows α² for α ≤ 1 (0.060–0.066 at α = 0.25, 0.255–0.274 at α = 0.5). At α = 2 it is
+   below α² (2.9–3.3). The smooth model holds for small updates.
+2. Rounding the weights alone reproduces the training setup: the falls agree within 1% at α ≥ 0.5 and within
+   0.00003 nats at α = 0.25. BF16 arithmetic in the forward pass adds nothing measurable. The cause is the rounding of the weights.
+3. Rounding removes a large part of the effect of the full update. With rounded weights the fall at α = 1 is 41% of
+   the FP32 fall for R-s101 and 15% for mean6. mean6 has half the norm of R-s101, so fewer of its weights cross a
+   rounding boundary.
+
+The same holds for the surrogate S on these two domains (pooled; 95% interval over problems):
+
+| Weights; compute | Update | S at α = 0.5 | S at α = 1 | S at α = 2 |
+|---|---|---|---|---|
+| FP32; FP32 | R-s101 | 0.0075 [0.0053, 0.0097] | 0.0146 [0.0080, 0.0213] | 0.0022 [−0.0141, 0.0179] |
+| FP32; FP32 | mean6 | 0.0047 [0.0029, 0.0064] | 0.0169 [0.0116, 0.0224] | 0.0320 [0.0181, 0.0463] |
+| Rounded to BF16; FP32 | R-s101 | 0.0014 [0.0009, 0.0018] | 0.0105 [0.0073, 0.0137] | 0.0061 [−0.0081, 0.0193] |
+| Rounded to BF16; FP32 | mean6 | 0.0003 [0.0002, 0.0005] | 0.0031 [0.0020, 0.0042] | 0.0254 [0.0177, 0.0327] |
+
+In FP32, half of the R-s101 update gives 51% of its S, as the first-order model predicts. For mean6 it gives 28%, which
+the first-order model does not explain; the intervals are wide. In FP32, mean6 has an S at least as large as R-s101
+(0.0169 against 0.0146) at half the norm, so the result of Section 1.5 does not depend on rounding. Rounding hides
+most of it: the rounded mean6 has 18% of its FP32 value of S.
+
+The single-threshold rounding model above is too simple at α = 2. It predicts 3.4; rounded weights give 5.7 and 10.4
+on these two domains, and FP32 weights give 2.9–3.3. The faster growth at large α is therefore also an effect of
+rounding.
 
 **Answers became much longer.** On the dev set the base model's answers have a mean length of 1,734 tokens. The
 answers of R-s101 at round 128 have a mean length of 5,753 tokens, and 19% of them reach the 12,288-token limit (job
@@ -522,7 +563,7 @@ never solved in 128 tries. That is the regime of ingredient 2, and we did not en
 
 ### 2.5 Rounding sets a threshold on what any update can do
 
-**Claim 4 [derived from the training code; supported by Section 1.6].** The model that is sampled, differentiated
+**Claim 4 [derived from the training code; confirmed by the precision test of Section 1.6].** The model that is sampled, differentiated
 and evaluated is the BF16 rounding of the FP32 weights. A weight contributes to any change of behaviour only after its
 accumulated FP32 change exceeds half a BF16 step. After 512 steps this holds for 20–23% of the weights.
 
@@ -672,9 +713,9 @@ runs, and the share of changed BF16 weights per round.
 | Dev score in rounds 1–8, (b) against (a) | (b) improves earlier | equal |
 | Cosine between two seeds of (b) against two seeds of (a) | different | equal |
 
-**Cost.** 3 runs × about 25 GPU-hours, FP32 sampling about twice slower (est.): about 100 GPU-hours. The pending job
-`qis-ui-lpprec` (about 1 GPU-hour) tests the forward-pass half of the claim first. Run E4 only if that job supports
-it.
+**Cost.** 3 runs × about 25 GPU-hours, FP32 sampling about twice slower (est.): about 100 GPU-hours. Job
+`qis-ui-lpprec` tested the forward-pass half of the claim and confirmed it (Section 1.6). E4 tests the other half:
+whether rounding changes what is learned.
 
 ### E5. Control: is the shared gain driven by the reward at all?
 
@@ -705,8 +746,8 @@ updates with mean6.
 
 ### Recommended order
 
-1. Finish the pending jobs (no new cost). They decide whether averaging helps accuracy and whether rounding explains
-   the nonlinear response.
+1. Finish the pending accuracy evaluation of the averaged checkpoints (no new cost). It decides whether averaging
+   helps accuracy and not only log-probabilities.
 2. M1 and the mechanistic studies (about 120 GPU-hours). They tell us what the shared direction is.
 3. E1 without the code arm (about 190 GPU-hours). It is the direct test of the main conclusion: interference appears
    when the directions oppose.

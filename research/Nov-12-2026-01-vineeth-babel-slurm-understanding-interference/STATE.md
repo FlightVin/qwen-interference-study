@@ -21,11 +21,13 @@ more hard problems (H). It found no evidence of interference. This study asks wh
   others loses 75–96% of its effect (log-probability measure).
 - Forward pass and sampler use BF16-rounded weights; 20–23% of weights differ from base after rounding. The output
   change at half the update is 8–10% of the full change.
+- Precision test (`qis-ui-lpprec`, hard + related): FP32 weights follow alpha^2 (0.26–0.27 at half the update);
+  weights rounded to BF16 reproduce the training setup (0.08–0.09). Rounding is the cause. Rounded weights give 41%
+  (R-s101) and 15% (mean6) of the FP32 output change.
 - Trained R-s101 answers are 3.3 times longer than base answers on dev (5,753 against 1,734 tokens).
 
 ## Uncertain
 - Whether averaged weights score higher (accuracy), not only move log-probabilities. Pending: `qis-ui-soup`, `qis-ui-soup-b`.
-- Whether BF16 rounding of the weights causes the non-proportional response. Pending: `qis-ui-lpprec`.
 - Gradient geometry on other model sizes at 64 answers. Out of scope (owner, 2026-11-12); future work, M1.
 - Why the shared signal fades so early; what the shared direction is (answer length is one candidate).
 - Everything about a second model size after training. The capacity hypothesis is untested.
@@ -41,6 +43,6 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - See `DECISIONS.md` U1–U10.
 
 ## Next actions
-1. Harvest the pending jobs; fill the two "pending" places in `01-understanding.md` (Sections 1.5, 1.6) and
+1. Harvest the pending jobs; fill the "pending" place in `01-understanding.md` (Section 1.5) and
    update the Summary if a result changes a verdict.
 2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).
