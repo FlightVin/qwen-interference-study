@@ -21,7 +21,7 @@ coupling with the correctness reward. Base-9 addition of 12-digit strings has a 
 | 1 | Gradients of different domains do not conflict at the base model. Mean cosine 0.0003–0.0007; conflict rates 48.7–49.8% (independent directions: 50%) | 1,512 group gradients, 64 answers per problem (`01`, §1.2) | measured; intervals for the hard pool are wide |
 | 2 | Every trained model helped every domain: 24 of 24 effects positive, 17 with a 95% interval above zero | log-probability of base answers under six trained models (`01`, §1.4) | measured |
 | 3 | Two runs share 4% of their weight update (cosine 0.03–0.05), whatever their arm. That shared part carries 75–96% of a run's effect | six stored checkpoints; averaged weight sets (`01`, §1.1, §1.5) | measured |
-| 4 | SOUP-FINDING | dev panel, 53 problems × 32 answers (`01`, §1.5) | measured; no intervals |
+| 4 | The shared part also carries the accuracy gain. At equal norm the mean of six runs gains 22.2 points of dev pass@1, one run 11.3. With the shared part removed, a run gains 1.9 points against 31.0 | dev panel, 53 problems × 32 answers (`01`, §1.5) | measured; no intervals |
 | 5 | The shared part formed in rounds 1–64. Later updates of two runs have cosine 0.004 | update halves of two runs (`01`, §1.1) | measured on two runs |
 | 6 | The model that is sampled is a BF16-rounded copy. Rounding the weights explains why half of an update gives 8–9% of the output change; in FP32 it gives 26–27% | precision test (`01`, §1.6) | measured; cause confirmed |
 | 7 | The learned change needs little of the model: 8 directions per weight matrix (0.6% of the parameters) carry 67–77% of the effect | rank-r parts of the update (`01`, §1.7) | measured; directions chosen after training |

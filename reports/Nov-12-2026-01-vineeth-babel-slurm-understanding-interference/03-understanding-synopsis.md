@@ -8,7 +8,7 @@ The first study trained Qwen3-1.7B with GRPO on three math domains and saw no in
 
 The source labels each claim, and this synopsis keeps the labels. **Derived** follows from stated assumptions by mathematics. **Supported** agrees with our measurements or with cited ones. **Speculation** is a proposal that the data do not test.
 
-Status of the evidence (2026-11-12, 23:30 EST): one result is partly **pending**, the accuracy of four of the five averaged checkpoints (Section 2.5). The owner removed all gradient measurements on Qwen3-0.6B and Qwen3-4B on 2026-11-12; they are future work (M1).
+Status of the evidence (2026-11-13, 03:45 EST): one value is **pending**, the dev accuracy of the weight set `mean6x` (Section 2.5). Six of the seven accuracy rows are measured. The owner removed all gradient measurements on Qwen3-0.6B and Qwen3-4B on 2026-11-12; they are future work (M1).
 
 ## The answer in five sentences
 
@@ -38,7 +38,7 @@ All measurements use forward and backward passes on stored checkpoints.
 | Weight updates of the six runs | `wdelta` | 2.1 |
 | Group gradients at the base model and five trained checkpoints | `geom-base`, `geom-base64`, `geom-<run>-r64/r128` | 2.2, 2.3 |
 | Log-probability of base answers under each trained model | `lp` | 2.4 |
-| Averaged checkpoints | `soup`, `soup-b` | 2.5 (partly pending) |
+| Averaged checkpoints | `soup`, `soup-b` | 2.5 (`mean6x` accuracy pending) |
 | Precision test of the response along the update | `lpprec` | 2.6 |
 | Rank-r parts of the update | `lowrank-mean6`, `lowrank-R101` | 2.7 |
 
@@ -174,17 +174,23 @@ If the useful part of an update is the shared part, averaging the six updates ke
 3. **A small effect remains on the related pool and on control.** The residual keeps a positive effect on the related pool and on control. On hard and unrelated it is zero within the interval.
 4. **An average that never saw R-s101 does as well as one that did.** `loo5` matches `mean6` on every domain.
 
-The direct test is accuracy. Job `qis-ui-soup` evaluates each model on the first study's dev panel (53 problems × 32 answers, 12,288-token limit). Three models are done.
+The direct test is accuracy. Job `qis-ui-soup` evaluates each model on the first study's dev panel (53 problems × 32 answers, 12,288-token limit). Six of seven models are done.
 
 | Model | Update norm | pass@1 | pass@8 | Mean answer length (tokens) | Answers cut at the limit |
 |---|---|---|---|---|---|
 | Base | 0 | 41.4% | 65.3% | 1,734 | 0% |
 | R-s101, round 128 | 1.26 | 72.4% | 89.9% | 5,753 | 19.0% |
 | mean6 (mean of six runs) | 0.60 | 63.6% | 86.8% | 4,078 | 6.4% |
+| scaled-R101 (R-s101 at the norm of mean6) | 0.60 | 52.7% | 78.3% | 2,947 | 0.4% |
+| resid-R101 (R-s101 minus the mean of the other five) | 1.36 | 43.3% | 72.4% | 3,063 | 1.2% |
+| loo5 (mean of the five runs without R-s101) | 0.65 | 64.3% | 83.3% | 3,966 | 5.7% |
+| mean6x (mean6 scaled to the norm of R-s101) | 1.26 | pending | pending | pending | pending |
 
-SOUP-PENDING
+1. **At equal norm the averaged update gains twice as much as one run.** `mean6` gains 22.2 points of pass@1; `scaled-R101` gains 11.3 points at the same norm.
+2. **Removing the shared part removes the accuracy gain.** `resid-R101` gains 1.9 points, against 31.0 for R-s101.
+3. **An average that never saw R-s101 scores as well as one that did.** `loo5` reaches 64.3%, `mean6` 63.6%.
 
-The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (71%), with an update of half the norm. The source gives no intervals for these values. **Pending:** `mean6x`, `loo5`, `resid-R101` and `scaled-R101`. They give the comparisons at equal norm.
+The mean of the six runs keeps 22.2 of the 31.0 points that R-s101 gained over the base model (71%), with an update of half the norm. The source gives no intervals for these values. **Pending:** `mean6x`, the comparison with R-s101 at norm 1.26.
 
 Full text: `01-understanding.md`, Section 1.5.
 
@@ -265,7 +271,7 @@ Full text: `01-understanding.md`, Sections 2.1–2.5.
 | S2. Training too short or learning rate too small | weight change 0.05% of the norm, but dev pass@1 41% → 72% and answers 3.3 times longer | **Not consistent** as stated: the outputs changed a lot. A longer run could still meet conflict later; untested |
 | S3. The evaluation cannot detect interference | one update changes few effective weights; repeat noise was 2.5–3.1 points | **Consistent** for the one-update test. **Not the explanation** of the main result |
 | N1. The run learned one generic behaviour (new) | removing the shared part removes 75–96% of the effect; all domains move together | **Consistent** |
-| N2. Updates are mostly sampling noise (new) | cosine 0.04; averaged update 2.4–3.3 times more effective at equal norm | **Consistent** for log-probabilities; accuracy **pending** |
+| N2. Updates are mostly sampling noise (new) | cosine 0.04; averaged update 2.4–3.3 times more effective at equal norm | **Consistent** for log-probabilities and for dev accuracy at norm 0.60 (22.2 against 11.3 points); accuracy at norm 1.26 **pending** |
 
 The gradient updates do not conflict at 1.7B; whether this is because of scale is unknown. Sharing parameters is not sufficient for conflict; the directions must also oppose.
 
@@ -301,7 +307,7 @@ No training run was started in this study. The cost basis is the first study: on
 | One rerun of R-s101 with early checkpoints; gradient geometry with 64 answers at each | about 50 GPU-hours |
 | 64-answer gradient geometry at the five stored trained checkpoints | about 50 GPU-hours |
 | 64-answer gradient geometry at initialisation on Qwen3-0.6B and Qwen3-4B (recipes exist; not run) | about 8 GPU-hours each (est.) |
-| Dev accuracy of averaged checkpoints (in progress) | about 15 GPU-hours |
+| Dev accuracy of averaged checkpoints (done except mean6x; Section 2.5) | about 15 GPU-hours |
 | Mechanistic studies 1–5 | under 20 GPU-hours |
 
 A limit of E6: rank is not model size. E6 tests whether room in the *update* matters; E2 tests whether room in the *model* matters.
@@ -310,7 +316,8 @@ Full text: `01-understanding.md`, Section 3.
 
 ## 7. Recommended order
 
-1. Finish the pending accuracy evaluation of the averaged checkpoints (no new cost). It decides whether averaging helps accuracy and not only log-probabilities.
+1. Finish the accuracy evaluation of mean6x (running; no new cost). Averaging already helps accuracy at norm 0.60;
+   mean6x gives the comparison at norm 1.26.
 2. Run M1 without the 0.6B and 4B rows, and the mechanistic studies (about 120 GPU-hours). They tell us what the shared direction is.
 3. Run E1 without the code arm (about 190 GPU-hours). It is the direct test of the main conclusion: interference appears when the directions oppose.
 4. Run E2 at 0.6B (about 100 GPU-hours), with the E1-c arm if E1 found conflict.
