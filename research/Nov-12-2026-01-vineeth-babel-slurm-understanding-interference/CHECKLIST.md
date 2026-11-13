@@ -31,8 +31,9 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 - 3.2 On-policy samples and gradient geometry: base (16 and 64 answers), R-s101 r64, H-s202 r64, R-s202 r128,
       U-s202 r128, H-s101 r128; Adam-scaled where optimizer state exists. [done]
 - 3.3 Surrogate transfer matrix and response along the training direction (`qis-ui-lp`, job 11130858). [done]
-- 3.4 Averaged checkpoints: log-probability effect [done]; dev accuracy (`qis-ui-soup` 11130401 running,
-      `qis-ui-soup-b` 11131755 pending). [active]
+- 3.4 Averaged checkpoints: log-probability effect [done]; dev accuracy: six of seven models done
+      (`qis-ui-soup` 11130401, cancelled at 01:41 EST on 2026-11-13 after a requeue; `qis-ui-soup-b` 11131755);
+      mean6x running since 02:20 EST. [active]
 - 3.5 Precision test: FP32 against BF16-rounded weights (`qis-ui-lpprec`, job 11132332); `tables/lpprec.json`. [done]
 - 3.6 Scale: Qwen3-0.6B at 16 answers [done]. The 64-answer runs on 0.6B and 4B (jobs 11131757, 11131734) were
       cancelled while pending: out of scope by owner amendment 0.6, listed as future work in M1. [closed]
@@ -40,10 +41,10 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
       synthetic data [done].
 
 ## 4. Phase 2 — writing (`reports/<ID>/01-understanding.md`)
-- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done, one place pending 3.4]
+- 4.1 Empirical section with exact numbers, method and code location; mechanistic studies. [done; mean6x row pending 3.4]
 - 4.2 Theory section; each claim marked derived / supported / speculation; verdict per hypothesis. [done]
 - 4.3 Proposed experiments E1–E5 and M1 with predictions per hypothesis and compute cost. [done]
-- 4.4 Section 1.6 filled with the precision result [done]. Fill Section 1.5 when 3.4 finishes. [pending, needs 3.4]
+- 4.4 Section 1.6 filled with the precision result [done]. Section 1.5 filled with six rows; mean6x row open. [active, needs 3.4]
 
 ## 5. Phase 3 — documentation and close
 - 5.1 Update root `README.md`, `reports/README.md`, `research/README.md`, archive README, `envs/README.md`. [done]
@@ -60,12 +61,12 @@ Purpose: the live plan. Status: **done** / **active** / **blocked** / **pending*
 ## 7. Domain mixtures for ray interference (`reports/<ID>/04-domains-to-explore.md`)
 - 7.1 Literature and dataset survey (`LIT-NOTES.md` sections 2–4). [done]
 - 7.2 Measurements on Qwen3-1.7B base: pass rates and gradient coupling of 12 domains (`qis-ui-probe` 11133430)
-      [done]; brevity-reward coupling (`qis-ui-geom-short` 11133402) [active]; zero-success band, 4 pools
-      (`qis-ui-probe2` 11134233) [active].
-- 7.3 Write `04-domains-to-explore.md`: drafted; fill the brevity and zero-band results. [active, needs 7.2]
+      [done]; brevity-reward coupling (`qis-ui-geom-short` 11133402) [done]; zero-success band, 4 pools
+      (`qis-ui-probe2` 11134233) [done].
+- 7.3 Write `04-domains-to-explore.md`: written with all measured results. [done]
 
 ## 8. Synopses and summary
 - 8.1 `02-theory-synopsis.md`. [done]
-- 8.2 `03-understanding-synopsis.md` (subagent drafting; fill accuracy rows after 3.4; review numbers). [active]
-- 8.3 `05-summary.md`. [pending, needs 7.3, 8.2]
-- 8.4 Final `01` (fill Section 1.5 after 3.4), README updates, number audit, HANDOVER, STATE, commit. [pending]
+- 8.2 `03-understanding-synopsis.md` written and reviewed; mean6x row open. [active, needs 3.4]
+- 8.3 `05-summary.md`. [done]
+- 8.4 Final `01` (fill Section 1.5 after 3.4), README updates, number audit, HANDOVER, STATE, commit. [active: only the mean6x row and the final audit remain]
