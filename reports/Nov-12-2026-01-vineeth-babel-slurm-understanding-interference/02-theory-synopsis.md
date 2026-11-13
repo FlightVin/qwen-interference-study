@@ -37,9 +37,9 @@ Full text: `00-initial-theory.md`, Section 1.
 
     L_B(θ') = L_B(θ) − η ⟨g_B, g_A⟩ + (η²/2) g_Aᵀ H_B g_A + O(η³),   H_B = ∇²L_B(θ).        (1)
 
-The step lowers L_B exactly when ⟨g_B, g_A⟩ > 0. To first order D1, D3 and D4 are one quantity. This assumes a small η.
+The step lowers L_B exactly when ⟨g_B, g_A⟩ > 0. To first order, for small η, D1, D3 and D4 are one quantity.
 
-**Policy gradient.** The same rule holds for the log-probabilities of a language model. GRPO, the method of our runs, samples a group of answers per problem. When all answers in a group have the same reward, every advantage is zero. Such a group gives no gradient, so it cannot interfere with or help anything.
+**Policy gradient.** The same rule holds for the log-probabilities of a language model. GRPO, the method of our runs, samples a group of answers per problem. A group whose answers all have the same reward gives no gradient. It cannot interfere with or help anything.
 
 **Adam (our derivation).** Adam reweights coordinates, so the cross-task term can change sign. A raw-gradient cosine is not the last word for an Adam run.
 
@@ -47,9 +47,9 @@ The step lowers L_B exactly when ⟨g_B, g_A⟩ > 0. To first order D1, D3 and D
 
     η h ‖g_A‖ / ‖g_B‖ > 2 cos(g_A, g_B).                                                          (4)
 
-A small learning rate removes this curvature route. It does not remove the first-order route. In joint supervised training, conflict alone is harmless. Harm also needs unequal gradient sizes and high curvature.
+A small learning rate removes this curvature route, not the first-order route. In joint supervised training, harm also needs unequal gradient sizes and high curvature.
 
-**Conflict rate.** The *conflict rate* is the share of gradient pairs with negative cosine. Its null value for independent random directions is 50%, not 0%. Reported rates of 32–42% between tasks (Zhang et al. 2024) are therefore mild alignment. A conflict rate needs a within-task baseline.
+**Conflict rate.** The *conflict rate* is the share of gradient pairs with negative cosine. Its null value for independent random directions is 50%, not 0%. Reported rates of 32–42% between tasks are therefore mild alignment. A conflict rate needs a within-task baseline.
 
 Full text: `00-initial-theory.md`, Section 2.
 
@@ -66,9 +66,8 @@ The first term is a task's own progress. The second is the interference. The fac
 
 **Results.**
 
-1. (1,1) is the stable fixed point. (0,1) and (1,0) are saddle points.
-2. *Winner-take-all (WTA) regions*: near the origin, J_2 > 2 J_1 makes context 1 get worse while context 2 improves. A random start direction near the origin lies in a WTA region with probability ≈ 59%.
-3. Plateau: the path then passes close to a saddle, with speed ε = 2 J_1²(1−J_1)². The paper states a slowdown of order 1/ε.
+1. *Winner-take-all (WTA) regions*: near the origin, J_2 > 2 J_1 makes context 1 get worse while context 2 improves. A random start direction near the origin lies in a WTA region with probability ≈ 59%.
+2. Plateau: the path then passes close to a saddle point, (0,1) or (1,0), with speed ε = 2 J_1²(1−J_1)². The paper states a slowdown of order 1/ε.
 
 ![Flow of the two-context bandit](figures/t1_ray_flow.png)
 
@@ -76,17 +75,15 @@ The first term is a task's own progress. The second is the interference. The fac
 
 ![Learning curves and slowdown](figures/t2_ray_curves.png)
 
-*Figure T2. Left: on-policy curves stall at total performance 1, longer for less balanced starts. Right: time to reach J = 1.9 against the initial ratio.*
-
-In our simulation a balanced start reaches J = 1.9 at t = 38. Ratio 1:3 needs t = 201 and ratio 1:9 needs t = 1,503. Supervised learning needs t = 24 to 26 for every start.
+*Figure T2. Left: on-policy curves stall at total performance 1, longer for less balanced starts. Right: time to reach J = 1.9. In our simulation it is t = 38 for a balanced start and t = 1,503 for ratio 1:9. Supervised learning needs t = 24 to 26.*
 
 **The coupling function.** Schaul et al. write ∇J_k = f_k(J_k) v_k(θ), with f_k the *coupling function*. On-policy REINFORCE has f(u) = u(1−u). Supervised learning has f(u) = 1−u and the same ρ = −1/2, with no saddle and no plateau. The sufficient condition for a saddle is **f_k(0) = 0**.
 
-Removing the shared parameter removes the WTA regions. A uniform random behaviour policy removes the saddle and the plateau. 10% uniform random actions give f(0) > 0 and much weaker plateaus.
+Removing the shared parameter removes the WTA regions. 10% uniform random actions give f(0) > 0 and much weaker plateaus.
 
-**Where it fails.** The shared bias builds in ρ = −1/2; the paper does not show that real tasks have negative ρ. The condition f(0) = 0 fails with exploration noise, off-policy data, dense rewards or supervised signal. The case of more than two contexts and deep RL is not proven; all experiments are bandit simulations.
+**Where it fails.** The paper does not show that real tasks have negative ρ. The condition f(0) = 0 fails with exploration noise, off-policy data, dense rewards or supervised signal. The case of more than two contexts and deep RL is not proven; all experiments are bandit simulations.
 
-**GRPO coupling (our derivation).** Let p be the success probability of a problem and G the number of sampled answers. GRPO divides the advantage by the group's standard deviation. The expected update size is
+**GRPO coupling (our derivation).** Let p be the success probability of a problem and G the number of sampled answers. The expected update size is
 
     f_GRPO(p) = Σ_c Binom(c; G, p) √((c/G)(1 − c/G)).
 
@@ -94,7 +91,7 @@ f_GRPO(0) = 0, so the saddle condition still holds. The coupling is weaker than 
 
 ![Coupling functions](figures/t9_coupling.png)
 
-*Figure T9. Left: the GRPO coupling lies above REINFORCE and still reaches zero at p = 0. Right: the probability that a group is mixed; only mixed groups give a gradient.*
+*Figure T9. Left: the GRPO coupling lies above REINFORCE and still reaches zero at p = 0. Right: only mixed groups give a gradient.*
 
 Full text: `00-initial-theory.md`, Section 3.
 
@@ -114,7 +111,7 @@ Three factors multiply: the high-variance directions of task A (Σ_A), the overl
 
 *Figure T6. Left: forgetting peaks at 45°. Middle: the peak at intermediate dissimilarity appears only for high over-parameterisation β. Right: forgetting falls as parameters per sample grow.*
 
-"Very different domains interfere most" is only true for models with little spare capacity. In a highly over-parameterised model the danger zone is tasks that share features and need different outputs.
+"Very different domains interfere most" is only true for models with little spare capacity. Otherwise the danger zone is tasks that share features and need different outputs.
 
 Full text: `00-initial-theory.md`, Section 4.
 
@@ -124,17 +121,13 @@ Full text: `00-initial-theory.md`, Section 4.
 |---|---|---|
 | High dimension (5.1) | Independent isotropic vectors in R^d have cosine of order 1/√d. For d = 1.72 × 10⁹ (Qwen3-1.7B without the tied output layer), 1/√d = 2.4 × 10⁻⁵. | A floor, not a prediction. Real gradients concentrate in few directions. |
 | Capacity (5.2) | If the network can minimise all task losses at once, summed-loss training converges where every task gradient is zero. | This concerns the solution, not the path. Capacity reduces outcome interference without reducing gradient conflict. |
-| Over-parameterisation (5.3) | In linear models forgetting falls with parameters per sample. Wider networks forget less. | — |
+| Over-parameterisation (5.3) | Wider networks forget less. | — |
 | Pre-training (5.4) | Pre-trained models forget far less, and the advantage grows with model size. | Causality not tested. Scale is contested for language models. |
-| Small on-policy moves (5.5) | Theorem: policy gradient with binary reward converges to the optimal policy closest in KL divergence to the start (Shenfeld et al. 2025). | Neural networks do not meet the convexity assumption exactly. |
-
-![Near-orthogonality](figures/t5_orthogonality.png)
-
-*Figure T5. Left: the cosine of independent vectors shrinks as 1/√d. Right: a common component that carries a share s of the squared norm gives cosine s.*
+| Small on-policy moves (5.5) | Theorem: policy gradient with binary reward converges to the optimal policy closest in KL divergence to the start. | Neural networks do not meet the convexity assumption exactly. |
 
 Low-dimensional updates allow two opposite readings. *Room to avoid*: unrelated tasks use disjoint directions, so the cosine is ≈ 0, with no interference and no transfer. *Shared subspace*: the gradients concentrate in the same subspace, and the cosine can be large with either sign. A measured cosine distinguishes the two.
 
-**Warning** (Shao et al. 2025). Random rewards gave Qwen2.5-Math-7B +21.4 points on MATH-500 (true rewards: +29.1). GRPO amplified a strategy the model already preferred. Uniform gains on all subjects can be this signature.
+**Warning.** Random rewards gave Qwen2.5-Math-7B +21.4 points on MATH-500 (true rewards: +29.1). Uniform gains on all subjects can be this signature.
 
 Full text: `00-initial-theory.md`, Section 5.
 
@@ -149,9 +142,9 @@ Full text: `00-initial-theory.md`, Section 5.
 
 ![Reported results](figures/t8_reported.png)
 
-*Figure T8. Top left: easy problems lower hard-set pass@1 in POPE. Bottom right: the conflict rate (Zhang et al. 2024) stays below the 50% null at every model size.*
+*Figure T8. Top left: easy problems lower hard-set pass@1 in POPE. Bottom right: the conflict rate stays below the 50% null at every model size.*
 
-Two gaps matter. POPE is the only study with easy-plus-hard mixtures under GRPO, and it reports an outcome, not a gradient cosine. No study covers two skills inside one subject, which is our case.
+POPE is the only study with easy-plus-hard mixtures under GRPO, and it reports an outcome, not a gradient cosine. No study covers two skills inside one subject, which is our case.
 
 Full text: `00-initial-theory.md`, Section 6.
 
@@ -160,14 +153,14 @@ Full text: `00-initial-theory.md`, Section 6.
 | Status | Statements |
 |---|---|
 | **Proven** (under the stated assumptions) | Equations (1), (4) and (6). The bandit results, and f(0) = 0 as sufficient for a saddle. Linear-regression forgetting: zero for identical and orthogonal tasks, largest in between. A model that fits all tasks ends where all task gradients vanish. Convergence to the KL-closest optimal policy. Cosine of order 1/√d for independent directions. |
-| **Empirically supported** | Outcome interference under on-policy RL exists in language models (easy against hard math; math against code). Larger and pre-trained models show less outcome interference in vision and in weight merging. Gradient cosine tracks task relatedness. RL post-training forgets less than SFT and mostly makes existing behaviour more reliable. Conflict rates are near 30–45%, similar within and between tasks. |
+| **Empirically supported** | Outcome interference under on-policy RL exists in language models (easy against hard math; math against code). Larger and pre-trained models show less outcome interference in vision and in weight merging. Gradient cosine tracks task relatedness. RL post-training forgets less than SFT. Conflict rates are near 30–45%, similar within and between tasks. |
 | **Conjecture or contested** | Ray interference explains plateaus in deep RL or language-model RL: proven only for bandits. Gradient conflict *causes* outcome interference. Scale by itself reduces interference. Language-model fine-tuning is linear in the weights: untested for RL. Why pre-training helps: correlation only. Superposition capacity governs interference between tasks: no direct evidence. How the cross-domain gradient cosine depends on model size: not measured. |
 
 Full text: `00-initial-theory.md`, Section 7.
 
 ## 8. What this means for the study
 
-The theory gives five conditions under which a mixed training run shows **no** outcome interference. `01-understanding.md` tests each one.
+A mixed training run shows **no** outcome interference under five conditions. `01-understanding.md` tests each one.
 
 | Condition | Test |
 |---|---|
@@ -188,7 +181,4 @@ Label: **R** = text read for the cited facts.
 - Li, Pan, Lin, Sun, He, Wu (2025). Can one domain help others? arXiv:2507.17512. **R**
 - Qu, Setlur, Smith, Salakhutdinov, Kumar (2026). POPE: learning to reason on hard problems via privileged on-policy exploration. arXiv:2601.18779. **R**
 - Schaul, Borsa, Modayil, Pascanu (2019). Ray interference: a source of plateaus in deep reinforcement learning. arXiv:1904.11455. **R** (full text, appendices checked)
-- Shao et al. (2025). Spurious rewards: rethinking training signals in RLVR. arXiv:2506.10947. **R**
-- Shenfeld, Pari, Agrawal (2025). RL's razor: why online reinforcement learning forgets less. arXiv:2509.04259. **R**
-- Zhang, Shen, Cao, Dai, Zhou, Zhang, Zhang, Shutova (2024). Proactive gradient conflict mitigation in multi-task learning: a sparse training perspective. arXiv:2411.18615. **R**
 - Zhu et al. (2026). SFT conflicts, RL coexists. arXiv:2608.03573. **R** (abstract and Section 4)
