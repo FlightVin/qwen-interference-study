@@ -51,5 +51,6 @@ more hard problems (H). It found no evidence of interference. This study asks wh
 - See `DECISIONS.md` U1–U14.
 
 ## Next actions
-1. All jobs are done and all deliverables are written. Nothing is running.
+1. All jobs are done and all deliverables are written. Nothing is running. Babel storage of this project was wiped on
+   2026-11-13 on the owner's instruction (HANDOVER, last section): no checkpoint or environment exists there.
 2. Owner decides which proposed experiments to run (Section 3 of the document; recommended order at its end).

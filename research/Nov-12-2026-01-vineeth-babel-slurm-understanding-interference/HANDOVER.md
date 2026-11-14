@@ -57,3 +57,11 @@ From `reports/<ID>/`, with a Python that has numpy and matplotlib, and `RES` = t
 - The first-order alignment of base gradients with the run updates is below the count-sketch noise.
 - A bare `ae harvest` early in this study pulled about 20 old first-study experiments into the harness `results/` and
   appended lines to the harness `state/FINDINGS.md`. No tracked first-study record changed.
+
+
+## Babel storage wiped on 2026-11-13 (owner instruction)
+- Deleted on the owner's instruction: `/data/user_data/$USER/qis` (all checkpoints, environment, model cache, study
+  outputs), `/data/user_data/$USER/BC2RL`, `~/ae-qis`, `~/projects/qwen-interference-study`, `~/ae-bc2rl`, `~/.cache/vllm`.
+- Consequence: no result of either study can be recomputed without retraining. Reports, tables, figures and harvested
+  summaries (laptop, git) remain. A new study starts from a clean state: clone the repo on Babel, rebuild the
+  environment, and run the harness "First run" checks (`ae setup`, self-tests) before any submission.
