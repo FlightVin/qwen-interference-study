@@ -130,5 +130,71 @@
    "allow_uneven_minibatch": true
   },
   "exclude": "babel-l9-32"
+ },
+ {
+  "expid": "qis-s02-e3-add9d4d6-s3",
+  "part": "preempt",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E3d d4+d6 mixture WITHOUT d8 (3+3 groups, divisor 32), seed 3: same d4/d6 prompts as the mixed run of seed 3. F12 predicts no d6 collapse (d8 updates are the harmful source); a collapse here would refute it. (Added after F16 to estimate the collapse rate without d8.)",
+  "config": {
+   "phase": "e3a",
+   "seed": 3,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add9_d4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "add9_d6_train",
+     "slots": 3
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "allow_uneven_minibatch": true
+  },
+  "exclude": "babel-l9-32"
  }
 ]
