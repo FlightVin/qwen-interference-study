@@ -69,7 +69,7 @@
  },
  {
   "expid": "qis-s02-e1-add9-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
@@ -137,7 +137,7 @@
  },
  {
   "expid": "qis-s02-e1-add10-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
@@ -195,7 +195,7 @@
  },
  {
   "expid": "qis-s02-e1-mbpp-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
@@ -253,7 +253,7 @@
  },
  {
   "expid": "qis-s02-e1-arc-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
@@ -311,7 +311,7 @@
  },
  {
   "expid": "qis-s02-e1-countdown-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
@@ -374,7 +374,7 @@
  },
  {
   "expid": "qis-s02-e1-terse-s1",
-  "part": "general",
+  "part": "preempt",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
