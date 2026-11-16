@@ -1,7 +1,8 @@
 # When does learning one skill impede another? Interference dynamics in GRPO on Qwen3-1.7B
 
-Study `Nov-15-2026-02-vineeth-babel-slurm-interference-dynamics` (s02). Report drafted 2026-11-16. Every result is
-exploratory: one to three seeds per condition, selection-split panels unless marked "conf".
+Study `Nov-15-2026-02-vineeth-babel-slurm-interference-dynamics` (s02). Final report, 2026-11-16. Every result is
+exploratory: one to three seeds per condition, selection-split panels unless marked "conf". Numbers were audited
+(`research/<ID>/audit-2026-11-16.md`) and the add9 findings had an independent critical review.
 
 ## 1. Purpose and main results
 
@@ -14,13 +15,15 @@ This study asks two questions about reinforcement learning with GRPO on Qwen3-1.
 
 Main results:
 
-1. **A behavioural objective can delay a skill that needs written working.** Training "terse" answers (no
-   working, at most 24 tokens) together with Caesar decoding delayed the harder Caesar strata by 0.11 to 0.18 at
-   round 16, in 2 of 2 seeds. One seed closed the gap by round 24; the other still lagged by 0.12 at round 32 on
-   one stratum. Caesar answers were 5-15% shorter in the joint run during the lag. (F6, F11)
-2. **Training one task often damages an untrained behaviour.** Caesar or base-9 addition (add9) training drove the
-   untrained terse task from about 0.4 to 0.03-0.07, in two different ways: over-long answers (Caesar) and unboxed
-   answers (add9). Training both Caesar and MBPP together protected it. (F3, F5, F15)
+1. **A behavioural objective can delay a skill that needs written working, when it spills into its answers.**
+   Training "terse" answers (no working, at most 24 tokens) together with Caesar decoding delayed the harder Caesar
+   strata by 0.11 to 0.18 at round 16 in 2 of 3 seeds. One of those seeds closed the gap by round 24; the other
+   still lagged by 0.12 at round 32 on one stratum. In both, Caesar answers were 5-15% shorter in the joint run
+   during the lag. The third seed showed no shortening and no delay. (F6, F11, F19)
+2. **Training one task often damages an untrained behaviour.** Caesar or base-9 addition (add9) training lowered
+   the untrained terse task from about 0.4 to 0.03-0.29 (Caesar: 3 of 3 seeds; size varies by seed), in two
+   different ways: over-long answers (Caesar) and unboxed answers (add9). Training Caesar together with MBPP, or
+   training terse itself, protected it. (F3, F5, F15, F19)
 3. **Inside one task family, a skill can collapse and stay collapsed because it stops receiving feedback.** When
    add9 trained on a mixture of 4-, 6- and 8-digit problems, the 6-digit stratum (d6) rose and then fell to near
    zero in 2 of 3 seeds. Once all d6 training groups were all-wrong, d6 received no gradient. From the collapsed
@@ -28,7 +31,8 @@ Main results:
    or transfer from d4 training restarted recovery. This is the persistence step of the RQ2 chain. (F8, F10, F14)
 4. **The trigger of that collapse is not identified.** It is not d8 gradients (d8 gave almost no gradient before
    the seed-2 collapse). Without d8 groups, 0 of 3 seeds collapsed, against 2 of 3 with them (Fisher exact
-   p = 0.4): suggestive, not significant. (F13, F16, independent review)
+   p = 0.4); with a second task added (add10 or terse), 0 of 2 collapsed. Suggestive, not significant. (F13, F16,
+   F18, independent review)
 5. **A joint-run lag is not by itself evidence of interference.** Caesar trained with MBPP lagged Caesar alone by
    0.09-0.12 at round 32 while MBPP was unaffected. Halving Caesar's learning rate alone costs 0.14-0.53, so the lag
    fits Adam simply sharing each step between two active tasks. Add9 trained with decimal addition (add10) showed no
@@ -72,7 +76,7 @@ groups + 8 competitor groups per round. **D(t) = p_T(R) − p_T(J)**: positive m
 
 | Target T | Competitor C | Effect on T | Effect on C | Class (T under C) | Seeds | Source |
 |---|---|---|---|---|---|---|
-| caesar | terse | harder strata delayed: D(s8, s12) +.11..+.18 at r16 | terse learned (.4 → .9+), protected | delay; transient in seed 1, unresolved in seed 2 | 2 | F6, F11 |
+| caesar | terse | harder strata delayed in 2/3 seeds: D(s8, s12) +.11..+.18 at r16; none in seed 3 | terse learned (.4 → .9+), protected | delay in 2/3 seeds (transient in one), tracks answer shortening | 3 | F6, F11, F19 |
 | caesar | MBPP | all strata behind at r32: D +.09..+.12 | MBPP unaffected (D +.03, n.s.) | lag explained by step sharing (half-lr control costs .14-.53) | 1 | F15, F17 |
 | add9 | add10 | no harm; d6 collapse absent | not analysed | none detected | 1 | F7 |
 | add9 | terse | no harm (J ahead of the collapsed R: d6 −.47) | terse learned (.4 → .93), protected | none detected | 1 | F18 |
@@ -136,7 +140,16 @@ also carries 4x the loss weight of an 8-sample group, so "more samples" and "a l
 
 During the lag (rounds 9-16), the joint runs had fewer mixed Caesar groups than the references (seed 1: 44 vs 51;
 seed 2: 46 vs 51) and more all-wrong groups (18 vs 11; 13 vs 9). The chain direction holds, but the effect is small
-and closes in one seed.
+and closes in one seed. Seed 3 had no delay and equal group counts (51 vs 51 mixed; 13 vs 13 all-wrong).
+
+| Seed | D(s8) at r16 | D(s12) at r16 | Caesar answer length r9-16, alone vs joint |
+|---|---|---|---|
+| 1 | +.18 [+.10, +.25] | +.11 [+.03, +.18] | 603 vs 533 tokens (joint 12% shorter) |
+| 2 | +.12 [+.05, +.20] | +.15 [+.07, +.23] | 479 vs 456 (5% shorter) |
+| 3 | +.07 [−.02, +.17] | +.02 [−.05, +.08] | 535 vs 566 (6% longer) |
+
+The delay appears only in the seeds where terse training shortened Caesar answers. This fits brevity spill-over;
+with three seeds it is a correlation, not a test.
 
 ### 4.4 What the evidence supports
 
@@ -151,9 +164,9 @@ and closes in one seed.
 
 | Claim | Experiments (expid) | Result | Status |
 |---|---|---|---|
-| C-1 Caesar acquires all strata alone | e1-caesar-s1, -s2 | s12 .04 → .64-.71 | replicated (2 seeds) |
-| C-2 Caesar training breaks terse via long answers | e1-caesar-s1, -s2 | −.34, −.40; length 19 → 107 | replicated |
-| C-3 terse delays harder Caesar strata | j-caesar-terse-s1/-s2 vs e1-caesar-s1/-s2 | D(r16) s8 +.18/+.12, s12 +.11/+.15 | replicated; closure 1 of 2 |
+| C-1 Caesar acquires all strata alone | e1-caesar-s1, -s2, -s3 | s12 .04 → .64-.71 | replicated (3 seeds) |
+| C-2 Caesar training lowers terse via long answers | e1-caesar-s1, -s2, -s3 | −.34, −.40, −.11 [−.19, −.04] | 3 of 3 seeds; size varies |
+| C-3 terse delays harder Caesar strata | j-caesar-terse-s1/-s2/-s3 vs e1-caesar-s1/-s2/-s3 | D(r16) s8 +.18/+.12/+.07, s12 +.11/+.15/+.02 | 2 of 3 seeds; tracks answer shortening |
 | C-4 add10 / terse do not harm add9 | j-add9-add10-s1, j-add9-terse-s1 vs e1-add9-s1 | |D(d4)| ≤ .06; d6 no collapse in either | 1 seed each |
 | C-5 MBPP slows Caesar beyond step sharing | j-caesar-mbpp-s1, e1-caesar-s1, e1-mbpp-s1, e1-caesar-lr1e6-s1 | D(r32) +.09..+.12; half lr costs .14-.53 | not supported: step sharing suffices |
 | C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r | 2 of 3 seeds | supported (reviewed) |
@@ -168,7 +181,8 @@ and closes in one seed.
 - **Generality** beyond Qwen3-1.7B, lr 2e-6, Adam, and these task families.
 - **Which update causes the add9 collapse.** Candidates left: d4×d6 interaction, one large update, sparse-update
   drift under Adam, a weak effect of d8 groups.
-- **Mechanism of the Caesar delay.** Brevity spill-over fits the length data but was not tested.
+- **Mechanism of the Caesar delay.** Brevity spill-over fits the length data in all three seeds but was not tested
+  by intervention.
 - **Step size versus interference** in joint runs with an active competitor. Adam gives each step about the same
   size whatever the number of tasks, so each task's share shrinks when another task is active; the loss divisor
   matches raw gradient weight only (decision D3). The half-lr control (F17) bounds this for Caesar only.

@@ -50,14 +50,18 @@ Code: task generators `src/qis/s02/tasks.py`; graders `src/qis/verify.py`; train
    runs: 3+ more seeds of the mixed and d4+d6 configurations (to test the d8 association, p = 0.4 now); log
    per-minibatch composition and gradient norms by stratum; a random-reward stratum in place of d8 (reviewer's
    suggestion) to separate "sparse noisy updates" from d8 content.
-2. **Is the Caesar delay under terse caused by brevity spill-over?** Test with a length-matched competitor, or a
-   terse variant with a looser length limit; check seed 3 (`qis-s02-j-caesar-terse-s3`, see `runs.md`).
+2. **Is the Caesar delay under terse caused by brevity spill-over?** The delay appeared in 2 of 3 seeds, exactly
+   those where Caesar answers got shorter (F19). Test by intervention: a terse variant with a looser length limit,
+   or a length penalty on Caesar answers in the reference run.
 3. **Recovery dynamics with more than one collapse state.** F10 rests on one collapse state and one branch per
    condition; separate "more samples" from "larger step" (normalise the loss per group size).
 4. **Why d4-only training lowers terse while d6-only raises it** (format drift, unexplained).
 
 ## 5. State at hand-over
 
-All study jobs finished or are listed in `runs.md` with their final state. Remaining compute storage under
-`/data/user_data/vineethb/qis/s02` holds run directories (metrics, records) and no retained checkpoints, except any
-listed in `runs.md` notes.
+All 38 study jobs have ended; `runs.md` lists each final state from `sacct`. No study job was running at hand-over.
+Compute storage under `/data/user_data/vineethb/qis/s02` holds run directories (metrics, training and evaluation
+records) and bundles. Retained checkpoints were deleted at 13:04 EST; finished runs pruned their own checkpoints in
+the export phase. Last measured: 99 GB under `s02/ckpt` at 13:03 EST, before the final deletions and prunes; not
+re-measured after the last job ended. Verify with a CPU job (`du -sh /data/user_data/$USER/qis/s02/ckpt`) before
+starting new work.

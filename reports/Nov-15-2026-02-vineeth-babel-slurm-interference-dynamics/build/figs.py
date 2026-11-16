@@ -134,6 +134,7 @@ def fig_recovery(res, out):
 def fig_caesar_D(res, out):
     pairs = [("qis-s02-j-caesar-terse-s1", "qis-s02-e1-caesar-s1", "with terse, seed 1", 0, 1),
              ("qis-s02-j-caesar-terse-s2", "qis-s02-e1-caesar-s2", "with terse, seed 2", 0, 2),
+             ("qis-s02-j-caesar-terse-s3", "qis-s02-e1-caesar-s3", "with terse, seed 3", 0, 3),
              ("qis-s02-j-caesar-mbpp-s1", "qis-s02-e1-caesar-s1", "with MBPP, seed 1", 1, 1)]
     fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharey=True, facecolor=SURFACE)
     for stratum, ax in zip(("s4", "s8", "s12"), axes):
@@ -157,7 +158,7 @@ def fig_caesar_D(res, out):
 
 
 def fig_offtarget(res, out):
-    runs = [("caesar", "qis-s02-e1-caesar-s1"), ("caesar s2", "qis-s02-e1-caesar-s2"), ("MBPP", "qis-s02-e1-mbpp-s1"),
+    runs = [("caesar", "qis-s02-e1-caesar-s1"), ("caesar s2", "qis-s02-e1-caesar-s2"), ("caesar s3", "qis-s02-e1-caesar-s3"), ("MBPP", "qis-s02-e1-mbpp-s1"),
             ("add9 mixed", "qis-s02-e1-add9-s1"), ("add9 d4", "qis-s02-e3-add9d4-s1"), ("add9 d6", "qis-s02-e3-add9d6-s1"),
             ("add9 d8", "qis-s02-e3-add9d8-s1")]
     panels = ["caesar_s4_sel", "caesar_s8_sel", "caesar_s12_sel", "add9_d4_sel", "add9_d6_sel", "add9_d8_sel",
