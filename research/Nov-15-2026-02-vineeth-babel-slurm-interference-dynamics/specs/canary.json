@@ -1,0 +1,10 @@
+{"expid": "qis-s02-canary", "part": "preempt", "time": "03:00:00",
+ "bundle": "s02-canary", "bundle_spec": "add9:d6,countdown:n4", "n_train": 200, "n_eval": 32,
+ "hypothesis": "canary (no science): joint add9+countdown, 6 rounds, forced exit after round 3 and resume; checks mix scheduling, two graders, per-role groups, loss divisor, checkpoint/resume, in-run evals, memory and seconds per round.",
+ "config": {"phase": "canary", "seed": 1, "lr": 1e-6, "eps_low": 0.2, "eps_high": 0.2, "grad_clip": 1.0,
+            "rounds": 6, "ckpt_every": 3, "eval_rounds": [0, 3, 6],
+            "eval_panels": {"add9_d6_sel": 8, "countdown_n4_sel": 8},
+            "max_tokens": 4096, "gpu_mem_util": 0.30, "max_num_seqs": 256,
+            "n_per_prompt": 8, "n_minibatch": 4, "loss_norm_responses": 32,
+            "mix": [{"role": "T", "pool": "add9_d6_train", "slots": 8}, {"role": "C", "pool": "countdown_n4_train", "slots": 8}],
+            "wandb": {"enabled": false}}}
