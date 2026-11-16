@@ -1,0 +1,149 @@
+[
+ {
+  "expid": "qis-s02-e1-caesar-s3",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1f seed-3 replicate of the caesar-terse pair (F6, F11: harder strata delayed at r16 in 2/2 seeds). no_ckpt (NFS slow 2026-11-16; a preemption restarts the run from round 0).",
+  "config": {
+   "phase": "e1",
+   "seed": 3,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "caesar_s4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s8_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s12_train",
+     "slots": 2
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "no_ckpt": true
+  },
+  "exclude": "babel-l9-32"
+ },
+ {
+  "expid": "qis-s02-j-caesar-terse-s3",
+  "part": "preempt",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1f seed-3 replicate of the caesar-terse pair (F6, F11: harder strata delayed at r16 in 2/2 seeds). no_ckpt (NFS slow 2026-11-16; a preemption restarts the run from round 0).",
+  "config": {
+   "phase": "e1b",
+   "seed": 3,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "caesar_s4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s8_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s12_train",
+     "slots": 2
+    },
+    {
+     "role": "C",
+     "pool": "terse10_k2_train",
+     "slots": 8
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "no_ckpt": true
+  },
+  "exclude": "babel-l9-32"
+ }
+]
