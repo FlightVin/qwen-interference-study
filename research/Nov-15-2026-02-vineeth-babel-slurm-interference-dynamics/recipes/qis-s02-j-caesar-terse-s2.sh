@@ -23,6 +23,8 @@ phase precheck "false" '
     used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)
     [ "$used" -lt 2048 ] || { echo "GPU already holds ${used} MiB on $(hostname)"; exit 1; }
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv > "$AE_RESULTS/gpu.txt"
+    free=$(df -BG --output=avail "$PROJ_DATA" | tail -1 | tr -dc 0-9)
+    [ "$free" -ge 60 ] || { echo "PRECONDITION FAILED: $PROJ_DATA has ${free}G free < 60G"; exit 1; }
     mkdir -p "$W" "$CK" "$S02/data"
 '
 phase tests "test -s $W/pytest.ok" '
@@ -61,4 +63,10 @@ phase train "test -f $W/RUN_COMPLETE" '
 phase export "false" '
     cp "$W/metrics.jsonl" "$W/config.json" "$AE_RESULTS/"
     du -sh "$CK" > "$AE_RESULTS/ckpt_du.txt" 2>&1 || true
+    # storage rule (2026-11-16 incident): after a complete run keep only the retained rounds
+    keep=$(python -c "import json; print(\" \".join(\"round_%04d\" % r for r in json.load(open(\"$W/config.json\")).get(\"retain_rounds\", [])))")
+    for r in "$CK"/round_*; do
+        [ -d "$r" ] || continue
+        case " $keep " in *" $(basename "$r") "*) echo "keep $r";; *) echo "prune $r"; rm -rf -- "$r";; esac
+    done >> "$AE_RESULTS/ckpt_du.txt"
 '
