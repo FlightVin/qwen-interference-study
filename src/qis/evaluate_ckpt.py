@@ -35,14 +35,18 @@ def main():
     ap.add_argument("--seed-label", required=True)
     ap.add_argument("--max-tokens", type=int, default=MAX_TOKENS)
     ap.add_argument("--gpu-mem-util", type=float, default=0.85)
+    ap.add_argument("--max-num-seqs", type=int, default=256)
+    ap.add_argument("--limit", type=int, default=0, help="evaluate only the first N problems of the panel")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     items = json.load(open(a.panel))["pools"][a.panel_key]
+    if a.limit:
+        items = items[:a.limit]
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(a.model)
     from qis.train.rollout import Rollout
     # vLLM gets most of the GPU; checkpoint weights are read on the CPU and pushed into vLLM (no learner on GPU).
-    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens)
+    roll = Rollout(a.model, a.gpu_mem_util, max_tokens=a.max_tokens, max_num_seqs=a.max_num_seqs)
     ck_hash, weight_check = "base", None
     if a.ckpt != "base":
         mpath = os.path.join(a.ckpt, "model.pt")
@@ -65,12 +69,12 @@ def main():
         print("weight check ok", weight_check, flush=True)
         del sd, params
     ver = Verifier(8)
-    ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
+    from qis.train.run import render_ids, score_items
+    ids = [render_ids(tok, it) for it in items]
     req = [seeds.int_seed(EVAL_SEED, f"eval/{a.panel_key}/{it['id']}/{a.seed_label}/n{a.n}") for it in items]
     t0 = time.time()
     outs = roll.generate(ids, a.n, req, logprobs=False)
-    sc = ver.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
-                     "truncated": o["finish"] == "length"} for it, g in zip(items, outs) for o in g])
+    sc = score_items(ver, tok, items, outs)
     per, k, unknown, toks = [], 0, 0, 0
     c8 = []          # A10: success with completion required within 8,192 tokens (same traces)
     with gzip.open(os.path.join(a.out, "records.jsonl.gz"), "wt") as f:
@@ -83,7 +87,7 @@ def main():
                 f.write(json.dumps({"prompt_id": it["id"], "seed": s, "sample": j, "n_tokens": len(o["ids"]),
                                     "finish": o["finish"], "extracted": r["extracted"], "status": r["status"],
                                     "reward": r["reward"], "ids": o["ids"]}) + "\n")
-            per.append({"id": it["id"], "c": c, "c_within_8192": c_8k, "n": a.n})
+            per.append({"id": it["id"], "c": c, "c_within_8192": c_8k, "n": a.n, "stratum": it.get("stratum")})
     summ = {"ckpt": a.ckpt, "ckpt_model_sha256": ck_hash, "weight_check": weight_check, "panel": a.panel_key, "n": a.n, "problems": len(items),
             "pass1": float(np.mean([p["c"] / a.n for p in per])),
             "pass8": float(np.mean([grpo.pass_at_k(a.n, p["c"], 8) for p in per])),
@@ -93,7 +97,11 @@ def main():
                                           for r, o in zip(sc, [o for g in outs for o in g])) / (a.n * len(items)),
             "tokens_per_second": toks / max(time.time() - t0, 1e-9), "completions": a.n * len(items),
             "truncated": sum(o["finish"] == "length" for g in outs for o in g) / (a.n * len(items)),
-            "unknown": unknown, "tokens": toks, "seconds": time.time() - t0, "seed_label": a.seed_label,
+            "unknown": unknown, "tokens": toks, "status_counts": {st: sum(r["status"] == st for r in sc)
+                                                                  for st in sorted({r["status"] for r in sc})},
+            "len_mean": toks / max(1, a.n * len(items)),
+            "len_q": [float(x) for x in np.quantile([len(o["ids"]) for g in outs for o in g], [0.5, 0.9, 0.99, 1.0])],
+            "problems_all_wrong_all_right": {"all0": sum(p["c"] == 0 for p in per), "all1": sum(p["c"] == a.n for p in per)}, "seconds": time.time() - t0, "seed_label": a.seed_label,
             "per_problem": per}
     json.dump(summ, open(os.path.join(a.out, "summary.json"), "w"), indent=1)
     print(json.dumps({k: v for k, v in summ.items() if k != "per_problem"}, indent=1))

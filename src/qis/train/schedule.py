@@ -54,3 +54,15 @@ def round_plan(arm: str, seed: int, rnd: int, n_hard: int, n_pairs: int = 0, n_c
     pairs = _draws(n_pairs, seed, "sched/aux_pairs", 8, rnd)[0]
     pool = {"R": "related", "U": "unrelated"}[arm]
     return plan + [("aux", pool, p) for p in pairs]
+
+
+def mix_plan(mix: list, seed: int, rnd: int, pool_sizes: dict):
+    """Study Nov-15-2026-02: generic task mixture. mix = [{"role": R, "pool": P, "slots": k}, ...].
+    Each role draws k distinct items per round from its own shuffled-cycle stream "sched/mix/<role>/<pool>", so the
+    same (seed, role, pool) gives the same prompts in every run whatever the other roles are (paired arms).
+    Returns [(role, pool, index), ...] in mix order."""
+    plan = []
+    for m in mix:
+        idx = _draws(pool_sizes[m["pool"]], seed, f"sched/mix/{m['role']}/{m['pool']}", m["slots"], rnd)[0]
+        plan += [(m["role"], m["pool"], i) for i in idx]
+    return plan

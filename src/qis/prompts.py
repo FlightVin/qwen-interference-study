@@ -7,8 +7,9 @@ PROMPT_CAP = 1024
 THINK_STUB = "<think>\n\n</think>\n\n"
 
 
-def render(tok, problem: str) -> str:
-    return tok.apply_chat_template([{"role": "user", "content": USER_PREFIX + problem}],
+def render(tok, problem: str, prefix: str = None) -> str:
+    """prefix: optional instruction that replaces USER_PREFIX (study Nov-15-2026-02 items carry it as "prefix")."""
+    return tok.apply_chat_template([{"role": "user", "content": (USER_PREFIX if prefix is None else prefix) + problem}],
                                    tokenize=False, add_generation_prompt=True,
                                    enable_thinking=False)
 

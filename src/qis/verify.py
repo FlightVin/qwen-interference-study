@@ -9,6 +9,7 @@ Rules:
 """
 import inspect
 import multiprocessing as mp
+import re
 import time
 
 from qis.data.math_source import last_boxed
@@ -18,6 +19,31 @@ RETRY_TIMEOUT_S = 15.0
 
 # status values
 CORRECT, WRONG, NO_ANSWER, TRUNCATED, UNKNOWN = "correct", "wrong", "no_answer", "truncated", "unknown"
+OVER_LEN = "over_len"
+
+
+_SUBSCRIPT = re.compile(r"_\{?\(?(?:\\text\{|\\mathrm\{)?(?:base\s*)?\d+\}?\)?\}?$")
+_TEXT_WRAP = re.compile(r"^\\(?:text|mathrm|mathbf)\{(.*)\}$")
+
+
+def normalize_digits(s: str):
+    """Exact-match normal form for procedural answers (study Nov-15-2026-02): drop $, spaces, thousands separators
+    (",", "\\,", "{,}"), one \\text{...} wrapper, a trailing base subscript (_9, _{9}, _{(9)}, _{\\text{9}}) or a
+    trailing "(base 9)" / "base 9" note, and leading zeros. Returns the digit string, or None if anything else
+    remains (for example letters, operators or decimals)."""
+    t = s.strip().strip("$").strip()
+    m = _TEXT_WRAP.match(t)
+    if m:
+        t = m.group(1)
+    t = re.sub(r"\\[,!;: ]|\{,\}|,|\s|~", "", t)
+    t = re.sub(r"\(?\\?(?:text\{)?base\d+\}?\)?$", "", t)
+    t = _SUBSCRIPT.sub("", t)
+    m = _TEXT_WRAP.match(t)
+    if m:
+        t = m.group(1)
+    if not t.isdigit():
+        return None
+    return t.lstrip("0") or "0"
 
 
 def _mv():
@@ -121,7 +147,11 @@ class Verifier:
 
     def score(self, items):
         """items: list of dicts with gold, response, truncated. Returns list of dicts with
-        reward (0/1 or None for unknown), status, extracted, diagnostic."""
+        reward (0/1 or None for unknown), status, extracted, diagnostic.
+        Optional item keys (study Nov-15-2026-02): match="digits" grades by exact comparison of normalize_digits()
+        in-process (no Math-Verify); len_limit=L with n_tokens gives reward 0 and status "over_len" to a correct
+        response longer than L tokens.
+        """
         res = [None] * len(items)
         jobs = []
         for k, it in enumerate(items):
@@ -129,6 +159,14 @@ class Verifier:
             res[k] = {"extracted": ext}
             if ext is None:
                 res[k].update(status=TRUNCATED if it["truncated"] else NO_ANSWER, reward=0)
+            elif it.get("match") == "digits":
+                ok = normalize_digits(ext) == normalize_digits(it["gold"])
+                if it["truncated"]:
+                    res[k].update(status=TRUNCATED, reward=0, would_match=ok)
+                elif ok and it.get("len_limit") is not None and it["n_tokens"] > it["len_limit"]:
+                    res[k].update(status=OVER_LEN, reward=0)
+                else:
+                    res[k].update(status=CORRECT if ok else WRONG, reward=1 if ok else 0)
             else:
                 jobs.append((k, it["gold"], ext))
         first = self._run(jobs, TIMEOUT_S)

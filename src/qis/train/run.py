@@ -6,6 +6,16 @@ advantages -> teacher-forced log probs of the round-start learner (pi_old, fixed
 Checkpoints every `ckpt_every` committed rounds; scheduled evaluations at `eval_rounds`.
 Response cap: one value for every round and in-run evaluation (config max_tokens, default 12,288).
 
+Study Nov-15-2026-02 extensions (all optional; absent keys keep the behaviour above):
+  mix                  [{"role", "pool", "slots", "weight"=1.0}, ...] replaces `arm` scheduling (schedule.mix_plan);
+                       weight multiplies that role's advantages in the loss (competing-update strength)
+  n_per_prompt         responses per prompt (default 8);  n_minibatch  optimizer steps per round (default 4)
+  loss_norm_responses  fixed divisor of the per-response objective (default: responses in the minibatch). Set it to
+                       the joint arm's minibatch size in a single-task control so the target's gradient weight per
+                       response is identical (exposure-matched control)
+  init_round           with init_ckpt: the branch continues at this absolute round (schedule, seeds, eval labels)
+Items may carry prefix / match / len_limit (qis.s02.tasks). Round metrics add per-role group counts ("by_role").
+
 Exit codes: 0 done; 143 preemption notice (requeue); 3 round held (verifier unknown);
 4 numerical failure (non-finite loss or gradient).
 """
@@ -24,7 +34,7 @@ import torch
 from qis import prompts, seeds
 from qis.limits import MAX_TOKENS
 from qis.train import ckpt, grpo
-from qis.train.schedule import round_plan
+from qis.train.schedule import mix_plan, round_plan
 from qis.verify import UNKNOWN, Verifier
 
 EVAL_SEED = 4242            # evaluation streams are independent of training/selection streams
@@ -109,13 +119,24 @@ def load_bundle(path):
     return b, hashlib.sha256(open(path, "rb").read()).hexdigest()
 
 
+def score_items(verifier, tok, items, outs):
+    """Grade [n responses per item]; carries the s02 item keys (match, len_limit) into the verifier."""
+    return verifier.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
+                            "truncated": o["finish"] == "length", "n_tokens": len(o["ids"]),
+                            "match": it.get("match"), "len_limit": it.get("len_limit")}
+                           for it, g in zip(items, outs) for o in g])
+
+
+def render_ids(tok, it):
+    return tok(prompts.render(tok, it["problem"], it.get("prefix")), add_special_tokens=False)["input_ids"]
+
+
 def evaluate(rollout, verifier, tok, panel_name, items, n, rnd, rec_dir):
-    ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for it in items]
+    ids = [render_ids(tok, it) for it in items]
     req_seeds = [seeds.int_seed(EVAL_SEED, f"eval/{panel_name}/{it['id']}/r{rnd}/n{n}") for it in items]
     t0 = time.time()
     outs = rollout.generate(ids, n, req_seeds, logprobs=False)
-    scored = verifier.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
-                              "truncated": o["finish"] == "length"} for it, g in zip(items, outs) for o in g])
+    scored = score_items(verifier, tok, items, outs)
     per, k, recs, unknown = [], 0, [], 0
     for it, g, s in zip(items, outs, req_seeds):
         c = 0
@@ -126,12 +147,20 @@ def evaluate(rollout, verifier, tok, panel_name, items, n, rnd, rec_dir):
             recs.append({"panel": panel_name, "round": rnd, "prompt_id": it["id"], "seed": s, "sample": j,
                          "n_tokens": len(o["ids"]), "finish": o["finish"], "extracted": r["extracted"],
                          "status": r["status"], "reward": r["reward"], "ids": o["ids"]})
-        per.append({"id": it["id"], "c": c, "n": n})
+        per.append({"id": it["id"], "c": c, "n": n, "stratum": it.get("stratum")})
     with gzip.open(os.path.join(rec_dir, f"eval_{panel_name}_r{rnd:04d}.jsonl.gz"), "wt") as f:
         for x in recs:
             f.write(json.dumps(x) + "\n")
     toks = sum(x["n_tokens"] for x in recs)
-    return {"panel": panel_name, "round": rnd, "n": n, "problems": len(items),
+    strata = {}
+    for p in per:
+        strata.setdefault(p["stratum"], []).append(p)
+    by_stratum = {str(k): {"pass1": float(np.mean([p["c"] / n for p in v])), "problems": len(v),
+                           "all0": sum(p["c"] == 0 for p in v), "all1": sum(p["c"] == n for p in v)}
+                  for k, v in strata.items()}
+    return {"panel": panel_name, "by_stratum": by_stratum,
+            "len_mean": float(np.mean([x["n_tokens"] for x in recs])),
+            "over_len": sum(x["status"] == "over_len" for x in recs) / len(recs), "round": rnd, "n": n, "problems": len(items),
             "pass1": float(np.mean([p["c"] / n for p in per])),
             "pass8": float(np.mean([grpo.pass_at_k(n, p["c"], 8) for p in per])) if n >= 8 else None,
             "truncated": sum(x["finish"] == "length" for x in recs) / len(recs),
@@ -158,6 +187,8 @@ def main():
     from qis.train.rollout import Rollout
     rollout = Rollout(cfg["model"], cfg["gpu_mem_util"], max_tokens=response_cap(cfg),
                       max_num_seqs=cfg.get("max_num_seqs", 256))
+    n_per, n_mb = cfg.get("n_per_prompt", N_PER_PROMPT), cfg.get("n_minibatch", N_MINIBATCH)
+    role_w = {m["role"]: float(m.get("weight", 1.0)) for m in cfg.get("mix", [])}
     learner = Learner(cfg["model"], cfg["lr"])
     verifier = Verifier(cfg.get("verify_workers", 6))
 
@@ -170,7 +201,7 @@ def main():
     if src is not None:
         meta = ckpt.load(src["path"], learner.model, learner.opt)
         rollout.load_weights(learner.model)
-        start = meta["round"] if src["round"] is not None else 0
+        start = meta["round"] if src["round"] is not None else int(cfg.get("init_round", 0))
         counters.update(meta.get("counters", {}))
     log = Log(out, cfg, meta)
     log.event("start", host=socket.gethostname(), gpu=torch.cuda.get_device_name(0),
@@ -222,8 +253,8 @@ def main():
                           pass8=float(np.mean([grpo.pass_at_k(x["n"], x["c"], 8) for x in pp])) if n >= 8 else None,
                           per_problem=pp, ckpt_round=rnd)
 
-    if start == 0 and 0 in cfg.get("eval_rounds", []):
-        run_evals(0)
+    if start in cfg.get("eval_rounds", []):        # skips panels already written (resume)
+        run_evals(start)
 
     n_hard = len(pools.get("hard", [])); n_pairs = len(pools.get("related", []))
     n_calib = len(pools.get("calib_train", []))
@@ -235,22 +266,23 @@ def main():
             preempt_exit(round=rnd)
         report_ckpt()
         t_round = time.time()
-        plan = round_plan(cfg["arm"], cfg["seed"], rnd, n_hard, n_pairs, n_calib)
+        if cfg.get("mix"):
+            plan = mix_plan(cfg["mix"], cfg["seed"], rnd, {k: len(v) for k, v in pools.items()})
+        else:
+            plan = round_plan(cfg["arm"], cfg["seed"], rnd, n_hard, n_pairs, n_calib)
         items = [(role, pools[pool][i]) for role, pool, i in plan]
-        p_ids = [tok(prompts.render(tok, it["problem"]), add_special_tokens=False)["input_ids"] for _, it in items]
+        p_ids = [render_ids(tok, it) for _, it in items]
         assert all(len(p) <= prompts.PROMPT_CAP for p in p_ids), "prompt over cap (bundle must pre-filter)"
         req_seeds = [seeds.int_seed(cfg["seed"], f"gen/r{rnd}/p{j}") for j in range(len(items))]
         t0 = time.time()
-        groups = rollout.generate(p_ids, N_PER_PROMPT, req_seeds, logprobs=True)
+        groups = rollout.generate(p_ids, n_per, req_seeds, logprobs=True)
         t_gen = time.time() - t0
         mem_gen = gpu_used()
         rollout.sleep()
 
         t0 = time.time()
         flat = [(gi, o) for gi, g in enumerate(groups) for o in g]
-        scored = verifier.score([{"gold": items[gi][1]["gold"],
-                                  "response": tok.decode(o["ids"], skip_special_tokens=True),
-                                  "truncated": o["finish"] == "length"} for gi, o in flat])
+        scored = score_items(verifier, tok, [it for _, it in items], groups)
         t_ver = time.time() - t0
         unk = [i for i, s in enumerate(scored) if s["status"] == UNKNOWN]
         if unk:
@@ -258,7 +290,7 @@ def main():
                       diagnostics=[scored[i].get("diagnostic") for i in unk][:10],
                       predictions=[scored[i]["extracted"] for i in unk][:10])
             raise Held(f"round {rnd}: {len(unk)} verifier unknown")
-        rewards = torch.tensor([s["reward"] for s in scored], dtype=torch.float32).view(len(groups), N_PER_PROMPT)
+        rewards = torch.tensor([s["reward"] for s in scored], dtype=torch.float32).view(len(groups), n_per)
         adv = grpo.group_advantages(rewards)
 
         # pi_old: round-start learner, teacher forced, fixed for all 4 steps (decision D11)
@@ -275,20 +307,21 @@ def main():
 
         # 4 optimizer steps; minibatches of 4 complete groups with balanced roles
         roles = [r for r, _ in items]
-        mb_plan = grpo.minibatch_plan(roles, N_MINIBATCH, seeds.rng(cfg["seed"], f"minibatch/r{rnd}"))
+        mb_plan = grpo.minibatch_plan(roles, n_mb, seeds.rng(cfg["seed"], f"minibatch/r{rnd}"))
         ratios, act_pos, act_neg, n_pos, n_neg = [], 0.0, 0.0, 0.0, 0.0
         t0 = time.time()
         for m, mb in enumerate(mb_plan):
             if preempted():
                 preempt_exit(round=rnd, minibatch=m, midround=True)
-            members = [(gi, j) for gi in mb for j in range(N_PER_PROMPT)]
+            members = [(gi, j) for gi in mb for j in range(n_per)]
+            denom = cfg.get("loss_norm_responses") or len(members)
             tot_loss, valid_tok = torch.zeros((), device="cuda"), 0
             for gi, j in members:
                 o = groups[gi][j]
                 lp = learner.token_logprobs(p_ids[gi], o["ids"], train=True)
-                A = float(adv[gi, j])
+                A = float(adv[gi, j]) * role_w.get(roles[gi], 1.0)
                 obj, st = grpo.response_objective(lp, old[(gi, j)], A, eps_lo, eps_hi)
-                loss = -obj / len(members)
+                loss = -obj / denom
                 loss.backward()
                 tot_loss += loss.detach(); valid_tok += len(o["ids"])
                 ratios.append(st["ratio"])
@@ -322,11 +355,22 @@ def main():
             gis = [gi for gi, r in enumerate(roles) if r == role]
             succ[role] = float(rewards[gis].mean())
         ng = rewards.sum(1)
-        counters["gen_tokens"] += int(lens.sum()); counters["prompt_tokens"] += sum(len(p) * N_PER_PROMPT for p in p_ids)
-        counters["hard_responses"] += N_PER_PROMPT * sum(r.startswith("hard") for r in roles)
+        by_role = {}
+        for role in sorted(set(roles)):
+            gis = [gi for gi, r in enumerate(roles) if r == role]
+            rl = torch.tensor([len(o["ids"]) for gi in gis for o in groups[gi]], dtype=torch.float32)
+            rs = [scored[gi * n_per + j] for gi in gis for j in range(n_per)]
+            by_role[role] = {"groups": len(gis), "success": float(rewards[gis].mean()),
+                             "all0": int((ng[gis] == 0).sum()), "all1": int((ng[gis] == n_per).sum()),
+                             "mixed": int(((ng[gis] > 0) & (ng[gis] < n_per)).sum()),
+                             "len_mean": float(rl.mean()), "truncated": sum(r["status"] == "truncated" for r in rs),
+                             "over_len": sum(r["status"] == "over_len" for r in rs),
+                             "no_answer": sum(r["status"] == "no_answer" for r in rs)}
+        counters["gen_tokens"] += int(lens.sum()); counters["prompt_tokens"] += sum(len(p) * n_per for p in p_ids)
+        counters["hard_responses"] += n_per * sum(r.startswith("hard") for r in roles)
         rm = {"round": rnd + 1, "max_tokens": rollout.max_tokens, "success": succ,
-              "groups_all0": int((ng == 0).sum()), "groups_all1": int((ng == N_PER_PROMPT).sum()),
-              "groups_mixed": int(((ng > 0) & (ng < N_PER_PROMPT)).sum()),
+              "groups_all0": int((ng == 0).sum()), "groups_all1": int((ng == n_per).sum()),
+              "groups_mixed": int(((ng > 0) & (ng < n_per)).sum()), "by_role": by_role,
               "len_mean": float(lens.mean()), "len_q": qtiles(lens),
               "truncated": sum(o["finish"] == "length" for _, o in flat),
               "no_answer": sum(s["status"] == "no_answer" for s in scored),
@@ -343,8 +387,8 @@ def main():
         log.write("round", **rm)
         with gzip.open(os.path.join(rec_dir, f"train_r{rnd:04d}.jsonl.gz"), "wt") as f:
             for k, ((gi, o), s) in enumerate(zip(flat, scored)):
-                j = k % N_PER_PROMPT
-                f.write(json.dumps({"round": rnd, "prompt_id": items[gi][1]["id"], "role": roles[gi], "slot": gi,
+                j = k % n_per
+                f.write(json.dumps({"round": rnd, "prompt_id": items[gi][1]["id"], "role": roles[gi], "slot": gi, "stratum": items[gi][1].get("stratum"),
                                     "seed": req_seeds[gi], "sample": j, "n_tokens": len(o["ids"]),
                                     "finish": o["finish"], "extracted": s["extracted"], "status": s["status"],
                                     "reward": s["reward"], "adv": float(adv[gi, j]), "ids": o["ids"]}) + "\n")
