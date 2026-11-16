@@ -66,7 +66,8 @@
     "enabled": false
    },
    "retain_rounds": []
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-j-caesar-terse-s2",
@@ -140,6 +141,7 @@
     "enabled": false
    },
    "retain_rounds": []
-  }
+  },
+  "exclude": "babel-l9-32"
  }
 ]

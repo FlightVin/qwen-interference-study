@@ -70,7 +70,8 @@
     24
    ],
    "allow_uneven_minibatch": true
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-e3-add9d6-s1",
@@ -130,7 +131,8 @@
    },
    "retain_rounds": [],
    "allow_uneven_minibatch": true
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-e3-add9d8-s1",
@@ -190,7 +192,8 @@
    },
    "retain_rounds": [],
    "allow_uneven_minibatch": true
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-e3-add9d4-s1",
@@ -250,6 +253,7 @@
    },
    "retain_rounds": [],
    "allow_uneven_minibatch": true
-  }
+  },
+  "exclude": "babel-l9-32"
  }
 ]

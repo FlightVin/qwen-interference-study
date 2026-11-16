@@ -60,7 +60,8 @@
    "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
    "init_round": 16,
    "no_ckpt": true
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-e3b-r16-d6",
@@ -113,7 +114,8 @@
    "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
    "init_round": 16,
    "no_ckpt": true
-  }
+  },
+  "exclude": "babel-l9-32"
  },
  {
   "expid": "qis-s02-e3b-r16-d6n32",
@@ -166,6 +168,7 @@
    "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
    "init_round": 16,
    "no_ckpt": true
-  }
+  },
+  "exclude": "babel-l9-32"
  }
 ]
