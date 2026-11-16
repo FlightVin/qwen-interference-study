@@ -1,0 +1,171 @@
+[
+ {
+  "expid": "qis-s02-e3b-r16-mixed",
+  "part": "preempt",
+  "time": "04:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E3b recovery from the d6 collapse state (qis-s02-e3-add9mix-s2 round 16, d6 sel .00). Branch mixed: control: continue the original mixture. RQ2: if d6 recovers with d6-only training (more so with 32 samples) but not under the mixture, the collapse persists because d6 gets no corrective signal while d4/d8 updates continue; if nothing recovers in 8 rounds, the collapsed state lacks reachable successes.",
+  "config": {
+   "phase": "e3b",
+   "seed": 2,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 24,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    16,
+    20,
+    24
+   ],
+   "eval_panels": {
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "add9_d6_conf": 8,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add9_d4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "add9_d6_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "add9_d8_train",
+     "slots": 2
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "allow_uneven_minibatch": true,
+   "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
+   "init_round": 16,
+   "no_ckpt": true
+  }
+ },
+ {
+  "expid": "qis-s02-e3b-r16-d6",
+  "part": "preempt",
+  "time": "04:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E3b recovery from the d6 collapse state (qis-s02-e3-add9mix-s2 round 16, d6 sel .00). Branch d6: d6 groups only, 8 samples/prompt (same d6 prompts as control). RQ2: if d6 recovers with d6-only training (more so with 32 samples) but not under the mixture, the collapse persists because d6 gets no corrective signal while d4/d8 updates continue; if nothing recovers in 8 rounds, the collapsed state lacks reachable successes.",
+  "config": {
+   "phase": "e3b",
+   "seed": 2,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 24,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    16,
+    20,
+    24
+   ],
+   "eval_panels": {
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "add9_d6_conf": 8,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add9_d6_train",
+     "slots": 3
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "allow_uneven_minibatch": true,
+   "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
+   "init_round": 16,
+   "no_ckpt": true
+  }
+ },
+ {
+  "expid": "qis-s02-e3b-r16-d6n32",
+  "part": "preempt",
+  "time": "04:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E3b recovery from the d6 collapse state (qis-s02-e3-add9mix-s2 round 16, d6 sel .00). Branch d6n32: d6 groups only, 32 samples/prompt: 4x more chances of a success in an all-wrong group. RQ2: if d6 recovers with d6-only training (more so with 32 samples) but not under the mixture, the collapse persists because d6 gets no corrective signal while d4/d8 updates continue; if nothing recovers in 8 rounds, the collapsed state lacks reachable successes.",
+  "config": {
+   "phase": "e3b",
+   "seed": 2,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 24,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    16,
+    20,
+    24
+   ],
+   "eval_panels": {
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "add9_d6_conf": 8,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 32,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add9_d6_train",
+     "slots": 3
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   },
+   "retain_rounds": [],
+   "allow_uneven_minibatch": true,
+   "init_ckpt": "run:qis-s02-e3-add9mix-s2:16",
+   "init_round": 16,
+   "no_ckpt": true
+  }
+ }
+]
