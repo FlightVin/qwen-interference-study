@@ -26,13 +26,13 @@ Main results:
    training terse itself, protected it. (F3, F5, F15, F19)
 3. **Inside one task family, a skill can collapse and stay collapsed because it stops receiving feedback.** When
    add9 trained on a mixture of 4-, 6- and 8-digit problems, the 6-digit stratum (d6) rose and then fell to near
-   zero in 2 of 3 seeds. Once all d6 training groups were all-wrong, d6 received no gradient. From the collapsed
+   zero in 2 of 5 seeds. Once all d6 training groups were all-wrong, d6 received no gradient. From the collapsed
    state, a branch with zero d6 successes did not recover in 8 rounds; one rare success (found by sampling 4x more)
    or transfer from d4 training restarted recovery. This is the persistence step of the RQ2 chain. (F8, F10, F14)
-4. **The trigger of that collapse is not identified.** It is not d8 gradients (d8 gave almost no gradient before
-   the seed-2 collapse). Without d8 groups, 0 of 3 seeds collapsed, against 2 of 3 with them (Fisher exact
-   p = 0.4); with a second task added (add10 or terse), 0 of 2 collapsed. Suggestive, not significant. (F13, F16,
-   F18, independent review)
+4. **The trigger of that collapse is not identified; it is an occasional event.** It is not d8 gradients (d8 gave
+   almost no gradient before the seed-2 collapse). Without d8 groups, 0 of 5 seeds collapsed, against 2 of 5 with
+   them (Fisher exact p = 0.44); with a second task added (add10 or terse), 0 of 2 collapsed. No condition
+   difference is significant. (F13, F16, F18, independent review)
 5. **A joint-run lag is not by itself evidence of interference.** Caesar trained with MBPP lagged Caesar alone by
    0.09-0.12 at round 32 while MBPP was unaffected. Halving Caesar's learning rate alone costs 0.14-0.53, so the lag
    fits Adam simply sharing each step between two active tasks. Add9 trained with decimal addition (add10) showed no
@@ -104,8 +104,8 @@ Single-task off-target effects at round 32 (Figure 2) show that a task's own tra
 
 | Condition | Seeds | d6 collapse | d6 at r32 |
 |---|---|---|---|
-| mixed d4+d6+d8 (3:3:2 groups) | 3 | 2 of 3 (seed 1 r16→r24, seed 2 r12→r16) | .05, .07, .54 |
-| d4+d6, no d8 | 3 | 0 of 3 | .50, .65, .59 |
+| mixed d4+d6+d8 (3:3:2 groups) | 5 | 2 of 5 (seed 1 r16→r24, seed 2 r12→r16) | .05, .07, .54, .68, .62 |
+| d4+d6, no d8 | 5 | 0 of 5 | .50, .65, .59, .48, .57 |
 | d6 only | 1 | no | .47 |
 | d4 only | 1 | no (d6 rises .15 → .36) | .36 |
 | d8 only | 1 | d6 falls .18 → .03 | .03 |
@@ -169,10 +169,10 @@ with three seeds it is a correlation, not a test.
 | C-3 terse delays harder Caesar strata | j-caesar-terse-s1/-s2/-s3 vs e1-caesar-s1/-s2/-s3 | D(r16) s8 +.18/+.12/+.07, s12 +.11/+.15/+.02 | 2 of 3 seeds; tracks answer shortening |
 | C-4 add10 / terse do not harm add9 | j-add9-add10-s1, j-add9-terse-s1 vs e1-add9-s1 | |D(d4)| ≤ .06; d6 no collapse in either | 1 seed each |
 | C-5 MBPP slows Caesar beyond step sharing | j-caesar-mbpp-s1, e1-caesar-s1, e1-mbpp-s1, e1-caesar-lr1e6-s1 | D(r32) +.09..+.12; half lr costs .14-.53 | not supported: step sharing suffices |
-| C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r | 2 of 3 seeds | supported (reviewed) |
+| C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r, -s4, -s5 | 2 of 5 seeds | supported (reviewed); occasional |
 | C-7 d4 training helps d6 | e3-add9d4-s1 | +.21 [+.13, +.30] | 1 seed (reviewed) |
 | C-8 d8 training harms d4, d6 | e3-add9d8-s1 | −.25, −.15 | 1 seed; d6 answers shorten (reviewed) |
-| C-9 d8 triggers the collapse | e3-add9mix-s2 strata; e3-add9d4d6-s1/-s2 | 2 d8 updates before seed-2 collapse; 0/3 without d8 vs 2/3 with (p=0.4) | not supported as stated; open |
+| C-9 d8 triggers the collapse | e3-add9mix-s2 strata; e3-add9mix-s1..s5; e3-add9d4d6-s1..s5 | 2 d8 updates before seed-2 collapse; 0/5 without d8 vs 2/5 with (p=0.44) | not supported; open |
 | C-10 no successes → no recovery; a success restarts it | e3b-r16-d6 / -d6n32 / -mixed | .000 / .113 / .072 | 1 collapse state (reviewed, partial) |
 
 ## 6. What this study cannot establish

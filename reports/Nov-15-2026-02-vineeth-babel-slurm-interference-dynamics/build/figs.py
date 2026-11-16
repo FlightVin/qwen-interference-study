@@ -21,7 +21,7 @@ import numpy as np
 
 SLOTS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
 MARKERS = ["o", "s", "^", "D", "v", "P", "X", "*"]
-STYLES = {1: "-", 2: "--", 3: ":"}
+STYLES = {1: "-", 2: "--", 3: ":", 4: "-.", 5: (0, (1, 1))}
 INK, MUTED, GRID, SURFACE = "#1f1f1e", "#6b6a64", "#e4e3de", "#fcfcfb"
 DIV_NEG, DIV_POS = "#e34948", "#2a78d6"     # diverging poles (red = harm, blue = gain), grey midpoint
 
@@ -73,8 +73,10 @@ def legend_top(fig, ax, ncol=None):
 
 
 # condition -> (slot, [(expid, seed)])
-ADD9 = [("mixed d4+d6+d8", 0, [("qis-s02-e1-add9-s1", 1), ("qis-s02-e3-add9mix-s2", 2), ("qis-s02-e3-add9mix-s3r", 3)]),
-        ("d4+d6 (no d8)", 4, [("qis-s02-e3-add9d4d6-s1", 1), ("qis-s02-e3-add9d4d6-s2", 2), ("qis-s02-e3-add9d4d6-s3", 3)]),
+ADD9 = [("mixed d4+d6+d8", 0, [("qis-s02-e1-add9-s1", 1), ("qis-s02-e3-add9mix-s2", 2), ("qis-s02-e3-add9mix-s3r", 3),
+                                     ("qis-s02-e3-add9mix-s4", 4), ("qis-s02-e3-add9mix-s5", 5)]),
+        ("d4+d6 (no d8)", 4, [("qis-s02-e3-add9d4d6-s1", 1), ("qis-s02-e3-add9d4d6-s2", 2), ("qis-s02-e3-add9d4d6-s3", 3),
+                                    ("qis-s02-e3-add9d4d6-s4", 4), ("qis-s02-e3-add9d4d6-s5", 5)]),
         ("d6 only", 1, [("qis-s02-e3-add9d6-s1", 1)]),
         ("d4 only", 2, [("qis-s02-e3-add9d4-s1", 1)]),
         ("d8 only", 3, [("qis-s02-e3-add9d8-s1", 1)]),
@@ -92,13 +94,13 @@ def fig_add9(res, out):
                     e = evals(res, expid).get(f"add9_{st}_sel", {})
                     if e:
                         rs = sorted(e)
-                        lab = f"{cond}" + (f" (seed {seed})" if len(runs) > 1 else "")
+                        lab = (f"{cond} ({len(runs)} seeds; line style = seed)" if len(runs) > 1 else cond) if k == 0 else None
                         line(ax, rs, [e[r]["pass1"] for r in rs], slot, seed, lab)
             ax.set_title(f"add9 {st} (sel, 64 problems x 4 samples)", fontsize=10, color=INK, loc="left")
             ax.set_xlabel("training round", fontsize=8, color=MUTED)
             ax.set_ylim(-0.02, 1.0)
         axes[0][0].set_ylabel("pass@1", fontsize=8, color=MUTED)
-        legend_top(fig, axes[0][0], ncol=3)
+        legend_top(fig, axes[0][0], ncol=2)
         fig.tight_layout(rect=(0, 0, 1, 0.80))
         fig.savefig(os.path.join(out, name), dpi=150, facecolor=SURFACE)
         plt.close(fig)

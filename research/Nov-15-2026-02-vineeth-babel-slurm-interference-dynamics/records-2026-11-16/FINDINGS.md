@@ -343,3 +343,12 @@ Terse (competitor) mixed groups: 11, 4, 3, 0 per 8-round block (as in seeds 1-2)
 Combined (3 seeds): the harder-strata delay appears in 2/3 seeds (s1, s2) and is absent in s3. In all three seeds the
 delay goes with shorter caesar answers in the joint run during rounds 1-16, and its absence with no shortening.
 Supports brevity spill-over as the mechanism (correlational, n=3; not tested by intervention).
+- 2026-11-16  **qis-s02-e3-add9d4d6-s4**  COMPLETED  sha=338c9942f5436045a4fab6f1cb1e5297cf5fd81d  job=11176693  results=slurm-agentic-engineering/results/qis-s02-e3-add9d4d6-s4/
+- 2026-11-16  **qis-s02-e3-add9d4d6-s5**  COMPLETED  sha=338c9942f5436045a4fab6f1cb1e5297cf5fd81d  job=11176696  results=slurm-agentic-engineering/results/qis-s02-e3-add9d4d6-s5/
+- 2026-11-16  **qis-s02-e3-add9mix-s5**  COMPLETED  sha=338c9942f5436045a4fab6f1cb1e5297cf5fd81d  job=11176692  results=slurm-agentic-engineering/results/qis-s02-e3-add9mix-s5/
+- 2026-11-16  **qis-s02-e3-add9mix-s4**  COMPLETED  sha=338c9942f5436045a4fab6f1cb1e5297cf5fd81d  job=11176691  results=slurm-agentic-engineering/results/qis-s02-e3-add9mix-s4/
+F16 FINAL-2 (16:25 EST, E3g seeds 4-5, commit 338c994, no checkpoints): mixed s4 (11176691) d6 .18 → .68, mixed s5
+(11176692) d6 .16 → .62, d4+d6 s4 (11176693) .17 → .48, d4+d6 s5 (11176696) .17 → .57 — none collapsed.
+Collapse count: mixed with d8 2/5; d4+d6 without d8 0/5 (Fisher exact two-sided p = 0.44); with a competitor 0/2.
+Revised reading: the d6 collapse is an occasional event of the mixed configuration (2/5 seeds); its association with
+d8 is not significant. RQ2 persistence/recovery findings (F10) are unaffected.

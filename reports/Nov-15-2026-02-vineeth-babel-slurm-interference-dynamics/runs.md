@@ -45,3 +45,7 @@ harness workspace `slurm-agentic-engineering/results/<expid>/`; full outputs on 
 | `qis-s02-e3-add9d4d6-s3` | 11174313 | `305dc56` | `b42c5140b917` | 1 | COMPLETED | 2026-11-16T13:02:51 | preempted twice; resumed; rounds 17-24 duplicated in metrics |
 | `qis-s02-e1-caesar-s3` | 11175477 | `d2c5199` | `c45380d13932` | 1 | COMPLETED | 2026-11-16T13:56:38 |  |
 | `qis-s02-j-caesar-terse-s3` | 11175478 | `d2c5199` | `f92658a394af` | 1 | COMPLETED | 2026-11-16T14:10:12 |  |
+| `qis-s02-e3-add9mix-s4` | 11176691 | `338c994` | `d67bbf292395` | 1 | COMPLETED | 2026-11-16T16:23:32 |  |
+| `qis-s02-e3-add9mix-s5` | 11176692 | `338c994` | `68502a494c3b` | 1 | COMPLETED | 2026-11-16T16:13:53 |  |
+| `qis-s02-e3-add9d4d6-s4` | 11176693 | `338c994` | `6c4c7bd53ece` | 1 | COMPLETED | 2026-11-16T15:23:32 |  |
+| `qis-s02-e3-add9d4d6-s5` | 11176696 | `338c994` | `7526d30f5bba` | 1 | COMPLETED | 2026-11-16T15:58:47 |  |

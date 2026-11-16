@@ -46,8 +46,8 @@ Code: task generators `src/qis/s02/tasks.py`; graders `src/qis/verify.py`; train
 
 ## 4. Open questions, in priority order
 
-1. **What triggers the add9 d6 collapse?** Seen in 2/3 mixed runs, 0/3 without d8, 0/2 with a competitor. Next
-   runs: 3+ more seeds of the mixed and d4+d6 configurations (to test the d8 association, p = 0.4 now); log
+1. **What triggers the add9 d6 collapse?** Seen in 2/5 mixed runs, 0/5 without d8, 0/2 with a competitor (no
+   difference significant; p = 0.44 for d8). More seeds alone are costly at this rate; better: log
    per-minibatch composition and gradient norms by stratum; a random-reward stratum in place of d8 (reviewer's
    suggestion) to separate "sparse noisy updates" from d8 content.
 2. **Is the Caesar delay under terse caused by brevity spill-over?** The delay appeared in 2 of 3 seeds, exactly
@@ -59,7 +59,7 @@ Code: task generators `src/qis/s02/tasks.py`; graders `src/qis/verify.py`; train
 
 ## 5. State at hand-over
 
-All 38 study jobs have ended; `runs.md` lists each final state from `sacct`. No study job was running at hand-over.
+All 42 study jobs have ended; `runs.md` lists each final state from `sacct`. No study job was running at hand-over.
 Compute storage under `/data/user_data/vineethb/qis/s02` holds run directories (metrics, training and evaluation
 records) and bundles. Retained checkpoints were deleted at 13:04 EST; finished runs pruned their own checkpoints in
 the export phase. Last measured: 99 GB under `s02/ckpt` at 13:03 EST, before the final deletions and prunes; not

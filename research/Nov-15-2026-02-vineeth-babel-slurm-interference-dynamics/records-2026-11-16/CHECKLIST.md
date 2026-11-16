@@ -1,4 +1,4 @@
-# CHECKLIST — study s02 live execution plan (updated 2026-11-16 14:14 EST)
+# CHECKLIST — study s02 live execution plan (updated 2026-11-16 16:25 EST)
 
 Marks: [x] done  [~] active  [!] blocked  [ ] pending. Definitions: PROJECT.md §2.
 
@@ -62,6 +62,7 @@ Marks: [x] done  [~] active  [!] blocked  [ ] pending. Definitions: PROJECT.md �
       d6-only / d6-only x32 samples. One-round probe rejected (all-wrong d6 groups give zero gradient)
 - [x] Storage incident resolved: 236G free (11171795); max 4 checkpointing runs at once
 - [x] E3d d4+d6 without d8, seeds 1-3: 0/3 collapse vs mixed 2/3 (F16, p=0.4)
+- [x] E3g seeds 4-5: no collapse in any; with d8 2/5 vs without 0/5 (p=0.44); report updated
 - [x] E3c add9 mixed seed 3 (F14): no collapse → frequency 2/3; retained r16/r24 deleted 13:04
 - [x] DROPPED (s3 did not collapse): repeat E3b branches from its collapse state (needs retained checkpoint — s3 retains none;
       would need a rerun with retain_rounds) — decide at s3 readout

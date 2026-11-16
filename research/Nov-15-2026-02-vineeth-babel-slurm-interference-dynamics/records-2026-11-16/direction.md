@@ -330,3 +330,13 @@ MBPP (code, execution-graded), ARC-Challenge (factual), terse answers (a behavio
 - **2026-11-16 14:14 EST — final.** All 38 study jobs ended. Report finalised (report.md with F17-F19, runs.md with
   sacct states, handover.md, figures incl. seed 3). STATE marked FINAL. Records snapshot refreshed in
   research/<ID>/records-2026-11-16/. No study jobs running; watcher left to expire.
+- **2026-11-16 14:37 EST — hourly review + decision.** No study jobs were running; report final (1fb1050). With ~6.5 h
+  to the deadline, the weakest open point is the collapse trigger (2/3 with d8 vs 0/3 without, p=0.4). Submitted
+  E3g at 338c994, no checkpoints: mixed s4, s5 (general; 11176691, 11176692) and d4+d6 s4, s5 (preempt; 11176693,
+  11176696). Plan: fold results into the report by ~19:00 if they land; the report stands as is if they do not.
+  Ceilings: general 2/2, preempt 2/6, CPU 0/20. Watcher re-armed.
+- **2026-11-16 15:24 EST — event (E3g d4+d6 s4 done).** No collapse: d6 .17 → .48 (r32), d4 .52 → .70, d8 .04 → .12. Without d8: 0/4. Mixed s4, s5 running (general, ~47 min); d4+d6 s5 running (preempt).
+- **2026-11-16 15:36 EST — hourly review (short).** Evidence since 14:36: d4+d6 s4 no collapse (0/4 without d8). Running: mixed s4, s5 (general, 59 min; add9 mixed runs take ~1.5-2 h), d4+d6 s5 (preempt, 25 min). Ceilings: general 2/2, preempt 1/6, CPU 0/20. Nothing cancelled. Next: mixed s4/s5 readout (~16:15-16:45), then update F16 and the report.
+- **2026-11-16 15:59 EST — event (E3g d4+d6 s5 done).** No collapse: d6 .17 → .57, d4 .52 → .79, d8 .04 → .12. Without d8: 0/5. Waiting for mixed s4, s5 (general, 82 min).
+- **2026-11-16 16:15 EST — event (E3g mixed s5 done).** No collapse: d6 .16 → .62, d8 .04 → .18. With d8: 2/4; without: 0/5 (Fisher two-sided p ≈ 0.17). Waiting for mixed s4 (general, 98 min).
+- **2026-11-16 16:25 EST — event (E3g complete; all study jobs ended).** Mixed s4, s5 did not collapse: with d8 2/5, without 0/5 (p=0.44). Report, handover, figures updated; runs.md regenerated.
