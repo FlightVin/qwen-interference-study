@@ -78,7 +78,8 @@ ADD9 = [("mixed d4+d6+d8", 0, [("qis-s02-e1-add9-s1", 1), ("qis-s02-e3-add9mix-s
         ("d6 only", 1, [("qis-s02-e3-add9d6-s1", 1)]),
         ("d4 only", 2, [("qis-s02-e3-add9d4-s1", 1)]),
         ("d8 only", 3, [("qis-s02-e3-add9d8-s1", 1)]),
-        ("mixed + add10", 5, [("qis-s02-j-add9-add10-s1", 1)])]
+        ("mixed + add10", 5, [("qis-s02-j-add9-add10-s1", 1)]),
+        ("mixed + terse", 6, [("qis-s02-j-add9-terse-s1", 1)])]
 
 
 def fig_add9(res, out):

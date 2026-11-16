@@ -75,7 +75,7 @@ groups + 8 competitor groups per round. **D(t) = p_T(R) − p_T(J)**: positive m
 | caesar | terse | harder strata delayed: D(s8, s12) +.11..+.18 at r16 | terse learned (.4 → .9+), protected | delay; transient in seed 1, unresolved in seed 2 | 2 | F6, F11 |
 | caesar | MBPP | all strata behind at r32: D +.09..+.12 | MBPP unaffected (D +.03, n.s.) | lag explained by step sharing (half-lr control costs .14-.53) | 1 | F15, F17 |
 | add9 | add10 | no harm; d6 collapse absent | not analysed | none detected | 1 | F7 |
-| add9 | terse | pending | pending | pending | 1 | — |
+| add9 | terse | no harm (J ahead of the collapsed R: d6 −.47) | terse learned (.4 → .93), protected | none detected | 1 | F18 |
 
 Single-task off-target effects at round 32 (Figure 2) show that a task's own training can damage an untrained one:
 
@@ -106,6 +106,7 @@ Single-task off-target effects at round 32 (Figure 2) show that a task's own tra
 | d4 only | 1 | no (d6 rises .15 → .36) | .36 |
 | d8 only | 1 | d6 falls .18 → .03 | .03 |
 | mixed + add10 | 1 | no | .53 |
+| mixed + terse | 1 | no | .52 |
 
 - **The chain is visible.** In seed 2, d6 training success went .50 (r12), .29 (r13), then 0 with all three d6
   groups all-wrong in rounds 14-26: 39 consecutive groups with no gradient (training records, F13).
@@ -153,7 +154,7 @@ and closes in one seed.
 | C-1 Caesar acquires all strata alone | e1-caesar-s1, -s2 | s12 .04 → .64-.71 | replicated (2 seeds) |
 | C-2 Caesar training breaks terse via long answers | e1-caesar-s1, -s2 | −.34, −.40; length 19 → 107 | replicated |
 | C-3 terse delays harder Caesar strata | j-caesar-terse-s1/-s2 vs e1-caesar-s1/-s2 | D(r16) s8 +.18/+.12, s12 +.11/+.15 | replicated; closure 1 of 2 |
-| C-4 add10 does not harm add9 | j-add9-add10-s1 vs e1-add9-s1 | |D(d4)| ≤ .05; d6 no collapse | 1 seed |
+| C-4 add10 / terse do not harm add9 | j-add9-add10-s1, j-add9-terse-s1 vs e1-add9-s1 | |D(d4)| ≤ .06; d6 no collapse in either | 1 seed each |
 | C-5 MBPP slows Caesar beyond step sharing | j-caesar-mbpp-s1, e1-caesar-s1, e1-mbpp-s1, e1-caesar-lr1e6-s1 | D(r32) +.09..+.12; half lr costs .14-.53 | not supported: step sharing suffices |
 | C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r | 2 of 3 seeds | supported (reviewed) |
 | C-7 d4 training helps d6 | e3-add9d4-s1 | +.21 [+.13, +.30] | 1 seed (reviewed) |
