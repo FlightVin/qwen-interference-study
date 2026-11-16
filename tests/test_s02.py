@@ -6,13 +6,18 @@ from qis.train.schedule import mix_plan
 from qis.verify import CORRECT, OVER_LEN, TRUNCATED, WRONG, Verifier, normalize_digits
 
 
-@pytest.mark.parametrize("raw,want", [
-    ("1234", "1234"), ("1,234", "1234"), ("1\\,234", "1234"), ("1{,}234", "1234"), (" 1234 ", "1234"),
-    ("1234_9", "1234"), ("1234_{9}", "1234"), ("1234_{(9)}", "1234"), ("1234_{\\text{9}}", "1234"),
-    ("1234 (base 9)", "1234"), ("\\text{1234}", "1234"), ("$1234$", "1234"), ("001234", "1234"), ("0", "0"),
-    ("12.5", None), ("x=3", None), ("1234_9 + 1", None), ("", None)])
-def test_normalize_digits(raw, want):
-    assert normalize_digits(raw) == want
+@pytest.mark.parametrize("raw,base,want", [
+    ("1234", None, "1234"), ("1,234", None, "1234"), ("1\\,234", None, "1234"), ("1{,}234", None, "1234"),
+    (" 1234 ", None, "1234"), ("1234_9", 9, "1234"), ("1234_{9}", 9, "1234"), ("1234_{(9)}", 9, "1234"),
+    ("1234_{\\text{9}}", 9, "1234"), ("1234 (base 9)", 9, "1234"), ("\\text{1234}", None, "1234"),
+    ("$1234$", None, "1234"), ("001234", None, "1234"), ("0", None, "0"), ("(1234)_9", 9, "1234"),
+    ("1234_{base9}", 9, "1234"), ("1234\\text{ (base 9)}", 9, "1234"), ("1234 \\text{base } 9", 9, "1234"),
+    ("\\text{1234}_9", 9, "1234"),
+    ("1234_{10}", 9, None), ("1234 base 7", 9, None), ("1234 9", None, None), ("1234 \\, 5678", None, None),
+    ("12,34", None, None), ("1,2,3,4", None, None), ("12.5", None, None), ("x=3", None, None),
+    ("1234_9 + 1", 9, None), ("", None, None), ("\u00b2", None, None)])
+def test_normalize_digits(raw, base, want):
+    assert normalize_digits(raw, base) == want
 
 
 @pytest.fixture(scope="module")
@@ -22,14 +27,15 @@ def v():
     ver.close()
 
 
-def one(v, gold, resp, n_tokens=10, truncated=False, len_limit=None):
+def one(v, gold, resp, n_tokens=10, truncated=False, len_limit=None, base=9):
     return v.score([{"gold": gold, "response": resp, "truncated": truncated, "n_tokens": n_tokens,
-                     "match": "digits", "len_limit": len_limit}])[0]
+                     "match": "digits", "len_limit": len_limit, "base": base}])[0]
 
 
 def test_digit_grading(v):
     assert one(v, "1234", "so \\boxed{1234_9}")["status"] == CORRECT
     assert one(v, "1234", "\\boxed{1234} no wait \\boxed{1235}")["status"] == WRONG
+    assert one(v, "1234", "\\boxed{1234_{10}}")["status"] == WRONG
     assert one(v, "1234", "\\boxed{1234}", truncated=True)["status"] == TRUNCATED
     r = one(v, "1234", "\\boxed{1234}", n_tokens=30, len_limit=24)
     assert (r["status"], r["reward"]) == (OVER_LEN, 0)
@@ -52,18 +58,18 @@ def test_golds_are_right():
 
 
 def test_bundle_splits_disjoint_and_deterministic():
-    spec = [("add9", "d4"), ("add10", "d4"), ("terse10", "k2")]
+    spec = [("add9", "d4"), ("add10", "d4"), ("terse10", "k2"), ("mul10", "k2", 300)]
     a, b = tasks.build(spec, 300, 40), tasks.build(spec, 300, 40)
     assert a == b
-    texts = {}
+    keys = set()
     for name, items in a["pools"].items():
-        split = name.rsplit("_", 1)[1]
         for it in items:
-            key = (it.get("prefix", ""), it["problem"])
-            assert key not in texts or texts[key] == split
-            texts[key] = split
+            key = (tasks.DEDUP_GROUP[it["task"]], tuple(it["operands"]))
+            assert key not in keys            # no shared or commuted pair, also across mul10/terse10
+            keys.add(key)
     ids = [it["id"] for v in a["pools"].values() for it in v]
     assert len(ids) == len(set(ids))
+    assert len(a["pools"]["mul10_k2_train"]) == 300 and len(a["pools"]["terse10_k2_train"]) == 300
 
 
 def test_mix_plan_pairs_target_stream():

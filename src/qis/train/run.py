@@ -68,7 +68,7 @@ class Log:
                 import wandb
                 wid = (resume_meta or {}).get("wandb_id") or f"{cfg['run_id']}-{cfg['attempt_id']}"
                 self.wb = wandb.init(project=cfg["wandb"]["project"], id=wid, resume="allow",
-                                     group=cfg["run_id"], tags=[cfg["phase"], cfg["arm"]],
+                                     group=cfg["run_id"], tags=[cfg.get("phase", "s02"), cfg.get("arm", "mix")],
                                      config=cfg, mode=os.environ.get("WANDB_MODE", "offline"))
                 self.wb.define_metric("opt_step"); self.wb.define_metric("round")
                 self.wb.define_metric("step/*", step_metric="opt_step")
@@ -123,7 +123,7 @@ def score_items(verifier, tok, items, outs):
     """Grade [n responses per item]; carries the s02 item keys (match, len_limit) into the verifier."""
     return verifier.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
                             "truncated": o["finish"] == "length", "n_tokens": len(o["ids"]),
-                            "match": it.get("match"), "len_limit": it.get("len_limit")}
+                            "match": it.get("match"), "len_limit": it.get("len_limit"), "base": it.get("base")}
                            for it, g in zip(items, outs) for o in g])
 
 
@@ -201,7 +201,13 @@ def main():
     if src is not None:
         meta = ckpt.load(src["path"], learner.model, learner.opt)
         rollout.load_weights(learner.model)
-        start = meta["round"] if src["round"] is not None else int(cfg.get("init_round", 0))
+        if src["round"] is not None:
+            start = meta["round"]
+        else:                                   # branch from init_ckpt: its round must be stated and must match
+            start = int(cfg.get("init_round", 0))
+            if "init_round" in cfg and meta.get("round") is not None and meta["round"] != start:
+                raise ValueError(f"init_round {start} != round {meta['round']} of init_ckpt {src['path']}")
+            meta = dict(meta, wandb_id=None)    # a branch never logs into the parent's W&B run
         counters.update(meta.get("counters", {}))
     log = Log(out, cfg, meta)
     log.event("start", host=socket.gethostname(), gpu=torch.cuda.get_device_name(0),

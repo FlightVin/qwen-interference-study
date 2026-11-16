@@ -20,10 +20,11 @@ valid numerals in base 9 and in base 10):
   terse10 k product of two k-digit integers, answered with no working (prefix), reward needs len <= len_limit
             (a competing behavioural demand: short answers)
 Splits use disjoint named seeds: train, sel (selection / screening evaluation), conf (confirmation evaluation).
-A problem text that occurs in two splits is removed from the later split (checked; counts are recorded).
+A problem whose operand pair (in either order) already occurs in the same dedup group (mul10 and terse10 form one
+group) is redrawn, so no problem, commuted copy or re-prefixed copy is shared between or within splits.
 
 Usage: python -m qis.s02.tasks --out BUNDLE.json --spec SPEC [--n-train 4000 --n-eval 64]
-SPEC is a comma list of family:stratum, for example add9:d6,add9:d8,add10:d10,terse10:k2.
+SPEC is a comma list of family:stratum[:n_train], for example add9:d6,add9:d8,add10:d10,terse10:k2:1500.
 """
 import argparse
 import hashlib
@@ -49,25 +50,33 @@ def _digits(rng, d, top):
     return str(rng.randint(1, top)) + "".join(str(rng.randint(0, top)) for _ in range(d - 1))
 
 
+# Families whose problems must not share an operand pair across splits (commuted or re-prefixed copies).
+DEDUP_GROUP = {"add9": "add9", "add10": "add10", "add7": "add7", "mul10": "mul", "terse10": "mul"}
+
+
 def make(family: str, stratum: str, rng) -> dict:
+    """One problem. "operands" (sorted) is the split-disjointness key together with DEDUP_GROUP."""
     k = int(stratum[1:])
     if family in ("add9", "add10"):
         x, y = _digits(rng, k, 8), _digits(rng, k, 8)
         if family == "add9":
-            return {"problem": f"The numbers {x} and {y} are written in base 9. Compute {x} + {y}. "
-                               f"Give the answer in base 9.", "gold": to_base(int(x, 9) + int(y, 9), 9)}
-        return {"problem": f"Compute {x} + {y}.", "gold": str(int(x) + int(y))}
-    if family == "add7":
+            it = {"problem": f"The numbers {x} and {y} are written in base 9. Compute {x} + {y}. "
+                             f"Give the answer in base 9.", "gold": to_base(int(x, 9) + int(y, 9), 9), "base": 9}
+        else:
+            it = {"problem": f"Compute {x} + {y}.", "gold": str(int(x) + int(y)), "base": 10}
+    elif family == "add7":
         x, y = _digits(rng, k, 6), _digits(rng, k, 6)
-        return {"problem": f"The numbers {x} and {y} are written in base 7. Compute {x} + {y}. "
-                           f"Give the answer in base 7.", "gold": to_base(int(x, 7) + int(y, 7), 7)}
-    if family in ("mul10", "terse10"):
+        it = {"problem": f"The numbers {x} and {y} are written in base 7. Compute {x} + {y}. "
+                         f"Give the answer in base 7.", "gold": to_base(int(x, 7) + int(y, 7), 7), "base": 7}
+    elif family in ("mul10", "terse10"):
         x, y = rng.randint(10 ** (k - 1), 10 ** k - 1), rng.randint(10 ** (k - 1), 10 ** k - 1)
-        it = {"problem": f"Compute {x} \\times {y}.", "gold": str(x * y)}
+        it = {"problem": f"Compute {x} \\times {y}.", "gold": str(x * y), "base": 10}
         if family == "terse10":
             it.update(prefix=TERSE_PREFIX, len_limit=TERSE_LEN)
-        return it
-    raise ValueError(f"unknown family {family}")
+    else:
+        raise ValueError(f"unknown family {family}")
+    it["operands"] = sorted([str(x), str(y)])
+    return it
 
 
 SPLIT_SEED = {"train": 0, "sel": 1, "conf": 2}
@@ -76,8 +85,9 @@ SPLIT_SEED = {"train": 0, "sel": 1, "conf": 2}
 def build(spec: list, n_train: int, n_eval: int, master: int = 20261115) -> dict:
     pools, seen, dropped = {}, set(), {}
     for split in ("train", "sel", "conf"):           # train first: later splits drop any text already used
-        for fam, strat in spec:
-            n = n_train if split == "train" else n_eval
+        for sp in spec:
+            fam, strat = sp[0], sp[1]
+            n = (int(sp[2]) if len(sp) > 2 else n_train) if split == "train" else n_eval
             rng = random.Random(seeds.int_seed(master, f"s02/{fam}/{strat}/{split}"))
             items, tries = [], 0
             while len(items) < n:
@@ -85,7 +95,7 @@ def build(spec: list, n_train: int, n_eval: int, master: int = 20261115) -> dict
                 if tries > 50 * n:
                     raise RuntimeError(f"cannot draw {n} distinct problems for {fam}:{strat}:{split}")
                 it = make(fam, strat, rng)
-                key = (it.get("prefix", ""), it["problem"])
+                key = (DEDUP_GROUP[fam], tuple(it["operands"]))
                 if key in seen:
                     dropped[f"{fam}:{strat}:{split}"] = dropped.get(f"{fam}:{strat}:{split}", 0) + 1
                     continue
@@ -93,7 +103,7 @@ def build(spec: list, n_train: int, n_eval: int, master: int = 20261115) -> dict
                 it.update(id=f"{fam}/{strat}/{split}/{len(items):05d}", task=fam, stratum=strat, match="digits")
                 items.append(it)
             pools[f"{fam}_{strat}_{split}"] = items
-    return {"version": "s02-tasks-v1", "master_seed": master, "spec": [f"{f}:{s}" for f, s in spec],
+    return {"version": "s02-tasks-v1", "master_seed": master, "spec": [":".join(map(str, sp)) for sp in spec],
             "dropped_duplicates": dropped, "pools": pools}
 
 

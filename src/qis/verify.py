@@ -22,26 +22,44 @@ CORRECT, WRONG, NO_ANSWER, TRUNCATED, UNKNOWN = "correct", "wrong", "no_answer",
 OVER_LEN = "over_len"
 
 
-_SUBSCRIPT = re.compile(r"_\{?\(?(?:\\text\{|\\mathrm\{)?(?:base\s*)?\d+\}?\)?\}?$")
-_TEXT_WRAP = re.compile(r"^\\(?:text|mathrm|mathbf)\{(.*)\}$")
+_WRAP = re.compile(r"\\(?:text|mathrm|mathbf)\{(.*)\}")
+# trailing base label: _9, _{9}, _{(9)}, _{\text{9}}, _{base 9}, _{\text{base } 9}
+_SUB = re.compile(r"(?P<num>.*?)\s*_\{?\s*\(?\s*(?:\\(?:text|mathrm)\{\s*)?(?:base\s*)?(?P<b>\d+)\s*\}?\s*\)?\s*\}?")
+# trailing note: (base 9), base 9, \text{ (base 9)}, \text{base } 9
+_NOTE = re.compile(r"(?P<num>.*?)\s*(?:\\(?:text|mathrm)\{)?\s*\(?\s*base\s*\}?\s*(?P<b>\d+)\s*\)?\s*\}?")
+_SEP = re.compile(r"\\,|\\ |\{,\}|,|~|\s+")
 
 
-def normalize_digits(s: str):
-    """Exact-match normal form for procedural answers (study Nov-15-2026-02): drop $, spaces, thousands separators
-    (",", "\\,", "{,}"), one \\text{...} wrapper, a trailing base subscript (_9, _{9}, _{(9)}, _{\\text{9}}) or a
-    trailing "(base 9)" / "base 9" note, and leading zeros. Returns the digit string, or None if anything else
-    remains (for example letters, operators or decimals)."""
+def normalize_digits(s: str, base: int = None):
+    """Exact-match normal form for procedural answers (study Nov-15-2026-02).
+    Accepts: surrounding $ and one \\text{...} wrapper; a trailing base label (subscript or "(base b)" note), which
+    must name `base` when `base` is given; parentheses around the numeral; thousands separators (",", "\\,", "{,}",
+    "~", spaces) only in valid 3-digit grouping. Leading zeros are dropped. Returns the ASCII digit string, or None
+    if anything else remains (letters, operators, decimals, a wrong base label, misplaced separators)."""
     t = s.strip().strip("$").strip()
-    m = _TEXT_WRAP.match(t)
+    m = _WRAP.fullmatch(t)
     if m:
-        t = m.group(1)
-    t = re.sub(r"\\[,!;: ]|\{,\}|,|\s|~", "", t)
-    t = re.sub(r"\(?\\?(?:text\{)?base\d+\}?\)?$", "", t)
-    t = _SUBSCRIPT.sub("", t)
-    m = _TEXT_WRAP.match(t)
+        t = m.group(1).strip()
+    for rx in (_SUB, _NOTE):
+        m = rx.fullmatch(t)
+        if m:
+            if base is not None and int(m.group("b")) != int(base):
+                return None
+            t = m.group("num").strip()
+            break
+    m = _WRAP.fullmatch(t)
     if m:
-        t = m.group(1)
-    if not t.isdigit():
+        t = m.group(1).strip()
+    if t.startswith("(") and t.endswith(")"):
+        t = t[1:-1].strip()
+    parts = [x for x in _SEP.split(t)]
+    if len(parts) > 1:
+        if any(not re.fullmatch(r"[0-9]+", x) for x in parts):
+            return None
+        if not (1 <= len(parts[0]) <= 3 and all(len(x) == 3 for x in parts[1:])):
+            return None
+        t = "".join(parts)
+    if not re.fullmatch(r"[0-9]+", t):
         return None
     return t.lstrip("0") or "0"
 
@@ -160,7 +178,7 @@ class Verifier:
             if ext is None:
                 res[k].update(status=TRUNCATED if it["truncated"] else NO_ANSWER, reward=0)
             elif it.get("match") == "digits":
-                ok = normalize_digits(ext) == normalize_digits(it["gold"])
+                ok = normalize_digits(ext, it.get("base")) == normalize_digits(it["gold"])
                 if it["truncated"]:
                     res[k].update(status=TRUNCATED, reward=0, would_match=ok)
                 elif ok and it.get("len_limit") is not None and it["n_tokens"] > it["len_limit"]:
