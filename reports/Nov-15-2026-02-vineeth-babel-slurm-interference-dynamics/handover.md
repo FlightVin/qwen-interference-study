@@ -61,7 +61,6 @@ Code: task generators `src/qis/s02/tasks.py`; graders `src/qis/verify.py`; train
 
 All 42 study jobs have ended; `runs.md` lists each final state from `sacct`. No study job was running at hand-over.
 Compute storage under `/data/user_data/vineethb/qis/s02` holds run directories (metrics, training and evaluation
-records) and bundles. Retained checkpoints were deleted at 13:04 EST; finished runs pruned their own checkpoints in
-the export phase. Last measured: 99 GB under `s02/ckpt` at 13:03 EST, before the final deletions and prunes; not
-re-measured after the last job ended. Verify with a CPU job (`du -sh /data/user_data/$USER/qis/s02/ckpt`) before
-starting new work.
+records) and bundles. Measured at 16:37 EST (job 11177886, `qis-s02-diag-final`): no `round_*` checkpoints remain; study s02 uses about
+256 MB (runs 241 MB, data 5.1 MB, ckpt 161 KB, other 9.4 MB); the shared filesystem had 200 GB free (301 of 500 GB
+used, mostly other projects).

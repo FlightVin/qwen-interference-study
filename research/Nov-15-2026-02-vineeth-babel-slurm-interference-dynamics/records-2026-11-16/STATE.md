@@ -35,4 +35,4 @@ All results exploratory (1-3 seeds), sel panels unless "conf". Report: reports/<
 ## Next actions (for a successor; handover.md §4)
 1. Collapse trigger (occasional, 2/5): per-stratum gradient logging; random-reward stratum.
 2. Test brevity spill-over by intervention (looser terse length limit).
-3. Verify remaining storage under /data/user_data/$USER/qis/s02 before new work.
+3. Storage verified 16:37 EST: no checkpoints; s02 ~256 MB.

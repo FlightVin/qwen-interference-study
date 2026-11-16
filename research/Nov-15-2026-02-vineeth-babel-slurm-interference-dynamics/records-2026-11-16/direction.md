@@ -340,3 +340,5 @@ MBPP (code, execution-graded), ARC-Challenge (factual), terse answers (a behavio
 - **2026-11-16 15:59 EST — event (E3g d4+d6 s5 done).** No collapse: d6 .17 → .57, d4 .52 → .79, d8 .04 → .12. Without d8: 0/5. Waiting for mixed s4, s5 (general, 82 min).
 - **2026-11-16 16:15 EST — event (E3g mixed s5 done).** No collapse: d6 .16 → .62, d8 .04 → .18. With d8: 2/4; without: 0/5 (Fisher two-sided p ≈ 0.17). Waiting for mixed s4 (general, 98 min).
 - **2026-11-16 16:25 EST — event (E3g complete; all study jobs ended).** Mixed s4, s5 did not collapse: with d8 2/5, without 0/5 (p=0.44). Report, handover, figures updated; runs.md regenerated.
+- **2026-11-16 16:36 EST — hourly review (short).** No study jobs; report final (c38ac74). Decision: no new experiment families before the deadline (the next tests need code changes: per-stratum gradient logging, a looser terse length limit; each needs a canary and review). Submitted a read-only storage check (qis-s02-diag-final) to close the handover's open item. Ceilings: general 1/2, preempt 0/6, CPU 0/20.
+- **2026-11-16 16:38 EST — storage verified.** No checkpoints remain; s02 ~256 MB; 200G free. Handover updated.

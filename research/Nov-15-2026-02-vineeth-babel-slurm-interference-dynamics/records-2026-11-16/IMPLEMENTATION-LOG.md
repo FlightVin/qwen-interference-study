@@ -79,3 +79,4 @@ node fails (host key verification).
 Rule: for non-preemptible general runs whose checkpoints are not needed, set ckpt_every above rounds and no retained
 rounds, so only one save happens; avoid concurrent saves.
 13:04 EST: deleted retained checkpoints no longer needed (via overlap step in my job 11175477): qis-s02-e3-add9mix-s2/round_0016 (E3b done), qis-s02-e3-add9mix-s3r/round_0016 and round_0024 (not collapse states). Remaining: J(add9,terse) checkpoints (pruned by its export phase). Disk before: 320G used / 181G free.
+16:38 EST: final storage check (qis-s02-diag-final, 11177886): no checkpoints remain; s02 uses ~256 MB; disk 301G/500G used, 200G free.
