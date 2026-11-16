@@ -41,25 +41,31 @@ def response_objective(logp: torch.Tensor, logp_old: torch.Tensor, adv: float,
     return obj.mean(), stats
 
 
-def minibatch_plan(roles: list, n_minibatches: int, rng) -> list:
+def minibatch_plan(roles: list, n_minibatches: int, rng, allow_uneven: bool = False) -> list:
     """Assign complete prompt groups to minibatches with balanced role composition.
 
     roles: role label per group in round order (e.g. 8 x "hard" + 8 x "aux", or for arm H
     8 x "hard_common" + 8 x "hard_extra"). Each minibatch gets the same number of groups of each
     role. rng: numpy Generator (named stream per round). Returns list of lists of group indices.
+    allow_uneven (study s02): a role whose group count is not divisible by n_minibatches is allowed; its leftover
+    groups go round-robin to minibatches. Divisible roles draw exactly as before (same random calls).
     """
     by_role = {}
     for g, r in enumerate(roles):
         by_role.setdefault(r, []).append(g)
     plan = [[] for _ in range(n_minibatches)]
+    fill = 0
     for r in sorted(by_role):
         gs = by_role[r]
-        if len(gs) % n_minibatches:
+        if len(gs) % n_minibatches and not allow_uneven:
             raise ValueError(f"role {r}: {len(gs)} groups not divisible by {n_minibatches}")
         perm = rng.permutation(len(gs))
         k = len(gs) // n_minibatches
         for m in range(n_minibatches):
             plan[m] += [gs[i] for i in perm[m * k:(m + 1) * k]]
+        for i in perm[k * n_minibatches:]:
+            plan[fill % n_minibatches].append(gs[i])
+            fill += 1
     order = rng.permutation(n_minibatches)
     return [sorted(plan[m]) for m in order]
 

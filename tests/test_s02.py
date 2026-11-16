@@ -147,3 +147,15 @@ def test_extraction_fixes(v):
     assert [x["status"] for x in r] == [CORRECT, CORRECT, CORRECT]
     assert choice_fallback("the answer is a volcanic rock") is None
     assert choice_fallback("The answer is B.") == "B"
+
+
+def test_minibatch_uneven_opt_in():
+    import numpy as np
+    from qis.train import grpo
+    with pytest.raises(ValueError):
+        grpo.minibatch_plan(["T"] * 3, 4, np.random.default_rng(0))
+    p = grpo.minibatch_plan(["T"] * 3, 4, np.random.default_rng(0), allow_uneven=True)
+    assert sorted(g for mb in p for g in mb) == [0, 1, 2] and len(p) == 4
+    roles = ["C"] * 8 + ["T"] * 8                       # divisible: identical to the strict plan
+    assert grpo.minibatch_plan(roles, 4, np.random.default_rng(3)) == \
+        grpo.minibatch_plan(roles, 4, np.random.default_rng(3), allow_uneven=True)

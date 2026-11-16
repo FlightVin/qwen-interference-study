@@ -14,6 +14,7 @@ Study Nov-15-2026-02 extensions (all optional; absent keys keep the behaviour ab
                        the joint arm's minibatch size in a single-task control so the target's gradient weight per
                        response is identical (exposure-matched control)
   init_round           with init_ckpt: the branch continues at this absolute round (schedule, seeds, eval labels)
+  allow_uneven_minibatch  a role with a group count not divisible by n_minibatch spreads its leftovers round-robin
   no_ckpt              never write a checkpoint (short branches / probes; a requeue restarts from init_ckpt)
 Items may carry prefix / match / len_limit (qis.s02.tasks). Round metrics add per-role group counts ("by_role").
 
@@ -316,7 +317,8 @@ def main():
 
         # 4 optimizer steps; minibatches of 4 complete groups with balanced roles
         roles = [r for r, _ in items]
-        mb_plan = grpo.minibatch_plan(roles, n_mb, seeds.rng(cfg["seed"], f"minibatch/r{rnd}"))
+        mb_plan = grpo.minibatch_plan(roles, n_mb, seeds.rng(cfg["seed"], f"minibatch/r{rnd}"),
+                                      allow_uneven=bool(cfg.get("allow_uneven_minibatch", False)))
         ratios, act_pos, act_neg, n_pos, n_neg = [], 0.0, 0.0, 0.0, 0.0
         t0 = time.time()
         for m, mb in enumerate(mb_plan):

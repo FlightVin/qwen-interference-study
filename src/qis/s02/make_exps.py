@@ -41,6 +41,10 @@ phase precheck "false" '
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv > "$AE_RESULTS/gpu.txt"
     mkdir -p "$W" "$CK" "$S02/data"
 '
+phase tests "test -s $W/pytest.ok" '
+    rc=0; env CUDA_VISIBLE_DEVICES= python -m pytest -q -p no:cacheprovider tests/test_s02.py tests/test_grpo.py > "$AE_RESULTS/pytest.txt" 2>&1 || rc=$?
+    tail -n 2 "$AE_RESULTS/pytest.txt"; [ $rc -eq 0 ] && touch "$W/pytest.ok"; exit $rc
+'
 phase bundle "test -s $BUNDLE" '
     t="$BUNDLE.tmp.$SLURM_JOB_ID"
     HF_HUB_OFFLINE=0 python -m qis.s02.tasks --out "$t" --spec "$BSPEC" --n-train {n_train} --n-eval {n_eval} > "$t.log"
