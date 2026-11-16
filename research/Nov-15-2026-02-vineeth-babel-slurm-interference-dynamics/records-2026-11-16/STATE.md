@@ -1,41 +1,38 @@
-# STATE — study s02 (Nov-15-2026-02), updated 2026-11-16 13:37 EST
+# STATE — study s02 (Nov-15-2026-02), updated 2026-11-16 14:14 EST — FINAL (report delivered)
 
 ## Objective
 RQ1: which task relationships give transfer / independence / transient harm / persistent delay, and why.
 RQ2: does on-policy feedback amplify an initial disadvantage (adverse update → lower T success → fewer mixed T
 groups → slower acquisition)? Definitions: PROJECT.md §2. Owner amendment A1: tasks beyond math in scope.
-All results below: one seed, sel panels, EXPLORATORY.
+All results exploratory (1-3 seeds), sel panels unless "conf". Report: reports/<ID>/report.md.
 
 ## Established (this study)
-- Base success of 26 candidate pools (F1); grader artefacts fixed before training (602b151); runner validated
-  (canary 11168205: two roles, checkpoint, forced exit + resume).
-- caesar alone (F3): all strata acquired (s12 .04 → .71). Off-target: terse −.34 via over-long answers (a
-  competing behavioural demand, not lost arithmetic); add9 d6 +.11.
-- MBPP alone (F4): +.14; arc −.04 (small harm); add10 +.07; terse unaffected.
-- add9 alone on mixed strata (F5): d4 improves (.52 → .77); d6 rises to .49 (r16) then collapses to .05 with
-  all-wrong training groups r26-31; d8 never gets signal. Terse −.34 via unboxed answers.
+- Caesar alone acquires all strata (3 seeds) and lowers untrained terse (3/3 seeds, −.11 to −.40) via long answers.
+- caesar × terse: harder-strata delay at r16 in 2/3 seeds, exactly the seeds where joint-run Caesar answers were
+  shorter (F6, F11, F19). Brevity spill-over fits; untested by intervention.
+- caesar × MBPP: lag of .09-.12 explained by Adam step sharing (half-lr control costs .14-.53; F15, F17).
+- add9 × add10 and add9 × terse: no harm to add9 (F7, F18).
+- add9 mixed strata: d6 collapses in 2/3 seeds (F8, F14); once all d6 groups are all-wrong there is no signal; with
+  zero successes no recovery in 8 rounds, one success or d4 transfer restarts it (F10; review: partial — the
+  8-sample branch took no gradient; the 32-sample gain is one step and is confounded with step size).
+- d4 training helps d6 (+.21); d8 training harms d4 (−.25) and d6 (−.15) (F9, F12).
 
 ## Uncertain
-- add9 d6 collapse: 2/3 mixed-strata seeds (F14), 0/3 single-stratum or +add10 runs. Persistence supported
-  (review): once d6 groups are all-wrong there is no signal; recovery needs a nonzero update (rare success or d4
-  transfer, F10). Trigger unknown: NOT d8 (F13, review); candidates d4×d6, one large update, sparse-update drift.
-  d4+d6 without d8: 0/2 collapse (F16; s3 running) vs 2/3 with d8 — suggestive, p≈0.4. d8 alone harms d4/d6 (F12).
-- caesar under terse (F6, F11): harder strata delayed (r16 D +.11 to +.18, 2/2 seeds); closed by r24 in seed 1,
-  still +.12 on s8 at r32 in seed 2. Caesar answers 5-15% shorter in J during the lag (brevity spill-over, untested).
-- caesar × MBPP (F15, F17): lag explained by Adam step sharing (half-lr costs .14-.53). add9 × terse (F18): no harm.
-  add9 collapse: alone 2/3, with competitor 0/2, d4+d6 0/3 (F16). Report drafted (reports/<ID>/), handover drafted.
-- vLLM sampling is not reproducible across jobs (±.01-.05); terse panel noise about ±.1.
+- Trigger of the d6 collapse: not d8 gradients (F13); without d8 0/3 collapse vs 2/3 with (p=0.4); with a
+  competitor 0/2. Candidates: d4×d6 interaction, sparse-update drift under Adam, d8 group presence.
+- Why d4-only lowers terse while d6-only raises it.
+- vLLM sampling not reproducible across jobs (same-model evals differ ≤ .04).
 
 ## Decisions (and why)
 - lr 2e-6, clip 0.2, 8 groups × 8 responses, 4 steps/round, divisor 32, cap 4,096 (study-00 selection; canary).
-- Divisor 32 matches raw gradient weight, not Adam update size (D3).
-- Countdown and ARC single runs dropped (D4). J(caesar,mbpp), J(add9,terse) deferred until E3a reads out.
+- Divisor 32 matches raw gradient weight, not Adam update size (D3) — the reason for the half-lr control.
+- Countdown/ARC single runs dropped (D4). Random-reward control dropped (d8 no longer the suspect).
 
 ## Blockers
-- Storage: resolved (236G free at 06:39); recipes guard free space and prune checkpoints; ≤4 checkpointing runs.
-- NFS writes slow since ~11:30 (checkpoint ~1 h at 6 MB/s): jobs finish late.
-- Preempt starts slowly; babel-l9-32 excluded (CUDA devices unavailable). Hourly cron is session-only.
+- None open. Incidents resolved: disk full 06:19 (recipes now guard space and prune), bad node babel-l9-32
+  (excluded), NFS slowdown 11:30-12:45 (use no_ckpt where possible). Hourly cron is session-only.
 
-## Next actions
-1. E1f caesar-terse seed 3 readout; update report.
-2. runs.md state column; records snapshot; audit; final report by 21:00.
+## Next actions (for a successor; handover.md §4)
+1. Collapse trigger: more seeds of mixed vs d4+d6; per-stratum gradient logging; random-reward stratum.
+2. Test brevity spill-over by intervention (looser terse length limit).
+3. Verify remaining storage under /data/user_data/$USER/qis/s02 before new work.
