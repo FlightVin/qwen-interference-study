@@ -1,13 +1,13 @@
 [
  {
-  "expid": "qis-s02-e3-add9mix-s3",
+  "expid": "qis-s02-e3-add9mix-s3r",
   "part": "general",
   "time": "12:00:00",
   "bundle": "s02-v1",
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
   "n_train": 4000,
   "n_eval": 64,
-  "hypothesis": "E3c seed-3 replicate of the add9 mixed-strata run (R(add9) config). Collapse count so far: 2/2 mixed runs vs 0/3 others (F8, F9). Tests how often the d6 rise-then-collapse occurs. Retains rounds 16 and 24 so E3b recovery branches can be repeated from a second collapse state.",
+  "hypothesis": "E3c seed-3 replicate of the add9 mixed-strata run (R(add9) config). Collapse count so far: 2/2 mixed runs vs 0/3 others (F8, F9). Tests how often the d6 rise-then-collapse occurs. Retains rounds 16 and 24 so E3b recovery branches can be repeated from a second collapse state. (Expid s3r: the first s3 job 11172967 was cancelled after ~10 min to add retained rounds; its run dir holds a stale config.)",
   "config": {
    "phase": "e3a",
    "seed": 3,
