@@ -7,7 +7,7 @@
   "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
   "n_train": 4000,
   "n_eval": 64,
-  "hypothesis": "E3c seed-3 replicate of the add9 mixed-strata run (R(add9) config). Collapse count so far: 2/2 mixed runs vs 0/3 others (F8, F9). Tests how often the d6 rise-then-collapse occurs.",
+  "hypothesis": "E3c seed-3 replicate of the add9 mixed-strata run (R(add9) config). Collapse count so far: 2/2 mixed runs vs 0/3 others (F8, F9). Tests how often the d6 rise-then-collapse occurs. Retains rounds 16 and 24 so E3b recovery branches can be repeated from a second collapse state.",
   "config": {
    "phase": "e3a",
    "seed": 3,
@@ -65,7 +65,10 @@
    "wandb": {
     "enabled": false
    },
-   "retain_rounds": [],
+   "retain_rounds": [
+    16,
+    24
+   ],
    "allow_uneven_minibatch": true
   },
   "exclude": "babel-l9-32"
