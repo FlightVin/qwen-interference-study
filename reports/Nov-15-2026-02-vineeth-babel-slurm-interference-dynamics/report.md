@@ -29,9 +29,11 @@ Main results:
 4. **The trigger of that collapse is not identified.** It is not d8 gradients (d8 gave almost no gradient before
    the seed-2 collapse). Without d8 groups, 0 of 2 seeds collapsed (third seed pending), against 2 of 3 with them:
    suggestive, not significant. (F13, F16, independent review)
-5. **Cross-domain pairs are not automatically independent.** Caesar trained with MBPP lagged Caesar alone by 0.09-0.12
-   at round 32 while MBPP was unaffected; part of this may be Adam step sharing (control pending). Add9 trained with
-   decimal addition (add10) showed no harm. (F7, F15)
+5. **A joint-run lag is not by itself evidence of interference.** Caesar trained with MBPP lagged Caesar alone by
+   0.09-0.12 at round 32 while MBPP was unaffected. Halving Caesar's learning rate alone costs 0.14-0.53, so the lag
+   fits Adam simply sharing each step between two active tasks. Add9 trained with decimal addition (add10) showed no
+   harm. The Caesar-terse delay (result 1) is the one cross-task delay that step sharing does not explain, because
+   terse gave almost no gradient after round 2. (F7, F15, F17)
 
 ## 2. Setup
 
@@ -71,7 +73,7 @@ groups + 8 competitor groups per round. **D(t) = p_T(R) − p_T(J)**: positive m
 | Target T | Competitor C | Effect on T | Effect on C | Class (T under C) | Seeds | Source |
 |---|---|---|---|---|---|---|
 | caesar | terse | harder strata delayed: D(s8, s12) +.11..+.18 at r16 | terse learned (.4 → .9+), protected | delay; transient in seed 1, unresolved in seed 2 | 2 | F6, F11 |
-| caesar | MBPP | all strata behind at r32: D +.09..+.12 | MBPP unaffected (D +.03, n.s.) | persistent lag to r32; step-sharing confound | 1 | F15 |
+| caesar | MBPP | all strata behind at r32: D +.09..+.12 | MBPP unaffected (D +.03, n.s.) | lag explained by step sharing (half-lr control costs .14-.53) | 1 | F15, F17 |
 | add9 | add10 | no harm; d6 collapse absent | not analysed | none detected | 1 | F7 |
 | add9 | terse | pending | pending | pending | 1 | — |
 
@@ -152,7 +154,7 @@ and closes in one seed.
 | C-2 Caesar training breaks terse via long answers | e1-caesar-s1, -s2 | −.34, −.40; length 19 → 107 | replicated |
 | C-3 terse delays harder Caesar strata | j-caesar-terse-s1/-s2 vs e1-caesar-s1/-s2 | D(r16) s8 +.18/+.12, s12 +.11/+.15 | replicated; closure 1 of 2 |
 | C-4 add10 does not harm add9 | j-add9-add10-s1 vs e1-add9-s1 | |D(d4)| ≤ .05; d6 no collapse | 1 seed |
-| C-5 MBPP slows Caesar, not vice versa | j-caesar-mbpp-s1 vs e1-caesar-s1, e1-mbpp-s1 | D(r32) +.09..+.12; MBPP +.03 n.s. | 1 seed; confound pending (E1e) |
+| C-5 MBPP slows Caesar beyond step sharing | j-caesar-mbpp-s1, e1-caesar-s1, e1-mbpp-s1, e1-caesar-lr1e6-s1 | D(r32) +.09..+.12; half lr costs .14-.53 | not supported: step sharing suffices |
 | C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r | 2 of 3 seeds | supported (reviewed) |
 | C-7 d4 training helps d6 | e3-add9d4-s1 | +.21 [+.13, +.30] | 1 seed (reviewed) |
 | C-8 d8 training harms d4, d6 | e3-add9d8-s1 | −.25, −.15 | 1 seed; d6 answers shorten (reviewed) |
@@ -166,8 +168,9 @@ and closes in one seed.
 - **Which update causes the add9 collapse.** Candidates left: d4×d6 interaction, one large update, sparse-update
   drift under Adam, a weak effect of d8 groups.
 - **Mechanism of the Caesar delay.** Brevity spill-over fits the length data but was not tested.
-- **Step size versus interference** in joint runs with an active competitor (Adam gives each step about the same
-  size whatever the number of tasks; the loss divisor matches raw gradient weight only, decision D3).
+- **Step size versus interference** in joint runs with an active competitor. Adam gives each step about the same
+  size whatever the number of tasks, so each task's share shrinks when another task is active; the loss divisor
+  matches raw gradient weight only (decision D3). The half-lr control (F17) bounds this for Caesar only.
 - **Absence** of an effect: "no harm detected" means the 95% interval includes 0 at about ±0.08.
 
 ## 7. Validity and incidents
