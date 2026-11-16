@@ -39,6 +39,8 @@ phase precheck "false" '
     used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | head -1)
     [ "$used" -lt 2048 ] || {{ echo "GPU already holds ${{used}} MiB on $(hostname)"; exit 1; }}
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv > "$AE_RESULTS/gpu.txt"
+    free=$(df -BG --output=avail "$PROJ_DATA" | tail -1 | tr -dc 0-9)
+    [ "$free" -ge {min_free_gb} ] || {{ echo "PRECONDITION FAILED: $PROJ_DATA has ${{free}}G free < {min_free_gb}G"; exit 1; }}
     mkdir -p "$W" "$CK" "$S02/data"
 '
 phase tests "test -s $W/pytest.ok" '
@@ -77,6 +79,12 @@ phase train "test -f $W/RUN_COMPLETE" '
 phase export "false" '
     cp "$W/metrics.jsonl" "$W/config.json" "$AE_RESULTS/"
     du -sh "$CK" > "$AE_RESULTS/ckpt_du.txt" 2>&1 || true
+    # storage rule (2026-11-16 incident): after a complete run keep only the retained rounds
+    keep=$(python -c "import json; print(\" \".join(\"round_%04d\" % r for r in json.load(open(\"$W/config.json\")).get(\"retain_rounds\", [])))")
+    for r in "$CK"/round_*; do
+        [ -d "$r" ] || continue
+        case " $keep " in *" $(basename "$r") "*) echo "keep $r";; *) echo "prune $r"; rm -rf -- "$r";; esac
+    done >> "$AE_RESULTS/ckpt_du.txt"
 '
 '''
 
@@ -90,6 +98,7 @@ def write(spec, expdir, test_exit=None):
     text = TEMPLATE.format(time=spec.get("time", "08:00:00"), part=spec.get("part", "general"), exclude=ex,
                            hypothesis=spec["hypothesis"], bundle=spec["bundle"], bundle_spec=spec["bundle_spec"],
                            n_train=spec.get("n_train", 4000), n_eval=spec.get("n_eval", 64), expid=spec["expid"],
+                           min_free_gb=spec.get("min_free_gb", 60),
                            extra_env="\n".join(extra))
     assert "'" not in json.dumps(cfg), "config must not contain single quotes"
     path = os.path.join(expdir, spec["expid"] + ".sh")
