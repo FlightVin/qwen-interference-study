@@ -1,4 +1,4 @@
-{"expid": "qis-s02-canary", "part": "preempt", "time": "03:00:00",
+{"expid": "qis-s02-canary", "part": "general", "time": "03:00:00",
  "bundle": "s02-canary", "bundle_spec": "add9:d6,countdown:n4", "n_train": 200, "n_eval": 32,
  "hypothesis": "canary (no science): joint add9+countdown, 6 rounds, forced exit after round 3 and resume; checks mix scheduling, two graders, per-role groups, loss divisor, checkpoint/resume, in-run evals, memory and seconds per round.",
  "config": {"phase": "canary", "seed": 1, "lr": 1e-6, "eps_low": 0.2, "eps_high": 0.2, "grad_clip": 1.0,
