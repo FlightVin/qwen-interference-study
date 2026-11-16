@@ -140,8 +140,40 @@ _CODE_BLOCK = re.compile(r"```(?:python|py)?[ \t]*\n(.*?)```", re.S)
 
 
 def last_code_block(text: str):
+    """The program of a code answer: every ```python block that defines something (def / class / import / from),
+    concatenated in order. Blocks with only usage examples or asserts are skipped (models often end with one).
+    Falls back to the last block when no block defines anything; None when there is no block."""
     blocks = _CODE_BLOCK.findall(text)
-    return blocks[-1] if blocks else None
+    if not blocks:
+        return None
+    defs = [b for b in blocks if re.search(r"^\s*(def|class|import|from)\s", b, re.M)]
+    return "\n\n".join(defs) if defs else blocks[-1]
+
+
+_BOXED = re.compile(r"\\(?:boxed|fbox)\s*\{")
+_OPS = re.compile(r"[+\-*/×÷]|\\times|\\div|\\cdot")
+
+
+def all_boxed(text: str) -> list:
+    """Contents of every balanced \\boxed{...} in order."""
+    out = []
+    for m in _BOXED.finditer(text):
+        i, depth, j = m.end(), 1, m.end()
+        while j < len(text) and depth:
+            depth += {"{": 1, "}": -1}.get(text[j], 0)
+            j += 1
+        if depth == 0:
+            out.append(text[i:j - 1].strip())
+    return out
+
+
+_CHOICE_FALLBACK = re.compile(r"(?i:answer)[^A-Za-z0-9]{0,30}(?:(?i:is)[^A-Za-z0-9]{0,10})?\(?([A-D])\)?(?![A-Za-z])")
+
+
+def choice_fallback(text: str):
+    """Option letter stated without a box, e.g. "**Final Answer:** **(D) volcanic**" (last statement wins)."""
+    m = list(_CHOICE_FALLBACK.finditer(text[-600:]))
+    return m[-1].group(1).upper() if m else None
 
 
 def _limits():
@@ -283,6 +315,18 @@ class Verifier:
                 continue
             ext = last_boxed(it["response"])
             res[k] = {"extracted": ext}
+            if it.get("match") == "countdown":
+                # the expression is the last boxed content that contains an operator: models often box the
+                # expression and then box its value ("\\boxed{29}") at the very end
+                exprs = [b for b in all_boxed(it["response"]) if _OPS.search(b)]
+                if exprs:
+                    ext = exprs[-1]
+                    res[k] = {"extracted": ext}
+            elif it.get("match") == "choice" and ext is None:
+                fb = choice_fallback(it["response"])
+                if fb is not None:
+                    ext = fb
+                    res[k] = {"extracted": ext, "fallback": True}
             if ext is None:
                 res[k].update(status=TRUNCATED if it["truncated"] else NO_ANSWER, reward=0)
             elif it.get("match") in ("digits", "string", "choice", "countdown"):

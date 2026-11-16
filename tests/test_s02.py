@@ -132,3 +132,18 @@ def test_code_runner(v):
                  {"gold": "", "response": "\\boxed{2*(3+5)}", "truncated": False, "n_tokens": 3, "match": "countdown",
                   "numbers": [3, 5, 2], "target": 16}])
     assert [x["status"] for x in r] == [CORRECT, "no_answer", CORRECT, CORRECT]
+
+
+def test_extraction_fixes(v):
+    from qis.verify import choice_fallback, last_code_block
+    resp = "```python\ndef f(x):\n    return x + 1\n```\nExample:\n```python\nassert f(1) == 2\n```"
+    assert "def f" in last_code_block(resp)
+    r = v.score([{"gold": "", "response": resp, "truncated": False, "n_tokens": 30, "match": "code",
+                  "tests": ["assert f(4) == 5"]},
+                 {"gold": "", "response": "\\boxed{(22 + 1) + (15 - 9)} so the value is \\boxed{29}", "truncated": False,
+                  "n_tokens": 9, "match": "countdown", "numbers": [22, 1, 15, 9], "target": 29},
+                 {"gold": "D", "response": "### Final Answer:\n**(D) volcanic**", "truncated": False, "n_tokens": 9,
+                  "match": "choice"}])
+    assert [x["status"] for x in r] == [CORRECT, CORRECT, CORRECT]
+    assert choice_fallback("the answer is a volcanic rock") is None
+    assert choice_fallback("The answer is B.") == "B"
