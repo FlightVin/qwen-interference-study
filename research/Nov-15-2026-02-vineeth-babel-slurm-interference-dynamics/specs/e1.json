@@ -1,0 +1,433 @@
+[
+ {
+  "expid": "qis-s02-e1-caesar-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train caesar alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "caesar_s4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s8_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "caesar_s12_train",
+     "slots": 2
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-add9-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train add9 alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add9_d4_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "add9_d6_train",
+     "slots": 3
+    },
+    {
+     "role": "T",
+     "pool": "add9_d8_train",
+     "slots": 2
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-add10-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train add10 alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "add10_d14_train",
+     "slots": 8
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-mbpp-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train mbpp alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "mbpp_all_train",
+     "slots": 8
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-arc-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train arc alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "arc_all_train",
+     "slots": 8
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-countdown-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train countdown alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "countdown_n3_train",
+     "slots": 4
+    },
+    {
+     "role": "T",
+     "pool": "countdown_n4_train",
+     "slots": 4
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ },
+ {
+  "expid": "qis-s02-e1-terse-s1",
+  "part": "general",
+  "time": "12:00:00",
+  "bundle": "s02-v1",
+  "bundle_spec": "add9:d4,add9:d6,add9:d8,caesar:s4,caesar:s8,caesar:s12,mbpp:all,arc:all,countdown:n3,countdown:n4,terse10:k2:3000,add10:d14",
+  "n_train": 4000,
+  "n_eval": 64,
+  "hypothesis": "E1 single-task matrix: train terse alone (8 groups/round, divisor 32 = reference R for joint runs); evaluate every task panel at rounds 0,4,...,32 to measure own learning and off-target transfer/interference (RQ1). Seed 1, lr 2e-6, sel panels.",
+  "config": {
+   "phase": "e1",
+   "seed": 1,
+   "lr": 2e-06,
+   "eps_low": 0.2,
+   "eps_high": 0.2,
+   "grad_clip": 1.0,
+   "rounds": 32,
+   "ckpt_every": 8,
+   "eval_rounds": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+   ],
+   "eval_panels": {
+    "caesar_s4_sel": 4,
+    "caesar_s8_sel": 4,
+    "caesar_s12_sel": 4,
+    "add9_d4_sel": 4,
+    "add9_d6_sel": 4,
+    "add9_d8_sel": 4,
+    "mbpp_all_sel": 4,
+    "arc_all_sel": 4,
+    "countdown_n3_sel": 4,
+    "add10_d14_sel": 4,
+    "terse10_k2_sel": 4
+   },
+   "max_tokens": 4096,
+   "gpu_mem_util": 0.3,
+   "max_num_seqs": 256,
+   "n_per_prompt": 8,
+   "n_minibatch": 4,
+   "loss_norm_responses": 32,
+   "mix": [
+    {
+     "role": "T",
+     "pool": "terse10_k2_train",
+     "slots": 8
+    }
+   ],
+   "wandb": {
+    "enabled": false
+   }
+  }
+ }
+]

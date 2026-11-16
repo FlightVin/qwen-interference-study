@@ -43,7 +43,7 @@ phase precheck "false" '
 '
 phase bundle "test -s $BUNDLE" '
     t="$BUNDLE.tmp.$SLURM_JOB_ID"
-    python -m qis.s02.tasks --out "$t" --spec "$BSPEC" --n-train {n_train} --n-eval {n_eval} > "$t.log"
+    HF_HUB_OFFLINE=0 python -m qis.s02.tasks --out "$t" --spec "$BSPEC" --n-train {n_train} --n-eval {n_eval} > "$t.log"
     mv "$t" "$BUNDLE"; mv "$t.log" "$BUNDLE.log"
 '
 phase config "test -s $W/config.json" '
