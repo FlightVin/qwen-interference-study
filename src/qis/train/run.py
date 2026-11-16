@@ -14,6 +14,7 @@ Study Nov-15-2026-02 extensions (all optional; absent keys keep the behaviour ab
                        the joint arm's minibatch size in a single-task control so the target's gradient weight per
                        response is identical (exposure-matched control)
   init_round           with init_ckpt: the branch continues at this absolute round (schedule, seeds, eval labels)
+  no_ckpt              never write a checkpoint (short branches / probes; a requeue restarts from init_ckpt)
 Items may carry prefix / match / len_limit (qis.s02.tasks). Round metrics add per-role group counts ("by_role").
 
 Exit codes: 0 done; 143 preemption notice (requeue); 3 round held (verifier unknown);
@@ -404,7 +405,8 @@ def main():
         done_rounds = rnd + 1
         if done_rounds in cfg.get("eval_rounds", []):
             run_evals(done_rounds)
-        if done_rounds % cfg["ckpt_every"] == 0 or done_rounds == cfg["rounds"] or done_rounds in ckpt_retain:
+        if not cfg.get("no_ckpt") and (done_rounds % cfg["ckpt_every"] == 0 or done_rounds == cfg["rounds"]
+                                       or done_rounds in ckpt_retain):
             snap_s = saver.save(done_rounds, learner.model, learner.opt,
                                 {"counters": dict(counters), "config_sha": hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest(),
                                  "bundle_sha": bundle_sha, "wandb_id": getattr(log, "wandb_id", None),
@@ -417,7 +419,7 @@ def main():
             log.event("forced_exit_test", round=done_rounds); sys.exit(143)
 
     saver.wait(); report_ckpt()
-    if not (saver.last or {}).get("ok"):
+    if not cfg.get("no_ckpt") and not (saver.last or {}).get("ok"):
         log.event("final_checkpoint_failed"); sys.exit(5)
     log.event("complete", rounds=cfg["rounds"], **counters)
     with open(os.path.join(out, "RUN_COMPLETE"), "w") as f:
