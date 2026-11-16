@@ -83,3 +83,52 @@ def test_mix_plan_pairs_target_stream():
         assert len({i for _, p, i in pj if p == "T"}) == 8
     seen = [i for r in range(10) for _, _, i in mix_plan(alone, 7, r, {"T": 80})]
     assert sorted(seen) == list(range(80))
+
+
+# ---- amendment A1 task families: countdown, caesar, code, choice -----------------------------------------------
+from qis.verify import countdown_ok, normalize_choice, normalize_string, run_code_tests  # noqa: E402
+
+
+@pytest.mark.parametrize("expr,ok", [
+    ("(3 + 5) * 2", True), ("2 * (5 + 3)", True), ("(3+5) \\times 2", True), ("(3 + 5) * 2 = 16", True),
+    ("16 = 2*(3+5)", True), ("\\left(3+5\\right)\\cdot 2", True), ("3 + 5 * 2", False), ("(3 + 5) * 2 = 17", False),
+    ("(3 + 5) * 2 * 1", False), ("8 * 2", False), ("(3 + 5) ** 2", False), ("__import__('os')", False),
+    ("(3 + 5) / 0 * 2", False), ("-(3 + 5) * -2", False), ("2.0 * (3 + 5)", False)])
+def test_countdown_grader(expr, ok):
+    assert countdown_ok(expr, [3, 5, 2], 16) is ok
+
+
+def test_countdown_witness_and_caesar_gold():
+    import random
+    rng = random.Random(1)
+    for n in (3, 4, 5):
+        for _ in range(100):
+            it = tasks.make("countdown", f"n{n}", rng)
+            assert len(it["numbers"]) == n and 10 <= it["target"] <= 999
+            assert countdown_ok(it["gold"], it["numbers"], it["target"])
+    for _ in range(100):
+        it = tasks.make("caesar", "s6", rng)
+        w = it["problem"].split('"')[1]
+        sh = int(it["problem"].split("shift of ")[1].split()[0])
+        assert len(it["gold"]) == 6 and all((ord(b) - ord(a)) % 26 == sh for a, b in zip(w, it["gold"]))
+
+
+def test_string_and_choice():
+    assert normalize_string("\\text{AbC}") == "abc" and normalize_string('"abc"') == "abc"
+    assert normalize_string("ab1") is None
+    assert [normalize_choice(x) for x in ("B", "(b)", "\\text{C}", "D) foo", "A.", "E", "AB")] == \
+        ["B", "B", "C", "D", "A", None, None]
+
+
+def test_code_runner(v):
+    good = "def f(x):\n    return x + 1\n"
+    assert run_code_tests(good, ["assert f(1) == 2", "assert f(2) == 3"])["passed"]
+    assert not run_code_tests(good, ["assert f(1) == 3"])["passed"]
+    assert run_code_tests("while True:\n    pass\n", ["assert True"], timeout=3)["passed"] is False
+    r = v.score([{"gold": "", "response": "Here:\n```python\n" + good + "```", "truncated": False, "n_tokens": 30,
+                  "match": "code", "tests": ["assert f(4) == 5"]},
+                 {"gold": "", "response": "no code", "truncated": False, "n_tokens": 3, "match": "code", "tests": []},
+                 {"gold": "B", "response": "\\boxed{(B)}", "truncated": False, "n_tokens": 3, "match": "choice"},
+                 {"gold": "", "response": "\\boxed{2*(3+5)}", "truncated": False, "n_tokens": 3, "match": "countdown",
+                  "numbers": [3, 5, 2], "target": 16}])
+    assert [x["status"] for x in r] == [CORRECT, "no_answer", CORRECT, CORRECT]

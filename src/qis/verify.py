@@ -64,6 +64,109 @@ def normalize_digits(s: str, base: int = None):
     return t.lstrip("0") or "0"
 
 
+def normalize_string(s: str):
+    """Exact-match normal form for string answers: one \text{...} wrapper, quotes and spaces removed, lower case."""
+    t = s.strip().strip("$").strip()
+    m = _WRAP.fullmatch(t)
+    if m:
+        t = m.group(1).strip()
+    t = t.strip("'\"`").replace(" ", "").lower()
+    return t if re.fullmatch(r"[a-z]+", t) else None
+
+
+def normalize_choice(s: str):
+    """Option letter A-D from "B", "(B)", "\text{B}", "B)" or "B. text"; None otherwise."""
+    t = s.strip().strip("$").strip()
+    m = _WRAP.fullmatch(t)
+    if m:
+        t = m.group(1).strip()
+    m = re.fullmatch(r"\(?\s*([A-Da-d])\s*\)?(?:[.:)]\s*.*)?", t)
+    return m.group(1).upper() if m else None
+
+
+def countdown_ok(expr: str, numbers: list, target: int) -> bool:
+    """True when expr uses each of `numbers` exactly once (as a multiset), only + - * / and parentheses, and equals
+    `target` exactly (rational arithmetic). A trailing "= target" is allowed. Division by zero is False."""
+    import ast
+    from fractions import Fraction
+    t = expr.strip().strip("$")
+    for a, b in (("\\times", "*"), ("\\cdot", "*"), ("\\div", "/"), ("×", "*"), ("÷", "/"), ("\\left", ""),
+                 ("\\right", ""), ("{", "("), ("}", ")"), ("\\", "")):
+        t = t.replace(a, b)
+    if "=" in t:                                     # "expr = target" or "target = expr"
+        parts = [x.strip() for x in t.split("=")]
+        if len(parts) != 2:
+            return False
+        if re.fullmatch(r"\(?\s*-?[0-9]+\s*\)?", parts[1]) and int(parts[1].strip("() ")) == target:
+            t = parts[0]
+        elif re.fullmatch(r"\(?\s*-?[0-9]+\s*\)?", parts[0]) and int(parts[0].strip("() ")) == target:
+            t = parts[1]
+        else:
+            return False
+    if not re.fullmatch(r"[0-9+\-*/() .]+", t) or len(t) > 200:
+        return False
+    try:
+        tree = ast.parse(t, mode="eval")
+    except SyntaxError:
+        return False
+    used = []
+
+    def ev(n):
+        if isinstance(n, ast.Expression):
+            return ev(n.body)
+        if isinstance(n, ast.Constant) and isinstance(n.value, int) and not isinstance(n.value, bool):
+            used.append(n.value)
+            return Fraction(n.value)
+        if isinstance(n, ast.BinOp) and type(n.op) in (ast.Add, ast.Sub, ast.Mult, ast.Div):
+            a, b = ev(n.left), ev(n.right)
+            if isinstance(n.op, ast.Add):
+                return a + b
+            if isinstance(n.op, ast.Sub):
+                return a - b
+            if isinstance(n.op, ast.Mult):
+                return a * b
+            if b == 0:
+                raise ZeroDivisionError
+            return a / b
+        raise ValueError("disallowed node")
+    try:
+        val = ev(tree)
+    except (ValueError, ZeroDivisionError):
+        return False
+    return sorted(used) == sorted(numbers) and val == target
+
+
+_CODE_BLOCK = re.compile(r"```(?:python|py)?[ \t]*\n(.*?)```", re.S)
+
+
+def last_code_block(text: str):
+    blocks = _CODE_BLOCK.findall(text)
+    return blocks[-1] if blocks else None
+
+
+def _limits():
+    import resource
+    resource.setrlimit(resource.RLIMIT_AS, (4 << 30, 4 << 30))
+    resource.setrlimit(resource.RLIMIT_CPU, (10, 10))
+    resource.setrlimit(resource.RLIMIT_FSIZE, (1 << 20, 1 << 20))
+
+
+def run_code_tests(code: str, tests: list, setup: str = "", timeout: float = 10.0) -> dict:
+    """Run `code` then `setup` then every assert of `tests` in a fresh isolated interpreter (python -I, temporary
+    working directory, 4 GB address space, 10 s CPU, 1 MB files). Passed only when the process exits 0."""
+    import subprocess
+    import sys
+    import tempfile
+    prog = code + "\n\n" + setup + "\n\n" + "\n".join(tests) + "\n"
+    with tempfile.TemporaryDirectory() as d:
+        try:
+            r = subprocess.run([sys.executable, "-I", "-c", prog], cwd=d, capture_output=True, timeout=timeout,
+                               preexec_fn=_limits, stdin=subprocess.DEVNULL)
+            return {"passed": r.returncode == 0, "rc": r.returncode, "err": r.stderr.decode(errors="replace")[-300:]}
+        except subprocess.TimeoutExpired:
+            return {"passed": False, "rc": None, "err": "timeout"}
+
+
 def _mv():
     import math_verify
     from math_verify import LatexExtractionConfig, parse, verify
@@ -108,7 +211,8 @@ def _worker(conn):
 class Verifier:
     """A small pool of killable worker processes (spawn context: no forked CUDA state)."""
 
-    def __init__(self, workers: int = 4):
+    def __init__(self, workers: int = 4, code_workers: int = 8):
+        self.code_workers = code_workers
         self.ctx = mp.get_context("spawn")
         self.n = workers
         self.procs = [self._spawn() for _ in range(workers)]
@@ -172,13 +276,25 @@ class Verifier:
         """
         res = [None] * len(items)
         jobs = []
+        code_jobs = []
         for k, it in enumerate(items):
+            if it.get("match") == "code":
+                code_jobs.append(k)
+                continue
             ext = last_boxed(it["response"])
             res[k] = {"extracted": ext}
             if ext is None:
                 res[k].update(status=TRUNCATED if it["truncated"] else NO_ANSWER, reward=0)
-            elif it.get("match") == "digits":
-                ok = normalize_digits(ext, it.get("base")) == normalize_digits(it["gold"])
+            elif it.get("match") in ("digits", "string", "choice", "countdown"):
+                mt = it["match"]
+                if mt == "digits":
+                    ok = normalize_digits(ext, it.get("base")) == normalize_digits(it["gold"])
+                elif mt == "string":
+                    ok = normalize_string(ext) is not None and normalize_string(ext) == normalize_string(it["gold"])
+                elif mt == "choice":
+                    ok = normalize_choice(ext) == it["gold"]
+                else:
+                    ok = countdown_ok(ext, it["numbers"], it["target"])
                 if it["truncated"]:
                     res[k].update(status=TRUNCATED, reward=0, would_match=ok)
                 elif ok and it.get("len_limit") is not None and it["n_tokens"] > it["len_limit"]:
@@ -187,6 +303,22 @@ class Verifier:
                     res[k].update(status=CORRECT if ok else WRONG, reward=1 if ok else 0)
             else:
                 jobs.append((k, it["gold"], ext))
+        if code_jobs:
+            from concurrent.futures import ThreadPoolExecutor
+
+            def grade(k):
+                it = items[k]
+                code = last_code_block(it["response"])
+                if code is None:
+                    return k, {"extracted": None, "status": TRUNCATED if it["truncated"] else NO_ANSWER, "reward": 0}
+                r = run_code_tests(code, it["tests"], it.get("test_setup", ""))
+                if it["truncated"]:
+                    return k, {"extracted": code[-200:], "status": TRUNCATED, "reward": 0, "would_match": r["passed"]}
+                return k, {"extracted": code[-200:], "status": CORRECT if r["passed"] else WRONG,
+                           "reward": 1 if r["passed"] else 0, "diagnostic": None if r["passed"] else r["err"][-120:]}
+            with ThreadPoolExecutor(max(1, self.code_workers)) as ex:
+                for k, r in ex.map(grade, code_jobs):
+                    res[k] = r
         first = self._run(jobs, TIMEOUT_S)
         retry = [(k, g, p) for k, g, p in jobs if not first[k]["ok"]]
         second = self._run(retry, RETRY_TIMEOUT_S) if retry else {}

@@ -123,7 +123,9 @@ def score_items(verifier, tok, items, outs):
     """Grade [n responses per item]; carries the s02 item keys (match, len_limit) into the verifier."""
     return verifier.score([{"gold": it["gold"], "response": tok.decode(o["ids"], skip_special_tokens=True),
                             "truncated": o["finish"] == "length", "n_tokens": len(o["ids"]),
-                            "match": it.get("match"), "len_limit": it.get("len_limit"), "base": it.get("base")}
+                            "match": it.get("match"), "len_limit": it.get("len_limit"), "base": it.get("base"),
+                            "numbers": it.get("numbers"), "target": it.get("target"), "tests": it.get("tests"),
+                            "test_setup": it.get("test_setup", "")}
                            for it, g in zip(items, outs) for o in g])
 
 
