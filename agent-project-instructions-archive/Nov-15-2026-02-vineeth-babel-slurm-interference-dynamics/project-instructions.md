@@ -255,4 +255,13 @@ The deadline is a planning target, not a hard stop or a reason to weaken validat
 ---
 
 ## Amendments
-(none yet)
+
+## Amendment A1 (owner, 2026-11-15 23:30 EST) — broaden candidate tasks beyond mathematics
+
+Verbatim:
+
+> You may broaden the candidate tasks beyond mathematics. Arithmetic can remain a useful controlled setting, but you are allowed to not make it constrain the scope of this study.
+>
+> Consider skill interactions within and across domains such as code generation, logical puzzles, symbolic reasoning, instruction following, and factual tasks with reliable grading. Cross-domain pairs need not include math—for example, code and puzzles are also in scope. Choose a small, diverse set for cheap screening, then deepen the comparisons that best inform RQ1 and RQ2.
+>
+> Select tasks for scientific value: reliable verification, measurable starting success, learnability, and potentially informative update interactions. Do not assume different domains conflict or similar domains cooperate. Distinguish competing behavioral objectives from distinct skills.
