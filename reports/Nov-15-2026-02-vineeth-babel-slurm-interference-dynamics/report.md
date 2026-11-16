@@ -27,8 +27,8 @@ Main results:
    state, a branch with zero d6 successes did not recover in 8 rounds; one rare success (found by sampling 4x more)
    or transfer from d4 training restarted recovery. This is the persistence step of the RQ2 chain. (F8, F10, F14)
 4. **The trigger of that collapse is not identified.** It is not d8 gradients (d8 gave almost no gradient before
-   the seed-2 collapse). Without d8 groups, 0 of 2 seeds collapsed (third seed pending), against 2 of 3 with them:
-   suggestive, not significant. (F13, F16, independent review)
+   the seed-2 collapse). Without d8 groups, 0 of 3 seeds collapsed, against 2 of 3 with them (Fisher exact
+   p = 0.4): suggestive, not significant. (F13, F16, independent review)
 5. **A joint-run lag is not by itself evidence of interference.** Caesar trained with MBPP lagged Caesar alone by
    0.09-0.12 at round 32 while MBPP was unaffected. Halving Caesar's learning rate alone costs 0.14-0.53, so the lag
    fits Adam simply sharing each step between two active tasks. Add9 trained with decimal addition (add10) showed no
@@ -101,7 +101,7 @@ Single-task off-target effects at round 32 (Figure 2) show that a task's own tra
 | Condition | Seeds | d6 collapse | d6 at r32 |
 |---|---|---|---|
 | mixed d4+d6+d8 (3:3:2 groups) | 3 | 2 of 3 (seed 1 r16→r24, seed 2 r12→r16) | .05, .07, .54 |
-| d4+d6, no d8 | 2 (+1 pending) | 0 of 2 | .50, .65 |
+| d4+d6, no d8 | 3 | 0 of 3 | .50, .65, .59 |
 | d6 only | 1 | no | .47 |
 | d4 only | 1 | no (d6 rises .15 → .36) | .36 |
 | d8 only | 1 | d6 falls .18 → .03 | .03 |
@@ -158,7 +158,7 @@ and closes in one seed.
 | C-6 mixed add9 can collapse d6 | e1-add9-s1, e3-add9mix-s2, -s3r | 2 of 3 seeds | supported (reviewed) |
 | C-7 d4 training helps d6 | e3-add9d4-s1 | +.21 [+.13, +.30] | 1 seed (reviewed) |
 | C-8 d8 training harms d4, d6 | e3-add9d8-s1 | −.25, −.15 | 1 seed; d6 answers shorten (reviewed) |
-| C-9 d8 triggers the collapse | e3-add9mix-s2 strata; e3-add9d4d6-s1/-s2 | 2 d8 updates before seed-2 collapse; 0/2 without d8 | not supported as stated; open |
+| C-9 d8 triggers the collapse | e3-add9mix-s2 strata; e3-add9d4d6-s1/-s2 | 2 d8 updates before seed-2 collapse; 0/3 without d8 vs 2/3 with (p=0.4) | not supported as stated; open |
 | C-10 no successes → no recovery; a success restarts it | e3b-r16-d6 / -d6n32 / -mixed | .000 / .113 / .072 | 1 collapse state (reviewed, partial) |
 
 ## 6. What this study cannot establish
