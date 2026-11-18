@@ -18,9 +18,12 @@ half the learning rate showed that Caesar learning is highly sensitive to step s
 credible alternative explanation. Third, within base-9 addition, the medium-difficulty
 problems sometimes collapsed to near-zero accuracy during training (2 of 5 seeds). Once every training sample on
 those problems was wrong, GRPO produced no gradient for them and the skill stayed collapsed; a single rare correct
-sample, or transfer from easier problems, was enough to restart learning. This confirms the persistence step of the
-proposed feedback loop. The cause of the collapse itself remains unidentified. All results are exploratory: most
-conditions have one to three seeds.
+sample, or transfer from easier problems, was enough to restart learning. This supports the persistence step of
+the proposed feedback loop, although the test used a single collapse state. The cause of the collapse itself remains
+unidentified. A controlled measurement also showed that, with the AdamW optimizer, steps without any gradient still
+move the weights and change the model's behaviour. All results are exploratory: most conditions have one to three
+training seeds, and the reported confidence intervals cover evaluation problems within a run, not variation
+between training runs.
 
 ## 1. Introduction
 
