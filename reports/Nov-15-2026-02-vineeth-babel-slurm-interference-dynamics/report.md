@@ -383,7 +383,28 @@ and rose to 0.11 over the next four rounds, during which every gradient was agai
 by many momentum-carried steps in the same direction.
 
 These branch observations are indirect: the training logs record gradients and accuracy, not how far the weights
-moved. MOMENTUM_CPU_PLACEHOLDER
+moved. To measure the movement directly, we ran a controlled
+experiment on CPU with the same model, the same AdamW settings and the same loss. Starting from the base model, we
+applied real policy-gradient steps computed from recorded training groups of the base-9 run, then steps whose
+gradient was exactly zero, then one more real step followed by zero-gradient steps. After every step we measured how
+far the weights had moved, and at intervals the model's average log-probability of held-out correct 4- and 6-digit
+answers. This is a small-scale version (responses shortened to 64 tokens, one warm-up step, two zero-gradient steps
+per phase); it is not a re-run of the collapsed branch, whose checkpoint no longer exists.
+
+![Weight movement under zero-gradient steps](figures/momentum_cpu.png)
+
+*Figure 10. Controlled measurement on Qwen3-1.7B with the training optimizer (AdamW, learning rate 2×10⁻⁶). (a)
+Size of each weight update in execution order; orange: real gradient steps, blue: zero-gradient steps; dashed: the
+size AdamW predicts when no new gradient arrives. (b) Total distance moved during zero-gradient steps. (c) Change in
+the mean log-probability of held-out correct answers; shaded columns are real gradient steps.*
+
+The measurement confirms the mechanism. A zero-gradient step moved the weights by 0.049 in L2 norm, two-thirds of
+the preceding real step (0.073) and more than a later real step (0.039). Consecutive zero-gradient updates pointed in
+the same direction (cosine similarity 0.99995), and each was smaller than the last by exactly the factor AdamW's
+update rule predicts (measured 0.770, predicted 0.773). These updates changed the model's behaviour as much as real
+ones: each zero-gradient step lowered the mean log-probability of held-out correct answers by 0.08 to 0.16, while
+each real step changed it by 0.05 to 0.15. Because this run is small, the numbers illustrate the mechanism rather than quantify its size in
+full training.
 
 The practical consequence is that an analysis treating rounds with all-equal groups as "null" updates will
 misattribute change. Weight movement continues after the last informative group, its size depends on the gradients
