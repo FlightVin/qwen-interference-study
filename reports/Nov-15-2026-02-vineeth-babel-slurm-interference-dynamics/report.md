@@ -143,14 +143,28 @@ Each task learned what it was trained on. Caesar decoding improved sharply at ev
 three seeds; even the hardest shift rose from 0.04 to between 0.64 and 0.71. MBPP improved by 0.14, and mixed
 base-9 training improved the 4-digit level by 0.25.
 
-The more striking pattern concerns the terse task, which none of these runs trained. Caesar training lowered terse
-accuracy in all three seeds, by between 0.11 and 0.40. Its multiplications stayed correct; the answers simply grew
-longer, from about 19 to over 100 tokens on average, and so broke the 24-token limit. The step-by-step style that
-Caesar training reinforced spread to a task where it is penalised. Base-9 training also lowered terse accuracy
-(by 0.34 in the mixed run and 0.42 when trained on 4-digit problems only), but through a different route: the model
-stopped putting its answer in the required box. Not every task did this. MBPP training, whose answers also contain
-explanation, left terse accuracy unchanged, and training on 6- or 8-digit problems alone actually raised it. We have
-no explanation for this difference between difficulty levels of the same task.
+The more striking pattern concerns the terse task, which none of these runs trained. Its arithmetic is easy for
+the model; the base model got only 4 of 256 multiplications wrong. Terse answers fail almost entirely on format. At
+the start, about half of them gave no boxed answer, and a few were correct but longer than the 24-token limit.
+Training other tasks moved this format in one of two harmful directions, or in a helpful one (Figure 2).
+
+![Terse task across runs](figures/terse_spillover.png)
+
+*Figure 2. The terse task in every run. Left: accuracy. Right: mean answer length on a logarithmic scale (dashed:
+the 24-token limit). Blue and purple: runs that trained terse; all other colours: runs that did not.*
+
+Caesar training lowered terse accuracy in all three seeds, by 0.34, 0.40 and 0.11, but not in the same way. In
+seed 1 the answers grew long: by round 32, 228 of 256 answers were correct but exceeded the length limit, and the
+mean length rose from 19 to 107 tokens. In seed 2 the answers instead stopped carrying a boxed answer (239 of 256). In
+seed 3 the format changed little. Base-9 training showed the same split between configurations. The mixed run lost
+the box (238 of 256 unboxed), while training on 4-digit problems alone produced over-long answers (238 of 256).
+Training on 6- or 8-digit problems alone did the opposite: the model learned to box its terse answers, and accuracy
+rose by 0.46 and 0.38. MBPP training left the terse task essentially unchanged.
+
+Two conclusions follow. First, the damage to terse comes from format and length conventions, not from lost
+arithmetic. Second, which convention a task spreads is not a fixed property of the task. The same task, Caesar
+decoding, spread long answers in one seed and unboxed answers in another, and different difficulty levels of
+base-9 addition pushed the format in opposite directions. We cannot predict the direction from the task alone.
 
 Other side effects were small. MBPP training lowered ARC accuracy by 0.04, and Caesar training raised 6-digit base-9
 accuracy by 0.11. Within base-9 addition, the effects were large and of both signs. Training on 4-digit problems
@@ -160,8 +174,8 @@ the model almost never succeeds, so nearly every gradient came from groups with 
 eight. Section 3.4 returns to this.
 
 The lesson for multi-task training is that a behaviour that no task currently trains is not protected. Whether it
-survives depends on the stylistic habits that the other tasks reinforce, and these differ even between closely
-related tasks.
+survives depends on the output conventions the other tasks reinforce, and these differ between closely related
+tasks and even between training seeds of the same task.
 
 ### 3.2 A behavioural objective can delay a skill that needs written working
 
@@ -360,7 +374,8 @@ from written working in two of three seeds, and in exactly those seeds the brevi
 answers. This explanation is promising but not confirmed; the competitor's earlier updates and their effect on the
 optimizer's state are an alternative we could not exclude. The single-task results
 point the same way. The largest side effects of training were on an untrained behaviour (the terse format), and
-they arose through stylistic habits: longer answers in one case, unboxed answers in another. These results caution
+they arose through output conventions, long answers or unboxed answers, whose direction varied even between seeds
+of the same task. These results caution
 against assuming that different domains conflict or that similar ones cooperate. They suggest that the relevant
 variable is what behaviour each task rewards.
 
