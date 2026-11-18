@@ -306,13 +306,17 @@ def fig_momentum_cpu(path, out):
         ax.plot([r["step"] for r in ph], [r["cum_from_phase_start"] for r in ph], color=SLOTS[slot], marker="o",
                 markersize=4, linewidth=2, label=f"zero-gradient steps {lab}")
     single = [r for r in seq if r["phase"] == "single"]
+    warm = [r for r in seq if r["phase"] == "warmup"]
+    if warm:
+        ax.axhline(warm[-1]["cum_from_phase_start"], color=SLOTS[1], linewidth=1.2, linestyle="--",
+                   label="distance moved by the 6 real steps")
     if single:
         ax.axhline(single[0]["step_norm"], color=SLOTS[1], linewidth=1.2, linestyle=":",
-                   label="size of that one real step")
+                   label="size of the one real step")
     ax.set_title("(b) Total distance moved with zero gradient", fontsize=9.5, color=INK, loc="left")
     ax.xaxis.get_major_locator().set_params(integer=True)
     ax.set_xlabel("zero-gradient steps taken", fontsize=8, color=MUTED); ax.set_ylabel("||weights - weights at phase start||", fontsize=8, color=MUTED)
-    ax.legend(frameon=False, fontsize=7.5, loc="lower right")
+    ax.legend(frameon=False, fontsize=7.5, loc="center right")
     # (c) policy change on held-out correct answers
     ax = axes[2]; style(ax)
     pr = [(i + 1, r) for i, r in enumerate(seq) if isinstance(r.get("probe"), dict)]
@@ -322,8 +326,8 @@ def fig_momentum_cpu(path, out):
     base = first_probe[0]["probe"] if first_probe else {}
     for f, slot in zip(files, (2, 4)):
         lab = "4-digit" if "d4" in f else "6-digit"
-        ax.plot([i for i, _ in pr], [r["probe"][f] - base[f] for _, r in pr], color=SLOTS[slot], marker="o", markersize=4,
-                linewidth=2, label=f"{lab} correct answers")
+        ax.plot([0] + [i for i, _ in pr], [0.0] + [r["probe"][f] - base[f] for _, r in pr], color=SLOTS[slot], marker="o",
+                markersize=4, linewidth=2, label=f"{lab} correct answers")
     for start, n, name in bounds:
         ax.axvspan(start + 0.5, start + n + 0.5, color=SLOTS[1] if name in ("warmup", "single") else SURFACE, alpha=0.08, linewidth=0)
     ax.axhline(0, color=MUTED, linewidth=1)

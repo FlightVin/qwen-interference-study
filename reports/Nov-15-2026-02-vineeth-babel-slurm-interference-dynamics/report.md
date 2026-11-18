@@ -388,26 +388,36 @@ by many momentum-carried steps in the same direction.
 These branch observations are indirect: the training logs record gradients and accuracy, not how far the weights
 moved. To measure the movement directly, we ran a controlled
 experiment on CPU with the same model, the same AdamW settings and the same loss. Starting from the base model, we
-applied real policy-gradient steps computed from recorded training groups of the base-9 run, then steps whose
-gradient was exactly zero, then one more real step followed by zero-gradient steps. After every step we measured how
-far the weights had moved, and at intervals the model's average log-probability of held-out correct 4- and 6-digit
-answers. This is a small-scale version (responses shortened to 64 tokens, one warm-up step, two zero-gradient steps
-per phase); it is not a re-run of the collapsed branch, whose checkpoint no longer exists.
+applied six real policy-gradient steps computed from recorded training groups of the base-9 run, then 16 steps whose
+gradient was exactly zero, then one more real step followed by eight zero-gradient steps. After every step we
+measured how far the weights had moved, and at intervals the model's average log-probability of held-out correct
+4- and 6-digit answers (four answers each). The experiment reproduces the optimizer's behaviour, not the collapsed
+branch itself, whose checkpoint no longer exists.
 
 ![Weight movement under zero-gradient steps](figures/momentum_cpu.png)
 
 *Figure 10. Controlled measurement on Qwen3-1.7B with the training optimizer (AdamW, learning rate 2×10⁻⁶). (a)
 Size of each weight update in execution order; orange: real gradient steps, blue: zero-gradient steps; dashed: the
-size AdamW predicts when no new gradient arrives. (b) Total distance moved during zero-gradient steps. (c) Change in
-the mean log-probability of held-out correct answers; shaded columns are real gradient steps.*
+size that AdamW's update rule predicts when no new gradient arrives. (b) Total distance moved during each
+zero-gradient phase, compared with the distance moved by the real steps before it. (c) Change in the mean
+log-probability of held-out correct answers from the starting model; shaded columns are real gradient steps.*
 
-The measurement confirms the mechanism. A zero-gradient step moved the weights by 0.049 in L2 norm, two-thirds of
-the preceding real step (0.073) and more than a later real step (0.039). Consecutive zero-gradient updates pointed in
-the same direction (cosine similarity 0.99995), and each was smaller than the last by exactly the factor AdamW's
-update rule predicts (measured 0.770, predicted 0.773). These updates changed the model's behaviour as much as real
-ones: each zero-gradient step lowered the mean log-probability of held-out correct answers by 0.08 to 0.16, while
-each real step changed it by 0.05 to 0.15. Because this run is small, the numbers illustrate the mechanism rather than quantify its size in
-full training.
+The measurement confirms the mechanism and shows that it is large. The first zero-gradient step moved the weights
+87% as far as the last real step before it. Every subsequent zero-gradient update pointed in the same direction as
+the previous one (cosine similarity above 0.9999), and each shrank by exactly the factor that AdamW's update rule
+predicts (agreement within 0.1%). The shrinkage is slow: over 16 zero-gradient steps the weights moved a total
+distance of 0.207, slightly more than the 0.201 moved by the six real steps that built up the momentum. A single
+later real step of size 0.015 was followed by eight zero-gradient steps that moved the weights 0.080, more than five
+times as far as the step itself.
+
+This movement changed the model's behaviour, not just its parameters. The six real steps lowered the log-probability
+of the held-out correct answers by 0.042 (4-digit) and 0.041 (6-digit). The 16 zero-gradient steps that followed
+lowered it by a further 0.072 and 0.050, more than the real steps did. After the single real step, which changed
+these probabilities by less than 0.01, the eight zero-gradient steps changed them by a further 0.015 and 0.023. In
+short, under AdamW a single informative update is followed by a sequence of uninformed updates in the same
+direction, whose combined effect can exceed that of the update itself. These figures come from one short run on
+recorded data with eight probe answers, so they show the size of the effect at this learning rate rather than its
+exact size during full training.
 
 The practical consequence is that an analysis treating rounds with all-equal groups as "null" updates will
 misattribute change. Weight movement continues after the last informative group, its size depends on the gradients
@@ -497,6 +507,11 @@ and whether the brevity effect can be confirmed by direct intervention.
   the report reflects that correction.
 - **Numerical audit.** A sample of 18 reported numbers was recomputed independently, with no discrepancies, and
   every evaluation was confirmed to use 64 problems.
+- **Momentum measurement.** The CPU experiment was first run as a small canary. Probes taken at identical weights
+  gave identical values, so the probe is deterministic; and the measured step sizes matched AdamW's update rule to
+  within 0.1%, confirming that the experiment reproduces the optimizer exactly.
+- **Terse failure types.** The format failures in Section 3.1 were counted from the stored grader verdicts of every
+  evaluation answer, not inferred from accuracy or length.
 - **Operational events.** One run was resumed after preemption and replayed eight rounds. Its evaluations were
   unaffected, and duplicated training records were excluded from all counts. When shared storage filled, two
   runs ended after their final evaluations, so their results are complete; a third was rerun from the start. One
