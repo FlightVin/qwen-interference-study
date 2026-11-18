@@ -181,12 +181,12 @@ tasks and even between training seeds of the same task.
 
 Our first joint pair trained Caesar decoding together with the terse task. Terse was learned within four rounds,
 rising from about 0.4 to above 0.9. After that most of its prompt groups were all-correct, so it contributed much
-less gradient than an active task: about one group per round in seed 1, and fewer still in seeds 2 and 3. Nonetheless, Caesar learning was slowed on the harder shifts. Figure 2
+less gradient than an active task: about one group per round in seed 1, and fewer still in seeds 2 and 3. Nonetheless, Caesar learning was slowed on the harder shifts. Figure 3
 shows the gap to the single-task reference.
 
 ![Caesar gap in joint runs](figures/caesar_D.png)
 
-*Figure 2. Gap between Caesar accuracy trained alone and in a joint run (positive: joint run behind), by shift
+*Figure 3. Gap between Caesar accuracy trained alone and in a joint run (positive: joint run behind), by shift
 size. Blue: joint training with the terse task, three seeds. Orange: joint training with MBPP. Bands are 95% paired
 bootstrap intervals.*
 
@@ -203,7 +203,7 @@ loosening the terse length limit.
 
 A second explanation cannot be excluded either. Although terse was nearly solved after the first few rounds, it never
 stopped producing gradient entirely. In rounds 1–8, 10 to 13 of its groups produced gradient. In later blocks of eight
-rounds, seed 1 still had 6 to 9 such groups per block, and seeds 2 and 3 had 0 to 5 (Figure 4a). Those updates changed the model, and they also changed Adam's running estimates of
+rounds, seed 1 still had 6 to 9 such groups per block, and seeds 2 and 3 had 0 to 5 (Figure 5a). Those updates changed the model, and they also changed Adam's running estimates of
 gradient direction and scale, which shape every later Caesar update. A delay could therefore arise from this
 optimizer history rather than from brevity specifically. The two explanations are not exclusive.
 
@@ -216,7 +216,7 @@ Caesar training alone had driven it down.
 
 ### 3.3 A cross-domain lag that optimizer effects may explain
 
-Our second pair crossed domains: Caesar decoding with Python programming. Figure 3 shows both tasks trained alone
+Our second pair crossed domains: Caesar decoding with Python programming. Figure 4 shows both tasks trained alone
 and together. MBPP learned at the same rate in both settings; its accuracy at round 32 was 0.69 with Caesar and 0.72
 alone, a difference well within the evaluation uncertainty. Caesar improved substantially in both settings, but
 the joint run fell behind on all three shifts, by 0.09 to 0.12 at round 32, and had not caught up by the end of
@@ -224,25 +224,25 @@ training.
 
 ![Caesar and MBPP alone and together](figures/caesar_mbpp_curves.png)
 
-*Figure 3. Accuracy of MBPP (left) and of Caesar decoding at each shift, trained alone (orange) and together (blue).
+*Figure 4. Accuracy of MBPP (left) and of Caesar decoding at each shift, trained alone (orange) and together (blue).
 Grey dashed: Caesar trained alone at half the learning rate. Bands are 95% bootstrap intervals over the 64
 evaluation problems of each run; they do not capture variation across training seeds.*
 
 The lag could be interference, but there is a simpler alternative. MBPP remained an active learner throughout
-training: it produced gradient in 100 groups over 32 rounds, whereas terse produced 18 to 34 (Figure 4a).
+training: it produced gradient in 100 groups over 32 rounds, whereas terse produced 18 to 34 (Figure 5a).
 Adam scales each update by running estimates of gradient size, so when two tasks contribute gradient the update is
 spread across both, and Caesar's learning can slow without any conflict between the tasks. To gauge how sensitive
 Caesar is to such effects, we trained Caesar alone at half the learning rate.
 
 ![Step-size sensitivity](figures/step_sharing.png)
 
-*Figure 4. (a) Cumulative number of competitor groups that produced gradient: MBPP stayed active throughout, while
+*Figure 5. (a) Cumulative number of competitor groups that produced gradient: MBPP stayed active throughout, while
 terse produced most of its gradient in the first rounds. (b) Caesar accuracy at round 32 when trained alone at the full learning rate, with MBPP, and
 alone at half the learning rate (95% intervals over evaluation problems). (c) Accuracy lost relative to Caesar trained
 alone at the full rate, over training.*
 
 Halving the learning rate cost Caesar 0.14, 0.53 and 0.37 at round 32 on the three shifts, far more than the joint
-run's lag (Figure 4b and c). This shows that Caesar learning is highly sensitive to the size of its updates, which
+run's lag (Figure 5b and c). This shows that Caesar learning is highly sensitive to the size of its updates, which
 makes optimizer effects a credible explanation for the joint-run lag. It does not show that the joint run is
 equivalent to some smaller Caesar-only learning rate. Adam changes the direction and the per-parameter scaling of
 updates, not just their overall size, so there is no general rule that places a shared update between half and full
@@ -256,7 +256,7 @@ force to the Caesar-terse delay of Section 3.2, because terse contributed far le
 not vanish: terse kept producing some gradient, and its early updates shaped the optimizer's history.
 
 Two further pairs combined base-9 addition with a competitor: decimal addition, which shares surface form but uses
-a different carry rule, and the terse task (Figure 5). Against the single-task reference with the same seed, we
+a different carry rule, and the terse task (Figure 6). Against the single-task reference with the same seed, we
 detected no harm: 4-digit accuracy stayed within 0.06 of the reference throughout. That reference, however,
 collapsed on 6-digit problems (Section 3.4), which makes it a poor comparison at that level. We therefore also
 compare with three other single-task seeds that did not collapse. Against them, both joint runs ended at or just below
@@ -269,7 +269,7 @@ learned. Terse rose from 0.40 to above 0.9 within four rounds. Decimal addition 
 
 ![Base-9 addition with competitors](figures/add9_pairs.png)
 
-*Figure 5. Base-9 addition at each difficulty level, trained alone (grey band: range of three seeds that did not
+*Figure 6. Base-9 addition at each difficulty level, trained alone (grey band: range of three seeds that did not
 collapse; grey line: the collapsed seed 1) and together with decimal addition or terse (one seed each). Right: the
 competitor tasks, trained and untrained.*
 
@@ -285,13 +285,13 @@ written working, though even there the optimizer's history is a possible contrib
 
 The clearest evidence on the second research question came from inside one task. When base-9 addition was trained
 on a mixture of 4-, 6- and 8-digit problems, 6-digit accuracy usually rose steadily. In two of five seeds, however,
-it first rose to between 0.30 and 0.49 and then fell to near zero within a few rounds (Figure 3). In one seed it
+it first rose to between 0.30 and 0.49 and then fell to near zero within a few rounds (Figure 7). In one seed it
 dropped from 0.30 to 0.00 between rounds 12 and 16; in the other, from 0.49 to 0.09 between rounds 16 and 24. Both
 stayed below 0.1 until training ended.
 
 ![Base-9 6-digit accuracy](figures/add9_d6.png)
 
-*Figure 3. Accuracy on 6-digit base-9 problems under each training condition. Colour shows the condition; line
+*Figure 7. Accuracy on 6-digit base-9 problems under each training condition. Colour shows the condition; line
 style distinguishes seeds. The two mixed-difficulty seeds that collapsed are the blue lines that fall to near zero.*
 
 The collapse was not caused by longer or truncated answers. Answer length stayed between about 1,000 and 1,250
@@ -328,11 +328,11 @@ What happens after the collapse speaks directly to the second research question.
 learning signal. Its accuracy recovered only slightly, to 0.07, by round 32.
 
 To test whether the missing signal is what keeps the skill down, we branched from the collapsed checkpoint (round
-16, 6-digit accuracy 0.00) and continued for eight rounds under three conditions (Figure 4).
+16, 6-digit accuracy 0.00) and continued for eight rounds under three conditions (Figure 8).
 
 ![Recovery from the collapsed state](figures/recovery.png)
 
-*Figure 4. Eight-round continuations from the collapsed checkpoint at round 16. Left: 6-digit accuracy on the
+*Figure 8. Eight-round continuations from the collapsed checkpoint at round 16. Left: 6-digit accuracy on the
 confirmation set. Right: 4-digit accuracy. Grey: the original run before the branch point.*
 
 With 6-digit problems only and the usual eight samples per prompt, the model never produced a correct 6-digit
@@ -354,13 +354,40 @@ loss divides by a fixed number of responses, a group of 32 samples also carries 
 eight. The branch therefore does not separate "more samples" from "a larger step". Third, the whole experiment
 rests on one collapse state and one branch per condition.
 
-### 3.6 A note on optimizer momentum
+### 3.6 With Adam, a round without gradient is not a round without change
 
-Two observations show that, with Adam, a round without gradient is not a round without change. In the
-zero-gradient branch above, the weights kept moving for many steps on momentum from earlier updates, and this
-movement alone degraded a skill that was no longer trained. In the 32-sample branch, a single non-zero update was
-followed by continued improvement over the next few rounds, consistent with momentum extending that one step. This
-matters for any analysis that treats rounds with all-equal groups as "null" updates.
+GRPO gives zero advantage to every group whose samples all receive the same reward. It is tempting to treat a round
+made only of such groups as a round in which nothing happens. With the AdamW optimizer used here, that is wrong. AdamW
+keeps a running average of past gradients (momentum, decaying by a factor of 0.9 per step) and a running average of
+their squares. Each update is the ratio of the two. When a new gradient is exactly zero, the momentum term shrinks by
+10% but does not vanish, so the optimizer keeps moving the weights in the direction of the most recent updates. Our
+trainer runs an optimizer step after every minibatch, so a minibatch whose groups are all-equal still triggers such
+a momentum-only update. The only exception is a minibatch with no responses at all, which leaves the weights
+untouched.
+
+Figure 9 shows what this means in the recovery branches of Section 3.5. Its top row shows every optimizer step of
+each branch.
+
+![Optimizer steps in the recovery branches](figures/momentum_branches.png)
+
+*Figure 9. The three recovery branches of Section 3.5, step by step. Top: pre-clip gradient norm of every optimizer
+step (four per round). Ticks at zero mark steps whose gradient was exactly zero but which still applied a momentum
+update; grey crosses mark empty minibatches. Bottom: 6-digit accuracy (confirmation set) and 4-digit accuracy, with
+95% intervals over evaluation problems.*
+
+In the 8-sample branch, none of the 32 optimizer steps had any gradient. Yet 4-digit accuracy, which this branch no
+longer trained, fell from 0.55 to 0.39 (change −0.16, 95% interval −0.26 to −0.07). Since every gradient was zero,
+only the momentum carried over from the checkpoint could have moved the weights. In the 32-sample branch, exactly one
+step had a gradient (round 20, norm 1.26, clipped to 1). Six-digit accuracy was still 0.01 at the end of that round
+and rose to 0.11 over the next four rounds, during which every gradient was again zero. That one step was followed
+by many momentum-carried steps in the same direction.
+
+These branch observations are indirect: the training logs record gradients and accuracy, not how far the weights
+moved. MOMENTUM_CPU_PLACEHOLDER
+
+The practical consequence is that an analysis treating rounds with all-equal groups as "null" updates will
+misattribute change. Weight movement continues after the last informative group, its size depends on the gradients
+that preceded it, and it can harm skills that are no longer trained.
 
 ## 4. Discussion
 

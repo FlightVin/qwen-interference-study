@@ -264,10 +264,80 @@ def fig_momentum_branches(res, out):
     plt.close(fig)
 
 
+# ---------------------------------------------------------------- 4b. momentum: controlled CPU measurement
+def fig_momentum_cpu(path, out):
+    recs = [json.loads(l) for l in open(path)]
+    steps = [r for r in recs if "kind" in r]
+    seq = [r for r in steps]                                    # in execution order
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.0), facecolor=SURFACE)
+    # (a) size of every weight update, in execution order
+    ax = axes[0]; style(ax)
+    xs = np.arange(1, len(seq) + 1)
+    cols = [SLOTS[1] if r["kind"] == "real" else SLOTS[0] for r in seq]
+    ax.bar(xs, [r["step_norm"] for r in seq], color=cols, width=0.8)
+    bounds, k = [], 0
+    for name in ("warmup", "zero", "single", "zero_after_single"):
+        n = sum(1 for r in seq if r["phase"] == name)
+        if n:
+            ax.axvline(k + 0.5, color=GRID, linewidth=1)
+            bounds.append((k, n, name)); k += n
+    for start, n, name in bounds:                                # exact AdamW prediction for zero-gradient phases
+        if name.startswith("zero"):
+            # with g = 0: m <- 0.9 m, v <- 0.999 v; update = lr * mhat / sqrt(vhat), mhat = m/(1-0.9^t), vhat = v/(1-0.999^t)
+            pred = [seq[start]["step_norm"]]
+            for r in seq[start + 1:start + n]:
+                t = r["adam_step_count"]
+                ratio = (0.9 / np.sqrt(0.999)) * (1 - 0.9 ** (t - 1)) / (1 - 0.9 ** t) * np.sqrt((1 - 0.999 ** t) / (1 - 0.999 ** (t - 1)))
+                pred.append(pred[-1] * ratio)
+            ax.plot(np.arange(start + 1, start + 1 + n), pred, color=INK, linewidth=1.2, linestyle="--")
+    ax.bar([0], [0], color=SLOTS[1], label="real gradient step")
+    ax.bar([0], [0], color=SLOTS[0], label="zero-gradient step")
+    ax.plot([], [], color=INK, linestyle="--", label="AdamW prediction with no new gradient")
+    ax.set_xlim(0.3, len(seq) + 0.7)
+    ax.set_title("(a) Size of each weight update (L2 norm), in order", fontsize=9.5, color=INK, loc="left")
+    ax.set_xlabel("optimizer step", fontsize=8, color=MUTED); ax.set_ylabel("||change in weights||", fontsize=8, color=MUTED)
+    ax.legend(frameon=False, fontsize=7.5, loc="upper right")
+    # (b) cumulative movement during zero-gradient phases vs the single real step that preceded the second phase
+    ax = axes[1]; style(ax)
+    for name, slot, lab in (("zero", 0, "after 6 real steps"), ("zero_after_single", 2, "after 1 real step")):
+        ph = [r for r in seq if r["phase"] == name]
+        if not ph:
+            continue
+        ax.plot([r["step"] for r in ph], [r["cum_from_phase_start"] for r in ph], color=SLOTS[slot], marker="o",
+                markersize=4, linewidth=2, label=f"zero-gradient steps {lab}")
+    single = [r for r in seq if r["phase"] == "single"]
+    if single:
+        ax.axhline(single[0]["step_norm"], color=SLOTS[1], linewidth=1.2, linestyle=":",
+                   label="size of that one real step")
+    ax.set_title("(b) Total distance moved with zero gradient", fontsize=9.5, color=INK, loc="left")
+    ax.xaxis.get_major_locator().set_params(integer=True)
+    ax.set_xlabel("zero-gradient steps taken", fontsize=8, color=MUTED); ax.set_ylabel("||weights - weights at phase start||", fontsize=8, color=MUTED)
+    ax.legend(frameon=False, fontsize=7.5, loc="lower right")
+    # (c) policy change on held-out correct answers
+    ax = axes[2]; style(ax)
+    pr = [(i + 1, r) for i, r in enumerate(seq) if isinstance(r.get("probe"), dict)]
+    files = sorted({f for _, r in pr for f in r["probe"]})
+    base = None
+    first_probe = [r for r in recs if isinstance(r.get("probe"), dict)]
+    base = first_probe[0]["probe"] if first_probe else {}
+    for f, slot in zip(files, (2, 4)):
+        lab = "4-digit" if "d4" in f else "6-digit"
+        ax.plot([i for i, _ in pr], [r["probe"][f] - base[f] for _, r in pr], color=SLOTS[slot], marker="o", markersize=4,
+                linewidth=2, label=f"{lab} correct answers")
+    for start, n, name in bounds:
+        ax.axvspan(start + 0.5, start + n + 0.5, color=SLOTS[1] if name in ("warmup", "single") else SURFACE, alpha=0.08, linewidth=0)
+    ax.axhline(0, color=MUTED, linewidth=1)
+    ax.set_title("(c) Change in log-probability of held-out\ncorrect answers (shaded: real gradient steps)", fontsize=9.5, color=INK, loc="left")
+    ax.set_xlabel("optimizer step", fontsize=8, color=MUTED); ax.set_ylabel("mean token log-prob, change from start", fontsize=8, color=MUTED)
+    ax.legend(frameon=False, fontsize=7.5)
+    save(fig, out, "momentum_cpu.png", top=0.97)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--res", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--momentum", default=None, help="momentum_probe output (jsonl)")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     fig_caesar_mbpp(a.res, a.out)
@@ -275,6 +345,8 @@ def main():
     fig_add9_pairs(a.res, a.out)
     fig_terse(a.res, a.out)
     fig_momentum_branches(a.res, a.out)
+    if a.momentum:
+        fig_momentum_cpu(a.momentum, a.out)
 
 
 if __name__ == "__main__":
