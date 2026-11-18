@@ -13,8 +13,9 @@ less often also receives less learning signal?
 Three results stand out. First, interference followed behaviour rather than domain. A task that rewards short
 answers delayed the harder Caesar problems in two of three seeds, and in each of those seeds Caesar answers became
 shorter during the delay. Training on one task also often damaged an untrained behaviour, here the terse format.
-Second, an apparent cross-domain lag (Caesar trained with MBPP) was fully explained by the optimizer giving each
-task a smaller share of every update, not by interference. Third, within base-9 addition, the medium-difficulty
+Second, a cross-domain lag (Caesar trained with MBPP) cannot be attributed to interference: a Caesar-only run at
+half the learning rate showed that Caesar learning is highly sensitive to step size, which makes optimizer effects a
+credible alternative explanation. Third, within base-9 addition, the medium-difficulty
 problems sometimes collapsed to near-zero accuracy during training (2 of 5 seeds). Once every training sample on
 those problems was wrong, GRPO produced no gradient for them and the skill stayed collapsed; a single rare correct
 sample, or transfer from easier problems, was enough to restart learning. This confirms the persistence step of the
@@ -115,6 +116,13 @@ two runs, which removes variation due to problem difficulty. Evaluations of the 
 differed by up to 0.04 because the inference engine's sampling is not bit-reproducible. Effects of 0.15 or more are
 therefore well above evaluation noise, while effects near 0.07 are only about twice it.
 
+These intervals have a limited meaning, and it matters throughout the results. They describe uncertainty over the
+evaluation problems within a single training run. They say nothing about how much the result would change if the
+whole training run were repeated with a different seed, and that between-run variation can be large: the
+within-task collapse of Section 3.4 occurred in two of five otherwise identical runs. An interval that excludes zero
+therefore shows that a difference is real for that pair of runs, not that it would replicate. Only replication
+across training seeds addresses that, and we state the number of seeds behind each claim.
+
 Results that changed the direction of the study were re-examined by an independent reviewer, who recomputed the
 numbers from raw metrics and actively looked for alternative explanations. This review corrected one of our
 conclusions (Section 3.4). A separate audit recomputed a sample of 18 reported numbers and found no discrepancies.
@@ -158,8 +166,8 @@ related tasks.
 ### 3.2 A behavioural objective can delay a skill that needs written working
 
 Our first joint pair trained Caesar decoding together with the terse task. Terse was learned within four rounds,
-rising from about 0.4 to above 0.9. After that almost all its prompt groups were all-correct, so it contributed
-little gradient for the rest of training. Nonetheless, Caesar learning was slowed on the harder shifts. Figure 2
+rising from about 0.4 to above 0.9. After that most of its prompt groups were all-correct, so it contributed much
+less gradient than an active task: about one group per round in seed 1, and fewer still in seeds 2 and 3. Nonetheless, Caesar learning was slowed on the harder shifts. Figure 2
 shows the gap to the single-task reference.
 
 ![Caesar gap in joint runs](figures/caesar_D.png)
@@ -172,12 +180,18 @@ In seeds 1 and 2, the joint run fell behind on shifts 8 and 12 by 0.11 to 0.18 a
 closed by round 24. In seed 2 it persisted on shift 8 until the end of training (0.12 at round 32). Seed 3 showed
 no delay at any point.
 
-A plausible mechanism emerged from the length of Caesar answers during training. In the two seeds with a delay, the
-joint run's Caesar answers were 5–12% shorter than the reference's during rounds 1–16. Caesar decoding benefits from
-writing out the shifted letters, so shorter answers plausibly mean worse answers. In seed 3, the joint run's answers
-were 6% longer, and there was no delay. The terse objective therefore appears to slow Caesar learning when, and only
-when, its preference for brevity spills over into Caesar answers. This is a correlation across three seeds. We did
-not test it by intervention, for example by loosening the terse length limit.
+A candidate mechanism emerged from the length of Caesar answers during training. In the two seeds with a delay,
+the joint run's Caesar answers were 5–12% shorter than the reference's during rounds 1–16. Caesar decoding benefits
+from writing out the shifted letters, so shorter answers plausibly mean worse answers. In seed 3, the joint run's
+answers were 6% longer, and there was no delay. This pattern makes brevity spill-over a promising explanation, but
+it is not confirmed. It is a correlation across three seeds, and we did not test it by intervention, for example by
+loosening the terse length limit.
+
+A second explanation cannot be excluded either. Although terse was nearly solved after the first few rounds, it never
+stopped producing gradient entirely. In rounds 1–8, 10 to 13 of its groups produced gradient. In later blocks of eight
+rounds, seed 1 still had 6 to 9 such groups per block, and seeds 2 and 3 had 0 to 5 (Figure 4a). Those updates changed the model, and they also changed Adam's running estimates of
+gradient direction and scale, which shape every later Caesar update. A delay could therefore arise from this
+optimizer history rather than from brevity specifically. The two explanations are not exclusive.
 
 During the delay, the joint runs also had fewer Caesar prompt groups with mixed outcomes, and more with all-wrong
 outcomes, than the references. In seed 1, for example, rounds 9–16 had 44 mixed groups against 51. This is the first
@@ -186,34 +200,72 @@ link of the proposed feedback loop. The effect was small, however, and in seed 1
 The pairing also protected terse. When terse was trained alongside Caesar, its accuracy stayed above 0.9, whereas
 Caesar training alone had driven it down.
 
-### 3.3 An apparent cross-domain conflict was explained by update sharing
+### 3.3 A cross-domain lag that optimizer effects may explain
 
-Our second pair crossed domains: Caesar decoding with Python programming. MBPP learned as fast as it did alone
-(gap 0.03, not significant). Caesar fell behind on all three shifts, by 0.09 to 0.12 at round 32 (Figure 2,
-orange), and had not caught up by the end of training. This looked like cross-domain interference.
+Our second pair crossed domains: Caesar decoding with Python programming. Figure 3 shows both tasks trained alone
+and together. MBPP learned at the same rate in both settings; its accuracy at round 32 was 0.69 with Caesar and 0.72
+alone, a difference well within the evaluation uncertainty. Caesar improved substantially in both settings, but
+the joint run fell behind on all three shifts, by 0.09 to 0.12 at round 32, and had not caught up by the end of
+training.
 
-Unlike terse, however, MBPP remained an active learner throughout training, contributing mixed groups in every
-block of rounds. Because Adam produces updates of roughly fixed size, the two tasks shared each update, and Caesar
-received a smaller effective step than when trained alone. To measure what this alone would do, we trained Caesar by
-itself at half the learning rate. Halving the step cost Caesar 0.14, 0.53 and 0.37 on the three shifts at round
-32, far more than the 0.09–0.12 lag in the joint run. Since a shared update leaves Caesar with an effective step
-between half and full size, the joint-run lag lies well within what update sharing alone predicts. We therefore do
-not attribute it to interference.
+![Caesar and MBPP alone and together](figures/caesar_mbpp_curves.png)
 
-This control has a broader implication. With Adam, a joint-run lag is not by itself evidence that one task harms
-another, because any active competitor reduces each task's share of the update. The Caesar-terse delay of Section
-3.2 survives this check, because terse contributed almost no gradient after the first few rounds.
+*Figure 3. Accuracy of MBPP (left) and of Caesar decoding at each shift, trained alone (orange) and together (blue).
+Grey dashed: Caesar trained alone at half the learning rate. Bands are 95% bootstrap intervals over the 64
+evaluation problems of each run; they do not capture variation across training seeds.*
+
+The lag could be interference, but there is a simpler alternative. MBPP remained an active learner throughout
+training: it produced gradient in 100 groups over 32 rounds, whereas terse produced 18 to 34 (Figure 4a).
+Adam scales each update by running estimates of gradient size, so when two tasks contribute gradient the update is
+spread across both, and Caesar's learning can slow without any conflict between the tasks. To gauge how sensitive
+Caesar is to such effects, we trained Caesar alone at half the learning rate.
+
+![Step-size sensitivity](figures/step_sharing.png)
+
+*Figure 4. (a) Cumulative number of competitor groups that produced gradient: MBPP stayed active throughout, while
+terse produced most of its gradient in the first rounds. (b) Caesar accuracy at round 32 when trained alone at the full learning rate, with MBPP, and
+alone at half the learning rate (95% intervals over evaluation problems). (c) Accuracy lost relative to Caesar trained
+alone at the full rate, over training.*
+
+Halving the learning rate cost Caesar 0.14, 0.53 and 0.37 at round 32 on the three shifts, far more than the joint
+run's lag (Figure 4b and c). This shows that Caesar learning is highly sensitive to the size of its updates, which
+makes optimizer effects a credible explanation for the joint-run lag. It does not show that the joint run is
+equivalent to some smaller Caesar-only learning rate. Adam changes the direction and the per-parameter scaling of
+updates, not just their overall size, so there is no general rule that places a shared update between half and full
+step. The lag is therefore unresolved: it may reflect interference, optimizer effects, or both. Separating them
+would need, for example, an optimizer that keeps separate moment estimates per task, or a joint run in which the
+competitor's gradient is measured and removed.
+
+The control has a broader implication. With Adam, a lag in joint training is not by itself evidence that one task
+harms another, because any active competitor also changes the optimizer's state. This caveat applies with less
+force to the Caesar-terse delay of Section 3.2, because terse contributed far less gradient than MBPP, but it does
+not vanish: terse kept producing some gradient, and its early updates shaped the optimizer's history.
 
 Two further pairs combined base-9 addition with a competitor: decimal addition, which shares surface form but uses
-a different carry rule, and the terse task. Neither harmed base-9 learning. In both joint runs the 4-digit accuracy
-tracked the reference within 0.06, and the 6-digit level reached 0.52–0.53, well above the single-task reference of
-the same seed, which suffered the collapse described next. The terse task again learned quickly and was protected.
+a different carry rule, and the terse task (Figure 5). Against the single-task reference with the same seed, we
+detected no harm: 4-digit accuracy stayed within 0.06 of the reference throughout. That reference, however,
+collapsed on 6-digit problems (Section 3.4), which makes it a poor comparison at that level. We therefore also
+compare with three other single-task seeds that did not collapse. Against them, both joint runs ended at or just below
+the range on 6-digit problems (0.52 and 0.53, against 0.54 to 0.68). On 4-digit problems the run with terse ended
+inside the range (0.82), and the run with decimal addition ended below it (0.75, against 0.82 to 0.86). With one
+seed per joint configuration, we cannot tell a small cost of joint training from ordinary variation between seeds.
+What the runs do show is that neither competitor caused a large or lasting deficit. The competitors themselves were
+learned. Terse rose from 0.40 to above 0.9 within four rounds. Decimal addition rose from 0.38 to between 0.56 and
+0.75 during training (0.61 at round 32), against 0.41 to 0.53 when it was not trained.
+
+![Base-9 addition with competitors](figures/add9_pairs.png)
+
+*Figure 5. Base-9 addition at each difficulty level, trained alone (grey band: range of three seeds that did not
+collapse; grey line: the collapsed seed 1) and together with decimal addition or terse (one seed each). Right: the
+competitor tasks, trained and untrained.*
+
 A related observation came from the Caesar-MBPP pair: there, terse accuracy rose from 0.40 to 0.68, although
-neither task trained it and Caesar alone had driven it down.
+neither task trained it and Caesar alone had driven it down (Section 3.1).
 
 Across the four pairs, then, interference did not follow domain. Two arithmetic tasks with conflicting carry rules
-coexisted without harm. A cross-domain pair produced a lag explained entirely by update sharing. The one delay
-that survived scrutiny came from a behavioural objective acting on a skill that needs written working.
+coexisted without a large or lasting deficit. A cross-domain pair produced a lag that optimizer effects may explain. The delay
+that is hardest to attribute to the optimizer came from a behavioural objective acting on a skill that needs
+written working, though even there the optimizer's history is a possible contributor.
 
 ### 3.4 A skill can collapse within a single task
 
@@ -300,10 +352,13 @@ matters for any analysis that treats rounds with all-equal groups as "null" upda
 
 **Interference between tasks.** We found transfer, independence and a temporary or lasting delay, but these did not
 follow the similarity of the tasks. Decimal and base-9 addition, which share surface form but follow conflicting
-carry rules, coexisted without harm. A pair from different domains, Caesar decoding and programming, produced a lag
-that a simple update-size control fully explained. The interaction that survived scrutiny involved a competing
-behavioural objective rather than a competing skill. Rewarding short answers slowed a skill that benefits from
-written working, in the seeds where the brevity preference reached that skill's answers. The single-task results
+carry rules, coexisted without a large or lasting deficit. A pair from different domains, Caesar decoding and
+programming, produced a lag that we cannot attribute to interference, because Caesar learning proved highly
+sensitive to step size and optimizer effects are a credible alternative. The clearest interaction involved a
+competing behavioural objective rather than a competing skill. Rewarding short answers slowed a skill that benefits
+from written working in two of three seeds, and in exactly those seeds the brevity preference reached that skill's
+answers. This explanation is promising but not confirmed; the competitor's earlier updates and their effect on the
+optimizer's state are an alternative we could not exclude. The single-task results
 point the same way. The largest side effects of training were on an untrained behaviour (the terse format), and
 they arose through stylistic habits: longer answers in one case, unboxed answers in another. These results caution
 against assuming that different domains conflict or that similar ones cooperate. They suggest that the relevant
@@ -321,27 +376,32 @@ learning, the deficit closed.
 
 **Practical implications.** Three follow from the results. First, in multi-task GRPO, behaviours that no task
 trains need monitoring, because style learned on one task spreads to others. Second, lags in joint training should
-be compared with an update-size control before they are attributed to interference. Third, a skill whose success
+be checked against optimizer effects before they are attributed to interference; a learning-rate control shows
+how sensitive the target is, although it cannot by itself establish equivalence with joint training. Third, a skill whose success
 rate has fallen to zero can be revived by increasing the number of samples per prompt or by training a related,
 easier variant alongside it.
 
 ## 5. Limitations
 
 All results are exploratory. Most single-run findings rest on one seed, and the multi-seed findings on three to
-five. The study used one model (Qwen3-1.7B), one learning rate, the Adam optimizer, and a small set of synthetic and
+five. The confidence intervals reported throughout describe uncertainty over evaluation problems within a run;
+they are not a substitute for replication across training seeds, which was limited. The study used one model (Qwen3-1.7B), one learning rate, the Adam optimizer, and a small set of synthetic and
 benchmark tasks. "No harm detected" means that the 95% interval included zero, typically within about ±0.08, not
 that harm is absent. The cause of the within-task collapse remains unidentified. The brevity explanation for the
-Caesar delay is a correlation across three seeds and was not tested by intervention. The recovery experiment uses
+Caesar delay is a correlation across three seeds and was not tested by intervention; effects of the competitor's
+earlier updates on the optimizer's state remain an alternative. The recovery experiment uses
 one collapse state, and it does not separate the number of samples from the size of the update. Finally, the
-update-size control was run for Caesar only, so it bounds the update-sharing explanation for that task but not for
-others.
+half-learning-rate control was run for Caesar only. It shows that Caesar learning is sensitive to step size, but it
+does not show that joint training is equivalent to any particular reduced step, so the Caesar-MBPP lag remains
+unresolved between interference and optimizer effects.
 
 ## 6. Conclusion
 
-In this setting, how tasks interact under GRPO depended on behaviour more than on domain. The one robust
-cross-task delay came from an objective that rewarded short answers acting on a skill that needs written working.
-The largest side effects of training appeared on behaviours that no task was training. An apparent cross-domain
-conflict disappeared once the optimizer's sharing of each update was taken into account. Within a single task, a
+In this setting, how tasks interact under GRPO depended on behaviour more than on domain. The clearest cross-task
+delay came from an objective that rewarded short answers acting on a skill that needs written working; it appeared in
+two of three seeds, and brevity spill-over is a promising but unconfirmed explanation. The largest side effects of
+training appeared on behaviours that no task was training. A cross-domain lag could not be attributed to
+interference, because the optimizer offers a credible alternative explanation. Within a single task, a
 skill could collapse, and once it produced no correct samples GRPO could not repair it; a single success, or
 transfer from a related skill, was enough to restart learning. The open questions are what triggers such collapses,
 and whether the brevity effect can be confirmed by direct intervention.

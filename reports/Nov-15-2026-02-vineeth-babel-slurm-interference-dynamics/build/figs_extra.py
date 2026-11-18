@@ -126,6 +126,7 @@ def fig_step_sharing(res, out):
     ax.legend(frameon=False, fontsize=7, loc="upper right")
     # (c) lag over training: colour = condition (as in b), marker = shift, direct labels at round 32
     ax = axes[2]; style(ax); ax.axhline(0, color=MUTED, linewidth=1)
+    ends = []
     for E, col, lab in ((J, SLOTS[0], "with MBPP"), (H, MUTED, "half learning rate")):
         for st, mk in (("s4", "o"), ("s8", "s"), ("s12", "^")):
             e1, e2 = RC[f"caesar_{st}_sel"], E[f"caesar_{st}_sel"]
@@ -133,8 +134,12 @@ def fig_step_sharing(res, out):
             D = [paired_D(e1[r], e2[r])[0] for r in rs]
             ax.plot(rs, D, color=col, marker=mk, markersize=5, linewidth=1.8, markeredgecolor=SURFACE,
                     label=lab if st == "s4" else None)
-            ax.annotate(f"shift {st[1:]}", (rs[-1], D[-1]), xytext=(5, 0), textcoords="offset points", fontsize=7,
-                        color=INK, va="center")
+            ends.append([D[-1], rs[-1], f"shift {st[1:]}"])
+    ends.sort()
+    for n in range(1, len(ends)):
+        ends[n][0] = max(ends[n][0], ends[n - 1][0] + 0.025)
+    for y, x0, t in ends:
+        ax.annotate(t, (x0, y), xytext=(5, 0), textcoords="offset points", fontsize=7, color=INK, va="center")
     ax.set_xlim(-1, 38)
     ax.set_title("(c) Accuracy lost relative to Caesar alone at full rate\n(markers: circle 4, square 8, triangle 12)",
                  fontsize=9.5, color=INK, loc="left")
@@ -213,18 +218,23 @@ def fig_momentum_branches(res, out):
         E, R, S = load(res, expid)
         ax = fig.add_subplot(gs[0, j]); style(ax)
         steps = sorted(S)
-        x = [S[s]["round"] + 1 + S[s]["minibatch"] / 4 for s in steps]           # round (1-based) + minibatch fraction
+        # rounds are 0-based in step records; round index r spans [r, r+1) so the eval "after N rounds" sits at x = N
+        x = [S[s]["round"] + S[s]["minibatch"] / 4 for s in steps]
         g = [S[s]["grad_norm_preclip"] for s in steps]
         empty = [S[s]["responses"] == 0 for s in steps]
-        ax.bar(x, g, width=0.2, color=[GRID if e else SLOTS[slot] for e in empty], align="edge")
-        for xi, gi, e in zip(x, g, empty):
-            if gi == 0 and not e:
-                ax.plot(xi + 0.1, 0, marker="|", color=SLOTS[slot], markersize=6)
-        ax.set_ylim(0, 1.6); ax.axhline(1.0, color=MUTED, linewidth=0.8, linestyle="--")
+        ax.bar([xi for xi, e in zip(x, empty) if not e], [gi for gi, e in zip(g, empty) if not e], width=0.2,
+               color=SLOTS[slot], align="edge")
+        ax.plot([xi + 0.1 for xi, e, gi in zip(x, empty, g) if not e and gi == 0], [0.02] * sum(1 for e, gi in zip(empty, g) if not e and gi == 0),
+                linestyle="none", marker="|", color=SLOTS[slot], markersize=7, label="zero-gradient step (AdamW still updates)")
+        ax.plot([xi + 0.1 for xi, e in zip(x, empty) if e], [0.02] * sum(empty), linestyle="none", marker="x",
+                color=MUTED, markersize=5, label="empty minibatch (no update)")
+        ax.set_ylim(0, max(1.6, max(g) * 1.1)); ax.axhline(1.0, color=MUTED, linewidth=0.8, linestyle="--")
+        ax.set_xlim(16, 24.2); ax.set_xticks(range(16, 25))
         ax.set_title(f"{name}: gradient norm per optimizer step", fontsize=9.5, color=INK, loc="left")
-        ax.set_xlabel("training round (4 steps per round)", fontsize=8, color=MUTED)
+        ax.set_xlabel("rounds completed (4 steps per round)", fontsize=8, color=MUTED)
         if j == 0:
             ax.set_ylabel("pre-clip gradient norm\n(dashed: clip at 1.0)", fontsize=8, color=MUTED)
+            ax.legend(frameon=False, fontsize=7, loc="center left")
         nz = sum(1 for v in g if v > 0)
         ax.text(0.02, 0.92, f"{nz} of {len(g)} steps non-zero", transform=ax.transAxes, fontsize=8, color=INK)
     for k, (panel, title) in enumerate((("add9_d6_conf", "6-digit accuracy (confirmation set)"),
@@ -232,22 +242,23 @@ def fig_momentum_branches(res, out):
         ax = fig.add_subplot(gs[1, k]); style(ax)
         for name, slot, expid in br:
             curve(ax, load(res, expid)[0], panel, slot, label=name, band=True)
-        ax.set_title(title, fontsize=9.5, color=INK, loc="left"); ax.set_xlabel("training round", fontsize=8, color=MUTED)
-        ax.set_xticks([16, 20, 24])
+        ax.set_title(title, fontsize=9.5, color=INK, loc="left"); ax.set_xlabel("rounds completed", fontsize=8, color=MUTED)
+        ax.set_xticks([16, 20, 24]); ax.set_xlim(16, 24.2)
         if k == 0:
             ax.set_ylabel("accuracy", fontsize=8, color=MUTED); ax.legend(frameon=False, fontsize=7.5, loc="upper left")
     ax = fig.add_subplot(gs[1, 2]); ax.axis("off")
     ax.text(0, 0.95, "How to read this figure", fontsize=10, color=INK, weight="bold", va="top")
     ax.text(0, 0.80,
-            "Top: every optimizer step of each branch. Coloured bars are\n"
-            "non-zero gradients; small ticks at zero are steps whose\n"
-            "gradient was exactly zero but which still ran an AdamW update;\n"
-            "grey slots are empty minibatches (no update at all).\n\n"
-            "d6 only, 8 samples: 0 of 32 steps had any gradient, yet 4-digit\n"
-            "accuracy fell by 0.16 — the weights moved on momentum alone.\n\n"
+            "Top: every optimizer step of each branch (4 per round).\n"
+            "Bars: non-zero gradients. Ticks at zero: the gradient was\n"
+            "exactly zero, but AdamW still applied a momentum update.\n"
+            "Grey x: empty minibatch, no update at all.\n\n"
+            "d6 only, 8 samples: no step had any gradient, yet 4-digit\n"
+            "accuracy fell from 0.55 to 0.39: the weights moved on\n"
+            "momentum carried over from the checkpoint.\n\n"
             "d6 only, 32 samples: one non-zero step (round 20, clipped);\n"
-            "6-digit accuracy rose afterwards while all later gradients\n"
-            "were zero.", fontsize=8, color=INK, va="top", family="monospace")
+            "6-digit accuracy rose over the next 4 rounds although\n"
+            "every later gradient was zero.", fontsize=8, color=INK, va="top", family="monospace")
     fig.tight_layout()
     fig.savefig(os.path.join(out, "momentum_branches.png"), dpi=150, facecolor=SURFACE)
     plt.close(fig)
