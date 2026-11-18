@@ -4,8 +4,9 @@ Usage: python figs.py --res slurm-agentic-engineering/results --out reports/<ID>
 Figures:
   add9_d6.png       add9 d6 pass@1 vs round: colour = training condition, line style = seed (RQ2 collapse)
   add9_strata.png   d4 / d8 for the same runs (context)
-  recovery.png      E3b branches from the seed-2 collapse state (d6 conf and d4 sel)
-  caesar_D.png      D(t) = p(alone) - p(joint) per caesar stratum, 95% paired problem bootstrap (F6, F11, F15)
+  recovery_{a,b}.png   E3b branches from the seed-2 collapse state: (a) d6 conf, (b) d4 sel
+  caesar_D_{a,b,c}.png D(t) = p(alone) - p(joint) for caesar shift 4 / 8 / 12, 95% paired problem bootstrap
+Multi-panel figures are written as one image per panel, each with its own legend and axis labels.
   offtarget.png     off-target change r32 - r0 for single-task runs (diverging table)
 Colour: dataviz default categorical slots in fixed order (light mode). Identity never depends on colour alone:
 seeds differ by line style, conditions by marker, and every chart has a legend or direct labels.
@@ -65,6 +66,33 @@ def line(ax, xs, ys, i, seed=1, label=None):
             markeredgecolor=SURFACE, markeredgewidth=1, label=label)
 
 
+PANEL = (5.0, 3.8)
+LBL = {"fontsize": 9, "color": INK}
+ACC = "accuracy, pass@1 (fraction correct)"
+ROUND = "training round"
+
+
+def panel(size=PANEL):
+    """One figure, one axes. Constrained layout so a legend placed outside the axes never overlaps the labels."""
+    fig, ax = plt.subplots(figsize=size, facecolor=SURFACE, layout="constrained")
+    style(ax)
+    return fig, ax
+
+
+def finish(fig, ax, out, name, title, xlabel, ylabel, ncol=1, legend=True):
+    """Title, axis labels, a legend below the axes (one per image), and save."""
+    ax.set_title(title, fontsize=10, color=INK, loc="left")
+    if xlabel:
+        ax.set_xlabel(xlabel, **LBL)
+    if ylabel:
+        ax.set_ylabel(ylabel, **LBL)
+    h, l = ax.get_legend_handles_labels()
+    if legend and l:
+        fig.legend(h, l, loc="outside lower center", ncol=ncol, frameon=False, fontsize=8)
+    fig.savefig(os.path.join(out, name), dpi=150, facecolor=SURFACE)
+    plt.close(fig)
+
+
 def legend_top(fig, ax, ncol=None):
     h, l = ax.get_legend_handles_labels()
     if len(l) > 1:
@@ -97,9 +125,9 @@ def fig_add9(res, out):
                         lab = (f"{cond} ({len(runs)} seeds; line style = seed)" if len(runs) > 1 else cond) if k == 0 else None
                         line(ax, rs, [e[r]["pass1"] for r in rs], slot, seed, lab)
             ax.set_title(f"add9 {st} (sel, 64 problems x 4 samples)", fontsize=10, color=INK, loc="left")
-            ax.set_xlabel("training round", fontsize=8, color=MUTED)
+            ax.set_xlabel(ROUND, **LBL)
             ax.set_ylim(-0.02, 1.0)
-        axes[0][0].set_ylabel("pass@1", fontsize=8, color=MUTED)
+        axes[0][0].set_ylabel(ACC, **LBL)
         legend_top(fig, axes[0][0], ncol=2)
         fig.tight_layout(rect=(0, 0, 1, 0.80))
         fig.savefig(os.path.join(out, name), dpi=150, facecolor=SURFACE)
@@ -107,56 +135,54 @@ def fig_add9(res, out):
 
 
 def fig_recovery(res, out):
+    """recovery_a.png (6-digit, confirmation set), recovery_b.png (4-digit, selection set)."""
     parent = evals(res, "qis-s02-e3-add9mix-s2")
-    br = [("original mixture", 0, "qis-s02-e3b-r16-mixed"), ("d6 only, 8 samples", 1, "qis-s02-e3b-r16-d6"),
-          ("d6 only, 32 samples", 2, "qis-s02-e3b-r16-d6n32")]
-    fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), facecolor=SURFACE)
-    for ax, panel, title in ((axes[0], "add9_d6_conf", "d6 (conf, 64 x 8)"), (axes[1], "add9_d4_sel", "d4 (sel, 64 x 4)")):
-        style(ax)
-        p = parent.get(panel, {})
+    br = [("original mixture", 0, "qis-s02-e3b-r16-mixed"), ("6-digit only, 8 samples per prompt", 1, "qis-s02-e3b-r16-d6"),
+          ("6-digit only, 32 samples per prompt", 2, "qis-s02-e3b-r16-d6n32")]
+    for tag, panel_id, title in (("a", "add9_d6_conf", "(a) 6-digit base-9 addition (confirmation set)"),
+                                 ("b", "add9_d4_sel", "(b) 4-digit base-9 addition")):
+        fig, ax = panel()
+        p = parent.get(panel_id, {})
         if p:
             rs = [r for r in sorted(p) if r <= 16]
             ax.plot(rs, [p[r]["pass1"] for r in rs], color=MUTED, linewidth=1.5, marker="o", markersize=3,
-                    label="parent run (mixed, seed 2)")
+                    label="parent run before the branch (mixed, seed 2)")
         for name, i, expid in br:
-            e = evals(res, expid).get(panel, {})
+            e = evals(res, expid).get(panel_id, {})
             if e:
                 rs = sorted(e)
-                line(ax, rs, [e[r]["pass1"] for r in rs], i, 1, name)
+                line(ax, rs, [e[r]["pass1"] for r in rs], i, 1, f"branch: {name}")
         ax.axvline(16, color=GRID, linewidth=1)
-        ax.set_title(title, fontsize=10, color=INK, loc="left")
-        ax.set_xlabel("training round (branches start at 16)", fontsize=8, color=MUTED)
-    axes[0].set_ylabel("pass@1", fontsize=8, color=MUTED)
-    legend_top(fig, axes[1])                     # right panel also carries the parent line
-    fig.tight_layout(rect=(0, 0, 1, 0.88))
-    fig.savefig(os.path.join(out, "recovery.png"), dpi=150, facecolor=SURFACE)
-    plt.close(fig)
+        ax.set_ylim(*((-0.005, 0.2) if tag == "a" else (-0.02, 1.0)))
+        finish(fig, ax, out, f"recovery_{tag}.png", title, f"{ROUND} (branches start after round 16)", ACC)
 
 
 def fig_caesar_D(res, out):
+    """caesar_D_a/b/c.png: one image per shift, same y range so the images compare directly."""
     pairs = [("qis-s02-j-caesar-terse-s1", "qis-s02-e1-caesar-s1", "with terse, seed 1", 0, 1),
              ("qis-s02-j-caesar-terse-s2", "qis-s02-e1-caesar-s2", "with terse, seed 2", 0, 2),
              ("qis-s02-j-caesar-terse-s3", "qis-s02-e1-caesar-s3", "with terse, seed 3", 0, 3),
              ("qis-s02-j-caesar-mbpp-s1", "qis-s02-e1-caesar-s1", "with MBPP, seed 1", 1, 1)]
-    fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharey=True, facecolor=SURFACE)
-    for stratum, ax in zip(("s4", "s8", "s12"), axes):
-        style(ax)
-        ax.axhline(0, color=MUTED, linewidth=1)
+    data = {}
+    for stratum in ("s4", "s8", "s12"):
         for j, r, label, slot, seed in pairs:
             ej, er = evals(res, j).get(f"caesar_{stratum}_sel", {}), evals(res, r).get(f"caesar_{stratum}_sel", {})
             rs = sorted(set(ej) & set(er))
-            if not rs:
+            if rs:
+                data[(stratum, label)] = (rs, [paired_D(er[x], ej[x]) for x in rs], slot, seed)
+    lo = min(x[1] for v in data.values() for x in v[1]); hi = max(x[2] for v in data.values() for x in v[1])
+    for tag, stratum in zip("abc", ("s4", "s8", "s12")):
+        fig, ax = panel()
+        ax.axhline(0, color=MUTED, linewidth=1)
+        for j, r, label, slot, seed in pairs:
+            if (stratum, label) not in data:
                 continue
-            D = [paired_D(er[x], ej[x]) for x in rs]
+            rs, D, slot, seed = data[(stratum, label)]
             ax.fill_between(rs, [x[1] for x in D], [x[2] for x in D], color=SLOTS[slot], alpha=0.10, linewidth=0)
-            line(ax, rs, [x[0] for x in D], slot, seed, label)
-        ax.set_title(f"caesar {stratum}", fontsize=10, color=INK, loc="left")
-        ax.set_xlabel("training round", fontsize=8, color=MUTED)
-    axes[0].set_ylabel("D = p(caesar alone) - p(joint)\n(+ = joint run behind)", fontsize=8, color=MUTED)
-    legend_top(fig, axes[0])
-    fig.tight_layout(rect=(0, 0, 1, 0.88))
-    fig.savefig(os.path.join(out, "caesar_D.png"), dpi=150, facecolor=SURFACE)
-    plt.close(fig)
+            line(ax, rs, [x[0] for x in D], slot, seed, f"Caesar trained {label}")
+        ax.set_ylim(lo - 0.03, hi + 0.03)
+        finish(fig, ax, out, f"caesar_D_{tag}.png", f"({tag}) Caesar, shift {stratum[1:]} (above 0: joint run behind)",
+               ROUND, "gap, alone − joint (pass@1 difference)", ncol=1)
 
 
 def fig_offtarget(res, out):
@@ -186,8 +212,10 @@ def fig_offtarget(res, out):
     ax.set_xticks(range(len(panels)), [p.replace("_sel", "").replace("_all", "") for p in panels], fontsize=8,
                   color=MUTED, rotation=30, ha="right")
     ax.set_yticks(range(len(runs)), [r[0] for r in runs], fontsize=8, color=MUTED)
-    ax.set_title("pass@1 change r32 - r0 by trained task (rows) and evaluated panel (columns); bold = 95% CI excludes 0, "
+    ax.set_title("Change in accuracy (pass@1, round 32 minus round 0); bold = 95% interval excludes 0, "
                  "· = not significant", fontsize=9, color=INK, loc="left")
+    ax.set_xlabel("evaluated task and difficulty (s = Caesar shift, d = digits)", **LBL)
+    ax.set_ylabel("trained task", **LBL)
     for s in ax.spines.values():
         s.set_visible(False)
     fig.tight_layout()

@@ -151,9 +151,12 @@ the model; the base model got only 4 of 256 multiplications wrong. Terse answers
 the start, about half of them gave no boxed answer, and a few were correct but longer than the 24-token limit.
 Training other tasks moved this format in one of two harmful directions, or in a helpful one (Figure 2).
 
-![Terse task across runs](figures/terse_spillover.png)
+<p align="center">
+  <img src="figures/terse_spillover_a.png" width="49%" alt="Figure 2 (a): terse task">
+  <img src="figures/terse_spillover_b.png" width="49%" alt="Figure 2 (b): terse task">
+</p>
 
-*Figure 2. The terse task in every run. Left: accuracy. Right: mean answer length on a logarithmic scale (dashed:
+*Figure 2. The terse task in every run. (a) Accuracy. (b) Mean answer length on a logarithmic scale (dashed:
 the 24-token limit). Blue and purple: runs that trained terse; all other colours: runs that did not.*
 
 Caesar training lowered terse accuracy in all three seeds, by 0.34, 0.40 and 0.11, but not in the same way. In
@@ -187,10 +190,14 @@ rising from about 0.4 to above 0.9. After that most of its prompt groups were al
 less gradient than an active task: about one group per round in seed 1, and fewer still in seeds 2 and 3. Nonetheless, Caesar learning was slowed on the harder shifts. Figure 3
 shows the gap to the single-task reference.
 
-![Caesar gap in joint runs](figures/caesar_D.png)
+<p align="center">
+  <img src="figures/caesar_D_a.png" width="32%" alt="Figure 3 (a): Caesar gap">
+  <img src="figures/caesar_D_b.png" width="32%" alt="Figure 3 (b): Caesar gap">
+  <img src="figures/caesar_D_c.png" width="32%" alt="Figure 3 (c): Caesar gap">
+</p>
 
-*Figure 3. Gap between Caesar accuracy trained alone and in a joint run (positive: joint run behind), by shift
-size. Blue: joint training with the terse task, three seeds. Orange: joint training with MBPP. Bands are 95% paired
+*Figure 3. Gap between Caesar accuracy trained alone and in a joint run (positive: joint run behind) at shift 4
+(a), 8 (b) and 12 (c); all three panels share one vertical scale. Blue: joint training with the terse task, three seeds. Orange: joint training with MBPP. Bands are 95% paired
 bootstrap intervals.*
 
 In seeds 1 and 2, the joint run fell behind on shifts 8 and 12 by 0.11 to 0.18 at round 16. In seed 1 the gap
@@ -225,9 +232,16 @@ alone, a difference well within the evaluation uncertainty. Caesar improved subs
 the joint run fell behind on all three shifts, by 0.09 to 0.12 at round 32, and had not caught up by the end of
 training.
 
-![Caesar and MBPP alone and together](figures/caesar_mbpp_curves.png)
+<p align="center">
+  <img src="figures/caesar_mbpp_a.png" width="49%" alt="Figure 4 (a): Caesar and MBPP">
+  <img src="figures/caesar_mbpp_b.png" width="49%" alt="Figure 4 (b): Caesar and MBPP">
+</p>
+<p align="center">
+  <img src="figures/caesar_mbpp_c.png" width="49%" alt="Figure 4 (c): Caesar and MBPP">
+  <img src="figures/caesar_mbpp_d.png" width="49%" alt="Figure 4 (d): Caesar and MBPP">
+</p>
 
-*Figure 4. Accuracy of MBPP (left) and of Caesar decoding at each shift, trained alone (orange) and together (blue).
+*Figure 4. (a) MBPP accuracy. (b–d) Caesar accuracy at shifts 4, 8 and 12. Orange: trained alone; blue: trained together.
 Grey dashed: Caesar trained alone at half the learning rate. Bands are 95% bootstrap intervals over the 64
 evaluation problems of each run; they do not capture variation across training seeds.*
 
@@ -237,7 +251,11 @@ Adam scales each update by running estimates of gradient size, so when two tasks
 spread across both, and Caesar's learning can slow without any conflict between the tasks. To gauge how sensitive
 Caesar is to such effects, we trained Caesar alone at half the learning rate.
 
-![Step-size sensitivity](figures/step_sharing.png)
+<p align="center">
+  <img src="figures/step_sharing_a.png" width="32%" alt="Figure 5 (a): step-size sensitivity">
+  <img src="figures/step_sharing_b.png" width="32%" alt="Figure 5 (b): step-size sensitivity">
+  <img src="figures/step_sharing_c.png" width="32%" alt="Figure 5 (c): step-size sensitivity">
+</p>
 
 *Figure 5. (a) Cumulative number of competitor groups that produced gradient: MBPP stayed active throughout, while
 terse produced most of its gradient in the first rounds. (b) Caesar accuracy at round 32 when trained alone at the full learning rate, with MBPP, and
@@ -270,11 +288,18 @@ What the runs do show is that neither competitor caused a large or lasting defic
 learned. Terse rose from 0.40 to above 0.9 within four rounds. Decimal addition rose from 0.38 to between 0.56 and
 0.75 during training (0.61 at round 32), against 0.41 to 0.53 when it was not trained.
 
-![Base-9 addition with competitors](figures/add9_pairs.png)
+<p align="center">
+  <img src="figures/add9_pairs_a.png" width="49%" alt="Figure 6 (a): base-9 addition with competitors">
+  <img src="figures/add9_pairs_b.png" width="49%" alt="Figure 6 (b): base-9 addition with competitors">
+</p>
+<p align="center">
+  <img src="figures/add9_pairs_c.png" width="49%" alt="Figure 6 (c): base-9 addition with competitors">
+  <img src="figures/add9_pairs_d.png" width="49%" alt="Figure 6 (d): base-9 addition with competitors">
+</p>
 
 *Figure 6. Base-9 addition at each difficulty level, trained alone (grey band: range of three seeds that did not
-collapse; grey line: the collapsed seed 1) and together with decimal addition or terse (one seed each). Right: the
-competitor tasks, trained and untrained.*
+collapse; grey line: the collapsed seed 1) and together with decimal addition or terse (one seed each): (a) 4
+digits, (b) 6 digits, (c) 8 digits. (d) The competitor tasks, trained and untrained.*
 
 A related observation came from the Caesar-MBPP pair: there, terse accuracy rose from 0.40 to 0.68, although
 neither task trained it and Caesar alone had driven it down (Section 3.1).
@@ -333,10 +358,13 @@ learning signal. Its accuracy recovered only slightly, to 0.07, by round 32.
 To test whether the missing signal is what keeps the skill down, we branched from the collapsed checkpoint (round
 16, 6-digit accuracy 0.00) and continued for eight rounds under three conditions (Figure 8).
 
-![Recovery from the collapsed state](figures/recovery.png)
+<p align="center">
+  <img src="figures/recovery_a.png" width="49%" alt="Figure 8 (a): recovery">
+  <img src="figures/recovery_b.png" width="49%" alt="Figure 8 (b): recovery">
+</p>
 
-*Figure 8. Eight-round continuations from the collapsed checkpoint at round 16. Left: 6-digit accuracy on the
-confirmation set. Right: 4-digit accuracy. Grey: the original run before the branch point.*
+*Figure 8. Eight-round continuations from the collapsed checkpoint at round 16. (a) 6-digit accuracy on the
+confirmation set. (b) 4-digit accuracy. Grey: the original run before the branch point.*
 
 With 6-digit problems only and the usual eight samples per prompt, the model never produced a correct 6-digit
 answer. Every group was all-wrong, the gradient was exactly zero on every step, and accuracy stayed at 0.00. With
@@ -368,14 +396,22 @@ trainer runs an optimizer step after every minibatch, so a minibatch whose group
 a momentum-only update. The only exception is a minibatch with no responses at all, which leaves the weights
 untouched.
 
-Figure 9 shows what this means in the recovery branches of Section 3.5. Its top row shows every optimizer step of
+Figure 9 shows what this means in the recovery branches of Section 3.5. Panels (a) to (c) show every optimizer step of
 each branch.
 
-![Optimizer steps in the recovery branches](figures/momentum_branches.png)
+<p align="center">
+  <img src="figures/momentum_branches_a.png" width="32%" alt="Figure 9 (a): recovery branches">
+  <img src="figures/momentum_branches_b.png" width="32%" alt="Figure 9 (b): recovery branches">
+  <img src="figures/momentum_branches_c.png" width="32%" alt="Figure 9 (c): recovery branches">
+</p>
+<p align="center">
+  <img src="figures/momentum_branches_d.png" width="49%" alt="Figure 9 (d): recovery branches">
+  <img src="figures/momentum_branches_e.png" width="49%" alt="Figure 9 (e): recovery branches">
+</p>
 
-*Figure 9. The three recovery branches of Section 3.5, step by step. Top: pre-clip gradient norm of every optimizer
-step (four per round). Ticks at zero mark steps whose gradient was exactly zero but which still applied a momentum
-update; grey crosses mark empty minibatches. Bottom: 6-digit accuracy (confirmation set) and 4-digit accuracy, with
+*Figure 9. The three recovery branches of Section 3.5, step by step. (a–c) Pre-clip gradient norm of every optimizer
+step (four per round), one panel per branch. Ticks at zero mark steps whose gradient was exactly zero but which still applied a momentum
+update; grey crosses mark empty minibatches. (d) 6-digit accuracy (confirmation set) and (e) 4-digit accuracy, with
 95% intervals over evaluation problems.*
 
 In the 8-sample branch, none of the 32 optimizer steps had any gradient. Yet 4-digit accuracy, which this branch no
@@ -394,7 +430,11 @@ measured how far the weights had moved, and at intervals the model's average log
 4- and 6-digit answers (four answers each). The experiment reproduces the optimizer's behaviour, not the collapsed
 branch itself, whose checkpoint no longer exists.
 
-![Weight movement under zero-gradient steps](figures/momentum_cpu.png)
+<p align="center">
+  <img src="figures/momentum_cpu_a.png" width="32%" alt="Figure 10 (a): zero-gradient steps">
+  <img src="figures/momentum_cpu_b.png" width="32%" alt="Figure 10 (b): zero-gradient steps">
+  <img src="figures/momentum_cpu_c.png" width="32%" alt="Figure 10 (c): zero-gradient steps">
+</p>
 
 *Figure 10. Controlled measurement on Qwen3-1.7B with the training optimizer (AdamW, learning rate 2×10⁻⁶). (a)
 Size of each weight update in execution order; orange: real gradient steps, blue: zero-gradient steps; dashed: the
