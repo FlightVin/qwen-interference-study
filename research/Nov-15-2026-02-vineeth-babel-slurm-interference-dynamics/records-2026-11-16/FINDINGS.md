@@ -352,3 +352,20 @@ F16 FINAL-2 (16:25 EST, E3g seeds 4-5, commit 338c994, no checkpoints): mixed s4
 Collapse count: mixed with d8 2/5; d4+d6 without d8 0/5 (Fisher exact two-sided p = 0.44); with a competitor 0/2.
 Revised reading: the d6 collapse is an occasional event of the mixed configuration (2/5 seeds); its association with
 d8 is not significant. RQ2 persistence/recovery findings (F10) are unaffected.
+- 2026-11-16  **qis-s02-diag-final**  COMPLETED  sha=c38ac74f2978f1107361165de1988003b91d2f0d  job=11177886  results=slurm-agentic-engineering/results/qis-s02-diag-final/
+- 2026-11-18  **qis-s02-del-ogpo-dc**  FAILED  sha=180e26f95a76052da03b2e49031bdd1efb088975  job=11196088  results=slurm-agentic-engineering/results/qis-s02-del-ogpo-dc/
+- 2026-11-18  **qis-s02-cpu-del-ogpo-dc-rest**  COMPLETED  sha=91ccca7f413e09861f86b41198f5e22a4aa144ef  job=11196595  results=slurm-agentic-engineering/results/qis-s02-cpu-del-ogpo-dc-rest/
+- 2026-11-18  **qis-s02-cpu-terse-status**  COMPLETED  sha=324d7d4ff4aac72ad64cac162c352da99b7a5b9a  job=11196137  results=slurm-agentic-engineering/results/qis-s02-cpu-terse-status/
+- 2026-11-18  **qis-s02-cpu-momentum-canary**  COMPLETED  sha=324d7d4ff4aac72ad64cac162c352da99b7a5b9a  job=11196139  results=slurm-agentic-engineering/results/qis-s02-cpu-momentum-canary/
+- 2026-11-18  **qis-s02-cpu-momentum-full**  COMPLETED  sha=7f093361a8225467b170a528f4f74079d2dc3aa8  job=11198878  results=slurm-agentic-engineering/results/qis-s02-cpu-momentum-full/
+
+## 2026-11-18 07:33 EST — F20: zero-gradient AdamW steps move the weights and the policy (CPU measurement; report §3.6)
+Job qis-s02-cpu-momentum-full (11198878, commit 7f09336; canary 11196139 passed first). Qwen3-1.7B FP32 on CPU, AdamW
+as in training; real steps = policy gradient on recorded mixed d4 groups of qis-s02-e3-add9mix-s2 (rounds 0-2).
+6 real steps (cum 0.201) → 16 zero-gradient steps (cum 0.207; first = 0.87 x last real; cos > 0.9999; step ratio =
+bias-corrected AdamW prediction within 0.07%) → 1 real step (0.015) → 8 zero steps (cum 0.080, 5.4x).
+Probe (mean token log-prob of 4 held-out correct answers per stratum, base model r0 eval records): real steps −0.042
+(d4) / −0.041 (d6); following zero steps −0.072 / −0.050; single real step < 0.01; following zero steps −0.015 /
+−0.023. Probes deterministic (identical at identical weights). Terse failure types (qis-s02-cpu-terse-status): base
+model ~50% unboxed; Caesar s1 → over_len 228/256, s2 → no_answer 239/256; add9 mixed → no_answer 238; d4-only →
+over_len 238; d6/d8-only → boxing improves; add9+add10 → over_len 222.

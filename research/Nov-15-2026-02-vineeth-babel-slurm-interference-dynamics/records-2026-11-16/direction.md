@@ -342,3 +342,8 @@ MBPP (code, execution-graded), ARC-Challenge (factual), terse answers (a behavio
 - **2026-11-16 16:25 EST — event (E3g complete; all study jobs ended).** Mixed s4, s5 did not collapse: with d8 2/5, without 0/5 (p=0.44). Report, handover, figures updated; runs.md regenerated.
 - **2026-11-16 16:36 EST — hourly review (short).** No study jobs; report final (c38ac74). Decision: no new experiment families before the deadline (the next tests need code changes: per-stratum gradient logging, a looser terse length limit; each needs a canary and review). Submitted a read-only storage check (qis-s02-diag-final) to close the handover's open item. Ceilings: general 1/2, preempt 0/6, CPU 0/20.
 - **2026-11-16 16:38 EST — storage verified.** No checkpoints remain; s02 ~256 MB; 200G free. Handover updated.
+- **2026-11-16 17:36 EST — hourly review (short).** No study jobs; nothing new. Report final (be2900d). Ceilings 0/2, 0/6, 0/20. Watcher not re-armed (nothing to watch).
+- **2026-11-16 18:36 EST — hourly review (short).** No study jobs; nothing new. Report final (be2900d).
+- **2026-11-16 19:00 EST — STUDY STOPPED by owner instruction** ("stop the study and run no other jobs"). No jobs queued or running; hourly cron a372f64b deleted; no watcher running. Usage: ~40.7 GPU-hours (general 30.4, preempt 10.2) across 53 sacct records (last attempt per job). Next: report rewrite only (no compute).
+- **2026-11-16 19:03 EST — report rewritten** at owner request (narrative synthesis; no compute used). Study remains stopped.
+- **2026-11-18 07:33 EST — report revision done.** Critique addressed; figures 2, 4-6, 9, 10 added; terse failure types and the momentum measurement (F20) in; all on preempt CPUs.
